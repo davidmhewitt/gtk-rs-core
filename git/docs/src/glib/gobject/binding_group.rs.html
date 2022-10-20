@@ -576,6 +576,29 @@
 <span id="503">503</span>
 <span id="504">504</span>
 <span id="505">505</span>
+<span id="506">506</span>
+<span id="507">507</span>
+<span id="508">508</span>
+<span id="509">509</span>
+<span id="510">510</span>
+<span id="511">511</span>
+<span id="512">512</span>
+<span id="513">513</span>
+<span id="514">514</span>
+<span id="515">515</span>
+<span id="516">516</span>
+<span id="517">517</span>
+<span id="518">518</span>
+<span id="519">519</span>
+<span id="520">520</span>
+<span id="521">521</span>
+<span id="522">522</span>
+<span id="523">523</span>
+<span id="524">524</span>
+<span id="525">525</span>
+<span id="526">526</span>
+<span id="527">527</span>
+<span id="528">528</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::object::ObjectRef;
@@ -690,6 +713,27 @@
     </span><span class="kw">pub fn </span>flags(<span class="self">self</span>, flags: BindingFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{ flags, ..<span class="self">self </span>}
     }
+
+    <span class="comment">// rustdoc-stripper-ignore-next
+    </span><span class="doccomment">/// Set the binding flags to (`BIDIRECTIONAL`)[crate::BindingFlags::BIDIRECTIONAL].
+    </span><span class="kw">pub fn </span>bidirectional(<span class="kw-2">mut </span><span class="self">self</span>) -&gt; <span class="self">Self </span>{
+        <span class="self">self</span>.flags |= <span class="kw">crate</span>::BindingFlags::BIDIRECTIONAL;
+        <span class="self">self
+    </span>}
+
+    <span class="comment">// rustdoc-stripper-ignore-next
+    </span><span class="doccomment">/// Set the binding flags to (`SYNC_CREATE`)[crate::BindingFlags::SYNC_CREATE].
+    </span><span class="kw">pub fn </span>sync_create(<span class="kw-2">mut </span><span class="self">self</span>) -&gt; <span class="self">Self </span>{
+        <span class="self">self</span>.flags |= <span class="kw">crate</span>::BindingFlags::SYNC_CREATE;
+        <span class="self">self
+    </span>}
+
+    <span class="comment">// rustdoc-stripper-ignore-next
+    </span><span class="doccomment">/// Set the binding flags to (`INVERT_BOOLEAN`)[crate::BindingFlags::INVERT_BOOLEAN].
+    </span><span class="kw">pub fn </span>invert_boolean(<span class="kw-2">mut </span><span class="self">self</span>) -&gt; <span class="self">Self </span>{
+        <span class="self">self</span>.flags |= <span class="kw">crate</span>::BindingFlags::INVERT_BOOLEAN;
+        <span class="self">self
+    </span>}
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Establish the property binding.
@@ -862,7 +906,7 @@
         <span class="macro">assert!</span>(source.find_property(<span class="string">&quot;name&quot;</span>).is_some());
         binding_group
             .bind(<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span>target, <span class="string">&quot;name&quot;</span>)
-            .flags(<span class="kw">crate</span>::BindingFlags::BIDIRECTIONAL)
+            .bidirectional()
             .build();
 
         binding_group.set_source(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span>source));
@@ -899,7 +943,7 @@
         binding_group.set_source(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span>source));
         binding_group
             .bind(<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span>target, <span class="string">&quot;name&quot;</span>)
-            .flags(<span class="kw">crate</span>::BindingFlags::SYNC_CREATE)
+            .sync_create()
             .transform_to(|_binding, value| {
                 <span class="kw">let </span>value = value.get::&lt;<span class="kw-2">&amp;</span>str&gt;().unwrap();
                 <span class="prelude-val">Some</span>(<span class="macro">format!</span>(<span class="string">&quot;{} World&quot;</span>, value).to_value())
@@ -924,7 +968,8 @@
         binding_group.set_source(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span>source));
         binding_group
             .bind(<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span>target, <span class="string">&quot;name&quot;</span>)
-            .flags(<span class="kw">crate</span>::BindingFlags::SYNC_CREATE | <span class="kw">crate</span>::BindingFlags::BIDIRECTIONAL)
+            .sync_create()
+            .bidirectional()
             .transform_to(|_binding, value| {
                 <span class="kw">let </span>value = value.get::&lt;<span class="kw-2">&amp;</span>str&gt;().unwrap();
                 <span class="prelude-val">Some</span>(<span class="macro">format!</span>(<span class="string">&quot;{} World&quot;</span>, value).to_value())
@@ -949,7 +994,7 @@
         binding_group.set_source(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span>source));
         binding_group
             .bind(<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span>target, <span class="string">&quot;enabled&quot;</span>)
-            .flags(<span class="kw">crate</span>::BindingFlags::SYNC_CREATE)
+            .sync_create()
             .transform_to(|_binding, value| {
                 <span class="kw">let </span>value = value.get::&lt;<span class="kw-2">&amp;</span>str&gt;().unwrap();
                 <span class="prelude-val">Some</span>((value == <span class="string">&quot;Hello&quot;</span>).to_value())
@@ -977,7 +1022,8 @@
         binding_group.set_source(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span>source));
         binding_group
             .bind(<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span>target, <span class="string">&quot;enabled&quot;</span>)
-            .flags(<span class="kw">crate</span>::BindingFlags::SYNC_CREATE | <span class="kw">crate</span>::BindingFlags::BIDIRECTIONAL)
+            .sync_create()
+            .bidirectional()
             .transform_to(|_binding, value| {
                 <span class="kw">let </span>value = value.get::&lt;<span class="kw-2">&amp;</span>str&gt;().unwrap();
                 <span class="prelude-val">Some</span>((value == <span class="string">&quot;Hello&quot;</span>).to_value())
@@ -1082,4 +1128,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (a24a020e6 2022-10-18)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (4b8f43199 2022-10-19)" ></div></body></html>

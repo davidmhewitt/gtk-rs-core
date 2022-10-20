@@ -4571,6 +4571,33 @@
 <span id="4498">4498</span>
 <span id="4499">4499</span>
 <span id="4500">4500</span>
+<span id="4501">4501</span>
+<span id="4502">4502</span>
+<span id="4503">4503</span>
+<span id="4504">4504</span>
+<span id="4505">4505</span>
+<span id="4506">4506</span>
+<span id="4507">4507</span>
+<span id="4508">4508</span>
+<span id="4509">4509</span>
+<span id="4510">4510</span>
+<span id="4511">4511</span>
+<span id="4512">4512</span>
+<span id="4513">4513</span>
+<span id="4514">4514</span>
+<span id="4515">4515</span>
+<span id="4516">4516</span>
+<span id="4517">4517</span>
+<span id="4518">4518</span>
+<span id="4519">4519</span>
+<span id="4520">4520</span>
+<span id="4521">4521</span>
+<span id="4522">4522</span>
+<span id="4523">4523</span>
+<span id="4524">4524</span>
+<span id="4525">4525</span>
+<span id="4526">4526</span>
+<span id="4527">4527</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -6162,6 +6189,12 @@
             properties: <span class="macro">vec!</span>[],
             phantom: PhantomData,
         }
+    }
+
+    <span class="comment">// rustdoc-stripper-ignore-next
+    </span><span class="doccomment">/// Gets the type of this builder.
+    </span><span class="kw">pub fn </span>type_(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
+        <span class="self">self</span>.type_
     }
 
     <span class="comment">// rustdoc-stripper-ignore-next
@@ -8270,6 +8303,27 @@
     }
 
     <span class="comment">// rustdoc-stripper-ignore-next
+    </span><span class="doccomment">/// Set the binding flags to (`BIDIRECTIONAL`)[crate::BindingFlags::BIDIRECTIONAL].
+    </span><span class="kw">pub fn </span>bidirectional(<span class="kw-2">mut </span><span class="self">self</span>) -&gt; <span class="self">Self </span>{
+        <span class="self">self</span>.flags |= <span class="kw">crate</span>::BindingFlags::BIDIRECTIONAL;
+        <span class="self">self
+    </span>}
+
+    <span class="comment">// rustdoc-stripper-ignore-next
+    </span><span class="doccomment">/// Set the binding flags to (`SYNC_CREATE`)[crate::BindingFlags::SYNC_CREATE].
+    </span><span class="kw">pub fn </span>sync_create(<span class="kw-2">mut </span><span class="self">self</span>) -&gt; <span class="self">Self </span>{
+        <span class="self">self</span>.flags |= <span class="kw">crate</span>::BindingFlags::SYNC_CREATE;
+        <span class="self">self
+    </span>}
+
+    <span class="comment">// rustdoc-stripper-ignore-next
+    </span><span class="doccomment">/// Set the binding flags to (`INVERT_BOOLEAN`)[crate::BindingFlags::INVERT_BOOLEAN].
+    </span><span class="kw">pub fn </span>invert_boolean(<span class="kw-2">mut </span><span class="self">self</span>) -&gt; <span class="self">Self </span>{
+        <span class="self">self</span>.flags |= <span class="kw">crate</span>::BindingFlags::INVERT_BOOLEAN;
+        <span class="self">self
+    </span>}
+
+    <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Establish the property binding.
     ///
     /// # Panics
@@ -9072,4 +9126,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (a24a020e6 2022-10-18)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (4b8f43199 2022-10-19)" ></div></body></html>
