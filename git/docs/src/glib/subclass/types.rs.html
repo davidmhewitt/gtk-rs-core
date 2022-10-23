@@ -1113,6 +1113,27 @@
 <span id="1040">1040</span>
 <span id="1041">1041</span>
 <span id="1042">1042</span>
+<span id="1043">1043</span>
+<span id="1044">1044</span>
+<span id="1045">1045</span>
+<span id="1046">1046</span>
+<span id="1047">1047</span>
+<span id="1048">1048</span>
+<span id="1049">1049</span>
+<span id="1050">1050</span>
+<span id="1051">1051</span>
+<span id="1052">1052</span>
+<span id="1053">1053</span>
+<span id="1054">1054</span>
+<span id="1055">1055</span>
+<span id="1056">1056</span>
+<span id="1057">1057</span>
+<span id="1058">1058</span>
+<span id="1059">1059</span>
+<span id="1060">1060</span>
+<span id="1061">1061</span>
+<span id="1062">1062</span>
+<span id="1063">1063</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -1765,6 +1786,19 @@
     </span><span class="kw">fn </span>from_instance(obj: <span class="kw-2">&amp;</span><span class="self">Self</span>::Type) -&gt; <span class="kw-2">&amp;</span><span class="self">Self</span>;
 
     <span class="comment">// rustdoc-stripper-ignore-next
+    </span><span class="doccomment">/// Returns the corresponding object instance.
+    ///
+    /// Shorter alias for `instance()`.
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;get_instance&quot;</span>)]
+    </span><span class="kw">fn </span>obj(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::BorrowedObject&lt;<span class="self">Self</span>::Type&gt;;
+
+    <span class="comment">// rustdoc-stripper-ignore-next
+    </span><span class="doccomment">/// Returns the implementation from an instance.
+    ///
+    /// Shorter alias for `from_instance()`.
+    </span><span class="kw">fn </span>from_obj(obj: <span class="kw-2">&amp;</span><span class="self">Self</span>::Type) -&gt; <span class="kw-2">&amp;</span><span class="self">Self</span>;
+
+    <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Returns a new reference-counted wrapper around `self`.
     </span><span class="kw">fn </span>ref_counted(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">super</span>::ObjectImplRef&lt;<span class="self">Self</span>&gt;;
 
@@ -1803,6 +1837,14 @@
             <span class="kw">let </span>ptr = obj.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span><span class="self">Self</span>::Instance;
             (<span class="kw-2">*</span>ptr).imp()
         }
+    }
+
+    <span class="kw">fn </span>obj(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::BorrowedObject&lt;<span class="self">Self</span>::Type&gt; {
+        <span class="self">self</span>.instance()
+    }
+
+    <span class="kw">fn </span>from_obj(obj: <span class="kw-2">&amp;</span><span class="self">Self</span>::Type) -&gt; <span class="kw-2">&amp;</span><span class="self">Self </span>{
+        <span class="self">Self</span>::from_instance(obj)
     }
 
     <span class="kw">fn </span>ref_counted(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">super</span>::ObjectImplRef&lt;<span class="self">Self</span>&gt; {

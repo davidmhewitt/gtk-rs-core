@@ -585,6 +585,20 @@
 <span id="512">512</span>
 <span id="513">513</span>
 <span id="514">514</span>
+<span id="515">515</span>
+<span id="516">516</span>
+<span id="517">517</span>
+<span id="518">518</span>
+<span id="519">519</span>
+<span id="520">520</span>
+<span id="521">521</span>
+<span id="522">522</span>
+<span id="523">523</span>
+<span id="524">524</span>
+<span id="525">525</span>
+<span id="526">526</span>
+<span id="527">527</span>
+<span id="528">528</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::object::ObjectRef;
@@ -600,7 +614,21 @@
 <span class="kw">use </span>std::{fmt, ptr};
 
 <span class="kw">impl </span>BindingGroup {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;bind_with_closures&quot;</span>)]
+    <span class="doccomment">/// Creates a binding between `source_property` on the source object
+    /// and `target_property` on `target`. Whenever the `source_property`
+    /// is changed the `target_property` is updated using the same value.
+    /// The binding flag [`BindingFlags::SYNC_CREATE`][crate::BindingFlags::SYNC_CREATE] is automatically specified.
+    ///
+    /// See [`ObjectExt::bind_property()`][crate::prelude::ObjectExt::bind_property()] for more information.
+    /// ## `source_property`
+    /// the property on the source to bind
+    /// ## `target`
+    /// the target [`Object`][crate::Object]
+    /// ## `target_property`
+    /// the property on `target` to bind
+    /// ## `flags`
+    /// the flags used to create the [`Binding`][crate::Binding]
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;bind_with_closures&quot;</span>)]
     </span><span class="kw">pub fn </span>bind&lt;<span class="lifetime">&#39;a</span>, O: ObjectType&gt;(
         <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>,
         source_property: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str,

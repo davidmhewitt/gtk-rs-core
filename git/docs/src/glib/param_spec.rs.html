@@ -1953,6 +1953,76 @@
 <span id="1880">1880</span>
 <span id="1881">1881</span>
 <span id="1882">1882</span>
+<span id="1883">1883</span>
+<span id="1884">1884</span>
+<span id="1885">1885</span>
+<span id="1886">1886</span>
+<span id="1887">1887</span>
+<span id="1888">1888</span>
+<span id="1889">1889</span>
+<span id="1890">1890</span>
+<span id="1891">1891</span>
+<span id="1892">1892</span>
+<span id="1893">1893</span>
+<span id="1894">1894</span>
+<span id="1895">1895</span>
+<span id="1896">1896</span>
+<span id="1897">1897</span>
+<span id="1898">1898</span>
+<span id="1899">1899</span>
+<span id="1900">1900</span>
+<span id="1901">1901</span>
+<span id="1902">1902</span>
+<span id="1903">1903</span>
+<span id="1904">1904</span>
+<span id="1905">1905</span>
+<span id="1906">1906</span>
+<span id="1907">1907</span>
+<span id="1908">1908</span>
+<span id="1909">1909</span>
+<span id="1910">1910</span>
+<span id="1911">1911</span>
+<span id="1912">1912</span>
+<span id="1913">1913</span>
+<span id="1914">1914</span>
+<span id="1915">1915</span>
+<span id="1916">1916</span>
+<span id="1917">1917</span>
+<span id="1918">1918</span>
+<span id="1919">1919</span>
+<span id="1920">1920</span>
+<span id="1921">1921</span>
+<span id="1922">1922</span>
+<span id="1923">1923</span>
+<span id="1924">1924</span>
+<span id="1925">1925</span>
+<span id="1926">1926</span>
+<span id="1927">1927</span>
+<span id="1928">1928</span>
+<span id="1929">1929</span>
+<span id="1930">1930</span>
+<span id="1931">1931</span>
+<span id="1932">1932</span>
+<span id="1933">1933</span>
+<span id="1934">1934</span>
+<span id="1935">1935</span>
+<span id="1936">1936</span>
+<span id="1937">1937</span>
+<span id="1938">1938</span>
+<span id="1939">1939</span>
+<span id="1940">1940</span>
+<span id="1941">1941</span>
+<span id="1942">1942</span>
+<span id="1943">1943</span>
+<span id="1944">1944</span>
+<span id="1945">1945</span>
+<span id="1946">1946</span>
+<span id="1947">1947</span>
+<span id="1948">1948</span>
+<span id="1949">1949</span>
+<span id="1950">1950</span>
+<span id="1951">1951</span>
+<span id="1952">1952</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
@@ -1973,7 +2043,22 @@
 
 <span class="comment">// Can&#39;t use get_type here as this is not a boxed type but another fundamental type
 </span><span class="macro">wrapper! </span>{
-    <span class="attribute">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    <span class="doccomment">/// [`ParamSpec`][crate::ParamSpec] is an object structure that encapsulates the metadata
+    /// required to specify parameters, such as e.g. [`Object`][crate::Object] properties.
+    ///
+    /// ## Parameter names # {`canonical`-parameter-names}
+    ///
+    /// A property name consists of one or more segments consisting of ASCII letters
+    /// and digits, separated by either the `-` or `_` character. The first
+    /// character of a property name must be a letter. These are the same rules as
+    /// for signal naming (see `g_signal_new()`).
+    ///
+    /// When creating and looking up a [`ParamSpec`][crate::ParamSpec], either separator can be
+    /// used, but they cannot be mixed. Using `-` is considerably more
+    /// efficient, and is the ‘canonical form’. Using `_` is discouraged.
+    ///
+    /// This is an Abstract Base Class, you cannot instantiate it.
+    </span><span class="attribute">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
     #[doc(alias = <span class="string">&quot;GParamSpec&quot;</span>)]
     </span><span class="kw">pub struct </span>ParamSpec(Shared&lt;gobject_ffi::GParamSpec&gt;);
 
@@ -2121,7 +2206,12 @@
         <span class="kw">unsafe </span>{ from_glib((<span class="kw-2">*</span>(&lt;<span class="self">Self </span><span class="kw">as </span>ToGlibPtr&lt;<span class="kw-2">*const </span><span class="kw">_</span>&gt;&gt;::to_glib_none(<span class="self">self</span>).<span class="number">0</span>)).flags) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_param_spec_get_blurb&quot;</span>)]
+    <span class="doccomment">/// Get the short description of a [`ParamSpec`][crate::ParamSpec].
+    ///
+    /// # Returns
+    ///
+    /// the short description of `self`.
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_param_spec_get_blurb&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_blurb&quot;</span>)]
     </span><span class="kw">pub fn </span>blurb(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt; {
         <span class="kw">unsafe </span>{
@@ -2134,7 +2224,14 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_param_spec_get_default_value&quot;</span>)]
+    <span class="doccomment">/// Gets the default value of `self` as a pointer to a [`Value`][crate::Value].
+    ///
+    /// The [`Value`][crate::Value] will remain valid for the life of `self`.
+    ///
+    /// # Returns
+    ///
+    /// a pointer to a [`Value`][crate::Value] which must not be modified
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_param_spec_get_default_value&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_default_value&quot;</span>)]
     </span><span class="kw">pub fn </span>default_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>Value {
         <span class="kw">unsafe </span>{
@@ -2143,7 +2240,15 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_param_spec_get_name&quot;</span>)]
+    <span class="doccomment">/// Get the name of a [`ParamSpec`][crate::ParamSpec].
+    ///
+    /// The name is always an &quot;interned&quot; string (as per `g_intern_string()`).
+    /// This allows for pointer-value comparisons.
+    ///
+    /// # Returns
+    ///
+    /// the name of `self`.
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_param_spec_get_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_name&quot;</span>)]
     </span><span class="kw">pub fn </span>name&lt;<span class="lifetime">&#39;a</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str {
         <span class="kw">unsafe </span>{
@@ -2153,7 +2258,12 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_param_spec_get_name_quark&quot;</span>)]
+    <span class="doccomment">/// Gets the GQuark for the name.
+    ///
+    /// # Returns
+    ///
+    /// the GQuark for `self`-&gt;name.
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_param_spec_get_name_quark&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_name_quark&quot;</span>)]
     </span><span class="kw">pub fn </span>name_quark(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Quark {
         <span class="kw">unsafe </span>{
@@ -2168,6 +2278,12 @@
     ///
     /// If this `ParamSpec` does not have a nickname, the nickname of its redirect target is returned if it has one.
     /// Otherwise, `self.name()` is returned.
+    </span><span class="comment">// rustdoc-stripper-ignore-next-stop
+    </span><span class="doccomment">/// Get the nickname of a [`ParamSpec`][crate::ParamSpec].
+    ///
+    /// # Returns
+    ///
+    /// the nickname of `self`.
     </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_param_spec_get_nick&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_nick&quot;</span>)]
     </span><span class="kw">pub fn </span>nick(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>str {
@@ -2182,6 +2298,18 @@
     //    unsafe { TODO: call gobject_ffi::g_param_spec_get_qdata() }
     //}
 
+    </span><span class="doccomment">/// If the paramspec redirects operations to another paramspec,
+    /// returns that paramspec. Redirect is used typically for
+    /// providing a new implementation of a property in a derived
+    /// type while preserving all the properties from the parent
+    /// type. Redirection is established by creating a property
+    /// of type [`ParamSpecOverride`][crate::ParamSpecOverride]. See `g_object_class_override_property()`
+    /// for an example of the use of this capability.
+    ///
+    /// # Returns
+    ///
+    /// paramspec to which requests on this
+    ///  paramspec should be redirected, or [`None`] if none.
     </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_param_spec_get_redirect_target&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_redirect_target&quot;</span>)]
     </span><span class="kw">pub fn </span>redirect_target(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;ParamSpec&gt; {
@@ -2204,6 +2332,18 @@
     //    unsafe { TODO: call gobject_ffi::g_param_spec_steal_qdata() }
     //}
 
+    </span><span class="doccomment">/// Validate a property name for a [`ParamSpec`][crate::ParamSpec]. This can be useful for
+    /// dynamically-generated properties which need to be validated at run-time
+    /// before actually trying to create them.
+    ///
+    /// See [canonical parameter names][canonical-parameter-names] for details of
+    /// the rules for valid names.
+    /// ## `name`
+    /// the canonical name of the property
+    ///
+    /// # Returns
+    ///
+    /// [`true`] if `name` is a valid property name, [`false`] otherwise.
     </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_param_spec_is_valid_name&quot;</span>)]

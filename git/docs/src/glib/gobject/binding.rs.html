@@ -381,6 +381,8 @@
 <span id="308">308</span>
 <span id="309">309</span>
 <span id="310">310</span>
+<span id="311">311</span>
+<span id="312">312</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
@@ -388,12 +390,14 @@
 <span class="kw">use </span><span class="kw">crate</span>::Object;
 
 <span class="kw">impl </span>Binding {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_source&quot;</span>)]
+    <span class="doccomment">/// The [`Object`][crate::Object] that should be used as the source of the binding
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;get_source&quot;</span>)]
     </span><span class="kw">pub fn </span>source(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Object&gt; {
         <span class="self">self</span>.property(<span class="string">&quot;source&quot;</span>)
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_target&quot;</span>)]
+    <span class="doccomment">/// The [`Object`][crate::Object] that should be used as the target of the binding
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;get_target&quot;</span>)]
     </span><span class="kw">pub fn </span>target(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Object&gt; {
         <span class="self">self</span>.property(<span class="string">&quot;target&quot;</span>)
     }

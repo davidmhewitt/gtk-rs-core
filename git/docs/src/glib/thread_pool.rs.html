@@ -366,37 +366,6 @@
 <span id="293">293</span>
 <span id="294">294</span>
 <span id="295">295</span>
-<span id="296">296</span>
-<span id="297">297</span>
-<span id="298">298</span>
-<span id="299">299</span>
-<span id="300">300</span>
-<span id="301">301</span>
-<span id="302">302</span>
-<span id="303">303</span>
-<span id="304">304</span>
-<span id="305">305</span>
-<span id="306">306</span>
-<span id="307">307</span>
-<span id="308">308</span>
-<span id="309">309</span>
-<span id="310">310</span>
-<span id="311">311</span>
-<span id="312">312</span>
-<span id="313">313</span>
-<span id="314">314</span>
-<span id="315">315</span>
-<span id="316">316</span>
-<span id="317">317</span>
-<span id="318">318</span>
-<span id="319">319</span>
-<span id="320">320</span>
-<span id="321">321</span>
-<span id="322">322</span>
-<span id="323">323</span>
-<span id="324">324</span>
-<span id="325">325</span>
-<span id="326">326</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
@@ -405,10 +374,7 @@
 <span class="kw">use </span>std::future::Future;
 <span class="kw">use </span>std::ptr;
 
-<span class="doccomment">/// The [`ThreadPool`][crate::ThreadPool] struct represents a thread pool. It has three
-/// public read-only members, but the underlying struct is bigger,
-/// so you must not copy this struct.
-</span><span class="attribute">#[derive(Debug)]
+<span class="attribute">#[derive(Debug)]
 #[doc(alias = <span class="string">&quot;GThreadPool&quot;</span>)]
 </span><span class="kw">pub struct </span>ThreadPool(ptr::NonNull&lt;ffi::GThreadPool&gt;);
 
@@ -454,25 +420,7 @@
         }
     }
 
-    <span class="doccomment">/// Inserts `data` into the list of tasks to be executed by `self`.
-    ///
-    /// When the number of currently running threads is lower than the
-    /// maximal allowed number of threads, a new thread is started (or
-    /// reused) with the properties given to [`new()`][Self::new()].
-    /// Otherwise, `data` stays in the queue until a thread in this pool
-    /// finishes its previous task and processes `data`.
-    ///
-    /// `error` can be [`None`] to ignore errors, or non-[`None`] to report
-    /// errors. An error can only occur when a new thread couldn&#39;t be
-    /// created. In that case `data` is simply appended to the queue of
-    /// work to do.
-    ///
-    /// Before version 2.32, this function did not return a success status.
-    ///
-    /// # Returns
-    ///
-    /// [`true`] on success, [`false`] if an error occurred
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_push&quot;</span>)]
+    <span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_push&quot;</span>)]
     </span><span class="kw">pub fn </span>push&lt;F: FnOnce() + Send + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, func: F) -&gt; <span class="prelude-ty">Result</span>&lt;(), <span class="kw">crate</span>::Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>func: Box&lt;<span class="kw">dyn </span>FnOnce() + Send + <span class="lifetime">&#39;static</span>&gt; = Box::new(func);
@@ -551,12 +499,7 @@
         }
     }
 
-    <span class="doccomment">/// Returns the maximal number of threads for `self`.
-    ///
-    /// # Returns
-    ///
-    /// the maximal number of threads
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_get_max_threads&quot;</span>)]
+    <span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_get_max_threads&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_max_threads&quot;</span>)]
     </span><span class="kw">pub fn </span>max_threads(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;u32&gt; {
         <span class="kw">unsafe </span>{
@@ -569,12 +512,7 @@
         }
     }
 
-    <span class="doccomment">/// Returns the number of threads currently running in `self`.
-    ///
-    /// # Returns
-    ///
-    /// the number of threads currently running
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_get_num_threads&quot;</span>)]
+    <span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_get_num_threads&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_num_threads&quot;</span>)]
     </span><span class="kw">pub fn </span>num_threads(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::g_thread_pool_get_num_threads(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }

@@ -1394,34 +1394,6 @@
 <span id="1321">1321</span>
 <span id="1322">1322</span>
 <span id="1323">1323</span>
-<span id="1324">1324</span>
-<span id="1325">1325</span>
-<span id="1326">1326</span>
-<span id="1327">1327</span>
-<span id="1328">1328</span>
-<span id="1329">1329</span>
-<span id="1330">1330</span>
-<span id="1331">1331</span>
-<span id="1332">1332</span>
-<span id="1333">1333</span>
-<span id="1334">1334</span>
-<span id="1335">1335</span>
-<span id="1336">1336</span>
-<span id="1337">1337</span>
-<span id="1338">1338</span>
-<span id="1339">1339</span>
-<span id="1340">1340</span>
-<span id="1341">1341</span>
-<span id="1342">1342</span>
-<span id="1343">1343</span>
-<span id="1344">1344</span>
-<span id="1345">1345</span>
-<span id="1346">1346</span>
-<span id="1347">1347</span>
-<span id="1348">1348</span>
-<span id="1349">1349</span>
-<span id="1350">1350</span>
-<span id="1351">1351</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -1971,19 +1943,6 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Returns whether `Value`s of type `src` can be transformed to type `dst`.
-    </span><span class="comment">// rustdoc-stripper-ignore-next-stop
-    </span><span class="doccomment">/// Check whether [`transform()`][Self::transform()] is able to transform values
-    /// of type `src_type` into values of type `dest_type`. Note that for
-    /// the types to be transformable, they must be compatible or a
-    /// transformation function must be registered.
-    /// ## `src_type`
-    /// Source type.
-    /// ## `dest_type`
-    /// Target type.
-    ///
-    /// # Returns
-    ///
-    /// [`true`] if the transformation is possible, [`false`] otherwise.
     </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_value_type_transformable&quot;</span>)]
     </span><span class="kw">pub fn </span>type_transformable(src: Type, dst: Type) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -1996,21 +1955,6 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Tries to transform the value into a value of the target type
-    </span><span class="comment">// rustdoc-stripper-ignore-next-stop
-    </span><span class="doccomment">/// Tries to cast the contents of `self` into a type appropriate
-    /// to store in `dest_value`, e.g. to transform a `G_TYPE_INT` value
-    /// into a `G_TYPE_FLOAT` value. Performing transformations between
-    /// value types might incur precision lossage. Especially
-    /// transformations into strings might reveal seemingly arbitrary
-    /// results and shouldn&#39;t be relied upon for production code (such
-    /// as rcfile value or object property serialization).
-    /// ## `dest_value`
-    /// Target value.
-    ///
-    /// # Returns
-    ///
-    /// Whether a transformation rule was found and could be applied.
-    ///  Upon failing transformations, `dest_value` is left untouched.
     </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_value_transform&quot;</span>)]
     </span><span class="kw">pub fn </span>transform&lt;T: ValueType&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;Value, <span class="kw">crate</span>::BoolError&gt; {
         <span class="self">self</span>.transform_with_type(T::Type::static_type())
