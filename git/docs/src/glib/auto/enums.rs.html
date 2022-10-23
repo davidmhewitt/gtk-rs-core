@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../glib/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"><a class="sidebar-logo" href="../../../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../glib/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -2273,6 +2273,247 @@
 <span id="2200">2200</span>
 <span id="2201">2201</span>
 <span id="2202">2202</span>
+<span id="2203">2203</span>
+<span id="2204">2204</span>
+<span id="2205">2205</span>
+<span id="2206">2206</span>
+<span id="2207">2207</span>
+<span id="2208">2208</span>
+<span id="2209">2209</span>
+<span id="2210">2210</span>
+<span id="2211">2211</span>
+<span id="2212">2212</span>
+<span id="2213">2213</span>
+<span id="2214">2214</span>
+<span id="2215">2215</span>
+<span id="2216">2216</span>
+<span id="2217">2217</span>
+<span id="2218">2218</span>
+<span id="2219">2219</span>
+<span id="2220">2220</span>
+<span id="2221">2221</span>
+<span id="2222">2222</span>
+<span id="2223">2223</span>
+<span id="2224">2224</span>
+<span id="2225">2225</span>
+<span id="2226">2226</span>
+<span id="2227">2227</span>
+<span id="2228">2228</span>
+<span id="2229">2229</span>
+<span id="2230">2230</span>
+<span id="2231">2231</span>
+<span id="2232">2232</span>
+<span id="2233">2233</span>
+<span id="2234">2234</span>
+<span id="2235">2235</span>
+<span id="2236">2236</span>
+<span id="2237">2237</span>
+<span id="2238">2238</span>
+<span id="2239">2239</span>
+<span id="2240">2240</span>
+<span id="2241">2241</span>
+<span id="2242">2242</span>
+<span id="2243">2243</span>
+<span id="2244">2244</span>
+<span id="2245">2245</span>
+<span id="2246">2246</span>
+<span id="2247">2247</span>
+<span id="2248">2248</span>
+<span id="2249">2249</span>
+<span id="2250">2250</span>
+<span id="2251">2251</span>
+<span id="2252">2252</span>
+<span id="2253">2253</span>
+<span id="2254">2254</span>
+<span id="2255">2255</span>
+<span id="2256">2256</span>
+<span id="2257">2257</span>
+<span id="2258">2258</span>
+<span id="2259">2259</span>
+<span id="2260">2260</span>
+<span id="2261">2261</span>
+<span id="2262">2262</span>
+<span id="2263">2263</span>
+<span id="2264">2264</span>
+<span id="2265">2265</span>
+<span id="2266">2266</span>
+<span id="2267">2267</span>
+<span id="2268">2268</span>
+<span id="2269">2269</span>
+<span id="2270">2270</span>
+<span id="2271">2271</span>
+<span id="2272">2272</span>
+<span id="2273">2273</span>
+<span id="2274">2274</span>
+<span id="2275">2275</span>
+<span id="2276">2276</span>
+<span id="2277">2277</span>
+<span id="2278">2278</span>
+<span id="2279">2279</span>
+<span id="2280">2280</span>
+<span id="2281">2281</span>
+<span id="2282">2282</span>
+<span id="2283">2283</span>
+<span id="2284">2284</span>
+<span id="2285">2285</span>
+<span id="2286">2286</span>
+<span id="2287">2287</span>
+<span id="2288">2288</span>
+<span id="2289">2289</span>
+<span id="2290">2290</span>
+<span id="2291">2291</span>
+<span id="2292">2292</span>
+<span id="2293">2293</span>
+<span id="2294">2294</span>
+<span id="2295">2295</span>
+<span id="2296">2296</span>
+<span id="2297">2297</span>
+<span id="2298">2298</span>
+<span id="2299">2299</span>
+<span id="2300">2300</span>
+<span id="2301">2301</span>
+<span id="2302">2302</span>
+<span id="2303">2303</span>
+<span id="2304">2304</span>
+<span id="2305">2305</span>
+<span id="2306">2306</span>
+<span id="2307">2307</span>
+<span id="2308">2308</span>
+<span id="2309">2309</span>
+<span id="2310">2310</span>
+<span id="2311">2311</span>
+<span id="2312">2312</span>
+<span id="2313">2313</span>
+<span id="2314">2314</span>
+<span id="2315">2315</span>
+<span id="2316">2316</span>
+<span id="2317">2317</span>
+<span id="2318">2318</span>
+<span id="2319">2319</span>
+<span id="2320">2320</span>
+<span id="2321">2321</span>
+<span id="2322">2322</span>
+<span id="2323">2323</span>
+<span id="2324">2324</span>
+<span id="2325">2325</span>
+<span id="2326">2326</span>
+<span id="2327">2327</span>
+<span id="2328">2328</span>
+<span id="2329">2329</span>
+<span id="2330">2330</span>
+<span id="2331">2331</span>
+<span id="2332">2332</span>
+<span id="2333">2333</span>
+<span id="2334">2334</span>
+<span id="2335">2335</span>
+<span id="2336">2336</span>
+<span id="2337">2337</span>
+<span id="2338">2338</span>
+<span id="2339">2339</span>
+<span id="2340">2340</span>
+<span id="2341">2341</span>
+<span id="2342">2342</span>
+<span id="2343">2343</span>
+<span id="2344">2344</span>
+<span id="2345">2345</span>
+<span id="2346">2346</span>
+<span id="2347">2347</span>
+<span id="2348">2348</span>
+<span id="2349">2349</span>
+<span id="2350">2350</span>
+<span id="2351">2351</span>
+<span id="2352">2352</span>
+<span id="2353">2353</span>
+<span id="2354">2354</span>
+<span id="2355">2355</span>
+<span id="2356">2356</span>
+<span id="2357">2357</span>
+<span id="2358">2358</span>
+<span id="2359">2359</span>
+<span id="2360">2360</span>
+<span id="2361">2361</span>
+<span id="2362">2362</span>
+<span id="2363">2363</span>
+<span id="2364">2364</span>
+<span id="2365">2365</span>
+<span id="2366">2366</span>
+<span id="2367">2367</span>
+<span id="2368">2368</span>
+<span id="2369">2369</span>
+<span id="2370">2370</span>
+<span id="2371">2371</span>
+<span id="2372">2372</span>
+<span id="2373">2373</span>
+<span id="2374">2374</span>
+<span id="2375">2375</span>
+<span id="2376">2376</span>
+<span id="2377">2377</span>
+<span id="2378">2378</span>
+<span id="2379">2379</span>
+<span id="2380">2380</span>
+<span id="2381">2381</span>
+<span id="2382">2382</span>
+<span id="2383">2383</span>
+<span id="2384">2384</span>
+<span id="2385">2385</span>
+<span id="2386">2386</span>
+<span id="2387">2387</span>
+<span id="2388">2388</span>
+<span id="2389">2389</span>
+<span id="2390">2390</span>
+<span id="2391">2391</span>
+<span id="2392">2392</span>
+<span id="2393">2393</span>
+<span id="2394">2394</span>
+<span id="2395">2395</span>
+<span id="2396">2396</span>
+<span id="2397">2397</span>
+<span id="2398">2398</span>
+<span id="2399">2399</span>
+<span id="2400">2400</span>
+<span id="2401">2401</span>
+<span id="2402">2402</span>
+<span id="2403">2403</span>
+<span id="2404">2404</span>
+<span id="2405">2405</span>
+<span id="2406">2406</span>
+<span id="2407">2407</span>
+<span id="2408">2408</span>
+<span id="2409">2409</span>
+<span id="2410">2410</span>
+<span id="2411">2411</span>
+<span id="2412">2412</span>
+<span id="2413">2413</span>
+<span id="2414">2414</span>
+<span id="2415">2415</span>
+<span id="2416">2416</span>
+<span id="2417">2417</span>
+<span id="2418">2418</span>
+<span id="2419">2419</span>
+<span id="2420">2420</span>
+<span id="2421">2421</span>
+<span id="2422">2422</span>
+<span id="2423">2423</span>
+<span id="2424">2424</span>
+<span id="2425">2425</span>
+<span id="2426">2426</span>
+<span id="2427">2427</span>
+<span id="2428">2428</span>
+<span id="2429">2429</span>
+<span id="2430">2430</span>
+<span id="2431">2431</span>
+<span id="2432">2432</span>
+<span id="2433">2433</span>
+<span id="2434">2434</span>
+<span id="2435">2435</span>
+<span id="2436">2436</span>
+<span id="2437">2437</span>
+<span id="2438">2438</span>
+<span id="2439">2439</span>
+<span id="2440">2440</span>
+<span id="2441">2441</span>
+<span id="2442">2442</span>
+<span id="2443">2443</span>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
@@ -2842,21 +3083,29 @@
     }
 }
 
-<span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+<span class="doccomment">/// Error codes returned by key file parsing.
+</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GKeyFileError&quot;</span>)]
 </span><span class="kw">pub enum </span>KeyFileError {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_ERROR_UNKNOWN_ENCODING&quot;</span>)]
+    <span class="doccomment">/// the text being parsed was in
+    ///  an unknown encoding
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_ERROR_UNKNOWN_ENCODING&quot;</span>)]
     </span>UnknownEncoding,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_ERROR_PARSE&quot;</span>)]
+    <span class="doccomment">/// document was ill-formed
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_ERROR_PARSE&quot;</span>)]
     </span>Parse,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_ERROR_NOT_FOUND&quot;</span>)]
+    <span class="doccomment">/// the file was not found
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_ERROR_NOT_FOUND&quot;</span>)]
     </span>NotFound,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_ERROR_KEY_NOT_FOUND&quot;</span>)]
+    <span class="doccomment">/// a requested key was not found
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_ERROR_KEY_NOT_FOUND&quot;</span>)]
     </span>KeyNotFound,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_ERROR_GROUP_NOT_FOUND&quot;</span>)]
+    <span class="doccomment">/// a requested group was not found
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_ERROR_GROUP_NOT_FOUND&quot;</span>)]
     </span>GroupNotFound,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_ERROR_INVALID_VALUE&quot;</span>)]
+    <span class="doccomment">/// a value could not be parsed
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_ERROR_INVALID_VALUE&quot;</span>)]
     </span>InvalidValue,
     <span class="attribute">#[doc(hidden)]
     </span>__Unknown(i32),
@@ -2934,13 +3183,21 @@
     }
 }
 
-<span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+<span class="doccomment">/// Return values from `GLogWriterFuncs` to indicate whether the given log entry
+/// was successfully handled by the writer, or whether there was an error in
+/// handling it (and hence a fallback writer should be used).
+///
+/// If a `GLogWriterFunc` ignores a log entry, it should return
+/// [`Handled`][Self::Handled].
+</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GLogWriterOutput&quot;</span>)]
 </span><span class="kw">pub enum </span>LogWriterOutput {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_LOG_WRITER_HANDLED&quot;</span>)]
+    <span class="doccomment">/// Log writer has handled the log entry.
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_LOG_WRITER_HANDLED&quot;</span>)]
     </span>Handled,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_LOG_WRITER_UNHANDLED&quot;</span>)]
+    <span class="doccomment">/// Log writer could not handle the log entry.
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_LOG_WRITER_UNHANDLED&quot;</span>)]
     </span>Unhandled,
     <span class="attribute">#[doc(hidden)]
     </span>__Unknown(i32),
@@ -2984,23 +3241,35 @@
     }
 }
 
-<span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+<span class="doccomment">/// Error codes returned by markup parsing.
+</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GMarkupError&quot;</span>)]
 </span><span class="kw">pub enum </span>MarkupError {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_MARKUP_ERROR_BAD_UTF8&quot;</span>)]
+    <span class="doccomment">/// text being parsed was not valid UTF-8
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_MARKUP_ERROR_BAD_UTF8&quot;</span>)]
     </span>BadUtf8,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_MARKUP_ERROR_EMPTY&quot;</span>)]
+    <span class="doccomment">/// document contained nothing, or only whitespace
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_MARKUP_ERROR_EMPTY&quot;</span>)]
     </span>Empty,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_MARKUP_ERROR_PARSE&quot;</span>)]
+    <span class="doccomment">/// document was ill-formed
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_MARKUP_ERROR_PARSE&quot;</span>)]
     </span>Parse,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_MARKUP_ERROR_UNKNOWN_ELEMENT&quot;</span>)]
+    <span class="doccomment">/// error should be set by `GMarkupParser`
+    ///  functions; element wasn&#39;t known
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_MARKUP_ERROR_UNKNOWN_ELEMENT&quot;</span>)]
     </span>UnknownElement,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_MARKUP_ERROR_UNKNOWN_ATTRIBUTE&quot;</span>)]
+    <span class="doccomment">/// error should be set by `GMarkupParser`
+    ///  functions; attribute wasn&#39;t known
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_MARKUP_ERROR_UNKNOWN_ATTRIBUTE&quot;</span>)]
     </span>UnknownAttribute,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_MARKUP_ERROR_INVALID_CONTENT&quot;</span>)]
+    <span class="doccomment">/// error should be set by `GMarkupParser`
+    ///  functions; content was invalid
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_MARKUP_ERROR_INVALID_CONTENT&quot;</span>)]
     </span>InvalidContent,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_MARKUP_ERROR_MISSING_ATTRIBUTE&quot;</span>)]
+    <span class="doccomment">/// error should be set by `GMarkupParser`
+    ///  functions; a required attribute was missing
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_MARKUP_ERROR_MISSING_ATTRIBUTE&quot;</span>)]
     </span>MissingAttribute,
     <span class="attribute">#[doc(hidden)]
     </span>__Unknown(i32),
@@ -3082,27 +3351,49 @@
     }
 }
 
-<span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+<span class="doccomment">/// The [`OptionArg`][crate::OptionArg] enum values determine which type of extra argument the
+/// options expect to find. If an option expects an extra argument, it can
+/// be specified in several ways; with a short option: `-x arg`, with a long
+/// option: `--name arg` or combined in a single argument: `--name=arg`.
+</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GOptionArg&quot;</span>)]
 </span><span class="kw">pub enum </span>OptionArg {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_OPTION_ARG_NONE&quot;</span>)]
+    <span class="doccomment">/// No extra argument. This is useful for simple flags or booleans.
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_OPTION_ARG_NONE&quot;</span>)]
     </span><span class="prelude-val">None</span>,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_OPTION_ARG_STRING&quot;</span>)]
+    <span class="doccomment">/// The option takes a UTF-8 string argument.
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_OPTION_ARG_STRING&quot;</span>)]
     </span>String,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_OPTION_ARG_INT&quot;</span>)]
+    <span class="doccomment">/// The option takes an integer argument.
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_OPTION_ARG_INT&quot;</span>)]
     </span>Int,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_OPTION_ARG_CALLBACK&quot;</span>)]
+    <span class="doccomment">/// The option provides a callback (of type
+    ///  `GOptionArgFunc`) to parse the extra argument.
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_OPTION_ARG_CALLBACK&quot;</span>)]
     </span>Callback,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_OPTION_ARG_FILENAME&quot;</span>)]
+    <span class="doccomment">/// The option takes a filename as argument, which will
+    ///  be in the GLib filename encoding rather than UTF-8.
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_OPTION_ARG_FILENAME&quot;</span>)]
     </span>Filename,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_OPTION_ARG_STRING_ARRAY&quot;</span>)]
+    <span class="doccomment">/// The option takes a string argument, multiple
+    ///  uses of the option are collected into an array of strings.
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_OPTION_ARG_STRING_ARRAY&quot;</span>)]
     </span>StringArray,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_OPTION_ARG_FILENAME_ARRAY&quot;</span>)]
+    <span class="doccomment">/// The option takes a filename as argument,
+    ///  multiple uses of the option are collected into an array of strings.
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_OPTION_ARG_FILENAME_ARRAY&quot;</span>)]
     </span>FilenameArray,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_OPTION_ARG_DOUBLE&quot;</span>)]
+    <span class="doccomment">/// The option takes a double argument. The argument
+    ///  can be formatted either for the user&#39;s locale or for the &quot;C&quot; locale.
+    ///  Since 2.12
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_OPTION_ARG_DOUBLE&quot;</span>)]
     </span>Double,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_OPTION_ARG_INT64&quot;</span>)]
+    <span class="doccomment">/// The option takes a 64-bit integer. Like
+    ///  [`Int`][Self::Int] but for larger numbers. The number can be in
+    ///  decimal base, or in hexadecimal (when prefixed with `0x`, for
+    ///  example, `0xffffffff`). Since 2.12
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_OPTION_ARG_INT64&quot;</span>)]
     </span>Int64,
     <span class="attribute">#[doc(hidden)]
     </span>__Unknown(i32),
@@ -3167,15 +3458,20 @@
     }
 }
 
-<span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+<span class="doccomment">/// An enumeration specifying the base position for a
+/// `g_io_channel_seek_position()` operation.
+</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GSeekType&quot;</span>)]
 </span><span class="kw">pub enum </span>SeekType {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_SEEK_CUR&quot;</span>)]
+    <span class="doccomment">/// the current position in the file.
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SEEK_CUR&quot;</span>)]
     </span>Cur,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_SEEK_SET&quot;</span>)]
+    <span class="doccomment">/// the start of the file.
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SEEK_SET&quot;</span>)]
     </span>Set,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_SEEK_END&quot;</span>)]
+    <span class="doccomment">/// the end of the file.
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SEEK_END&quot;</span>)]
     </span>End,
     <span class="attribute">#[doc(hidden)]
     </span>__Unknown(i32),
@@ -3222,15 +3518,26 @@
     }
 }
 
-<span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+<span class="doccomment">/// Disambiguates a given time in two ways.
+///
+/// First, specifies if the given time is in universal or local time.
+///
+/// Second, if the time is in local time, specifies if it is local
+/// standard time or local daylight time. This is important for the case
+/// where the same local time occurs twice (during daylight savings time
+/// transitions, for example).
+</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GTimeType&quot;</span>)]
 </span><span class="kw">pub enum </span>TimeType {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_TIME_TYPE_STANDARD&quot;</span>)]
+    <span class="doccomment">/// the time is in local standard time
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TIME_TYPE_STANDARD&quot;</span>)]
     </span>Standard,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_TIME_TYPE_DAYLIGHT&quot;</span>)]
+    <span class="doccomment">/// the time is in local daylight time
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TIME_TYPE_DAYLIGHT&quot;</span>)]
     </span>Daylight,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_TIME_TYPE_UNIVERSAL&quot;</span>)]
+    <span class="doccomment">/// the time is in UTC
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TIME_TYPE_UNIVERSAL&quot;</span>)]
     </span>Universal,
     <span class="attribute">#[doc(hidden)]
     </span>__Unknown(i32),
@@ -3277,355 +3584,530 @@
     }
 }
 
-<span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+<span class="doccomment">/// The [`UnicodeScript`][crate::UnicodeScript] enumeration identifies different writing
+/// systems. The values correspond to the names as defined in the
+/// Unicode standard. The enumeration has been added in GLib 2.14,
+/// and is interchangeable with `PangoScript`.
+///
+/// Note that new types may be added in the future. Applications
+/// should be ready to handle unknown values.
+/// See [Unicode Standard Annex `24`: Script names](http://www.unicode.org/reports/tr24/).
+</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GUnicodeScript&quot;</span>)]
 </span><span class="kw">pub enum </span>UnicodeScript {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_INVALID_CODE&quot;</span>)]
+    <span class="doccomment">/// a value never returned from `g_unichar_get_script()`
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_INVALID_CODE&quot;</span>)]
     </span>InvalidCode,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_COMMON&quot;</span>)]
+    <span class="doccomment">/// a character used by multiple different scripts
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_COMMON&quot;</span>)]
     </span>Common,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_INHERITED&quot;</span>)]
+    <span class="doccomment">/// a mark glyph that takes its script from the
+    ///  base glyph to which it is attached
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_INHERITED&quot;</span>)]
     </span>Inherited,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_ARABIC&quot;</span>)]
+    <span class="doccomment">/// Arabic
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_ARABIC&quot;</span>)]
     </span>Arabic,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_ARMENIAN&quot;</span>)]
+    <span class="doccomment">/// Armenian
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_ARMENIAN&quot;</span>)]
     </span>Armenian,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_BENGALI&quot;</span>)]
+    <span class="doccomment">/// Bengali
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_BENGALI&quot;</span>)]
     </span>Bengali,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_BOPOMOFO&quot;</span>)]
+    <span class="doccomment">/// Bopomofo
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_BOPOMOFO&quot;</span>)]
     </span>Bopomofo,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_CHEROKEE&quot;</span>)]
+    <span class="doccomment">/// Cherokee
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_CHEROKEE&quot;</span>)]
     </span>Cherokee,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_COPTIC&quot;</span>)]
+    <span class="doccomment">/// Coptic
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_COPTIC&quot;</span>)]
     </span>Coptic,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_CYRILLIC&quot;</span>)]
+    <span class="doccomment">/// Cyrillic
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_CYRILLIC&quot;</span>)]
     </span>Cyrillic,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_DESERET&quot;</span>)]
+    <span class="doccomment">/// Deseret
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_DESERET&quot;</span>)]
     </span>Deseret,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_DEVANAGARI&quot;</span>)]
+    <span class="doccomment">/// Devanagari
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_DEVANAGARI&quot;</span>)]
     </span>Devanagari,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_ETHIOPIC&quot;</span>)]
+    <span class="doccomment">/// Ethiopic
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_ETHIOPIC&quot;</span>)]
     </span>Ethiopic,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_GEORGIAN&quot;</span>)]
+    <span class="doccomment">/// Georgian
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_GEORGIAN&quot;</span>)]
     </span>Georgian,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_GOTHIC&quot;</span>)]
+    <span class="doccomment">/// Gothic
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_GOTHIC&quot;</span>)]
     </span>Gothic,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_GREEK&quot;</span>)]
+    <span class="doccomment">/// Greek
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_GREEK&quot;</span>)]
     </span>Greek,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_GUJARATI&quot;</span>)]
+    <span class="doccomment">/// Gujarati
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_GUJARATI&quot;</span>)]
     </span>Gujarati,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_GURMUKHI&quot;</span>)]
+    <span class="doccomment">/// Gurmukhi
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_GURMUKHI&quot;</span>)]
     </span>Gurmukhi,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_HAN&quot;</span>)]
+    <span class="doccomment">/// Han
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_HAN&quot;</span>)]
     </span>Han,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_HANGUL&quot;</span>)]
+    <span class="doccomment">/// Hangul
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_HANGUL&quot;</span>)]
     </span>Hangul,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_HEBREW&quot;</span>)]
+    <span class="doccomment">/// Hebrew
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_HEBREW&quot;</span>)]
     </span>Hebrew,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_HIRAGANA&quot;</span>)]
+    <span class="doccomment">/// Hiragana
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_HIRAGANA&quot;</span>)]
     </span>Hiragana,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_KANNADA&quot;</span>)]
+    <span class="doccomment">/// Kannada
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_KANNADA&quot;</span>)]
     </span>Kannada,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_KATAKANA&quot;</span>)]
+    <span class="doccomment">/// Katakana
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_KATAKANA&quot;</span>)]
     </span>Katakana,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_KHMER&quot;</span>)]
+    <span class="doccomment">/// Khmer
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_KHMER&quot;</span>)]
     </span>Khmer,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_LAO&quot;</span>)]
+    <span class="doccomment">/// Lao
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_LAO&quot;</span>)]
     </span>Lao,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_LATIN&quot;</span>)]
+    <span class="doccomment">/// Latin
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_LATIN&quot;</span>)]
     </span>Latin,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MALAYALAM&quot;</span>)]
+    <span class="doccomment">/// Malayalam
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MALAYALAM&quot;</span>)]
     </span>Malayalam,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MONGOLIAN&quot;</span>)]
+    <span class="doccomment">/// Mongolian
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MONGOLIAN&quot;</span>)]
     </span>Mongolian,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MYANMAR&quot;</span>)]
+    <span class="doccomment">/// Myanmar
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MYANMAR&quot;</span>)]
     </span>Myanmar,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OGHAM&quot;</span>)]
+    <span class="doccomment">/// Ogham
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OGHAM&quot;</span>)]
     </span>Ogham,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OLD_ITALIC&quot;</span>)]
+    <span class="doccomment">/// Old Italic
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OLD_ITALIC&quot;</span>)]
     </span>OldItalic,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_ORIYA&quot;</span>)]
+    <span class="doccomment">/// Oriya
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_ORIYA&quot;</span>)]
     </span>Oriya,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_RUNIC&quot;</span>)]
+    <span class="doccomment">/// Runic
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_RUNIC&quot;</span>)]
     </span>Runic,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SINHALA&quot;</span>)]
+    <span class="doccomment">/// Sinhala
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SINHALA&quot;</span>)]
     </span>Sinhala,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SYRIAC&quot;</span>)]
+    <span class="doccomment">/// Syriac
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SYRIAC&quot;</span>)]
     </span>Syriac,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TAMIL&quot;</span>)]
+    <span class="doccomment">/// Tamil
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TAMIL&quot;</span>)]
     </span>Tamil,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TELUGU&quot;</span>)]
+    <span class="doccomment">/// Telugu
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TELUGU&quot;</span>)]
     </span>Telugu,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_THAANA&quot;</span>)]
+    <span class="doccomment">/// Thaana
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_THAANA&quot;</span>)]
     </span>Thaana,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_THAI&quot;</span>)]
+    <span class="doccomment">/// Thai
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_THAI&quot;</span>)]
     </span>Thai,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TIBETAN&quot;</span>)]
+    <span class="doccomment">/// Tibetan
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TIBETAN&quot;</span>)]
     </span>Tibetan,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_CANADIAN_ABORIGINAL&quot;</span>)]
+    <span class="doccomment">/// Canadian Aboriginal
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_CANADIAN_ABORIGINAL&quot;</span>)]
     </span>CanadianAboriginal,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_YI&quot;</span>)]
+    <span class="doccomment">/// Yi
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_YI&quot;</span>)]
     </span>Yi,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TAGALOG&quot;</span>)]
+    <span class="doccomment">/// Tagalog
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TAGALOG&quot;</span>)]
     </span>Tagalog,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_HANUNOO&quot;</span>)]
+    <span class="doccomment">/// Hanunoo
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_HANUNOO&quot;</span>)]
     </span>Hanunoo,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_BUHID&quot;</span>)]
+    <span class="doccomment">/// Buhid
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_BUHID&quot;</span>)]
     </span>Buhid,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TAGBANWA&quot;</span>)]
+    <span class="doccomment">/// Tagbanwa
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TAGBANWA&quot;</span>)]
     </span>Tagbanwa,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_BRAILLE&quot;</span>)]
+    <span class="doccomment">/// Braille
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_BRAILLE&quot;</span>)]
     </span>Braille,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_CYPRIOT&quot;</span>)]
+    <span class="doccomment">/// Cypriot
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_CYPRIOT&quot;</span>)]
     </span>Cypriot,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_LIMBU&quot;</span>)]
+    <span class="doccomment">/// Limbu
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_LIMBU&quot;</span>)]
     </span>Limbu,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OSMANYA&quot;</span>)]
+    <span class="doccomment">/// Osmanya
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OSMANYA&quot;</span>)]
     </span>Osmanya,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SHAVIAN&quot;</span>)]
+    <span class="doccomment">/// Shavian
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SHAVIAN&quot;</span>)]
     </span>Shavian,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_LINEAR_B&quot;</span>)]
+    <span class="doccomment">/// Linear B
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_LINEAR_B&quot;</span>)]
     </span>LinearB,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TAI_LE&quot;</span>)]
+    <span class="doccomment">/// Tai Le
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TAI_LE&quot;</span>)]
     </span>TaiLe,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_UGARITIC&quot;</span>)]
+    <span class="doccomment">/// Ugaritic
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_UGARITIC&quot;</span>)]
     </span>Ugaritic,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_NEW_TAI_LUE&quot;</span>)]
+    <span class="doccomment">/// New Tai Lue
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_NEW_TAI_LUE&quot;</span>)]
     </span>NewTaiLue,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_BUGINESE&quot;</span>)]
+    <span class="doccomment">/// Buginese
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_BUGINESE&quot;</span>)]
     </span>Buginese,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_GLAGOLITIC&quot;</span>)]
+    <span class="doccomment">/// Glagolitic
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_GLAGOLITIC&quot;</span>)]
     </span>Glagolitic,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TIFINAGH&quot;</span>)]
+    <span class="doccomment">/// Tifinagh
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TIFINAGH&quot;</span>)]
     </span>Tifinagh,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SYLOTI_NAGRI&quot;</span>)]
+    <span class="doccomment">/// Syloti Nagri
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SYLOTI_NAGRI&quot;</span>)]
     </span>SylotiNagri,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OLD_PERSIAN&quot;</span>)]
+    <span class="doccomment">/// Old Persian
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OLD_PERSIAN&quot;</span>)]
     </span>OldPersian,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_KHAROSHTHI&quot;</span>)]
+    <span class="doccomment">/// Kharoshthi
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_KHAROSHTHI&quot;</span>)]
     </span>Kharoshthi,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_UNKNOWN&quot;</span>)]
+    <span class="doccomment">/// an unassigned code point
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_UNKNOWN&quot;</span>)]
     </span>Unknown,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_BALINESE&quot;</span>)]
+    <span class="doccomment">/// Balinese
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_BALINESE&quot;</span>)]
     </span>Balinese,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_CUNEIFORM&quot;</span>)]
+    <span class="doccomment">/// Cuneiform
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_CUNEIFORM&quot;</span>)]
     </span>Cuneiform,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_PHOENICIAN&quot;</span>)]
+    <span class="doccomment">/// Phoenician
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_PHOENICIAN&quot;</span>)]
     </span>Phoenician,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_PHAGS_PA&quot;</span>)]
+    <span class="doccomment">/// Phags-pa
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_PHAGS_PA&quot;</span>)]
     </span>PhagsPa,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_NKO&quot;</span>)]
+    <span class="doccomment">/// N&#39;Ko
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_NKO&quot;</span>)]
     </span>Nko,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_KAYAH_LI&quot;</span>)]
+    <span class="doccomment">/// Kayah Li. Since 2.16.3
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_KAYAH_LI&quot;</span>)]
     </span>KayahLi,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_LEPCHA&quot;</span>)]
+    <span class="doccomment">/// Lepcha. Since 2.16.3
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_LEPCHA&quot;</span>)]
     </span>Lepcha,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_REJANG&quot;</span>)]
+    <span class="doccomment">/// Rejang. Since 2.16.3
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_REJANG&quot;</span>)]
     </span>Rejang,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SUNDANESE&quot;</span>)]
+    <span class="doccomment">/// Sundanese. Since 2.16.3
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SUNDANESE&quot;</span>)]
     </span>Sundanese,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SAURASHTRA&quot;</span>)]
+    <span class="doccomment">/// Saurashtra. Since 2.16.3
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SAURASHTRA&quot;</span>)]
     </span>Saurashtra,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_CHAM&quot;</span>)]
+    <span class="doccomment">/// Cham. Since 2.16.3
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_CHAM&quot;</span>)]
     </span>Cham,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OL_CHIKI&quot;</span>)]
+    <span class="doccomment">/// Ol Chiki. Since 2.16.3
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OL_CHIKI&quot;</span>)]
     </span>OlChiki,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_VAI&quot;</span>)]
+    <span class="doccomment">/// Vai. Since 2.16.3
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_VAI&quot;</span>)]
     </span>Vai,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_CARIAN&quot;</span>)]
+    <span class="doccomment">/// Carian. Since 2.16.3
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_CARIAN&quot;</span>)]
     </span>Carian,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_LYCIAN&quot;</span>)]
+    <span class="doccomment">/// Lycian. Since 2.16.3
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_LYCIAN&quot;</span>)]
     </span>Lycian,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_LYDIAN&quot;</span>)]
+    <span class="doccomment">/// Lydian. Since 2.16.3
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_LYDIAN&quot;</span>)]
     </span>Lydian,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_AVESTAN&quot;</span>)]
+    <span class="doccomment">/// Avestan. Since 2.26
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_AVESTAN&quot;</span>)]
     </span>Avestan,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_BAMUM&quot;</span>)]
+    <span class="doccomment">/// Bamum. Since 2.26
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_BAMUM&quot;</span>)]
     </span>Bamum,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_EGYPTIAN_HIEROGLYPHS&quot;</span>)]
+    <span class="doccomment">/// Egyptian Hieroglpyhs. Since 2.26
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_EGYPTIAN_HIEROGLYPHS&quot;</span>)]
     </span>EgyptianHieroglyphs,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_IMPERIAL_ARAMAIC&quot;</span>)]
+    <span class="doccomment">/// Imperial Aramaic. Since 2.26
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_IMPERIAL_ARAMAIC&quot;</span>)]
     </span>ImperialAramaic,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_INSCRIPTIONAL_PAHLAVI&quot;</span>)]
+    <span class="doccomment">/// Inscriptional Pahlavi. Since 2.26
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_INSCRIPTIONAL_PAHLAVI&quot;</span>)]
     </span>InscriptionalPahlavi,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_INSCRIPTIONAL_PARTHIAN&quot;</span>)]
+    <span class="doccomment">/// Inscriptional Parthian. Since 2.26
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_INSCRIPTIONAL_PARTHIAN&quot;</span>)]
     </span>InscriptionalParthian,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_JAVANESE&quot;</span>)]
+    <span class="doccomment">/// Javanese. Since 2.26
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_JAVANESE&quot;</span>)]
     </span>Javanese,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_KAITHI&quot;</span>)]
+    <span class="doccomment">/// Kaithi. Since 2.26
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_KAITHI&quot;</span>)]
     </span>Kaithi,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_LISU&quot;</span>)]
+    <span class="doccomment">/// Lisu. Since 2.26
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_LISU&quot;</span>)]
     </span>Lisu,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MEETEI_MAYEK&quot;</span>)]
+    <span class="doccomment">/// Meetei Mayek. Since 2.26
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MEETEI_MAYEK&quot;</span>)]
     </span>MeeteiMayek,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OLD_SOUTH_ARABIAN&quot;</span>)]
+    <span class="doccomment">/// Old South Arabian. Since 2.26
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OLD_SOUTH_ARABIAN&quot;</span>)]
     </span>OldSouthArabian,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OLD_TURKIC&quot;</span>)]
+    <span class="doccomment">/// Old Turkic. Since 2.28
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OLD_TURKIC&quot;</span>)]
     </span>OldTurkic,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SAMARITAN&quot;</span>)]
+    <span class="doccomment">/// Samaritan. Since 2.26
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SAMARITAN&quot;</span>)]
     </span>Samaritan,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TAI_THAM&quot;</span>)]
+    <span class="doccomment">/// Tai Tham. Since 2.26
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TAI_THAM&quot;</span>)]
     </span>TaiTham,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TAI_VIET&quot;</span>)]
+    <span class="doccomment">/// Tai Viet. Since 2.26
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TAI_VIET&quot;</span>)]
     </span>TaiViet,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_BATAK&quot;</span>)]
+    <span class="doccomment">/// Batak. Since 2.28
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_BATAK&quot;</span>)]
     </span>Batak,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_BRAHMI&quot;</span>)]
+    <span class="doccomment">/// Brahmi. Since 2.28
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_BRAHMI&quot;</span>)]
     </span>Brahmi,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MANDAIC&quot;</span>)]
+    <span class="doccomment">/// Mandaic. Since 2.28
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MANDAIC&quot;</span>)]
     </span>Mandaic,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_CHAKMA&quot;</span>)]
+    <span class="doccomment">/// Chakma. Since: 2.32
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_CHAKMA&quot;</span>)]
     </span>Chakma,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MEROITIC_CURSIVE&quot;</span>)]
+    <span class="doccomment">/// Meroitic Cursive. Since: 2.32
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MEROITIC_CURSIVE&quot;</span>)]
     </span>MeroiticCursive,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MEROITIC_HIEROGLYPHS&quot;</span>)]
+    <span class="doccomment">/// Meroitic Hieroglyphs. Since: 2.32
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MEROITIC_HIEROGLYPHS&quot;</span>)]
     </span>MeroiticHieroglyphs,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MIAO&quot;</span>)]
+    <span class="doccomment">/// Miao. Since: 2.32
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MIAO&quot;</span>)]
     </span>Miao,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SHARADA&quot;</span>)]
+    <span class="doccomment">/// Sharada. Since: 2.32
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SHARADA&quot;</span>)]
     </span>Sharada,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SORA_SOMPENG&quot;</span>)]
+    <span class="doccomment">/// Sora Sompeng. Since: 2.32
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SORA_SOMPENG&quot;</span>)]
     </span>SoraSompeng,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TAKRI&quot;</span>)]
+    <span class="doccomment">/// Takri. Since: 2.32
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TAKRI&quot;</span>)]
     </span>Takri,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_BASSA_VAH&quot;</span>)]
+    <span class="doccomment">/// Bassa. Since: 2.42
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_BASSA_VAH&quot;</span>)]
     </span>BassaVah,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_CAUCASIAN_ALBANIAN&quot;</span>)]
+    <span class="doccomment">/// Caucasian Albanian. Since: 2.42
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_CAUCASIAN_ALBANIAN&quot;</span>)]
     </span>CaucasianAlbanian,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_DUPLOYAN&quot;</span>)]
+    <span class="doccomment">/// Duployan. Since: 2.42
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_DUPLOYAN&quot;</span>)]
     </span>Duployan,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_ELBASAN&quot;</span>)]
+    <span class="doccomment">/// Elbasan. Since: 2.42
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_ELBASAN&quot;</span>)]
     </span>Elbasan,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_GRANTHA&quot;</span>)]
+    <span class="doccomment">/// Grantha. Since: 2.42
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_GRANTHA&quot;</span>)]
     </span>Grantha,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_KHOJKI&quot;</span>)]
+    <span class="doccomment">/// Kjohki. Since: 2.42
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_KHOJKI&quot;</span>)]
     </span>Khojki,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_KHUDAWADI&quot;</span>)]
+    <span class="doccomment">/// Khudawadi, Sindhi. Since: 2.42
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_KHUDAWADI&quot;</span>)]
     </span>Khudawadi,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_LINEAR_A&quot;</span>)]
+    <span class="doccomment">/// Linear A. Since: 2.42
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_LINEAR_A&quot;</span>)]
     </span>LinearA,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MAHAJANI&quot;</span>)]
+    <span class="doccomment">/// Mahajani. Since: 2.42
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MAHAJANI&quot;</span>)]
     </span>Mahajani,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MANICHAEAN&quot;</span>)]
+    <span class="doccomment">/// Manichaean. Since: 2.42
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MANICHAEAN&quot;</span>)]
     </span>Manichaean,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MENDE_KIKAKUI&quot;</span>)]
+    <span class="doccomment">/// Mende Kikakui. Since: 2.42
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MENDE_KIKAKUI&quot;</span>)]
     </span>MendeKikakui,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MODI&quot;</span>)]
+    <span class="doccomment">/// Modi. Since: 2.42
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MODI&quot;</span>)]
     </span>Modi,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MRO&quot;</span>)]
+    <span class="doccomment">/// Mro. Since: 2.42
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MRO&quot;</span>)]
     </span>Mro,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_NABATAEAN&quot;</span>)]
+    <span class="doccomment">/// Nabataean. Since: 2.42
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_NABATAEAN&quot;</span>)]
     </span>Nabataean,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OLD_NORTH_ARABIAN&quot;</span>)]
+    <span class="doccomment">/// Old North Arabian. Since: 2.42
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OLD_NORTH_ARABIAN&quot;</span>)]
     </span>OldNorthArabian,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OLD_PERMIC&quot;</span>)]
+    <span class="doccomment">/// Old Permic. Since: 2.42
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OLD_PERMIC&quot;</span>)]
     </span>OldPermic,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_PAHAWH_HMONG&quot;</span>)]
+    <span class="doccomment">/// Pahawh Hmong. Since: 2.42
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_PAHAWH_HMONG&quot;</span>)]
     </span>PahawhHmong,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_PALMYRENE&quot;</span>)]
+    <span class="doccomment">/// Palmyrene. Since: 2.42
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_PALMYRENE&quot;</span>)]
     </span>Palmyrene,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_PAU_CIN_HAU&quot;</span>)]
+    <span class="doccomment">/// Pau Cin Hau. Since: 2.42
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_PAU_CIN_HAU&quot;</span>)]
     </span>PauCinHau,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_PSALTER_PAHLAVI&quot;</span>)]
+    <span class="doccomment">/// Psalter Pahlavi. Since: 2.42
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_PSALTER_PAHLAVI&quot;</span>)]
     </span>PsalterPahlavi,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SIDDHAM&quot;</span>)]
+    <span class="doccomment">/// Siddham. Since: 2.42
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SIDDHAM&quot;</span>)]
     </span>Siddham,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TIRHUTA&quot;</span>)]
+    <span class="doccomment">/// Tirhuta. Since: 2.42
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TIRHUTA&quot;</span>)]
     </span>Tirhuta,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_WARANG_CITI&quot;</span>)]
+    <span class="doccomment">/// Warang Citi. Since: 2.42
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_WARANG_CITI&quot;</span>)]
     </span>WarangCiti,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_AHOM&quot;</span>)]
+    <span class="doccomment">/// Ahom. Since: 2.48
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_AHOM&quot;</span>)]
     </span>Ahom,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_ANATOLIAN_HIEROGLYPHS&quot;</span>)]
+    <span class="doccomment">/// Anatolian Hieroglyphs. Since: 2.48
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_ANATOLIAN_HIEROGLYPHS&quot;</span>)]
     </span>AnatolianHieroglyphs,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_HATRAN&quot;</span>)]
+    <span class="doccomment">/// Hatran. Since: 2.48
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_HATRAN&quot;</span>)]
     </span>Hatran,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MULTANI&quot;</span>)]
+    <span class="doccomment">/// Multani. Since: 2.48
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MULTANI&quot;</span>)]
     </span>Multani,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OLD_HUNGARIAN&quot;</span>)]
+    <span class="doccomment">/// Old Hungarian. Since: 2.48
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OLD_HUNGARIAN&quot;</span>)]
     </span>OldHungarian,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SIGNWRITING&quot;</span>)]
+    <span class="doccomment">/// Signwriting. Since: 2.48
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SIGNWRITING&quot;</span>)]
     </span>Signwriting,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_ADLAM&quot;</span>)]
+    <span class="doccomment">/// Adlam. Since: 2.50
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_ADLAM&quot;</span>)]
     </span>Adlam,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_BHAIKSUKI&quot;</span>)]
+    <span class="doccomment">/// Bhaiksuki. Since: 2.50
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_BHAIKSUKI&quot;</span>)]
     </span>Bhaiksuki,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MARCHEN&quot;</span>)]
+    <span class="doccomment">/// Marchen. Since: 2.50
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MARCHEN&quot;</span>)]
     </span>Marchen,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_NEWA&quot;</span>)]
+    <span class="doccomment">/// Newa. Since: 2.50
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_NEWA&quot;</span>)]
     </span>Newa,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OSAGE&quot;</span>)]
+    <span class="doccomment">/// Osage. Since: 2.50
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OSAGE&quot;</span>)]
     </span>Osage,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TANGUT&quot;</span>)]
+    <span class="doccomment">/// Tangut. Since: 2.50
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TANGUT&quot;</span>)]
     </span>Tangut,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MASARAM_GONDI&quot;</span>)]
+    <span class="doccomment">/// Masaram Gondi. Since: 2.54
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MASARAM_GONDI&quot;</span>)]
     </span>MasaramGondi,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_NUSHU&quot;</span>)]
+    <span class="doccomment">/// Nushu. Since: 2.54
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_NUSHU&quot;</span>)]
     </span>Nushu,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SOYOMBO&quot;</span>)]
+    <span class="doccomment">/// Soyombo. Since: 2.54
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SOYOMBO&quot;</span>)]
     </span>Soyombo,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_ZANABAZAR_SQUARE&quot;</span>)]
+    <span class="doccomment">/// Zanabazar Square. Since: 2.54
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_ZANABAZAR_SQUARE&quot;</span>)]
     </span>ZanabazarSquare,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_DOGRA&quot;</span>)]
+    <span class="doccomment">/// Dogra. Since: 2.58
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_DOGRA&quot;</span>)]
     </span>Dogra,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_GUNJALA_GONDI&quot;</span>)]
+    <span class="doccomment">/// Gunjala Gondi. Since: 2.58
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_GUNJALA_GONDI&quot;</span>)]
     </span>GunjalaGondi,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_HANIFI_ROHINGYA&quot;</span>)]
+    <span class="doccomment">/// Hanifi Rohingya. Since: 2.58
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_HANIFI_ROHINGYA&quot;</span>)]
     </span>HanifiRohingya,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MAKASAR&quot;</span>)]
+    <span class="doccomment">/// Makasar. Since: 2.58
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MAKASAR&quot;</span>)]
     </span>Makasar,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MEDEFAIDRIN&quot;</span>)]
+    <span class="doccomment">/// Medefaidrin. Since: 2.58
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MEDEFAIDRIN&quot;</span>)]
     </span>Medefaidrin,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OLD_SOGDIAN&quot;</span>)]
+    <span class="doccomment">/// Old Sogdian. Since: 2.58
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OLD_SOGDIAN&quot;</span>)]
     </span>OldSogdian,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SOGDIAN&quot;</span>)]
+    <span class="doccomment">/// Sogdian. Since: 2.58
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_SOGDIAN&quot;</span>)]
     </span>Sogdian,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_ELYMAIC&quot;</span>)]
+    <span class="doccomment">/// Elym. Since: 2.62
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_ELYMAIC&quot;</span>)]
     </span>Elymaic,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_NANDINAGARI&quot;</span>)]
+    <span class="doccomment">/// Nand. Since: 2.62
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_NANDINAGARI&quot;</span>)]
     </span>Nandinagari,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_NYIAKENG_PUACHUE_HMONG&quot;</span>)]
+    <span class="doccomment">/// Rohg. Since: 2.62
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_NYIAKENG_PUACHUE_HMONG&quot;</span>)]
     </span>NyiakengPuachueHmong,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_WANCHO&quot;</span>)]
+    <span class="doccomment">/// Wcho. Since: 2.62
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_WANCHO&quot;</span>)]
     </span>Wancho,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_CHORASMIAN&quot;</span>)]
+    <span class="doccomment">/// Chorasmian. Since: 2.66
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_CHORASMIAN&quot;</span>)]
     </span>Chorasmian,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_DIVES_AKURU&quot;</span>)]
+    <span class="doccomment">/// Dives Akuru. Since: 2.66
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_DIVES_AKURU&quot;</span>)]
     </span>DivesAkuru,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_KHITAN_SMALL_SCRIPT&quot;</span>)]
+    <span class="doccomment">/// Khitan small script. Since: 2.66
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_KHITAN_SMALL_SCRIPT&quot;</span>)]
     </span>KhitanSmallScript,
-    <span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_YEZIDI&quot;</span>)]
+    <span class="doccomment">/// Yezidi. Since: 2.66
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_YEZIDI&quot;</span>)]
     </span>Yezidi,
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="doccomment">/// Cypro-Minoan. Since: 2.72
+    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_CYPRO_MINOAN&quot;</span>)]
     </span>CyproMinoan,
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="doccomment">/// Old Uyghur. Since: 2.72
+    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_OLD_UYGHUR&quot;</span>)]
     </span>OldUyghur,
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="doccomment">/// Tangsa. Since: 2.72
+    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TANGSA&quot;</span>)]
     </span>Tangsa,
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="doccomment">/// Toto. Since: 2.72
+    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_TOTO&quot;</span>)]
     </span>Toto,
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="doccomment">/// Vithkuqi. Since: 2.72
+    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_VITHKUQI&quot;</span>)]
     </span>Vithkuqi,
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="doccomment">/// Mathematical notation. Since: 2.72
+    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_MATH&quot;</span>)]
     </span>Math,
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="doccomment">/// Kawi. Since 2.74
+    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_KAWI&quot;</span>)]
     </span>Kawi,
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="doccomment">/// Nag Mundari. Since 2.74
+    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;G_UNICODE_SCRIPT_NAG_MUNDARI&quot;</span>)]
     </span>NagMundari,
@@ -4476,4 +4958,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (4b8f43199 2022-10-19)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>
