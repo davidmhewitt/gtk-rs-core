@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"><a class="sidebar-logo" href="../../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -513,6 +513,56 @@
 <span id="440">440</span>
 <span id="441">441</span>
 <span id="442">442</span>
+<span id="443">443</span>
+<span id="444">444</span>
+<span id="445">445</span>
+<span id="446">446</span>
+<span id="447">447</span>
+<span id="448">448</span>
+<span id="449">449</span>
+<span id="450">450</span>
+<span id="451">451</span>
+<span id="452">452</span>
+<span id="453">453</span>
+<span id="454">454</span>
+<span id="455">455</span>
+<span id="456">456</span>
+<span id="457">457</span>
+<span id="458">458</span>
+<span id="459">459</span>
+<span id="460">460</span>
+<span id="461">461</span>
+<span id="462">462</span>
+<span id="463">463</span>
+<span id="464">464</span>
+<span id="465">465</span>
+<span id="466">466</span>
+<span id="467">467</span>
+<span id="468">468</span>
+<span id="469">469</span>
+<span id="470">470</span>
+<span id="471">471</span>
+<span id="472">472</span>
+<span id="473">473</span>
+<span id="474">474</span>
+<span id="475">475</span>
+<span id="476">476</span>
+<span id="477">477</span>
+<span id="478">478</span>
+<span id="479">479</span>
+<span id="480">480</span>
+<span id="481">481</span>
+<span id="482">482</span>
+<span id="483">483</span>
+<span id="484">484</span>
+<span id="485">485</span>
+<span id="486">486</span>
+<span id="487">487</span>
+<span id="488">488</span>
+<span id="489">489</span>
+<span id="490">490</span>
+<span id="491">491</span>
+<span id="492">492</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use crate</span>::{translate::<span class="kw-2">*</span>, ConvertError, Error, GStr, GString, Slice};
@@ -547,7 +597,45 @@
     }
 }
 
-<span class="attribute">#[doc(alias = <span class="string">&quot;g_convert&quot;</span>)]
+<span class="doccomment">/// Converts a string from one character set to another.
+///
+/// Note that you should use [`iconv()`][crate::iconv()] for streaming conversions.
+/// Despite the fact that `bytes_read` can return information about partial
+/// characters, the g_convert_... functions are not generally suitable
+/// for streaming. If the underlying converter maintains internal state,
+/// then this won&#39;t be preserved across successive calls to [`convert()`][crate::convert()],
+/// [`convert()`][crate::convert()] or [`convert_with_fallback()`][crate::convert_with_fallback()]. (An example of
+/// this is the GNU C converter for CP1255 which does not emit a base
+/// character until it knows that the next character is not a mark that
+/// could combine with the base character.)
+///
+/// Using extensions such as &quot;//TRANSLIT&quot; may not work (or may not work
+/// well) on many platforms. Consider using `g_str_to_ascii()` instead.
+/// ## `str`
+///
+///  the string to convert.
+/// ## `to_codeset`
+/// name of character set into which to convert `str`
+/// ## `from_codeset`
+/// character set of `str`.
+///
+/// # Returns
+///
+///
+///  If the conversion was successful, a newly allocated buffer
+///  containing the converted string, which must be freed with `g_free()`.
+///  Otherwise [`None`] and `error` will be set.
+///
+/// ## `bytes_read`
+/// location to store the number of bytes in
+///  the input string that were successfully converted, or [`None`].
+///  Even if the conversion was successful, this may be
+///  less than `len` if there were partial characters
+///  at the end of the input. If the error
+///  [`ConvertError::IllegalSequence`][crate::ConvertError::IllegalSequence] occurs, the value
+///  stored will be the byte offset after the last valid
+///  input sequence.
+</span><span class="attribute">#[doc(alias = <span class="string">&quot;g_convert&quot;</span>)]
 </span><span class="kw">pub fn </span>convert(
     str_: <span class="kw-2">&amp;</span>[u8],
     to_codeset: <span class="kw-2">&amp;</span>str,
@@ -576,7 +664,51 @@
     }
 }
 
-<span class="attribute">#[doc(alias = <span class="string">&quot;g_convert_with_fallback&quot;</span>)]
+<span class="doccomment">/// Converts a string from one character set to another, possibly
+/// including fallback sequences for characters not representable
+/// in the output. Note that it is not guaranteed that the specification
+/// for the fallback sequences in `fallback` will be honored. Some
+/// systems may do an approximate conversion from `from_codeset`
+/// to `to_codeset` in their `iconv()` functions,
+/// in which case GLib will simply return that approximate conversion.
+///
+/// Note that you should use [`iconv()`][crate::iconv()] for streaming conversions.
+/// Despite the fact that `bytes_read` can return information about partial
+/// characters, the g_convert_... functions are not generally suitable
+/// for streaming. If the underlying converter maintains internal state,
+/// then this won&#39;t be preserved across successive calls to [`convert()`][crate::convert()],
+/// [`convert()`][crate::convert()] or [`convert_with_fallback()`][crate::convert_with_fallback()]. (An example of
+/// this is the GNU C converter for CP1255 which does not emit a base
+/// character until it knows that the next character is not a mark that
+/// could combine with the base character.)
+/// ## `str`
+///
+///  the string to convert.
+/// ## `to_codeset`
+/// name of character set into which to convert `str`
+/// ## `from_codeset`
+/// character set of `str`.
+/// ## `fallback`
+/// UTF-8 string to use in place of characters not
+///  present in the target encoding. (The string must be
+///  representable in the target encoding).
+///  If [`None`], characters not in the target encoding will
+///  be represented as Unicode escapes \uxxxx or \Uxxxxyyyy.
+///
+/// # Returns
+///
+///
+///  If the conversion was successful, a newly allocated buffer
+///  containing the converted string, which must be freed with `g_free()`.
+///  Otherwise [`None`] and `error` will be set.
+///
+/// ## `bytes_read`
+/// location to store the number of bytes in
+///  the input string that were successfully converted, or [`None`].
+///  Even if the conversion was successful, this may be
+///  less than `len` if there were partial characters
+///  at the end of the input.
+</span><span class="attribute">#[doc(alias = <span class="string">&quot;g_convert_with_fallback&quot;</span>)]
 </span><span class="kw">pub fn </span>convert_with_fallback(
     str_: <span class="kw-2">&amp;</span>[u8],
     to_codeset: <span class="kw-2">&amp;</span>str,
@@ -621,7 +753,9 @@
     },
 }
 
-<span class="attribute">#[derive(Debug)]
+<span class="doccomment">/// The GIConv struct wraps an `iconv()` conversion descriptor. It contains
+/// private data and should only be accessed using the following functions.
+</span><span class="attribute">#[derive(Debug)]
 #[repr(transparent)]
 #[doc(alias = <span class="string">&quot;GIConv&quot;</span>)]
 </span><span class="kw">pub struct </span>IConv(ffi::GIConv);
@@ -629,7 +763,22 @@
 <span class="kw">unsafe impl </span>Send <span class="kw">for </span>IConv {}
 
 <span class="kw">impl </span>IConv {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_iconv_open&quot;</span>)]
+    <span class="doccomment">/// Same as the standard UNIX routine `iconv_open()`, but
+    /// may be implemented via libiconv on UNIX flavors that lack
+    /// a native implementation.
+    ///
+    /// GLib provides [`convert()`][crate::convert()] and [`locale_to_utf8()`][crate::locale_to_utf8()] which are likely
+    /// more convenient than the raw iconv wrappers.
+    /// ## `to_codeset`
+    /// destination codeset
+    /// ## `from_codeset`
+    /// source codeset
+    ///
+    /// # Returns
+    ///
+    /// a &quot;conversion descriptor&quot;, or (GIConv)-1 if
+    ///  opening the converter failed.
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_iconv_open&quot;</span>)]
     #[allow(clippy::unnecessary_lazy_evaluations)]
     </span><span class="kw">pub fn </span>new(to_codeset: <span class="kw-2">&amp;</span>str, from_codeset: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="self">Self</span>&gt; {
         <span class="kw">let </span>iconv = <span class="kw">unsafe </span>{
@@ -637,7 +786,48 @@
         };
         (iconv <span class="kw">as </span>isize != -<span class="number">1</span>).then(|| <span class="self">Self</span>(iconv))
     }
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_convert_with_iconv&quot;</span>)]
+    <span class="doccomment">/// Converts a string from one character set to another.
+    ///
+    /// Note that you should use [`iconv()`][crate::iconv()] for streaming conversions.
+    /// Despite the fact that `bytes_read` can return information about partial
+    /// characters, the g_convert_... functions are not generally suitable
+    /// for streaming. If the underlying converter maintains internal state,
+    /// then this won&#39;t be preserved across successive calls to [`convert()`][crate::convert()],
+    /// [`convert()`][crate::convert()] or [`convert_with_fallback()`][crate::convert_with_fallback()]. (An example of
+    /// this is the GNU C converter for CP1255 which does not emit a base
+    /// character until it knows that the next character is not a mark that
+    /// could combine with the base character.)
+    ///
+    /// Characters which are valid in the input character set, but which have no
+    /// representation in the output character set will result in a
+    /// [`ConvertError::IllegalSequence`][crate::ConvertError::IllegalSequence] error. This is in contrast to the `iconv()`
+    /// specification, which leaves this behaviour implementation defined. Note that
+    /// this is the same error code as is returned for an invalid byte sequence in
+    /// the input character set. To get defined behaviour for conversion of
+    /// unrepresentable characters, use [`convert_with_fallback()`][crate::convert_with_fallback()].
+    /// ## `str`
+    ///
+    ///  the string to convert.
+    /// ## `converter`
+    /// conversion descriptor from [`IConv::new()`][crate::IConv::new()]
+    ///
+    /// # Returns
+    ///
+    ///
+    ///  If the conversion was successful, a newly allocated buffer
+    ///  containing the converted string, which must be freed with
+    ///  `g_free()`. Otherwise [`None`] and `error` will be set.
+    ///
+    /// ## `bytes_read`
+    /// location to store the number of bytes in
+    ///  the input string that were successfully converted, or [`None`].
+    ///  Even if the conversion was successful, this may be
+    ///  less than `len` if there were partial characters
+    ///  at the end of the input. If the error
+    ///  [`ConvertError::IllegalSequence`][crate::ConvertError::IllegalSequence] occurs, the value
+    ///  stored will be the byte offset after the last valid
+    ///  input sequence.
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_convert_with_iconv&quot;</span>)]
     </span><span class="kw">pub fn </span>convert(<span class="kw-2">&amp;mut </span><span class="self">self</span>, str_: <span class="kw-2">&amp;</span>[u8]) -&gt; <span class="prelude-ty">Result</span>&lt;(Slice&lt;u8&gt;, usize), CvtError&gt; {
         <span class="macro">assert!</span>(str_.len() &lt;= isize::MAX <span class="kw">as </span>usize);
         <span class="kw">let </span><span class="kw-2">mut </span>bytes_read = <span class="number">0</span>;
@@ -660,34 +850,7 @@
             <span class="prelude-val">Ok</span>((slice, bytes_read))
         }
     }
-    <span class="doccomment">/// Same as the standard UNIX routine `iconv()`, but
-    /// may be implemented via libiconv on UNIX flavors that lack
-    /// a native implementation.
-    ///
-    /// GLib provides [`convert()`][crate::convert()] and [`locale_to_utf8()`][crate::locale_to_utf8()] which are likely
-    /// more convenient than the raw iconv wrappers.
-    ///
-    /// Note that the behaviour of `iconv()` for characters which are valid in the
-    /// input character set, but which have no representation in the output character
-    /// set, is implementation defined. This function may return success (with a
-    /// positive number of non-reversible conversions as replacement characters were
-    /// used), or it may return -1 and set an error such as `EILSEQ`, in such a
-    /// situation.
-    /// ## `converter`
-    /// conversion descriptor from [`IConv::new()`][crate::IConv::new()]
-    /// ## `inbuf`
-    /// bytes to convert
-    /// ## `inbytes_left`
-    /// inout parameter, bytes remaining to convert in `inbuf`
-    /// ## `outbuf`
-    /// converted output bytes
-    /// ## `outbytes_left`
-    /// inout parameter, bytes available to fill in `outbuf`
-    ///
-    /// # Returns
-    ///
-    /// count of non-reversible conversions, or -1 on error
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_iconv&quot;</span>)]
+    <span class="attribute">#[doc(alias = <span class="string">&quot;g_iconv&quot;</span>)]
     </span><span class="kw">pub fn </span>iconv(
         <span class="kw-2">&amp;mut </span><span class="self">self</span>,
         inbuf: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>[u8]&gt;,
@@ -805,37 +968,7 @@
     }
 }
 
-<span class="doccomment">/// Converts a string from UTF-8 to the encoding used for strings by
-/// the C runtime (usually the same as that used by the operating
-/// system) in the [current locale][setlocale]. On Windows this means
-/// the system codepage.
-///
-/// The input string shall not contain nul characters even if the `len`
-/// argument is positive. A nul character found inside the string will result
-/// in error [`ConvertError::IllegalSequence`][crate::ConvertError::IllegalSequence]. Use [`convert()`][crate::convert()] to convert
-/// input that may contain embedded nul characters.
-/// ## `utf8string`
-/// a UTF-8 encoded string
-/// ## `len`
-/// the length of the string, or -1 if the string is
-///  nul-terminated.
-///
-/// # Returns
-///
-///
-///  A newly-allocated buffer containing the converted string,
-///  or [`None`] on an error, and error will be set.
-///
-/// ## `bytes_read`
-/// location to store the number of bytes in the
-///  input string that were successfully converted, or [`None`].
-///  Even if the conversion was successful, this may be
-///  less than `len` if there were partial characters
-///  at the end of the input. If the error
-///  [`ConvertError::IllegalSequence`][crate::ConvertError::IllegalSequence] occurs, the value
-///  stored will be the byte offset after the last valid
-///  input sequence.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;g_locale_from_utf8&quot;</span>)]
+<span class="attribute">#[doc(alias = <span class="string">&quot;g_locale_from_utf8&quot;</span>)]
 </span><span class="kw">pub fn </span>locale_from_utf8(utf8string: <span class="kw-2">&amp;</span>GStr) -&gt; <span class="prelude-ty">Result</span>&lt;(Slice&lt;u8&gt;, usize), CvtError&gt; {
     <span class="macro">assert!</span>(utf8string.len() &lt;= isize::MAX <span class="kw">as </span>usize);
     <span class="kw">let </span><span class="kw-2">mut </span>bytes_read = <span class="number">0</span>;
@@ -862,40 +995,7 @@
     }
 }
 
-<span class="doccomment">/// Converts a string which is in the encoding used for strings by
-/// the C runtime (usually the same as that used by the operating
-/// system) in the [current locale][setlocale] into a UTF-8 string.
-///
-/// If the source encoding is not UTF-8 and the conversion output contains a
-/// nul character, the error [`ConvertError::EmbeddedNul`][crate::ConvertError::EmbeddedNul] is set and the
-/// function returns [`None`].
-/// If the source encoding is UTF-8, an embedded nul character is treated with
-/// the [`ConvertError::IllegalSequence`][crate::ConvertError::IllegalSequence] error for backward compatibility with
-/// earlier versions of this library. Use [`convert()`][crate::convert()] to produce output that
-/// may contain embedded nul characters.
-/// ## `opsysstring`
-/// a string in the
-///  encoding of the current locale. On Windows
-///  this means the system codepage.
-///
-/// # Returns
-///
-/// The converted string, or [`None`] on an error.
-///
-/// ## `bytes_read`
-/// location to store the number of bytes in the
-///  input string that were successfully converted, or [`None`].
-///  Even if the conversion was successful, this may be
-///  less than `len` if there were partial characters
-///  at the end of the input. If the error
-///  [`ConvertError::IllegalSequence`][crate::ConvertError::IllegalSequence] occurs, the value
-///  stored will be the byte offset after the last valid
-///  input sequence.
-///
-/// ## `bytes_written`
-/// the number of bytes stored in the output
-///  buffer (not including the terminating nul).
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;g_locale_to_utf8&quot;</span>)]
+<span class="attribute">#[doc(alias = <span class="string">&quot;g_locale_to_utf8&quot;</span>)]
 </span><span class="kw">pub fn </span>locale_to_utf8(opsysstring: <span class="kw-2">&amp;</span>[u8]) -&gt; <span class="prelude-ty">Result</span>&lt;(<span class="kw">crate</span>::GString, usize), CvtError&gt; {
     <span class="kw">let </span>len = opsysstring.len() <span class="kw">as </span>isize;
     <span class="kw">let </span><span class="kw-2">mut </span>bytes_read = <span class="number">0</span>;
@@ -956,4 +1056,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (a24a020e6 2022-10-18)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>

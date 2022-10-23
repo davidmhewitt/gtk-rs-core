@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"><a class="sidebar-logo" href="../../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -330,94 +330,6 @@
 <span id="257">257</span>
 <span id="258">258</span>
 <span id="259">259</span>
-<span id="260">260</span>
-<span id="261">261</span>
-<span id="262">262</span>
-<span id="263">263</span>
-<span id="264">264</span>
-<span id="265">265</span>
-<span id="266">266</span>
-<span id="267">267</span>
-<span id="268">268</span>
-<span id="269">269</span>
-<span id="270">270</span>
-<span id="271">271</span>
-<span id="272">272</span>
-<span id="273">273</span>
-<span id="274">274</span>
-<span id="275">275</span>
-<span id="276">276</span>
-<span id="277">277</span>
-<span id="278">278</span>
-<span id="279">279</span>
-<span id="280">280</span>
-<span id="281">281</span>
-<span id="282">282</span>
-<span id="283">283</span>
-<span id="284">284</span>
-<span id="285">285</span>
-<span id="286">286</span>
-<span id="287">287</span>
-<span id="288">288</span>
-<span id="289">289</span>
-<span id="290">290</span>
-<span id="291">291</span>
-<span id="292">292</span>
-<span id="293">293</span>
-<span id="294">294</span>
-<span id="295">295</span>
-<span id="296">296</span>
-<span id="297">297</span>
-<span id="298">298</span>
-<span id="299">299</span>
-<span id="300">300</span>
-<span id="301">301</span>
-<span id="302">302</span>
-<span id="303">303</span>
-<span id="304">304</span>
-<span id="305">305</span>
-<span id="306">306</span>
-<span id="307">307</span>
-<span id="308">308</span>
-<span id="309">309</span>
-<span id="310">310</span>
-<span id="311">311</span>
-<span id="312">312</span>
-<span id="313">313</span>
-<span id="314">314</span>
-<span id="315">315</span>
-<span id="316">316</span>
-<span id="317">317</span>
-<span id="318">318</span>
-<span id="319">319</span>
-<span id="320">320</span>
-<span id="321">321</span>
-<span id="322">322</span>
-<span id="323">323</span>
-<span id="324">324</span>
-<span id="325">325</span>
-<span id="326">326</span>
-<span id="327">327</span>
-<span id="328">328</span>
-<span id="329">329</span>
-<span id="330">330</span>
-<span id="331">331</span>
-<span id="332">332</span>
-<span id="333">333</span>
-<span id="334">334</span>
-<span id="335">335</span>
-<span id="336">336</span>
-<span id="337">337</span>
-<span id="338">338</span>
-<span id="339">339</span>
-<span id="340">340</span>
-<span id="341">341</span>
-<span id="342">342</span>
-<span id="343">343</span>
-<span id="344">344</span>
-<span id="345">345</span>
-<span id="346">346</span>
-<span id="347">347</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
@@ -463,27 +375,7 @@
     }
 }
 
-<span class="doccomment">/// Opens a temporary file. See the `mkstemp()` documentation
-/// on most UNIX-like systems.
-///
-/// The parameter is a string that should follow the rules for
-/// `mkstemp()` templates, i.e. contain the string &quot;XXXXXX&quot;.
-/// [`mkstemp()`][crate::mkstemp()] is slightly more flexible than `mkstemp()` in that the
-/// sequence does not have to occur at the very end of the template.
-/// The X string will be modified to form the name of a file that
-/// didn&#39;t exist. The string should be in the GLib file name encoding.
-/// Most importantly, on Windows it should be in UTF-8.
-/// ## `tmpl`
-/// template filename
-///
-/// # Returns
-///
-/// A file handle (as from `open()`) to the file
-///  opened for reading and writing. The file is opened in binary
-///  mode on platforms where there is a difference. The file handle
-///  should be closed with `close()`. In case of errors, -1 is
-///  returned and `errno` will be set.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;g_mkstemp&quot;</span>)]
+<span class="attribute">#[doc(alias = <span class="string">&quot;g_mkstemp&quot;</span>)]
 </span><span class="kw">pub fn </span>mkstemp&lt;P: AsRef&lt;std::path::Path&gt;&gt;(tmpl: P) -&gt; i32 {
     <span class="kw">unsafe </span>{
         <span class="comment">// NOTE: This modifies the string in place, which is fine here because
@@ -492,27 +384,7 @@
     }
 }
 
-<span class="doccomment">/// Opens a temporary file. See the `mkstemp()` documentation
-/// on most UNIX-like systems.
-///
-/// The parameter is a string that should follow the rules for
-/// `mkstemp()` templates, i.e. contain the string &quot;XXXXXX&quot;.
-/// [`mkstemp_full()`][crate::mkstemp_full()] is slightly more flexible than `mkstemp()`
-/// in that the sequence does not have to occur at the very end of the
-/// template and you can pass a `mode` and additional `flags`. The X
-/// string will be modified to form the name of a file that didn&#39;t exist.
-/// The string should be in the GLib file name encoding. Most importantly,
-/// on Windows it should be in UTF-8.
-/// ## `tmpl`
-/// template filename
-/// ## `flags`
-/// ved [`Value`][crate::Value] to `v_boxed`.
-///
-/// The boxed value is assumed to be static, and is thus not duplicated
-/// when setting the [`Value`][crate::Value].
-/// ## `v_boxed`
-/// static boxed value to be set
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;g_mkstemp_full&quot;</span>)]
+<span class="attribute">#[doc(alias = <span class="string">&quot;g_mkstemp_full&quot;</span>)]
 </span><span class="kw">pub fn </span>mkstemp_full(tmpl: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;, flags: i32, mode: i32) -&gt; i32 {
     <span class="kw">unsafe </span>{
         <span class="comment">// NOTE: This modifies the string in place, which is fine here because
@@ -521,30 +393,7 @@
     }
 }
 
-<span class="doccomment">/// Creates a temporary directory. See the `mkdtemp()` documentation
-/// on most UNIX-like systems.
-///
-/// The parameter is a string that should follow the rules for
-/// `mkdtemp()` templates, i.e. contain the string &quot;XXXXXX&quot;.
-/// [`mkdtemp()`][crate::mkdtemp()] is slightly more flexible than `mkdtemp()` in that the
-/// sequence does not have to occur at the very end of the template.
-/// The X string will be modified to form the name of a directory that
-/// didn&#39;t exist.
-/// The string should be in the GLib file name encoding. Most importantly,
-/// on Windows it should be in UTF-8.
-///
-/// If you are going to be creating a temporary directory inside the
-/// directory returned by [`tmp_dir()`][crate::tmp_dir()], you might want to use
-/// `g_dir_make_tmp()` instead.
-/// ## `tmpl`
-/// template directory name
-///
-/// # Returns
-///
-/// A pointer to `tmpl`, which has been
-///  modified to hold the directory name. In case of errors, [`None`] is
-///  returned and `errno` will be set.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;g_mkdtemp&quot;</span>)]
+<span class="attribute">#[doc(alias = <span class="string">&quot;g_mkdtemp&quot;</span>)]
 </span><span class="kw">pub fn </span>mkdtemp(tmpl: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;) -&gt; <span class="prelude-ty">Option</span>&lt;std::path::PathBuf&gt; {
     <span class="kw">unsafe </span>{
         <span class="comment">// NOTE: This modifies the string in place and returns it but does not free it
@@ -560,32 +409,7 @@
     }
 }
 
-<span class="doccomment">/// Creates a temporary directory. See the `mkdtemp()` documentation
-/// on most UNIX-like systems.
-///
-/// The parameter is a string that should follow the rules for
-/// `mkdtemp()` templates, i.e. contain the string &quot;XXXXXX&quot;.
-/// [`mkdtemp_full()`][crate::mkdtemp_full()] is slightly more flexible than `mkdtemp()` in that the
-/// sequence does not have to occur at the very end of the template
-/// and you can pass a `mode`. The X string will be modified to form
-/// the name of a directory that didn&#39;t exist. The string should be
-/// in the GLib file name encoding. Most importantly, on Windows it
-/// should be in UTF-8.
-///
-/// If you are going to be creating a temporary directory inside the
-/// directory returned by [`tmp_dir()`][crate::tmp_dir()], you might want to use
-/// `g_dir_make_tmp()` instead.
-/// ## `tmpl`
-/// template directory name
-/// ## `mode`
-/// permissions to create the temporary directory with
-///
-/// # Returns
-///
-/// A pointer to `tmpl`, which has been
-///  modified to hold the directory name. In case of errors, [`None`] is
-///  returned, and `errno` will be set.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;g_mkdtemp_full&quot;</span>)]
+<span class="attribute">#[doc(alias = <span class="string">&quot;g_mkdtemp_full&quot;</span>)]
 </span><span class="kw">pub fn </span>mkdtemp_full(tmpl: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;, mode: i32) -&gt; <span class="prelude-ty">Option</span>&lt;std::path::PathBuf&gt; {
     <span class="kw">unsafe </span>{
         <span class="comment">// NOTE: This modifies the string in place and returns it but does not free it
@@ -766,4 +590,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (a24a020e6 2022-10-18)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>

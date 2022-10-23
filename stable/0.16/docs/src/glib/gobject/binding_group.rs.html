@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../../glib/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"><a class="sidebar-logo" href="../../../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../glib/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -576,6 +576,15 @@
 <span id="503">503</span>
 <span id="504">504</span>
 <span id="505">505</span>
+<span id="506">506</span>
+<span id="507">507</span>
+<span id="508">508</span>
+<span id="509">509</span>
+<span id="510">510</span>
+<span id="511">511</span>
+<span id="512">512</span>
+<span id="513">513</span>
+<span id="514">514</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::object::ObjectRef;
@@ -591,21 +600,7 @@
 <span class="kw">use </span>std::{fmt, ptr};
 
 <span class="kw">impl </span>BindingGroup {
-    <span class="doccomment">/// Creates a binding between `source_property` on the source object
-    /// and `target_property` on `target`. Whenever the `source_property`
-    /// is changed the `target_property` is updated using the same value.
-    /// The binding flag [`BindingFlags::SYNC_CREATE`][crate::BindingFlags::SYNC_CREATE] is automatically specified.
-    ///
-    /// See [`ObjectExt::bind_property()`][crate::prelude::ObjectExt::bind_property()] for more information.
-    /// ## `source_property`
-    /// the property on the source to bind
-    /// ## `target`
-    /// the target [`Object`][crate::Object]
-    /// ## `target_property`
-    /// the property on `target` to bind
-    /// ## `flags`
-    /// the flags used to create the [`Binding`][crate::Binding]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;bind_with_closures&quot;</span>)]
+    <span class="attribute">#[doc(alias = <span class="string">&quot;bind_with_closures&quot;</span>)]
     </span><span class="kw">pub fn </span>bind&lt;<span class="lifetime">&#39;a</span>, O: ObjectType&gt;(
         <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>,
         source_property: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str,
@@ -690,6 +685,27 @@
     </span><span class="kw">pub fn </span>flags(<span class="self">self</span>, flags: BindingFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{ flags, ..<span class="self">self </span>}
     }
+
+    <span class="comment">// rustdoc-stripper-ignore-next
+    </span><span class="doccomment">/// Set the binding flags to [`BIDIRECTIONAL`][crate::BindingFlags::BIDIRECTIONAL].
+    </span><span class="kw">pub fn </span>bidirectional(<span class="kw-2">mut </span><span class="self">self</span>) -&gt; <span class="self">Self </span>{
+        <span class="self">self</span>.flags |= <span class="kw">crate</span>::BindingFlags::BIDIRECTIONAL;
+        <span class="self">self
+    </span>}
+
+    <span class="comment">// rustdoc-stripper-ignore-next
+    </span><span class="doccomment">/// Set the binding flags to [`SYNC_CREATE`][crate::BindingFlags::SYNC_CREATE].
+    </span><span class="kw">pub fn </span>sync_create(<span class="kw-2">mut </span><span class="self">self</span>) -&gt; <span class="self">Self </span>{
+        <span class="self">self</span>.flags |= <span class="kw">crate</span>::BindingFlags::SYNC_CREATE;
+        <span class="self">self
+    </span>}
+
+    <span class="comment">// rustdoc-stripper-ignore-next
+    </span><span class="doccomment">/// Set the binding flags to [`INVERT_BOOLEAN`][crate::BindingFlags::INVERT_BOOLEAN].
+    </span><span class="kw">pub fn </span>invert_boolean(<span class="kw-2">mut </span><span class="self">self</span>) -&gt; <span class="self">Self </span>{
+        <span class="self">self</span>.flags |= <span class="kw">crate</span>::BindingFlags::INVERT_BOOLEAN;
+        <span class="self">self
+    </span>}
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Establish the property binding.
@@ -862,7 +878,7 @@
         <span class="macro">assert!</span>(source.find_property(<span class="string">&quot;name&quot;</span>).is_some());
         binding_group
             .bind(<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span>target, <span class="string">&quot;name&quot;</span>)
-            .flags(<span class="kw">crate</span>::BindingFlags::BIDIRECTIONAL)
+            .bidirectional()
             .build();
 
         binding_group.set_source(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span>source));
@@ -899,7 +915,7 @@
         binding_group.set_source(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span>source));
         binding_group
             .bind(<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span>target, <span class="string">&quot;name&quot;</span>)
-            .flags(<span class="kw">crate</span>::BindingFlags::SYNC_CREATE)
+            .sync_create()
             .transform_to(|_binding, value| {
                 <span class="kw">let </span>value = value.get::&lt;<span class="kw-2">&amp;</span>str&gt;().unwrap();
                 <span class="prelude-val">Some</span>(<span class="macro">format!</span>(<span class="string">&quot;{} World&quot;</span>, value).to_value())
@@ -924,7 +940,8 @@
         binding_group.set_source(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span>source));
         binding_group
             .bind(<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span>target, <span class="string">&quot;name&quot;</span>)
-            .flags(<span class="kw">crate</span>::BindingFlags::SYNC_CREATE | <span class="kw">crate</span>::BindingFlags::BIDIRECTIONAL)
+            .sync_create()
+            .bidirectional()
             .transform_to(|_binding, value| {
                 <span class="kw">let </span>value = value.get::&lt;<span class="kw-2">&amp;</span>str&gt;().unwrap();
                 <span class="prelude-val">Some</span>(<span class="macro">format!</span>(<span class="string">&quot;{} World&quot;</span>, value).to_value())
@@ -949,7 +966,7 @@
         binding_group.set_source(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span>source));
         binding_group
             .bind(<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span>target, <span class="string">&quot;enabled&quot;</span>)
-            .flags(<span class="kw">crate</span>::BindingFlags::SYNC_CREATE)
+            .sync_create()
             .transform_to(|_binding, value| {
                 <span class="kw">let </span>value = value.get::&lt;<span class="kw-2">&amp;</span>str&gt;().unwrap();
                 <span class="prelude-val">Some</span>((value == <span class="string">&quot;Hello&quot;</span>).to_value())
@@ -977,7 +994,8 @@
         binding_group.set_source(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span>source));
         binding_group
             .bind(<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span>target, <span class="string">&quot;enabled&quot;</span>)
-            .flags(<span class="kw">crate</span>::BindingFlags::SYNC_CREATE | <span class="kw">crate</span>::BindingFlags::BIDIRECTIONAL)
+            .sync_create()
+            .bidirectional()
             .transform_to(|_binding, value| {
                 <span class="kw">let </span>value = value.get::&lt;<span class="kw-2">&amp;</span>str&gt;().unwrap();
                 <span class="prelude-val">Some</span>((value == <span class="string">&quot;Hello&quot;</span>).to_value())
@@ -1082,4 +1100,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (a24a020e6 2022-10-18)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>

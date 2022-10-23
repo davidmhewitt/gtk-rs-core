@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"><a class="sidebar-logo" href="../../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -351,6 +351,78 @@
 <span id="278">278</span>
 <span id="279">279</span>
 <span id="280">280</span>
+<span id="281">281</span>
+<span id="282">282</span>
+<span id="283">283</span>
+<span id="284">284</span>
+<span id="285">285</span>
+<span id="286">286</span>
+<span id="287">287</span>
+<span id="288">288</span>
+<span id="289">289</span>
+<span id="290">290</span>
+<span id="291">291</span>
+<span id="292">292</span>
+<span id="293">293</span>
+<span id="294">294</span>
+<span id="295">295</span>
+<span id="296">296</span>
+<span id="297">297</span>
+<span id="298">298</span>
+<span id="299">299</span>
+<span id="300">300</span>
+<span id="301">301</span>
+<span id="302">302</span>
+<span id="303">303</span>
+<span id="304">304</span>
+<span id="305">305</span>
+<span id="306">306</span>
+<span id="307">307</span>
+<span id="308">308</span>
+<span id="309">309</span>
+<span id="310">310</span>
+<span id="311">311</span>
+<span id="312">312</span>
+<span id="313">313</span>
+<span id="314">314</span>
+<span id="315">315</span>
+<span id="316">316</span>
+<span id="317">317</span>
+<span id="318">318</span>
+<span id="319">319</span>
+<span id="320">320</span>
+<span id="321">321</span>
+<span id="322">322</span>
+<span id="323">323</span>
+<span id="324">324</span>
+<span id="325">325</span>
+<span id="326">326</span>
+<span id="327">327</span>
+<span id="328">328</span>
+<span id="329">329</span>
+<span id="330">330</span>
+<span id="331">331</span>
+<span id="332">332</span>
+<span id="333">333</span>
+<span id="334">334</span>
+<span id="335">335</span>
+<span id="336">336</span>
+<span id="337">337</span>
+<span id="338">338</span>
+<span id="339">339</span>
+<span id="340">340</span>
+<span id="341">341</span>
+<span id="342">342</span>
+<span id="343">343</span>
+<span id="344">344</span>
+<span id="345">345</span>
+<span id="346">346</span>
+<span id="347">347</span>
+<span id="348">348</span>
+<span id="349">349</span>
+<span id="350">350</span>
+<span id="351">351</span>
+<span id="352">352</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::source::Priority;
@@ -362,7 +434,21 @@
 <span class="kw">use </span>std::mem;
 
 <span class="kw">impl </span>MainContext {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_main_context_prepare&quot;</span>)]
+    <span class="doccomment">/// Prepares to poll sources within a main loop. The resulting information
+    /// for polling is determined by calling g_main_context_query ().
+    ///
+    /// You must have successfully acquired the context with
+    /// [`acquire()`][Self::acquire()] before you may call this function.
+    ///
+    /// # Returns
+    ///
+    /// [`true`] if some source is ready to be dispatched
+    ///  prior to polling.
+    ///
+    /// ## `priority`
+    /// location to store priority of highest priority
+    ///  source already ready.
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_main_context_prepare&quot;</span>)]
     </span><span class="kw">pub fn </span>prepare(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (bool, i32) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>priority = mem::MaybeUninit::uninit();
@@ -376,7 +462,25 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_main_context_find_source_by_id&quot;</span>)]
+    <span class="doccomment">/// Finds a [`Source`][crate::Source] given a pair of context and ID.
+    ///
+    /// It is a programmer error to attempt to look up a non-existent source.
+    ///
+    /// More specifically: source IDs can be reissued after a source has been
+    /// destroyed and therefore it is never valid to use this function with a
+    /// source ID which may have already been removed. An example is when
+    /// scheduling an idle to run in another thread with `g_idle_add()`: the
+    /// idle may already have run and been removed by the time this function
+    /// is called on its (now invalid) source ID. This source ID may have
+    /// been reissued, leading to the operation being performed against the
+    /// wrong source.
+    /// ## `source_id`
+    /// the source ID, as returned by `g_source_get_id()`.
+    ///
+    /// # Returns
+    ///
+    /// the [`Source`][crate::Source]
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_main_context_find_source_by_id&quot;</span>)]
     </span><span class="kw">pub fn </span>find_source_by_id(<span class="kw-2">&amp;</span><span class="self">self</span>, source_id: <span class="kw-2">&amp;</span>SourceId) -&gt; <span class="prelude-ty">Option</span>&lt;Source&gt; {
         <span class="kw">unsafe </span>{
             from_glib_none(ffi::g_main_context_find_source_by_id(
@@ -393,6 +497,30 @@
     /// owner then `func` will be called directly from inside this function. If this behaviour is
     /// not desired and `func` should always be called asynchronously then use [`MainContext::spawn`]
     /// [`glib::idle_add`](crate::idle_add) instead.
+    </span><span class="comment">// rustdoc-stripper-ignore-next-stop
+    </span><span class="doccomment">/// Invokes a function in such a way that `self` is owned during the
+    /// invocation of `function`.
+    ///
+    /// If `self` is [`None`] then the global default main context — as
+    /// returned by [`default()`][Self::default()] — is used.
+    ///
+    /// If `self` is owned by the current thread, `function` is called
+    /// directly. Otherwise, if `self` is the thread-default main context
+    /// of the current thread and [`acquire()`][Self::acquire()] succeeds, then
+    /// `function` is called and [`release()`][Self::release()] is called
+    /// afterwards.
+    ///
+    /// In any other case, an idle source is created to call `function` and
+    /// that source is attached to `self` (presumably to be run in another
+    /// thread). The idle source is attached with `G_PRIORITY_DEFAULT`
+    /// priority. If you want a different priority, use
+    /// [`invoke_full()`][Self::invoke_full()].
+    ///
+    /// Note that, as with normal idle functions, `function` should probably
+    /// return [`false`]. If it returns [`true`], it will be continuously run in a
+    /// loop (and may prevent this call from returning).
+    /// ## `function`
+    /// function to call
     </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_main_context_invoke&quot;</span>)]
     </span><span class="kw">pub fn </span>invoke&lt;F&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, func: F)
     <span class="kw">where
@@ -515,6 +643,22 @@
     /// Ownership will automatically be released again once the returned acquire guard is dropped.
     ///
     /// This will fail if the main context is owned already by another thread.
+    </span><span class="comment">// rustdoc-stripper-ignore-next-stop
+    </span><span class="doccomment">/// Tries to become the owner of the specified context.
+    /// If some other thread is the owner of the context,
+    /// returns [`false`] immediately. Ownership is properly
+    /// recursive: the owner can require ownership again
+    /// and will release ownership when [`release()`][Self::release()]
+    /// is called as many times as [`acquire()`][Self::acquire()].
+    ///
+    /// You must be the owner of a context before you
+    /// can call [`prepare()`][Self::prepare()], `g_main_context_query()`,
+    /// `g_main_context_check()`, [`dispatch()`][Self::dispatch()].
+    ///
+    /// # Returns
+    ///
+    /// [`true`] if the operation succeeded, and
+    ///  this thread is now the owner of `self`.
     </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_main_context_acquire&quot;</span>)]
     </span><span class="kw">pub fn </span>acquire(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;MainContextAcquireGuard, <span class="kw">crate</span>::BoolError&gt; {
         <span class="kw">unsafe </span>{
@@ -632,4 +776,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (a24a020e6 2022-10-18)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>

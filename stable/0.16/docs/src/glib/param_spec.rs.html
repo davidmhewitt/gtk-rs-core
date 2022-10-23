@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"><a class="sidebar-logo" href="../../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -2013,6 +2013,16 @@
 <span id="1940">1940</span>
 <span id="1941">1941</span>
 <span id="1942">1942</span>
+<span id="1943">1943</span>
+<span id="1944">1944</span>
+<span id="1945">1945</span>
+<span id="1946">1946</span>
+<span id="1947">1947</span>
+<span id="1948">1948</span>
+<span id="1949">1949</span>
+<span id="1950">1950</span>
+<span id="1951">1951</span>
+<span id="1952">1952</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
@@ -2232,25 +2242,12 @@
 
     <span class="doccomment">/// Get the name of a [`ParamSpec`][crate::ParamSpec].
     ///
-    /// The nametmp_dir --&gt;
-    /// Gets the directory to use for temporary files.
-    ///
-    /// On UNIX, this is taken from the `TMPDIR` environment variable.
-    /// If the variable is not set, `P_tmpdir` is
-    /// used, as defined by the system C library. Failing that, a
-    /// hard-coded default of &quot;/tmp&quot; is returned.
-    ///
-    /// On Windows, the `TEMP` environment variable is used, with the
-    /// root directory of the Windows installation (eg: &quot;C:\&quot;) used
-    /// as a default.
-    ///
-    /// The encoding of the returned string is system-defined. On Windows,
-    /// it is always UTF-8. The return value is never [`None`] or the empty
-    /// string.
+    /// The name is always an &quot;interned&quot; string (as per `g_intern_string()`).
+    /// This allows for pointer-value comparisons.
     ///
     /// # Returns
     ///
-    /// the directory to use for temporary files.
+    /// the name of `self`.
     </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_param_spec_get_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_name&quot;</span>)]
     </span><span class="kw">pub fn </span>name&lt;<span class="lifetime">&#39;a</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str {
@@ -2261,7 +2258,12 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_param_spec_get_name_quark&quot;</span>)]
+    <span class="doccomment">/// Gets the GQuark for the name.
+    ///
+    /// # Returns
+    ///
+    /// the GQuark for `self`-&gt;name.
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_param_spec_get_name_quark&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_name_quark&quot;</span>)]
     </span><span class="kw">pub fn </span>name_quark(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Quark {
         <span class="kw">unsafe </span>{
@@ -2276,6 +2278,12 @@
     ///
     /// If this `ParamSpec` does not have a nickname, the nickname of its redirect target is returned if it has one.
     /// Otherwise, `self.name()` is returned.
+    </span><span class="comment">// rustdoc-stripper-ignore-next-stop
+    </span><span class="doccomment">/// Get the nickname of a [`ParamSpec`][crate::ParamSpec].
+    ///
+    /// # Returns
+    ///
+    /// the nickname of `self`.
     </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_param_spec_get_nick&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_nick&quot;</span>)]
     </span><span class="kw">pub fn </span>nick(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>str {
@@ -2290,6 +2298,18 @@
     //    unsafe { TODO: call gobject_ffi::g_param_spec_get_qdata() }
     //}
 
+    </span><span class="doccomment">/// If the paramspec redirects operations to another paramspec,
+    /// returns that paramspec. Redirect is used typically for
+    /// providing a new implementation of a property in a derived
+    /// type while preserving all the properties from the parent
+    /// type. Redirection is established by creating a property
+    /// of type [`ParamSpecOverride`][crate::ParamSpecOverride]. See `g_object_class_override_property()`
+    /// for an example of the use of this capability.
+    ///
+    /// # Returns
+    ///
+    /// paramspec to which requests on this
+    ///  paramspec should be redirected, or [`None`] if none.
     </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_param_spec_get_redirect_target&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_redirect_target&quot;</span>)]
     </span><span class="kw">pub fn </span>redirect_target(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;ParamSpec&gt; {
@@ -3956,4 +3976,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (a24a020e6 2022-10-18)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>

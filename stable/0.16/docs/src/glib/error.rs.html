@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><div class="sub-container"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav></div><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"><a class="sidebar-logo" href="../../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -384,6 +384,41 @@
 <span id="311">311</span>
 <span id="312">312</span>
 <span id="313">313</span>
+<span id="314">314</span>
+<span id="315">315</span>
+<span id="316">316</span>
+<span id="317">317</span>
+<span id="318">318</span>
+<span id="319">319</span>
+<span id="320">320</span>
+<span id="321">321</span>
+<span id="322">322</span>
+<span id="323">323</span>
+<span id="324">324</span>
+<span id="325">325</span>
+<span id="326">326</span>
+<span id="327">327</span>
+<span id="328">328</span>
+<span id="329">329</span>
+<span id="330">330</span>
+<span id="331">331</span>
+<span id="332">332</span>
+<span id="333">333</span>
+<span id="334">334</span>
+<span id="335">335</span>
+<span id="336">336</span>
+<span id="337">337</span>
+<span id="338">338</span>
+<span id="339">339</span>
+<span id="340">340</span>
+<span id="341">341</span>
+<span id="342">342</span>
+<span id="343">343</span>
+<span id="344">344</span>
+<span id="345">345</span>
+<span id="346">346</span>
+<span id="347">347</span>
+<span id="348">348</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -401,6 +436,9 @@
 <span class="macro">wrapper! </span>{
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// A generic error capable of representing various error domains (types).
+    </span><span class="comment">// rustdoc-stripper-ignore-next-stop
+    </span><span class="doccomment">/// The `GError` structure contains information about
+    /// an error that has occurred.
     </span><span class="attribute">#[derive(PartialEq, Eq, PartialOrd, Ord, Hash)]
     #[doc(alias = <span class="string">&quot;GError&quot;</span>)]
     </span><span class="kw">pub struct </span>Error(Boxed&lt;ffi::GError&gt;);
@@ -418,6 +456,19 @@
 <span class="kw">impl </span>Error {
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Creates an error with supplied error enum variant and message.
+    </span><span class="comment">// rustdoc-stripper-ignore-next-stop
+    </span><span class="doccomment">/// Creates a new [`Error`][crate::Error] with the given `domain` and `code`,
+    /// and a message formatted with `format`.
+    /// ## `domain`
+    /// error domain
+    /// ## `code`
+    /// error code
+    /// ## `format`
+    /// `printf()`-style format for error message
+    ///
+    /// # Returns
+    ///
+    /// a new [`Error`][crate::Error]
     </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_error_new_literal&quot;</span>)]
     #[doc(alias = <span class="string">&quot;g_error_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new&lt;T: ErrorDomain&gt;(error: T, message: <span class="kw-2">&amp;</span>str) -&gt; Error {
@@ -444,6 +495,25 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Checks if the error matches the specified domain and error code.
+    </span><span class="comment">// rustdoc-stripper-ignore-next-stop
+    </span><span class="doccomment">/// Returns [`true`] if `self` matches `domain` and `code`, [`false`]
+    /// otherwise. In particular, when `self` is [`None`], [`false`] will
+    /// be returned.
+    ///
+    /// If `domain` contains a `FAILED` (or otherwise generic) error code,
+    /// you should generally not check for it explicitly, but should
+    /// instead treat any not-explicitly-recognized error code as being
+    /// equivalent to the `FAILED` code. This way, if the domain is
+    /// extended in the future to provide a more specific error code for
+    /// a certain case, your code will still work.
+    /// ## `domain`
+    /// an error domain
+    /// ## `code`
+    /// an error code
+    ///
+    /// # Returns
+    ///
+    /// whether `self` has `domain` and `code`
     </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_error_matches&quot;</span>)]
     </span><span class="kw">pub fn </span>matches&lt;T: ErrorDomain&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, err: T) -&gt; bool {
         <span class="self">self</span>.is::&lt;T&gt;() &amp;&amp; <span class="self">self</span>.inner.code == err.code()
@@ -698,4 +768,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (a24a020e6 2022-10-18)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>
