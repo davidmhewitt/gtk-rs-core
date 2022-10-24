@@ -205,15 +205,6 @@
 <span id="132">132</span>
 <span id="133">133</span>
 <span id="134">134</span>
-<span id="135">135</span>
-<span id="136">136</span>
-<span id="137">137</span>
-<span id="138">138</span>
-<span id="139">139</span>
-<span id="140">140</span>
-<span id="141">141</span>
-<span id="142">142</span>
-<span id="143">143</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use crate</span>::{Action, ActionMap};
@@ -246,10 +237,7 @@
                 .lookup_action
                 .expect(<span class="string">&quot;no parent \&quot;lookup_action\&quot; implementation&quot;</span>);
             <span class="kw">let </span>ret = func(
-                <span class="self">self</span>.instance()
-                    .unsafe_cast_ref::&lt;ActionMap&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>,
+                <span class="self">self</span>.obj().unsafe_cast_ref::&lt;ActionMap&gt;().to_glib_none().<span class="number">0</span>,
                 name.to_glib_none().<span class="number">0</span>,
             );
             from_glib_none(ret)
@@ -266,10 +254,7 @@
                 .add_action
                 .expect(<span class="string">&quot;no parent \&quot;add_action\&quot; implementation&quot;</span>);
             func(
-                <span class="self">self</span>.instance()
-                    .unsafe_cast_ref::&lt;ActionMap&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>,
+                <span class="self">self</span>.obj().unsafe_cast_ref::&lt;ActionMap&gt;().to_glib_none().<span class="number">0</span>,
                 action.to_glib_none().<span class="number">0</span>,
             );
         }
@@ -285,10 +270,7 @@
                 .remove_action
                 .expect(<span class="string">&quot;no parent \&quot;remove_action\&quot; implementation&quot;</span>);
             func(
-                <span class="self">self</span>.instance()
-                    .unsafe_cast_ref::&lt;ActionMap&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>,
+                <span class="self">self</span>.obj().unsafe_cast_ref::&lt;ActionMap&gt;().to_glib_none().<span class="number">0</span>,
                 action_name.to_glib_none().<span class="number">0</span>,
             );
         }
@@ -321,7 +303,7 @@
 
     <span class="kw">let </span>ret = imp.lookup_action(<span class="kw-2">&amp;</span>action_name);
     <span class="kw">if let </span><span class="prelude-val">Some</span>(action) = ret {
-        <span class="kw">let </span>instance = imp.instance();
+        <span class="kw">let </span>instance = imp.obj();
         <span class="kw">let </span>actionptr = action.to_glib_none().<span class="number">0</span>;
 
         <span class="kw">let </span><span class="kw-2">mut </span>map = instance
@@ -358,4 +340,4 @@
     imp.remove_action(<span class="kw-2">&amp;</span>action_name);
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (7fcf850d7 2022-10-23)" ></div></body></html>

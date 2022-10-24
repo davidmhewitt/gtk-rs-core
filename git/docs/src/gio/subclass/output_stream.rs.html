@@ -497,7 +497,7 @@
                 .expect(<span class="string">&quot;No parent class implementation for \&quot;write\&quot;&quot;</span>);
             <span class="kw">let </span><span class="kw-2">mut </span>err = ptr::null_mut();
             <span class="kw">let </span>res = f(
-                <span class="self">self</span>.instance()
+                <span class="self">self</span>.obj()
                     .unsafe_cast_ref::&lt;OutputStream&gt;()
                     .to_glib_none()
                     .<span class="number">0</span>,
@@ -524,7 +524,7 @@
             <span class="kw">let </span><span class="kw-2">mut </span>err = ptr::null_mut();
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).close_fn {
                 <span class="kw">if </span>from_glib(f(
-                    <span class="self">self</span>.instance()
+                    <span class="self">self</span>.obj()
                         .unsafe_cast_ref::&lt;OutputStream&gt;()
                         .to_glib_none()
                         .<span class="number">0</span>,
@@ -548,7 +548,7 @@
             <span class="kw">let </span><span class="kw-2">mut </span>err = ptr::null_mut();
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).flush {
                 <span class="kw">if </span>from_glib(f(
-                    <span class="self">self</span>.instance()
+                    <span class="self">self</span>.obj()
                         .unsafe_cast_ref::&lt;OutputStream&gt;()
                         .to_glib_none()
                         .<span class="number">0</span>,
@@ -579,7 +579,7 @@
                 .splice
                 .expect(<span class="string">&quot;No parent class implementation for \&quot;splice\&quot;&quot;</span>);
             <span class="kw">let </span>res = f(
-                <span class="self">self</span>.instance()
+                <span class="self">self</span>.obj()
                     .unsafe_cast_ref::&lt;OutputStream&gt;()
                     .to_glib_none()
                     .<span class="number">0</span>,
@@ -784,4 +784,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (7fcf850d7 2022-10-23)" ></div></body></html>

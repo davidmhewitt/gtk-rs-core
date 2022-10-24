@@ -1812,6 +1812,14 @@
 
 <span class="kw">impl</span>&lt;T: ObjectSubclass&gt; ObjectSubclassExt <span class="kw">for </span>T {
     <span class="kw">fn </span>instance(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::BorrowedObject&lt;<span class="self">Self</span>::Type&gt; {
+        <span class="self">self</span>.obj()
+    }
+
+    <span class="kw">fn </span>from_instance(obj: <span class="kw-2">&amp;</span><span class="self">Self</span>::Type) -&gt; <span class="kw-2">&amp;</span><span class="self">Self </span>{
+        <span class="self">Self</span>::from_obj(obj)
+    }
+
+    <span class="kw">fn </span>obj(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::BorrowedObject&lt;<span class="self">Self</span>::Type&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>data = <span class="self">Self</span>::type_data();
             <span class="kw">let </span>type_ = data.as_ref().type_();
@@ -1832,19 +1840,11 @@
         }
     }
 
-    <span class="kw">fn </span>from_instance(obj: <span class="kw-2">&amp;</span><span class="self">Self</span>::Type) -&gt; <span class="kw-2">&amp;</span><span class="self">Self </span>{
+    <span class="kw">fn </span>from_obj(obj: <span class="kw-2">&amp;</span><span class="self">Self</span>::Type) -&gt; <span class="kw-2">&amp;</span><span class="self">Self </span>{
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>ptr = obj.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span><span class="self">Self</span>::Instance;
             (<span class="kw-2">*</span>ptr).imp()
         }
-    }
-
-    <span class="kw">fn </span>obj(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::BorrowedObject&lt;<span class="self">Self</span>::Type&gt; {
-        <span class="self">self</span>.instance()
-    }
-
-    <span class="kw">fn </span>from_obj(obj: <span class="kw-2">&amp;</span><span class="self">Self</span>::Type) -&gt; <span class="kw-2">&amp;</span><span class="self">Self </span>{
-        <span class="self">Self</span>::from_instance(obj)
     }
 
     <span class="kw">fn </span>ref_counted(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">super</span>::ObjectImplRef&lt;<span class="self">Self</span>&gt; {
@@ -2198,4 +2198,4 @@
     <span class="prelude-val">Some</span>(result).filter(|r| r.type_().is_valid() &amp;&amp; r.type_() != Type::UNIT)
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (7fcf850d7 2022-10-23)" ></div></body></html>

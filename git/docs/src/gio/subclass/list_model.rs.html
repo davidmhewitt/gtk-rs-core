@@ -218,19 +218,6 @@
 <span id="145">145</span>
 <span id="146">146</span>
 <span id="147">147</span>
-<span id="148">148</span>
-<span id="149">149</span>
-<span id="150">150</span>
-<span id="151">151</span>
-<span id="152">152</span>
-<span id="153">153</span>
-<span id="154">154</span>
-<span id="155">155</span>
-<span id="156">156</span>
-<span id="157">157</span>
-<span id="158">158</span>
-<span id="159">159</span>
-<span id="160">160</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::ListModel;
@@ -264,12 +251,7 @@
             <span class="kw">let </span>func = (<span class="kw-2">*</span>parent_iface)
                 .get_item_type
                 .expect(<span class="string">&quot;no parent \&quot;item_type\&quot; implementation&quot;</span>);
-            <span class="kw">let </span>ret = func(
-                <span class="self">self</span>.instance()
-                    .unsafe_cast_ref::&lt;ListModel&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>,
-            );
+            <span class="kw">let </span>ret = func(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;ListModel&gt;().to_glib_none().<span class="number">0</span>);
             from_glib(ret)
         }
     }
@@ -283,12 +265,7 @@
             <span class="kw">let </span>func = (<span class="kw-2">*</span>parent_iface)
                 .get_n_items
                 .expect(<span class="string">&quot;no parent \&quot;n_items\&quot; implementation&quot;</span>);
-            func(
-                <span class="self">self</span>.instance()
-                    .unsafe_cast_ref::&lt;ListModel&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>,
-            )
+            func(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;ListModel&gt;().to_glib_none().<span class="number">0</span>)
         }
     }
 
@@ -302,10 +279,7 @@
                 .get_item
                 .expect(<span class="string">&quot;no parent \&quot;get_item\&quot; implementation&quot;</span>);
             <span class="kw">let </span>ret = func(
-                <span class="self">self</span>.instance()
-                    .unsafe_cast_ref::&lt;ListModel&gt;()
-                    .to_glib_none()
-                    .<span class="number">0</span>,
+                <span class="self">self</span>.obj().unsafe_cast_ref::&lt;ListModel&gt;().to_glib_none().<span class="number">0</span>,
                 position,
             );
             from_glib_full(ret)
@@ -341,7 +315,7 @@
     <span class="kw">let </span>type_ = imp.item_type().into_glib();
 
     <span class="comment">// Store the type so we can enforce that it doesn&#39;t change.
-    </span><span class="kw">let </span>instance = imp.instance();
+    </span><span class="kw">let </span>instance = imp.obj();
     <span class="kw">match </span>instance.qdata(<span class="kw-2">*</span>LIST_ITEM_TYPE_QUARK) {
         <span class="prelude-val">Some</span>(old_type) =&gt; {
             <span class="macro">assert_eq!</span>(
@@ -392,4 +366,4 @@
     item.to_glib_full()
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (7fcf850d7 2022-10-23)" ></div></body></html>

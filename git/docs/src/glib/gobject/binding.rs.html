@@ -644,7 +644,7 @@
             }
 
             <span class="kw">fn </span>property(<span class="kw-2">&amp;</span><span class="self">self</span>, _id: usize, pspec: <span class="kw-2">&amp;</span><span class="kw">crate</span>::ParamSpec) -&gt; <span class="kw">crate</span>::Value {
-                <span class="kw">let </span>obj = <span class="self">self</span>.instance();
+                <span class="kw">let </span>obj = <span class="self">self</span>.obj();
                 <span class="kw">match </span>pspec.name() {
                     <span class="string">&quot;name&quot; </span>=&gt; obj.name().to_value(),
                     <span class="string">&quot;enabled&quot; </span>=&gt; obj.enabled().to_value(),
@@ -653,7 +653,7 @@
             }
 
             <span class="kw">fn </span>set_property(<span class="kw-2">&amp;</span><span class="self">self</span>, _id: usize, value: <span class="kw-2">&amp;</span><span class="kw">crate</span>::Value, pspec: <span class="kw-2">&amp;</span><span class="kw">crate</span>::ParamSpec) {
-                <span class="kw">let </span>obj = <span class="self">self</span>.instance();
+                <span class="kw">let </span>obj = <span class="self">self</span>.obj();
                 <span class="kw">match </span>pspec.name() {
                     <span class="string">&quot;name&quot; </span>=&gt; obj.set_name(value.get().unwrap()),
                     <span class="string">&quot;enabled&quot; </span>=&gt; obj.set_enabled(value.get().unwrap()),
@@ -696,4 +696,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (7fcf850d7 2022-10-23)" ></div></body></html>

@@ -691,10 +691,6 @@
 <span id="618">618</span>
 <span id="619">619</span>
 <span id="620">620</span>
-<span id="621">621</span>
-<span id="622">622</span>
-<span id="623">623</span>
-<span id="624">624</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -904,7 +900,7 @@
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>gobject_ffi::GObjectClass;
 
             <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>func) = (<span class="kw-2">*</span>parent_class).constructed {
-                func(<span class="self">self</span>.instance().unsafe_cast_ref::&lt;Object&gt;().to_glib_none().<span class="number">0</span>);
+                func(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;Object&gt;().to_glib_none().<span class="number">0</span>);
             }
         }
     }
@@ -915,11 +911,7 @@
         values: <span class="kw-2">&amp;</span>[Value],
     ) -&gt; <span class="prelude-ty">Option</span>&lt;Value&gt; {
         <span class="kw">unsafe </span>{
-            <span class="kw">super</span>::types::signal_chain_from_overridden(
-                <span class="self">self</span>.instance().as_ptr() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
-                token,
-                values,
-            )
+            <span class="kw">super</span>::types::signal_chain_from_overridden(<span class="self">self</span>.obj().as_ptr() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>, token, values)
         }
     }
 }
@@ -1032,7 +1024,7 @@
                             .get()
                             .expect(<span class="string">&quot;type conformity checked by &#39;Object::set_property&#39;&quot;</span>);
                         <span class="self">self</span>.name.replace(name);
-                        <span class="self">self</span>.instance()
+                        <span class="self">self</span>.obj()
                             .emit_by_name::&lt;()&gt;(<span class="string">&quot;name-changed&quot;</span>, <span class="kw-2">&amp;</span>[<span class="kw-2">&amp;*</span><span class="self">self</span>.name.borrow()]);
                     }
                     <span class="string">&quot;construct-name&quot; </span>=&gt; {
@@ -1060,7 +1052,7 @@
             <span class="kw">fn </span>constructed(<span class="kw-2">&amp;</span><span class="self">self</span>) {
                 <span class="self">self</span>.parent_constructed();
 
-                <span class="macro">assert_eq!</span>(<span class="self">self </span><span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>, <span class="self">self</span>.instance().imp() <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>);
+                <span class="macro">assert_eq!</span>(<span class="self">self </span><span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>, <span class="self">self</span>.obj().imp() <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>);
 
                 <span class="kw-2">*</span><span class="self">self</span>.constructed.borrow_mut() = <span class="bool-val">true</span>;
             }
@@ -1134,7 +1126,7 @@
     </span><span class="kw">fn </span>test_create_child_object() {
         <span class="kw">let </span>obj: ChildObject = Object::new(<span class="kw-2">&amp;</span>[]);
 
-        <span class="macro">assert_eq!</span>(<span class="kw-2">&amp;</span>obj, obj.imp().instance().as_ref());
+        <span class="macro">assert_eq!</span>(<span class="kw-2">&amp;</span>obj, obj.imp().obj().as_ref());
     }
 
     <span class="attribute">#[test]
@@ -1320,4 +1312,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (7fcf850d7 2022-10-23)" ></div></body></html>

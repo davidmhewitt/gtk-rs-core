@@ -545,7 +545,7 @@
             }
 
             Box::pin(<span class="kw">crate</span>::GioFuture::new(
-                <span class="kw-2">&amp;*</span><span class="self">self</span>.instance(),
+                <span class="kw-2">&amp;*</span><span class="self">self</span>.obj(),
                 <span class="kw">move </span>|obj, cancellable, res| {
                     <span class="kw">let </span>user_data: Box&lt;ThreadGuard&lt;GioFutureResult&lt;(), Error&gt;&gt;&gt; =
                         Box::new(ThreadGuard::new(res));
@@ -584,7 +584,7 @@
 
     <span class="kw">let </span>task = callback.map(|callback| {
         <span class="kw">let </span>task = LocalTask::new(
-            <span class="prelude-val">Some</span>(imp.instance().unsafe_cast_ref::&lt;glib::Object&gt;()),
+            <span class="prelude-val">Some</span>(imp.obj().unsafe_cast_ref::&lt;glib::Object&gt;()),
             cancellable.as_ref().as_ref(),
             <span class="kw">move </span>|task, obj| {
                 <span class="kw">let </span>result: <span class="kw-2">*mut </span><span class="kw">crate</span>::ffi::GAsyncResult =
@@ -860,4 +860,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (7fcf850d7 2022-10-23)" ></div></body></html>

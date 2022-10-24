@@ -237,17 +237,6 @@
 <span id="164">164</span>
 <span id="165">165</span>
 <span id="166">166</span>
-<span id="167">167</span>
-<span id="168">168</span>
-<span id="169">169</span>
-<span id="170">170</span>
-<span id="171">171</span>
-<span id="172">172</span>
-<span id="173">173</span>
-<span id="174">174</span>
-<span id="175">175</span>
-<span id="176">176</span>
-<span id="177">177</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>glib::prelude::<span class="kw-2">*</span>;
@@ -293,11 +282,7 @@
             <span class="kw">let </span>f = (<span class="kw-2">*</span>parent_class)
                 .get_input_stream
                 .expect(<span class="string">&quot;No parent class implementation for \&quot;input_stream\&quot;&quot;</span>);
-            from_glib_none(f(<span class="self">self
-                </span>.instance()
-                .unsafe_cast_ref::&lt;IOStream&gt;()
-                .to_glib_none()
-                .<span class="number">0</span>))
+            from_glib_none(f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;IOStream&gt;().to_glib_none().<span class="number">0</span>))
         }
     }
 
@@ -308,11 +293,7 @@
             <span class="kw">let </span>f = (<span class="kw-2">*</span>parent_class)
                 .get_output_stream
                 .expect(<span class="string">&quot;No parent class implementation for \&quot;output_stream\&quot;&quot;</span>);
-            from_glib_none(f(<span class="self">self
-                </span>.instance()
-                .unsafe_cast_ref::&lt;IOStream&gt;()
-                .to_glib_none()
-                .<span class="number">0</span>))
+            from_glib_none(f(<span class="self">self</span>.obj().unsafe_cast_ref::&lt;IOStream&gt;().to_glib_none().<span class="number">0</span>))
         }
     }
 
@@ -323,10 +304,7 @@
             <span class="kw">let </span><span class="kw-2">mut </span>err = ptr::null_mut();
             <span class="kw">if let </span><span class="prelude-val">Some</span>(f) = (<span class="kw-2">*</span>parent_class).close_fn {
                 <span class="kw">if </span>from_glib(f(
-                    <span class="self">self</span>.instance()
-                        .unsafe_cast_ref::&lt;IOStream&gt;()
-                        .to_glib_none()
-                        .<span class="number">0</span>,
+                    <span class="self">self</span>.obj().unsafe_cast_ref::&lt;IOStream&gt;().to_glib_none().<span class="number">0</span>,
                     cancellable.to_glib_none().<span class="number">0</span>,
                     <span class="kw-2">&amp;mut </span>err,
                 )) {
@@ -365,7 +343,7 @@
 
     <span class="kw">let </span>ret = imp.input_stream();
 
-    <span class="kw">let </span>instance = imp.instance();
+    <span class="kw">let </span>instance = imp.obj();
     <span class="comment">// Ensure that a) the stream stays alive as long as the IO stream instance and
     // b) that the same stream is returned every time. This is a requirement by the
     // IO stream API.
@@ -388,7 +366,7 @@
 
     <span class="kw">let </span>ret = imp.output_stream();
 
-    <span class="kw">let </span>instance = imp.instance();
+    <span class="kw">let </span>instance = imp.obj();
     <span class="comment">// Ensure that a) the stream stays alive as long as the IO stream instance and
     // b) that the same stream is returned every time. This is a requirement by the
     // IO stream API.
@@ -426,4 +404,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (7fcf850d7 2022-10-23)" ></div></body></html>
