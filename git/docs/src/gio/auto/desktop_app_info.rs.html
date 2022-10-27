@@ -951,7 +951,7 @@
                     key.to_glib_none().<span class="number">0</span>,
                     length.as_mut_ptr(),
                 ),
-                length.assume_init() <span class="kw">as </span>usize,
+                length.assume_init() <span class="kw">as _</span>,
             );
             ret
         }

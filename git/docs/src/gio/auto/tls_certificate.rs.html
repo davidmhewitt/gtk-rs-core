@@ -1139,7 +1139,7 @@
     </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_certificate_new_from_pem&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_pem&quot;</span>)]
     </span><span class="kw">pub fn </span>from_pem(data: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;TlsCertificate, glib::Error&gt; {
-        <span class="kw">let </span>length = data.len() <span class="kw">as </span>isize;
+        <span class="kw">let </span>length = data.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
             <span class="kw">let </span>ret =
@@ -1238,7 +1238,7 @@
     #[doc(alias = <span class="string">&quot;g_tls_certificate_new_from_pkcs12&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_pkcs12&quot;</span>)]
     </span><span class="kw">pub fn </span>from_pkcs12(data: <span class="kw-2">&amp;</span>[u8], password: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;TlsCertificate, glib::Error&gt; {
-        <span class="kw">let </span>length = data.len() <span class="kw">as </span>usize;
+        <span class="kw">let </span>length = data.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
             <span class="kw">let </span>ret = ffi::g_tls_certificate_new_from_pkcs12(

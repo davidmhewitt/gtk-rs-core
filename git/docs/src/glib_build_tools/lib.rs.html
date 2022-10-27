@@ -121,7 +121,6 @@
 <span id="48">48</span>
 <span id="49">49</span>
 <span id="50">50</span>
-<span id="51">51</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="attribute">#![doc = <span class="macro">include_str!</span>(<span class="string">&quot;../README.md&quot;</span>)]
@@ -148,18 +147,17 @@
         .arg(<span class="string">&quot;--sourcedir&quot;</span>)
         .arg(source_dir.as_ref())
         .arg(<span class="string">&quot;--target&quot;</span>)
-        .arg(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;{}/{}&quot;</span>, out_dir, target))
+        .arg(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;{out_dir}/{target}&quot;</span>))
         .arg(gresource)
         .status()
         .unwrap();
 
     <span class="macro">assert!</span>(
         status.success(),
-        <span class="string">&quot;glib-compile-resources failed with exit status {}&quot;</span>,
-        status
+        <span class="string">&quot;glib-compile-resources failed with exit status {status}&quot;</span>,
     );
 
-    <span class="macro">println!</span>(<span class="string">&quot;cargo:rerun-if-changed={}&quot;</span>, gresource);
+    <span class="macro">println!</span>(<span class="string">&quot;cargo:rerun-if-changed={gresource}&quot;</span>);
     <span class="kw">let </span>output = Command::new(<span class="string">&quot;glib-compile-resources&quot;</span>)
         .arg(<span class="string">&quot;--sourcedir&quot;</span>)
         .arg(source_dir.as_ref())
@@ -170,7 +168,7 @@
         .stdout;
     <span class="kw">let </span>output = String::from_utf8(output).unwrap();
     <span class="kw">for </span>dep <span class="kw">in </span>output.split_whitespace() {
-        <span class="macro">println!</span>(<span class="string">&quot;cargo:rerun-if-changed={}&quot;</span>, dep);
+        <span class="macro">println!</span>(<span class="string">&quot;cargo:rerun-if-changed={dep}&quot;</span>);
     }
 }
 </code></pre></div>

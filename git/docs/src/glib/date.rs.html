@@ -869,7 +869,7 @@
 
     <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_strftime&quot;</span>)]
     </span><span class="kw">pub fn </span>strftime(s: <span class="kw-2">&amp;</span>str, format: <span class="kw-2">&amp;</span>str, date: <span class="kw-2">&amp;</span>Date) -&gt; usize {
-        <span class="kw">let </span>slen = s.len() <span class="kw">as </span>usize;
+        <span class="kw">let </span>slen = s.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
             ffi::g_date_strftime(
                 s.to_glib_none().<span class="number">0</span>,

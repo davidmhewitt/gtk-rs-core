@@ -538,28 +538,28 @@
     </span><span class="kw">pub struct </span>FontMask: u32 {
         <span class="doccomment">/// the font family is specified.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_FONT_MASK_FAMILY&quot;</span>)]
-        </span><span class="kw">const </span>FAMILY = ffi::PANGO_FONT_MASK_FAMILY <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>FAMILY = ffi::PANGO_FONT_MASK_FAMILY <span class="kw">as _</span>;
         <span class="doccomment">/// the font style is specified.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_FONT_MASK_STYLE&quot;</span>)]
-        </span><span class="kw">const </span>STYLE = ffi::PANGO_FONT_MASK_STYLE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>STYLE = ffi::PANGO_FONT_MASK_STYLE <span class="kw">as _</span>;
         <span class="doccomment">/// the font variant is specified.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_FONT_MASK_VARIANT&quot;</span>)]
-        </span><span class="kw">const </span>VARIANT = ffi::PANGO_FONT_MASK_VARIANT <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>VARIANT = ffi::PANGO_FONT_MASK_VARIANT <span class="kw">as _</span>;
         <span class="doccomment">/// the font weight is specified.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_FONT_MASK_WEIGHT&quot;</span>)]
-        </span><span class="kw">const </span>WEIGHT = ffi::PANGO_FONT_MASK_WEIGHT <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>WEIGHT = ffi::PANGO_FONT_MASK_WEIGHT <span class="kw">as _</span>;
         <span class="doccomment">/// the font stretch is specified.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_FONT_MASK_STRETCH&quot;</span>)]
-        </span><span class="kw">const </span>STRETCH = ffi::PANGO_FONT_MASK_STRETCH <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>STRETCH = ffi::PANGO_FONT_MASK_STRETCH <span class="kw">as _</span>;
         <span class="doccomment">/// the font size is specified.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_FONT_MASK_SIZE&quot;</span>)]
-        </span><span class="kw">const </span>SIZE = ffi::PANGO_FONT_MASK_SIZE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>SIZE = ffi::PANGO_FONT_MASK_SIZE <span class="kw">as _</span>;
         <span class="doccomment">/// the font gravity is specified (Since: 1.16.)
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_FONT_MASK_GRAVITY&quot;</span>)]
-        </span><span class="kw">const </span>GRAVITY = ffi::PANGO_FONT_MASK_GRAVITY <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>GRAVITY = ffi::PANGO_FONT_MASK_GRAVITY <span class="kw">as _</span>;
         <span class="doccomment">/// OpenType font variations are specified (Since: 1.42)
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_FONT_MASK_VARIATIONS&quot;</span>)]
-        </span><span class="kw">const </span>VARIATIONS = ffi::PANGO_FONT_MASK_VARIATIONS <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>VARIATIONS = ffi::PANGO_FONT_MASK_VARIATIONS <span class="kw">as _</span>;
     }
 }
 
@@ -627,11 +627,11 @@
     </span><span class="kw">pub struct </span>LayoutDeserializeFlags: u32 {
         <span class="doccomment">/// Default behavior
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_LAYOUT_DESERIALIZE_DEFAULT&quot;</span>)]
-        </span><span class="kw">const </span>DEFAULT = ffi::PANGO_LAYOUT_DESERIALIZE_DEFAULT <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>DEFAULT = ffi::PANGO_LAYOUT_DESERIALIZE_DEFAULT <span class="kw">as _</span>;
         <span class="doccomment">/// Apply context information
         ///   from the serialization to the [`Context`][crate::Context]
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_LAYOUT_DESERIALIZE_CONTEXT&quot;</span>)]
-        </span><span class="kw">const </span>CONTEXT = ffi::PANGO_LAYOUT_DESERIALIZE_CONTEXT <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>CONTEXT = ffi::PANGO_LAYOUT_DESERIALIZE_CONTEXT <span class="kw">as _</span>;
     }
 }
 
@@ -713,13 +713,13 @@
     </span><span class="kw">pub struct </span>LayoutSerializeFlags: u32 {
         <span class="doccomment">/// Default behavior
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_LAYOUT_SERIALIZE_DEFAULT&quot;</span>)]
-        </span><span class="kw">const </span>DEFAULT = ffi::PANGO_LAYOUT_SERIALIZE_DEFAULT <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>DEFAULT = ffi::PANGO_LAYOUT_SERIALIZE_DEFAULT <span class="kw">as _</span>;
         <span class="doccomment">/// Include context information
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_LAYOUT_SERIALIZE_CONTEXT&quot;</span>)]
-        </span><span class="kw">const </span>CONTEXT = ffi::PANGO_LAYOUT_SERIALIZE_CONTEXT <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>CONTEXT = ffi::PANGO_LAYOUT_SERIALIZE_CONTEXT <span class="kw">as _</span>;
         <span class="doccomment">/// Include information about the formatted output
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_LAYOUT_SERIALIZE_OUTPUT&quot;</span>)]
-        </span><span class="kw">const </span>OUTPUT = ffi::PANGO_LAYOUT_SERIALIZE_OUTPUT <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>OUTPUT = ffi::PANGO_LAYOUT_SERIALIZE_OUTPUT <span class="kw">as _</span>;
     }
 }
 
@@ -801,11 +801,11 @@
     </span><span class="kw">pub struct </span>ShapeFlags: u32 {
         <span class="doccomment">/// Default value
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SHAPE_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::PANGO_SHAPE_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::PANGO_SHAPE_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Round glyph positions and widths to whole device units
         ///   This option should be set if the target renderer can&#39;t do subpixel positioning of glyphs
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SHAPE_ROUND_POSITIONS&quot;</span>)]
-        </span><span class="kw">const </span>ROUND_POSITIONS = ffi::PANGO_SHAPE_ROUND_POSITIONS <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>ROUND_POSITIONS = ffi::PANGO_SHAPE_ROUND_POSITIONS <span class="kw">as _</span>;
     }
 }
 
@@ -886,17 +886,17 @@
     </span><span class="kw">pub struct </span>ShowFlags: u32 {
         <span class="doccomment">/// No special treatment for invisible characters
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SHOW_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::PANGO_SHOW_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::PANGO_SHOW_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Render spaces, tabs and newlines visibly
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SHOW_SPACES&quot;</span>)]
-        </span><span class="kw">const </span>SPACES = ffi::PANGO_SHOW_SPACES <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>SPACES = ffi::PANGO_SHOW_SPACES <span class="kw">as _</span>;
         <span class="doccomment">/// Render line breaks visibly
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SHOW_LINE_BREAKS&quot;</span>)]
-        </span><span class="kw">const </span>LINE_BREAKS = ffi::PANGO_SHOW_LINE_BREAKS <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>LINE_BREAKS = ffi::PANGO_SHOW_LINE_BREAKS <span class="kw">as _</span>;
         <span class="doccomment">/// Render default-ignorable Unicode
         ///   characters visibly
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SHOW_IGNORABLES&quot;</span>)]
-        </span><span class="kw">const </span>IGNORABLES = ffi::PANGO_SHOW_IGNORABLES <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>IGNORABLES = ffi::PANGO_SHOW_IGNORABLES <span class="kw">as _</span>;
     }
 }
 

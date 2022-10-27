@@ -983,7 +983,7 @@
     }
 
     <span class="kw">fn </span>write(<span class="kw-2">&amp;</span><span class="self">self</span>, buf: <span class="kw-2">&amp;</span>[u8]) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt; {
-        <span class="kw">let </span>count = buf.len() <span class="kw">as </span>usize;
+        <span class="kw">let </span>count = buf.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
             <span class="kw">let </span>is_ok = ffi::gdk_pixbuf_loader_write(

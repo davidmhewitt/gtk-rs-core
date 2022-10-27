@@ -133,14 +133,14 @@
     </span><span class="kw">pub struct </span>PixbufFormatFlags: u32 {
         <span class="doccomment">/// the module can write out images in the format.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_FORMAT_WRITABLE&quot;</span>)]
-        </span><span class="kw">const </span>WRITABLE = ffi::GDK_PIXBUF_FORMAT_WRITABLE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>WRITABLE = ffi::GDK_PIXBUF_FORMAT_WRITABLE <span class="kw">as _</span>;
         <span class="doccomment">/// the image format is scalable
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_FORMAT_SCALABLE&quot;</span>)]
-        </span><span class="kw">const </span>SCALABLE = ffi::GDK_PIXBUF_FORMAT_SCALABLE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>SCALABLE = ffi::GDK_PIXBUF_FORMAT_SCALABLE <span class="kw">as _</span>;
         <span class="doccomment">/// the module is threadsafe. gdk-pixbuf
         ///     ignores modules that are not marked as threadsafe. (Since 2.28).
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_FORMAT_THREADSAFE&quot;</span>)]
-        </span><span class="kw">const </span>THREADSAFE = ffi::GDK_PIXBUF_FORMAT_THREADSAFE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>THREADSAFE = ffi::GDK_PIXBUF_FORMAT_THREADSAFE <span class="kw">as _</span>;
     }
 }
 

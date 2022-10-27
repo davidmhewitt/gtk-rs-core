@@ -290,6 +290,113 @@
 <span id="217">217</span>
 <span id="218">218</span>
 <span id="219">219</span>
+<span id="220">220</span>
+<span id="221">221</span>
+<span id="222">222</span>
+<span id="223">223</span>
+<span id="224">224</span>
+<span id="225">225</span>
+<span id="226">226</span>
+<span id="227">227</span>
+<span id="228">228</span>
+<span id="229">229</span>
+<span id="230">230</span>
+<span id="231">231</span>
+<span id="232">232</span>
+<span id="233">233</span>
+<span id="234">234</span>
+<span id="235">235</span>
+<span id="236">236</span>
+<span id="237">237</span>
+<span id="238">238</span>
+<span id="239">239</span>
+<span id="240">240</span>
+<span id="241">241</span>
+<span id="242">242</span>
+<span id="243">243</span>
+<span id="244">244</span>
+<span id="245">245</span>
+<span id="246">246</span>
+<span id="247">247</span>
+<span id="248">248</span>
+<span id="249">249</span>
+<span id="250">250</span>
+<span id="251">251</span>
+<span id="252">252</span>
+<span id="253">253</span>
+<span id="254">254</span>
+<span id="255">255</span>
+<span id="256">256</span>
+<span id="257">257</span>
+<span id="258">258</span>
+<span id="259">259</span>
+<span id="260">260</span>
+<span id="261">261</span>
+<span id="262">262</span>
+<span id="263">263</span>
+<span id="264">264</span>
+<span id="265">265</span>
+<span id="266">266</span>
+<span id="267">267</span>
+<span id="268">268</span>
+<span id="269">269</span>
+<span id="270">270</span>
+<span id="271">271</span>
+<span id="272">272</span>
+<span id="273">273</span>
+<span id="274">274</span>
+<span id="275">275</span>
+<span id="276">276</span>
+<span id="277">277</span>
+<span id="278">278</span>
+<span id="279">279</span>
+<span id="280">280</span>
+<span id="281">281</span>
+<span id="282">282</span>
+<span id="283">283</span>
+<span id="284">284</span>
+<span id="285">285</span>
+<span id="286">286</span>
+<span id="287">287</span>
+<span id="288">288</span>
+<span id="289">289</span>
+<span id="290">290</span>
+<span id="291">291</span>
+<span id="292">292</span>
+<span id="293">293</span>
+<span id="294">294</span>
+<span id="295">295</span>
+<span id="296">296</span>
+<span id="297">297</span>
+<span id="298">298</span>
+<span id="299">299</span>
+<span id="300">300</span>
+<span id="301">301</span>
+<span id="302">302</span>
+<span id="303">303</span>
+<span id="304">304</span>
+<span id="305">305</span>
+<span id="306">306</span>
+<span id="307">307</span>
+<span id="308">308</span>
+<span id="309">309</span>
+<span id="310">310</span>
+<span id="311">311</span>
+<span id="312">312</span>
+<span id="313">313</span>
+<span id="314">314</span>
+<span id="315">315</span>
+<span id="316">316</span>
+<span id="317">317</span>
+<span id="318">318</span>
+<span id="319">319</span>
+<span id="320">320</span>
+<span id="321">321</span>
+<span id="322">322</span>
+<span id="323">323</span>
+<span id="324">324</span>
+<span id="325">325</span>
+<span id="326">326</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
@@ -298,7 +405,10 @@
 <span class="kw">use </span>std::future::Future;
 <span class="kw">use </span>std::ptr;
 
-<span class="attribute">#[derive(Debug)]
+<span class="doccomment">/// The [`ThreadPool`][crate::ThreadPool] struct represents a thread pool. It has three
+/// public read-only members, but the underlying struct is bigger,
+/// so you must not copy this struct.
+</span><span class="attribute">#[derive(Debug)]
 #[doc(alias = <span class="string">&quot;GThreadPool&quot;</span>)]
 </span><span class="kw">pub struct </span>ThreadPool(ptr::NonNull&lt;ffi::GThreadPool&gt;);
 
@@ -344,7 +454,25 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_push&quot;</span>)]
+    <span class="doccomment">/// Inserts `data` into the list of tasks to be executed by `self`.
+    ///
+    /// When the number of currently running threads is lower than the
+    /// maximal allowed number of threads, a new thread is started (or
+    /// reused) with the properties given to [`new()`][Self::new()].
+    /// Otherwise, `data` stays in the queue until a thread in this pool
+    /// finishes its previous task and processes `data`.
+    ///
+    /// `error` can be [`None`] to ignore errors, or non-[`None`] to report
+    /// errors. An error can only occur when a new thread couldn&#39;t be
+    /// created. In that case `data` is simply appended to the queue of
+    /// work to do.
+    ///
+    /// Before version 2.32, this function did not return a success status.
+    ///
+    /// # Returns
+    ///
+    /// [`true`] on success, [`false`] if an error occurred
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_push&quot;</span>)]
     </span><span class="kw">pub fn </span>push&lt;F: FnOnce() + Send + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, func: F) -&gt; <span class="prelude-ty">Result</span>&lt;(), <span class="kw">crate</span>::Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>func: Box&lt;<span class="kw">dyn </span>FnOnce() + Send + <span class="lifetime">&#39;static</span>&gt; = Box::new(func);
@@ -379,7 +507,34 @@
         <span class="prelude-val">Ok</span>(<span class="kw">async move </span>{ receiver.<span class="kw">await</span>.expect(<span class="string">&quot;Dropped before executing&quot;</span>) })
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_set_max_threads&quot;</span>)]
+    <span class="doccomment">/// Sets the maximal allowed number of threads for `self`.
+    /// A value of -1 means that the maximal number of threads
+    /// is unlimited. If `self` is an exclusive thread pool, setting
+    /// the maximal number of threads to -1 is not allowed.
+    ///
+    /// Setting `max_threads` to 0 means stopping all work for `self`.
+    /// It is effectively frozen until `max_threads` is set to a non-zero
+    /// value again.
+    ///
+    /// A thread is never terminated while calling `func`, as supplied by
+    /// [`new()`][Self::new()]. Instead the maximal number of threads only
+    /// has effect for the allocation of new threads in [`push()`][Self::push()].
+    /// A new thread is allocated, whenever the number of currently
+    /// running threads in `self` is smaller than the maximal number.
+    ///
+    /// `error` can be [`None`] to ignore errors, or non-[`None`] to report
+    /// errors. An error can only occur when a new thread couldn&#39;t be
+    /// created.
+    ///
+    /// Before version 2.32, this function did not return a success status.
+    /// ## `max_threads`
+    /// a new maximal number of threads for `self`,
+    ///  or -1 for unlimited
+    ///
+    /// # Returns
+    ///
+    /// [`true`] on success, [`false`] if an error occurred
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_set_max_threads&quot;</span>)]
     </span><span class="kw">pub fn </span>set_max_threads(<span class="kw-2">&amp;</span><span class="self">self</span>, max_threads: <span class="prelude-ty">Option</span>&lt;u32&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), <span class="kw">crate</span>::Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>err = ptr::null_mut();
@@ -396,7 +551,12 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_get_max_threads&quot;</span>)]
+    <span class="doccomment">/// Returns the maximal number of threads for `self`.
+    ///
+    /// # Returns
+    ///
+    /// the maximal number of threads
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_get_max_threads&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_max_threads&quot;</span>)]
     </span><span class="kw">pub fn </span>max_threads(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;u32&gt; {
         <span class="kw">unsafe </span>{
@@ -409,26 +569,48 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_get_num_threads&quot;</span>)]
+    <span class="doccomment">/// Returns the number of threads currently running in `self`.
+    ///
+    /// # Returns
+    ///
+    /// the number of threads currently running
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_get_num_threads&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_num_threads&quot;</span>)]
     </span><span class="kw">pub fn </span>num_threads(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::g_thread_pool_get_num_threads(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_unprocessed&quot;</span>)]
+    <span class="doccomment">/// Returns the number of tasks still unprocessed in `self`.
+    ///
+    /// # Returns
+    ///
+    /// the number of unprocessed tasks
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_unprocessed&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_unprocessed&quot;</span>)]
     </span><span class="kw">pub fn </span>unprocessed(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::g_thread_pool_unprocessed(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_set_max_unused_threads&quot;</span>)]
+    <span class="doccomment">/// Sets the maximal number of unused threads to `max_threads`.
+    /// If `max_threads` is -1, no limit is imposed on the number
+    /// of unused threads.
+    ///
+    /// The default value is 2.
+    /// ## `max_threads`
+    /// maximal number of unused threads
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_set_max_unused_threads&quot;</span>)]
     </span><span class="kw">pub fn </span>set_max_unused_threads(max_threads: <span class="prelude-ty">Option</span>&lt;u32&gt;) {
         <span class="kw">unsafe </span>{
             ffi::g_thread_pool_set_max_unused_threads(max_threads.map(|v| v <span class="kw">as </span>i32).unwrap_or(-<span class="number">1</span>))
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_get_max_unused_threads&quot;</span>)]
+    <span class="doccomment">/// Returns the maximal allowed number of unused threads.
+    ///
+    /// # Returns
+    ///
+    /// the maximal number of unused threads
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_get_max_unused_threads&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_max_unused_threads&quot;</span>)]
     </span><span class="kw">pub fn </span>max_unused_threads() -&gt; <span class="prelude-ty">Option</span>&lt;u32&gt; {
         <span class="kw">unsafe </span>{
@@ -441,25 +623,57 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_get_num_unused_threads&quot;</span>)]
+    <span class="doccomment">/// Returns the number of currently unused threads.
+    ///
+    /// # Returns
+    ///
+    /// the number of currently unused threads
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_get_num_unused_threads&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_num_unused_threads&quot;</span>)]
     </span><span class="kw">pub fn </span>num_unused_threads() -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::g_thread_pool_get_num_unused_threads() }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_stop_unused_threads&quot;</span>)]
+    <span class="doccomment">/// Stops all currently unused threads. This does not change the
+    /// maximal number of unused threads. This function can be used to
+    /// regularly stop all unused threads e.g. from `g_timeout_add()`.
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_stop_unused_threads&quot;</span>)]
     </span><span class="kw">pub fn </span>stop_unused_threads() {
         <span class="kw">unsafe </span>{
             ffi::g_thread_pool_stop_unused_threads();
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_set_max_idle_time&quot;</span>)]
+    <span class="doccomment">/// This function will set the maximum `interval` that a thread
+    /// waiting in the pool for new tasks can be idle for before
+    /// being stopped. This function is similar to calling
+    /// [`stop_unused_threads()`][Self::stop_unused_threads()] on a regular timeout,
+    /// except this is done on a per thread basis.
+    ///
+    /// By setting `interval` to 0, idle threads will not be stopped.
+    ///
+    /// The default value is 15000 (15 seconds).
+    /// ## `interval`
+    /// the maximum `interval` (in milliseconds)
+    ///  a thread can be idle
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_set_max_idle_time&quot;</span>)]
     </span><span class="kw">pub fn </span>set_max_idle_time(max_idle_time: u32) {
         <span class="kw">unsafe </span>{ ffi::g_thread_pool_set_max_idle_time(max_idle_time) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_get_max_idle_time&quot;</span>)]
+    <span class="doccomment">/// This function will return the maximum `interval` that a
+    /// thread will wait in the thread pool for new tasks before
+    /// being stopped.
+    ///
+    /// If this function returns 0, threads waiting in the thread
+    /// pool for new work are not stopped.
+    ///
+    /// # Returns
+    ///
+    /// the maximum `interval` (milliseconds) to wait
+    ///  for new tasks in the thread pool before stopping the
+    ///  thread
+    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_get_max_idle_time&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_max_idle_time&quot;</span>)]
     </span><span class="kw">pub fn </span>max_idle_time() -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::g_thread_pool_get_max_idle_time() }

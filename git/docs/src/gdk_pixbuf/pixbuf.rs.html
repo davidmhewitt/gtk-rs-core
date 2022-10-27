@@ -798,7 +798,7 @@
         <span class="kw">let </span>ptr = {
             <span class="kw">let </span>data: <span class="kw-2">&amp;mut </span>[u8] = (<span class="kw-2">*</span>data).as_mut();
             <span class="macro">assert!</span>(
-                data.len() &gt;= ((height - <span class="number">1</span>) * row_stride + last_row_len) <span class="kw">as </span>usize,
+                data.len() &gt;= ((height - <span class="number">1</span>) * row_stride + last_row_len),
                 <span class="string">&quot;data.len() must fit the width, height, and row_stride&quot;
             </span>);
             data.as_mut_ptr()
@@ -1203,7 +1203,7 @@
             <span class="kw">if </span>error.is_null() {
                 <span class="prelude-val">Ok</span>(FromGlibContainer::from_glib_full_num(
                     buffer,
-                    buffer_size.assume_init() <span class="kw">as </span>usize,
+                    buffer_size.assume_init() <span class="kw">as _</span>,
                 ))
             } <span class="kw">else </span>{
                 <span class="prelude-val">Err</span>(from_glib_full(error))

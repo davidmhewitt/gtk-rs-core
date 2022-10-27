@@ -151,7 +151,7 @@
 
     <span class="attribute">#[doc(alias = <span class="string">&quot;g_checksum_update&quot;</span>)]
     </span><span class="kw">pub fn </span>update(<span class="kw-2">&amp;mut </span><span class="self">self</span>, data: <span class="kw-2">&amp;</span>[u8]) {
-        <span class="kw">let </span>length = data.len() <span class="kw">as </span>isize;
+        <span class="kw">let </span>length = data.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
             ffi::g_checksum_update(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>, data.to_glib_none().<span class="number">0</span>, length);
         }

@@ -499,8 +499,8 @@
     }
 
     <span class="kw">fn </span>size_hint(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (usize, <span class="prelude-ty">Option</span>&lt;usize&gt;) {
-        <span class="kw">let </span>n = (<span class="self">self</span>.reverse_pos - <span class="self">self</span>.i) <span class="kw">as </span>usize;
-        (n <span class="kw">as </span>usize, <span class="prelude-val">Some</span>(n))
+        <span class="kw">let </span>n: usize = (<span class="self">self</span>.reverse_pos - <span class="self">self</span>.i) <span class="kw">as _</span>;
+        (n, <span class="prelude-val">Some</span>(n))
     }
 
     <span class="kw">fn </span>count(<span class="self">self</span>) -&gt; usize {

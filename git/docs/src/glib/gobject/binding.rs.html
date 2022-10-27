@@ -381,8 +381,6 @@
 <span id="308">308</span>
 <span id="309">309</span>
 <span id="310">310</span>
-<span id="311">311</span>
-<span id="312">312</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
@@ -390,14 +388,12 @@
 <span class="kw">use </span><span class="kw">crate</span>::Object;
 
 <span class="kw">impl </span>Binding {
-    <span class="doccomment">/// The [`Object`][crate::Object] that should be used as the source of the binding
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;get_source&quot;</span>)]
+    <span class="attribute">#[doc(alias = <span class="string">&quot;get_source&quot;</span>)]
     </span><span class="kw">pub fn </span>source(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Object&gt; {
         <span class="self">self</span>.property(<span class="string">&quot;source&quot;</span>)
     }
 
-    <span class="doccomment">/// The [`Object`][crate::Object] that should be used as the target of the binding
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;get_target&quot;</span>)]
+    <span class="attribute">#[doc(alias = <span class="string">&quot;get_target&quot;</span>)]
     </span><span class="kw">pub fn </span>target(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Object&gt; {
         <span class="self">self</span>.property(<span class="string">&quot;target&quot;</span>)
     }
@@ -436,11 +432,11 @@
             .sync_create()
             .transform_to_with_values(|_binding, value| {
                 <span class="kw">let </span>value = value.get::&lt;<span class="kw-2">&amp;</span>str&gt;().unwrap();
-                <span class="prelude-val">Some</span>(<span class="macro">format!</span>(<span class="string">&quot;{} World&quot;</span>, value).to_value())
+                <span class="prelude-val">Some</span>(<span class="macro">format!</span>(<span class="string">&quot;{value} World&quot;</span>).to_value())
             })
             .transform_from_with_values(|_binding, value| {
                 <span class="kw">let </span>value = value.get::&lt;<span class="kw-2">&amp;</span>str&gt;().unwrap();
-                <span class="prelude-val">Some</span>(<span class="macro">format!</span>(<span class="string">&quot;{} World&quot;</span>, value).to_value())
+                <span class="prelude-val">Some</span>(<span class="macro">format!</span>(<span class="string">&quot;{value} World&quot;</span>).to_value())
             })
             .build();
 
@@ -459,11 +455,11 @@
             .bidirectional()
             .transform_to_with_values(|_binding, value| {
                 <span class="kw">let </span>value = value.get::&lt;<span class="kw-2">&amp;</span>str&gt;().unwrap();
-                <span class="prelude-val">Some</span>(<span class="macro">format!</span>(<span class="string">&quot;{} World&quot;</span>, value).to_value())
+                <span class="prelude-val">Some</span>(<span class="macro">format!</span>(<span class="string">&quot;{value} World&quot;</span>).to_value())
             })
             .transform_from_with_values(|_binding, value| {
                 <span class="kw">let </span>value = value.get::&lt;<span class="kw-2">&amp;</span>str&gt;().unwrap();
-                <span class="prelude-val">Some</span>(<span class="macro">format!</span>(<span class="string">&quot;{} World&quot;</span>, value).to_value())
+                <span class="prelude-val">Some</span>(<span class="macro">format!</span>(<span class="string">&quot;{value} World&quot;</span>).to_value())
             })
             .build();
 
@@ -479,8 +475,8 @@
         source
             .bind_property(<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span>target, <span class="string">&quot;name&quot;</span>)
             .sync_create()
-            .transform_to(|_binding, value: <span class="kw-2">&amp;</span>str| <span class="prelude-val">Some</span>(<span class="macro">format!</span>(<span class="string">&quot;{} World&quot;</span>, value)))
-            .transform_from(|_binding, value: <span class="kw-2">&amp;</span>str| <span class="prelude-val">Some</span>(<span class="macro">format!</span>(<span class="string">&quot;{} World&quot;</span>, value)))
+            .transform_to(|_binding, value: <span class="kw-2">&amp;</span>str| <span class="prelude-val">Some</span>(<span class="macro">format!</span>(<span class="string">&quot;{value} World&quot;</span>)))
+            .transform_from(|_binding, value: <span class="kw-2">&amp;</span>str| <span class="prelude-val">Some</span>(<span class="macro">format!</span>(<span class="string">&quot;{value} World&quot;</span>)))
             .build();
 
         source.set_name(<span class="string">&quot;Hello&quot;</span>);
@@ -495,8 +491,8 @@
         source
             .bind_property(<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span>target, <span class="string">&quot;name&quot;</span>)
             .sync_create()
-            .transform_to(|_binding, value: String| <span class="prelude-val">Some</span>(<span class="macro">format!</span>(<span class="string">&quot;{} World&quot;</span>, value)))
-            .transform_from(|_binding, value: <span class="kw-2">&amp;</span>str| <span class="prelude-val">Some</span>(<span class="macro">format!</span>(<span class="string">&quot;{} World&quot;</span>, value)))
+            .transform_to(|_binding, value: String| <span class="prelude-val">Some</span>(<span class="macro">format!</span>(<span class="string">&quot;{value} World&quot;</span>)))
+            .transform_from(|_binding, value: <span class="kw-2">&amp;</span>str| <span class="prelude-val">Some</span>(<span class="macro">format!</span>(<span class="string">&quot;{value} World&quot;</span>)))
             .build();
 
         source.set_name(<span class="string">&quot;Hello&quot;</span>);
@@ -512,8 +508,8 @@
             .bind_property(<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span>target, <span class="string">&quot;name&quot;</span>)
             .sync_create()
             .bidirectional()
-            .transform_to(|_binding, value: <span class="kw-2">&amp;</span>str| <span class="prelude-val">Some</span>(<span class="macro">format!</span>(<span class="string">&quot;{} World&quot;</span>, value)))
-            .transform_from(|_binding, value: <span class="kw-2">&amp;</span>str| <span class="prelude-val">Some</span>(<span class="macro">format!</span>(<span class="string">&quot;{} World&quot;</span>, value)))
+            .transform_to(|_binding, value: <span class="kw-2">&amp;</span>str| <span class="prelude-val">Some</span>(<span class="macro">format!</span>(<span class="string">&quot;{value} World&quot;</span>)))
+            .transform_from(|_binding, value: <span class="kw-2">&amp;</span>str| <span class="prelude-val">Some</span>(<span class="macro">format!</span>(<span class="string">&quot;{value} World&quot;</span>)))
             .build();
 
         target.set_name(<span class="string">&quot;Hello&quot;</span>);

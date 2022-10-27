@@ -309,7 +309,7 @@
     <span class="attribute">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib(val: c_ulong) -&gt; <span class="self">Self </span>{
         <span class="macro">assert_ne!</span>(val, <span class="number">0</span>);
-        <span class="self">Self</span>(NonZeroU64::new_unchecked(val <span class="kw">as </span>u64))
+        <span class="self">Self</span>(NonZeroU64::new_unchecked(val <span class="kw">as _</span>))
     }
 }
 

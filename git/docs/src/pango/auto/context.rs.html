@@ -821,7 +821,7 @@
                 <span class="kw-2">&amp;mut </span>families,
                 n_families.as_mut_ptr(),
             );
-            FromGlibContainer::from_glib_container_num(families, n_families.assume_init() <span class="kw">as </span>usize)
+            FromGlibContainer::from_glib_container_num(families, n_families.assume_init() <span class="kw">as _</span>)
         }
     }
 

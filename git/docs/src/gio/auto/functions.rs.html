@@ -1714,7 +1714,7 @@
     filename: <span class="prelude-ty">Option</span>&lt;<span class="kw">impl </span>AsRef&lt;std::path::Path&gt;&gt;,
     data: <span class="kw-2">&amp;</span>[u8],
 ) -&gt; (glib::GString, bool) {
-    <span class="kw">let </span>data_size = data.len() <span class="kw">as </span>usize;
+    <span class="kw">let </span>data_size = data.len() <span class="kw">as _</span>;
     <span class="kw">unsafe </span>{
         <span class="kw">let </span><span class="kw-2">mut </span>result_uncertain = mem::MaybeUninit::uninit();
         <span class="kw">let </span>ret = from_glib_full(ffi::g_content_type_guess(

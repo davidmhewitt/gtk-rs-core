@@ -2688,7 +2688,7 @@
     ///   `NUL`-terminated
     </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_set_markup&quot;</span>)]
     </span><span class="kw">pub fn </span>set_markup(<span class="kw-2">&amp;</span><span class="self">self</span>, markup: <span class="kw-2">&amp;</span>str) {
-        <span class="kw">let </span>length = markup.len() <span class="kw">as </span>i32;
+        <span class="kw">let </span>length = markup.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
             ffi::pango_layout_set_markup(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, markup.to_glib_none().<span class="number">0</span>, length);
         }
@@ -2723,7 +2723,7 @@
     ///   for first located accelerator
     </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_set_markup_with_accel&quot;</span>)]
     </span><span class="kw">pub fn </span>set_markup_with_accel(<span class="kw-2">&amp;</span><span class="self">self</span>, markup: <span class="kw-2">&amp;</span>str, accel_marker: char) -&gt; char {
-        <span class="kw">let </span>length = markup.len() <span class="kw">as </span>i32;
+        <span class="kw">let </span>length = markup.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>accel_char = mem::MaybeUninit::uninit();
             ffi::pango_layout_set_markup_with_accel(
@@ -2821,7 +2821,7 @@
     ///   even when @length is positive.
     </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_set_text&quot;</span>)]
     </span><span class="kw">pub fn </span>set_text(<span class="kw-2">&amp;</span><span class="self">self</span>, text: <span class="kw-2">&amp;</span>str) {
-        <span class="kw">let </span>length = text.len() <span class="kw">as </span>i32;
+        <span class="kw">let </span>length = text.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
             ffi::pango_layout_set_text(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, text.to_glib_none().<span class="number">0</span>, length);
         }

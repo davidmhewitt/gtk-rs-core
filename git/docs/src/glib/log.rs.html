@@ -1188,7 +1188,7 @@
         } <span class="kw">else if </span>value &amp; ffi::G_LOG_LEVEL_DEBUG != <span class="number">0 </span>{
             <span class="self">Self</span>::Debug
         } <span class="kw">else </span>{
-            <span class="macro">panic!</span>(<span class="string">&quot;Unknown log level: {}&quot;</span>, value)
+            <span class="macro">panic!</span>(<span class="string">&quot;Unknown log level: {value}&quot;</span>)
         }
     }
 }

@@ -3692,7 +3692,7 @@
         </span><span class="kw">let </span>interface_ref: InterfaceRef&lt;T&gt; = Interface::from_type(T::static_type()).unwrap();
         <span class="kw">let </span>pspec = interface_ref
             .find_property(name)
-            .unwrap_or_else(|| <span class="macro">panic!</span>(<span class="string">&quot;Couldn&#39;t find a property named `{}` to override&quot;</span>, name));
+            .unwrap_or_else(|| <span class="macro">panic!</span>(<span class="string">&quot;Couldn&#39;t find a property named `{name}` to override&quot;</span>));
 
         <span class="kw">unsafe </span>{ <span class="self">Self</span>::new_unchecked(name, <span class="kw-2">&amp;</span>pspec) }
     }
@@ -3716,7 +3716,7 @@
         <span class="kw">let </span>pspec = ObjectClass::from_type(T::static_type())
             .unwrap()
             .find_property(name)
-            .unwrap_or_else(|| <span class="macro">panic!</span>(<span class="string">&quot;Couldn&#39;t find a property named `{}` to override&quot;</span>, name));
+            .unwrap_or_else(|| <span class="macro">panic!</span>(<span class="string">&quot;Couldn&#39;t find a property named `{name}` to override&quot;</span>));
 
         <span class="kw">unsafe </span>{ <span class="self">Self</span>::new_unchecked(name, <span class="kw-2">&amp;</span>pspec) }
     }

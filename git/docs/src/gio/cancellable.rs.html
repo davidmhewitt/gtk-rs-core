@@ -290,7 +290,7 @@
     <span class="kw">type </span>Error = GlibNoneError;
     <span class="attribute">#[inline]
     </span><span class="kw">unsafe fn </span>try_from_glib(val: libc::c_ulong) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="self">Self</span>, GlibNoneError&gt; {
-        NonZeroU64::new(val <span class="kw">as </span>u64).map(<span class="self">Self</span>).ok_or(GlibNoneError)
+        NonZeroU64::new(val <span class="kw">as _</span>).map(<span class="self">Self</span>).ok_or(GlibNoneError)
     }
 }
 

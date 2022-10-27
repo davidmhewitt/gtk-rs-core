@@ -770,7 +770,7 @@
                     <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
                     argc.as_mut_ptr(),
                 ),
-                argc.assume_init() <span class="kw">as </span>usize,
+                argc.assume_init() <span class="kw">as _</span>,
             );
             ret
         }

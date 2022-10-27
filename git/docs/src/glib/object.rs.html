@@ -4585,37 +4585,6 @@
 <span id="4512">4512</span>
 <span id="4513">4513</span>
 <span id="4514">4514</span>
-<span id="4515">4515</span>
-<span id="4516">4516</span>
-<span id="4517">4517</span>
-<span id="4518">4518</span>
-<span id="4519">4519</span>
-<span id="4520">4520</span>
-<span id="4521">4521</span>
-<span id="4522">4522</span>
-<span id="4523">4523</span>
-<span id="4524">4524</span>
-<span id="4525">4525</span>
-<span id="4526">4526</span>
-<span id="4527">4527</span>
-<span id="4528">4528</span>
-<span id="4529">4529</span>
-<span id="4530">4530</span>
-<span id="4531">4531</span>
-<span id="4532">4532</span>
-<span id="4533">4533</span>
-<span id="4534">4534</span>
-<span id="4535">4535</span>
-<span id="4536">4536</span>
-<span id="4537">4537</span>
-<span id="4538">4538</span>
-<span id="4539">4539</span>
-<span id="4540">4540</span>
-<span id="4541">4541</span>
-<span id="4542">4542</span>
-<span id="4543">4543</span>
-<span id="4544">4544</span>
-<span id="4545">4545</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -6048,11 +6017,11 @@
         </span><span class="kw">unsafe </span>{
             <span class="kw">let </span>iface_type = from_glib(gio_ffi::g_initable_get_type());
             <span class="kw">if </span>type_.is_a(iface_type) {
-                <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t instantiate type &#39;{}&#39; implementing `gio::Initable`. Use `gio::Initable::new()`&quot;</span>, type_);
+                <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t instantiate type &#39;{type_}&#39; implementing `gio::Initable`. Use `gio::Initable::new()`&quot;</span>);
             }
             <span class="kw">let </span>iface_type = from_glib(gio_ffi::g_async_initable_get_type());
             <span class="kw">if </span>type_.is_a(iface_type) {
-                <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t instantiate type &#39;{}&#39; implementing `gio::AsyncInitable`. Use `gio::AsyncInitable::new()`&quot;</span>, type_);
+                <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t instantiate type &#39;{type_}&#39; implementing `gio::AsyncInitable`. Use `gio::AsyncInitable::new()`&quot;</span>);
             }
         }
 
@@ -6077,11 +6046,11 @@
         </span><span class="kw">unsafe </span>{
             <span class="kw">let </span>iface_type = from_glib(gio_ffi::g_initable_get_type());
             <span class="kw">if </span>type_.is_a(iface_type) {
-                <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t instantiate type &#39;{}&#39; implementing `gio::Initable`. Use `gio::Initable::new()`&quot;</span>, type_);
+                <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t instantiate type &#39;{type_}&#39; implementing `gio::Initable`. Use `gio::Initable::new()`&quot;</span>);
             }
             <span class="kw">let </span>iface_type = from_glib(gio_ffi::g_async_initable_get_type());
             <span class="kw">if </span>type_.is_a(iface_type) {
-                <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t instantiate type &#39;{}&#39; implementing `gio::AsyncInitable`. Use `gio::AsyncInitable::new()`&quot;</span>, type_);
+                <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t instantiate type &#39;{type_}&#39; implementing `gio::AsyncInitable`. Use `gio::AsyncInitable::new()`&quot;</span>);
             }
         }
 
@@ -6108,7 +6077,7 @@
     </span><span class="attribute">#[track_caller]
     </span><span class="kw">pub unsafe fn </span>new_internal(type_: Type, properties: <span class="kw-2">&amp;mut </span>[(<span class="kw-2">&amp;</span>str, Value)]) -&gt; Object {
         <span class="kw">if </span>!type_.is_a(Object::static_type()) {
-            <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t instantiate non-GObject type &#39;{}&#39;&quot;</span>, type_);
+            <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t instantiate non-GObject type &#39;{type_}&#39;&quot;</span>);
         }
 
         <span class="kw">if </span>gobject_ffi::g_type_test_flags(
@@ -6116,13 +6085,13 @@
             gobject_ffi::G_TYPE_FLAG_INSTANTIATABLE,
         ) == ffi::GFALSE
         {
-            <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t instantiate type &#39;{}&#39;&quot;</span>, type_);
+            <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t instantiate type &#39;{type_}&#39;&quot;</span>);
         }
 
         <span class="kw">if </span>gobject_ffi::g_type_test_flags(type_.into_glib(), gobject_ffi::G_TYPE_FLAG_ABSTRACT)
             != ffi::GFALSE
         {
-            <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t instantiate abstract type &#39;{}&#39;&quot;</span>, type_);
+            <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t instantiate abstract type &#39;{type_}&#39;&quot;</span>);
         }
 
         <span class="kw">let </span><span class="kw-2">mut </span>property_names = smallvec::SmallVec::&lt;[<span class="kw">_</span>; <span class="number">16</span>]&gt;::with_capacity(properties.len());
@@ -6130,16 +6099,14 @@
 
         <span class="kw">if </span>!properties.is_empty() {
             <span class="kw">let </span>klass = ObjectClass::from_type(type_)
-                .unwrap_or_else(|| <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t retrieve class for type &#39;{}&#39;&quot;</span>, type_));
+                .unwrap_or_else(|| <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t retrieve class for type &#39;{type_}&#39;&quot;</span>));
             <span class="kw">let </span>pspecs = klass.list_properties();
 
             <span class="kw">for </span>(idx, (name, value)) <span class="kw">in </span>properties.iter_mut().enumerate() {
                 <span class="kw">let </span>pspec = pspecs
                     .iter()
                     .find(|p| p.name() == <span class="kw-2">*</span>name)
-                    .unwrap_or_else(|| {
-                        <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t find property &#39;{}&#39; for type &#39;{}&#39;&quot;</span>, name, type_)
-                    });
+                    .unwrap_or_else(|| <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t find property &#39;{name}&#39; for type &#39;{type_}&#39;&quot;</span>));
 
                 <span class="kw">if </span>(pspec.flags().contains(<span class="kw">crate</span>::ParamFlags::CONSTRUCT)
                     || pspec.flags().contains(<span class="kw">crate</span>::ParamFlags::CONSTRUCT_ONLY))
@@ -6147,10 +6114,7 @@
                         .iter()
                         .any(|other_name| pspec.name().as_ptr() == <span class="kw-2">*</span>other_name)
                 {
-                    <span class="macro">panic!</span>(
-                        <span class="string">&quot;Can&#39;t set construct property &#39;{}&#39; for type &#39;{}&#39; twice&quot;</span>,
-                        name, type_
-                    );
+                    <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t set construct property &#39;{name}&#39; for type &#39;{type_}&#39; twice&quot;</span>);
                 }
 
                 <span class="comment">// FIXME: With GLib 2.74 and GParamSpecClass::value_is_valid() it is possible to
@@ -6171,7 +6135,7 @@
         );
 
         <span class="kw">if </span>ptr.is_null() {
-            <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t instantiate object for type &#39;{}&#39;&quot;</span>, type_);
+            <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t instantiate object for type &#39;{type_}&#39;&quot;</span>);
         } <span class="kw">else if </span>type_.is_a(InitiallyUnowned::static_type()) {
             <span class="comment">// Attention: This takes ownership of the floating reference
             </span>from_glib_none(ptr)
@@ -6910,8 +6874,7 @@
     </span><span class="kw">fn </span>set_property&lt;V: ToValue&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, property_name: <span class="kw-2">&amp;</span>str, value: V) {
         <span class="kw">let </span>pspec = <span class="self">self</span>.find_property(property_name).unwrap_or_else(|| {
             <span class="macro">panic!</span>(
-                <span class="string">&quot;property &#39;{}&#39; of type &#39;{}&#39; not found&quot;</span>,
-                property_name,
+                <span class="string">&quot;property &#39;{property_name}&#39; of type &#39;{}&#39; not found&quot;</span>,
                 <span class="self">self</span>.type_()
             )
         });
@@ -6933,8 +6896,7 @@
             <span class="prelude-val">Some</span>(pspec) =&gt; pspec,
             <span class="prelude-val">None </span>=&gt; {
                 <span class="macro">panic!</span>(
-                    <span class="string">&quot;property &#39;{}&#39; of type &#39;{}&#39; not found&quot;</span>,
-                    property_name,
+                    <span class="string">&quot;property &#39;{property_name}&#39; of type &#39;{}&#39; not found&quot;</span>,
                     <span class="self">self</span>.type_()
                 );
             }
@@ -6962,7 +6924,7 @@
             .iter()
             .map(|<span class="kw-2">&amp;</span>(name, value)| {
                 <span class="kw">let </span>pspec = pspecs.iter().find(|p| p.name() == name).unwrap_or_else(|| {
-                    <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t find property &#39;{}&#39; for type &#39;{}&#39;&quot;</span>, name, <span class="self">self</span>.type_());
+                    <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t find property &#39;{name}&#39; for type &#39;{}&#39;&quot;</span>, <span class="self">self</span>.type_());
                 });
 
                 <span class="kw">let </span><span class="kw-2">mut </span>value = value.to_value();
@@ -6993,7 +6955,7 @@
                     .iter()
                     .find(|p| p.name() == <span class="kw-2">*</span>name)
                     .unwrap_or_else(|| {
-                        <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t find property &#39;{}&#39; for type &#39;{}&#39;&quot;</span>, name, <span class="self">self</span>.type_());
+                        <span class="macro">panic!</span>(<span class="string">&quot;Can&#39;t find property &#39;{name}&#39; for type &#39;{}&#39;&quot;</span>, <span class="self">self</span>.type_());
                     });
 
                 <span class="kw">let </span><span class="kw-2">mut </span>value = value.clone();
@@ -7018,7 +6980,7 @@
         <span class="kw">let </span>prop = <span class="self">self</span>.property_value(property_name);
         <span class="kw">let </span>v = prop
             .get_owned::&lt;V&gt;()
-            .unwrap_or_else(|e| <span class="macro">panic!</span>(<span class="string">&quot;Failed to get cast value to a different type {}&quot;</span>, e));
+            .unwrap_or_else(|e| <span class="macro">panic!</span>(<span class="string">&quot;Failed to get cast value to a different type {e}&quot;</span>));
 
         v
     }
@@ -7027,16 +6989,14 @@
     </span><span class="kw">fn </span>property_value(<span class="kw-2">&amp;</span><span class="self">self</span>, property_name: <span class="kw-2">&amp;</span>str) -&gt; Value {
         <span class="kw">let </span>pspec = <span class="self">self</span>.find_property(property_name).unwrap_or_else(|| {
             <span class="macro">panic!</span>(
-                <span class="string">&quot;property &#39;{}&#39; of type &#39;{}&#39; not found&quot;</span>,
-                property_name,
+                <span class="string">&quot;property &#39;{property_name}&#39; of type &#39;{}&#39; not found&quot;</span>,
                 <span class="self">self</span>.type_()
             )
         });
 
         <span class="kw">if </span>!pspec.flags().contains(<span class="kw">crate</span>::ParamFlags::READABLE) {
             <span class="macro">panic!</span>(
-                <span class="string">&quot;property &#39;{}&#39; of type &#39;{}&#39; is not readable&quot;</span>,
-                property_name,
+                <span class="string">&quot;property &#39;{property_name}&#39; of type &#39;{}&#39; is not readable&quot;</span>,
                 <span class="self">self</span>.type_()
             );
         }
@@ -7052,8 +7012,7 @@
             <span class="comment">// This can&#39;t really happen unless something goes wrong inside GObject
             </span><span class="kw">if </span>!value.type_().is_valid() {
                 <span class="macro">panic!</span>(
-                    <span class="string">&quot;Failed to get property value for property &#39;{}&#39; of type &#39;{}&#39;&quot;</span>,
-                    property_name,
+                    <span class="string">&quot;Failed to get property value for property &#39;{property_name}&#39; of type &#39;{}&#39;&quot;</span>,
                     <span class="self">self</span>.type_()
                 )
             }
@@ -7236,7 +7195,7 @@
     {
         <span class="kw">let </span>type_ = <span class="self">self</span>.type_();
         <span class="kw">let </span>(signal_id, details) = SignalId::parse_name(signal_name, type_, <span class="bool-val">true</span>)
-            .unwrap_or_else(|| <span class="macro">panic!</span>(<span class="string">&quot;Signal &#39;{}&#39; of type &#39;{}&#39; not found&quot;</span>, signal_name, type_));
+            .unwrap_or_else(|| <span class="macro">panic!</span>(<span class="string">&quot;Signal &#39;{signal_name}&#39; of type &#39;{type_}&#39; not found&quot;</span>));
         <span class="self">self</span>.connect_unsafe_id(signal_id, details, after, callback)
     }
 
@@ -7262,9 +7221,7 @@
                 <span class="kw">let </span>ret = callback(values);
                 <span class="kw">if let </span><span class="prelude-val">Some</span>(ret) = ret {
                     <span class="macro">panic!</span>(
-                        <span class="string">&quot;Signal &#39;{}&#39; of type &#39;{}&#39; required no return value but got value of type &#39;{}&#39;&quot;</span>,
-                        signal_name,
-                        type_,
+                        <span class="string">&quot;Signal &#39;{signal_name}&#39; of type &#39;{type_}&#39; required no return value but got value of type &#39;{}&#39;&quot;</span>,
                         ret.type_()
                     );
                 }
@@ -7274,9 +7231,7 @@
             Closure::new_unsafe(<span class="kw">move </span>|values| {
                 <span class="kw">let </span><span class="kw-2">mut </span>ret = callback(values).unwrap_or_else(|| {
                     <span class="macro">panic!</span>(
-                        <span class="string">&quot;Signal &#39;{}&#39; of type &#39;{}&#39; required return value of type &#39;{}&#39; but got None&quot;</span>,
-                        signal_name,
-                        type_,
+                        <span class="string">&quot;Signal &#39;{signal_name}&#39; of type &#39;{type_}&#39; required return value of type &#39;{}&#39; but got None&quot;</span>,
                         return_type.name()
                     );
                 });
@@ -7291,8 +7246,7 @@
 
                 <span class="kw">if let </span><span class="prelude-val">Err</span>(got) = coerce_object_type(<span class="kw-2">&amp;mut </span>ret, return_type) {
                     <span class="macro">panic!</span>(
-                        <span class="string">&quot;Signal &#39;{}&#39; of type &#39;{}&#39; required return value of type &#39;{}&#39; but got &#39;{}&#39;&quot;</span>,
-                        signal_name, type_, return_type, got
+                        <span class="string">&quot;Signal &#39;{signal_name}&#39; of type &#39;{type_}&#39; required return value of type &#39;{return_type}&#39; but got &#39;{got}&#39;&quot;</span>,
                     );
                 };
                 <span class="prelude-val">Some</span>(ret)
@@ -7316,10 +7270,7 @@
         );
 
         <span class="kw">if </span>handler == <span class="number">0 </span>{
-            <span class="macro">panic!</span>(
-                <span class="string">&quot;Failed to connect to signal &#39;{}&#39; of type &#39;{}&#39;&quot;</span>,
-                signal_name, type_
-            );
+            <span class="macro">panic!</span>(<span class="string">&quot;Failed to connect to signal &#39;{signal_name}&#39; of type &#39;{type_}&#39;&quot;</span>,);
         }
 
         from_glib(handler)
@@ -7334,7 +7285,7 @@
     ) -&gt; SignalHandlerId {
         <span class="kw">let </span>type_ = <span class="self">self</span>.type_();
         <span class="kw">let </span>(signal_id, details) = SignalId::parse_name(signal_name, type_, <span class="bool-val">true</span>)
-            .unwrap_or_else(|| <span class="macro">panic!</span>(<span class="string">&quot;Signal &#39;{}&#39; of type &#39;{}&#39; not found&quot;</span>, signal_name, type_));
+            .unwrap_or_else(|| <span class="macro">panic!</span>(<span class="string">&quot;Signal &#39;{signal_name}&#39; of type &#39;{type_}&#39; not found&quot;</span>));
         <span class="self">self</span>.connect_closure_id(signal_id, details, after, closure)
     }
 
@@ -7369,10 +7320,7 @@
             );
 
             <span class="kw">if </span>handler == <span class="number">0 </span>{
-                <span class="macro">panic!</span>(
-                    <span class="string">&quot;Failed to connect to signal &#39;{}&#39; of type &#39;{}&#39;&quot;</span>,
-                    signal_name, type_
-                );
+                <span class="macro">panic!</span>(<span class="string">&quot;Failed to connect to signal &#39;{signal_name}&#39; of type &#39;{type_}&#39;&quot;</span>,);
             }
 
             from_glib(handler)
@@ -7490,7 +7438,7 @@
     ) -&gt; R {
         <span class="kw">let </span>type_ = <span class="self">self</span>.type_();
         <span class="kw">let </span>signal_id = SignalId::lookup(signal_name, type_).unwrap_or_else(|| {
-            <span class="macro">panic!</span>(<span class="string">&quot;Signal &#39;{}&#39; of type &#39;{}&#39; not found&quot;</span>, signal_name, type_);
+            <span class="macro">panic!</span>(<span class="string">&quot;Signal &#39;{signal_name}&#39; of type &#39;{type_}&#39; not found&quot;</span>);
         });
         <span class="self">self</span>.emit(signal_id, args)
     }
@@ -7499,7 +7447,7 @@
     </span><span class="kw">fn </span>emit_by_name_with_values(<span class="kw-2">&amp;</span><span class="self">self</span>, signal_name: <span class="kw-2">&amp;</span>str, args: <span class="kw-2">&amp;</span>[Value]) -&gt; <span class="prelude-ty">Option</span>&lt;Value&gt; {
         <span class="kw">let </span>type_ = <span class="self">self</span>.type_();
         <span class="kw">let </span>signal_id = SignalId::lookup(signal_name, type_).unwrap_or_else(|| {
-            <span class="macro">panic!</span>(<span class="string">&quot;Signal &#39;{}&#39; of type &#39;{}&#39; not found&quot;</span>, signal_name, type_);
+            <span class="macro">panic!</span>(<span class="string">&quot;Signal &#39;{signal_name}&#39; of type &#39;{type_}&#39; not found&quot;</span>);
         });
         <span class="self">self</span>.emit_with_values(signal_id, args)
     }
@@ -7513,7 +7461,7 @@
     ) -&gt; R {
         <span class="kw">let </span>type_ = <span class="self">self</span>.type_();
         <span class="kw">let </span>signal_id = SignalId::lookup(signal_name, type_)
-            .unwrap_or_else(|| <span class="macro">panic!</span>(<span class="string">&quot;Signal &#39;{}&#39; of type &#39;{}&#39; not found&quot;</span>, signal_name, type_));
+            .unwrap_or_else(|| <span class="macro">panic!</span>(<span class="string">&quot;Signal &#39;{signal_name}&#39; of type &#39;{type_}&#39; not found&quot;</span>));
         <span class="self">self</span>.emit_with_details(signal_id, details, args)
     }
 
@@ -7526,7 +7474,7 @@
     ) -&gt; <span class="prelude-ty">Option</span>&lt;Value&gt; {
         <span class="kw">let </span>type_ = <span class="self">self</span>.type_();
         <span class="kw">let </span>signal_id = SignalId::lookup(signal_name, type_)
-            .unwrap_or_else(|| <span class="macro">panic!</span>(<span class="string">&quot;Signal &#39;{}&#39; of type &#39;{}&#39; not found&quot;</span>, signal_name, type_));
+            .unwrap_or_else(|| <span class="macro">panic!</span>(<span class="string">&quot;Signal &#39;{signal_name}&#39; of type &#39;{type_}&#39; not found&quot;</span>));
         <span class="self">self</span>.emit_with_details_and_values(signal_id, details, args)
     }
 
@@ -7687,7 +7635,7 @@
         }
 
         <span class="kw">let </span>signal_name = <span class="kw">if let </span><span class="prelude-val">Some</span>(name) = name {
-            <span class="macro">format!</span>(<span class="string">&quot;notify::{}\0&quot;</span>, name)
+            <span class="macro">format!</span>(<span class="string">&quot;notify::{name}\0&quot;</span>)
         } <span class="kw">else </span>{
             <span class="string">&quot;notify\0&quot;</span>.into()
         };
@@ -7831,9 +7779,8 @@
         || (!allow_construct_only &amp;&amp; pspec.flags().contains(<span class="kw">crate</span>::ParamFlags::CONSTRUCT_ONLY))
     {
         <span class="macro">panic!</span>(
-            <span class="string">&quot;property &#39;{}&#39; of type &#39;{}&#39; is not writable&quot;</span>,
+            <span class="string">&quot;property &#39;{}&#39; of type &#39;{type_}&#39; is not writable&quot;</span>,
             pspec.name(),
-            type_
         );
     }
 
@@ -7850,11 +7797,9 @@
         <span class="kw">if </span>!valid_type {
             <span class="kw">if let </span><span class="prelude-val">Err</span>(got) = coerce_object_type(property_value, pspec.value_type()) {
                 <span class="macro">panic!</span>(
-                        <span class="string">&quot;property &#39;{}&#39; of type &#39;{}&#39; can&#39;t be set from the given type (expected: &#39;{}&#39;, got: &#39;{}&#39;)&quot;</span>,
+                        <span class="string">&quot;property &#39;{}&#39; of type &#39;{type_}&#39; can&#39;t be set from the given type (expected: &#39;{}&#39;, got: &#39;{got}&#39;)&quot;</span>,
                         pspec.name(),
-                        type_,
                         pspec.value_type(),
-                        got
                     );
             }
         }
@@ -7866,9 +7811,8 @@
         <span class="kw">let </span>change_allowed = pspec.flags().contains(<span class="kw">crate</span>::ParamFlags::LAX_VALIDATION);
         <span class="kw">if </span>changed &amp;&amp; !change_allowed {
             <span class="macro">panic!</span>(
-                <span class="string">&quot;property &#39;{}&#39; of type &#39;{}&#39; can&#39;t be set from given value, it is invalid or out of range&quot;</span>,
+                <span class="string">&quot;property &#39;{}&#39; of type &#39;{type_}&#39; can&#39;t be set from given value, it is invalid or out of range&quot;</span>,
                 pspec.name(),
-                type_,
             );
         }
     }
@@ -7897,9 +7841,7 @@
 
     <span class="kw">if </span>signal_query.n_params() != args.len() <span class="kw">as </span>u32 {
         <span class="macro">panic!</span>(
-            <span class="string">&quot;Incompatible number of arguments for signal &#39;{}&#39; of type &#39;{}&#39; (expected {}, got {})&quot;</span>,
-            signal_name,
-            type_,
+            <span class="string">&quot;Incompatible number of arguments for signal &#39;{signal_name}&#39; of type &#39;{type_}&#39; (expected {}, got {})&quot;</span>,
             signal_query.n_params(),
             args.len(),
         );
@@ -7912,12 +7854,7 @@
         <span class="kw">if </span>param_type != arg.type_() {
             coerce_object_type(arg, param_type).unwrap_or_else(|got|
                 <span class="macro">panic!</span>(
-                    <span class="string">&quot;Incompatible argument type in argument {} for signal &#39;{}&#39; of type &#39;{}&#39; (expected {}, got {})&quot;</span>,
-                    i,
-                    signal_name,
-                    type_,
-                    param_type,
-                    got
+                    <span class="string">&quot;Incompatible argument type in argument {i} for signal &#39;{signal_name}&#39; of type &#39;{type_}&#39; (expected {param_type}, got {got})&quot;</span>,
                 )
             );
         }
@@ -8786,6 +8723,7 @@
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Gets the default interface struct for `Self`.
     </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_type_default_interface_ref&quot;</span>)]
+    #[allow(clippy::should_implement_trait)]
     </span><span class="kw">pub fn </span>default() -&gt; InterfaceRef&lt;<span class="lifetime">&#39;static</span>, T&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>ptr = gobject_ffi::g_type_default_interface_ref(T::static_type().into_glib());

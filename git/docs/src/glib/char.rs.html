@@ -426,21 +426,21 @@
 
 <span class="kw">impl </span>From&lt;UChar&gt; <span class="kw">for </span>char {
     <span class="kw">fn </span>from(c: UChar) -&gt; char {
-        c.<span class="number">0 </span><span class="kw">as </span>char
-    }
+        c.<span class="number">0 </span><span class="kw">as _
+    </span>}
 }
 
 <span class="kw">impl </span>From&lt;u8&gt; <span class="kw">for </span>UChar {
     <span class="attribute">#[allow(clippy::unnecessary_cast)]
     </span><span class="kw">fn </span>from(c: u8) -&gt; UChar {
-        UChar(c <span class="kw">as </span>c_uchar)
+        UChar(c <span class="kw">as _</span>)
     }
 }
 
 <span class="kw">impl </span>From&lt;UChar&gt; <span class="kw">for </span>u8 {
     <span class="kw">fn </span>from(c: UChar) -&gt; u8 {
-        c.<span class="number">0 </span><span class="kw">as </span>u8
-    }
+        c.<span class="number">0 </span><span class="kw">as _
+    </span>}
 }
 
 <span class="attribute">#[doc(hidden)]

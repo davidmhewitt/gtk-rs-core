@@ -361,7 +361,7 @@
         buffer: <span class="kw-2">&amp;</span>[u8],
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;isize, glib::Error&gt; {
-        <span class="kw">let </span>count = buffer.len() <span class="kw">as </span>usize;
+        <span class="kw">let </span>count = buffer.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
             <span class="kw">let </span>ret = ffi::g_pollable_output_stream_write_nonblocking(

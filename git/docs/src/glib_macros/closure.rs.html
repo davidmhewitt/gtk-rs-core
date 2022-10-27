@@ -546,7 +546,7 @@
             .inputs
             .iter()
             .enumerate()
-            .map(|(i, <span class="kw">_</span>)| Ident::new(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;____value{}&quot;</span>, i), Span::call_site()))
+            .map(|(i, <span class="kw">_</span>)| Ident::new(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;____value{i}&quot;</span>), Span::call_site()))
             .collect();
         closure.capture = <span class="prelude-val">None</span>;
         <span class="prelude-val">Ok</span>(Closure {
@@ -578,7 +578,7 @@
             .map(|c| c.outer_after_tokens(<span class="kw-2">&amp;</span>crate_ident, <span class="kw-2">&amp;</span>closure_ident));
 
         <span class="kw">let </span>arg_values = <span class="self">self</span>.args.iter().enumerate().map(|(index, arg)| {
-            <span class="kw">let </span>err_msg = <span class="macro">format!</span>(<span class="string">&quot;Wrong type for argument {}: {{:?}}&quot;</span>, index);
+            <span class="kw">let </span>err_msg = <span class="macro">format!</span>(<span class="string">&quot;Wrong type for argument {index}: {{:?}}&quot;</span>);
             <span class="macro">quote! </span>{
                 <span class="kw">let </span>#arg = ::core::result::Result::unwrap_or_else(
                     #crate_ident::Value::get(<span class="kw-2">&amp;</span>#values_ident[#index]),

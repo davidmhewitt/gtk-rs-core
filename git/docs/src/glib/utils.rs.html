@@ -330,6 +330,26 @@
 <span id="257">257</span>
 <span id="258">258</span>
 <span id="259">259</span>
+<span id="260">260</span>
+<span id="261">261</span>
+<span id="262">262</span>
+<span id="263">263</span>
+<span id="264">264</span>
+<span id="265">265</span>
+<span id="266">266</span>
+<span id="267">267</span>
+<span id="268">268</span>
+<span id="269">269</span>
+<span id="270">270</span>
+<span id="271">271</span>
+<span id="272">272</span>
+<span id="273">273</span>
+<span id="274">274</span>
+<span id="275">275</span>
+<span id="276">276</span>
+<span id="277">277</span>
+<span id="278">278</span>
+<span id="279">279</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
@@ -425,7 +445,27 @@
     }
 }
 
-<span class="attribute">#[doc(alias = <span class="string">&quot;g_file_get_contents&quot;</span>)]
+<span class="doccomment">/// Reads an entire file into allocated memory, with good error
+/// checking.
+///
+/// If the call was successful, it returns [`true`] and sets `contents` to the file
+/// contents and `length` to the length of the file contents in bytes. The string
+/// stored in `contents` will be nul-terminated, so for text files you can pass
+/// [`None`] for the `length` argument. If the call was not successful, it returns
+/// [`false`] and sets `error`. The error domain is `G_FILE_ERROR`. Possible error
+/// codes are those in the [`FileError`][crate::FileError] enumeration. In the error case,
+/// `contents` is set to [`None`] and `length` is set to zero.
+/// ## `filename`
+/// name of a file to read contents from, in the GLib file name encoding
+///
+/// # Returns
+///
+/// [`true`] on success, [`false`] if an error occurred
+///
+/// ## `contents`
+/// location to store an allocated string, use `g_free()` to free
+///  the returned string
+</span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_get_contents&quot;</span>)]
 </span><span class="kw">pub fn </span>file_get_contents(
     filename: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;,
 ) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::Slice&lt;u8&gt;, <span class="kw">crate</span>::Error&gt; {
@@ -442,7 +482,7 @@
         <span class="kw">if </span>error.is_null() {
             <span class="prelude-val">Ok</span>(<span class="kw">crate</span>::Slice::from_glib_full_num_copy(
                 contents,
-                length.assume_init() <span class="kw">as </span>usize,
+                length.assume_init() <span class="kw">as _</span>,
             ))
         } <span class="kw">else </span>{
             <span class="prelude-val">Err</span>(from_glib_full(error))

@@ -3608,7 +3608,7 @@
                     } <span class="kw">else </span>{
                         <span class="kw">let </span>ret = str::from_utf8_unchecked(slice::from_raw_parts(
                             ptr <span class="kw">as </span><span class="kw-2">*const </span>u8,
-                            len <span class="kw">as </span>usize,
+                            len <span class="kw">as _</span>,
                         ));
                         <span class="prelude-val">Some</span>(ret)
                     }
@@ -4139,7 +4139,7 @@
                 <span class="kw">return </span><span class="kw-2">&amp;</span>[];
             }
             <span class="kw">let </span>ptr = ffi::g_variant_get_data(selfv.<span class="number">0</span>);
-            slice::from_raw_parts(ptr <span class="kw">as </span><span class="kw-2">*const </span>u8, len <span class="kw">as </span>usize)
+            slice::from_raw_parts(ptr <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>, len <span class="kw">as _</span>)
         }
     }
 
@@ -5694,7 +5694,7 @@
         </span><span class="kw">let </span><span class="kw-2">mut </span>m = BTreeMap::new();
         <span class="kw">let </span>total = <span class="number">20</span>;
         <span class="kw">for </span>n <span class="kw">in </span><span class="number">0</span>..total {
-            <span class="kw">let </span>k = <span class="macro">format!</span>(<span class="string">&quot;v{:04}&quot;</span>, n);
+            <span class="kw">let </span>k = <span class="macro">format!</span>(<span class="string">&quot;v{n:04}&quot;</span>);
             m.insert(k, n <span class="kw">as </span>u32);
         }
         <span class="kw">let </span>v = m.to_variant();

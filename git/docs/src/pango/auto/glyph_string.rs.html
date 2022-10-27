@@ -497,7 +497,7 @@
         index_: i32,
         trailing: bool,
     ) -&gt; i32 {
-        <span class="kw">let </span>length = text.len() <span class="kw">as </span>i32;
+        <span class="kw">let </span>length = text.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>x_pos = mem::MaybeUninit::uninit();
             ffi::pango_glyph_string_index_to_x(
@@ -557,7 +557,7 @@
     ///   user clicked on the leading or trailing edge of the character
     </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_glyph_string_x_to_index&quot;</span>)]
     </span><span class="kw">pub fn </span>x_to_index(<span class="kw-2">&amp;</span><span class="self">self</span>, text: <span class="kw-2">&amp;</span>str, analysis: <span class="kw-2">&amp;mut </span>Analysis, x_pos: i32) -&gt; (i32, i32) {
-        <span class="kw">let </span>length = text.len() <span class="kw">as </span>i32;
+        <span class="kw">let </span>length = text.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>index_ = mem::MaybeUninit::uninit();
             <span class="kw">let </span><span class="kw-2">mut </span>trailing = mem::MaybeUninit::uninit();

@@ -516,7 +516,7 @@
             <span class="bool-val">false</span>,
             <span class="macro">glib::closure_local!</span>(@watch obj, @strong store =&gt; <span class="kw">move </span>|o: <span class="kw-2">&amp;</span>SignalObject, a: u32, b: <span class="kw-2">&amp;</span>str| {
                 <span class="macro">assert_eq!</span>(o, obj);
-                store.replace(<span class="macro">format!</span>(<span class="string">&quot;a {} b {}&quot;</span>, a, b));
+                store.replace(<span class="macro">format!</span>(<span class="string">&quot;a {a} b {b}&quot;</span>));
             })
         );
         group.connect_closure(

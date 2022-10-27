@@ -296,8 +296,8 @@
             }
         );
 
-        <span class="kw">let </span>value_name = <span class="macro">format!</span>(<span class="string">&quot;{}\0&quot;</span>, value_name);
-        <span class="kw">let </span>value_nick = <span class="macro">format!</span>(<span class="string">&quot;{}\0&quot;</span>, value_nick);
+        <span class="kw">let </span>value_name = <span class="macro">format!</span>(<span class="string">&quot;{value_name}\0&quot;</span>);
+        <span class="kw">let </span>value_nick = <span class="macro">format!</span>(<span class="string">&quot;{value_nick}\0&quot;</span>);
 
         n += <span class="number">1</span>;
         <span class="macro">quote_spanned! </span>{v.span()=&gt;

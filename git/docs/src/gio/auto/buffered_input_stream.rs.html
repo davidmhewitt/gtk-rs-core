@@ -934,7 +934,7 @@
                     <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
                     count.as_mut_ptr(),
                 ),
-                count.assume_init() <span class="kw">as </span>usize,
+                count.assume_init() <span class="kw">as _</span>,
             );
             ret
         }

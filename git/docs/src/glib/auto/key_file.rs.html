@@ -684,7 +684,7 @@
             <span class="kw">if </span>error.is_null() {
                 <span class="prelude-val">Ok</span>(FromGlibContainer::from_glib_container_num(
                     ret,
-                    length.assume_init() <span class="kw">as </span>usize,
+                    length.assume_init() <span class="kw">as _</span>,
                 ))
             } <span class="kw">else </span>{
                 <span class="prelude-val">Err</span>(from_glib_full(error))
@@ -759,7 +759,7 @@
             <span class="kw">if </span>error.is_null() {
                 <span class="prelude-val">Ok</span>(FromGlibContainer::from_glib_container_num(
                     ret,
-                    length.assume_init() <span class="kw">as </span>usize,
+                    length.assume_init() <span class="kw">as _</span>,
                 ))
             } <span class="kw">else </span>{
                 <span class="prelude-val">Err</span>(from_glib_full(error))
@@ -883,7 +883,7 @@
 
     <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_load_from_data&quot;</span>)]
     </span><span class="kw">pub fn </span>load_from_data(<span class="kw-2">&amp;</span><span class="self">self</span>, data: <span class="kw-2">&amp;</span>str, flags: KeyFileFlags) -&gt; <span class="prelude-ty">Result</span>&lt;(), <span class="kw">crate</span>::Error&gt; {
-        <span class="kw">let </span>length = data.len() <span class="kw">as </span>usize;
+        <span class="kw">let </span>length = data.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
             <span class="kw">let </span>is_ok = ffi::g_key_file_load_from_data(

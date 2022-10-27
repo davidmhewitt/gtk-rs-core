@@ -2699,16 +2699,16 @@
     </span><span class="kw">pub struct </span>AppInfoCreateFlags: u32 {
         <span class="doccomment">/// No flags.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APP_INFO_CREATE_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_APP_INFO_CREATE_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_APP_INFO_CREATE_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Application opens in a terminal window.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APP_INFO_CREATE_NEEDS_TERMINAL&quot;</span>)]
-        </span><span class="kw">const </span>NEEDS_TERMINAL = ffi::G_APP_INFO_CREATE_NEEDS_TERMINAL <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NEEDS_TERMINAL = ffi::G_APP_INFO_CREATE_NEEDS_TERMINAL <span class="kw">as _</span>;
         <span class="doccomment">/// Application supports URI arguments.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APP_INFO_CREATE_SUPPORTS_URIS&quot;</span>)]
-        </span><span class="kw">const </span>SUPPORTS_URIS = ffi::G_APP_INFO_CREATE_SUPPORTS_URIS <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>SUPPORTS_URIS = ffi::G_APP_INFO_CREATE_SUPPORTS_URIS <span class="kw">as _</span>;
         <span class="doccomment">/// Application supports startup notification. Since 2.26
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APP_INFO_CREATE_SUPPORTS_STARTUP_NOTIFICATION&quot;</span>)]
-        </span><span class="kw">const </span>SUPPORTS_STARTUP_NOTIFICATION = ffi::G_APP_INFO_CREATE_SUPPORTS_STARTUP_NOTIFICATION <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>SUPPORTS_STARTUP_NOTIFICATION = ffi::G_APP_INFO_CREATE_SUPPORTS_STARTUP_NOTIFICATION <span class="kw">as _</span>;
     }
 }
 
@@ -2773,29 +2773,29 @@
         <span class="doccomment">/// Default. Deprecated in 2.74, use
         ///  `G_APPLICATION_DEFAULT_FLAGS` instead
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APPLICATION_FLAGS_NONE&quot;</span>)]
-        </span><span class="kw">const </span>FLAGS_NONE = ffi::G_APPLICATION_FLAGS_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>FLAGS_NONE = ffi::G_APPLICATION_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Run as a service. In this mode, registration
         ///  fails if the service is already running, and the application
         ///  will initially wait up to 10 seconds for an initial activation
         ///  message to arrive.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APPLICATION_IS_SERVICE&quot;</span>)]
-        </span><span class="kw">const </span>IS_SERVICE = ffi::G_APPLICATION_IS_SERVICE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>IS_SERVICE = ffi::G_APPLICATION_IS_SERVICE <span class="kw">as _</span>;
         <span class="doccomment">/// Don&#39;t try to become the primary instance.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APPLICATION_IS_LAUNCHER&quot;</span>)]
-        </span><span class="kw">const </span>IS_LAUNCHER = ffi::G_APPLICATION_IS_LAUNCHER <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>IS_LAUNCHER = ffi::G_APPLICATION_IS_LAUNCHER <span class="kw">as _</span>;
         <span class="doccomment">/// This application handles opening files (in
         ///  the primary instance). Note that this flag only affects the default
         ///  implementation of `local_command_line()`, and has no effect if
         ///  [`HANDLES_COMMAND_LINE`][Self::HANDLES_COMMAND_LINE] is given.
         ///  See [`ApplicationExtManual::run()`][crate::prelude::ApplicationExtManual::run()] for details.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APPLICATION_HANDLES_OPEN&quot;</span>)]
-        </span><span class="kw">const </span>HANDLES_OPEN = ffi::G_APPLICATION_HANDLES_OPEN <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>HANDLES_OPEN = ffi::G_APPLICATION_HANDLES_OPEN <span class="kw">as _</span>;
         <span class="doccomment">/// This application handles command line
         ///  arguments (in the primary instance). Note that this flag only affect
         ///  the default implementation of `local_command_line()`.
         ///  See [`ApplicationExtManual::run()`][crate::prelude::ApplicationExtManual::run()] for details.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APPLICATION_HANDLES_COMMAND_LINE&quot;</span>)]
-        </span><span class="kw">const </span>HANDLES_COMMAND_LINE = ffi::G_APPLICATION_HANDLES_COMMAND_LINE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>HANDLES_COMMAND_LINE = ffi::G_APPLICATION_HANDLES_COMMAND_LINE <span class="kw">as _</span>;
         <span class="doccomment">/// Send the environment of the
         ///  launching process to the primary instance. Set this flag if your
         ///  application is expected to behave differently depending on certain
@@ -2805,7 +2805,7 @@
         ///  to the `signal::Application::command-line` signal handler, via
         ///  [`ApplicationCommandLineExt::getenv()`][crate::prelude::ApplicationCommandLineExt::getenv()].
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APPLICATION_SEND_ENVIRONMENT&quot;</span>)]
-        </span><span class="kw">const </span>SEND_ENVIRONMENT = ffi::G_APPLICATION_SEND_ENVIRONMENT <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>SEND_ENVIRONMENT = ffi::G_APPLICATION_SEND_ENVIRONMENT <span class="kw">as _</span>;
         <span class="doccomment">/// Make no attempts to do any of the typical
         ///  single-instance application negotiation, even if the application
         ///  ID is given. The application neither attempts to become the
@@ -2813,21 +2813,21 @@
         ///  owner already exists. Everything occurs in the local process.
         ///  Since: 2.30.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APPLICATION_NON_UNIQUE&quot;</span>)]
-        </span><span class="kw">const </span>NON_UNIQUE = ffi::G_APPLICATION_NON_UNIQUE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NON_UNIQUE = ffi::G_APPLICATION_NON_UNIQUE <span class="kw">as _</span>;
         <span class="doccomment">/// Allow users to override the
         ///  application ID from the command line with `--gapplication-app-id`.
         ///  Since: 2.48
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APPLICATION_CAN_OVERRIDE_APP_ID&quot;</span>)]
-        </span><span class="kw">const </span>CAN_OVERRIDE_APP_ID = ffi::G_APPLICATION_CAN_OVERRIDE_APP_ID <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>CAN_OVERRIDE_APP_ID = ffi::G_APPLICATION_CAN_OVERRIDE_APP_ID <span class="kw">as _</span>;
         <span class="doccomment">/// Allow another instance to take over
         ///  the bus name. Since: 2.60
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APPLICATION_ALLOW_REPLACEMENT&quot;</span>)]
-        </span><span class="kw">const </span>ALLOW_REPLACEMENT = ffi::G_APPLICATION_ALLOW_REPLACEMENT <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>ALLOW_REPLACEMENT = ffi::G_APPLICATION_ALLOW_REPLACEMENT <span class="kw">as _</span>;
         <span class="doccomment">/// Take over from another instance. This flag is
         ///  usually set by passing `--gapplication-replace` on the commandline.
         ///  Since: 2.60
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APPLICATION_REPLACE&quot;</span>)]
-        </span><span class="kw">const </span>REPLACE = ffi::G_APPLICATION_REPLACE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>REPLACE = ffi::G_APPLICATION_REPLACE <span class="kw">as _</span>;
     }
 }
 
@@ -2893,22 +2893,22 @@
     </span><span class="kw">pub struct </span>AskPasswordFlags: u32 {
         <span class="doccomment">/// operation requires a password.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_ASK_PASSWORD_NEED_PASSWORD&quot;</span>)]
-        </span><span class="kw">const </span>NEED_PASSWORD = ffi::G_ASK_PASSWORD_NEED_PASSWORD <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NEED_PASSWORD = ffi::G_ASK_PASSWORD_NEED_PASSWORD <span class="kw">as _</span>;
         <span class="doccomment">/// operation requires a username.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_ASK_PASSWORD_NEED_USERNAME&quot;</span>)]
-        </span><span class="kw">const </span>NEED_USERNAME = ffi::G_ASK_PASSWORD_NEED_USERNAME <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NEED_USERNAME = ffi::G_ASK_PASSWORD_NEED_USERNAME <span class="kw">as _</span>;
         <span class="doccomment">/// operation requires a domain.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_ASK_PASSWORD_NEED_DOMAIN&quot;</span>)]
-        </span><span class="kw">const </span>NEED_DOMAIN = ffi::G_ASK_PASSWORD_NEED_DOMAIN <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NEED_DOMAIN = ffi::G_ASK_PASSWORD_NEED_DOMAIN <span class="kw">as _</span>;
         <span class="doccomment">/// operation supports saving settings.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_ASK_PASSWORD_SAVING_SUPPORTED&quot;</span>)]
-        </span><span class="kw">const </span>SAVING_SUPPORTED = ffi::G_ASK_PASSWORD_SAVING_SUPPORTED <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>SAVING_SUPPORTED = ffi::G_ASK_PASSWORD_SAVING_SUPPORTED <span class="kw">as _</span>;
         <span class="doccomment">/// operation supports anonymous users.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_ASK_PASSWORD_ANONYMOUS_SUPPORTED&quot;</span>)]
-        </span><span class="kw">const </span>ANONYMOUS_SUPPORTED = ffi::G_ASK_PASSWORD_ANONYMOUS_SUPPORTED <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>ANONYMOUS_SUPPORTED = ffi::G_ASK_PASSWORD_ANONYMOUS_SUPPORTED <span class="kw">as _</span>;
         <span class="doccomment">/// operation takes TCRYPT parameters (Since: 2.58)
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_ASK_PASSWORD_TCRYPT&quot;</span>)]
-        </span><span class="kw">const </span>TCRYPT = ffi::G_ASK_PASSWORD_TCRYPT <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>TCRYPT = ffi::G_ASK_PASSWORD_TCRYPT <span class="kw">as _</span>;
     }
 }
 
@@ -2972,18 +2972,18 @@
     </span><span class="kw">pub struct </span>BusNameOwnerFlags: u32 {
         <span class="doccomment">/// No flags set.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_BUS_NAME_OWNER_FLAGS_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_BUS_NAME_OWNER_FLAGS_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_BUS_NAME_OWNER_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Allow another message bus connection to claim the name.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_BUS_NAME_OWNER_FLAGS_ALLOW_REPLACEMENT&quot;</span>)]
-        </span><span class="kw">const </span>ALLOW_REPLACEMENT = ffi::G_BUS_NAME_OWNER_FLAGS_ALLOW_REPLACEMENT <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>ALLOW_REPLACEMENT = ffi::G_BUS_NAME_OWNER_FLAGS_ALLOW_REPLACEMENT <span class="kw">as _</span>;
         <span class="doccomment">/// If another message bus connection owns the name and have
         /// specified [`ALLOW_REPLACEMENT`][Self::ALLOW_REPLACEMENT], then take the name from the other connection.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_BUS_NAME_OWNER_FLAGS_REPLACE&quot;</span>)]
-        </span><span class="kw">const </span>REPLACE = ffi::G_BUS_NAME_OWNER_FLAGS_REPLACE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>REPLACE = ffi::G_BUS_NAME_OWNER_FLAGS_REPLACE <span class="kw">as _</span>;
         <span class="doccomment">/// If another message bus connection owns the name, immediately
         /// return an error from `g_bus_own_name()` rather than entering the waiting queue for that name. (Since 2.54)
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_BUS_NAME_OWNER_FLAGS_DO_NOT_QUEUE&quot;</span>)]
-        </span><span class="kw">const </span>DO_NOT_QUEUE = ffi::G_BUS_NAME_OWNER_FLAGS_DO_NOT_QUEUE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>DO_NOT_QUEUE = ffi::G_BUS_NAME_OWNER_FLAGS_DO_NOT_QUEUE <span class="kw">as _</span>;
     }
 }
 
@@ -3047,12 +3047,12 @@
     </span><span class="kw">pub struct </span>BusNameWatcherFlags: u32 {
         <span class="doccomment">/// No flags set.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_BUS_NAME_WATCHER_FLAGS_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_BUS_NAME_WATCHER_FLAGS_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_BUS_NAME_WATCHER_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// If no-one owns the name when
         /// beginning to watch the name, ask the bus to launch an owner for the
         /// name.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_BUS_NAME_WATCHER_FLAGS_AUTO_START&quot;</span>)]
-        </span><span class="kw">const </span>AUTO_START = ffi::G_BUS_NAME_WATCHER_FLAGS_AUTO_START <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>AUTO_START = ffi::G_BUS_NAME_WATCHER_FLAGS_AUTO_START <span class="kw">as _</span>;
     }
 }
 
@@ -3116,13 +3116,13 @@
     </span><span class="kw">pub struct </span>ConverterFlags: u32 {
         <span class="doccomment">/// No flags.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_CONVERTER_NO_FLAGS&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_CONVERTER_NO_FLAGS <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_CONVERTER_NO_FLAGS <span class="kw">as _</span>;
         <span class="doccomment">/// At end of input data
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_CONVERTER_INPUT_AT_END&quot;</span>)]
-        </span><span class="kw">const </span>INPUT_AT_END = ffi::G_CONVERTER_INPUT_AT_END <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>INPUT_AT_END = ffi::G_CONVERTER_INPUT_AT_END <span class="kw">as _</span>;
         <span class="doccomment">/// Flush data
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_CONVERTER_FLUSH&quot;</span>)]
-        </span><span class="kw">const </span>FLUSH = ffi::G_CONVERTER_FLUSH <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>FLUSH = ffi::G_CONVERTER_FLUSH <span class="kw">as _</span>;
     }
 }
 
@@ -3186,16 +3186,16 @@
     </span><span class="kw">pub struct </span>DBusCallFlags: u32 {
         <span class="doccomment">/// No flags set.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_CALL_FLAGS_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_DBUS_CALL_FLAGS_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_DBUS_CALL_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// The bus must not launch
         /// an owner for the destination name in response to this method
         /// invocation.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_CALL_FLAGS_NO_AUTO_START&quot;</span>)]
-        </span><span class="kw">const </span>NO_AUTO_START = ffi::G_DBUS_CALL_FLAGS_NO_AUTO_START <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NO_AUTO_START = ffi::G_DBUS_CALL_FLAGS_NO_AUTO_START <span class="kw">as _</span>;
         <span class="doccomment">/// the caller is prepared to
         /// wait for interactive authorization. Since 2.46.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_CALL_FLAGS_ALLOW_INTERACTIVE_AUTHORIZATION&quot;</span>)]
-        </span><span class="kw">const </span>ALLOW_INTERACTIVE_AUTHORIZATION = ffi::G_DBUS_CALL_FLAGS_ALLOW_INTERACTIVE_AUTHORIZATION <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>ALLOW_INTERACTIVE_AUTHORIZATION = ffi::G_DBUS_CALL_FLAGS_ALLOW_INTERACTIVE_AUTHORIZATION <span class="kw">as _</span>;
     }
 }
 
@@ -3259,11 +3259,11 @@
     </span><span class="kw">pub struct </span>DBusCapabilityFlags: u32 {
         <span class="doccomment">/// No flags set.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_CAPABILITY_FLAGS_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_DBUS_CAPABILITY_FLAGS_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_DBUS_CAPABILITY_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// The connection
         /// supports exchanging UNIX file descriptors with the remote peer.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_CAPABILITY_FLAGS_UNIX_FD_PASSING&quot;</span>)]
-        </span><span class="kw">const </span>UNIX_FD_PASSING = ffi::G_DBUS_CAPABILITY_FLAGS_UNIX_FD_PASSING <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>UNIX_FD_PASSING = ffi::G_DBUS_CAPABILITY_FLAGS_UNIX_FD_PASSING <span class="kw">as _</span>;
     }
 }
 
@@ -3327,30 +3327,30 @@
     </span><span class="kw">pub struct </span>DBusConnectionFlags: u32 {
         <span class="doccomment">/// No flags set.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_CONNECTION_FLAGS_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_DBUS_CONNECTION_FLAGS_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_DBUS_CONNECTION_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Perform authentication against server.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_CLIENT&quot;</span>)]
-        </span><span class="kw">const </span>AUTHENTICATION_CLIENT = ffi::G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_CLIENT <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>AUTHENTICATION_CLIENT = ffi::G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_CLIENT <span class="kw">as _</span>;
         <span class="doccomment">/// Perform authentication against client.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_SERVER&quot;</span>)]
-        </span><span class="kw">const </span>AUTHENTICATION_SERVER = ffi::G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_SERVER <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>AUTHENTICATION_SERVER = ffi::G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_SERVER <span class="kw">as _</span>;
         <span class="doccomment">/// When
         /// authenticating as a server, allow the anonymous authentication
         /// method.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_ALLOW_ANONYMOUS&quot;</span>)]
-        </span><span class="kw">const </span>AUTHENTICATION_ALLOW_ANONYMOUS = ffi::G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_ALLOW_ANONYMOUS <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>AUTHENTICATION_ALLOW_ANONYMOUS = ffi::G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_ALLOW_ANONYMOUS <span class="kw">as _</span>;
         <span class="doccomment">/// Pass this flag if connecting to a peer that is a
         /// message bus. This means that the Hello() method will be invoked as part of the connection setup.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_CONNECTION_FLAGS_MESSAGE_BUS_CONNECTION&quot;</span>)]
-        </span><span class="kw">const </span>MESSAGE_BUS_CONNECTION = ffi::G_DBUS_CONNECTION_FLAGS_MESSAGE_BUS_CONNECTION <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>MESSAGE_BUS_CONNECTION = ffi::G_DBUS_CONNECTION_FLAGS_MESSAGE_BUS_CONNECTION <span class="kw">as _</span>;
         <span class="doccomment">/// If set, processing of D-Bus messages is
         /// delayed until [`DBusConnection::start_message_processing()`][crate::DBusConnection::start_message_processing()] is called.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_CONNECTION_FLAGS_DELAY_MESSAGE_PROCESSING&quot;</span>)]
-        </span><span class="kw">const </span>DELAY_MESSAGE_PROCESSING = ffi::G_DBUS_CONNECTION_FLAGS_DELAY_MESSAGE_PROCESSING <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>DELAY_MESSAGE_PROCESSING = ffi::G_DBUS_CONNECTION_FLAGS_DELAY_MESSAGE_PROCESSING <span class="kw">as _</span>;
         <span class="doccomment">/// When authenticating
         /// as a server, require the UID of the peer to be the same as the UID of the server. (Since: 2.68)
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_REQUIRE_SAME_USER&quot;</span>)]
-        </span><span class="kw">const </span>AUTHENTICATION_REQUIRE_SAME_USER = ffi::G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_REQUIRE_SAME_USER <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>AUTHENTICATION_REQUIRE_SAME_USER = ffi::G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_REQUIRE_SAME_USER <span class="kw">as _</span>;
         <span class="doccomment">/// When authenticating, try to use
         ///  protocols that work across a Linux user namespace boundary, even if this
         ///  reduces interoperability with older D-Bus implementations. This currently
@@ -3360,7 +3360,7 @@
         </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
         #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
         #[doc(alias = <span class="string">&quot;G_DBUS_CONNECTION_FLAGS_CROSS_NAMESPACE&quot;</span>)]
-        </span><span class="kw">const </span>CROSS_NAMESPACE = ffi::G_DBUS_CONNECTION_FLAGS_CROSS_NAMESPACE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>CROSS_NAMESPACE = ffi::G_DBUS_CONNECTION_FLAGS_CROSS_NAMESPACE <span class="kw">as _</span>;
     }
 }
 
@@ -3424,13 +3424,13 @@
     </span><span class="kw">pub struct </span>DBusInterfaceSkeletonFlags: u32 {
         <span class="doccomment">/// No flags set.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_INTERFACE_SKELETON_FLAGS_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_DBUS_INTERFACE_SKELETON_FLAGS_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_DBUS_INTERFACE_SKELETON_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Each method invocation is handled in
         ///  a thread dedicated to the invocation. This means that the method implementation can use blocking IO
         ///  without blocking any other part of the process. It also means that the method implementation must
         ///  use locking to access data structures used by other threads.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_INTERFACE_SKELETON_FLAGS_HANDLE_METHOD_INVOCATIONS_IN_THREAD&quot;</span>)]
-        </span><span class="kw">const </span>HANDLE_METHOD_INVOCATIONS_IN_THREAD = ffi::G_DBUS_INTERFACE_SKELETON_FLAGS_HANDLE_METHOD_INVOCATIONS_IN_THREAD <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>HANDLE_METHOD_INVOCATIONS_IN_THREAD = ffi::G_DBUS_INTERFACE_SKELETON_FLAGS_HANDLE_METHOD_INVOCATIONS_IN_THREAD <span class="kw">as _</span>;
     }
 }
 
@@ -3494,19 +3494,19 @@
     </span><span class="kw">pub struct </span>DBusMessageFlags: u32 {
         <span class="doccomment">/// No flags set.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_FLAGS_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_DBUS_MESSAGE_FLAGS_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_DBUS_MESSAGE_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// A reply is not expected.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_FLAGS_NO_REPLY_EXPECTED&quot;</span>)]
-        </span><span class="kw">const </span>NO_REPLY_EXPECTED = ffi::G_DBUS_MESSAGE_FLAGS_NO_REPLY_EXPECTED <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NO_REPLY_EXPECTED = ffi::G_DBUS_MESSAGE_FLAGS_NO_REPLY_EXPECTED <span class="kw">as _</span>;
         <span class="doccomment">/// The bus must not launch an
         /// owner for the destination name in response to this message.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_FLAGS_NO_AUTO_START&quot;</span>)]
-        </span><span class="kw">const </span>NO_AUTO_START = ffi::G_DBUS_MESSAGE_FLAGS_NO_AUTO_START <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NO_AUTO_START = ffi::G_DBUS_MESSAGE_FLAGS_NO_AUTO_START <span class="kw">as _</span>;
         <span class="doccomment">/// If set on a method
         /// call, this flag means that the caller is prepared to wait for interactive
         /// authorization. Since 2.46.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_FLAGS_ALLOW_INTERACTIVE_AUTHORIZATION&quot;</span>)]
-        </span><span class="kw">const </span>ALLOW_INTERACTIVE_AUTHORIZATION = ffi::G_DBUS_MESSAGE_FLAGS_ALLOW_INTERACTIVE_AUTHORIZATION <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>ALLOW_INTERACTIVE_AUTHORIZATION = ffi::G_DBUS_MESSAGE_FLAGS_ALLOW_INTERACTIVE_AUTHORIZATION <span class="kw">as _</span>;
     }
 }
 
@@ -3570,34 +3570,34 @@
     </span><span class="kw">pub struct </span>DBusProxyFlags: u32 {
         <span class="doccomment">/// No flags set.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_PROXY_FLAGS_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_DBUS_PROXY_FLAGS_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_DBUS_PROXY_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Don&#39;t load properties.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES&quot;</span>)]
-        </span><span class="kw">const </span>DO_NOT_LOAD_PROPERTIES = ffi::G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>DO_NOT_LOAD_PROPERTIES = ffi::G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES <span class="kw">as _</span>;
         <span class="doccomment">/// Don&#39;t connect to signals on the remote object.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS&quot;</span>)]
-        </span><span class="kw">const </span>DO_NOT_CONNECT_SIGNALS = ffi::G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>DO_NOT_CONNECT_SIGNALS = ffi::G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS <span class="kw">as _</span>;
         <span class="doccomment">/// If the proxy is for a well-known name,
         /// do not ask the bus to launch an owner during proxy initialization or a method call.
         /// This flag is only meaningful in proxies for well-known names.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START&quot;</span>)]
-        </span><span class="kw">const </span>DO_NOT_AUTO_START = ffi::G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>DO_NOT_AUTO_START = ffi::G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START <span class="kw">as _</span>;
         <span class="doccomment">/// If set, the property value for any __invalidated property__ will be (asynchronously) retrieved upon receiving the [`PropertiesChanged`](http://dbus.freedesktop.org/doc/dbus-specification.html`standard`-interfaces-properties) D-Bus signal and the property will not cause emission of the `signal::DBusProxy::g-properties-changed` signal. When the value is received the `signal::DBusProxy::g-properties-changed` signal is emitted for the property along with the retrieved value. Since 2.32.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_PROXY_FLAGS_GET_INVALIDATED_PROPERTIES&quot;</span>)]
-        </span><span class="kw">const </span>GET_INVALIDATED_PROPERTIES = ffi::G_DBUS_PROXY_FLAGS_GET_INVALIDATED_PROPERTIES <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>GET_INVALIDATED_PROPERTIES = ffi::G_DBUS_PROXY_FLAGS_GET_INVALIDATED_PROPERTIES <span class="kw">as _</span>;
         <span class="doccomment">/// If the proxy is for a well-known name,
         /// do not ask the bus to launch an owner during proxy initialization, but allow it to be
         /// autostarted by a method call. This flag is only meaningful in proxies for well-known names,
         /// and only if [`DO_NOT_AUTO_START`][Self::DO_NOT_AUTO_START] is not also specified.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START_AT_CONSTRUCTION&quot;</span>)]
-        </span><span class="kw">const </span>DO_NOT_AUTO_START_AT_CONSTRUCTION = ffi::G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START_AT_CONSTRUCTION <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>DO_NOT_AUTO_START_AT_CONSTRUCTION = ffi::G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START_AT_CONSTRUCTION <span class="kw">as _</span>;
         <span class="doccomment">/// Don&#39;t actually send the AddMatch D-Bus
         ///  call for this signal subscription. This gives you more control
         ///  over which match rules you add (but you must add them manually). (Since: 2.72)
         </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
         #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
         #[doc(alias = <span class="string">&quot;G_DBUS_PROXY_FLAGS_NO_MATCH_RULE&quot;</span>)]
-        </span><span class="kw">const </span>NO_MATCH_RULE = ffi::G_DBUS_PROXY_FLAGS_NO_MATCH_RULE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NO_MATCH_RULE = ffi::G_DBUS_PROXY_FLAGS_NO_MATCH_RULE <span class="kw">as _</span>;
     }
 }
 
@@ -3661,12 +3661,12 @@
     </span><span class="kw">pub struct </span>DBusSendMessageFlags: u32 {
         <span class="doccomment">/// No flags set.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_SEND_MESSAGE_FLAGS_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_DBUS_SEND_MESSAGE_FLAGS_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_DBUS_SEND_MESSAGE_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Do not automatically
         /// assign a serial number from the [`DBusConnection`][crate::DBusConnection] object when
         /// sending a message.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_SEND_MESSAGE_FLAGS_PRESERVE_SERIAL&quot;</span>)]
-        </span><span class="kw">const </span>PRESERVE_SERIAL = ffi::G_DBUS_SEND_MESSAGE_FLAGS_PRESERVE_SERIAL <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>PRESERVE_SERIAL = ffi::G_DBUS_SEND_MESSAGE_FLAGS_PRESERVE_SERIAL <span class="kw">as _</span>;
     }
 }
 
@@ -3730,20 +3730,20 @@
     </span><span class="kw">pub struct </span>DBusServerFlags: u32 {
         <span class="doccomment">/// No flags set.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_SERVER_FLAGS_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_DBUS_SERVER_FLAGS_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_DBUS_SERVER_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// All `signal::DBusServer::new-connection`
         /// signals will run in separated dedicated threads (see signal for
         /// details).
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_SERVER_FLAGS_RUN_IN_THREAD&quot;</span>)]
-        </span><span class="kw">const </span>RUN_IN_THREAD = ffi::G_DBUS_SERVER_FLAGS_RUN_IN_THREAD <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>RUN_IN_THREAD = ffi::G_DBUS_SERVER_FLAGS_RUN_IN_THREAD <span class="kw">as _</span>;
         <span class="doccomment">/// Allow the anonymous
         /// authentication method.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_SERVER_FLAGS_AUTHENTICATION_ALLOW_ANONYMOUS&quot;</span>)]
-        </span><span class="kw">const </span>AUTHENTICATION_ALLOW_ANONYMOUS = ffi::G_DBUS_SERVER_FLAGS_AUTHENTICATION_ALLOW_ANONYMOUS <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>AUTHENTICATION_ALLOW_ANONYMOUS = ffi::G_DBUS_SERVER_FLAGS_AUTHENTICATION_ALLOW_ANONYMOUS <span class="kw">as _</span>;
         <span class="doccomment">/// Require the UID of the
         /// peer to be the same as the UID of the server when authenticating. (Since: 2.68)
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_SERVER_FLAGS_AUTHENTICATION_REQUIRE_SAME_USER&quot;</span>)]
-        </span><span class="kw">const </span>AUTHENTICATION_REQUIRE_SAME_USER = ffi::G_DBUS_SERVER_FLAGS_AUTHENTICATION_REQUIRE_SAME_USER <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>AUTHENTICATION_REQUIRE_SAME_USER = ffi::G_DBUS_SERVER_FLAGS_AUTHENTICATION_REQUIRE_SAME_USER <span class="kw">as _</span>;
     }
 }
 
@@ -3807,21 +3807,21 @@
     </span><span class="kw">pub struct </span>DBusSignalFlags: u32 {
         <span class="doccomment">/// No flags set.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_SIGNAL_FLAGS_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_DBUS_SIGNAL_FLAGS_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_DBUS_SIGNAL_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Don&#39;t actually send the AddMatch
         /// D-Bus call for this signal subscription. This gives you more control
         /// over which match rules you add (but you must add them manually).
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_SIGNAL_FLAGS_NO_MATCH_RULE&quot;</span>)]
-        </span><span class="kw">const </span>NO_MATCH_RULE = ffi::G_DBUS_SIGNAL_FLAGS_NO_MATCH_RULE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NO_MATCH_RULE = ffi::G_DBUS_SIGNAL_FLAGS_NO_MATCH_RULE <span class="kw">as _</span>;
         <span class="doccomment">/// Match first arguments that
         /// contain a bus or interface name with the given namespace.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_SIGNAL_FLAGS_MATCH_ARG0_NAMESPACE&quot;</span>)]
-        </span><span class="kw">const </span>MATCH_ARG0_NAMESPACE = ffi::G_DBUS_SIGNAL_FLAGS_MATCH_ARG0_NAMESPACE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>MATCH_ARG0_NAMESPACE = ffi::G_DBUS_SIGNAL_FLAGS_MATCH_ARG0_NAMESPACE <span class="kw">as _</span>;
         <span class="doccomment">/// Match first arguments that
         /// contain an object path that is either equivalent to the given path,
         /// or one of the paths is a subpath of the other.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_SIGNAL_FLAGS_MATCH_ARG0_PATH&quot;</span>)]
-        </span><span class="kw">const </span>MATCH_ARG0_PATH = ffi::G_DBUS_SIGNAL_FLAGS_MATCH_ARG0_PATH <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>MATCH_ARG0_PATH = ffi::G_DBUS_SIGNAL_FLAGS_MATCH_ARG0_PATH <span class="kw">as _</span>;
     }
 }
 
@@ -3885,7 +3885,7 @@
     </span><span class="kw">pub struct </span>DriveStartFlags: u32 {
         <span class="doccomment">/// No flags set.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DRIVE_START_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_DRIVE_START_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_DRIVE_START_NONE <span class="kw">as _</span>;
     }
 }
 
@@ -3949,13 +3949,13 @@
     </span><span class="kw">pub struct </span>FileAttributeInfoFlags: u32 {
         <span class="doccomment">/// no flags set.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_INFO_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_FILE_ATTRIBUTE_INFO_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_FILE_ATTRIBUTE_INFO_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// copy the attribute values when the file is copied.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_INFO_COPY_WITH_FILE&quot;</span>)]
-        </span><span class="kw">const </span>COPY_WITH_FILE = ffi::G_FILE_ATTRIBUTE_INFO_COPY_WITH_FILE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>COPY_WITH_FILE = ffi::G_FILE_ATTRIBUTE_INFO_COPY_WITH_FILE <span class="kw">as _</span>;
         <span class="doccomment">/// copy the attribute values when the file is moved.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_INFO_COPY_WHEN_MOVED&quot;</span>)]
-        </span><span class="kw">const </span>COPY_WHEN_MOVED = ffi::G_FILE_ATTRIBUTE_INFO_COPY_WHEN_MOVED <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>COPY_WHEN_MOVED = ffi::G_FILE_ATTRIBUTE_INFO_COPY_WHEN_MOVED <span class="kw">as _</span>;
     }
 }
 
@@ -4019,25 +4019,25 @@
     </span><span class="kw">pub struct </span>FileCopyFlags: u32 {
         <span class="doccomment">/// No flags set.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_COPY_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_FILE_COPY_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_FILE_COPY_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Overwrite any existing files
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_COPY_OVERWRITE&quot;</span>)]
-        </span><span class="kw">const </span>OVERWRITE = ffi::G_FILE_COPY_OVERWRITE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>OVERWRITE = ffi::G_FILE_COPY_OVERWRITE <span class="kw">as _</span>;
         <span class="doccomment">/// Make a backup of any existing files.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_COPY_BACKUP&quot;</span>)]
-        </span><span class="kw">const </span>BACKUP = ffi::G_FILE_COPY_BACKUP <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>BACKUP = ffi::G_FILE_COPY_BACKUP <span class="kw">as _</span>;
         <span class="doccomment">/// Don&#39;t follow symlinks.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_COPY_NOFOLLOW_SYMLINKS&quot;</span>)]
-        </span><span class="kw">const </span>NOFOLLOW_SYMLINKS = ffi::G_FILE_COPY_NOFOLLOW_SYMLINKS <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NOFOLLOW_SYMLINKS = ffi::G_FILE_COPY_NOFOLLOW_SYMLINKS <span class="kw">as _</span>;
         <span class="doccomment">/// Copy all file metadata instead of just default set used for copy (see [`FileInfo`][crate::FileInfo]).
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_COPY_ALL_METADATA&quot;</span>)]
-        </span><span class="kw">const </span>ALL_METADATA = ffi::G_FILE_COPY_ALL_METADATA <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>ALL_METADATA = ffi::G_FILE_COPY_ALL_METADATA <span class="kw">as _</span>;
         <span class="doccomment">/// Don&#39;t use copy and delete fallback if native move not supported.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_COPY_NO_FALLBACK_FOR_MOVE&quot;</span>)]
-        </span><span class="kw">const </span>NO_FALLBACK_FOR_MOVE = ffi::G_FILE_COPY_NO_FALLBACK_FOR_MOVE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NO_FALLBACK_FOR_MOVE = ffi::G_FILE_COPY_NO_FALLBACK_FOR_MOVE <span class="kw">as _</span>;
         <span class="doccomment">/// Leaves target file with default perms, instead of setting the source file perms.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_COPY_TARGET_DEFAULT_PERMS&quot;</span>)]
-        </span><span class="kw">const </span>TARGET_DEFAULT_PERMS = ffi::G_FILE_COPY_TARGET_DEFAULT_PERMS <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>TARGET_DEFAULT_PERMS = ffi::G_FILE_COPY_TARGET_DEFAULT_PERMS <span class="kw">as _</span>;
     }
 }
 
@@ -4101,11 +4101,11 @@
     </span><span class="kw">pub struct </span>FileCreateFlags: u32 {
         <span class="doccomment">/// No flags set.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_CREATE_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_FILE_CREATE_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_FILE_CREATE_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Create a file that can only be
         ///  accessed by the current user.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_CREATE_PRIVATE&quot;</span>)]
-        </span><span class="kw">const </span>PRIVATE = ffi::G_FILE_CREATE_PRIVATE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>PRIVATE = ffi::G_FILE_CREATE_PRIVATE <span class="kw">as _</span>;
         <span class="doccomment">/// Replace the destination
         ///  as if it didn&#39;t exist before. Don&#39;t try to keep any old
         ///  permissions, replace instead of following links. This
@@ -4117,7 +4117,7 @@
         ///  [`FileExt::replace()`][crate::prelude::FileExt::replace()] and its variants, including [`FileExt::replace_contents()`][crate::prelude::FileExt::replace_contents()].
         ///  Since 2.20
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_CREATE_REPLACE_DESTINATION&quot;</span>)]
-        </span><span class="kw">const </span>REPLACE_DESTINATION = ffi::G_FILE_CREATE_REPLACE_DESTINATION <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>REPLACE_DESTINATION = ffi::G_FILE_CREATE_REPLACE_DESTINATION <span class="kw">as _</span>;
     }
 }
 
@@ -4181,22 +4181,22 @@
     </span><span class="kw">pub struct </span>FileMeasureFlags: u32 {
         <span class="doccomment">/// No flags set.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MEASURE_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_FILE_MEASURE_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_FILE_MEASURE_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Report any error encountered
         ///  while traversing the directory tree. Normally errors are only
         ///  reported for the toplevel file.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MEASURE_REPORT_ANY_ERROR&quot;</span>)]
-        </span><span class="kw">const </span>REPORT_ANY_ERROR = ffi::G_FILE_MEASURE_REPORT_ANY_ERROR <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>REPORT_ANY_ERROR = ffi::G_FILE_MEASURE_REPORT_ANY_ERROR <span class="kw">as _</span>;
         <span class="doccomment">/// Tally usage based on apparent file
         ///  sizes. Normally, the block-size is used, if available, as this is a
         ///  more accurate representation of disk space used.
         ///  Compare with `du --apparent-size`.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MEASURE_APPARENT_SIZE&quot;</span>)]
-        </span><span class="kw">const </span>APPARENT_SIZE = ffi::G_FILE_MEASURE_APPARENT_SIZE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>APPARENT_SIZE = ffi::G_FILE_MEASURE_APPARENT_SIZE <span class="kw">as _</span>;
         <span class="doccomment">/// Do not cross mount point boundaries.
         ///  Compare with `du -x`.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MEASURE_NO_XDEV&quot;</span>)]
-        </span><span class="kw">const </span>NO_XDEV = ffi::G_FILE_MEASURE_NO_XDEV <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NO_XDEV = ffi::G_FILE_MEASURE_NO_XDEV <span class="kw">as _</span>;
     }
 }
 
@@ -4260,10 +4260,10 @@
     </span><span class="kw">pub struct </span>FileMonitorFlags: u32 {
         <span class="doccomment">/// No flags set.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_FILE_MONITOR_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_FILE_MONITOR_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Watch for mount events.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_WATCH_MOUNTS&quot;</span>)]
-        </span><span class="kw">const </span>WATCH_MOUNTS = ffi::G_FILE_MONITOR_WATCH_MOUNTS <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>WATCH_MOUNTS = ffi::G_FILE_MONITOR_WATCH_MOUNTS <span class="kw">as _</span>;
         <span class="doccomment">/// Pair DELETED and CREATED events caused
         ///  by file renames (moves) and send a single G_FILE_MONITOR_EVENT_MOVED
         ///  event instead (NB: not supported on all backends; the default
@@ -4271,17 +4271,17 @@
         ///  and CREATED events). Deprecated since 2.46: use
         ///  [`WATCH_MOVES`][Self::WATCH_MOVES] instead.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_SEND_MOVED&quot;</span>)]
-        </span><span class="kw">const </span>SEND_MOVED = ffi::G_FILE_MONITOR_SEND_MOVED <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>SEND_MOVED = ffi::G_FILE_MONITOR_SEND_MOVED <span class="kw">as _</span>;
         <span class="doccomment">/// Watch for changes to the file made
         ///  via another hard link. Since 2.36.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_WATCH_HARD_LINKS&quot;</span>)]
-        </span><span class="kw">const </span>WATCH_HARD_LINKS = ffi::G_FILE_MONITOR_WATCH_HARD_LINKS <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>WATCH_HARD_LINKS = ffi::G_FILE_MONITOR_WATCH_HARD_LINKS <span class="kw">as _</span>;
         <span class="doccomment">/// Watch for rename operations on a
         ///  monitored directory. This causes [`FileMonitorEvent::Renamed`][crate::FileMonitorEvent::Renamed],
         ///  [`FileMonitorEvent::MovedIn`][crate::FileMonitorEvent::MovedIn] and [`FileMonitorEvent::MovedOut`][crate::FileMonitorEvent::MovedOut]
         ///  events to be emitted when possible. Since: 2.46.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_WATCH_MOVES&quot;</span>)]
-        </span><span class="kw">const </span>WATCH_MOVES = ffi::G_FILE_MONITOR_WATCH_MOVES <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>WATCH_MOVES = ffi::G_FILE_MONITOR_WATCH_MOVES <span class="kw">as _</span>;
     }
 }
 
@@ -4345,10 +4345,10 @@
     </span><span class="kw">pub struct </span>FileQueryInfoFlags: u32 {
         <span class="doccomment">/// No flags set.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_QUERY_INFO_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_FILE_QUERY_INFO_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_FILE_QUERY_INFO_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Don&#39;t follow symlinks.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_QUERY_INFO_NOFOLLOW_SYMLINKS&quot;</span>)]
-        </span><span class="kw">const </span>NOFOLLOW_SYMLINKS = ffi::G_FILE_QUERY_INFO_NOFOLLOW_SYMLINKS <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NOFOLLOW_SYMLINKS = ffi::G_FILE_QUERY_INFO_NOFOLLOW_SYMLINKS <span class="kw">as _</span>;
     }
 }
 
@@ -4412,19 +4412,19 @@
     </span><span class="kw">pub struct </span>IOStreamSpliceFlags: u32 {
         <span class="doccomment">/// Do not close either stream.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_STREAM_SPLICE_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_IO_STREAM_SPLICE_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_IO_STREAM_SPLICE_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Close the first stream after
         ///  the splice.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_STREAM_SPLICE_CLOSE_STREAM1&quot;</span>)]
-        </span><span class="kw">const </span>CLOSE_STREAM1 = ffi::G_IO_STREAM_SPLICE_CLOSE_STREAM1 <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>CLOSE_STREAM1 = ffi::G_IO_STREAM_SPLICE_CLOSE_STREAM1 <span class="kw">as _</span>;
         <span class="doccomment">/// Close the second stream after
         ///  the splice.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_STREAM_SPLICE_CLOSE_STREAM2&quot;</span>)]
-        </span><span class="kw">const </span>CLOSE_STREAM2 = ffi::G_IO_STREAM_SPLICE_CLOSE_STREAM2 <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>CLOSE_STREAM2 = ffi::G_IO_STREAM_SPLICE_CLOSE_STREAM2 <span class="kw">as _</span>;
         <span class="doccomment">/// Wait for both splice operations to finish
         ///  before calling the callback.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_STREAM_SPLICE_WAIT_FOR_BOTH&quot;</span>)]
-        </span><span class="kw">const </span>WAIT_FOR_BOTH = ffi::G_IO_STREAM_SPLICE_WAIT_FOR_BOTH <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>WAIT_FOR_BOTH = ffi::G_IO_STREAM_SPLICE_WAIT_FOR_BOTH <span class="kw">as _</span>;
     }
 }
 
@@ -4488,7 +4488,7 @@
     </span><span class="kw">pub struct </span>MountMountFlags: u32 {
         <span class="doccomment">/// No flags set.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_MOUNT_MOUNT_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_MOUNT_MOUNT_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_MOUNT_MOUNT_NONE <span class="kw">as _</span>;
     }
 }
 
@@ -4552,11 +4552,11 @@
     </span><span class="kw">pub struct </span>MountUnmountFlags: u32 {
         <span class="doccomment">/// No flags set.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_MOUNT_UNMOUNT_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_MOUNT_UNMOUNT_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_MOUNT_UNMOUNT_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Unmount even if there are outstanding
         ///  file operations on the mount.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_MOUNT_UNMOUNT_FORCE&quot;</span>)]
-        </span><span class="kw">const </span>FORCE = ffi::G_MOUNT_UNMOUNT_FORCE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>FORCE = ffi::G_MOUNT_UNMOUNT_FORCE <span class="kw">as _</span>;
     }
 }
 
@@ -4620,15 +4620,15 @@
     </span><span class="kw">pub struct </span>OutputStreamSpliceFlags: u32 {
         <span class="doccomment">/// Do not close either stream.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_OUTPUT_STREAM_SPLICE_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_OUTPUT_STREAM_SPLICE_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_OUTPUT_STREAM_SPLICE_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Close the source stream after
         ///  the splice.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_OUTPUT_STREAM_SPLICE_CLOSE_SOURCE&quot;</span>)]
-        </span><span class="kw">const </span>CLOSE_SOURCE = ffi::G_OUTPUT_STREAM_SPLICE_CLOSE_SOURCE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>CLOSE_SOURCE = ffi::G_OUTPUT_STREAM_SPLICE_CLOSE_SOURCE <span class="kw">as _</span>;
         <span class="doccomment">/// Close the target stream after
         ///  the splice.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_OUTPUT_STREAM_SPLICE_CLOSE_TARGET&quot;</span>)]
-        </span><span class="kw">const </span>CLOSE_TARGET = ffi::G_OUTPUT_STREAM_SPLICE_CLOSE_TARGET <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>CLOSE_TARGET = ffi::G_OUTPUT_STREAM_SPLICE_CLOSE_TARGET <span class="kw">as _</span>;
     }
 }
 
@@ -4694,13 +4694,13 @@
     </span><span class="kw">pub struct </span>ResolverNameLookupFlags: u32 {
         <span class="doccomment">/// default behavior (same as [`ResolverExt::lookup_by_name()`][crate::prelude::ResolverExt::lookup_by_name()])
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_RESOLVER_NAME_LOOKUP_FLAGS_DEFAULT&quot;</span>)]
-        </span><span class="kw">const </span>DEFAULT = ffi::G_RESOLVER_NAME_LOOKUP_FLAGS_DEFAULT <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>DEFAULT = ffi::G_RESOLVER_NAME_LOOKUP_FLAGS_DEFAULT <span class="kw">as _</span>;
         <span class="doccomment">/// only resolve ipv4 addresses
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_RESOLVER_NAME_LOOKUP_FLAGS_IPV4_ONLY&quot;</span>)]
-        </span><span class="kw">const </span>IPV4_ONLY = ffi::G_RESOLVER_NAME_LOOKUP_FLAGS_IPV4_ONLY <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>IPV4_ONLY = ffi::G_RESOLVER_NAME_LOOKUP_FLAGS_IPV4_ONLY <span class="kw">as _</span>;
         <span class="doccomment">/// only resolve ipv6 addresses
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_RESOLVER_NAME_LOOKUP_FLAGS_IPV6_ONLY&quot;</span>)]
-        </span><span class="kw">const </span>IPV6_ONLY = ffi::G_RESOLVER_NAME_LOOKUP_FLAGS_IPV6_ONLY <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>IPV6_ONLY = ffi::G_RESOLVER_NAME_LOOKUP_FLAGS_IPV6_ONLY <span class="kw">as _</span>;
     }
 }
 
@@ -4778,7 +4778,7 @@
     </span><span class="kw">pub struct </span>ResourceLookupFlags: u32 {
         <span class="doccomment">/// No flags set.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_RESOURCE_LOOKUP_FLAGS_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_RESOURCE_LOOKUP_FLAGS_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_RESOURCE_LOOKUP_FLAGS_NONE <span class="kw">as _</span>;
     }
 }
 
@@ -4844,27 +4844,27 @@
     </span><span class="kw">pub struct </span>SettingsBindFlags: u32 {
         <span class="doccomment">/// Equivalent to `G_SETTINGS_BIND_GET|G_SETTINGS_BIND_SET`
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SETTINGS_BIND_DEFAULT&quot;</span>)]
-        </span><span class="kw">const </span>DEFAULT = ffi::G_SETTINGS_BIND_DEFAULT <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>DEFAULT = ffi::G_SETTINGS_BIND_DEFAULT <span class="kw">as _</span>;
         <span class="doccomment">/// Update the [`glib::Object`][crate::glib::Object] property when the setting changes.
         ///  It is an error to use this flag if the property is not writable.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SETTINGS_BIND_GET&quot;</span>)]
-        </span><span class="kw">const </span>GET = ffi::G_SETTINGS_BIND_GET <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>GET = ffi::G_SETTINGS_BIND_GET <span class="kw">as _</span>;
         <span class="doccomment">/// Update the setting when the [`glib::Object`][crate::glib::Object] property changes.
         ///  It is an error to use this flag if the property is not readable.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SETTINGS_BIND_SET&quot;</span>)]
-        </span><span class="kw">const </span>SET = ffi::G_SETTINGS_BIND_SET <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>SET = ffi::G_SETTINGS_BIND_SET <span class="kw">as _</span>;
         <span class="doccomment">/// Do not try to bind a &quot;sensitivity&quot; property to the writability of the setting
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SETTINGS_BIND_NO_SENSITIVITY&quot;</span>)]
-        </span><span class="kw">const </span>NO_SENSITIVITY = ffi::G_SETTINGS_BIND_NO_SENSITIVITY <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NO_SENSITIVITY = ffi::G_SETTINGS_BIND_NO_SENSITIVITY <span class="kw">as _</span>;
         <span class="doccomment">/// When set in addition to [`GET`][Self::GET], set the [`glib::Object`][crate::glib::Object] property
         ///  value initially from the setting, but do not listen for changes of the setting
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SETTINGS_BIND_GET_NO_CHANGES&quot;</span>)]
-        </span><span class="kw">const </span>GET_NO_CHANGES = ffi::G_SETTINGS_BIND_GET_NO_CHANGES <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>GET_NO_CHANGES = ffi::G_SETTINGS_BIND_GET_NO_CHANGES <span class="kw">as _</span>;
         <span class="doccomment">/// When passed to [`SettingsExtManual::bind()`][crate::prelude::SettingsExtManual::bind()], uses a pair of mapping functions that invert
         ///  the boolean value when mapping between the setting and the property. The setting and property must both
         ///  be booleans. You cannot pass this flag to [`SettingsExtManual::bind_with_mapping()`][crate::prelude::SettingsExtManual::bind_with_mapping()].
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SETTINGS_BIND_INVERT_BOOLEAN&quot;</span>)]
-        </span><span class="kw">const </span>INVERT_BOOLEAN = ffi::G_SETTINGS_BIND_INVERT_BOOLEAN <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>INVERT_BOOLEAN = ffi::G_SETTINGS_BIND_INVERT_BOOLEAN <span class="kw">as _</span>;
     }
 }
 
@@ -4936,52 +4936,52 @@
     </span><span class="kw">pub struct </span>SubprocessFlags: u32 {
         <span class="doccomment">/// No flags.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_SUBPROCESS_FLAGS_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_SUBPROCESS_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// create a pipe for the stdin of the
         ///  spawned process that can be accessed with
         ///  [`Subprocess::stdin_pipe()`][crate::Subprocess::stdin_pipe()].
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_STDIN_PIPE&quot;</span>)]
-        </span><span class="kw">const </span>STDIN_PIPE = ffi::G_SUBPROCESS_FLAGS_STDIN_PIPE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>STDIN_PIPE = ffi::G_SUBPROCESS_FLAGS_STDIN_PIPE <span class="kw">as _</span>;
         <span class="doccomment">/// stdin is inherited from the
         ///  calling process.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_STDIN_INHERIT&quot;</span>)]
-        </span><span class="kw">const </span>STDIN_INHERIT = ffi::G_SUBPROCESS_FLAGS_STDIN_INHERIT <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>STDIN_INHERIT = ffi::G_SUBPROCESS_FLAGS_STDIN_INHERIT <span class="kw">as _</span>;
         <span class="doccomment">/// create a pipe for the stdout of the
         ///  spawned process that can be accessed with
         ///  [`Subprocess::stdout_pipe()`][crate::Subprocess::stdout_pipe()].
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_STDOUT_PIPE&quot;</span>)]
-        </span><span class="kw">const </span>STDOUT_PIPE = ffi::G_SUBPROCESS_FLAGS_STDOUT_PIPE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>STDOUT_PIPE = ffi::G_SUBPROCESS_FLAGS_STDOUT_PIPE <span class="kw">as _</span>;
         <span class="doccomment">/// silence the stdout of the spawned
         ///  process (ie: redirect to `/dev/null`).
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_STDOUT_SILENCE&quot;</span>)]
-        </span><span class="kw">const </span>STDOUT_SILENCE = ffi::G_SUBPROCESS_FLAGS_STDOUT_SILENCE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>STDOUT_SILENCE = ffi::G_SUBPROCESS_FLAGS_STDOUT_SILENCE <span class="kw">as _</span>;
         <span class="doccomment">/// create a pipe for the stderr of the
         ///  spawned process that can be accessed with
         ///  [`Subprocess::stderr_pipe()`][crate::Subprocess::stderr_pipe()].
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_STDERR_PIPE&quot;</span>)]
-        </span><span class="kw">const </span>STDERR_PIPE = ffi::G_SUBPROCESS_FLAGS_STDERR_PIPE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>STDERR_PIPE = ffi::G_SUBPROCESS_FLAGS_STDERR_PIPE <span class="kw">as _</span>;
         <span class="doccomment">/// silence the stderr of the spawned
         ///  process (ie: redirect to `/dev/null`).
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_STDERR_SILENCE&quot;</span>)]
-        </span><span class="kw">const </span>STDERR_SILENCE = ffi::G_SUBPROCESS_FLAGS_STDERR_SILENCE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>STDERR_SILENCE = ffi::G_SUBPROCESS_FLAGS_STDERR_SILENCE <span class="kw">as _</span>;
         <span class="doccomment">/// merge the stderr of the spawned
         ///  process with whatever the stdout happens to be. This is a good way
         ///  of directing both streams to a common log file, for example.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_STDERR_MERGE&quot;</span>)]
-        </span><span class="kw">const </span>STDERR_MERGE = ffi::G_SUBPROCESS_FLAGS_STDERR_MERGE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>STDERR_MERGE = ffi::G_SUBPROCESS_FLAGS_STDERR_MERGE <span class="kw">as _</span>;
         <span class="doccomment">/// spawned processes will inherit the
         ///  file descriptors of their parent, unless those descriptors have
         ///  been explicitly marked as close-on-exec. This flag has no effect
         ///  over the &quot;standard&quot; file descriptors (stdin, stdout, stderr).
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_INHERIT_FDS&quot;</span>)]
-        </span><span class="kw">const </span>INHERIT_FDS = ffi::G_SUBPROCESS_FLAGS_INHERIT_FDS <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>INHERIT_FDS = ffi::G_SUBPROCESS_FLAGS_INHERIT_FDS <span class="kw">as _</span>;
         <span class="doccomment">/// if path searching is
         ///  needed when spawning the subprocess, use the `PATH` in the launcher
         ///  environment. (Since: 2.72)
         </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
         #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
         #[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_SEARCH_PATH_FROM_ENVP&quot;</span>)]
-        </span><span class="kw">const </span>SEARCH_PATH_FROM_ENVP = ffi::G_SUBPROCESS_FLAGS_SEARCH_PATH_FROM_ENVP <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>SEARCH_PATH_FROM_ENVP = ffi::G_SUBPROCESS_FLAGS_SEARCH_PATH_FROM_ENVP <span class="kw">as _</span>;
     }
 }
 
@@ -5056,34 +5056,34 @@
         <span class="doccomment">/// The signing certificate authority is
         ///  not known.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_UNKNOWN_CA&quot;</span>)]
-        </span><span class="kw">const </span>UNKNOWN_CA = ffi::G_TLS_CERTIFICATE_UNKNOWN_CA <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>UNKNOWN_CA = ffi::G_TLS_CERTIFICATE_UNKNOWN_CA <span class="kw">as _</span>;
         <span class="doccomment">/// The certificate does not match the
         ///  expected identity of the site that it was retrieved from.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_BAD_IDENTITY&quot;</span>)]
-        </span><span class="kw">const </span>BAD_IDENTITY = ffi::G_TLS_CERTIFICATE_BAD_IDENTITY <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>BAD_IDENTITY = ffi::G_TLS_CERTIFICATE_BAD_IDENTITY <span class="kw">as _</span>;
         <span class="doccomment">/// The certificate&#39;s activation time
         ///  is still in the future
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_NOT_ACTIVATED&quot;</span>)]
-        </span><span class="kw">const </span>NOT_ACTIVATED = ffi::G_TLS_CERTIFICATE_NOT_ACTIVATED <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NOT_ACTIVATED = ffi::G_TLS_CERTIFICATE_NOT_ACTIVATED <span class="kw">as _</span>;
         <span class="doccomment">/// The certificate has expired
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_EXPIRED&quot;</span>)]
-        </span><span class="kw">const </span>EXPIRED = ffi::G_TLS_CERTIFICATE_EXPIRED <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>EXPIRED = ffi::G_TLS_CERTIFICATE_EXPIRED <span class="kw">as _</span>;
         <span class="doccomment">/// The certificate has been revoked
         ///  according to the [`TlsConnection`][crate::TlsConnection]&#39;s certificate revocation list.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_REVOKED&quot;</span>)]
-        </span><span class="kw">const </span>REVOKED = ffi::G_TLS_CERTIFICATE_REVOKED <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>REVOKED = ffi::G_TLS_CERTIFICATE_REVOKED <span class="kw">as _</span>;
         <span class="doccomment">/// The certificate&#39;s algorithm is
         ///  considered insecure.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_INSECURE&quot;</span>)]
-        </span><span class="kw">const </span>INSECURE = ffi::G_TLS_CERTIFICATE_INSECURE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>INSECURE = ffi::G_TLS_CERTIFICATE_INSECURE <span class="kw">as _</span>;
         <span class="doccomment">/// Some other error occurred validating
         ///  the certificate
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_GENERIC_ERROR&quot;</span>)]
-        </span><span class="kw">const </span>GENERIC_ERROR = ffi::G_TLS_CERTIFICATE_GENERIC_ERROR <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>GENERIC_ERROR = ffi::G_TLS_CERTIFICATE_GENERIC_ERROR <span class="kw">as _</span>;
         <span class="doccomment">/// the combination of all of the above
         ///  flags
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_VALIDATE_ALL&quot;</span>)]
-        </span><span class="kw">const </span>VALIDATE_ALL = ffi::G_TLS_CERTIFICATE_VALIDATE_ALL <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>VALIDATE_ALL = ffi::G_TLS_CERTIFICATE_VALIDATE_ALL <span class="kw">as _</span>;
     }
 }
 
@@ -5147,7 +5147,7 @@
     </span><span class="kw">pub struct </span>TlsDatabaseVerifyFlags: u32 {
         <span class="doccomment">/// No verification flags
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_DATABASE_VERIFY_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_TLS_DATABASE_VERIFY_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_TLS_DATABASE_VERIFY_NONE <span class="kw">as _</span>;
     }
 }
 
@@ -5211,30 +5211,30 @@
     </span><span class="kw">pub struct </span>TlsPasswordFlags: u32 {
         <span class="doccomment">/// No flags
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_PASSWORD_NONE&quot;</span>)]
-        </span><span class="kw">const </span>NONE = ffi::G_TLS_PASSWORD_NONE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>NONE = ffi::G_TLS_PASSWORD_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// The password was wrong, and the user should retry.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_PASSWORD_RETRY&quot;</span>)]
-        </span><span class="kw">const </span>RETRY = ffi::G_TLS_PASSWORD_RETRY <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>RETRY = ffi::G_TLS_PASSWORD_RETRY <span class="kw">as _</span>;
         <span class="doccomment">/// Hint to the user that the password has been
         ///  wrong many times, and the user may not have many chances left.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_PASSWORD_MANY_TRIES&quot;</span>)]
-        </span><span class="kw">const </span>MANY_TRIES = ffi::G_TLS_PASSWORD_MANY_TRIES <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>MANY_TRIES = ffi::G_TLS_PASSWORD_MANY_TRIES <span class="kw">as _</span>;
         <span class="doccomment">/// Hint to the user that this is the last try to get
         ///  this password right.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_PASSWORD_FINAL_TRY&quot;</span>)]
-        </span><span class="kw">const </span>FINAL_TRY = ffi::G_TLS_PASSWORD_FINAL_TRY <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>FINAL_TRY = ffi::G_TLS_PASSWORD_FINAL_TRY <span class="kw">as _</span>;
         <span class="doccomment">/// For PKCS `11`, the user PIN is required.
         ///  Since: 2.70.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_PASSWORD_PKCS11_USER&quot;</span>)]
-        </span><span class="kw">const </span>PKCS11_USER = ffi::G_TLS_PASSWORD_PKCS11_USER <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>PKCS11_USER = ffi::G_TLS_PASSWORD_PKCS11_USER <span class="kw">as _</span>;
         <span class="doccomment">/// For PKCS `11`, the security officer
         ///  PIN is required. Since: 2.70.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_PASSWORD_PKCS11_SECURITY_OFFICER&quot;</span>)]
-        </span><span class="kw">const </span>PKCS11_SECURITY_OFFICER = ffi::G_TLS_PASSWORD_PKCS11_SECURITY_OFFICER <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>PKCS11_SECURITY_OFFICER = ffi::G_TLS_PASSWORD_PKCS11_SECURITY_OFFICER <span class="kw">as _</span>;
         <span class="doccomment">/// For PKCS `11`, the context-specific
         ///  PIN is required. Since: 2.70.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_PASSWORD_PKCS11_CONTEXT_SPECIFIC&quot;</span>)]
-        </span><span class="kw">const </span>PKCS11_CONTEXT_SPECIFIC = ffi::G_TLS_PASSWORD_PKCS11_CONTEXT_SPECIFIC <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>PKCS11_CONTEXT_SPECIFIC = ffi::G_TLS_PASSWORD_PKCS11_CONTEXT_SPECIFIC <span class="kw">as _</span>;
     }
 }
 

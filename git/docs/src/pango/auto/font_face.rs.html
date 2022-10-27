@@ -389,7 +389,7 @@
                 <span class="kw-2">&amp;mut </span>sizes,
                 n_sizes.as_mut_ptr(),
             );
-            FromGlibContainer::from_glib_full_num(sizes, n_sizes.assume_init() <span class="kw">as </span>usize)
+            FromGlibContainer::from_glib_full_num(sizes, n_sizes.assume_init() <span class="kw">as _</span>)
         }
     }
 }

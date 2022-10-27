@@ -866,7 +866,7 @@
     ) -&gt; <span class="prelude-ty">Result</span>&lt;(usize, <span class="prelude-ty">Option</span>&lt;glib::Error&gt;), glib::Error&gt; {
         <span class="kw">let </span>cancellable = cancellable.map(|c| c.as_ref());
         <span class="kw">let </span>gcancellable = cancellable.to_glib_none();
-        <span class="kw">let </span>count = buffer.len() <span class="kw">as </span>usize;
+        <span class="kw">let </span>count = buffer.len();
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>bytes_written = mem::MaybeUninit::uninit();
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();

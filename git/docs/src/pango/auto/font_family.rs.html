@@ -441,7 +441,7 @@
                 <span class="kw-2">&amp;mut </span>faces,
                 n_faces.as_mut_ptr(),
             );
-            FromGlibContainer::from_glib_container_num(faces, n_faces.assume_init() <span class="kw">as </span>usize)
+            FromGlibContainer::from_glib_container_num(faces, n_faces.assume_init() <span class="kw">as _</span>)
         }
     }
 }

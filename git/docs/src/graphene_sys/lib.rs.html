@@ -1806,7 +1806,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>graphene_box_t {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_box_t @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_box_t @ {self:p}&quot;</span>))
             .finish()
     }
 }
@@ -1820,7 +1820,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>graphene_euler_t {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_euler_t @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_euler_t @ {self:p}&quot;</span>))
             .finish()
     }
 }
@@ -1833,7 +1833,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>graphene_frustum_t {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_frustum_t @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_frustum_t @ {self:p}&quot;</span>))
             .finish()
     }
 }
@@ -1847,7 +1847,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>graphene_matrix_t {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_matrix_t @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_matrix_t @ {self:p}&quot;</span>))
             .finish()
     }
 }
@@ -1861,7 +1861,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>graphene_plane_t {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_plane_t @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_plane_t @ {self:p}&quot;</span>))
             .finish()
     }
 }
@@ -1876,7 +1876,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>graphene_point3d_t {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_point3d_t @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_point3d_t @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;x&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.x)
             .field(<span class="string">&quot;y&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.y)
             .field(<span class="string">&quot;z&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.z)
@@ -1893,7 +1893,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>graphene_point_t {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_point_t @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_point_t @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;x&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.x)
             .field(<span class="string">&quot;y&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.y)
             .finish()
@@ -1908,7 +1908,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>graphene_quad_t {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_quad_t @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_quad_t @ {self:p}&quot;</span>))
             .finish()
     }
 }
@@ -1924,7 +1924,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>graphene_quaternion_t {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_quaternion_t @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_quaternion_t @ {self:p}&quot;</span>))
             .finish()
     }
 }
@@ -1938,7 +1938,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>graphene_ray_t {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_ray_t @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_ray_t @ {self:p}&quot;</span>))
             .finish()
     }
 }
@@ -1952,7 +1952,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>graphene_rect_t {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_rect_t @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_rect_t @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;origin&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.origin)
             .field(<span class="string">&quot;size&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.size)
             .finish()
@@ -1971,7 +1971,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>graphene_simd4f_t {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_simd4f_t @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_simd4f_t @ {self:p}&quot;</span>))
             .finish()
     }
 }
@@ -1988,7 +1988,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>graphene_simd4x4f_t {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_simd4x4f_t @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_simd4x4f_t @ {self:p}&quot;</span>))
             .finish()
     }
 }
@@ -2002,7 +2002,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>graphene_size_t {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_size_t @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_size_t @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;width&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.width)
             .field(<span class="string">&quot;height&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.height)
             .finish()
@@ -2018,7 +2018,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>graphene_sphere_t {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_sphere_t @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_sphere_t @ {self:p}&quot;</span>))
             .finish()
     }
 }
@@ -2033,7 +2033,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>graphene_triangle_t {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_triangle_t @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_triangle_t @ {self:p}&quot;</span>))
             .finish()
     }
 }
@@ -2047,7 +2047,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>graphene_vec2_t {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_vec2_t @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_vec2_t @ {self:p}&quot;</span>))
             .finish()
     }
 }
@@ -2061,7 +2061,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>graphene_vec3_t {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_vec3_t @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_vec3_t @ {self:p}&quot;</span>))
             .finish()
     }
 }
@@ -2075,7 +2075,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>graphene_vec4_t {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_vec4_t @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;graphene_vec4_t @ {self:p}&quot;</span>))
             .finish()
     }
 }

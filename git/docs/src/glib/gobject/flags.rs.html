@@ -158,23 +158,23 @@
     </span><span class="kw">pub struct </span>ParamFlags: u32 {
         <span class="doccomment">/// the parameter is readable
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_PARAM_READABLE&quot;</span>)]
-        </span><span class="kw">const </span>READABLE = gobject_ffi::G_PARAM_READABLE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>READABLE = gobject_ffi::G_PARAM_READABLE <span class="kw">as _</span>;
         <span class="doccomment">/// the parameter is writable
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_PARAM_WRITABLE&quot;</span>)]
-        </span><span class="kw">const </span>WRITABLE = gobject_ffi::G_PARAM_WRITABLE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>WRITABLE = gobject_ffi::G_PARAM_WRITABLE <span class="kw">as _</span>;
         <span class="doccomment">/// alias for [`READABLE`][Self::READABLE] | [`WRITABLE`][Self::WRITABLE]
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_PARAM_READWRITE&quot;</span>)]
-        </span><span class="kw">const </span>READWRITE = gobject_ffi::G_PARAM_READWRITE <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>READWRITE = gobject_ffi::G_PARAM_READWRITE <span class="kw">as _</span>;
         <span class="doccomment">/// the parameter will be set upon object construction
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_PARAM_CONSTRUCT&quot;</span>)]
-        </span><span class="kw">const </span>CONSTRUCT = gobject_ffi::G_PARAM_CONSTRUCT <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>CONSTRUCT = gobject_ffi::G_PARAM_CONSTRUCT <span class="kw">as _</span>;
         <span class="doccomment">/// the parameter can only be set upon object construction
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_PARAM_CONSTRUCT_ONLY&quot;</span>)]
-        </span><span class="kw">const </span>CONSTRUCT_ONLY = gobject_ffi::G_PARAM_CONSTRUCT_ONLY <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>CONSTRUCT_ONLY = gobject_ffi::G_PARAM_CONSTRUCT_ONLY <span class="kw">as _</span>;
         <span class="doccomment">/// upon parameter conversion (see `g_param_value_convert()`)
         ///  strict validation is not required
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_PARAM_LAX_VALIDATION&quot;</span>)]
-        </span><span class="kw">const </span>LAX_VALIDATION = gobject_ffi::G_PARAM_LAX_VALIDATION <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>LAX_VALIDATION = gobject_ffi::G_PARAM_LAX_VALIDATION <span class="kw">as _</span>;
         <span class="kw">const </span>USER_1 = <span class="number">256</span>;
         <span class="kw">const </span>USER_2 = <span class="number">1024</span>;
         <span class="kw">const </span>USER_3 = <span class="number">2048</span>;
@@ -188,13 +188,13 @@
         ///  emitted: the implementation must call [`ObjectExt::notify()`][crate::prelude::ObjectExt::notify()] themselves
         ///  in case the property actually changes. Since: 2.42.
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_PARAM_EXPLICIT_NOTIFY&quot;</span>)]
-        </span><span class="kw">const </span>EXPLICIT_NOTIFY = gobject_ffi::G_PARAM_EXPLICIT_NOTIFY <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>EXPLICIT_NOTIFY = gobject_ffi::G_PARAM_EXPLICIT_NOTIFY <span class="kw">as _</span>;
         <span class="doccomment">/// the parameter is deprecated and will be removed
         ///  in a future version. A warning will be generated if it is used
         ///  while running with G_ENABLE_DIAGNOSTIC=1.
         ///  Since 2.26
         </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_PARAM_DEPRECATED&quot;</span>)]
-        </span><span class="kw">const </span>DEPRECATED = gobject_ffi::G_PARAM_DEPRECATED <span class="kw">as </span>u32;
+        </span><span class="kw">const </span>DEPRECATED = gobject_ffi::G_PARAM_DEPRECATED <span class="kw">as _</span>;
     }
 }
 

@@ -6300,7 +6300,7 @@
             <span class="macro">assert_eq!</span>(is_ok == glib::ffi::GFALSE, !error.is_null());
             <span class="kw">if </span>error.is_null() {
                 <span class="prelude-val">Ok</span>((
-                    FromGlibContainer::from_glib_full_num(contents, length.assume_init() <span class="kw">as </span>usize),
+                    FromGlibContainer::from_glib_full_num(contents, length.assume_init() <span class="kw">as _</span>),
                     from_glib_full(etag_out),
                 ))
             } <span class="kw">else </span>{
@@ -6349,7 +6349,7 @@
             );
             <span class="kw">let </span>result = <span class="kw">if </span>error.is_null() {
                 <span class="prelude-val">Ok</span>((
-                    FromGlibContainer::from_glib_full_num(contents, length.assume_init() <span class="kw">as </span>usize),
+                    FromGlibContainer::from_glib_full_num(contents, length.assume_init() <span class="kw">as _</span>),
                     from_glib_full(etag_out),
                 ))
             } <span class="kw">else </span>{
@@ -7457,7 +7457,7 @@
         flags: FileCreateFlags,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="prelude-ty">Option</span>&lt;glib::GString&gt;, glib::Error&gt; {
-        <span class="kw">let </span>length = contents.len() <span class="kw">as </span>usize;
+        <span class="kw">let </span>length = contents.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>new_etag = ptr::null_mut();
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();

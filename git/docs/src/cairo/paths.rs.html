@@ -417,7 +417,7 @@
                     to_tuple(<span class="kw-2">&amp;</span><span class="self">self</span>.data[<span class="self">self</span>.i + <span class="number">3</span>].point),
                 ),
                 PathDataType::ClosePath =&gt; PathSegment::ClosePath,
-                PathDataType::__Unknown(x) =&gt; <span class="macro">panic!</span>(<span class="string">&quot;Unknown value: {}&quot;</span>, x),
+                PathDataType::__Unknown(x) =&gt; <span class="macro">panic!</span>(<span class="string">&quot;Unknown value: {x}&quot;</span>),
             };
 
             <span class="self">self</span>.i += <span class="self">self</span>.data[<span class="self">self</span>.i].header.length <span class="kw">as </span>usize;
