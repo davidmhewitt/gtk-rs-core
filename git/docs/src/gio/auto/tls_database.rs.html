@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -972,7 +972,7 @@
     /// # Implements
     ///
     /// [`TlsDatabaseExt`][trait@crate::prelude::TlsDatabaseExt], [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GTlsDatabase&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GTlsDatabase&quot;</span>)]
     </span><span class="kw">pub struct </span>TlsDatabase(Object&lt;ffi::GTlsDatabase, ffi::GTlsDatabaseClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -1005,7 +1005,7 @@
     ///
     /// a newly allocated string containing the
     /// handle.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_database_create_certificate_handle&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_database_create_certificate_handle&quot;</span>)]
     </span><span class="kw">fn </span>create_certificate_handle(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         certificate: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;TlsCertificate&gt;,
@@ -1036,7 +1036,7 @@
     ///
     /// a newly allocated
     /// [`TlsCertificate`][crate::TlsCertificate], or [`None`]. Use `g_object_unref()` to release the certificate.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_database_lookup_certificate_for_handle&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_database_lookup_certificate_for_handle&quot;</span>)]
     </span><span class="kw">fn </span>lookup_certificate_for_handle(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         handle: <span class="kw-2">&amp;</span>str,
@@ -1057,7 +1057,7 @@
     /// a [`Cancellable`][crate::Cancellable], or [`None`]
     /// ## `callback`
     /// callback to call when the operation completes
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_database_lookup_certificate_for_handle_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_database_lookup_certificate_for_handle_async&quot;</span>)]
     </span><span class="kw">fn </span>lookup_certificate_for_handle_async&lt;
         P: FnOnce(<span class="prelude-ty">Result</span>&lt;TlsCertificate, glib::Error&gt;) + <span class="lifetime">&#39;static</span>,
     &gt;(
@@ -1109,7 +1109,7 @@
     ///
     /// a newly allocated issuer [`TlsCertificate`][crate::TlsCertificate],
     /// or [`None`]. Use `g_object_unref()` to release the certificate.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_database_lookup_certificate_issuer&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_database_lookup_certificate_issuer&quot;</span>)]
     </span><span class="kw">fn </span>lookup_certificate_issuer(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         certificate: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;TlsCertificate&gt;,
@@ -1130,7 +1130,7 @@
     /// a [`Cancellable`][crate::Cancellable], or [`None`]
     /// ## `callback`
     /// callback to call when the operation completes
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_database_lookup_certificate_issuer_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_database_lookup_certificate_issuer_async&quot;</span>)]
     </span><span class="kw">fn </span>lookup_certificate_issuer_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;TlsCertificate, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         certificate: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;TlsCertificate&gt;,
@@ -1164,7 +1164,7 @@
     ///
     /// a newly allocated list of [`TlsCertificate`][crate::TlsCertificate]
     /// objects. Use `g_object_unref()` on each certificate, and `g_list_free()` on the release the list.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_database_lookup_certificates_issued_by&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_database_lookup_certificates_issued_by&quot;</span>)]
     </span><span class="kw">fn </span>lookup_certificates_issued_by(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         issuer_raw_dn: <span class="kw-2">&amp;</span>glib::ByteArray,
@@ -1189,7 +1189,7 @@
     /// a [`Cancellable`][crate::Cancellable], or [`None`]
     /// ## `callback`
     /// callback to call when the operation completes
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_database_lookup_certificates_issued_by_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_database_lookup_certificates_issued_by_async&quot;</span>)]
     </span><span class="kw">fn </span>lookup_certificates_issued_by_async&lt;
         P: FnOnce(<span class="prelude-ty">Result</span>&lt;Vec&lt;TlsCertificate&gt;, glib::Error&gt;) + <span class="lifetime">&#39;static</span>,
     &gt;(
@@ -1287,7 +1287,7 @@
     ///
     /// the appropriate [`TlsCertificateFlags`][crate::TlsCertificateFlags] which represents the
     /// result of verification.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_database_verify_chain&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_database_verify_chain&quot;</span>)]
     </span><span class="kw">fn </span>verify_chain(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         chain: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;TlsCertificate&gt;,
@@ -1315,7 +1315,7 @@
     /// a [`Cancellable`][crate::Cancellable], or [`None`]
     /// ## `callback`
     /// callback to call when the operation completes
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_database_verify_chain_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_database_verify_chain_async&quot;</span>)]
     </span><span class="kw">fn </span>verify_chain_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;TlsCertificateFlags, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         chain: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;TlsCertificate&gt;,
@@ -1804,4 +1804,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

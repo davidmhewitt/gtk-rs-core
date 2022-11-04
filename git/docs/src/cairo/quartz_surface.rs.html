@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../cairo/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../cairo/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -127,7 +127,7 @@
 <span class="kw">use </span><span class="kw">crate</span>::enums::{Format, SurfaceType};
 <span class="kw">use </span><span class="kw">crate</span>::error::Error;
 <span class="kw">use </span><span class="kw">crate</span>::surface::Surface;
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 
 <span class="kw">use </span>ffi::CGContextRef;
@@ -135,7 +135,7 @@
 <span class="macro">declare_surface!</span>(QuartzSurface, SurfaceType::Quartz);
 
 <span class="kw">impl </span>QuartzSurface {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_quartz_surface_create&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_quartz_surface_create&quot;</span>)]
     </span><span class="kw">pub fn </span>create(format: Format, width: u32, height: u32) -&gt; <span class="prelude-ty">Result</span>&lt;QuartzSurface, Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="self">Self</span>::from_raw_full(ffi::cairo_quartz_surface_create(
@@ -146,7 +146,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_quartz_surface_create_for_cg_context&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_quartz_surface_create_for_cg_context&quot;</span>)]
     </span><span class="kw">pub fn </span>create_for_cg_context(
         cg_context: CGContextRef,
         width: u32,
@@ -159,11 +159,11 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_quartz_surface_get_cg_context&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_quartz_surface_get_cg_context&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_cg_context&quot;</span>)]
     </span><span class="kw">pub fn </span>cg_context(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; CGContextRef {
         <span class="kw">unsafe </span>{ ffi::cairo_quartz_surface_get_cg_context(<span class="self">self</span>.to_raw_none()) }
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -640,7 +640,7 @@
             <span class="kw">let </span><span class="kw-2">&amp;mut </span>(<span class="kw">_</span>, <span class="kw-2">ref mut </span>receiver) = source.as_mut().unwrap();
             Pin::new(receiver).poll(ctx)
         };
-        <span class="attribute">#[allow(clippy::match_wild_err_arm)]
+        <span class="attr">#[allow(clippy::match_wild_err_arm)]
         </span><span class="kw">match </span>res {
             Poll::Ready(<span class="prelude-val">Err</span>(<span class="kw">_</span>)) =&gt; <span class="macro">panic!</span>(<span class="string">&quot;Source sender was unexpectedly closed&quot;</span>),
             Poll::Ready(<span class="prelude-val">Ok</span>(v)) =&gt; {
@@ -755,7 +755,7 @@
     }))
 }
 
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Create a `Future` that will resolve once the given UNIX signal is raised
@@ -765,7 +765,7 @@
     unix_signal_future_with_priority(<span class="kw">crate</span>::PRIORITY_DEFAULT, signum)
 }
 
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Create a `Future` that will resolve once the given UNIX signal is raised
@@ -851,7 +851,7 @@
             <span class="kw">let </span><span class="kw-2">&amp;mut </span>(<span class="kw">_</span>, <span class="kw-2">ref mut </span>receiver) = source.as_mut().unwrap();
             Pin::new(receiver).poll_next(ctx)
         };
-        <span class="attribute">#[allow(clippy::match_wild_err_arm)]
+        <span class="attr">#[allow(clippy::match_wild_err_arm)]
         </span><span class="kw">match </span>res {
             Poll::Ready(v) =&gt; {
                 <span class="kw">if </span>v.is_none() {
@@ -941,7 +941,7 @@
     }))
 }
 
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Create a `Stream` that will provide a value whenever the given UNIX signal is raised
@@ -951,7 +951,7 @@
     unix_signal_stream_with_priority(<span class="kw">crate</span>::PRIORITY_DEFAULT, signum)
 }
 
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Create a `Stream` that will provide a value whenever the given UNIX signal is raised
@@ -972,7 +972,7 @@
     }))
 }
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use </span>futures_util::future::FutureExt;
@@ -980,14 +980,14 @@
     <span class="kw">use </span>std::thread;
     <span class="kw">use </span>std::time::Duration;
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_timeout() {
         <span class="kw">let </span>c = MainContext::new();
 
         c.block_on(timeout_future(Duration::from_millis(<span class="number">20</span>)));
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_timeout_send() {
         <span class="kw">let </span>c = MainContext::new();
         <span class="kw">let </span>l = <span class="kw">crate</span>::MainLoop::new(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span>c), <span class="bool-val">false</span>);
@@ -1001,7 +1001,7 @@
         l.run();
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_interval() {
         <span class="kw">let </span>c = MainContext::new();
 
@@ -1024,7 +1024,7 @@
         <span class="macro">assert_eq!</span>(count, <span class="number">2</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_timeout_and_channel() {
         <span class="kw">let </span>c = MainContext::default();
 
@@ -1042,4 +1042,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

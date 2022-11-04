@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -511,7 +511,7 @@
     /// # Implements
     ///
     /// [`NetworkMonitorExt`][trait@crate::prelude::NetworkMonitorExt], [`InitableExt`][trait@crate::prelude::InitableExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GNetworkMonitor&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GNetworkMonitor&quot;</span>)]
     </span><span class="kw">pub struct </span>NetworkMonitor(Interface&lt;ffi::GNetworkMonitor, ffi::GNetworkMonitorInterface&gt;) @requires Initable;
 
     <span class="kw">match fn </span>{
@@ -528,7 +528,7 @@
     ///
     /// a [`NetworkMonitor`][crate::NetworkMonitor], which will be
     ///  a dummy object if no network monitor is available
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_network_monitor_get_default&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_network_monitor_get_default&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_default&quot;</span>)]
     #[allow(clippy::should_implement_trait)]
     </span><span class="kw">pub fn </span>default() -&gt; NetworkMonitor {
@@ -567,7 +567,7 @@
     /// # Returns
     ///
     /// [`true`] if `connectable` is reachable, [`false`] if not.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_network_monitor_can_reach&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_network_monitor_can_reach&quot;</span>)]
     </span><span class="kw">fn </span>can_reach(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         connectable: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;SocketConnectable&gt;,
@@ -590,7 +590,7 @@
     /// ## `callback`
     /// a `GAsyncReadyCallback` to call when the
     ///  request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_network_monitor_can_reach_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_network_monitor_can_reach_async&quot;</span>)]
     </span><span class="kw">fn </span>can_reach_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         connectable: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;SocketConnectable&gt;,
@@ -626,7 +626,7 @@
     /// # Returns
     ///
     /// the network connectivity state
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_network_monitor_get_connectivity&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_network_monitor_get_connectivity&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_connectivity&quot;</span>)]
     </span><span class="kw">fn </span>connectivity(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; NetworkConnectivity;
 
@@ -638,7 +638,7 @@
     /// # Returns
     ///
     /// whether the network is available
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_network_monitor_get_network_available&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_network_monitor_get_network_available&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_network_available&quot;</span>)]
     </span><span class="kw">fn </span>is_network_available(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -648,23 +648,23 @@
     /// # Returns
     ///
     /// whether the connection is metered
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_network_monitor_get_network_metered&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_network_monitor_get_network_metered&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_network_metered&quot;</span>)]
     </span><span class="kw">fn </span>is_network_metered(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
     <span class="doccomment">/// Emitted when the network configuration changes.
     /// ## `network_available`
     /// the current value of `property::NetworkMonitor::network-available`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;network-changed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;network-changed&quot;</span>)]
     </span><span class="kw">fn </span>connect_network_changed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, bool) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;connectivity&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;connectivity&quot;</span>)]
     </span><span class="kw">fn </span>connect_connectivity_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;network-available&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;network-available&quot;</span>)]
     </span><span class="kw">fn </span>connect_network_available_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;network-metered&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;network-metered&quot;</span>)]
     </span><span class="kw">fn </span>connect_network_metered_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -890,4 +890,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

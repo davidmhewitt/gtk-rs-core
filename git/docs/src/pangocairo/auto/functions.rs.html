@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pangocairo/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pangocairo/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -442,7 +442,7 @@
 ///
 /// the resolution in &quot;dots per inch&quot;. A negative value will
 ///  be returned if no resolution has previously been set.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_cairo_context_get_resolution&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_cairo_context_get_resolution&quot;</span>)]
 </span><span class="kw">pub fn </span>context_get_resolution(context: <span class="kw-2">&amp;</span>pango::Context) -&gt; f64 {
     <span class="kw">unsafe </span>{ ffi::pango_cairo_context_get_resolution(context.to_glib_none().<span class="number">0</span>) }
 }
@@ -461,7 +461,7 @@
 /// ## `options`
 /// a [`cairo::FontOptions`][crate::cairo::FontOptions], or [`None`] to unset
 ///  any previously set options. A copy is made.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_cairo_context_set_font_options&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_cairo_context_set_font_options&quot;</span>)]
 </span><span class="kw">pub fn </span>context_set_font_options(context: <span class="kw-2">&amp;</span>pango::Context, options: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>cairo::FontOptions&gt;) {
     <span class="kw">unsafe </span>{
         ffi::pango_cairo_context_set_font_options(
@@ -482,7 +482,7 @@
 /// the resolution in &quot;dots per inch&quot;. (Physical inches aren&#39;t actually
 ///  involved; the terminology is conventional.) A 0 or negative value
 ///  means to use the resolution from the font map.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_cairo_context_set_resolution&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_cairo_context_set_resolution&quot;</span>)]
 </span><span class="kw">pub fn </span>context_set_resolution(context: <span class="kw-2">&amp;</span>pango::Context, dpi: f64) {
     <span class="kw">unsafe </span>{
         ffi::pango_cairo_context_set_resolution(context.to_glib_none().<span class="number">0</span>, dpi);
@@ -510,7 +510,7 @@
 /// # Returns
 ///
 /// the newly created [`pango::Context`][crate::pango::Context]
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_cairo_create_context&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_cairo_create_context&quot;</span>)]
 </span><span class="kw">pub fn </span>create_context(cr: <span class="kw-2">&amp;</span>cairo::Context) -&gt; pango::Context {
     <span class="kw">unsafe </span>{
         from_glib_full(ffi::pango_cairo_create_context(mut_override(
@@ -537,7 +537,7 @@
 /// # Returns
 ///
 /// the newly created [`pango::Layout`][crate::pango::Layout]
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_cairo_create_layout&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_cairo_create_layout&quot;</span>)]
 </span><span class="kw">pub fn </span>create_layout(cr: <span class="kw-2">&amp;</span>cairo::Context) -&gt; pango::Layout {
     <span class="kw">unsafe </span>{
         from_glib_full(ffi::pango_cairo_create_layout(mut_override(
@@ -562,7 +562,7 @@
 /// Non-negative width of the rectangle
 /// ## `height`
 /// Non-negative height of the rectangle
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_cairo_error_underline_path&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_cairo_error_underline_path&quot;</span>)]
 </span><span class="kw">pub fn </span>error_underline_path(cr: <span class="kw-2">&amp;</span>cairo::Context, x: f64, y: f64, width: f64, height: f64) {
     <span class="kw">unsafe </span>{
         ffi::pango_cairo_error_underline_path(
@@ -586,7 +586,7 @@
 /// a [`pango::Font`][crate::pango::Font] from a [`FontMap`][crate::FontMap]
 /// ## `glyphs`
 /// a [`pango::GlyphString`][crate::pango::GlyphString]
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_cairo_glyph_string_path&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_cairo_glyph_string_path&quot;</span>)]
 </span><span class="kw">pub fn </span>glyph_string_path(
     cr: <span class="kw-2">&amp;</span>cairo::Context,
     font: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;pango::Font&gt;,
@@ -610,7 +610,7 @@
 /// a Cairo context
 /// ## `line`
 /// a [`pango::LayoutLine`][crate::pango::LayoutLine]
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_cairo_layout_line_path&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_cairo_layout_line_path&quot;</span>)]
 </span><span class="kw">pub fn </span>layout_line_path(cr: <span class="kw-2">&amp;</span>cairo::Context, line: <span class="kw-2">&amp;</span>pango::LayoutLine) {
     <span class="kw">unsafe </span>{
         ffi::pango_cairo_layout_line_path(mut_override(cr.to_glib_none().<span class="number">0</span>), line.to_glib_none().<span class="number">0</span>);
@@ -626,7 +626,7 @@
 /// a Cairo context
 /// ## `layout`
 /// a Pango layout
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_cairo_layout_path&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_cairo_layout_path&quot;</span>)]
 </span><span class="kw">pub fn </span>layout_path(cr: <span class="kw-2">&amp;</span>cairo::Context, layout: <span class="kw-2">&amp;</span>pango::Layout) {
     <span class="kw">unsafe </span>{
         ffi::pango_cairo_layout_path(mut_override(cr.to_glib_none().<span class="number">0</span>), layout.to_glib_none().<span class="number">0</span>);
@@ -650,7 +650,7 @@
 /// Non-negative width of the rectangle
 /// ## `height`
 /// Non-negative height of the rectangle
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_cairo_show_error_underline&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_cairo_show_error_underline&quot;</span>)]
 </span><span class="kw">pub fn </span>show_error_underline(cr: <span class="kw-2">&amp;</span>cairo::Context, x: f64, y: f64, width: f64, height: f64) {
     <span class="kw">unsafe </span>{
         ffi::pango_cairo_show_error_underline(
@@ -680,7 +680,7 @@
 /// the UTF-8 text that `glyph_item` refers to
 /// ## `glyph_item`
 /// a [`pango::GlyphItem`][crate::pango::GlyphItem]
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_cairo_show_glyph_item&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_cairo_show_glyph_item&quot;</span>)]
 </span><span class="kw">pub fn </span>show_glyph_item(cr: <span class="kw-2">&amp;</span>cairo::Context, text: <span class="kw-2">&amp;</span>str, glyph_item: <span class="kw-2">&amp;mut </span>pango::GlyphItem) {
     <span class="kw">unsafe </span>{
         ffi::pango_cairo_show_glyph_item(
@@ -701,7 +701,7 @@
 /// a [`pango::Font`][crate::pango::Font] from a [`FontMap`][crate::FontMap]
 /// ## `glyphs`
 /// a [`pango::GlyphString`][crate::pango::GlyphString]
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_cairo_show_glyph_string&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_cairo_show_glyph_string&quot;</span>)]
 </span><span class="kw">pub fn </span>show_glyph_string(
     cr: <span class="kw-2">&amp;</span>cairo::Context,
     font: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;pango::Font&gt;,
@@ -724,7 +724,7 @@
 /// a Cairo context
 /// ## `layout`
 /// a Pango layout
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_cairo_show_layout&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_cairo_show_layout&quot;</span>)]
 </span><span class="kw">pub fn </span>show_layout(cr: <span class="kw-2">&amp;</span>cairo::Context, layout: <span class="kw-2">&amp;</span>pango::Layout) {
     <span class="kw">unsafe </span>{
         ffi::pango_cairo_show_layout(mut_override(cr.to_glib_none().<span class="number">0</span>), layout.to_glib_none().<span class="number">0</span>);
@@ -739,7 +739,7 @@
 /// a Cairo context
 /// ## `line`
 /// a [`pango::LayoutLine`][crate::pango::LayoutLine]
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_cairo_show_layout_line&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_cairo_show_layout_line&quot;</span>)]
 </span><span class="kw">pub fn </span>show_layout_line(cr: <span class="kw-2">&amp;</span>cairo::Context, line: <span class="kw-2">&amp;</span>pango::LayoutLine) {
     <span class="kw">unsafe </span>{
         ffi::pango_cairo_show_layout_line(mut_override(cr.to_glib_none().<span class="number">0</span>), line.to_glib_none().<span class="number">0</span>);
@@ -756,7 +756,7 @@
 /// a Cairo context
 /// ## `context`
 /// a [`pango::Context`][crate::pango::Context], from a pangocairo font map
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_cairo_update_context&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_cairo_update_context&quot;</span>)]
 </span><span class="kw">pub fn </span>update_context(cr: <span class="kw-2">&amp;</span>cairo::Context, context: <span class="kw-2">&amp;</span>pango::Context) {
     <span class="kw">unsafe </span>{
         ffi::pango_cairo_update_context(
@@ -773,11 +773,11 @@
 /// a Cairo context
 /// ## `layout`
 /// a [`pango::Layout`][crate::pango::Layout], from [func`create_layout`]
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_cairo_update_layout&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_cairo_update_layout&quot;</span>)]
 </span><span class="kw">pub fn </span>update_layout(cr: <span class="kw-2">&amp;</span>cairo::Context, layout: <span class="kw-2">&amp;</span>pango::Layout) {
     <span class="kw">unsafe </span>{
         ffi::pango_cairo_update_layout(mut_override(cr.to_glib_none().<span class="number">0</span>), layout.to_glib_none().<span class="number">0</span>);
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pangocairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pangocairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -274,7 +274,7 @@
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// The id of a cancelled handler that is returned by `CancellableExtManual::connect`. This type is
 /// analogous to [`glib::SignalHandlerId`].
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq)]
 #[repr(transparent)]
 </span><span class="kw">pub struct </span>CancelledHandlerId(NonZeroU64);
 
@@ -288,7 +288,7 @@
 
 <span class="kw">impl </span>TryFromGlib&lt;libc::c_ulong&gt; <span class="kw">for </span>CancelledHandlerId {
     <span class="kw">type </span>Error = GlibNoneError;
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>try_from_glib(val: libc::c_ulong) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="self">Self</span>, GlibNoneError&gt; {
         NonZeroU64::new(val <span class="kw">as _</span>).map(<span class="self">Self</span>).ok_or(GlibNoneError)
     }
@@ -313,14 +313,14 @@
     /// # Returns
     ///
     /// The id of the signal handler or `None` if `self` has already been cancelled.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_cancellable_connect&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_cancellable_connect&quot;</span>)]
     </span><span class="kw">fn </span>connect_cancelled&lt;F: FnOnce(<span class="kw-2">&amp;</span><span class="self">Self</span>) + Send + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         callback: F,
     ) -&gt; <span class="prelude-ty">Option</span>&lt;CancelledHandlerId&gt;;
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Local variant of [`Self::connect_cancelled`].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_cancellable_connect&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_cancellable_connect&quot;</span>)]
     </span><span class="kw">fn </span>connect_cancelled_local&lt;F: FnOnce(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         callback: F,
@@ -333,7 +333,7 @@
     ///
     /// This avoids a race condition where a thread cancels at the same time as the cancellable
     /// operation is finished and the signal handler is removed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_cancellable_disconnect&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_cancellable_disconnect&quot;</span>)]
     </span><span class="kw">fn </span>disconnect_cancelled(<span class="kw-2">&amp;</span><span class="self">self</span>, id: CancelledHandlerId);
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Returns a `Future` that completes when the cancellable becomes cancelled. Completes
@@ -342,7 +342,7 @@
 }
 
 <span class="kw">impl</span>&lt;O: IsA&lt;Cancellable&gt;&gt; CancellableExtManual <span class="kw">for </span>O {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_cancellable_connect&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_cancellable_connect&quot;</span>)]
     </span><span class="kw">fn </span>connect_cancelled&lt;F: FnOnce(<span class="kw-2">&amp;</span><span class="self">Self</span>) + Send + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         callback: F,
@@ -374,7 +374,7 @@
             ))
         }
     }
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_cancellable_connect&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_cancellable_connect&quot;</span>)]
     </span><span class="kw">fn </span>connect_cancelled_local&lt;F: FnOnce(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         callback: F,
@@ -383,7 +383,7 @@
 
         <span class="self">self</span>.connect_cancelled(<span class="kw">move </span>|obj| (callback.into_inner())(obj))
     }
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_cancellable_disconnect&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_cancellable_disconnect&quot;</span>)]
     </span><span class="kw">fn </span>disconnect_cancelled(<span class="kw-2">&amp;</span><span class="self">self</span>, id: CancelledHandlerId) {
         <span class="kw">unsafe </span>{ ffi::g_cancellable_disconnect(<span class="self">self</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>, id.as_raw()) };
     }
@@ -402,11 +402,11 @@
     }
 }
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>cancellable_callback() {
         <span class="kw">let </span>c = Cancellable::new();
         <span class="kw">let </span>id = c.connect_cancelled(|<span class="kw">_</span>| {});
@@ -414,7 +414,7 @@
         </span>c.disconnect_cancelled(id.unwrap());
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>cancellable_callback_local() {
         <span class="kw">let </span>c = Cancellable::new();
         <span class="kw">let </span>id = c.connect_cancelled_local(|<span class="kw">_</span>| {});
@@ -422,14 +422,14 @@
         </span>c.disconnect_cancelled(id.unwrap());
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>cancellable_future() {
         <span class="kw">let </span>c = Cancellable::new();
         c.cancel();
         glib::MainContext::new().block_on(c.future());
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>cancellable_future_thread() {
         <span class="kw">let </span>cancellable = Cancellable::new();
         <span class="kw">let </span>c = cancellable.clone();
@@ -437,7 +437,7 @@
         glib::MainContext::new().block_on(cancellable.future());
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>cancellable_future_delayed() {
         <span class="kw">let </span>ctx = glib::MainContext::new();
         <span class="kw">let </span>c = Cancellable::new();
@@ -454,4 +454,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

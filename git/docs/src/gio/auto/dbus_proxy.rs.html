@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1554,7 +1554,7 @@
 <span class="kw">use </span><span class="kw">crate</span>::DBusInterfaceInfo;
 <span class="kw">use </span><span class="kw">crate</span>::DBusProxyFlags;
 <span class="kw">use </span><span class="kw">crate</span>::Initable;
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
 </span><span class="kw">use </span><span class="kw">crate</span>::UnixFDList;
 <span class="kw">use </span>glib::object::Cast;
@@ -1619,7 +1619,7 @@
     /// # Implements
     ///
     /// [`DBusProxyExt`][trait@crate::prelude::DBusProxyExt], [`trait@glib::ObjectExt`], [`AsyncInitableExt`][trait@crate::prelude::AsyncInitableExt], [`DBusInterfaceExt`][trait@crate::prelude::DBusInterfaceExt], [`InitableExt`][trait@crate::prelude::InitableExt], [`DBusProxyExtManual`][trait@crate::prelude::DBusProxyExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDBusProxy&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDBusProxy&quot;</span>)]
     </span><span class="kw">pub struct </span>DBusProxy(Object&lt;ffi::GDBusProxy, ffi::GDBusProxyClass&gt;) @implements AsyncInitable, DBusInterface, Initable;
 
     <span class="kw">match fn </span>{
@@ -1653,7 +1653,7 @@
     ///
     /// A [`DBusProxy`][crate::DBusProxy] or [`None`] if error is set.
     ///  Free with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_proxy_new_for_bus_sync&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_proxy_new_for_bus_sync&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_for_bus_sync&quot;</span>)]
     </span><span class="kw">pub fn </span>for_bus_sync(
         bus_type: BusType,
@@ -1725,7 +1725,7 @@
     ///
     /// A [`DBusProxy`][crate::DBusProxy] or [`None`] if error is set.
     ///  Free with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_proxy_new_sync&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_proxy_new_sync&quot;</span>)]
     </span><span class="kw">pub fn </span>new_sync(
         connection: <span class="kw-2">&amp;</span>DBusConnection,
         flags: DBusProxyFlags,
@@ -1798,7 +1798,7 @@
     /// A [`Cancellable`][crate::Cancellable] or [`None`].
     /// ## `callback`
     /// Callback function to invoke when the proxy is ready.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_proxy_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_proxy_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;DBusProxy, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         connection: <span class="kw-2">&amp;</span>DBusConnection,
         flags: DBusProxyFlags,
@@ -1905,7 +1905,7 @@
     /// A [`Cancellable`][crate::Cancellable] or [`None`].
     /// ## `callback`
     /// Callback function to invoke when the proxy is ready.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_proxy_new_for_bus&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_proxy_new_for_bus&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_for_bus&quot;</span>)]
     </span><span class="kw">pub fn </span>for_bus&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;DBusProxy, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         bus_type: BusType,
@@ -2065,7 +2065,7 @@
     /// ## `callback`
     /// A `GAsyncReadyCallback` to call when the request is satisfied or [`None`] if you don&#39;t
     /// care about the result of the method invocation.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_proxy_call&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_proxy_call&quot;</span>)]
     </span><span class="kw">fn </span>call&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;glib::Variant, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         method_name: <span class="kw-2">&amp;</span>str,
@@ -2139,7 +2139,7 @@
     ///
     /// [`None`] if `error` is set. Otherwise a [`glib::Variant`][struct@crate::glib::Variant] tuple with
     /// return values. Free with `g_variant_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_proxy_call_sync&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_proxy_call_sync&quot;</span>)]
     </span><span class="kw">fn </span>call_sync(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         method_name: <span class="kw-2">&amp;</span>str,
@@ -2168,7 +2168,7 @@
     /// ## `callback`
     /// A `GAsyncReadyCallback` to call when the request is satisfied or [`None`] if you don&#39;t
     /// care about the result of the method invocation.
-    </span><span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
     #[doc(alias = <span class="string">&quot;g_dbus_proxy_call_with_unix_fd_list&quot;</span>)]
     </span><span class="kw">fn </span>call_with_unix_fd_list&lt;
@@ -2184,7 +2184,7 @@
         callback: P,
     );
 
-    <span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
     </span><span class="kw">fn </span>call_with_unix_fd_list_future(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -2225,7 +2225,7 @@
     ///
     /// ## `out_fd_list`
     /// Return location for a [`UnixFDList`][crate::UnixFDList] or [`None`].
-    </span><span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
     #[doc(alias = <span class="string">&quot;g_dbus_proxy_call_with_unix_fd_list_sync&quot;</span>)]
     </span><span class="kw">fn </span>call_with_unix_fd_list_sync(
@@ -2252,7 +2252,7 @@
     /// A reference to the [`glib::Variant`][struct@crate::glib::Variant] instance
     ///  that holds the value for `property_name` or [`None`] if the value is not in
     ///  the cache. The returned reference must be freed with `g_variant_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_proxy_get_cached_property&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_proxy_get_cached_property&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_cached_property&quot;</span>)]
     </span><span class="kw">fn </span>cached_property(<span class="kw-2">&amp;</span><span class="self">self</span>, property_name: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;glib::Variant&gt;;
 
@@ -2264,7 +2264,7 @@
     ///  [`None`]-terminated array of strings or [`None`] if
     ///  `self` has no cached properties. Free the returned array with
     ///  `g_strfreev()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_proxy_get_cached_property_names&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_proxy_get_cached_property_names&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_cached_property_names&quot;</span>)]
     </span><span class="kw">fn </span>cached_property_names(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;glib::GString&gt;;
 
@@ -2273,7 +2273,7 @@
     /// # Returns
     ///
     /// A [`DBusConnection`][crate::DBusConnection] owned by `self`. Do not free.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_proxy_get_connection&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_proxy_get_connection&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_connection&quot;</span>)]
     </span><span class="kw">fn </span>connection(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; DBusConnection;
 
@@ -2286,7 +2286,7 @@
     /// # Returns
     ///
     /// Timeout to use for `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_proxy_get_default_timeout&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_proxy_get_default_timeout&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_default_timeout&quot;</span>)]
     </span><span class="kw">fn </span>default_timeout(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
 
@@ -2295,7 +2295,7 @@
     /// # Returns
     ///
     /// Flags from the [`DBusProxyFlags`][crate::DBusProxyFlags] enumeration.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_proxy_get_flags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_proxy_get_flags&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_flags&quot;</span>)]
     </span><span class="kw">fn </span>flags(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; DBusProxyFlags;
 
@@ -2307,7 +2307,7 @@
     ///
     /// A [`DBusInterfaceInfo`][crate::DBusInterfaceInfo] or [`None`].
     ///  Do not unref the returned object, it is owned by `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_proxy_get_interface_info&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_proxy_get_interface_info&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_interface_info&quot;</span>)]
     </span><span class="kw">fn </span>interface_info(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;DBusInterfaceInfo&gt;;
 
@@ -2316,7 +2316,7 @@
     /// # Returns
     ///
     /// A string owned by `self`. Do not free.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_proxy_get_interface_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_proxy_get_interface_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_interface_name&quot;</span>)]
     </span><span class="kw">fn </span>interface_name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString;
 
@@ -2329,7 +2329,7 @@
     /// # Returns
     ///
     /// A string owned by `self`. Do not free.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_proxy_get_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_proxy_get_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_name&quot;</span>)]
     </span><span class="kw">fn </span>name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
@@ -2342,7 +2342,7 @@
     ///
     /// The name owner or [`None`] if no name
     ///  owner exists. Free with `g_free()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_proxy_get_name_owner&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_proxy_get_name_owner&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_name_owner&quot;</span>)]
     </span><span class="kw">fn </span>name_owner(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
@@ -2351,7 +2351,7 @@
     /// # Returns
     ///
     /// A string owned by `self`. Do not free.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_proxy_get_object_path&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_proxy_get_object_path&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_object_path&quot;</span>)]
     </span><span class="kw">fn </span>object_path(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString;
 
@@ -2396,7 +2396,7 @@
     /// Property name.
     /// ## `value`
     /// Value for the property or [`None`] to remove it from the cache.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_proxy_set_cached_property&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_proxy_set_cached_property&quot;</span>)]
     </span><span class="kw">fn </span>set_cached_property(<span class="kw-2">&amp;</span><span class="self">self</span>, property_name: <span class="kw-2">&amp;</span>str, value: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>glib::Variant&gt;);
 
     <span class="doccomment">/// Sets the timeout to use if -1 (specifying default timeout) is
@@ -2406,7 +2406,7 @@
     /// See the `property::DBusProxy::g-default-timeout` property for more details.
     /// ## `timeout_msec`
     /// Timeout in milliseconds.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_proxy_set_default_timeout&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_proxy_set_default_timeout&quot;</span>)]
     </span><span class="kw">fn </span>set_default_timeout(<span class="kw-2">&amp;</span><span class="self">self</span>, timeout_msec: i32);
 
     <span class="doccomment">/// Ensure that interactions with `self` conform to the given
@@ -2415,11 +2415,11 @@
     /// ## `info`
     /// Minimum interface this proxy conforms to
     ///  or [`None`] to unset.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_proxy_set_interface_info&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_proxy_set_interface_info&quot;</span>)]
     </span><span class="kw">fn </span>set_interface_info(<span class="kw-2">&amp;</span><span class="self">self</span>, info: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>DBusInterfaceInfo&gt;);
 
     <span class="doccomment">/// The [`DBusConnection`][crate::DBusConnection] the proxy is for.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g-connection&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g-connection&quot;</span>)]
     </span><span class="kw">fn </span>g_connection(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;DBusConnection&gt;;
 
     <span class="doccomment">/// The timeout to use if -1 (specifying default timeout) is passed
@@ -2430,7 +2430,7 @@
     /// remote method invocations on the proxy. If this property is -1,
     /// the default timeout (typically 25 seconds) is used. If set to
     /// `G_MAXINT`, then no timeout is used.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g-default-timeout&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g-default-timeout&quot;</span>)]
     </span><span class="kw">fn </span>g_default_timeout(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
 
     <span class="doccomment">/// The timeout to use if -1 (specifying default timeout) is passed
@@ -2441,11 +2441,11 @@
     /// remote method invocations on the proxy. If this property is -1,
     /// the default timeout (typically 25 seconds) is used. If set to
     /// `G_MAXINT`, then no timeout is used.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g-default-timeout&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g-default-timeout&quot;</span>)]
     </span><span class="kw">fn </span>set_g_default_timeout(<span class="kw-2">&amp;</span><span class="self">self</span>, g_default_timeout: i32);
 
     <span class="doccomment">/// Flags from the [`DBusProxyFlags`][crate::DBusProxyFlags] enumeration.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g-flags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g-flags&quot;</span>)]
     </span><span class="kw">fn </span>g_flags(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; DBusProxyFlags;
 
     <span class="doccomment">/// Ensure that interactions with this proxy conform to the given
@@ -2472,7 +2472,7 @@
     /// properties that are not referenced in the given
     /// [`DBusInterfaceInfo`][crate::DBusInterfaceInfo], since extending a D-Bus interface on the
     /// service-side is not considered an ABI break.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g-interface-info&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g-interface-info&quot;</span>)]
     </span><span class="kw">fn </span>g_interface_info(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;DBusInterfaceInfo&gt;;
 
     <span class="doccomment">/// Ensure that interactions with this proxy conform to the given
@@ -2499,40 +2499,40 @@
     /// properties that are not referenced in the given
     /// [`DBusInterfaceInfo`][crate::DBusInterfaceInfo], since extending a D-Bus interface on the
     /// service-side is not considered an ABI break.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g-interface-info&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g-interface-info&quot;</span>)]
     </span><span class="kw">fn </span>set_g_interface_info(<span class="kw-2">&amp;</span><span class="self">self</span>, g_interface_info: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>DBusInterfaceInfo&gt;);
 
     <span class="doccomment">/// The D-Bus interface name the proxy is for.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g-interface-name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g-interface-name&quot;</span>)]
     </span><span class="kw">fn </span>g_interface_name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
     <span class="doccomment">/// The well-known or unique name that the proxy is for.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g-name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g-name&quot;</span>)]
     </span><span class="kw">fn </span>g_name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
     <span class="doccomment">/// The unique name that owns `property::DBusProxy::g-name` or [`None`] if no-one
     /// currently owns that name. You may connect to `signal::glib::Object::notify` signal to
     /// track changes to this property.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g-name-owner&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g-name-owner&quot;</span>)]
     </span><span class="kw">fn </span>g_name_owner(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
     <span class="doccomment">/// The object path the proxy is for.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g-object-path&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g-object-path&quot;</span>)]
     </span><span class="kw">fn </span>g_object_path(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g-default-timeout&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g-default-timeout&quot;</span>)]
     </span><span class="kw">fn </span>connect_g_default_timeout_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
     ) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g-interface-info&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g-interface-info&quot;</span>)]
     </span><span class="kw">fn </span>connect_g_interface_info_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
     ) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g-name-owner&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g-name-owner&quot;</span>)]
     </span><span class="kw">fn </span>connect_g_name_owner_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -2649,7 +2649,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
     </span><span class="kw">fn </span>call_with_unix_fd_list&lt;
         P: FnOnce(<span class="prelude-ty">Result</span>&lt;(glib::Variant, UnixFDList), glib::Error&gt;) + <span class="lifetime">&#39;static</span>,
@@ -2716,7 +2716,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
     </span><span class="kw">fn </span>call_with_unix_fd_list_future(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -2752,7 +2752,7 @@
         ))
     }
 
-    <span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
     </span><span class="kw">fn </span>call_with_unix_fd_list_sync(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -3010,4 +3010,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

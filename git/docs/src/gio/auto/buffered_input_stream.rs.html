@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -574,7 +574,7 @@
     /// # Implements
     ///
     /// [`BufferedInputStreamExt`][trait@crate::prelude::BufferedInputStreamExt], [`FilterInputStreamExt`][trait@crate::prelude::FilterInputStreamExt], [`InputStreamExt`][trait@crate::prelude::InputStreamExt], [`trait@glib::ObjectExt`], [`SeekableExt`][trait@crate::prelude::SeekableExt], [`InputStreamExtManual`][trait@crate::prelude::InputStreamExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GBufferedInputStream&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GBufferedInputStream&quot;</span>)]
     </span><span class="kw">pub struct </span>BufferedInputStream(Object&lt;ffi::GBufferedInputStream, ffi::GBufferedInputStreamClass&gt;) @extends FilterInputStream, InputStream, @implements Seekable;
 
     <span class="kw">match fn </span>{
@@ -593,7 +593,7 @@
     /// # Returns
     ///
     /// a [`InputStream`][crate::InputStream] for the given `base_stream`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_buffered_input_stream_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_buffered_input_stream_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(base_stream: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;InputStream&gt;) -&gt; BufferedInputStream {
         <span class="kw">unsafe </span>{
             InputStream::from_glib_full(ffi::g_buffered_input_stream_new(
@@ -613,7 +613,7 @@
     /// # Returns
     ///
     /// a [`InputStream`][crate::InputStream].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_buffered_input_stream_new_sized&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_buffered_input_stream_new_sized&quot;</span>)]
     </span><span class="kw">pub fn </span>new_sized(base_stream: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;InputStream&gt;, size: usize) -&gt; BufferedInputStream {
         <span class="kw">unsafe </span>{
             InputStream::from_glib_full(ffi::g_buffered_input_stream_new_sized(
@@ -639,12 +639,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`BufferedInputStream`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>BufferedInputStreamBuilder {
     buffer_size: <span class="prelude-ty">Option</span>&lt;u32&gt;,
     base_stream: <span class="prelude-ty">Option</span>&lt;InputStream&gt;,
@@ -660,7 +660,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`BufferedInputStream`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; BufferedInputStream {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>buffer_size) = <span class="self">self</span>.buffer_size {
@@ -730,7 +730,7 @@
     ///
     /// the number of bytes read into `self`&#39;s buffer, up to `count`,
     ///  or -1 on error.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_buffered_input_stream_fill&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_buffered_input_stream_fill&quot;</span>)]
     </span><span class="kw">fn </span>fill(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         count: isize,
@@ -751,7 +751,7 @@
     /// optional [`Cancellable`][crate::Cancellable] object
     /// ## `callback`
     /// a `GAsyncReadyCallback`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_buffered_input_stream_fill_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_buffered_input_stream_fill_async&quot;</span>)]
     </span><span class="kw">fn </span>fill_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;isize, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         count: isize,
@@ -771,7 +771,7 @@
     /// # Returns
     ///
     /// size of the available stream.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_buffered_input_stream_get_available&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_buffered_input_stream_get_available&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_available&quot;</span>)]
     </span><span class="kw">fn </span>available(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; usize;
 
@@ -780,7 +780,7 @@
     /// # Returns
     ///
     /// the current buffer size.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_buffered_input_stream_get_buffer_size&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_buffered_input_stream_get_buffer_size&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_buffer_size&quot;</span>)]
     </span><span class="kw">fn </span>buffer_size(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; usize;
 
@@ -792,7 +792,7 @@
     ///
     ///
     ///  read-only buffer
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_buffered_input_stream_peek_buffer&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_buffered_input_stream_peek_buffer&quot;</span>)]
     </span><span class="kw">fn </span>peek_buffer(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;u8&gt;;
 
     <span class="doccomment">/// Tries to read a single byte from the stream or the buffer. Will block
@@ -814,7 +814,7 @@
     /// # Returns
     ///
     /// the byte read from the `self`, or -1 on end of stream or error.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_buffered_input_stream_read_byte&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_buffered_input_stream_read_byte&quot;</span>)]
     </span><span class="kw">fn </span>read_byte(<span class="kw-2">&amp;</span><span class="self">self</span>, cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;i32, glib::Error&gt;;
 
     <span class="doccomment">/// Sets the size of the internal buffer of `self` to `size`, or to the
@@ -822,10 +822,10 @@
     /// smaller than its current contents.
     /// ## `size`
     /// a `gsize`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_buffered_input_stream_set_buffer_size&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_buffered_input_stream_set_buffer_size&quot;</span>)]
     </span><span class="kw">fn </span>set_buffer_size(<span class="kw-2">&amp;</span><span class="self">self</span>, size: usize);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;buffer-size&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;buffer-size&quot;</span>)]
     </span><span class="kw">fn </span>connect_buffer_size_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -994,4 +994,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

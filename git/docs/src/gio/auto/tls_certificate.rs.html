@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -951,28 +951,28 @@
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
 
-</span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
 </span><span class="kw">use </span><span class="kw">crate</span>::InetAddress;
 <span class="kw">use </span><span class="kw">crate</span>::SocketConnectable;
 <span class="kw">use </span><span class="kw">crate</span>::TlsCertificateFlags;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
 </span><span class="kw">use </span>glib::object::Cast;
 <span class="kw">use </span>glib::object::IsA;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
 </span><span class="kw">use </span>glib::signal::connect_raw;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
 </span><span class="kw">use </span>glib::signal::SignalHandlerId;
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 <span class="kw">use </span>glib::StaticType;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
 </span><span class="kw">use </span>std::boxed::Box <span class="kw">as </span>Box_;
 <span class="kw">use </span>std::fmt;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
 </span><span class="kw">use </span>std::mem::transmute;
 <span class="kw">use </span>std::ptr;
@@ -989,7 +989,7 @@
     /// # Implements
     ///
     /// [`TlsCertificateExt`][trait@crate::prelude::TlsCertificateExt], [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GTlsCertificate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GTlsCertificate&quot;</span>)]
     </span><span class="kw">pub struct </span>TlsCertificate(Object&lt;ffi::GTlsCertificate, ffi::GTlsCertificateClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -1015,7 +1015,7 @@
     /// # Returns
     ///
     /// the new certificate, or [`None`] on error
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_certificate_new_from_file&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_certificate_new_from_file&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_file&quot;</span>)]
     </span><span class="kw">pub fn </span>from_file(file: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;TlsCertificate, glib::Error&gt; {
         <span class="kw">unsafe </span>{
@@ -1046,7 +1046,7 @@
     /// # Returns
     ///
     /// the new certificate, or [`None`] on error
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_tls_certificate_new_from_file_with_password&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_file_with_password&quot;</span>)]
@@ -1093,7 +1093,7 @@
     /// # Returns
     ///
     /// the new certificate, or [`None`] on error
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_certificate_new_from_files&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_certificate_new_from_files&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_files&quot;</span>)]
     </span><span class="kw">pub fn </span>from_files(
         cert_file: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;,
@@ -1136,7 +1136,7 @@
     /// # Returns
     ///
     /// the new certificate, or [`None`] if `data` is invalid
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_certificate_new_from_pem&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_certificate_new_from_pem&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_pem&quot;</span>)]
     </span><span class="kw">pub fn </span>from_pem(data: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;TlsCertificate, glib::Error&gt; {
         <span class="kw">let </span>length = data.len() <span class="kw">as _</span>;
@@ -1185,7 +1185,7 @@
     /// # Returns
     ///
     /// the new certificate, or [`None`] on error
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_tls_certificate_new_from_pkcs11_uris&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_pkcs11_uris&quot;</span>)]
@@ -1233,7 +1233,7 @@
     /// # Returns
     ///
     /// the new certificate, or [`None`] if `data` is invalid
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_tls_certificate_new_from_pkcs12&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_pkcs12&quot;</span>)]
@@ -1268,7 +1268,7 @@
     /// a
     /// `GList` containing [`TlsCertificate`][crate::TlsCertificate] objects. You must free the list
     /// and its contents when you are done with it.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_certificate_list_new_from_file&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_certificate_list_new_from_file&quot;</span>)]
     </span><span class="kw">pub fn </span>list_new_from_file(
         file: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;Vec&lt;TlsCertificate&gt;, glib::Error&gt; {
@@ -1299,7 +1299,7 @@
     ///
     /// A `GPtrArray` of
     /// [`glib::Bytes`][crate::glib::Bytes] elements, or [`None`] if it&#39;s not available.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_tls_certificate_get_dns_names&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_dns_names&quot;</span>)]
@@ -1311,7 +1311,7 @@
     ///
     /// A `GPtrArray`
     /// of [`InetAddress`][crate::InetAddress] elements, or [`None`] if it&#39;s not available.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_tls_certificate_get_ip_addresses&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_ip_addresses&quot;</span>)]
@@ -1324,7 +1324,7 @@
     /// The certificate of `self`&#39;s issuer,
     /// or [`None`] if `self` is self-signed or signed with an unknown
     /// certificate.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_certificate_get_issuer&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_certificate_get_issuer&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_issuer&quot;</span>)]
     #[must_use]
     </span><span class="kw">fn </span>issuer(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;TlsCertificate&gt;;
@@ -1334,7 +1334,7 @@
     /// # Returns
     ///
     /// The issuer name, or [`None`] if it&#39;s not available.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_tls_certificate_get_issuer_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_issuer_name&quot;</span>)]
@@ -1345,7 +1345,7 @@
     /// # Returns
     ///
     /// The not-valid-after date, or [`None`] if it&#39;s not available.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_tls_certificate_get_not_valid_after&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_not_valid_after&quot;</span>)]
@@ -1356,7 +1356,7 @@
     /// # Returns
     ///
     /// The not-valid-before date, or [`None`] if it&#39;s not available.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_tls_certificate_get_not_valid_before&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_not_valid_before&quot;</span>)]
@@ -1367,7 +1367,7 @@
     /// # Returns
     ///
     /// The subject name, or [`None`] if it&#39;s not available.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_tls_certificate_get_subject_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_subject_name&quot;</span>)]
@@ -1384,7 +1384,7 @@
     /// # Returns
     ///
     /// whether the same or not
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_certificate_is_same&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_certificate_is_same&quot;</span>)]
     </span><span class="kw">fn </span>is_same(<span class="kw-2">&amp;</span><span class="self">self</span>, cert_two: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;TlsCertificate&gt;) -&gt; bool;
 
     <span class="doccomment">/// This verifies `self` and returns a set of [`TlsCertificateFlags`][crate::TlsCertificateFlags]
@@ -1428,7 +1428,7 @@
     /// # Returns
     ///
     /// the appropriate [`TlsCertificateFlags`][crate::TlsCertificateFlags]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_certificate_verify&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_certificate_verify&quot;</span>)]
     </span><span class="kw">fn </span>verify(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         identity: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;SocketConnectable&gt;&gt;,
@@ -1443,7 +1443,7 @@
     <span class="doccomment">/// The PEM (ASCII) encoded representation of the certificate.
     /// This property and the `property::TlsCertificate::certificate`
     /// property represent the same data, just in different forms.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;certificate-pem&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;certificate-pem&quot;</span>)]
     </span><span class="kw">fn </span>certificate_pem(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
     <span class="doccomment">/// A URI referencing the [PKCS \`11`](https://docs.oasis-open.org/pkcs11/pkcs11-base/v3.0/os/pkcs11-base-v3.0-os.html)
@@ -1451,7 +1451,7 @@
     ///
     /// If [`None`], the certificate is either not backed by PKCS \`11` or the
     /// [`TlsBackend`][crate::TlsBackend] does not support PKCS \`11`.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pkcs11-uri&quot;</span>)]
     </span><span class="kw">fn </span>pkcs11_uri(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
@@ -1473,7 +1473,7 @@
     /// properties to see if the certificate really has a private key.
     /// When this property is read, the output format will be unencrypted
     /// PKCS \`8`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;private-key&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;private-key&quot;</span>)]
     </span><span class="kw">fn </span>private_key(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::ByteArray&gt;;
 
     <span class="doccomment">/// The PEM (ASCII) encoded representation of the certificate&#39;s
@@ -1494,49 +1494,49 @@
     /// properties to see if the certificate really has a private key.
     /// When this property is read, the output format will be unencrypted
     /// PKCS \`8`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;private-key-pem&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;private-key-pem&quot;</span>)]
     </span><span class="kw">fn </span>private_key_pem(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
     <span class="doccomment">/// A URI referencing a [PKCS \`11`](https://docs.oasis-open.org/pkcs11/pkcs11-base/v3.0/os/pkcs11-base-v3.0-os.html)
     /// object containing a private key.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;private-key-pkcs11-uri&quot;</span>)]
     </span><span class="kw">fn </span>private_key_pkcs11_uri(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;dns-names&quot;</span>)]
     </span><span class="kw">fn </span>connect_dns_names_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;ip-addresses&quot;</span>)]
     </span><span class="kw">fn </span>connect_ip_addresses_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;issuer-name&quot;</span>)]
     </span><span class="kw">fn </span>connect_issuer_name_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;not-valid-after&quot;</span>)]
     </span><span class="kw">fn </span>connect_not_valid_after_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;not-valid-before&quot;</span>)]
     </span><span class="kw">fn </span>connect_not_valid_before_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;subject-name&quot;</span>)]
     </span><span class="kw">fn </span>connect_subject_name_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
 <span class="kw">impl</span>&lt;O: IsA&lt;TlsCertificate&gt;&gt; TlsCertificateExt <span class="kw">for </span>O {
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">fn </span>dns_names(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;glib::Bytes&gt; {
         <span class="kw">unsafe </span>{
@@ -1546,7 +1546,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">fn </span>ip_addresses(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;InetAddress&gt; {
         <span class="kw">unsafe </span>{
@@ -1564,7 +1564,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">fn </span>issuer_name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{
@@ -1574,7 +1574,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">fn </span>not_valid_after(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::DateTime&gt; {
         <span class="kw">unsafe </span>{
@@ -1584,7 +1584,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">fn </span>not_valid_before(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::DateTime&gt; {
         <span class="kw">unsafe </span>{
@@ -1594,7 +1594,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">fn </span>subject_name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{
@@ -1635,7 +1635,7 @@
         glib::ObjectExt::property(<span class="self">self</span>.as_ref(), <span class="string">&quot;certificate-pem&quot;</span>)
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">fn </span>pkcs11_uri(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         glib::ObjectExt::property(<span class="self">self</span>.as_ref(), <span class="string">&quot;pkcs11-uri&quot;</span>)
@@ -1649,13 +1649,13 @@
         glib::ObjectExt::property(<span class="self">self</span>.as_ref(), <span class="string">&quot;private-key-pem&quot;</span>)
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">fn </span>private_key_pkcs11_uri(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         glib::ObjectExt::property(<span class="self">self</span>.as_ref(), <span class="string">&quot;private-key-pkcs11-uri&quot;</span>)
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">fn </span>connect_dns_names_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_dns_names_trampoline&lt;
@@ -1682,7 +1682,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">fn </span>connect_ip_addresses_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_ip_addresses_trampoline&lt;
@@ -1709,7 +1709,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">fn </span>connect_issuer_name_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_issuer_name_trampoline&lt;
@@ -1736,7 +1736,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">fn </span>connect_not_valid_after_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_not_valid_after_trampoline&lt;
@@ -1763,7 +1763,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">fn </span>connect_not_valid_before_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_not_valid_before_trampoline&lt;
@@ -1790,7 +1790,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">fn </span>connect_subject_name_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_subject_name_trampoline&lt;
@@ -1824,4 +1824,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

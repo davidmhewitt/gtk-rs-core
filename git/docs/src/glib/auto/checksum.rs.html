@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../glib/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../glib/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -126,7 +126,7 @@
 <span class="kw">use </span><span class="kw">crate</span>::ChecksumType;
 
 <span class="macro">crate::wrapper! </span>{
-    <span class="attribute">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    <span class="attr">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
     </span><span class="kw">pub struct </span>Checksum(Boxed&lt;ffi::GChecksum&gt;);
 
     <span class="kw">match fn </span>{
@@ -137,19 +137,19 @@
 }
 
 <span class="kw">impl </span>Checksum {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_checksum_new&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_checksum_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(checksum_type: ChecksumType) -&gt; <span class="prelude-ty">Option</span>&lt;Checksum&gt; {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_checksum_new(checksum_type.into_glib())) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_checksum_reset&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_checksum_reset&quot;</span>)]
     </span><span class="kw">pub fn </span>reset(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::g_checksum_reset(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>);
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_checksum_update&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_checksum_update&quot;</span>)]
     </span><span class="kw">pub fn </span>update(<span class="kw-2">&amp;mut </span><span class="self">self</span>, data: <span class="kw-2">&amp;</span>[u8]) {
         <span class="kw">let </span>length = data.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
@@ -157,7 +157,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_checksum_type_get_length&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_checksum_type_get_length&quot;</span>)]
     </span><span class="kw">pub fn </span>type_get_length(checksum_type: ChecksumType) -&gt; isize {
         <span class="kw">unsafe </span>{ ffi::g_checksum_type_get_length(checksum_type.into_glib()) }
     }
@@ -166,4 +166,4 @@
 <span class="kw">unsafe impl </span>Send <span class="kw">for </span>Checksum {}
 <span class="kw">unsafe impl </span>Sync <span class="kw">for </span>Checksum {}
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

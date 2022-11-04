@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -382,7 +382,7 @@
     }
 }
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
@@ -397,7 +397,7 @@
 
         <span class="kw">pub struct </span>InitableTestType(<span class="kw">pub </span>Cell&lt;u64&gt;);
 
-        <span class="attribute">#[glib::object_subclass]
+        <span class="attr">#[glib::object_subclass]
         </span><span class="kw">impl </span>ObjectSubclass <span class="kw">for </span>InitableTestType {
             <span class="kw">const </span>NAME: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str = <span class="string">&quot;InitableTestType&quot;</span>;
             <span class="kw">type </span>Type = <span class="kw">super</span>::InitableTestType;
@@ -433,7 +433,7 @@
             @implements Initable;
     }
 
-    <span class="attribute">#[allow(clippy::new_without_default)]
+    <span class="attr">#[allow(clippy::new_without_default)]
     </span><span class="kw">impl </span>InitableTestType {
         <span class="kw">pub fn </span>new() -&gt; <span class="self">Self </span>{
             Initable::new(<span class="kw-2">&amp;</span>[], <span class="prelude-ty">Option</span>::&lt;<span class="kw-2">&amp;</span>Cancellable&gt;::None)
@@ -454,7 +454,7 @@
         }
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_initable_with_init() {
         <span class="kw">let </span>res = <span class="kw">unsafe </span>{
             <span class="kw">let </span>test = InitableTestType::new_uninit();
@@ -469,13 +469,13 @@
         <span class="macro">assert_eq!</span>(<span class="number">0x123456789abcdef</span>, test.value());
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_initable_with_initable_new() {
         <span class="kw">let </span>test = InitableTestType::new();
         <span class="macro">assert_eq!</span>(<span class="number">0x123456789abcdef</span>, test.value());
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     #[should_panic = <span class="string">&quot;&quot;</span>]
     </span><span class="kw">fn </span>test_initable_new_failure() {
         <span class="kw">let </span>value: u32 = <span class="number">2</span>;
@@ -486,7 +486,7 @@
         <span class="macro">unreachable!</span>();
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_initable_with_initable_with_type() {
         <span class="kw">let </span>test = Initable::with_type(
             InitableTestType::static_type(),
@@ -499,7 +499,7 @@
         <span class="macro">assert_eq!</span>(<span class="number">0x123456789abcdef</span>, test.value());
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_initable_with_initable_with_values() {
         <span class="kw">let </span>test = Initable::with_values(
             InitableTestType::static_type(),
@@ -512,7 +512,7 @@
         <span class="macro">assert_eq!</span>(<span class="number">0x123456789abcdef</span>, test.value());
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_initable_through_ffi() {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>test = InitableTestType::new_uninit();
@@ -534,4 +534,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

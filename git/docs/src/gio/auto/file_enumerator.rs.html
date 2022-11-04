@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -561,7 +561,7 @@
     /// # Implements
     ///
     /// [`FileEnumeratorExt`][trait@crate::prelude::FileEnumeratorExt], [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GFileEnumerator&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GFileEnumerator&quot;</span>)]
     </span><span class="kw">pub struct </span>FileEnumerator(Object&lt;ffi::GFileEnumerator, ffi::GFileEnumeratorClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -591,7 +591,7 @@
     /// # Returns
     ///
     /// [`true`] on success or [`false`] on error.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_enumerator_close&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_enumerator_close&quot;</span>)]
     </span><span class="kw">fn </span>close(<span class="kw-2">&amp;</span><span class="self">self</span>, cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
     <span class="doccomment">/// Asynchronously closes the file enumerator.
@@ -606,7 +606,7 @@
     /// optional [`Cancellable`][crate::Cancellable] object, [`None`] to ignore.
     /// ## `callback`
     /// a `GAsyncReadyCallback` to call when the request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_enumerator_close_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_enumerator_close_async&quot;</span>)]
     </span><span class="kw">fn </span>close_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         io_priority: glib::Priority,
@@ -643,7 +643,7 @@
     /// # Returns
     ///
     /// a [`File`][crate::File] for the [`FileInfo`][crate::FileInfo] passed it.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_enumerator_get_child&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_enumerator_get_child&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_child&quot;</span>)]
     </span><span class="kw">fn </span>child(<span class="kw-2">&amp;</span><span class="self">self</span>, info: <span class="kw-2">&amp;</span>FileInfo) -&gt; File;
 
@@ -652,7 +652,7 @@
     /// # Returns
     ///
     /// the [`File`][crate::File] which is being enumerated.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_enumerator_get_container&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_enumerator_get_container&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_container&quot;</span>)]
     </span><span class="kw">fn </span>container(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; File;
 
@@ -661,7 +661,7 @@
     /// # Returns
     ///
     /// [`true`] if the `self` has pending operations.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_enumerator_has_pending&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_enumerator_has_pending&quot;</span>)]
     </span><span class="kw">fn </span>has_pending(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
     <span class="doccomment">/// Checks if the file enumerator has been closed.
@@ -669,7 +669,7 @@
     /// # Returns
     ///
     /// [`true`] if the `self` is closed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_enumerator_is_closed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_enumerator_is_closed&quot;</span>)]
     </span><span class="kw">fn </span>is_closed(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
     <span class="doccomment">/// Returns information for the next file in the enumerated object.
@@ -691,7 +691,7 @@
     /// A [`FileInfo`][crate::FileInfo] or [`None`] on error
     ///  or end of enumerator. Free the returned object with
     ///  `g_object_unref()` when no longer needed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_enumerator_next_file&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_enumerator_next_file&quot;</span>)]
     </span><span class="kw">fn </span>next_file(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
@@ -724,7 +724,7 @@
     /// optional [`Cancellable`][crate::Cancellable] object, [`None`] to ignore.
     /// ## `callback`
     /// a `GAsyncReadyCallback` to call when the request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_enumerator_next_files_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_enumerator_next_files_async&quot;</span>)]
     </span><span class="kw">fn </span>next_files_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;Vec&lt;FileInfo&gt;, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         num_files: i32,
@@ -742,7 +742,7 @@
     <span class="doccomment">/// Sets the file enumerator as having pending operations.
     /// ## `pending`
     /// a boolean value.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_enumerator_set_pending&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_enumerator_set_pending&quot;</span>)]
     </span><span class="kw">fn </span>set_pending(<span class="kw-2">&amp;</span><span class="self">self</span>, pending: bool);
 }
 
@@ -960,4 +960,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

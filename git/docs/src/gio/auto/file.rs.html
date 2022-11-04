@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -4293,7 +4293,7 @@
     /// # Implements
     ///
     /// [`FileExt`][trait@crate::prelude::FileExt], [`FileExtManual`][trait@crate::prelude::FileExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GFile&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GFile&quot;</span>)]
     </span><span class="kw">pub struct </span>File(Interface&lt;ffi::GFile, ffi::GFileIface&gt;);
 
     <span class="kw">match fn </span>{
@@ -4330,7 +4330,7 @@
     ///
     /// a new [`File`][crate::File].
     ///  Free the returned object with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_new_for_commandline_arg&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_new_for_commandline_arg&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_for_commandline_arg&quot;</span>)]
     </span><span class="kw">pub fn </span>for_commandline_arg(arg: <span class="kw">impl </span>AsRef&lt;std::ffi::OsStr&gt;) -&gt; File {
         <span class="kw">unsafe </span>{
@@ -4359,7 +4359,7 @@
     /// # Returns
     ///
     /// a new [`File`][crate::File]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_new_for_commandline_arg_and_cwd&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_new_for_commandline_arg_and_cwd&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_for_commandline_arg_and_cwd&quot;</span>)]
     </span><span class="kw">pub fn </span>for_commandline_arg_and_cwd(
         arg: <span class="kw">impl </span>AsRef&lt;std::ffi::OsStr&gt;,
@@ -4384,7 +4384,7 @@
     ///
     /// a new [`File`][crate::File] for the given `path`.
     ///  Free the returned object with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_new_for_path&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_new_for_path&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_for_path&quot;</span>)]
     </span><span class="kw">pub fn </span>for_path(path: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;) -&gt; File {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_file_new_for_path(path.as_ref().to_glib_none().<span class="number">0</span>)) }
@@ -4401,7 +4401,7 @@
     ///
     /// a new [`File`][crate::File] for the given `uri`.
     ///  Free the returned object with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_new_for_uri&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_new_for_uri&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_for_uri&quot;</span>)]
     </span><span class="kw">pub fn </span>for_uri(uri: <span class="kw-2">&amp;</span>str) -&gt; File {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_file_new_for_uri(uri.to_glib_none().<span class="number">0</span>)) }
@@ -4428,7 +4428,7 @@
     ///
     /// ## `iostream`
     /// on return, a [`FileIOStream`][crate::FileIOStream] for the created file
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_new_tmp&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_new_tmp&quot;</span>)]
     </span><span class="kw">pub fn </span>new_tmp(
         tmpl: <span class="prelude-ty">Option</span>&lt;<span class="kw">impl </span>AsRef&lt;std::path::Path&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;(File, FileIOStream), glib::Error&gt; {
@@ -4458,7 +4458,7 @@
     /// # Returns
     ///
     /// a new [`File`][crate::File].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_parse_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_parse_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;parse_name&quot;</span>)]
     </span><span class="kw">pub fn </span>for_parse_name(parse_name: <span class="kw-2">&amp;</span>str) -&gt; File {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_file_parse_name(parse_name.to_glib_none().<span class="number">0</span>)) }
@@ -4501,7 +4501,7 @@
     ///
     /// a [`FileOutputStream`][crate::FileOutputStream], or [`None`] on error.
     ///  Free the returned object with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_append_to&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_append_to&quot;</span>)]
     </span><span class="kw">fn </span>append_to(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         flags: FileCreateFlags,
@@ -4526,7 +4526,7 @@
     /// ## `callback`
     /// a `GAsyncReadyCallback` to call
     ///  when the request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_append_to_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_append_to_async&quot;</span>)]
     </span><span class="kw">fn </span>append_to_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;FileOutputStream, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         flags: FileCreateFlags,
@@ -4541,7 +4541,7 @@
         io_priority: glib::Priority,
     ) -&gt; Pin&lt;Box_&lt;<span class="kw">dyn </span>std::future::Future&lt;Output = <span class="prelude-ty">Result</span>&lt;FileOutputStream, glib::Error&gt;&gt; + <span class="lifetime">&#39;static</span>&gt;&gt;;
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_file_build_attribute_list_for_copy&quot;</span>)]
     </span><span class="kw">fn </span>build_attribute_list_for_copy(
@@ -4550,7 +4550,7 @@
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;glib::GString, glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_copy&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_copy&quot;</span>)]
     </span><span class="kw">fn </span>copy(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         destination: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;File&gt;,
@@ -4579,7 +4579,7 @@
     ///
     /// [`true`] if the attributes were copied successfully,
     ///  [`false`] otherwise.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_copy_attributes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_copy_attributes&quot;</span>)]
     </span><span class="kw">fn </span>copy_attributes(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         destination: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;File&gt;,
@@ -4617,7 +4617,7 @@
     /// a [`FileOutputStream`][crate::FileOutputStream] for the newly created
     ///  file, or [`None`] on error.
     ///  Free the returned object with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_create&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_create&quot;</span>)]
     </span><span class="kw">fn </span>create(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         flags: FileCreateFlags,
@@ -4643,7 +4643,7 @@
     /// ## `callback`
     /// a `GAsyncReadyCallback` to call
     ///  when the request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_create_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_create_async&quot;</span>)]
     </span><span class="kw">fn </span>create_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;FileOutputStream, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         flags: FileCreateFlags,
@@ -4692,7 +4692,7 @@
     /// a [`FileIOStream`][crate::FileIOStream] for the newly created
     ///  file, or [`None`] on error.
     ///  Free the returned object with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_create_readwrite&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_create_readwrite&quot;</span>)]
     </span><span class="kw">fn </span>create_readwrite(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         flags: FileCreateFlags,
@@ -4718,7 +4718,7 @@
     /// ## `callback`
     /// a `GAsyncReadyCallback` to call
     ///  when the request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_create_readwrite_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_create_readwrite_async&quot;</span>)]
     </span><span class="kw">fn </span>create_readwrite_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;FileIOStream, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         flags: FileCreateFlags,
@@ -4762,7 +4762,7 @@
     /// # Returns
     ///
     /// [`true`] if the file was deleted. [`false`] otherwise.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_delete&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_delete&quot;</span>)]
     </span><span class="kw">fn </span>delete(<span class="kw-2">&amp;</span><span class="self">self</span>, cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
     <span class="doccomment">/// Asynchronously delete a file. If the `self` is a directory, it will
@@ -4776,7 +4776,7 @@
     /// ## `callback`
     /// a `GAsyncReadyCallback` to call
     ///  when the request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_delete_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_delete_async&quot;</span>)]
     </span><span class="kw">fn </span>delete_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         io_priority: glib::Priority,
@@ -4804,7 +4804,7 @@
     ///
     /// a new [`File`][crate::File] that is a duplicate
     ///  of the given [`File`][crate::File].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_dup&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_dup&quot;</span>)]
     #[must_use]
     </span><span class="kw">fn </span>dup(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; File;
 
@@ -4827,7 +4827,7 @@
     /// ## `callback`
     /// a `GAsyncReadyCallback` to call
     ///  when the request is satisfied, or [`None`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_eject_mountable_with_operation&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_eject_mountable_with_operation&quot;</span>)]
     </span><span class="kw">fn </span>eject_mountable_with_operation&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         flags: MountUnmountFlags,
@@ -4879,7 +4879,7 @@
     ///
     /// A [`FileEnumerator`][crate::FileEnumerator] if successful,
     ///  [`None`] on error. Free the returned object with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_enumerate_children&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_enumerate_children&quot;</span>)]
     </span><span class="kw">fn </span>enumerate_children(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         attributes: <span class="kw-2">&amp;</span>str,
@@ -4887,7 +4887,7 @@
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;FileEnumerator, glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_equal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_equal&quot;</span>)]
     </span><span class="kw">fn </span>equal(<span class="kw-2">&amp;</span><span class="self">self</span>, file2: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;File&gt;) -&gt; bool;
 
     <span class="doccomment">/// Gets a [`Mount`][crate::Mount] for the [`File`][crate::File].
@@ -4908,7 +4908,7 @@
     /// a [`Mount`][crate::Mount] where the `self` is located
     ///  or [`None`] on error.
     ///  Free the returned object with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_find_enclosing_mount&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_find_enclosing_mount&quot;</span>)]
     </span><span class="kw">fn </span>find_enclosing_mount(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
@@ -4933,7 +4933,7 @@
     /// string containing the [`File`][crate::File]&#39;s
     ///  base name, or [`None`] if given [`File`][crate::File] is invalid. The returned string
     ///  should be freed with `g_free()` when no longer needed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_get_basename&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_get_basename&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_basename&quot;</span>)]
     </span><span class="kw">fn </span>basename(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;std::path::PathBuf&gt;;
 
@@ -4951,59 +4951,59 @@
     ///
     /// a [`File`][crate::File] to a child specified by `name`.
     ///  Free the returned object with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_get_child&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_get_child&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_child&quot;</span>)]
     #[must_use]
     </span><span class="kw">fn </span>child(<span class="kw-2">&amp;</span><span class="self">self</span>, name: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;) -&gt; File;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_get_child_for_display_name&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_get_child_for_display_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_child_for_display_name&quot;</span>)]
     </span><span class="kw">fn </span>child_for_display_name(<span class="kw-2">&amp;</span><span class="self">self</span>, display_name: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;File, glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_get_parent&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_get_parent&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_parent&quot;</span>)]
     #[must_use]
     </span><span class="kw">fn </span>parent(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;File&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_get_parse_name&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_get_parse_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_parse_name&quot;</span>)]
     </span><span class="kw">fn </span>parse_name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_get_path&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_get_path&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_path&quot;</span>)]
     </span><span class="kw">fn </span>path(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;std::path::PathBuf&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_get_relative_path&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_get_relative_path&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_relative_path&quot;</span>)]
     </span><span class="kw">fn </span>relative_path(<span class="kw-2">&amp;</span><span class="self">self</span>, descendant: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;File&gt;) -&gt; <span class="prelude-ty">Option</span>&lt;std::path::PathBuf&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_get_uri&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_get_uri&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_uri&quot;</span>)]
     </span><span class="kw">fn </span>uri(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_get_uri_scheme&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_get_uri_scheme&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_uri_scheme&quot;</span>)]
     </span><span class="kw">fn </span>uri_scheme(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_has_parent&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_has_parent&quot;</span>)]
     </span><span class="kw">fn </span>has_parent(<span class="kw-2">&amp;</span><span class="self">self</span>, parent: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;File&gt;&gt;) -&gt; bool;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_has_prefix&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_has_prefix&quot;</span>)]
     </span><span class="kw">fn </span>has_prefix(<span class="kw-2">&amp;</span><span class="self">self</span>, prefix: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;File&gt;) -&gt; bool;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_has_uri_scheme&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_has_uri_scheme&quot;</span>)]
     </span><span class="kw">fn </span>has_uri_scheme(<span class="kw-2">&amp;</span><span class="self">self</span>, uri_scheme: <span class="kw-2">&amp;</span>str) -&gt; bool;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_is_native&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_is_native&quot;</span>)]
     </span><span class="kw">fn </span>is_native(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_load_bytes&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_load_bytes&quot;</span>)]
     </span><span class="kw">fn </span>load_bytes(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;(glib::Bytes, <span class="prelude-ty">Option</span>&lt;glib::GString&gt;), glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_load_bytes_async&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_load_bytes_async&quot;</span>)]
     </span><span class="kw">fn </span>load_bytes_async&lt;
         P: FnOnce(<span class="prelude-ty">Result</span>&lt;(glib::Bytes, <span class="prelude-ty">Option</span>&lt;glib::GString&gt;), glib::Error&gt;) + <span class="lifetime">&#39;static</span>,
     &gt;(
@@ -5022,13 +5022,13 @@
         &gt;,
     &gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_load_contents&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_load_contents&quot;</span>)]
     </span><span class="kw">fn </span>load_contents(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;(Vec&lt;u8&gt;, <span class="prelude-ty">Option</span>&lt;glib::GString&gt;), glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_load_contents_async&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_load_contents_async&quot;</span>)]
     </span><span class="kw">fn </span>load_contents_async&lt;
         P: FnOnce(<span class="prelude-ty">Result</span>&lt;(Vec&lt;u8&gt;, <span class="prelude-ty">Option</span>&lt;glib::GString&gt;), glib::Error&gt;) + <span class="lifetime">&#39;static</span>,
     &gt;(
@@ -5046,13 +5046,13 @@
         &gt;,
     &gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_make_directory&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_make_directory&quot;</span>)]
     </span><span class="kw">fn </span>make_directory(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_make_directory_async&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_make_directory_async&quot;</span>)]
     </span><span class="kw">fn </span>make_directory_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         io_priority: glib::Priority,
@@ -5065,41 +5065,41 @@
         io_priority: glib::Priority,
     ) -&gt; Pin&lt;Box_&lt;<span class="kw">dyn </span>std::future::Future&lt;Output = <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;&gt; + <span class="lifetime">&#39;static</span>&gt;&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_make_directory_with_parents&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_make_directory_with_parents&quot;</span>)]
     </span><span class="kw">fn </span>make_directory_with_parents(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_make_symbolic_link&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_make_symbolic_link&quot;</span>)]
     </span><span class="kw">fn </span>make_symbolic_link(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         symlink_value: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_monitor&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_monitor&quot;</span>)]
     </span><span class="kw">fn </span>monitor(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         flags: FileMonitorFlags,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;FileMonitor, glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_monitor_directory&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_monitor_directory&quot;</span>)]
     </span><span class="kw">fn </span>monitor_directory(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         flags: FileMonitorFlags,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;FileMonitor, glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_monitor_file&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_monitor_file&quot;</span>)]
     </span><span class="kw">fn </span>monitor_file(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         flags: FileMonitorFlags,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;FileMonitor, glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_mount_enclosing_volume&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_mount_enclosing_volume&quot;</span>)]
     </span><span class="kw">fn </span>mount_enclosing_volume&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         flags: MountMountFlags,
@@ -5114,7 +5114,7 @@
         mount_operation: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>(<span class="kw">impl </span>IsA&lt;MountOperation&gt; + Clone + <span class="lifetime">&#39;static</span>)&gt;,
     ) -&gt; Pin&lt;Box_&lt;<span class="kw">dyn </span>std::future::Future&lt;Output = <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;&gt; + <span class="lifetime">&#39;static</span>&gt;&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_mount_mountable&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_mount_mountable&quot;</span>)]
     </span><span class="kw">fn </span>mount_mountable&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;File, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         flags: MountMountFlags,
@@ -5129,7 +5129,7 @@
         mount_operation: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>(<span class="kw">impl </span>IsA&lt;MountOperation&gt; + Clone + <span class="lifetime">&#39;static</span>)&gt;,
     ) -&gt; Pin&lt;Box_&lt;<span class="kw">dyn </span>std::future::Future&lt;Output = <span class="prelude-ty">Result</span>&lt;File, glib::Error&gt;&gt; + <span class="lifetime">&#39;static</span>&gt;&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_move&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_move&quot;</span>)]
     #[doc(alias = <span class="string">&quot;move&quot;</span>)]
     </span><span class="kw">fn </span>move_(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -5139,13 +5139,13 @@
         progress_callback: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;mut </span><span class="kw">dyn </span>(FnMut(i64, i64))&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_open_readwrite&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_open_readwrite&quot;</span>)]
     </span><span class="kw">fn </span>open_readwrite(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;FileIOStream, glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_open_readwrite_async&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_open_readwrite_async&quot;</span>)]
     </span><span class="kw">fn </span>open_readwrite_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;FileIOStream, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         io_priority: glib::Priority,
@@ -5158,10 +5158,10 @@
         io_priority: glib::Priority,
     ) -&gt; Pin&lt;Box_&lt;<span class="kw">dyn </span>std::future::Future&lt;Output = <span class="prelude-ty">Result</span>&lt;FileIOStream, glib::Error&gt;&gt; + <span class="lifetime">&#39;static</span>&gt;&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_peek_path&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_peek_path&quot;</span>)]
     </span><span class="kw">fn </span>peek_path(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;std::path::PathBuf&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_poll_mountable&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_poll_mountable&quot;</span>)]
     </span><span class="kw">fn </span>poll_mountable&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
@@ -5172,13 +5172,13 @@
         <span class="kw-2">&amp;</span><span class="self">self</span>,
     ) -&gt; Pin&lt;Box_&lt;<span class="kw">dyn </span>std::future::Future&lt;Output = <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;&gt; + <span class="lifetime">&#39;static</span>&gt;&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_query_default_handler&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_query_default_handler&quot;</span>)]
     </span><span class="kw">fn </span>query_default_handler(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;AppInfo, glib::Error&gt;;
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_file_query_default_handler_async&quot;</span>)]
     </span><span class="kw">fn </span>query_default_handler_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;AppInfo, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
@@ -5188,31 +5188,31 @@
         callback: P,
     );
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
     </span><span class="kw">fn </span>query_default_handler_future(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         io_priority: glib::Priority,
     ) -&gt; Pin&lt;Box_&lt;<span class="kw">dyn </span>std::future::Future&lt;Output = <span class="prelude-ty">Result</span>&lt;AppInfo, glib::Error&gt;&gt; + <span class="lifetime">&#39;static</span>&gt;&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_query_exists&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_query_exists&quot;</span>)]
     </span><span class="kw">fn </span>query_exists(<span class="kw-2">&amp;</span><span class="self">self</span>, cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;) -&gt; bool;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_query_file_type&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_query_file_type&quot;</span>)]
     </span><span class="kw">fn </span>query_file_type(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         flags: FileQueryInfoFlags,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; FileType;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_query_filesystem_info&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_query_filesystem_info&quot;</span>)]
     </span><span class="kw">fn </span>query_filesystem_info(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         attributes: <span class="kw-2">&amp;</span>str,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;FileInfo, glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_query_filesystem_info_async&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_query_filesystem_info_async&quot;</span>)]
     </span><span class="kw">fn </span>query_filesystem_info_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;FileInfo, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         attributes: <span class="kw-2">&amp;</span>str,
@@ -5227,7 +5227,7 @@
         io_priority: glib::Priority,
     ) -&gt; Pin&lt;Box_&lt;<span class="kw">dyn </span>std::future::Future&lt;Output = <span class="prelude-ty">Result</span>&lt;FileInfo, glib::Error&gt;&gt; + <span class="lifetime">&#39;static</span>&gt;&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_query_info&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_query_info&quot;</span>)]
     </span><span class="kw">fn </span>query_info(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         attributes: <span class="kw-2">&amp;</span>str,
@@ -5235,7 +5235,7 @@
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;FileInfo, glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_query_info_async&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_query_info_async&quot;</span>)]
     </span><span class="kw">fn </span>query_info_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;FileInfo, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         attributes: <span class="kw-2">&amp;</span>str,
@@ -5252,25 +5252,25 @@
         io_priority: glib::Priority,
     ) -&gt; Pin&lt;Box_&lt;<span class="kw">dyn </span>std::future::Future&lt;Output = <span class="prelude-ty">Result</span>&lt;FileInfo, glib::Error&gt;&gt; + <span class="lifetime">&#39;static</span>&gt;&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_query_settable_attributes&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_query_settable_attributes&quot;</span>)]
     </span><span class="kw">fn </span>query_settable_attributes(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;FileAttributeInfoList, glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_query_writable_namespaces&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_query_writable_namespaces&quot;</span>)]
     </span><span class="kw">fn </span>query_writable_namespaces(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;FileAttributeInfoList, glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_read&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_read&quot;</span>)]
     </span><span class="kw">fn </span>read(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;FileInputStream, glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_read_async&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_read_async&quot;</span>)]
     </span><span class="kw">fn </span>read_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;FileInputStream, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         io_priority: glib::Priority,
@@ -5283,7 +5283,7 @@
         io_priority: glib::Priority,
     ) -&gt; Pin&lt;Box_&lt;<span class="kw">dyn </span>std::future::Future&lt;Output = <span class="prelude-ty">Result</span>&lt;FileInputStream, glib::Error&gt;&gt; + <span class="lifetime">&#39;static</span>&gt;&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_replace&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_replace&quot;</span>)]
     </span><span class="kw">fn </span>replace(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         etag: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
@@ -5292,7 +5292,7 @@
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;FileOutputStream, glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_replace_async&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_replace_async&quot;</span>)]
     </span><span class="kw">fn </span>replace_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;FileOutputStream, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         etag: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
@@ -5311,7 +5311,7 @@
         io_priority: glib::Priority,
     ) -&gt; Pin&lt;Box_&lt;<span class="kw">dyn </span>std::future::Future&lt;Output = <span class="prelude-ty">Result</span>&lt;FileOutputStream, glib::Error&gt;&gt; + <span class="lifetime">&#39;static</span>&gt;&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_replace_contents&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_replace_contents&quot;</span>)]
     </span><span class="kw">fn </span>replace_contents(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         contents: <span class="kw-2">&amp;</span>[u8],
@@ -5324,7 +5324,7 @@
     <span class="comment">//#[doc(alias = &quot;g_file_replace_contents_bytes_async&quot;)]
     //fn replace_contents_bytes_async&lt;P: FnOnce(Result&lt;(), glib::Error&gt;) + &#39;static&gt;(&amp;self, contents: &amp;glib::Bytes, etag: Option&lt;&amp;str&gt;, make_backup: bool, flags: FileCreateFlags, cancellable: Option&lt;&amp;impl IsA&lt;Cancellable&gt;&gt;, callback: P);
 
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_replace_readwrite&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_replace_readwrite&quot;</span>)]
     </span><span class="kw">fn </span>replace_readwrite(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         etag: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
@@ -5333,7 +5333,7 @@
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;FileIOStream, glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_replace_readwrite_async&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_replace_readwrite_async&quot;</span>)]
     </span><span class="kw">fn </span>replace_readwrite_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;FileIOStream, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         etag: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
@@ -5352,14 +5352,14 @@
         io_priority: glib::Priority,
     ) -&gt; Pin&lt;Box_&lt;<span class="kw">dyn </span>std::future::Future&lt;Output = <span class="prelude-ty">Result</span>&lt;FileIOStream, glib::Error&gt;&gt; + <span class="lifetime">&#39;static</span>&gt;&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_resolve_relative_path&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_resolve_relative_path&quot;</span>)]
     #[must_use]
     </span><span class="kw">fn </span>resolve_relative_path(<span class="kw-2">&amp;</span><span class="self">self</span>, relative_path: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;) -&gt; File;
 
     <span class="comment">//#[doc(alias = &quot;g_file_set_attribute&quot;)]
     //fn set_attribute(&amp;self, attribute: &amp;str, type_: FileAttributeType, value_p: /*Unimplemented*/Option&lt;Basic: Pointer&gt;, flags: FileQueryInfoFlags, cancellable: Option&lt;&amp;impl IsA&lt;Cancellable&gt;&gt;) -&gt; Result&lt;(), glib::Error&gt;;
 
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_set_attribute_byte_string&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_set_attribute_byte_string&quot;</span>)]
     </span><span class="kw">fn </span>set_attribute_byte_string(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         attribute: <span class="kw-2">&amp;</span>str,
@@ -5368,7 +5368,7 @@
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_set_attribute_int32&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_set_attribute_int32&quot;</span>)]
     </span><span class="kw">fn </span>set_attribute_int32(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         attribute: <span class="kw-2">&amp;</span>str,
@@ -5377,7 +5377,7 @@
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_set_attribute_int64&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_set_attribute_int64&quot;</span>)]
     </span><span class="kw">fn </span>set_attribute_int64(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         attribute: <span class="kw-2">&amp;</span>str,
@@ -5386,7 +5386,7 @@
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_set_attribute_string&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_set_attribute_string&quot;</span>)]
     </span><span class="kw">fn </span>set_attribute_string(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         attribute: <span class="kw-2">&amp;</span>str,
@@ -5395,7 +5395,7 @@
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_set_attribute_uint32&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_set_attribute_uint32&quot;</span>)]
     </span><span class="kw">fn </span>set_attribute_uint32(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         attribute: <span class="kw-2">&amp;</span>str,
@@ -5404,7 +5404,7 @@
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_set_attribute_uint64&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_set_attribute_uint64&quot;</span>)]
     </span><span class="kw">fn </span>set_attribute_uint64(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         attribute: <span class="kw-2">&amp;</span>str,
@@ -5413,7 +5413,7 @@
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_set_attributes_async&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_set_attributes_async&quot;</span>)]
     </span><span class="kw">fn </span>set_attributes_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;FileInfo, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         info: <span class="kw-2">&amp;</span>FileInfo,
@@ -5430,7 +5430,7 @@
         io_priority: glib::Priority,
     ) -&gt; Pin&lt;Box_&lt;<span class="kw">dyn </span>std::future::Future&lt;Output = <span class="prelude-ty">Result</span>&lt;FileInfo, glib::Error&gt;&gt; + <span class="lifetime">&#39;static</span>&gt;&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_set_attributes_from_info&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_set_attributes_from_info&quot;</span>)]
     </span><span class="kw">fn </span>set_attributes_from_info(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         info: <span class="kw-2">&amp;</span>FileInfo,
@@ -5438,14 +5438,14 @@
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_set_display_name&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_set_display_name&quot;</span>)]
     </span><span class="kw">fn </span>set_display_name(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         display_name: <span class="kw-2">&amp;</span>str,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;File, glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_set_display_name_async&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_set_display_name_async&quot;</span>)]
     </span><span class="kw">fn </span>set_display_name_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;File, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         display_name: <span class="kw-2">&amp;</span>str,
@@ -5460,7 +5460,7 @@
         io_priority: glib::Priority,
     ) -&gt; Pin&lt;Box_&lt;<span class="kw">dyn </span>std::future::Future&lt;Output = <span class="prelude-ty">Result</span>&lt;File, glib::Error&gt;&gt; + <span class="lifetime">&#39;static</span>&gt;&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_start_mountable&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_start_mountable&quot;</span>)]
     </span><span class="kw">fn </span>start_mountable&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         flags: DriveStartFlags,
@@ -5475,7 +5475,7 @@
         start_operation: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>(<span class="kw">impl </span>IsA&lt;MountOperation&gt; + Clone + <span class="lifetime">&#39;static</span>)&gt;,
     ) -&gt; Pin&lt;Box_&lt;<span class="kw">dyn </span>std::future::Future&lt;Output = <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;&gt; + <span class="lifetime">&#39;static</span>&gt;&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_stop_mountable&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_stop_mountable&quot;</span>)]
     </span><span class="kw">fn </span>stop_mountable&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         flags: MountUnmountFlags,
@@ -5490,13 +5490,13 @@
         mount_operation: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>(<span class="kw">impl </span>IsA&lt;MountOperation&gt; + Clone + <span class="lifetime">&#39;static</span>)&gt;,
     ) -&gt; Pin&lt;Box_&lt;<span class="kw">dyn </span>std::future::Future&lt;Output = <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;&gt; + <span class="lifetime">&#39;static</span>&gt;&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_supports_thread_contexts&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_supports_thread_contexts&quot;</span>)]
     </span><span class="kw">fn </span>supports_thread_contexts(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_trash&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_trash&quot;</span>)]
     </span><span class="kw">fn </span>trash(<span class="kw-2">&amp;</span><span class="self">self</span>, cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_trash_async&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_trash_async&quot;</span>)]
     </span><span class="kw">fn </span>trash_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         io_priority: glib::Priority,
@@ -5509,7 +5509,7 @@
         io_priority: glib::Priority,
     ) -&gt; Pin&lt;Box_&lt;<span class="kw">dyn </span>std::future::Future&lt;Output = <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;&gt; + <span class="lifetime">&#39;static</span>&gt;&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_unmount_mountable_with_operation&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_unmount_mountable_with_operation&quot;</span>)]
     </span><span class="kw">fn </span>unmount_mountable_with_operation&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         flags: MountUnmountFlags,
@@ -5614,7 +5614,7 @@
         ))
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">fn </span>build_attribute_list_for_copy(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -6938,7 +6938,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
     </span><span class="kw">fn </span>query_default_handler_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;AppInfo, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -6990,7 +6990,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
     </span><span class="kw">fn </span>query_default_handler_future(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -8276,4 +8276,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1032,7 +1032,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_source_set_ready_time&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_source_set_ready_time&quot;</span>)]
     </span><span class="kw">fn </span>set_ready_time(<span class="kw-2">&amp;mut </span><span class="self">self</span>, ready_time: i64) {
         <span class="kw">if let </span>ChannelSourceState::Attached(source) = <span class="self">self</span>.source {
             <span class="kw">unsafe </span>{
@@ -1186,7 +1186,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">struct </span>ChannelSource&lt;T, F: FnMut(T) -&gt; Continue + <span class="lifetime">&#39;static</span>&gt; {
     source: ffi::GSource,
     source_funcs: <span class="prelude-ty">Option</span>&lt;Box&lt;ffi::GSourceFuncs&gt;&gt;,
@@ -1236,7 +1236,7 @@
     ffi::G_SOURCE_CONTINUE
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;v2_64&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;v2_64&quot;</span>)]
 </span><span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>dispose&lt;T, F: FnMut(T) -&gt; Continue + <span class="lifetime">&#39;static</span>&gt;(source: <span class="kw-2">*mut </span>ffi::GSource) {
     <span class="kw">let </span>source = <span class="kw-2">&amp;mut *</span>(source <span class="kw">as </span><span class="kw-2">*mut </span>ChannelSource&lt;T, F&gt;);
 
@@ -1256,11 +1256,11 @@
 
     <span class="comment">// Drop all memory we own by taking it out of the Options
 
-    </span><span class="attribute">#[cfg(feature = <span class="string">&quot;v2_64&quot;</span>)]
+    </span><span class="attr">#[cfg(feature = <span class="string">&quot;v2_64&quot;</span>)]
     </span>{
         <span class="kw">let _ </span>= source.channel.take().expect(<span class="string">&quot;Receiver without channel&quot;</span>);
     }
-    <span class="attribute">#[cfg(not(feature = <span class="string">&quot;v2_64&quot;</span>))]
+    <span class="attr">#[cfg(not(feature = <span class="string">&quot;v2_64&quot;</span>))]
     </span>{
         <span class="kw">let </span>channel = source.channel.take().expect(<span class="string">&quot;Receiver without channel&quot;</span>);
 
@@ -1483,7 +1483,7 @@
             ) <span class="kw">as </span><span class="kw-2">*mut </span>ChannelSource&lt;T, F&gt;;
             <span class="macro">assert!</span>(!source.is_null());
 
-            <span class="attribute">#[cfg(feature = <span class="string">&quot;v2_64&quot;</span>)]
+            <span class="attr">#[cfg(feature = <span class="string">&quot;v2_64&quot;</span>)]
             </span>{
                 ffi::g_source_set_dispose_function(
                     source <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GSource,
@@ -1579,7 +1579,7 @@
     }
 }
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use </span><span class="kw">crate</span>::MainLoop;
@@ -1589,7 +1589,7 @@
     <span class="kw">use </span>std::thread;
     <span class="kw">use </span>std::time;
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_channel() {
         <span class="kw">let </span>c = MainContext::new();
         <span class="kw">let </span>l = MainLoop::new(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span>c), <span class="bool-val">false</span>);
@@ -1620,7 +1620,7 @@
         <span class="macro">assert_eq!</span>(<span class="kw-2">*</span>sum.borrow(), <span class="number">6</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_drop_sender() {
         <span class="kw">let </span>c = MainContext::new();
         <span class="kw">let </span>l = MainLoop::new(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span>c), <span class="bool-val">false</span>);
@@ -1647,7 +1647,7 @@
         l.run();
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_drop_receiver() {
         <span class="kw">let </span>(sender, receiver) = MainContext::channel::&lt;i32&gt;(Priority::default());
 
@@ -1655,7 +1655,7 @@
         <span class="macro">assert_eq!</span>(sender.send(<span class="number">1</span>), <span class="prelude-val">Err</span>(mpsc::SendError(<span class="number">1</span>)));
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_remove_receiver() {
         <span class="kw">let </span>c = MainContext::new();
 
@@ -1671,7 +1671,7 @@
         <span class="macro">assert_eq!</span>(sender.send(<span class="number">1</span>), <span class="prelude-val">Err</span>(mpsc::SendError(<span class="number">1</span>)));
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_remove_receiver_and_drop_source() {
         <span class="kw">let </span>c = MainContext::new();
 
@@ -1703,7 +1703,7 @@
         <span class="macro">assert_eq!</span>(sender.send(<span class="number">1</span>), <span class="prelude-val">Err</span>(mpsc::SendError(<span class="number">1</span>)));
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_sync_channel() {
         <span class="kw">let </span>c = MainContext::new();
         <span class="kw">let </span>l = MainLoop::new(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span>c), <span class="bool-val">false</span>);
@@ -1752,7 +1752,7 @@
         <span class="macro">assert_eq!</span>(<span class="kw-2">*</span>sum.borrow(), <span class="number">6</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_sync_channel_drop_wakeup() {
         <span class="kw">let </span>c = MainContext::new();
         <span class="kw">let </span>l = MainLoop::new(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span>c), <span class="bool-val">false</span>);
@@ -1804,7 +1804,7 @@
         <span class="macro">assert_eq!</span>(<span class="kw-2">*</span>sum.borrow(), <span class="number">6</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_sync_channel_drop_receiver_wakeup() {
         <span class="kw">let </span>c = MainContext::new();
 
@@ -1833,7 +1833,7 @@
         thread.join().unwrap();
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_sync_channel_rendezvous() {
         <span class="kw">let </span>c = MainContext::new();
         <span class="kw">let </span>l = MainLoop::new(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span>c), <span class="bool-val">false</span>);
@@ -1898,4 +1898,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

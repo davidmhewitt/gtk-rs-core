@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pango/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pango/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -3600,20 +3600,20 @@
 ///
 /// See [`Layout::set_auto_dir()`][crate::Layout::set_auto_dir()] for how text direction affects
 /// the interpretation of [`Alignment`][crate::Alignment] values.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;PangoAlignment&quot;</span>)]
 </span><span class="kw">pub enum </span>Alignment {
     <span class="doccomment">/// Put all available space on the right
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ALIGN_LEFT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ALIGN_LEFT&quot;</span>)]
     </span>Left,
     <span class="doccomment">/// Center the line within the available space
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ALIGN_CENTER&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ALIGN_CENTER&quot;</span>)]
     </span>Center,
     <span class="doccomment">/// Put all available space on the left
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ALIGN_RIGHT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ALIGN_RIGHT&quot;</span>)]
     </span>Right,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -3632,7 +3632,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>Alignment {
     <span class="kw">type </span>GlibType = ffi::PangoAlignment;
 
@@ -3646,7 +3646,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::PangoAlignment&gt; <span class="kw">for </span>Alignment {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::PangoAlignment) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -3696,143 +3696,143 @@
 /// values for custom attributes using `register()`. The predefined
 /// values are given below. The type of structure used to store the attribute is
 /// listed in parentheses after the description.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;PangoAttrType&quot;</span>)]
 </span><span class="kw">pub enum </span>AttrType {
     <span class="doccomment">/// does not happen
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_INVALID&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_INVALID&quot;</span>)]
     </span>Invalid,
     <span class="doccomment">/// language ([`AttrLanguage`][crate::AttrLanguage])
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_LANGUAGE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_LANGUAGE&quot;</span>)]
     </span>Language,
     <span class="doccomment">/// font family name list ([`AttrString`][crate::AttrString])
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_FAMILY&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_FAMILY&quot;</span>)]
     </span>Family,
     <span class="doccomment">/// font slant style ([`AttrInt`][crate::AttrInt])
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_STYLE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_STYLE&quot;</span>)]
     </span>Style,
     <span class="doccomment">/// font weight ([`AttrInt`][crate::AttrInt])
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_WEIGHT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_WEIGHT&quot;</span>)]
     </span>Weight,
     <span class="doccomment">/// font variant (normal or small caps) ([`AttrInt`][crate::AttrInt])
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_VARIANT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_VARIANT&quot;</span>)]
     </span>Variant,
     <span class="doccomment">/// font stretch ([`AttrInt`][crate::AttrInt])
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_STRETCH&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_STRETCH&quot;</span>)]
     </span>Stretch,
     <span class="doccomment">/// font size in points scaled by `PANGO_SCALE` ([`AttrInt`][crate::AttrInt])
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_SIZE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_SIZE&quot;</span>)]
     </span>Size,
     <span class="doccomment">/// font description ([`AttrFontDesc`][crate::AttrFontDesc])
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_FONT_DESC&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_FONT_DESC&quot;</span>)]
     </span>FontDesc,
     <span class="doccomment">/// foreground color ([`AttrColor`][crate::AttrColor])
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_FOREGROUND&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_FOREGROUND&quot;</span>)]
     </span>Foreground,
     <span class="doccomment">/// background color ([`AttrColor`][crate::AttrColor])
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_BACKGROUND&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_BACKGROUND&quot;</span>)]
     </span>Background,
     <span class="doccomment">/// whether the text has an underline ([`AttrInt`][crate::AttrInt])
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_UNDERLINE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_UNDERLINE&quot;</span>)]
     </span>Underline,
     <span class="doccomment">/// whether the text is struck-through ([`AttrInt`][crate::AttrInt])
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_STRIKETHROUGH&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_STRIKETHROUGH&quot;</span>)]
     </span>Strikethrough,
     <span class="doccomment">/// baseline displacement ([`AttrInt`][crate::AttrInt])
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_RISE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_RISE&quot;</span>)]
     </span>Rise,
     <span class="doccomment">/// shape ([`AttrShape`][crate::AttrShape])
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_SHAPE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_SHAPE&quot;</span>)]
     </span>Shape,
     <span class="doccomment">/// font size scale factor ([`AttrFloat`][crate::AttrFloat])
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_SCALE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_SCALE&quot;</span>)]
     </span>Scale,
     <span class="doccomment">/// whether fallback is enabled ([`AttrInt`][crate::AttrInt])
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_FALLBACK&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_FALLBACK&quot;</span>)]
     </span>Fallback,
     <span class="doccomment">/// letter spacing ([`AttrInt`][crate::AttrInt])
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_LETTER_SPACING&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_LETTER_SPACING&quot;</span>)]
     </span>LetterSpacing,
     <span class="doccomment">/// underline color ([`AttrColor`][crate::AttrColor])
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_UNDERLINE_COLOR&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_UNDERLINE_COLOR&quot;</span>)]
     </span>UnderlineColor,
     <span class="doccomment">/// strikethrough color ([`AttrColor`][crate::AttrColor])
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_STRIKETHROUGH_COLOR&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_STRIKETHROUGH_COLOR&quot;</span>)]
     </span>StrikethroughColor,
     <span class="doccomment">/// font size in pixels scaled by `PANGO_SCALE` ([`AttrInt`][crate::AttrInt])
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_ABSOLUTE_SIZE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_ABSOLUTE_SIZE&quot;</span>)]
     </span>AbsoluteSize,
     <span class="doccomment">/// base text gravity ([`AttrInt`][crate::AttrInt])
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_GRAVITY&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_GRAVITY&quot;</span>)]
     </span>Gravity,
     <span class="doccomment">/// gravity hint ([`AttrInt`][crate::AttrInt])
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_GRAVITY_HINT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_GRAVITY_HINT&quot;</span>)]
     </span>GravityHint,
     <span class="doccomment">/// OpenType font features ([`AttrFontFeatures`][crate::AttrFontFeatures]). Since 1.38
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_FONT_FEATURES&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_FONT_FEATURES&quot;</span>)]
     </span>FontFeatures,
     <span class="doccomment">/// foreground alpha ([`AttrInt`][crate::AttrInt]). Since 1.38
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_FOREGROUND_ALPHA&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_FOREGROUND_ALPHA&quot;</span>)]
     </span>ForegroundAlpha,
     <span class="doccomment">/// background alpha ([`AttrInt`][crate::AttrInt]). Since 1.38
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_BACKGROUND_ALPHA&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_BACKGROUND_ALPHA&quot;</span>)]
     </span>BackgroundAlpha,
     <span class="doccomment">/// whether breaks are allowed ([`AttrInt`][crate::AttrInt]). Since 1.44
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_ALLOW_BREAKS&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_ALLOW_BREAKS&quot;</span>)]
     </span>AllowBreaks,
     <span class="doccomment">/// how to render invisible characters ([`AttrInt`][crate::AttrInt]). Since 1.44
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_SHOW&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_SHOW&quot;</span>)]
     </span>Show,
     <span class="doccomment">/// whether to insert hyphens at intra-word line breaks ([`AttrInt`][crate::AttrInt]). Since 1.44
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_INSERT_HYPHENS&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_INSERT_HYPHENS&quot;</span>)]
     </span>InsertHyphens,
     <span class="doccomment">/// whether the text has an overline ([`AttrInt`][crate::AttrInt]). Since 1.46
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_OVERLINE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_OVERLINE&quot;</span>)]
     </span>Overline,
     <span class="doccomment">/// overline color ([`AttrColor`][crate::AttrColor]). Since 1.46
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_OVERLINE_COLOR&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_OVERLINE_COLOR&quot;</span>)]
     </span>OverlineColor,
     <span class="doccomment">/// line height factor ([`AttrFloat`][crate::AttrFloat]). Since: 1.50
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;PANGO_ATTR_LINE_HEIGHT&quot;</span>)]
     </span>LineHeight,
     <span class="doccomment">/// line height ([`AttrInt`][crate::AttrInt]). Since: 1.50
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;PANGO_ATTR_ABSOLUTE_LINE_HEIGHT&quot;</span>)]
     </span>AbsoluteLineHeight,
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;PANGO_ATTR_TEXT_TRANSFORM&quot;</span>)]
     </span>TextTransform,
     <span class="doccomment">/// override segmentation to classify the range of the attribute as a single word ([`AttrInt`][crate::AttrInt]). Since 1.50
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;PANGO_ATTR_WORD&quot;</span>)]
     </span>Word,
     <span class="doccomment">/// override segmentation to classify the range of the attribute as a single sentence ([`AttrInt`][crate::AttrInt]). Since 1.50
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;PANGO_ATTR_SENTENCE&quot;</span>)]
     </span>Sentence,
     <span class="doccomment">/// baseline displacement ([`AttrInt`][crate::AttrInt]). Since 1.50
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;PANGO_ATTR_BASELINE_SHIFT&quot;</span>)]
     </span>BaselineShift,
     <span class="doccomment">/// font-relative size change ([`AttrInt`][crate::AttrInt]). Since 1.50
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;PANGO_ATTR_FONT_SCALE&quot;</span>)]
     </span>FontScale,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
 <span class="kw">impl </span>AttrType {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;pango_attr_type_get_name&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;pango_attr_type_get_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_name&quot;</span>)]
     </span><span class="kw">pub fn </span>name(<span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::pango_attr_type_get_name(<span class="self">self</span>.into_glib())) }
@@ -3876,19 +3876,19 @@
                 <span class="self">Self</span>::InsertHyphens =&gt; <span class="string">&quot;InsertHyphens&quot;</span>,
                 <span class="self">Self</span>::Overline =&gt; <span class="string">&quot;Overline&quot;</span>,
                 <span class="self">Self</span>::OverlineColor =&gt; <span class="string">&quot;OverlineColor&quot;</span>,
-                <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
                 </span><span class="self">Self</span>::LineHeight =&gt; <span class="string">&quot;LineHeight&quot;</span>,
-                <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
                 </span><span class="self">Self</span>::AbsoluteLineHeight =&gt; <span class="string">&quot;AbsoluteLineHeight&quot;</span>,
-                <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
                 </span><span class="self">Self</span>::TextTransform =&gt; <span class="string">&quot;TextTransform&quot;</span>,
-                <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
                 </span><span class="self">Self</span>::Word =&gt; <span class="string">&quot;Word&quot;</span>,
-                <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
                 </span><span class="self">Self</span>::Sentence =&gt; <span class="string">&quot;Sentence&quot;</span>,
-                <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
                 </span><span class="self">Self</span>::BaselineShift =&gt; <span class="string">&quot;BaselineShift&quot;</span>,
-                <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
                 </span><span class="self">Self</span>::FontScale =&gt; <span class="string">&quot;FontScale&quot;</span>,
                 <span class="kw">_ </span>=&gt; <span class="string">&quot;Unknown&quot;</span>,
             }
@@ -3896,7 +3896,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>AttrType {
     <span class="kw">type </span>GlibType = ffi::PangoAttrType;
 
@@ -3933,26 +3933,26 @@
             <span class="self">Self</span>::InsertHyphens =&gt; ffi::PANGO_ATTR_INSERT_HYPHENS,
             <span class="self">Self</span>::Overline =&gt; ffi::PANGO_ATTR_OVERLINE,
             <span class="self">Self</span>::OverlineColor =&gt; ffi::PANGO_ATTR_OVERLINE_COLOR,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span><span class="self">Self</span>::LineHeight =&gt; ffi::PANGO_ATTR_LINE_HEIGHT,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span><span class="self">Self</span>::AbsoluteLineHeight =&gt; ffi::PANGO_ATTR_ABSOLUTE_LINE_HEIGHT,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span><span class="self">Self</span>::TextTransform =&gt; ffi::PANGO_ATTR_TEXT_TRANSFORM,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span><span class="self">Self</span>::Word =&gt; ffi::PANGO_ATTR_WORD,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span><span class="self">Self</span>::Sentence =&gt; ffi::PANGO_ATTR_SENTENCE,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span><span class="self">Self</span>::BaselineShift =&gt; ffi::PANGO_ATTR_BASELINE_SHIFT,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span><span class="self">Self</span>::FontScale =&gt; ffi::PANGO_ATTR_FONT_SCALE,
             <span class="self">Self</span>::__Unknown(value) =&gt; value,
         }
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::PangoAttrType&gt; <span class="kw">for </span>AttrType {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::PangoAttrType) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -3987,19 +3987,19 @@
             ffi::PANGO_ATTR_INSERT_HYPHENS =&gt; <span class="self">Self</span>::InsertHyphens,
             ffi::PANGO_ATTR_OVERLINE =&gt; <span class="self">Self</span>::Overline,
             ffi::PANGO_ATTR_OVERLINE_COLOR =&gt; <span class="self">Self</span>::OverlineColor,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>ffi::PANGO_ATTR_LINE_HEIGHT =&gt; <span class="self">Self</span>::LineHeight,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>ffi::PANGO_ATTR_ABSOLUTE_LINE_HEIGHT =&gt; <span class="self">Self</span>::AbsoluteLineHeight,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>ffi::PANGO_ATTR_TEXT_TRANSFORM =&gt; <span class="self">Self</span>::TextTransform,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>ffi::PANGO_ATTR_WORD =&gt; <span class="self">Self</span>::Word,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>ffi::PANGO_ATTR_SENTENCE =&gt; <span class="self">Self</span>::Sentence,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>ffi::PANGO_ATTR_BASELINE_SHIFT =&gt; <span class="self">Self</span>::BaselineShift,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>ffi::PANGO_ATTR_FONT_SCALE =&gt; <span class="self">Self</span>::FontScale,
             value =&gt; <span class="self">Self</span>::__Unknown(value),
         }
@@ -4039,28 +4039,28 @@
 }
 
 <span class="doccomment">/// An enumeration that affects baseline shifts between runs.
-</span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;PangoBaselineShift&quot;</span>)]
 </span><span class="kw">pub enum </span>BaselineShift {
     <span class="doccomment">/// Leave the baseline unchanged
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BASELINE_SHIFT_NONE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BASELINE_SHIFT_NONE&quot;</span>)]
     </span><span class="prelude-val">None</span>,
     <span class="doccomment">/// Shift the baseline to the superscript position,
     ///   relative to the previous run
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BASELINE_SHIFT_SUPERSCRIPT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BASELINE_SHIFT_SUPERSCRIPT&quot;</span>)]
     </span>Superscript,
     <span class="doccomment">/// Shift the baseline to the subscript position,
     ///   relative to the previous run
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BASELINE_SHIFT_SUBSCRIPT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BASELINE_SHIFT_SUBSCRIPT&quot;</span>)]
     </span>Subscript,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 </span><span class="kw">impl </span>fmt::Display <span class="kw">for </span>BaselineShift {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter) -&gt; fmt::Result {
@@ -4077,7 +4077,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 #[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>BaselineShift {
@@ -4093,7 +4093,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 #[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::PangoBaselineShift&gt; <span class="kw">for </span>BaselineShift {
@@ -4107,7 +4107,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 </span><span class="kw">impl </span>StaticType <span class="kw">for </span>BaselineShift {
     <span class="kw">fn </span>static_type() -&gt; Type {
@@ -4115,13 +4115,13 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 </span><span class="kw">impl </span>glib::value::ValueType <span class="kw">for </span>BaselineShift {
     <span class="kw">type </span>Type = <span class="self">Self</span>;
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 </span><span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span>BaselineShift {
     <span class="kw">type </span>Checker = glib::value::GenericValueTypeChecker&lt;<span class="self">Self</span>&gt;;
@@ -4131,7 +4131,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 </span><span class="kw">impl </span>ToValue <span class="kw">for </span>BaselineShift {
     <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::Value {
@@ -4156,86 +4156,86 @@
 /// # Deprecated since 1.44
 ///
 /// Use fribidi for this information
-</span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v1_44&quot;</span>, deprecated = <span class="string">&quot;Since 1.44&quot;</span>)]
+</span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v1_44&quot;</span>, deprecated = <span class="string">&quot;Since 1.44&quot;</span>)]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;PangoBidiType&quot;</span>)]
 </span><span class="kw">pub enum </span>BidiType {
     <span class="doccomment">/// Left-to-Right
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_L&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_L&quot;</span>)]
     </span>L,
     <span class="doccomment">/// Left-to-Right Embedding
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_LRE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_LRE&quot;</span>)]
     </span>Lre,
     <span class="doccomment">/// Left-to-Right Override
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_LRO&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_LRO&quot;</span>)]
     </span>Lro,
     <span class="doccomment">/// Right-to-Left
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_R&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_R&quot;</span>)]
     </span>R,
     <span class="doccomment">/// Right-to-Left Arabic
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_AL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_AL&quot;</span>)]
     </span>Al,
     <span class="doccomment">/// Right-to-Left Embedding
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_RLE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_RLE&quot;</span>)]
     </span>Rle,
     <span class="doccomment">/// Right-to-Left Override
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_RLO&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_RLO&quot;</span>)]
     </span>Rlo,
     <span class="doccomment">/// Pop Directional Format
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_PDF&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_PDF&quot;</span>)]
     </span>Pdf,
     <span class="doccomment">/// European Number
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_EN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_EN&quot;</span>)]
     </span>En,
     <span class="doccomment">/// European Number Separator
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_ES&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_ES&quot;</span>)]
     </span>Es,
     <span class="doccomment">/// European Number Terminator
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_ET&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_ET&quot;</span>)]
     </span>Et,
     <span class="doccomment">/// Arabic Number
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_AN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_AN&quot;</span>)]
     </span>An,
     <span class="doccomment">/// Common Number Separator
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_CS&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_CS&quot;</span>)]
     </span>Cs,
     <span class="doccomment">/// Nonspacing Mark
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_NSM&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_NSM&quot;</span>)]
     </span>Nsm,
     <span class="doccomment">/// Boundary Neutral
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_BN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_BN&quot;</span>)]
     </span>Bn,
     <span class="doccomment">/// Paragraph Separator
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_B&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_B&quot;</span>)]
     </span>B,
     <span class="doccomment">/// Segment Separator
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_S&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_S&quot;</span>)]
     </span>S,
     <span class="doccomment">/// Whitespace
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_WS&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_WS&quot;</span>)]
     </span>Ws,
     <span class="doccomment">/// Other Neutrals
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_ON&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_ON&quot;</span>)]
     </span>On,
     <span class="doccomment">/// Left-to-Right isolate. Since 1.48.6
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_LRI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_LRI&quot;</span>)]
     </span>Lri,
     <span class="doccomment">/// Right-to-Left isolate. Since 1.48.6
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_RLI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_RLI&quot;</span>)]
     </span>Rli,
     <span class="doccomment">/// First strong isolate. Since 1.48.6
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_FSI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_FSI&quot;</span>)]
     </span>Fsi,
     <span class="doccomment">/// Pop directional isolate. Since 1.48.6
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_PDI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_BIDI_TYPE_PDI&quot;</span>)]
     </span>Pdi,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
 <span class="kw">impl </span>BidiType {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;pango_bidi_type_for_unichar&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;pango_bidi_type_for_unichar&quot;</span>)]
     </span><span class="kw">pub fn </span>for_unichar(ch: char) -&gt; BidiType {
         <span class="kw">unsafe </span>{ from_glib(ffi::pango_bidi_type_for_unichar(ch.into_glib())) }
     }
@@ -4276,7 +4276,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>BidiType {
     <span class="kw">type </span>GlibType = ffi::PangoBidiType;
 
@@ -4310,7 +4310,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::PangoBidiType&gt; <span class="kw">for </span>BidiType {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::PangoBidiType) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -4379,31 +4379,31 @@
 ///
 /// Since 1.44, only [`None`][Self::None] and [`Exact`][Self::Exact]
 /// will be returned.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;PangoCoverageLevel&quot;</span>)]
 </span><span class="kw">pub enum </span>CoverageLevel {
     <span class="doccomment">/// The character is not representable with
     ///   the font.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_COVERAGE_NONE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_COVERAGE_NONE&quot;</span>)]
     </span><span class="prelude-val">None</span>,
     <span class="doccomment">/// The character is represented in a
     ///   way that may be comprehensible but is not the correct
     ///   graphical form. For instance, a Hangul character represented
     ///   as a a sequence of Jamos, or a Latin transliteration of a
     ///   Cyrillic word.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_COVERAGE_FALLBACK&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_COVERAGE_FALLBACK&quot;</span>)]
     </span>Fallback,
     <span class="doccomment">/// The character is represented as
     ///   basically the correct graphical form, but with a stylistic
     ///   variant inappropriate for the current script.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_COVERAGE_APPROXIMATE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_COVERAGE_APPROXIMATE&quot;</span>)]
     </span>Approximate,
     <span class="doccomment">/// The character is represented as the
     ///   correct graphical form.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_COVERAGE_EXACT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_COVERAGE_EXACT&quot;</span>)]
     </span>Exact,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -4423,7 +4423,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>CoverageLevel {
     <span class="kw">type </span>GlibType = ffi::PangoCoverageLevel;
 
@@ -4438,7 +4438,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::PangoCoverageLevel&gt; <span class="kw">for </span>CoverageLevel {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::PangoCoverageLevel) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -4501,34 +4501,34 @@
 /// If you are interested in text direction, you should really use fribidi
 /// directly. [`Direction`][crate::Direction] is only retained because it is used in some
 /// public apis.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;PangoDirection&quot;</span>)]
 </span><span class="kw">pub enum </span>Direction {
     <span class="doccomment">/// A strong left-to-right direction
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_DIRECTION_LTR&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_DIRECTION_LTR&quot;</span>)]
     </span>Ltr,
     <span class="doccomment">/// A strong right-to-left direction
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_DIRECTION_RTL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_DIRECTION_RTL&quot;</span>)]
     </span>Rtl,
     <span class="doccomment">/// Deprecated value; treated the
     ///   same as `PANGO_DIRECTION_RTL`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_DIRECTION_TTB_LTR&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_DIRECTION_TTB_LTR&quot;</span>)]
     </span>TtbLtr,
     <span class="doccomment">/// Deprecated value; treated the
     ///   same as `PANGO_DIRECTION_LTR`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_DIRECTION_TTB_RTL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_DIRECTION_TTB_RTL&quot;</span>)]
     </span>TtbRtl,
     <span class="doccomment">/// A weak left-to-right direction
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_DIRECTION_WEAK_LTR&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_DIRECTION_WEAK_LTR&quot;</span>)]
     </span>WeakLtr,
     <span class="doccomment">/// A weak right-to-left direction
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_DIRECTION_WEAK_RTL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_DIRECTION_WEAK_RTL&quot;</span>)]
     </span>WeakRtl,
     <span class="doccomment">/// No direction specified
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_DIRECTION_NEUTRAL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_DIRECTION_NEUTRAL&quot;</span>)]
     </span>Neutral,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -4551,7 +4551,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>Direction {
     <span class="kw">type </span>GlibType = ffi::PangoDirection;
 
@@ -4569,7 +4569,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::PangoDirection&gt; <span class="kw">for </span>Direction {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::PangoDirection) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -4623,23 +4623,23 @@
 /// In the ellipsization process characters are removed from the
 /// text in order to make it fit to a given width and replaced
 /// with an ellipsis.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;PangoEllipsizeMode&quot;</span>)]
 </span><span class="kw">pub enum </span>EllipsizeMode {
     <span class="doccomment">/// No ellipsization
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ELLIPSIZE_NONE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ELLIPSIZE_NONE&quot;</span>)]
     </span><span class="prelude-val">None</span>,
     <span class="doccomment">/// Omit characters at the start of the text
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ELLIPSIZE_START&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ELLIPSIZE_START&quot;</span>)]
     </span>Start,
     <span class="doccomment">/// Omit characters in the middle of the text
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ELLIPSIZE_MIDDLE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ELLIPSIZE_MIDDLE&quot;</span>)]
     </span>Middle,
     <span class="doccomment">/// Omit characters at the end of the text
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ELLIPSIZE_END&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ELLIPSIZE_END&quot;</span>)]
     </span>End,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -4659,7 +4659,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>EllipsizeMode {
     <span class="kw">type </span>GlibType = ffi::PangoEllipsizeMode;
 
@@ -4674,7 +4674,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::PangoEllipsizeMode&gt; <span class="kw">for </span>EllipsizeMode {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::PangoEllipsizeMode) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -4721,29 +4721,29 @@
 
 <span class="doccomment">/// An enumeration that affects font sizes for superscript
 /// and subscript positioning and for (emulated) Small Caps.
-</span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;PangoFontScale&quot;</span>)]
 </span><span class="kw">pub enum </span>FontScale {
     <span class="doccomment">/// Leave the font size unchanged
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_FONT_SCALE_NONE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_FONT_SCALE_NONE&quot;</span>)]
     </span><span class="prelude-val">None</span>,
     <span class="doccomment">/// Change the font to a size suitable for superscripts
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_FONT_SCALE_SUPERSCRIPT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_FONT_SCALE_SUPERSCRIPT&quot;</span>)]
     </span>Superscript,
     <span class="doccomment">/// Change the font to a size suitable for subscripts
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_FONT_SCALE_SUBSCRIPT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_FONT_SCALE_SUBSCRIPT&quot;</span>)]
     </span>Subscript,
     <span class="doccomment">/// Change the font to a size suitable for Small Caps
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_FONT_SCALE_SMALL_CAPS&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_FONT_SCALE_SMALL_CAPS&quot;</span>)]
     </span>SmallCaps,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 </span><span class="kw">impl </span>fmt::Display <span class="kw">for </span>FontScale {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter) -&gt; fmt::Result {
@@ -4761,7 +4761,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 #[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>FontScale {
@@ -4778,7 +4778,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 #[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::PangoFontScale&gt; <span class="kw">for </span>FontScale {
@@ -4793,7 +4793,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 </span><span class="kw">impl </span>StaticType <span class="kw">for </span>FontScale {
     <span class="kw">fn </span>static_type() -&gt; Type {
@@ -4801,13 +4801,13 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 </span><span class="kw">impl </span>glib::value::ValueType <span class="kw">for </span>FontScale {
     <span class="kw">type </span>Type = <span class="self">Self</span>;
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 </span><span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span>FontScale {
     <span class="kw">type </span>Checker = glib::value::GenericValueTypeChecker&lt;<span class="self">Self</span>&gt;;
@@ -4817,7 +4817,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 </span><span class="kw">impl </span>ToValue <span class="kw">for </span>FontScale {
     <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::Value {
@@ -4846,37 +4846,37 @@
 /// [`Context::base_gravity()`][crate::Context::base_gravity()].
 ///
 /// See also: [`GravityHint`][crate::GravityHint]
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;PangoGravity&quot;</span>)]
 </span><span class="kw">pub enum </span>Gravity {
     <span class="doccomment">/// Glyphs stand upright (default) &lt;img align=&quot;right&quot; valign=&quot;center&quot; src=&quot;m-south.png&quot;&gt;
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_GRAVITY_SOUTH&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_GRAVITY_SOUTH&quot;</span>)]
     </span>South,
     <span class="doccomment">/// Glyphs are rotated 90 degrees counter-clockwise. &lt;img align=&quot;right&quot; valign=&quot;center&quot; src=&quot;m-east.png&quot;&gt;
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_GRAVITY_EAST&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_GRAVITY_EAST&quot;</span>)]
     </span>East,
     <span class="doccomment">/// Glyphs are upside-down. &lt;img align=&quot;right&quot; valign=&quot;cener&quot; src=&quot;m-north.png&quot;&gt;
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_GRAVITY_NORTH&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_GRAVITY_NORTH&quot;</span>)]
     </span>North,
     <span class="doccomment">/// Glyphs are rotated 90 degrees clockwise. &lt;img align=&quot;right&quot; valign=&quot;center&quot; src=&quot;m-west.png&quot;&gt;
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_GRAVITY_WEST&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_GRAVITY_WEST&quot;</span>)]
     </span>West,
     <span class="doccomment">/// Gravity is resolved from the context matrix
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_GRAVITY_AUTO&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_GRAVITY_AUTO&quot;</span>)]
     </span>Auto,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
 <span class="kw">impl </span>Gravity {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;pango_gravity_get_for_matrix&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;pango_gravity_get_for_matrix&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_for_matrix&quot;</span>)]
     </span><span class="kw">pub fn </span>for_matrix(matrix: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>Matrix&gt;) -&gt; Gravity {
         <span class="kw">unsafe </span>{ from_glib(ffi::pango_gravity_get_for_matrix(matrix.to_glib_none().<span class="number">0</span>)) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;pango_gravity_get_for_script&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;pango_gravity_get_for_script&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_for_script&quot;</span>)]
     </span><span class="kw">pub fn </span>for_script(script: Script, base_gravity: Gravity, hint: GravityHint) -&gt; Gravity {
         <span class="kw">unsafe </span>{
@@ -4888,7 +4888,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;pango_gravity_get_for_script_and_width&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;pango_gravity_get_for_script_and_width&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_for_script_and_width&quot;</span>)]
     </span><span class="kw">pub fn </span>for_script_and_width(
         script: Script,
@@ -4906,7 +4906,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;pango_gravity_to_rotation&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;pango_gravity_to_rotation&quot;</span>)]
     </span><span class="kw">pub fn </span>to_rotation(<span class="self">self</span>) -&gt; f64 {
         <span class="kw">unsafe </span>{ ffi::pango_gravity_to_rotation(<span class="self">self</span>.into_glib()) }
     }
@@ -4929,7 +4929,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>Gravity {
     <span class="kw">type </span>GlibType = ffi::PangoGravity;
 
@@ -4945,7 +4945,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::PangoGravity&gt; <span class="kw">for </span>Gravity {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::PangoGravity) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -4997,25 +4997,25 @@
 /// That is, English excerpts in a vertical paragraph for example.
 ///
 /// See also [`Gravity`][crate::Gravity]
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;PangoGravityHint&quot;</span>)]
 </span><span class="kw">pub enum </span>GravityHint {
     <span class="doccomment">/// scripts will take their natural gravity based
     ///   on the base gravity and the script.  This is the default.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_GRAVITY_HINT_NATURAL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_GRAVITY_HINT_NATURAL&quot;</span>)]
     </span>Natural,
     <span class="doccomment">/// always use the base gravity set, regardless of
     ///   the script.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_GRAVITY_HINT_STRONG&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_GRAVITY_HINT_STRONG&quot;</span>)]
     </span>Strong,
     <span class="doccomment">/// for scripts not in their natural direction (eg.
     ///   Latin in East gravity), choose per-script gravity such that every script
     ///   respects the line progression. This means, Latin and Arabic will take
     ///   opposite gravities and both flow top-to-bottom for example.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_GRAVITY_HINT_LINE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_GRAVITY_HINT_LINE&quot;</span>)]
     </span>Line,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -5034,7 +5034,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>GravityHint {
     <span class="kw">type </span>GlibType = ffi::PangoGravityHint;
 
@@ -5048,7 +5048,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::PangoGravityHint&gt; <span class="kw">for </span>GravityHint {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::PangoGravityHint) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -5094,24 +5094,24 @@
 
 <span class="doccomment">/// The [`Overline`][crate::Overline] enumeration is used to specify whether text
 /// should be overlined, and if so, the type of line.
-</span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_46&quot;</span>)))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;PangoOverline&quot;</span>)]
 </span><span class="kw">pub enum </span>Overline {
     <span class="doccomment">/// no overline should be drawn
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_OVERLINE_NONE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_OVERLINE_NONE&quot;</span>)]
     </span><span class="prelude-val">None</span>,
     <span class="doccomment">/// Draw a single line above the ink
     ///   extents of the text being underlined.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_OVERLINE_SINGLE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_OVERLINE_SINGLE&quot;</span>)]
     </span>Single,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_46&quot;</span>)))]
 </span><span class="kw">impl </span>fmt::Display <span class="kw">for </span>Overline {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter) -&gt; fmt::Result {
@@ -5127,7 +5127,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_46&quot;</span>)))]
 #[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>Overline {
@@ -5142,7 +5142,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_46&quot;</span>)))]
 #[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::PangoOverline&gt; <span class="kw">for </span>Overline {
@@ -5155,7 +5155,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_46&quot;</span>)))]
 </span><span class="kw">impl </span>StaticType <span class="kw">for </span>Overline {
     <span class="kw">fn </span>static_type() -&gt; Type {
@@ -5163,13 +5163,13 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_46&quot;</span>)))]
 </span><span class="kw">impl </span>glib::value::ValueType <span class="kw">for </span>Overline {
     <span class="kw">type </span>Type = <span class="self">Self</span>;
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_46&quot;</span>)))]
 </span><span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span>Overline {
     <span class="kw">type </span>Checker = glib::value::GenericValueTypeChecker&lt;<span class="self">Self</span>&gt;;
@@ -5179,7 +5179,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_46&quot;</span>)))]
 </span><span class="kw">impl </span>ToValue <span class="kw">for </span>Overline {
     <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::Value {
@@ -5197,26 +5197,26 @@
 
 <span class="doccomment">/// [`RenderPart`][crate::RenderPart] defines different items to render for such
 /// purposes as setting colors.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;PangoRenderPart&quot;</span>)]
 </span><span class="kw">pub enum </span>RenderPart {
     <span class="doccomment">/// the text itself
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_RENDER_PART_FOREGROUND&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_RENDER_PART_FOREGROUND&quot;</span>)]
     </span>Foreground,
     <span class="doccomment">/// the area behind the text
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_RENDER_PART_BACKGROUND&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_RENDER_PART_BACKGROUND&quot;</span>)]
     </span>Background,
     <span class="doccomment">/// underlines
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_RENDER_PART_UNDERLINE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_RENDER_PART_UNDERLINE&quot;</span>)]
     </span>Underline,
     <span class="doccomment">/// strikethrough lines
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_RENDER_PART_STRIKETHROUGH&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_RENDER_PART_STRIKETHROUGH&quot;</span>)]
     </span>Strikethrough,
     <span class="doccomment">/// overlines
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_RENDER_PART_OVERLINE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_RENDER_PART_OVERLINE&quot;</span>)]
     </span>Overline,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -5237,7 +5237,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>RenderPart {
     <span class="kw">type </span>GlibType = ffi::PangoRenderPart;
 
@@ -5253,7 +5253,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::PangoRenderPart&gt; <span class="kw">for </span>RenderPart {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::PangoRenderPart) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -5309,377 +5309,377 @@
 /// in newer versions of the Unicode standard. Applications should use the
 /// `GLib::UnicodeScript` enumeration instead,
 /// whose values are interchangeable with [`Script`][crate::Script].
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;PangoScript&quot;</span>)]
 </span><span class="kw">pub enum </span>Script {
     <span class="doccomment">/// a value never returned from pango_script_for_unichar()
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_INVALID_CODE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_INVALID_CODE&quot;</span>)]
     </span>InvalidCode,
     <span class="doccomment">/// a character used by multiple different scripts
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_COMMON&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_COMMON&quot;</span>)]
     </span>Common,
     <span class="doccomment">/// a mark glyph that takes its script from the
     /// base glyph to which it is attached
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_INHERITED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_INHERITED&quot;</span>)]
     </span>Inherited,
     <span class="doccomment">/// Arabic
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_ARABIC&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_ARABIC&quot;</span>)]
     </span>Arabic,
     <span class="doccomment">/// Armenian
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_ARMENIAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_ARMENIAN&quot;</span>)]
     </span>Armenian,
     <span class="doccomment">/// Bengali
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_BENGALI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_BENGALI&quot;</span>)]
     </span>Bengali,
     <span class="doccomment">/// Bopomofo
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_BOPOMOFO&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_BOPOMOFO&quot;</span>)]
     </span>Bopomofo,
     <span class="doccomment">/// Cherokee
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_CHEROKEE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_CHEROKEE&quot;</span>)]
     </span>Cherokee,
     <span class="doccomment">/// Coptic
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_COPTIC&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_COPTIC&quot;</span>)]
     </span>Coptic,
     <span class="doccomment">/// Cyrillic
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_CYRILLIC&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_CYRILLIC&quot;</span>)]
     </span>Cyrillic,
     <span class="doccomment">/// Deseret
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_DESERET&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_DESERET&quot;</span>)]
     </span>Deseret,
     <span class="doccomment">/// Devanagari
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_DEVANAGARI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_DEVANAGARI&quot;</span>)]
     </span>Devanagari,
     <span class="doccomment">/// Ethiopic
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_ETHIOPIC&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_ETHIOPIC&quot;</span>)]
     </span>Ethiopic,
     <span class="doccomment">/// Georgian
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_GEORGIAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_GEORGIAN&quot;</span>)]
     </span>Georgian,
     <span class="doccomment">/// Gothic
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_GOTHIC&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_GOTHIC&quot;</span>)]
     </span>Gothic,
     <span class="doccomment">/// Greek
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_GREEK&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_GREEK&quot;</span>)]
     </span>Greek,
     <span class="doccomment">/// Gujarati
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_GUJARATI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_GUJARATI&quot;</span>)]
     </span>Gujarati,
     <span class="doccomment">/// Gurmukhi
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_GURMUKHI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_GURMUKHI&quot;</span>)]
     </span>Gurmukhi,
     <span class="doccomment">/// Han
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_HAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_HAN&quot;</span>)]
     </span>Han,
     <span class="doccomment">/// Hangul
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_HANGUL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_HANGUL&quot;</span>)]
     </span>Hangul,
     <span class="doccomment">/// Hebrew
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_HEBREW&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_HEBREW&quot;</span>)]
     </span>Hebrew,
     <span class="doccomment">/// Hiragana
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_HIRAGANA&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_HIRAGANA&quot;</span>)]
     </span>Hiragana,
     <span class="doccomment">/// Kannada
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_KANNADA&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_KANNADA&quot;</span>)]
     </span>Kannada,
     <span class="doccomment">/// Katakana
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_KATAKANA&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_KATAKANA&quot;</span>)]
     </span>Katakana,
     <span class="doccomment">/// Khmer
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_KHMER&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_KHMER&quot;</span>)]
     </span>Khmer,
     <span class="doccomment">/// Lao
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_LAO&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_LAO&quot;</span>)]
     </span>Lao,
     <span class="doccomment">/// Latin
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_LATIN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_LATIN&quot;</span>)]
     </span>Latin,
     <span class="doccomment">/// Malayalam
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MALAYALAM&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MALAYALAM&quot;</span>)]
     </span>Malayalam,
     <span class="doccomment">/// Mongolian
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MONGOLIAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MONGOLIAN&quot;</span>)]
     </span>Mongolian,
     <span class="doccomment">/// Myanmar
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MYANMAR&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MYANMAR&quot;</span>)]
     </span>Myanmar,
     <span class="doccomment">/// Ogham
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_OGHAM&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_OGHAM&quot;</span>)]
     </span>Ogham,
     <span class="doccomment">/// Old Italic
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_OLD_ITALIC&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_OLD_ITALIC&quot;</span>)]
     </span>OldItalic,
     <span class="doccomment">/// Oriya
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_ORIYA&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_ORIYA&quot;</span>)]
     </span>Oriya,
     <span class="doccomment">/// Runic
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_RUNIC&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_RUNIC&quot;</span>)]
     </span>Runic,
     <span class="doccomment">/// Sinhala
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_SINHALA&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_SINHALA&quot;</span>)]
     </span>Sinhala,
     <span class="doccomment">/// Syriac
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_SYRIAC&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_SYRIAC&quot;</span>)]
     </span>Syriac,
     <span class="doccomment">/// Tamil
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_TAMIL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_TAMIL&quot;</span>)]
     </span>Tamil,
     <span class="doccomment">/// Telugu
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_TELUGU&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_TELUGU&quot;</span>)]
     </span>Telugu,
     <span class="doccomment">/// Thaana
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_THAANA&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_THAANA&quot;</span>)]
     </span>Thaana,
     <span class="doccomment">/// Thai
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_THAI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_THAI&quot;</span>)]
     </span>Thai,
     <span class="doccomment">/// Tibetan
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_TIBETAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_TIBETAN&quot;</span>)]
     </span>Tibetan,
     <span class="doccomment">/// Canadian Aboriginal
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_CANADIAN_ABORIGINAL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_CANADIAN_ABORIGINAL&quot;</span>)]
     </span>CanadianAboriginal,
     <span class="doccomment">/// Yi
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_YI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_YI&quot;</span>)]
     </span>Yi,
     <span class="doccomment">/// Tagalog
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_TAGALOG&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_TAGALOG&quot;</span>)]
     </span>Tagalog,
     <span class="doccomment">/// Hanunoo
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_HANUNOO&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_HANUNOO&quot;</span>)]
     </span>Hanunoo,
     <span class="doccomment">/// Buhid
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_BUHID&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_BUHID&quot;</span>)]
     </span>Buhid,
     <span class="doccomment">/// Tagbanwa
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_TAGBANWA&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_TAGBANWA&quot;</span>)]
     </span>Tagbanwa,
     <span class="doccomment">/// Braille
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_BRAILLE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_BRAILLE&quot;</span>)]
     </span>Braille,
     <span class="doccomment">/// Cypriot
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_CYPRIOT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_CYPRIOT&quot;</span>)]
     </span>Cypriot,
     <span class="doccomment">/// Limbu
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_LIMBU&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_LIMBU&quot;</span>)]
     </span>Limbu,
     <span class="doccomment">/// Osmanya
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_OSMANYA&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_OSMANYA&quot;</span>)]
     </span>Osmanya,
     <span class="doccomment">/// Shavian
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_SHAVIAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_SHAVIAN&quot;</span>)]
     </span>Shavian,
     <span class="doccomment">/// Linear B
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_LINEAR_B&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_LINEAR_B&quot;</span>)]
     </span>LinearB,
     <span class="doccomment">/// Tai Le
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_TAI_LE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_TAI_LE&quot;</span>)]
     </span>TaiLe,
     <span class="doccomment">/// Ugaritic
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_UGARITIC&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_UGARITIC&quot;</span>)]
     </span>Ugaritic,
     <span class="doccomment">/// New Tai Lue. Since 1.10
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_NEW_TAI_LUE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_NEW_TAI_LUE&quot;</span>)]
     </span>NewTaiLue,
     <span class="doccomment">/// Buginese. Since 1.10
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_BUGINESE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_BUGINESE&quot;</span>)]
     </span>Buginese,
     <span class="doccomment">/// Glagolitic. Since 1.10
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_GLAGOLITIC&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_GLAGOLITIC&quot;</span>)]
     </span>Glagolitic,
     <span class="doccomment">/// Tifinagh. Since 1.10
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_TIFINAGH&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_TIFINAGH&quot;</span>)]
     </span>Tifinagh,
     <span class="doccomment">/// Syloti Nagri. Since 1.10
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_SYLOTI_NAGRI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_SYLOTI_NAGRI&quot;</span>)]
     </span>SylotiNagri,
     <span class="doccomment">/// Old Persian. Since 1.10
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_OLD_PERSIAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_OLD_PERSIAN&quot;</span>)]
     </span>OldPersian,
     <span class="doccomment">/// Kharoshthi. Since 1.10
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_KHAROSHTHI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_KHAROSHTHI&quot;</span>)]
     </span>Kharoshthi,
     <span class="doccomment">/// an unassigned code point. Since 1.14
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_UNKNOWN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_UNKNOWN&quot;</span>)]
     </span>Unknown,
     <span class="doccomment">/// Balinese. Since 1.14
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_BALINESE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_BALINESE&quot;</span>)]
     </span>Balinese,
     <span class="doccomment">/// Cuneiform. Since 1.14
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_CUNEIFORM&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_CUNEIFORM&quot;</span>)]
     </span>Cuneiform,
     <span class="doccomment">/// Phoenician. Since 1.14
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_PHOENICIAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_PHOENICIAN&quot;</span>)]
     </span>Phoenician,
     <span class="doccomment">/// Phags-pa. Since 1.14
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_PHAGS_PA&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_PHAGS_PA&quot;</span>)]
     </span>PhagsPa,
     <span class="doccomment">/// N&#39;Ko. Since 1.14
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_NKO&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_NKO&quot;</span>)]
     </span>Nko,
     <span class="doccomment">/// Kayah Li. Since 1.20.1
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_KAYAH_LI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_KAYAH_LI&quot;</span>)]
     </span>KayahLi,
     <span class="doccomment">/// Lepcha. Since 1.20.1
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_LEPCHA&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_LEPCHA&quot;</span>)]
     </span>Lepcha,
     <span class="doccomment">/// Rejang. Since 1.20.1
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_REJANG&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_REJANG&quot;</span>)]
     </span>Rejang,
     <span class="doccomment">/// Sundanese. Since 1.20.1
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_SUNDANESE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_SUNDANESE&quot;</span>)]
     </span>Sundanese,
     <span class="doccomment">/// Saurashtra. Since 1.20.1
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_SAURASHTRA&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_SAURASHTRA&quot;</span>)]
     </span>Saurashtra,
     <span class="doccomment">/// Cham. Since 1.20.1
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_CHAM&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_CHAM&quot;</span>)]
     </span>Cham,
     <span class="doccomment">/// Ol Chiki. Since 1.20.1
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_OL_CHIKI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_OL_CHIKI&quot;</span>)]
     </span>OlChiki,
     <span class="doccomment">/// Vai. Since 1.20.1
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_VAI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_VAI&quot;</span>)]
     </span>Vai,
     <span class="doccomment">/// Carian. Since 1.20.1
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_CARIAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_CARIAN&quot;</span>)]
     </span>Carian,
     <span class="doccomment">/// Lycian. Since 1.20.1
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_LYCIAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_LYCIAN&quot;</span>)]
     </span>Lycian,
     <span class="doccomment">/// Lydian. Since 1.20.1
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_LYDIAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_LYDIAN&quot;</span>)]
     </span>Lydian,
     <span class="doccomment">/// Batak. Since 1.32
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_BATAK&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_BATAK&quot;</span>)]
     </span>Batak,
     <span class="doccomment">/// Brahmi. Since 1.32
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_BRAHMI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_BRAHMI&quot;</span>)]
     </span>Brahmi,
     <span class="doccomment">/// Mandaic. Since 1.32
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MANDAIC&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MANDAIC&quot;</span>)]
     </span>Mandaic,
     <span class="doccomment">/// Chakma. Since: 1.32
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_CHAKMA&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_CHAKMA&quot;</span>)]
     </span>Chakma,
     <span class="doccomment">/// Meroitic Cursive. Since: 1.32
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MEROITIC_CURSIVE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MEROITIC_CURSIVE&quot;</span>)]
     </span>MeroiticCursive,
     <span class="doccomment">/// Meroitic Hieroglyphs. Since: 1.32
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MEROITIC_HIEROGLYPHS&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MEROITIC_HIEROGLYPHS&quot;</span>)]
     </span>MeroiticHieroglyphs,
     <span class="doccomment">/// Miao. Since: 1.32
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MIAO&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MIAO&quot;</span>)]
     </span>Miao,
     <span class="doccomment">/// Sharada. Since: 1.32
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_SHARADA&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_SHARADA&quot;</span>)]
     </span>Sharada,
     <span class="doccomment">/// Sora Sompeng. Since: 1.32
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_SORA_SOMPENG&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_SORA_SOMPENG&quot;</span>)]
     </span>SoraSompeng,
     <span class="doccomment">/// Takri. Since: 1.32
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_TAKRI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_TAKRI&quot;</span>)]
     </span>Takri,
     <span class="doccomment">/// Bassa. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_BASSA_VAH&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_BASSA_VAH&quot;</span>)]
     </span>BassaVah,
     <span class="doccomment">/// Caucasian Albanian. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_CAUCASIAN_ALBANIAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_CAUCASIAN_ALBANIAN&quot;</span>)]
     </span>CaucasianAlbanian,
     <span class="doccomment">/// Duployan. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_DUPLOYAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_DUPLOYAN&quot;</span>)]
     </span>Duployan,
     <span class="doccomment">/// Elbasan. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_ELBASAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_ELBASAN&quot;</span>)]
     </span>Elbasan,
     <span class="doccomment">/// Grantha. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_GRANTHA&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_GRANTHA&quot;</span>)]
     </span>Grantha,
     <span class="doccomment">/// Kjohki. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_KHOJKI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_KHOJKI&quot;</span>)]
     </span>Khojki,
     <span class="doccomment">/// Khudawadi, Sindhi. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_KHUDAWADI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_KHUDAWADI&quot;</span>)]
     </span>Khudawadi,
     <span class="doccomment">/// Linear A. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_LINEAR_A&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_LINEAR_A&quot;</span>)]
     </span>LinearA,
     <span class="doccomment">/// Mahajani. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MAHAJANI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MAHAJANI&quot;</span>)]
     </span>Mahajani,
     <span class="doccomment">/// Manichaean. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MANICHAEAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MANICHAEAN&quot;</span>)]
     </span>Manichaean,
     <span class="doccomment">/// Mende Kikakui. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MENDE_KIKAKUI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MENDE_KIKAKUI&quot;</span>)]
     </span>MendeKikakui,
     <span class="doccomment">/// Modi. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MODI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MODI&quot;</span>)]
     </span>Modi,
     <span class="doccomment">/// Mro. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MRO&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MRO&quot;</span>)]
     </span>Mro,
     <span class="doccomment">/// Nabataean. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_NABATAEAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_NABATAEAN&quot;</span>)]
     </span>Nabataean,
     <span class="doccomment">/// Old North Arabian. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_OLD_NORTH_ARABIAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_OLD_NORTH_ARABIAN&quot;</span>)]
     </span>OldNorthArabian,
     <span class="doccomment">/// Old Permic. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_OLD_PERMIC&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_OLD_PERMIC&quot;</span>)]
     </span>OldPermic,
     <span class="doccomment">/// Pahawh Hmong. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_PAHAWH_HMONG&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_PAHAWH_HMONG&quot;</span>)]
     </span>PahawhHmong,
     <span class="doccomment">/// Palmyrene. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_PALMYRENE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_PALMYRENE&quot;</span>)]
     </span>Palmyrene,
     <span class="doccomment">/// Pau Cin Hau. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_PAU_CIN_HAU&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_PAU_CIN_HAU&quot;</span>)]
     </span>PauCinHau,
     <span class="doccomment">/// Psalter Pahlavi. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_PSALTER_PAHLAVI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_PSALTER_PAHLAVI&quot;</span>)]
     </span>PsalterPahlavi,
     <span class="doccomment">/// Siddham. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_SIDDHAM&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_SIDDHAM&quot;</span>)]
     </span>Siddham,
     <span class="doccomment">/// Tirhuta. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_TIRHUTA&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_TIRHUTA&quot;</span>)]
     </span>Tirhuta,
     <span class="doccomment">/// Warang Citi. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_WARANG_CITI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_WARANG_CITI&quot;</span>)]
     </span>WarangCiti,
     <span class="doccomment">/// Ahom. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_AHOM&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_AHOM&quot;</span>)]
     </span>Ahom,
     <span class="doccomment">/// Anatolian Hieroglyphs. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_ANATOLIAN_HIEROGLYPHS&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_ANATOLIAN_HIEROGLYPHS&quot;</span>)]
     </span>AnatolianHieroglyphs,
     <span class="doccomment">/// Hatran. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_HATRAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_HATRAN&quot;</span>)]
     </span>Hatran,
     <span class="doccomment">/// Multani. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MULTANI&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_MULTANI&quot;</span>)]
     </span>Multani,
     <span class="doccomment">/// Old Hungarian. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_OLD_HUNGARIAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_OLD_HUNGARIAN&quot;</span>)]
     </span>OldHungarian,
     <span class="doccomment">/// Signwriting. Since: 1.40
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_SIGNWRITING&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCRIPT_SIGNWRITING&quot;</span>)]
     </span>Signwriting,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
 <span class="kw">impl </span>Script {
-    <span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v1_44&quot;</span>, deprecated = <span class="string">&quot;Since 1.44&quot;</span>)]
+    <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v1_44&quot;</span>, deprecated = <span class="string">&quot;Since 1.44&quot;</span>)]
     #[doc(alias = <span class="string">&quot;pango_script_for_unichar&quot;</span>)]
     </span><span class="kw">pub fn </span>for_unichar(ch: char) -&gt; Script {
         <span class="kw">unsafe </span>{ from_glib(ffi::pango_script_for_unichar(ch.into_glib())) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;pango_script_get_sample_language&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;pango_script_get_sample_language&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_sample_language&quot;</span>)]
     </span><span class="kw">pub fn </span>sample_language(<span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Language&gt; {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::pango_script_get_sample_language(<span class="self">self</span>.into_glib())) }
@@ -5816,7 +5816,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>Script {
     <span class="kw">type </span>GlibType = ffi::PangoScript;
 
@@ -5945,7 +5945,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::PangoScript&gt; <span class="kw">for </span>Script {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::PangoScript) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -6106,38 +6106,38 @@
 
 <span class="doccomment">/// An enumeration specifying the width of the font relative to other designs
 /// within a family.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;PangoStretch&quot;</span>)]
 </span><span class="kw">pub enum </span>Stretch {
     <span class="doccomment">/// ultra condensed width
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_STRETCH_ULTRA_CONDENSED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_STRETCH_ULTRA_CONDENSED&quot;</span>)]
     </span>UltraCondensed,
     <span class="doccomment">/// extra condensed width
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_STRETCH_EXTRA_CONDENSED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_STRETCH_EXTRA_CONDENSED&quot;</span>)]
     </span>ExtraCondensed,
     <span class="doccomment">/// condensed width
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_STRETCH_CONDENSED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_STRETCH_CONDENSED&quot;</span>)]
     </span>Condensed,
     <span class="doccomment">/// semi condensed width
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_STRETCH_SEMI_CONDENSED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_STRETCH_SEMI_CONDENSED&quot;</span>)]
     </span>SemiCondensed,
     <span class="doccomment">/// the normal width
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_STRETCH_NORMAL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_STRETCH_NORMAL&quot;</span>)]
     </span>Normal,
     <span class="doccomment">/// semi expanded width
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_STRETCH_SEMI_EXPANDED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_STRETCH_SEMI_EXPANDED&quot;</span>)]
     </span>SemiExpanded,
     <span class="doccomment">/// expanded width
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_STRETCH_EXPANDED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_STRETCH_EXPANDED&quot;</span>)]
     </span>Expanded,
     <span class="doccomment">/// extra expanded width
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_STRETCH_EXTRA_EXPANDED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_STRETCH_EXTRA_EXPANDED&quot;</span>)]
     </span>ExtraExpanded,
     <span class="doccomment">/// ultra expanded width
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_STRETCH_ULTRA_EXPANDED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_STRETCH_ULTRA_EXPANDED&quot;</span>)]
     </span>UltraExpanded,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -6162,7 +6162,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>Stretch {
     <span class="kw">type </span>GlibType = ffi::PangoStretch;
 
@@ -6182,7 +6182,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::PangoStretch&gt; <span class="kw">for </span>Stretch {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::PangoStretch) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -6233,20 +6233,20 @@
 }
 
 <span class="doccomment">/// An enumeration specifying the various slant styles possible for a font.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;PangoStyle&quot;</span>)]
 </span><span class="kw">pub enum </span>Style {
     <span class="doccomment">/// the font is upright.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_STYLE_NORMAL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_STYLE_NORMAL&quot;</span>)]
     </span>Normal,
     <span class="doccomment">/// the font is slanted, but in a roman style.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_STYLE_OBLIQUE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_STYLE_OBLIQUE&quot;</span>)]
     </span>Oblique,
     <span class="doccomment">/// the font is slanted in an italic style.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_STYLE_ITALIC&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_STYLE_ITALIC&quot;</span>)]
     </span>Italic,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -6265,7 +6265,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>Style {
     <span class="kw">type </span>GlibType = ffi::PangoStyle;
 
@@ -6279,7 +6279,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::PangoStyle&gt; <span class="kw">for </span>Style {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::PangoStyle) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -6325,33 +6325,33 @@
 
 <span class="doccomment">/// [`TabAlign`][crate::TabAlign] specifies where the text appears relative to the tab stop
 /// position.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;PangoTabAlign&quot;</span>)]
 </span><span class="kw">pub enum </span>TabAlign {
     <span class="doccomment">/// the text appears to the right of the tab stop position
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_TAB_LEFT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_TAB_LEFT&quot;</span>)]
     </span>Left,
     <span class="doccomment">/// the text appears to the left of the tab stop position
     ///   until the available space is filled. Since: 1.50
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;PANGO_TAB_RIGHT&quot;</span>)]
     </span>Right,
     <span class="doccomment">/// the text is centered at the tab stop position
     ///   until the available space is filled. Since: 1.50
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;PANGO_TAB_CENTER&quot;</span>)]
     </span>Center,
     <span class="doccomment">/// text before the first occurrence of the decimal point
     ///   character appears to the left of the tab stop position (until the available
     ///   space is filled), the rest to the right. Since: 1.50
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;PANGO_TAB_DECIMAL&quot;</span>)]
     </span>Decimal,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -6362,11 +6362,11 @@
             <span class="string">&quot;TabAlign::{}&quot;</span>,
             <span class="kw">match </span><span class="kw-2">*</span><span class="self">self </span>{
                 <span class="self">Self</span>::Left =&gt; <span class="string">&quot;Left&quot;</span>,
-                <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
                 </span><span class="self">Self</span>::Right =&gt; <span class="string">&quot;Right&quot;</span>,
-                <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
                 </span><span class="self">Self</span>::Center =&gt; <span class="string">&quot;Center&quot;</span>,
-                <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
                 </span><span class="self">Self</span>::Decimal =&gt; <span class="string">&quot;Decimal&quot;</span>,
                 <span class="kw">_ </span>=&gt; <span class="string">&quot;Unknown&quot;</span>,
             }
@@ -6374,34 +6374,34 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>TabAlign {
     <span class="kw">type </span>GlibType = ffi::PangoTabAlign;
 
     <span class="kw">fn </span>into_glib(<span class="self">self</span>) -&gt; ffi::PangoTabAlign {
         <span class="kw">match </span><span class="self">self </span>{
             <span class="self">Self</span>::Left =&gt; ffi::PANGO_TAB_LEFT,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span><span class="self">Self</span>::Right =&gt; ffi::PANGO_TAB_RIGHT,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span><span class="self">Self</span>::Center =&gt; ffi::PANGO_TAB_CENTER,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span><span class="self">Self</span>::Decimal =&gt; ffi::PANGO_TAB_DECIMAL,
             <span class="self">Self</span>::__Unknown(value) =&gt; value,
         }
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::PangoTabAlign&gt; <span class="kw">for </span>TabAlign {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::PangoTabAlign) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
             ffi::PANGO_TAB_LEFT =&gt; <span class="self">Self</span>::Left,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>ffi::PANGO_TAB_RIGHT =&gt; <span class="self">Self</span>::Right,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>ffi::PANGO_TAB_CENTER =&gt; <span class="self">Self</span>::Center,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>ffi::PANGO_TAB_DECIMAL =&gt; <span class="self">Self</span>::Decimal,
             value =&gt; <span class="self">Self</span>::__Unknown(value),
         }
@@ -6441,30 +6441,30 @@
 }
 
 <span class="doccomment">/// An enumeration that affects how Pango treats characters during shaping.
-</span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;PangoTextTransform&quot;</span>)]
 </span><span class="kw">pub enum </span>TextTransform {
     <span class="doccomment">/// Leave text unchanged
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_TEXT_TRANSFORM_NONE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_TEXT_TRANSFORM_NONE&quot;</span>)]
     </span><span class="prelude-val">None</span>,
     <span class="doccomment">/// Display letters and numbers as lowercase
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_TEXT_TRANSFORM_LOWERCASE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_TEXT_TRANSFORM_LOWERCASE&quot;</span>)]
     </span>Lowercase,
     <span class="doccomment">/// Display letters and numbers as uppercase
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_TEXT_TRANSFORM_UPPERCASE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_TEXT_TRANSFORM_UPPERCASE&quot;</span>)]
     </span>Uppercase,
     <span class="doccomment">/// Display the first character of a word
     ///   in titlecase
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_TEXT_TRANSFORM_CAPITALIZE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_TEXT_TRANSFORM_CAPITALIZE&quot;</span>)]
     </span>Capitalize,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 </span><span class="kw">impl </span>fmt::Display <span class="kw">for </span>TextTransform {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter) -&gt; fmt::Result {
@@ -6482,7 +6482,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 #[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>TextTransform {
@@ -6499,7 +6499,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 #[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::PangoTextTransform&gt; <span class="kw">for </span>TextTransform {
@@ -6514,7 +6514,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 </span><span class="kw">impl </span>StaticType <span class="kw">for </span>TextTransform {
     <span class="kw">fn </span>static_type() -&gt; Type {
@@ -6522,13 +6522,13 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 </span><span class="kw">impl </span>glib::value::ValueType <span class="kw">for </span>TextTransform {
     <span class="kw">type </span>Type = <span class="self">Self</span>;
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 </span><span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span>TextTransform {
     <span class="kw">type </span>Checker = glib::value::GenericValueTypeChecker&lt;<span class="self">Self</span>&gt;;
@@ -6538,7 +6538,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 </span><span class="kw">impl </span>ToValue <span class="kw">for </span>TextTransform {
     <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::Value {
@@ -6556,18 +6556,18 @@
 
 <span class="doccomment">/// The [`Underline`][crate::Underline] enumeration is used to specify whether text
 /// should be underlined, and if so, the type of underlining.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;PangoUnderline&quot;</span>)]
 </span><span class="kw">pub enum </span>Underline {
     <span class="doccomment">/// no underline should be drawn
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_UNDERLINE_NONE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_UNDERLINE_NONE&quot;</span>)]
     </span><span class="prelude-val">None</span>,
     <span class="doccomment">/// a single underline should be drawn
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_UNDERLINE_SINGLE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_UNDERLINE_SINGLE&quot;</span>)]
     </span>Single,
     <span class="doccomment">/// a double underline should be drawn
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_UNDERLINE_DOUBLE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_UNDERLINE_DOUBLE&quot;</span>)]
     </span>Double,
     <span class="doccomment">/// a single underline should be drawn at a
     ///   position beneath the ink extents of the text being
@@ -6575,7 +6575,7 @@
     ///   single characters, such as for keyboard accelerators.
     ///   [`Single`][Self::Single] should be used for extended
     ///   portions of text.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_UNDERLINE_LOW&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_UNDERLINE_LOW&quot;</span>)]
     </span>Low,
     <span class="doccomment">/// an underline indicating an error should
     ///   be drawn below. The exact style of rendering is up to the
@@ -6585,24 +6585,24 @@
     ///   as a possible mispelling; in some cases a contrasting color
     ///   may automatically be used. This type of underlining is
     ///   available since Pango 1.4.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_UNDERLINE_ERROR&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_UNDERLINE_ERROR&quot;</span>)]
     </span>Error,
     <span class="doccomment">/// Like @PANGO_UNDERLINE_SINGLE, but
     ///   drawn continuously across multiple runs. This type
     ///   of underlining is available since Pango 1.46.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_UNDERLINE_SINGLE_LINE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_UNDERLINE_SINGLE_LINE&quot;</span>)]
     </span>SingleLine,
     <span class="doccomment">/// Like @PANGO_UNDERLINE_DOUBLE, but
     ///   drawn continuously across multiple runs. This type
     ///   of underlining is available since Pango 1.46.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_UNDERLINE_DOUBLE_LINE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_UNDERLINE_DOUBLE_LINE&quot;</span>)]
     </span>DoubleLine,
     <span class="doccomment">/// Like @PANGO_UNDERLINE_ERROR, but
     ///   drawn continuously across multiple runs. This type
     ///   of underlining is available since Pango 1.46.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_UNDERLINE_ERROR_LINE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_UNDERLINE_ERROR_LINE&quot;</span>)]
     </span>ErrorLine,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -6626,7 +6626,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>Underline {
     <span class="kw">type </span>GlibType = ffi::PangoUnderline;
 
@@ -6645,7 +6645,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::PangoUnderline&gt; <span class="kw">for </span>Underline {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::PangoUnderline) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -6695,50 +6695,50 @@
 }
 
 <span class="doccomment">/// An enumeration specifying capitalization variant of the font.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;PangoVariant&quot;</span>)]
 </span><span class="kw">pub enum </span>Variant {
     <span class="doccomment">/// A normal font.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_VARIANT_NORMAL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_VARIANT_NORMAL&quot;</span>)]
     </span>Normal,
     <span class="doccomment">/// A font with the lower case characters
     ///   replaced by smaller variants of the capital characters.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_VARIANT_SMALL_CAPS&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_VARIANT_SMALL_CAPS&quot;</span>)]
     </span>SmallCaps,
     <span class="doccomment">/// A font with all characters
     ///   replaced by smaller variants of the capital characters. Since: 1.50
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;PANGO_VARIANT_ALL_SMALL_CAPS&quot;</span>)]
     </span>AllSmallCaps,
     <span class="doccomment">/// A font with the lower case characters
     ///   replaced by smaller variants of the capital characters.
     ///   Petite Caps can be even smaller than Small Caps. Since: 1.50
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;PANGO_VARIANT_PETITE_CAPS&quot;</span>)]
     </span>PetiteCaps,
     <span class="doccomment">/// A font with all characters
     ///   replaced by smaller variants of the capital characters.
     ///   Petite Caps can be even smaller than Small Caps. Since: 1.50
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;PANGO_VARIANT_ALL_PETITE_CAPS&quot;</span>)]
     </span>AllPetiteCaps,
     <span class="doccomment">/// A font with the upper case characters
     ///   replaced by smaller variants of the capital letters. Since: 1.50
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;PANGO_VARIANT_UNICASE&quot;</span>)]
     </span>Unicase,
     <span class="doccomment">/// A font with capital letters that
     ///   are more suitable for all-uppercase titles. Since: 1.50
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;PANGO_VARIANT_TITLE_CAPS&quot;</span>)]
     </span>TitleCaps,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -6750,15 +6750,15 @@
             <span class="kw">match </span><span class="kw-2">*</span><span class="self">self </span>{
                 <span class="self">Self</span>::Normal =&gt; <span class="string">&quot;Normal&quot;</span>,
                 <span class="self">Self</span>::SmallCaps =&gt; <span class="string">&quot;SmallCaps&quot;</span>,
-                <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
                 </span><span class="self">Self</span>::AllSmallCaps =&gt; <span class="string">&quot;AllSmallCaps&quot;</span>,
-                <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
                 </span><span class="self">Self</span>::PetiteCaps =&gt; <span class="string">&quot;PetiteCaps&quot;</span>,
-                <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
                 </span><span class="self">Self</span>::AllPetiteCaps =&gt; <span class="string">&quot;AllPetiteCaps&quot;</span>,
-                <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
                 </span><span class="self">Self</span>::Unicase =&gt; <span class="string">&quot;Unicase&quot;</span>,
-                <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
                 </span><span class="self">Self</span>::TitleCaps =&gt; <span class="string">&quot;TitleCaps&quot;</span>,
                 <span class="kw">_ </span>=&gt; <span class="string">&quot;Unknown&quot;</span>,
             }
@@ -6766,7 +6766,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>Variant {
     <span class="kw">type </span>GlibType = ffi::PangoVariant;
 
@@ -6774,36 +6774,36 @@
         <span class="kw">match </span><span class="self">self </span>{
             <span class="self">Self</span>::Normal =&gt; ffi::PANGO_VARIANT_NORMAL,
             <span class="self">Self</span>::SmallCaps =&gt; ffi::PANGO_VARIANT_SMALL_CAPS,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span><span class="self">Self</span>::AllSmallCaps =&gt; ffi::PANGO_VARIANT_ALL_SMALL_CAPS,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span><span class="self">Self</span>::PetiteCaps =&gt; ffi::PANGO_VARIANT_PETITE_CAPS,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span><span class="self">Self</span>::AllPetiteCaps =&gt; ffi::PANGO_VARIANT_ALL_PETITE_CAPS,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span><span class="self">Self</span>::Unicase =&gt; ffi::PANGO_VARIANT_UNICASE,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span><span class="self">Self</span>::TitleCaps =&gt; ffi::PANGO_VARIANT_TITLE_CAPS,
             <span class="self">Self</span>::__Unknown(value) =&gt; value,
         }
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::PangoVariant&gt; <span class="kw">for </span>Variant {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::PangoVariant) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
             ffi::PANGO_VARIANT_NORMAL =&gt; <span class="self">Self</span>::Normal,
             ffi::PANGO_VARIANT_SMALL_CAPS =&gt; <span class="self">Self</span>::SmallCaps,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>ffi::PANGO_VARIANT_ALL_SMALL_CAPS =&gt; <span class="self">Self</span>::AllSmallCaps,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>ffi::PANGO_VARIANT_PETITE_CAPS =&gt; <span class="self">Self</span>::PetiteCaps,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>ffi::PANGO_VARIANT_ALL_PETITE_CAPS =&gt; <span class="self">Self</span>::AllPetiteCaps,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>ffi::PANGO_VARIANT_UNICASE =&gt; <span class="self">Self</span>::Unicase,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>ffi::PANGO_VARIANT_TITLE_CAPS =&gt; <span class="self">Self</span>::TitleCaps,
             value =&gt; <span class="self">Self</span>::__Unknown(value),
         }
@@ -6846,47 +6846,47 @@
 ///
 /// Weight is specified as a numeric value ranging from 100 to 1000.
 /// This enumeration simply provides some common, predefined values.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;PangoWeight&quot;</span>)]
 </span><span class="kw">pub enum </span>Weight {
     <span class="doccomment">/// the thin weight (= 100) Since: 1.24
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_WEIGHT_THIN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_WEIGHT_THIN&quot;</span>)]
     </span>Thin,
     <span class="doccomment">/// the ultralight weight (= 200)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_WEIGHT_ULTRALIGHT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_WEIGHT_ULTRALIGHT&quot;</span>)]
     </span>Ultralight,
     <span class="doccomment">/// the light weight (= 300)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_WEIGHT_LIGHT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_WEIGHT_LIGHT&quot;</span>)]
     </span>Light,
     <span class="doccomment">/// the semilight weight (= 350) Since: 1.36.7
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_WEIGHT_SEMILIGHT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_WEIGHT_SEMILIGHT&quot;</span>)]
     </span>Semilight,
     <span class="doccomment">/// the book weight (= 380) Since: 1.24)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_WEIGHT_BOOK&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_WEIGHT_BOOK&quot;</span>)]
     </span>Book,
     <span class="doccomment">/// the default weight (= 400)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_WEIGHT_NORMAL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_WEIGHT_NORMAL&quot;</span>)]
     </span>Normal,
     <span class="doccomment">/// the medium weight (= 500) Since: 1.24
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_WEIGHT_MEDIUM&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_WEIGHT_MEDIUM&quot;</span>)]
     </span>Medium,
     <span class="doccomment">/// the semibold weight (= 600)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_WEIGHT_SEMIBOLD&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_WEIGHT_SEMIBOLD&quot;</span>)]
     </span>Semibold,
     <span class="doccomment">/// the bold weight (= 700)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_WEIGHT_BOLD&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_WEIGHT_BOLD&quot;</span>)]
     </span>Bold,
     <span class="doccomment">/// the ultrabold weight (= 800)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_WEIGHT_ULTRABOLD&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_WEIGHT_ULTRABOLD&quot;</span>)]
     </span>Ultrabold,
     <span class="doccomment">/// the heavy weight (= 900)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_WEIGHT_HEAVY&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_WEIGHT_HEAVY&quot;</span>)]
     </span>Heavy,
     <span class="doccomment">/// the ultraheavy weight (= 1000) Since: 1.24
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_WEIGHT_ULTRAHEAVY&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_WEIGHT_ULTRAHEAVY&quot;</span>)]
     </span>Ultraheavy,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -6914,7 +6914,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>Weight {
     <span class="kw">type </span>GlibType = ffi::PangoWeight;
 
@@ -6937,7 +6937,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::PangoWeight&gt; <span class="kw">for </span>Weight {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::PangoWeight) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -6997,21 +6997,21 @@
 /// by the Unicode line breaking algorithm. For @PANGO_WRAP_CHAR, Pango allows
 /// breaking at grapheme boundaries that are determined by the Unicode text
 /// segmentation algorithm.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;PangoWrapMode&quot;</span>)]
 </span><span class="kw">pub enum </span>WrapMode {
     <span class="doccomment">/// wrap lines at word boundaries.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_WRAP_WORD&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_WRAP_WORD&quot;</span>)]
     </span>Word,
     <span class="doccomment">/// wrap lines at character boundaries.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_WRAP_CHAR&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_WRAP_CHAR&quot;</span>)]
     </span>Char,
     <span class="doccomment">/// wrap lines at word boundaries, but fall back to
     ///   character boundaries if there is not enough space for a full word.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_WRAP_WORD_CHAR&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_WRAP_WORD_CHAR&quot;</span>)]
     </span>WordChar,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -7030,7 +7030,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>WrapMode {
     <span class="kw">type </span>GlibType = ffi::PangoWrapMode;
 
@@ -7044,7 +7044,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::PangoWrapMode&gt; <span class="kw">for </span>WrapMode {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::PangoWrapMode) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -7088,4 +7088,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

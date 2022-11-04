@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -499,7 +499,7 @@
     /// # Implements
     ///
     /// [`DebugControllerDBusExt`][trait@crate::prelude::DebugControllerDBusExt], [`trait@glib::ObjectExt`], [`DebugControllerExt`][trait@crate::prelude::DebugControllerExt], [`InitableExt`][trait@crate::prelude::InitableExt], [`DebugControllerDBusExtManual`][trait@crate::prelude::DebugControllerDBusExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDebugControllerDBus&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDebugControllerDBus&quot;</span>)]
     </span><span class="kw">pub struct </span>DebugControllerDBus(Object&lt;ffi::GDebugControllerDBus, ffi::GDebugControllerDBusClass&gt;) @implements DebugController, Initable;
 
     <span class="kw">match fn </span>{
@@ -526,7 +526,7 @@
     ///
     /// a new [`DebugControllerDBus`][crate::DebugControllerDBus], or [`None`]
     ///  on failure
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_debug_controller_dbus_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_debug_controller_dbus_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(
         connection: <span class="kw-2">&amp;</span>DBusConnection,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
@@ -569,7 +569,7 @@
     ///
     /// Calling this method from within a `signal::DebugControllerDBus::authorize` signal
     /// handler will cause a deadlock and must not be done.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_debug_controller_dbus_stop&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_debug_controller_dbus_stop&quot;</span>)]
     </span><span class="kw">fn </span>stop(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
     <span class="doccomment">/// Emitted when a D-Bus peer is trying to change the debug settings and used
@@ -595,7 +595,7 @@
     /// # Returns
     ///
     /// [`true`] if the call is authorized, [`false`] otherwise.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;authorize&quot;</span>)]
     </span><span class="kw">fn </span>connect_authorize&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>DBusMethodInvocation) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(
@@ -611,7 +611,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">fn </span>connect_authorize&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>DBusMethodInvocation) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -652,4 +652,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

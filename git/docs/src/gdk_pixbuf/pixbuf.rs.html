@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gdk_pixbuf/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gdk_pixbuf/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -764,7 +764,7 @@
 <span class="kw">use crate</span>::{Colorspace, Pixbuf, PixbufFormat};
 
 <span class="kw">impl </span>Pixbuf {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_new_from_data&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_new_from_data&quot;</span>)]
     </span><span class="kw">pub fn </span>from_mut_slice&lt;T: AsMut&lt;[u8]&gt;&gt;(
         data: T,
         colorspace: Colorspace,
@@ -833,7 +833,7 @@
         Pixbuf::from_stream(<span class="kw-2">&amp;</span>gio::ReadInputStream::new(r), <span class="prelude-val">None</span>::&lt;<span class="kw-2">&amp;</span>gio::Cancellable&gt;)
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_new_from_stream_async&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_new_from_stream_async&quot;</span>)]
     </span><span class="kw">pub fn </span>from_stream_async&lt;
         P: IsA&lt;gio::InputStream&gt;,
         Q: IsA&lt;gio::Cancellable&gt;,
@@ -897,7 +897,7 @@
         }))
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_new_from_stream_at_scale_async&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_new_from_stream_at_scale_async&quot;</span>)]
     </span><span class="kw">pub fn </span>from_stream_at_scale_async&lt;
         P: IsA&lt;gio::InputStream&gt;,
         Q: IsA&lt;gio::Cancellable&gt;,
@@ -990,7 +990,7 @@
     ///
     /// Until you drop the returned reference, you must not call any methods on the pixbuf which may read
     /// or write to the data.
-    </span><span class="attribute">#[allow(clippy::mut_from_ref)]
+    </span><span class="attr">#[allow(clippy::mut_from_ref)]
     #[allow(clippy::missing_safety_doc)]
     #[doc(alias = <span class="string">&quot;gdk_pixbuf_get_pixels_with_length&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_pixels&quot;</span>)]
@@ -1045,7 +1045,7 @@
     ///
     /// ## `height`
     /// Return location for the height of the image
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_get_file_info&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_get_file_info&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_file_info&quot;</span>)]
     </span><span class="kw">pub fn </span>file_info&lt;T: AsRef&lt;Path&gt;&gt;(filename: T) -&gt; <span class="prelude-ty">Option</span>&lt;(PixbufFormat, i32, i32)&gt; {
         <span class="kw">unsafe </span>{
@@ -1083,7 +1083,7 @@
     /// optional `GCancellable` object, `NULL` to ignore
     /// ## `callback`
     /// a `GAsyncReadyCallback` to call when the file info is available
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_get_file_info_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_get_file_info_async&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_file_info_async&quot;</span>)]
     </span><span class="kw">pub fn </span>file_info_async&lt;
         P: IsA&lt;gio::Cancellable&gt;,
@@ -1150,7 +1150,7 @@
         }
     }
 
-    <span class="attribute">#[allow(clippy::type_complexity)]
+    <span class="attr">#[allow(clippy::type_complexity)]
     #[doc(alias = <span class="string">&quot;get_file_info_async&quot;</span>)]
     </span><span class="kw">pub fn </span>file_info_future&lt;T: AsRef&lt;Path&gt; + Clone + <span class="lifetime">&#39;static</span>&gt;(
         filename: T,
@@ -1183,7 +1183,7 @@
     /// ## `buffer`
     ///
     ///   location to receive a pointer to the new buffer.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_save_to_bufferv&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_save_to_bufferv&quot;</span>)]
     </span><span class="kw">pub fn </span>save_to_bufferv(<span class="kw-2">&amp;</span><span class="self">self</span>, type_: <span class="kw-2">&amp;</span>str, options: <span class="kw-2">&amp;</span>[(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span>str)]) -&gt; <span class="prelude-ty">Result</span>&lt;Vec&lt;u8&gt;, Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>buffer = ptr::null_mut();
@@ -1232,7 +1232,7 @@
     ///
     /// `TRUE` if the pixbuf was saved successfully, `FALSE` if an
     ///   error was set.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_save_to_streamv&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_save_to_streamv&quot;</span>)]
     </span><span class="kw">pub fn </span>save_to_streamv&lt;P: IsA&lt;gio::OutputStream&gt;, Q: IsA&lt;gio::Cancellable&gt;&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         stream: <span class="kw-2">&amp;</span>P,
@@ -1283,7 +1283,7 @@
     /// optional `GCancellable` object, `NULL` to ignore
     /// ## `callback`
     /// a `GAsyncReadyCallback` to call when the pixbuf is saved
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_save_to_streamv_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_save_to_streamv_async&quot;</span>)]
     </span><span class="kw">pub fn </span>save_to_streamv_async&lt;
         P: IsA&lt;gio::OutputStream&gt;,
         Q: IsA&lt;gio::Cancellable&gt;,
@@ -1394,7 +1394,7 @@
     /// # Returns
     ///
     /// whether an error was set
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_savev&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_savev&quot;</span>)]
     </span><span class="kw">pub fn </span>savev&lt;T: AsRef&lt;Path&gt;&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         filename: T,
@@ -1422,4 +1422,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gdk_pixbuf" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gdk_pixbuf" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

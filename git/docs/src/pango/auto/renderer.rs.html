@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pango/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pango/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -635,7 +635,7 @@
     /// # Implements
     ///
     /// [`RendererExt`][trait@crate::prelude::RendererExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PangoRenderer&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PangoRenderer&quot;</span>)]
     </span><span class="kw">pub struct </span>Renderer(Object&lt;ffi::PangoRenderer, ffi::PangoRendererClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -662,13 +662,13 @@
     /// Calls to [`activate()`][Self::activate()] and
     /// [`deactivate()`][Self::deactivate()] can be nested and the
     /// renderer will only be initialized and deinitialized once.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_renderer_activate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_renderer_activate&quot;</span>)]
     </span><span class="kw">fn </span>activate(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
     <span class="doccomment">/// Cleans up after rendering operations on @self.
     ///
     /// See docs for [`activate()`][Self::activate()].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_renderer_deactivate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_renderer_deactivate&quot;</span>)]
     </span><span class="kw">fn </span>deactivate(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
     <span class="doccomment">/// Draw a squiggly line that approximately covers the given rectangle
@@ -688,7 +688,7 @@
     /// width of underline, in Pango units in user coordinate system
     /// ## `height`
     /// height of underline, in Pango units in user coordinate system
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_renderer_draw_error_underline&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_renderer_draw_error_underline&quot;</span>)]
     </span><span class="kw">fn </span>draw_error_underline(<span class="kw-2">&amp;</span><span class="self">self</span>, x: i32, y: i32, width: i32, height: i32);
 
     <span class="doccomment">/// Draws a single glyph with coordinates in device space.
@@ -700,7 +700,7 @@
     /// X coordinate of left edge of baseline of glyph
     /// ## `y`
     /// Y coordinate of left edge of baseline of glyph
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_renderer_draw_glyph&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_renderer_draw_glyph&quot;</span>)]
     </span><span class="kw">fn </span>draw_glyph(<span class="kw-2">&amp;</span><span class="self">self</span>, font: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Font&gt;, glyph: Glyph, x: f64, y: f64);
 
     <span class="doccomment">/// Draws the glyphs in @glyph_item with the specified [`Renderer`][crate::Renderer],
@@ -731,7 +731,7 @@
     /// ## `y`
     /// Y position of left edge of baseline, in user space coordinates
     ///   in Pango units
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_renderer_draw_glyph_item&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_renderer_draw_glyph_item&quot;</span>)]
     </span><span class="kw">fn </span>draw_glyph_item(<span class="kw-2">&amp;</span><span class="self">self</span>, text: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, glyph_item: <span class="kw-2">&amp;mut </span>GlyphItem, x: i32, y: i32);
 
     <span class="doccomment">/// Draws the glyphs in @glyphs with the specified [`Renderer`][crate::Renderer].
@@ -745,7 +745,7 @@
     /// ## `y`
     /// Y position of left edge of baseline, in user space coordinates
     ///   in Pango units.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_renderer_draw_glyphs&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_renderer_draw_glyphs&quot;</span>)]
     </span><span class="kw">fn </span>draw_glyphs(<span class="kw-2">&amp;</span><span class="self">self</span>, font: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Font&gt;, glyphs: <span class="kw-2">&amp;mut </span>GlyphString, x: i32, y: i32);
 
     <span class="doccomment">/// Draws @layout with the specified [`Renderer`][crate::Renderer].
@@ -760,7 +760,7 @@
     /// ## `y`
     /// Y position of left edge of baseline, in user space coordinates
     ///   in Pango units.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_renderer_draw_layout&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_renderer_draw_layout&quot;</span>)]
     </span><span class="kw">fn </span>draw_layout(<span class="kw-2">&amp;</span><span class="self">self</span>, layout: <span class="kw-2">&amp;</span>Layout, x: i32, y: i32);
 
     <span class="doccomment">/// Draws @line with the specified [`Renderer`][crate::Renderer].
@@ -776,7 +776,7 @@
     /// ## `y`
     /// Y position of left edge of baseline, in user space coordinates
     ///   in Pango units.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_renderer_draw_layout_line&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_renderer_draw_layout_line&quot;</span>)]
     </span><span class="kw">fn </span>draw_layout_line(<span class="kw-2">&amp;</span><span class="self">self</span>, line: <span class="kw-2">&amp;</span>LayoutLine, x: i32, y: i32);
 
     <span class="doccomment">/// Draws an axis-aligned rectangle in user space coordinates with the
@@ -796,7 +796,7 @@
     /// width of rectangle in Pango units
     /// ## `height`
     /// height of rectangle in Pango units
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_renderer_draw_rectangle&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_renderer_draw_rectangle&quot;</span>)]
     </span><span class="kw">fn </span>draw_rectangle(<span class="kw-2">&amp;</span><span class="self">self</span>, part: RenderPart, x: i32, y: i32, width: i32, height: i32);
 
     <span class="doccomment">/// Draws a trapezoid with the parallel sides aligned with the X axis
@@ -815,7 +815,7 @@
     /// X coordinate of left end of bottom of trapezoid
     /// ## `x22`
     /// X coordinate of right end of bottom of trapezoid
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_renderer_draw_trapezoid&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_renderer_draw_trapezoid&quot;</span>)]
     </span><span class="kw">fn </span>draw_trapezoid(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         part: RenderPart,
@@ -836,7 +836,7 @@
     /// the alpha for the specified part,
     ///   or 0 if it hasn&#39;t been set and should be
     ///   inherited from the environment.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_renderer_get_alpha&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_renderer_get_alpha&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_alpha&quot;</span>)]
     </span><span class="kw">fn </span>alpha(<span class="kw-2">&amp;</span><span class="self">self</span>, part: RenderPart) -&gt; u16;
 
@@ -849,7 +849,7 @@
     /// the color for the
     ///   specified part, or [`None`] if it hasn&#39;t been set and should be
     ///   inherited from the environment.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_renderer_get_color&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_renderer_get_color&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_color&quot;</span>)]
     </span><span class="kw">fn </span>color(<span class="kw-2">&amp;</span><span class="self">self</span>, part: RenderPart) -&gt; <span class="prelude-ty">Option</span>&lt;Color&gt;;
 
@@ -865,7 +865,7 @@
     ///
     /// the layout, or [`None`] if
     ///   no layout is being rendered using @self at this time.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_renderer_get_layout&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_renderer_get_layout&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_layout&quot;</span>)]
     </span><span class="kw">fn </span>layout(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Layout&gt;;
 
@@ -881,7 +881,7 @@
     ///
     /// the layout line, or [`None`]
     ///   if no layout line is being rendered using @self at this time.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_renderer_get_layout_line&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_renderer_get_layout_line&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_layout_line&quot;</span>)]
     </span><span class="kw">fn </span>layout_line(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;LayoutLine&gt;;
 
@@ -895,7 +895,7 @@
     /// the matrix, or [`None`] if no matrix has
     ///   been set (which is the same as the identity matrix). The returned
     ///   matrix is owned by Pango and must not be modified or freed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_renderer_get_matrix&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_renderer_get_matrix&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_matrix&quot;</span>)]
     </span><span class="kw">fn </span>matrix(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Matrix&gt;;
 
@@ -916,7 +916,7 @@
     /// changes to colors. (See [`set_color()`][Self::set_color()])
     /// ## `part`
     /// the part for which rendering has changed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_renderer_part_changed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_renderer_part_changed&quot;</span>)]
     </span><span class="kw">fn </span>part_changed(<span class="kw-2">&amp;</span><span class="self">self</span>, part: RenderPart);
 
     <span class="doccomment">/// Sets the alpha for part of the rendering.
@@ -927,7 +927,7 @@
     /// the part to set the alpha for
     /// ## `alpha`
     /// an alpha value between 1 and 65536, or 0 to unset the alpha
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_renderer_set_alpha&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_renderer_set_alpha&quot;</span>)]
     </span><span class="kw">fn </span>set_alpha(<span class="kw-2">&amp;</span><span class="self">self</span>, part: RenderPart, alpha: u16);
 
     <span class="doccomment">/// Sets the color for part of the rendering.
@@ -937,14 +937,14 @@
     /// the part to change the color of
     /// ## `color`
     /// the new color or [`None`] to unset the current color
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_renderer_set_color&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_renderer_set_color&quot;</span>)]
     </span><span class="kw">fn </span>set_color(<span class="kw-2">&amp;</span><span class="self">self</span>, part: RenderPart, color: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>Color&gt;);
 
     <span class="doccomment">/// Sets the transformation matrix that will be applied when rendering.
     /// ## `matrix`
     /// a [`Matrix`][crate::Matrix], or [`None`] to unset any existing matrix
     ///  (No matrix set is the same as setting the identity matrix.)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_renderer_set_matrix&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_renderer_set_matrix&quot;</span>)]
     </span><span class="kw">fn </span>set_matrix(<span class="kw-2">&amp;</span><span class="self">self</span>, matrix: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>Matrix&gt;);
 }
 
@@ -1140,4 +1140,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

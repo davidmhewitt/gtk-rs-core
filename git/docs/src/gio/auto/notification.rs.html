@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -393,7 +393,7 @@
     /// # Implements
     ///
     /// [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GNotification&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GNotification&quot;</span>)]
     </span><span class="kw">pub struct </span>Notification(Object&lt;ffi::GNotification&gt;);
 
     <span class="kw">match fn </span>{
@@ -414,7 +414,7 @@
     /// # Returns
     ///
     /// a new [`Notification`][crate::Notification] instance
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_notification_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_notification_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(title: <span class="kw-2">&amp;</span>str) -&gt; Notification {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_notification_new(title.to_glib_none().<span class="number">0</span>)) }
     }
@@ -431,7 +431,7 @@
     /// label of the button
     /// ## `detailed_action`
     /// a detailed action name
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_notification_add_button&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_notification_add_button&quot;</span>)]
     </span><span class="kw">pub fn </span>add_button(<span class="kw-2">&amp;</span><span class="self">self</span>, label: <span class="kw-2">&amp;</span>str, detailed_action: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::g_notification_add_button(
@@ -458,7 +458,7 @@
     /// an action name
     /// ## `target`
     /// a [`glib::Variant`][struct@crate::glib::Variant] to use as `action`&#39;s parameter, or [`None`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_notification_add_button_with_target_value&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_notification_add_button_with_target_value&quot;</span>)]
     </span><span class="kw">pub fn </span>add_button_with_target_value(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         label: <span class="kw-2">&amp;</span>str,
@@ -478,7 +478,7 @@
     <span class="doccomment">/// Sets the body of `self` to `body`.
     /// ## `body`
     /// the new body for `self`, or [`None`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_notification_set_body&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_notification_set_body&quot;</span>)]
     </span><span class="kw">pub fn </span>set_body(<span class="kw-2">&amp;</span><span class="self">self</span>, body: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
         <span class="kw">unsafe </span>{
             ffi::g_notification_set_body(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, body.to_glib_none().<span class="number">0</span>);
@@ -493,7 +493,7 @@
     /// Standard categories are [listed in the specification](https://specifications.freedesktop.org/notification-spec/latest/ar01s06.html).
     /// ## `category`
     /// the category for `self`, or [`None`] for no category
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_notification_set_category&quot;</span>)]
     </span><span class="kw">pub fn </span>set_category(<span class="kw-2">&amp;</span><span class="self">self</span>, category: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
@@ -515,7 +515,7 @@
     /// was sent on is activated.
     /// ## `detailed_action`
     /// a detailed action name
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_notification_set_default_action&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_notification_set_default_action&quot;</span>)]
     </span><span class="kw">pub fn </span>set_default_action(<span class="kw-2">&amp;</span><span class="self">self</span>, detailed_action: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::g_notification_set_default_action(
@@ -543,7 +543,7 @@
     /// an action name
     /// ## `target`
     /// a [`glib::Variant`][struct@crate::glib::Variant] to use as `action`&#39;s parameter, or [`None`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_notification_set_default_action_and_target_value&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_notification_set_default_action_and_target_value&quot;</span>)]
     </span><span class="kw">pub fn </span>set_default_action_and_target_value(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         action: <span class="kw-2">&amp;</span>str,
@@ -561,7 +561,7 @@
     <span class="doccomment">/// Sets the icon of `self` to `icon`.
     /// ## `icon`
     /// the icon to be shown in `self`, as a [`Icon`][crate::Icon]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_notification_set_icon&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_notification_set_icon&quot;</span>)]
     </span><span class="kw">pub fn </span>set_icon(<span class="kw-2">&amp;</span><span class="self">self</span>, icon: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Icon&gt;) {
         <span class="kw">unsafe </span>{
             ffi::g_notification_set_icon(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, icon.as_ref().to_glib_none().<span class="number">0</span>);
@@ -572,7 +572,7 @@
     /// [`NotificationPriority`][crate::NotificationPriority] for possible values.
     /// ## `priority`
     /// a [`NotificationPriority`][crate::NotificationPriority]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_notification_set_priority&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_notification_set_priority&quot;</span>)]
     </span><span class="kw">pub fn </span>set_priority(<span class="kw-2">&amp;</span><span class="self">self</span>, priority: NotificationPriority) {
         <span class="kw">unsafe </span>{
             ffi::g_notification_set_priority(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, priority.into_glib());
@@ -582,7 +582,7 @@
     <span class="doccomment">/// Sets the title of `self` to `title`.
     /// ## `title`
     /// the new title for `self`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_notification_set_title&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_notification_set_title&quot;</span>)]
     </span><span class="kw">pub fn </span>set_title(<span class="kw-2">&amp;</span><span class="self">self</span>, title: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::g_notification_set_title(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, title.to_glib_none().<span class="number">0</span>);
@@ -596,4 +596,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

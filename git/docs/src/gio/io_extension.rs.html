@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -166,7 +166,7 @@
 </span><span class="comment">// rustdoc-stripper-ignore-next-stop
 </span><span class="doccomment">/// [`IOExtension`][crate::IOExtension] is an opaque data structure and can only be accessed
 /// using the following functions.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GIOExtension&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GIOExtension&quot;</span>)]
 #[derive(Copy, Clone, Eq, PartialEq)]
 </span><span class="kw">pub struct </span>IOExtension(ptr::NonNull&lt;ffi::GIOExtension&gt;);
 
@@ -187,7 +187,7 @@
 }
 
 <span class="kw">impl </span>FromGlibPtrNone&lt;<span class="kw-2">*mut </span>ffi::GIOExtension&gt; <span class="kw">for </span>IOExtension {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_none(ptr: <span class="kw-2">*mut </span>ffi::GIOExtension) -&gt; <span class="self">Self </span>{
         <span class="macro">assert!</span>(!ptr.is_null());
         IOExtension(ptr::NonNull::new_unchecked(ptr))
@@ -197,7 +197,7 @@
 <span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::GIOExtension&gt; <span class="kw">for </span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>IOExtension {
     <span class="kw">type </span>Storage = <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>IOExtension;
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::GIOExtension, <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>IOExtension&gt; {
         Stash(<span class="self">self</span>.<span class="number">0</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GIOExtension, <span class="kw-2">*</span><span class="self">self</span>)
     }
@@ -212,7 +212,7 @@
     /// # Returns
     ///
     /// the name of `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_io_extension_get_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_io_extension_get_name&quot;</span>)]
     </span><span class="kw">pub fn </span>name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_io_extension_get_name(<span class="self">self</span>.<span class="number">0</span>.as_ptr())) }
     }
@@ -222,7 +222,7 @@
     /// # Returns
     ///
     /// the priority of `self`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_io_extension_get_priority&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_io_extension_get_priority&quot;</span>)]
     </span><span class="kw">pub fn </span>priority(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::g_io_extension_get_priority(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
     }
@@ -232,10 +232,10 @@
     /// # Returns
     ///
     /// the type of `self`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_io_extension_get_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_io_extension_get_type&quot;</span>)]
     </span><span class="kw">pub fn </span>type_(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_io_extension_get_type(<span class="self">self</span>.<span class="number">0</span>.as_ptr())) }
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

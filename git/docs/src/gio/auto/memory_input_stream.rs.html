@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -190,7 +190,7 @@
     /// # Implements
     ///
     /// [`MemoryInputStreamExt`][trait@crate::prelude::MemoryInputStreamExt], [`InputStreamExt`][trait@crate::prelude::InputStreamExt], [`trait@glib::ObjectExt`], [`PollableInputStreamExt`][trait@crate::prelude::PollableInputStreamExt], [`SeekableExt`][trait@crate::prelude::SeekableExt], [`InputStreamExtManual`][trait@crate::prelude::InputStreamExtManual], [`PollableInputStreamExtManual`][trait@crate::prelude::PollableInputStreamExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GMemoryInputStream&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GMemoryInputStream&quot;</span>)]
     </span><span class="kw">pub struct </span>MemoryInputStream(Object&lt;ffi::GMemoryInputStream, ffi::GMemoryInputStreamClass&gt;) @extends InputStream, @implements PollableInputStream, Seekable;
 
     <span class="kw">match fn </span>{
@@ -206,7 +206,7 @@
     /// # Returns
     ///
     /// a new [`InputStream`][crate::InputStream]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_memory_input_stream_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_memory_input_stream_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; MemoryInputStream {
         <span class="kw">unsafe </span>{ InputStream::from_glib_full(ffi::g_memory_input_stream_new()).unsafe_cast() }
     }
@@ -218,7 +218,7 @@
     /// # Returns
     ///
     /// new [`InputStream`][crate::InputStream] read from `bytes`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_memory_input_stream_new_from_bytes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_memory_input_stream_new_from_bytes&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_bytes&quot;</span>)]
     </span><span class="kw">pub fn </span>from_bytes(bytes: <span class="kw-2">&amp;</span>glib::Bytes) -&gt; MemoryInputStream {
         <span class="kw">unsafe </span>{
@@ -245,7 +245,7 @@
     <span class="doccomment">/// Appends `bytes` to data that can be read from the input stream.
     /// ## `bytes`
     /// input data
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_memory_input_stream_add_bytes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_memory_input_stream_add_bytes&quot;</span>)]
     </span><span class="kw">fn </span>add_bytes(<span class="kw-2">&amp;</span><span class="self">self</span>, bytes: <span class="kw-2">&amp;</span>glib::Bytes);
 }
 
@@ -266,4 +266,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../pango/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../pango/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -183,12 +183,12 @@
 </span><span class="kw">use </span><span class="kw">crate</span>::Analysis;
 <span class="kw">use </span><span class="kw">crate</span>::GlyphString;
 <span class="kw">use </span><span class="kw">crate</span>::Item;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span><span class="kw">crate</span>::ShapeFlags;
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 <span class="kw">use </span>std::ptr;
 
-<span class="attribute">#[doc(alias = <span class="string">&quot;pango_reorder_items&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;pango_reorder_items&quot;</span>)]
 </span><span class="kw">pub fn </span>reorder_items(logical_items: <span class="kw-2">&amp;</span>[<span class="kw-2">&amp;</span>Item]) -&gt; Vec&lt;Item&gt; {
     <span class="kw">unsafe </span>{
         <span class="kw">let </span>stash_vec: Vec&lt;<span class="kw">_</span>&gt; = logical_items
@@ -205,7 +205,7 @@
     }
 }
 
-<span class="attribute">#[doc(alias = <span class="string">&quot;pango_shape_full&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;pango_shape_full&quot;</span>)]
 </span><span class="kw">pub fn </span>shape_full(
     item_text: <span class="kw-2">&amp;</span>str,
     paragraph_text: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
@@ -230,7 +230,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_44&quot;</span>)))]
 #[doc(alias = <span class="string">&quot;pango_shape_with_flags&quot;</span>)]
 </span><span class="kw">pub fn </span>shape_with_flags(
@@ -276,7 +276,7 @@
 /// rectangle to round to pixels inclusively
 /// ## `nearest`
 /// rectangle to round to nearest pixels
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_extents_to_pixels&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_extents_to_pixels&quot;</span>)]
 </span><span class="kw">pub fn </span>extents_to_pixels(
     <span class="kw-2">mut </span>inclusive: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;mut </span><span class="kw">crate</span>::Rectangle&gt;,
     <span class="kw-2">mut </span>nearest: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;mut </span><span class="kw">crate</span>::Rectangle&gt;,
@@ -286,4 +286,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

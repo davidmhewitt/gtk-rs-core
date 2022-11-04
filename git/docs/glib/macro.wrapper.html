@@ -71,9 +71,9 @@
 </script>
 
 
-<nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../rust-logo.svg" alt="logo"></div></a><h2></h2></nav><nav class="sidebar"><a class="sidebar-logo" href="../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../rust-logo.svg" alt="logo"></div></a><div class="sidebar-elems"><h2><a href="index.html">In glib</a></h2></div></nav><main><div class="width-limiter"><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="main-heading"><h1 class="fqn">Macro <a href="index.html">glib</a>::<wbr><a class="macro" href="#">wrapper</a><button id="copy-path" onclick="copy_path(this)" title="Copy item path to clipboard"><img src="../clipboard.svg" width="19" height="18" alt="Copy item path"></button></h1><span class="out-of-band"><a class="srclink" href="../src/glib/wrapper.rs.html#277-445">source</a> · <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">[<span class="inner">&#x2212;</span>]</a></span></div><div class="item-decl"><div class="example-wrap"><pre class="rust macro"><code><span class="macro">macro_rules! </span>wrapper {
+<nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../rust-logo.svg" alt="logo"></div></a><h2></h2></nav><nav class="sidebar"><a class="sidebar-logo" href="../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../rust-logo.svg" alt="logo"></div></a><div class="sidebar-elems"><h2><a href="index.html">In glib</a></h2></div></nav><main><div class="width-limiter"><nav class="sub"><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="main-heading"><h1 class="fqn">Macro <a href="index.html">glib</a>::<wbr><a class="macro" href="#">wrapper</a><button id="copy-path" onclick="copy_path(this)" title="Copy item path to clipboard"><img src="../clipboard.svg" width="19" height="18" alt="Copy item path"></button></h1><span class="out-of-band"><a class="srclink" href="../src/glib/wrapper.rs.html#277-445">source</a> · <button id="toggle-all-docs" title="collapse all docs">[<span>&#x2212;</span>]</button></span></div><div class="item-decl"><div class="example-wrap"><pre class="rust macro"><code><span class="macro">macro_rules! </span>wrapper {
     (
-        $(<span class="attribute">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
+        $(<span class="attr">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
         <span class="macro-nonterminal">$visibility</span>:vis <span class="kw">struct </span><span class="macro-nonterminal">$name</span>:ident $(&lt;$(<span class="macro-nonterminal">$generic</span>:ident $(: <span class="macro-nonterminal">$bound</span>:tt $(+ <span class="macro-nonterminal">$bound2</span>:tt)<span class="kw-2">*</span>)<span class="question-mark">?</span>),+&gt;)<span class="question-mark">? </span>(Boxed&lt;<span class="macro-nonterminal">$ffi_name</span>:ty&gt;);
 
         <span class="kw">match fn </span>{
@@ -85,7 +85,7 @@
         </span>}
     ) =&gt; { ... };
     (
-        $(<span class="attribute">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
+        $(<span class="attr">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
         <span class="macro-nonterminal">$visibility</span>:vis <span class="kw">struct </span><span class="macro-nonterminal">$name</span>:ident $(&lt;$(<span class="macro-nonterminal">$generic</span>:ident $(: <span class="macro-nonterminal">$bound</span>:tt $(+ <span class="macro-nonterminal">$bound2</span>:tt)<span class="kw-2">*</span>)<span class="question-mark">?</span>),+&gt;)<span class="question-mark">? </span>(BoxedInline&lt;<span class="macro-nonterminal">$ffi_name</span>:ty&gt;);
 
         <span class="kw">match fn </span>{
@@ -104,11 +104,11 @@
         </span>}
     ) =&gt; { ... };
     (
-        $(<span class="attribute">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
+        $(<span class="attr">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
         <span class="macro-nonterminal">$visibility</span>:vis <span class="kw">struct </span><span class="macro-nonterminal">$name</span>:ident $(&lt;$(<span class="macro-nonterminal">$generic</span>:ident $(: <span class="macro-nonterminal">$bound</span>:tt $(+ <span class="macro-nonterminal">$bound2</span>:tt)<span class="kw-2">*</span>)<span class="question-mark">?</span>),+&gt;)<span class="question-mark">? </span>(BoxedInline&lt;<span class="macro-nonterminal">$ffi_name</span>:ty&gt;);
     ) =&gt; { ... };
     (
-        $(<span class="attribute">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
+        $(<span class="attr">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
         <span class="macro-nonterminal">$visibility</span>:vis <span class="kw">struct </span><span class="macro-nonterminal">$name</span>:ident $(&lt;$(<span class="macro-nonterminal">$generic</span>:ident $(: <span class="macro-nonterminal">$bound</span>:tt $(+ <span class="macro-nonterminal">$bound2</span>:tt)<span class="kw-2">*</span>)<span class="question-mark">?</span>),+&gt;)<span class="question-mark">? </span>(Shared&lt;<span class="macro-nonterminal">$ffi_name</span>:ty&gt;);
 
         <span class="kw">match fn </span>{
@@ -120,7 +120,7 @@
         </span>}
     ) =&gt; { ... };
     (
-        $(<span class="attribute">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
+        $(<span class="attr">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
         <span class="macro-nonterminal">$visibility</span>:vis <span class="kw">struct </span><span class="macro-nonterminal">$name</span>:ident $(&lt;$(<span class="macro-nonterminal">$generic</span>:ident $(: <span class="macro-nonterminal">$bound</span>:tt $(+ <span class="macro-nonterminal">$bound2</span>:tt)<span class="kw-2">*</span>)<span class="question-mark">?</span>),+&gt;)<span class="question-mark">? </span>(Object&lt;<span class="macro-nonterminal">$ffi_name</span>:ty $(, <span class="macro-nonterminal">$ffi_class_name</span>:ty)<span class="question-mark">?</span>&gt;) $(@implements $(<span class="macro-nonterminal">$implements</span>:path),+)<span class="question-mark">?</span>;
 
         <span class="kw">match fn </span>{
@@ -128,7 +128,7 @@
         }
     ) =&gt; { ... };
     (
-        $(<span class="attribute">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
+        $(<span class="attr">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
         <span class="macro-nonterminal">$visibility</span>:vis <span class="kw">struct </span><span class="macro-nonterminal">$name</span>:ident $(&lt;$(<span class="macro-nonterminal">$generic</span>:ident $(: <span class="macro-nonterminal">$bound</span>:tt $(+ <span class="macro-nonterminal">$bound2</span>:tt)<span class="kw-2">*</span>)<span class="question-mark">?</span>),+&gt;)<span class="question-mark">? </span>(Object&lt;<span class="macro-nonterminal">$ffi_name</span>:ty $(, <span class="macro-nonterminal">$ffi_class_name</span>:ty)<span class="question-mark">?</span>&gt;) @extends $(<span class="macro-nonterminal">$extends</span>:path),+ $(, @implements $(<span class="macro-nonterminal">$implements</span>:path),+)<span class="question-mark">?</span>;
 
         <span class="kw">match fn </span>{
@@ -136,15 +136,15 @@
         }
     ) =&gt; { ... };
     (
-        $(<span class="attribute">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
+        $(<span class="attr">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
         <span class="macro-nonterminal">$visibility</span>:vis <span class="kw">struct </span><span class="macro-nonterminal">$name</span>:ident $(&lt;$(<span class="macro-nonterminal">$generic</span>:ident $(: <span class="macro-nonterminal">$bound</span>:tt $(+ <span class="macro-nonterminal">$bound2</span>:tt)<span class="kw-2">*</span>)<span class="question-mark">?</span>),+&gt;)<span class="question-mark">? </span>(ObjectSubclass&lt;<span class="macro-nonterminal">$subclass</span>:ty&gt;) $(@implements $(<span class="macro-nonterminal">$implements</span>:path),+)<span class="question-mark">?</span>;
     ) =&gt; { ... };
     (
-        $(<span class="attribute">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
+        $(<span class="attr">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
         <span class="macro-nonterminal">$visibility</span>:vis <span class="kw">struct </span><span class="macro-nonterminal">$name</span>:ident $(&lt;$(<span class="macro-nonterminal">$generic</span>:ident $(: <span class="macro-nonterminal">$bound</span>:tt $(+ <span class="macro-nonterminal">$bound2</span>:tt)<span class="kw-2">*</span>)<span class="question-mark">?</span>),+&gt;)<span class="question-mark">? </span>(ObjectSubclass&lt;<span class="macro-nonterminal">$subclass</span>:ty&gt;) @extends $(<span class="macro-nonterminal">$extends</span>:path),+ $(, @implements $(<span class="macro-nonterminal">$implements</span>:path),+)<span class="question-mark">?</span>;
     ) =&gt; { ... };
     (
-        $(<span class="attribute">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
+        $(<span class="attr">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
         <span class="macro-nonterminal">$visibility</span>:vis <span class="kw">struct </span><span class="macro-nonterminal">$name</span>:ident $(&lt;$(<span class="macro-nonterminal">$generic</span>:ident $(: <span class="macro-nonterminal">$bound</span>:tt $(+ <span class="macro-nonterminal">$bound2</span>:tt)<span class="kw-2">*</span>)<span class="question-mark">?</span>),+&gt;)<span class="question-mark">? </span>(Interface&lt;<span class="macro-nonterminal">$ffi_name</span>:ty $(, <span class="macro-nonterminal">$ffi_class_name</span>:ty)<span class="question-mark">?</span>&gt;) $(@requires $(<span class="macro-nonterminal">$requires</span>:path),+)<span class="question-mark">?</span>;
 
         <span class="kw">match fn </span>{
@@ -152,7 +152,7 @@
         }
     ) =&gt; { ... };
     (
-        $(<span class="attribute">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
+        $(<span class="attr">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
         <span class="macro-nonterminal">$visibility</span>:vis <span class="kw">struct </span><span class="macro-nonterminal">$name</span>:ident $(&lt;$(<span class="macro-nonterminal">$generic</span>:ident $(: <span class="macro-nonterminal">$bound</span>:tt $(+ <span class="macro-nonterminal">$bound2</span>:tt)<span class="kw-2">*</span>)<span class="question-mark">?</span>),+&gt;)<span class="question-mark">? </span>(ObjectInterface&lt;<span class="macro-nonterminal">$iface_name</span>:ty&gt;) $(@requires $(<span class="macro-nonterminal">$requires</span>:path),+)<span class="question-mark">?</span>;
     ) =&gt; { ... };
 }</code></pre></div>
@@ -351,4 +351,4 @@ interface have to inherit or interfaces that have to be implemented:</p>
     <span class="kw">pub struct </span>TreeSortable(Interface&lt;ffi::GtkTreeSortable, ffi::GtkTreeSortable&gt;) @requires TreeModel;
     ...
 }</code></pre></div>
-</div></details></section></div></main><div id="rustdoc-vars" data-root-path="../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</div></details></section></div></main><div id="rustdoc-vars" data-root-path="../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

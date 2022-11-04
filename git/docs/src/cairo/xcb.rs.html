@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../cairo/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../cairo/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -518,7 +518,7 @@
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::enums::SurfaceType;
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 <span class="kw">use </span>std::convert::TryFrom;
 <span class="kw">use </span>std::fmt;
@@ -528,7 +528,7 @@
 <span class="kw">use </span><span class="kw">crate</span>::error::Error;
 <span class="kw">use </span><span class="kw">crate</span>::surface::Surface;
 
-<span class="attribute">#[derive(Debug)]
+<span class="attr">#[derive(Debug)]
 </span><span class="kw">pub struct </span>XCBDrawable(<span class="kw">pub </span>u32);
 
 <span class="kw">impl </span>XCBDrawable {
@@ -543,7 +543,7 @@
     }
 }
 
-<span class="attribute">#[derive(Debug)]
+<span class="attr">#[derive(Debug)]
 </span><span class="kw">pub struct </span>XCBPixmap(<span class="kw">pub </span>u32);
 
 <span class="kw">impl </span>XCBPixmap {
@@ -558,7 +558,7 @@
     }
 }
 
-<span class="attribute">#[derive(Debug)]
+<span class="attr">#[derive(Debug)]
 #[doc(alias = <span class="string">&quot;xcb_connection_t&quot;</span>)]
 </span><span class="kw">pub struct </span>XCBConnection(<span class="kw">pub </span>ptr::NonNull&lt;ffi::xcb_connection_t&gt;);
 
@@ -583,35 +583,35 @@
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::xcb_connection_t&gt; <span class="kw">for </span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>XCBConnection {
     <span class="kw">type </span>Storage = <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>XCBConnection;
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::xcb_connection_t, <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>XCBConnection&gt; {
         Stash(<span class="self">self</span>.to_raw_none(), <span class="kw-2">*</span><span class="self">self</span>)
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">impl </span>FromGlibPtrNone&lt;<span class="kw-2">*mut </span>ffi::xcb_connection_t&gt; <span class="kw">for </span>XCBConnection {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_none(ptr: <span class="kw-2">*mut </span>ffi::xcb_connection_t) -&gt; XCBConnection {
         <span class="self">Self</span>::from_raw_none(ptr)
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">impl </span>FromGlibPtrBorrow&lt;<span class="kw-2">*mut </span>ffi::xcb_connection_t&gt; <span class="kw">for </span>XCBConnection {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_borrow(ptr: <span class="kw-2">*mut </span>ffi::xcb_connection_t) -&gt; Borrowed&lt;XCBConnection&gt; {
         <span class="self">Self</span>::from_raw_borrow(ptr)
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">impl </span>FromGlibPtrFull&lt;<span class="kw-2">*mut </span>ffi::xcb_connection_t&gt; <span class="kw">for </span>XCBConnection {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*mut </span>ffi::xcb_connection_t) -&gt; XCBConnection {
         <span class="self">Self</span>::from_raw_full(ptr)
     }
@@ -629,7 +629,7 @@
     }
 }
 
-<span class="attribute">#[derive(Debug)]
+<span class="attr">#[derive(Debug)]
 #[doc(alias = <span class="string">&quot;xcb_render_pictforminfo_t&quot;</span>)]
 </span><span class="kw">pub struct </span>XCBRenderPictFormInfo(<span class="kw">pub </span>ptr::NonNull&lt;ffi::xcb_render_pictforminfo_t&gt;);
 
@@ -656,11 +656,11 @@
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::xcb_render_pictforminfo_t&gt; <span class="kw">for </span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>XCBRenderPictFormInfo {
     <span class="kw">type </span>Storage = <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>XCBRenderPictFormInfo;
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_none(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
     ) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::xcb_render_pictforminfo_t, <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>XCBRenderPictFormInfo&gt; {
@@ -668,17 +668,17 @@
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">impl </span>FromGlibPtrNone&lt;<span class="kw-2">*mut </span>ffi::xcb_render_pictforminfo_t&gt; <span class="kw">for </span>XCBRenderPictFormInfo {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_none(ptr: <span class="kw-2">*mut </span>ffi::xcb_render_pictforminfo_t) -&gt; XCBRenderPictFormInfo {
         <span class="self">Self</span>::from_raw_none(ptr)
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">impl </span>FromGlibPtrBorrow&lt;<span class="kw-2">*mut </span>ffi::xcb_render_pictforminfo_t&gt; <span class="kw">for </span>XCBRenderPictFormInfo {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_borrow(
         ptr: <span class="kw-2">*mut </span>ffi::xcb_render_pictforminfo_t,
     ) -&gt; Borrowed&lt;XCBRenderPictFormInfo&gt; {
@@ -686,9 +686,9 @@
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">impl </span>FromGlibPtrFull&lt;<span class="kw-2">*mut </span>ffi::xcb_render_pictforminfo_t&gt; <span class="kw">for </span>XCBRenderPictFormInfo {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*mut </span>ffi::xcb_render_pictforminfo_t) -&gt; XCBRenderPictFormInfo {
         <span class="self">Self</span>::from_raw_full(ptr)
     }
@@ -706,7 +706,7 @@
     }
 }
 
-<span class="attribute">#[derive(Debug)]
+<span class="attr">#[derive(Debug)]
 #[doc(alias = <span class="string">&quot;xcb_screen_t&quot;</span>)]
 </span><span class="kw">pub struct </span>XCBScreen(<span class="kw">pub </span>ptr::NonNull&lt;ffi::xcb_screen_t&gt;);
 
@@ -731,35 +731,35 @@
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::xcb_screen_t&gt; <span class="kw">for </span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>XCBScreen {
     <span class="kw">type </span>Storage = <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>XCBScreen;
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::xcb_screen_t, <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>XCBScreen&gt; {
         Stash(<span class="self">self</span>.to_raw_none(), <span class="kw-2">*</span><span class="self">self</span>)
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">impl </span>FromGlibPtrNone&lt;<span class="kw-2">*mut </span>ffi::xcb_screen_t&gt; <span class="kw">for </span>XCBScreen {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_none(ptr: <span class="kw-2">*mut </span>ffi::xcb_screen_t) -&gt; XCBScreen {
         <span class="self">Self</span>::from_raw_none(ptr)
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">impl </span>FromGlibPtrBorrow&lt;<span class="kw-2">*mut </span>ffi::xcb_screen_t&gt; <span class="kw">for </span>XCBScreen {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_borrow(ptr: <span class="kw-2">*mut </span>ffi::xcb_screen_t) -&gt; Borrowed&lt;XCBScreen&gt; {
         <span class="self">Self</span>::from_raw_borrow(ptr)
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">impl </span>FromGlibPtrFull&lt;<span class="kw-2">*mut </span>ffi::xcb_screen_t&gt; <span class="kw">for </span>XCBScreen {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*mut </span>ffi::xcb_screen_t) -&gt; XCBScreen {
         <span class="self">Self</span>::from_raw_full(ptr)
     }
@@ -780,7 +780,7 @@
 <span class="macro">declare_surface!</span>(XCBSurface, SurfaceType::Xcb);
 
 <span class="kw">impl </span>XCBSurface {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_xcb_surface_create&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_xcb_surface_create&quot;</span>)]
     </span><span class="kw">pub fn </span>create(
         connection: <span class="kw-2">&amp;</span>XCBConnection,
         drawable: <span class="kw-2">&amp;</span>XCBDrawable,
@@ -799,7 +799,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_xcb_surface_create_for_bitmap&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_xcb_surface_create_for_bitmap&quot;</span>)]
     </span><span class="kw">pub fn </span>create_for_bitmap(
         connection: <span class="kw-2">&amp;</span>XCBConnection,
         screen: <span class="kw-2">&amp;</span>XCBScreen,
@@ -820,7 +820,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_xcb_surface_create_with_xrender_format&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_xcb_surface_create_with_xrender_format&quot;</span>)]
     </span><span class="kw">pub fn </span>create_with_xrender_format(
         connection: <span class="kw-2">&amp;</span>XCBConnection,
         screen: <span class="kw-2">&amp;</span>XCBScreen,
@@ -843,13 +843,13 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_xcb_surface_set_size&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_xcb_surface_set_size&quot;</span>)]
     </span><span class="kw">pub fn </span>set_size(<span class="kw-2">&amp;</span><span class="self">self</span>, width: i32, height: i32) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">unsafe </span>{ ffi::cairo_xcb_surface_set_size(<span class="self">self</span>.to_raw_none(), width, height) }
         <span class="self">self</span>.status()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_xcb_surface_set_drawable&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_xcb_surface_set_drawable&quot;</span>)]
     </span><span class="kw">pub fn </span>set_drawable(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         drawable: <span class="kw-2">&amp;</span>XCBDrawable,
@@ -868,7 +868,7 @@
     }
 }
 
-<span class="attribute">#[derive(Debug)]
+<span class="attr">#[derive(Debug)]
 #[doc(alias = <span class="string">&quot;xcb_visualtype_t&quot;</span>)]
 </span><span class="kw">pub struct </span>XCBVisualType(<span class="kw">pub </span>ptr::NonNull&lt;ffi::xcb_visualtype_t&gt;);
 
@@ -893,35 +893,35 @@
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::xcb_visualtype_t&gt; <span class="kw">for </span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>XCBVisualType {
     <span class="kw">type </span>Storage = <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>XCBVisualType;
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::xcb_visualtype_t, <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>XCBVisualType&gt; {
         Stash(<span class="self">self</span>.to_raw_none(), <span class="kw-2">*</span><span class="self">self</span>)
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">impl </span>FromGlibPtrNone&lt;<span class="kw-2">*mut </span>ffi::xcb_visualtype_t&gt; <span class="kw">for </span>XCBVisualType {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_none(ptr: <span class="kw-2">*mut </span>ffi::xcb_visualtype_t) -&gt; XCBVisualType {
         <span class="self">Self</span>::from_raw_none(ptr)
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">impl </span>FromGlibPtrBorrow&lt;<span class="kw-2">*mut </span>ffi::xcb_visualtype_t&gt; <span class="kw">for </span>XCBVisualType {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_borrow(ptr: <span class="kw-2">*mut </span>ffi::xcb_visualtype_t) -&gt; Borrowed&lt;XCBVisualType&gt; {
         <span class="self">Self</span>::from_raw_borrow(ptr)
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">impl </span>FromGlibPtrFull&lt;<span class="kw-2">*mut </span>ffi::xcb_visualtype_t&gt; <span class="kw">for </span>XCBVisualType {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*mut </span>ffi::xcb_visualtype_t) -&gt; XCBVisualType {
         <span class="self">Self</span>::from_raw_full(ptr)
     }
@@ -940,7 +940,7 @@
 }
 
 <span class="kw">impl </span><span class="kw">crate</span>::device::Device {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_xcb_device_get_connection&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_xcb_device_get_connection&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_connection&quot;</span>)]
     </span><span class="kw">pub fn </span>connection(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; XCBConnection {
         <span class="kw">unsafe </span>{
@@ -948,7 +948,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_xcb_device_debug_cap_xshm_version&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_xcb_device_debug_cap_xshm_version&quot;</span>)]
     </span><span class="kw">pub fn </span>debug_cap_xshm_version(<span class="kw-2">&amp;</span><span class="self">self</span>, major_version: i32, minor_version: i32) {
         <span class="kw">unsafe </span>{
             ffi::cairo_xcb_device_debug_cap_xshm_version(
@@ -960,4 +960,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

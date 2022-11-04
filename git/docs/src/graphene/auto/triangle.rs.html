@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../graphene/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../graphene/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -393,12 +393,12 @@
     /// # Returns
     ///
     /// `true` if the point is inside the triangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_triangle_contains_point&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_triangle_contains_point&quot;</span>)]
     </span><span class="kw">pub fn </span>contains_point(<span class="kw-2">&amp;</span><span class="self">self</span>, p: <span class="kw-2">&amp;</span>Point3D) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_triangle_contains_point(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, p.to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;graphene_triangle_equal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;graphene_triangle_equal&quot;</span>)]
     </span><span class="kw">fn </span>equal(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Triangle) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_triangle_equal(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, b.to_glib_none().<span class="number">0</span>) }
     }
@@ -408,7 +408,7 @@
     /// # Returns
     ///
     /// the area of the triangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_triangle_get_area&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_triangle_get_area&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_area&quot;</span>)]
     </span><span class="kw">pub fn </span>area(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_triangle_get_area(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -440,7 +440,7 @@
     /// ## `res`
     /// return location for the vector
     ///  with the barycentric coordinates
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_triangle_get_barycoords&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_triangle_get_barycoords&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_barycoords&quot;</span>)]
     </span><span class="kw">pub fn </span>barycoords(<span class="kw-2">&amp;</span><span class="self">self</span>, p: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>Point3D&gt;) -&gt; <span class="prelude-ty">Option</span>&lt;Vec2&gt; {
         <span class="kw">unsafe </span>{
@@ -465,7 +465,7 @@
     ///
     /// ## `res`
     /// return location for the box
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_triangle_get_bounding_box&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_triangle_get_bounding_box&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_bounding_box&quot;</span>)]
     </span><span class="kw">pub fn </span>bounding_box(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Box {
         <span class="kw">unsafe </span>{
@@ -489,7 +489,7 @@
     /// ## `res`
     /// return location for the coordinates of
     ///  the midpoint
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_triangle_get_midpoint&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_triangle_get_midpoint&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_midpoint&quot;</span>)]
     </span><span class="kw">pub fn </span>midpoint(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Point3D {
         <span class="kw">unsafe </span>{
@@ -506,7 +506,7 @@
     ///
     /// ## `res`
     /// return location for the normal vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_triangle_get_normal&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_triangle_get_normal&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_normal&quot;</span>)]
     </span><span class="kw">pub fn </span>normal(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec3 {
         <span class="kw">unsafe </span>{
@@ -523,7 +523,7 @@
     ///
     /// ## `res`
     /// return location for the plane
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_triangle_get_plane&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_triangle_get_plane&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_plane&quot;</span>)]
     </span><span class="kw">pub fn </span>plane(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Plane {
         <span class="kw">unsafe </span>{
@@ -550,7 +550,7 @@
     /// ## `c`
     /// return location for the coordinates
     ///  of the third vertex
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_triangle_get_points&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_triangle_get_points&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_points&quot;</span>)]
     </span><span class="kw">pub fn </span>points(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (Point3D, Point3D, Point3D) {
         <span class="kw">unsafe </span>{
@@ -595,7 +595,7 @@
     /// ## `res`
     /// a vector containing the UV coordinates
     ///  of the given point `p`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_triangle_get_uv&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_triangle_get_uv&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_uv&quot;</span>)]
     </span><span class="kw">pub fn </span>uv(<span class="kw-2">&amp;</span><span class="self">self</span>, p: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>Point3D&gt;, uv_a: <span class="kw-2">&amp;</span>Vec2, uv_b: <span class="kw-2">&amp;</span>Vec2, uv_c: <span class="kw-2">&amp;</span>Vec2) -&gt; <span class="prelude-ty">Option</span>&lt;Vec2&gt; {
         <span class="kw">unsafe </span>{
@@ -629,7 +629,7 @@
     ///
     /// ## `c`
     /// return location for the third vertex
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_triangle_get_vertices&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_triangle_get_vertices&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_vertices&quot;</span>)]
     </span><span class="kw">pub fn </span>vertices(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (Vec3, Vec3, Vec3) {
         <span class="kw">unsafe </span>{
@@ -648,7 +648,7 @@
 }
 
 <span class="kw">impl </span>PartialEq <span class="kw">for </span>Triangle {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool {
         <span class="self">self</span>.equal(other)
     }
@@ -656,4 +656,4 @@
 
 <span class="kw">impl </span>Eq <span class="kw">for </span>Triangle {}
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../glib/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../glib/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1420,7 +1420,7 @@
     /// For example, `data:,foo` and `data:;base64,Zm9v` resolve to the same
     /// thing according to the `data:` URI specification which GLib does not
     /// handle.
-    </span><span class="attribute">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    </span><span class="attr">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
     </span><span class="kw">pub struct </span>Uri(Shared&lt;ffi::GUri&gt;);
 
     <span class="kw">match fn </span>{
@@ -1442,7 +1442,7 @@
     /// # Returns
     ///
     /// `self`&#39;s authentication parameters.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_get_auth_params&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_auth_params&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_auth_params&quot;</span>)]
     </span><span class="kw">pub fn </span>auth_params(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_uri_get_auth_params(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1453,7 +1453,7 @@
     /// # Returns
     ///
     /// `self`&#39;s flags.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_get_flags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_flags&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_flags&quot;</span>)]
     </span><span class="kw">pub fn </span>flags(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; UriFlags {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_uri_get_flags(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1465,7 +1465,7 @@
     /// # Returns
     ///
     /// `self`&#39;s fragment.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_get_fragment&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_fragment&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_fragment&quot;</span>)]
     </span><span class="kw">pub fn </span>fragment(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_uri_get_fragment(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1484,7 +1484,7 @@
     /// # Returns
     ///
     /// `self`&#39;s host.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_get_host&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_host&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_host&quot;</span>)]
     </span><span class="kw">pub fn </span>host(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_uri_get_host(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1497,7 +1497,7 @@
     /// # Returns
     ///
     /// `self`&#39;s password.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_get_password&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_password&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_password&quot;</span>)]
     </span><span class="kw">pub fn </span>password(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_uri_get_password(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1509,7 +1509,7 @@
     /// # Returns
     ///
     /// `self`&#39;s path.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_get_path&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_path&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_path&quot;</span>)]
     </span><span class="kw">pub fn </span>path(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::GString {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_uri_get_path(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1520,7 +1520,7 @@
     /// # Returns
     ///
     /// `self`&#39;s port, or `-1` if no port was specified.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_get_port&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_port&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_port&quot;</span>)]
     </span><span class="kw">pub fn </span>port(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::g_uri_get_port(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -1535,7 +1535,7 @@
     /// # Returns
     ///
     /// `self`&#39;s query.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_get_query&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_query&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_query&quot;</span>)]
     </span><span class="kw">pub fn </span>query(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_uri_get_query(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1547,7 +1547,7 @@
     /// # Returns
     ///
     /// `self`&#39;s scheme.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_get_scheme&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_scheme&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_scheme&quot;</span>)]
     </span><span class="kw">pub fn </span>scheme(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::GString {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_uri_get_scheme(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1561,7 +1561,7 @@
     /// # Returns
     ///
     /// `self`&#39;s user.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_get_user&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_user&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_user&quot;</span>)]
     </span><span class="kw">pub fn </span>user(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_uri_get_user(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1573,7 +1573,7 @@
     /// # Returns
     ///
     /// `self`&#39;s userinfo.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_get_userinfo&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_userinfo&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_userinfo&quot;</span>)]
     </span><span class="kw">pub fn </span>userinfo(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_uri_get_userinfo(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1591,7 +1591,7 @@
     /// # Returns
     ///
     /// a new [`Uri`][crate::Uri], or NULL on error.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_parse_relative&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_parse_relative&quot;</span>)]
     </span><span class="kw">pub fn </span>parse_relative(<span class="kw-2">&amp;</span><span class="self">self</span>, uri_ref: <span class="kw-2">&amp;</span>str, flags: UriFlags) -&gt; <span class="prelude-ty">Result</span>&lt;Uri, <span class="kw">crate</span>::Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
@@ -1626,7 +1626,7 @@
     ///
     /// a string representing `self`,
     ///  which the caller must free.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_to_string&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_to_string&quot;</span>)]
     #[doc(alias = <span class="string">&quot;to_string&quot;</span>)]
     </span><span class="kw">pub fn </span>to_str(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::GString {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_uri_to_string(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1641,7 +1641,7 @@
     ///
     /// a string representing
     ///  `self`, which the caller must free.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_to_string_partial&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_to_string_partial&quot;</span>)]
     </span><span class="kw">pub fn </span>to_string_partial(<span class="kw-2">&amp;</span><span class="self">self</span>, flags: UriHideFlags) -&gt; <span class="kw">crate</span>::GString {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::g_uri_to_string_partial(
@@ -1675,7 +1675,7 @@
     /// # Returns
     ///
     /// a new [`Uri`][crate::Uri]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_build&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_build&quot;</span>)]
     </span><span class="kw">pub fn </span>build(
         flags: UriFlags,
         scheme: <span class="kw-2">&amp;</span>str,
@@ -1732,7 +1732,7 @@
     /// # Returns
     ///
     /// a new [`Uri`][crate::Uri]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_build_with_user&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_build_with_user&quot;</span>)]
     </span><span class="kw">pub fn </span>build_with_user(
         flags: UriFlags,
         scheme: <span class="kw-2">&amp;</span>str,
@@ -1782,7 +1782,7 @@
     ///
     /// an escaped version of `unescaped`.
     ///  The returned string should be freed when no longer needed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_escape_bytes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_escape_bytes&quot;</span>)]
     </span><span class="kw">pub fn </span>escape_bytes(unescaped: <span class="kw-2">&amp;</span>[u8], reserved_chars_allowed: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; <span class="kw">crate</span>::GString {
         <span class="kw">let </span>length = unescaped.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
@@ -1814,7 +1814,7 @@
     ///
     /// an escaped version of `unescaped`. The
     /// returned string should be freed when no longer needed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_escape_string&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_escape_string&quot;</span>)]
     </span><span class="kw">pub fn </span>escape_string(
         unescaped: <span class="kw-2">&amp;</span>str,
         reserved_chars_allowed: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
@@ -1845,7 +1845,7 @@
     /// # Returns
     ///
     /// [`true`] if `uri_string` is a valid absolute URI, [`false`] on error.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_is_valid&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_is_valid&quot;</span>)]
     </span><span class="kw">pub fn </span>is_valid(uri_string: <span class="kw-2">&amp;</span>str, flags: UriFlags) -&gt; <span class="prelude-ty">Result</span>&lt;(), <span class="kw">crate</span>::Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
@@ -1894,7 +1894,7 @@
     /// # Returns
     ///
     /// an absolute URI string
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_join&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_join&quot;</span>)]
     </span><span class="kw">pub fn </span>join(
         flags: UriFlags,
         scheme: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
@@ -1954,7 +1954,7 @@
     /// # Returns
     ///
     /// an absolute URI string
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_join_with_user&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_join_with_user&quot;</span>)]
     </span><span class="kw">pub fn </span>join_with_user(
         flags: UriFlags,
         scheme: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
@@ -1994,7 +1994,7 @@
     /// a newly allocated [`None`]-terminated list
     ///  of strings holding the individual URIs. The array should be freed
     ///  with `g_strfreev()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_list_extract_uris&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_list_extract_uris&quot;</span>)]
     </span><span class="kw">pub fn </span>list_extract_uris(uri_list: <span class="kw-2">&amp;</span>str) -&gt; Vec&lt;<span class="kw">crate</span>::GString&gt; {
         <span class="kw">unsafe </span>{
             FromGlibPtrContainer::from_glib_full(ffi::g_uri_list_extract_uris(
@@ -2014,7 +2014,7 @@
     /// # Returns
     ///
     /// a new [`Uri`][crate::Uri], or NULL on error.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_parse&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_parse&quot;</span>)]
     </span><span class="kw">pub fn </span>parse(uri_string: <span class="kw-2">&amp;</span>str, flags: UriFlags) -&gt; <span class="prelude-ty">Result</span>&lt;Uri, <span class="kw">crate</span>::Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
@@ -2047,7 +2047,7 @@
     ///
     /// The ‘scheme’ component of the URI, or
     ///  [`None`] on error. The returned string should be freed when no longer needed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_parse_scheme&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_parse_scheme&quot;</span>)]
     </span><span class="kw">pub fn </span>parse_scheme(uri: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_uri_parse_scheme(uri.to_glib_none().<span class="number">0</span>)) }
     }
@@ -2071,7 +2071,7 @@
     /// The ‘scheme’ component of the URI, or
     ///  [`None`] on error. The returned string is normalized to all-lowercase, and
     ///  interned via `g_intern_string()`, so it does not need to be freed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_peek_scheme&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_peek_scheme&quot;</span>)]
     </span><span class="kw">pub fn </span>peek_scheme(uri: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_uri_peek_scheme(uri.to_glib_none().<span class="number">0</span>)) }
     }
@@ -2094,7 +2094,7 @@
     ///
     /// the resolved URI string,
     /// or NULL on error.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_resolve_relative&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_resolve_relative&quot;</span>)]
     </span><span class="kw">pub fn </span>resolve_relative(
         base_uri_string: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
         uri_ref: <span class="kw-2">&amp;</span>str,
@@ -2169,7 +2169,7 @@
     /// ## `fragment`
     /// on return, contains
     ///  the fragment, or [`None`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_split&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_split&quot;</span>)]
     </span><span class="kw">pub fn </span>split(
         uri_ref: <span class="kw-2">&amp;</span>str,
         flags: UriFlags,
@@ -2250,7 +2250,7 @@
     /// ## `port`
     /// on return, contains the
     ///  port, or `-1`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_split_network&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_split_network&quot;</span>)]
     </span><span class="kw">pub fn </span>split_network(
         uri_string: <span class="kw-2">&amp;</span>str,
         flags: UriFlags,
@@ -2337,7 +2337,7 @@
     /// ## `fragment`
     /// on return, contains
     ///  the fragment, or [`None`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_split_with_user&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_split_with_user&quot;</span>)]
     </span><span class="kw">pub fn </span>split_with_user(
         uri_ref: <span class="kw-2">&amp;</span>str,
         flags: UriFlags,
@@ -2423,7 +2423,7 @@
     /// an unescaped version of `escaped_string`
     ///  or [`None`] on error (if decoding failed, using [`UriError::Failed`][crate::UriError::Failed] error
     ///  code). The returned [`Bytes`][crate::Bytes] should be unreffed when no longer needed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_unescape_bytes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_unescape_bytes&quot;</span>)]
     </span><span class="kw">pub fn </span>unescape_bytes(
         escaped_string: <span class="kw-2">&amp;</span>str,
         illegal_characters: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
@@ -2470,7 +2470,7 @@
     /// or [`None`] on error. The returned string should be freed when no longer
     /// needed. As a special case if [`None`] is given for `escaped_string`, this
     /// function will return [`None`].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_unescape_segment&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_unescape_segment&quot;</span>)]
     </span><span class="kw">pub fn </span>unescape_segment(
         escaped_string: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
         escaped_string_end: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
@@ -2502,7 +2502,7 @@
     ///
     /// an unescaped version of `escaped_string`.
     /// The returned string should be freed when no longer needed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_uri_unescape_string&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_unescape_string&quot;</span>)]
     </span><span class="kw">pub fn </span>unescape_string(
         escaped_string: <span class="kw-2">&amp;</span>str,
         illegal_characters: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
@@ -2517,7 +2517,7 @@
 }
 
 <span class="kw">impl </span>fmt::Display <span class="kw">for </span>Uri {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter) -&gt; fmt::Result {
         f.write_str(<span class="kw-2">&amp;</span><span class="self">self</span>.to_str())
     }
@@ -2526,4 +2526,4 @@
 <span class="kw">unsafe impl </span>Send <span class="kw">for </span>Uri {}
 <span class="kw">unsafe impl </span>Sync <span class="kw">for </span>Uri {}
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

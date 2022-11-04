@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -2695,19 +2695,19 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Flags used when creating a [`AppInfo`][crate::AppInfo].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GAppInfoCreateFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GAppInfoCreateFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>AppInfoCreateFlags: u32 {
         <span class="doccomment">/// No flags.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APP_INFO_CREATE_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_APP_INFO_CREATE_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_APP_INFO_CREATE_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Application opens in a terminal window.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APP_INFO_CREATE_NEEDS_TERMINAL&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_APP_INFO_CREATE_NEEDS_TERMINAL&quot;</span>)]
         </span><span class="kw">const </span>NEEDS_TERMINAL = ffi::G_APP_INFO_CREATE_NEEDS_TERMINAL <span class="kw">as _</span>;
         <span class="doccomment">/// Application supports URI arguments.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APP_INFO_CREATE_SUPPORTS_URIS&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_APP_INFO_CREATE_SUPPORTS_URIS&quot;</span>)]
         </span><span class="kw">const </span>SUPPORTS_URIS = ffi::G_APP_INFO_CREATE_SUPPORTS_URIS <span class="kw">as _</span>;
         <span class="doccomment">/// Application supports startup notification. Since 2.26
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APP_INFO_CREATE_SUPPORTS_STARTUP_NOTIFICATION&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_APP_INFO_CREATE_SUPPORTS_STARTUP_NOTIFICATION&quot;</span>)]
         </span><span class="kw">const </span>SUPPORTS_STARTUP_NOTIFICATION = ffi::G_APP_INFO_CREATE_SUPPORTS_STARTUP_NOTIFICATION <span class="kw">as _</span>;
     }
 }
@@ -2718,7 +2718,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>AppInfoCreateFlags {
     <span class="kw">type </span>GlibType = ffi::GAppInfoCreateFlags;
 
@@ -2727,7 +2727,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GAppInfoCreateFlags&gt; <span class="kw">for </span>AppInfoCreateFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GAppInfoCreateFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -2768,33 +2768,33 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Flags used to define the behaviour of a [`Application`][crate::Application].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GApplicationFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GApplicationFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>ApplicationFlags: u32 {
         <span class="doccomment">/// Default. Deprecated in 2.74, use
         ///  `G_APPLICATION_DEFAULT_FLAGS` instead
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APPLICATION_FLAGS_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_APPLICATION_FLAGS_NONE&quot;</span>)]
         </span><span class="kw">const </span>FLAGS_NONE = ffi::G_APPLICATION_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Run as a service. In this mode, registration
         ///  fails if the service is already running, and the application
         ///  will initially wait up to 10 seconds for an initial activation
         ///  message to arrive.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APPLICATION_IS_SERVICE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_APPLICATION_IS_SERVICE&quot;</span>)]
         </span><span class="kw">const </span>IS_SERVICE = ffi::G_APPLICATION_IS_SERVICE <span class="kw">as _</span>;
         <span class="doccomment">/// Don&#39;t try to become the primary instance.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APPLICATION_IS_LAUNCHER&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_APPLICATION_IS_LAUNCHER&quot;</span>)]
         </span><span class="kw">const </span>IS_LAUNCHER = ffi::G_APPLICATION_IS_LAUNCHER <span class="kw">as _</span>;
         <span class="doccomment">/// This application handles opening files (in
         ///  the primary instance). Note that this flag only affects the default
         ///  implementation of `local_command_line()`, and has no effect if
         ///  [`HANDLES_COMMAND_LINE`][Self::HANDLES_COMMAND_LINE] is given.
         ///  See [`ApplicationExtManual::run()`][crate::prelude::ApplicationExtManual::run()] for details.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APPLICATION_HANDLES_OPEN&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_APPLICATION_HANDLES_OPEN&quot;</span>)]
         </span><span class="kw">const </span>HANDLES_OPEN = ffi::G_APPLICATION_HANDLES_OPEN <span class="kw">as _</span>;
         <span class="doccomment">/// This application handles command line
         ///  arguments (in the primary instance). Note that this flag only affect
         ///  the default implementation of `local_command_line()`.
         ///  See [`ApplicationExtManual::run()`][crate::prelude::ApplicationExtManual::run()] for details.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APPLICATION_HANDLES_COMMAND_LINE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_APPLICATION_HANDLES_COMMAND_LINE&quot;</span>)]
         </span><span class="kw">const </span>HANDLES_COMMAND_LINE = ffi::G_APPLICATION_HANDLES_COMMAND_LINE <span class="kw">as _</span>;
         <span class="doccomment">/// Send the environment of the
         ///  launching process to the primary instance. Set this flag if your
@@ -2804,7 +2804,7 @@
         ///  when editing a git commit message. The environment is available
         ///  to the `signal::Application::command-line` signal handler, via
         ///  [`ApplicationCommandLineExt::getenv()`][crate::prelude::ApplicationCommandLineExt::getenv()].
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APPLICATION_SEND_ENVIRONMENT&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_APPLICATION_SEND_ENVIRONMENT&quot;</span>)]
         </span><span class="kw">const </span>SEND_ENVIRONMENT = ffi::G_APPLICATION_SEND_ENVIRONMENT <span class="kw">as _</span>;
         <span class="doccomment">/// Make no attempts to do any of the typical
         ///  single-instance application negotiation, even if the application
@@ -2812,21 +2812,21 @@
         ///  owner of the application ID nor does it check if an existing
         ///  owner already exists. Everything occurs in the local process.
         ///  Since: 2.30.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APPLICATION_NON_UNIQUE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_APPLICATION_NON_UNIQUE&quot;</span>)]
         </span><span class="kw">const </span>NON_UNIQUE = ffi::G_APPLICATION_NON_UNIQUE <span class="kw">as _</span>;
         <span class="doccomment">/// Allow users to override the
         ///  application ID from the command line with `--gapplication-app-id`.
         ///  Since: 2.48
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APPLICATION_CAN_OVERRIDE_APP_ID&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_APPLICATION_CAN_OVERRIDE_APP_ID&quot;</span>)]
         </span><span class="kw">const </span>CAN_OVERRIDE_APP_ID = ffi::G_APPLICATION_CAN_OVERRIDE_APP_ID <span class="kw">as _</span>;
         <span class="doccomment">/// Allow another instance to take over
         ///  the bus name. Since: 2.60
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APPLICATION_ALLOW_REPLACEMENT&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_APPLICATION_ALLOW_REPLACEMENT&quot;</span>)]
         </span><span class="kw">const </span>ALLOW_REPLACEMENT = ffi::G_APPLICATION_ALLOW_REPLACEMENT <span class="kw">as _</span>;
         <span class="doccomment">/// Take over from another instance. This flag is
         ///  usually set by passing `--gapplication-replace` on the commandline.
         ///  Since: 2.60
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_APPLICATION_REPLACE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_APPLICATION_REPLACE&quot;</span>)]
         </span><span class="kw">const </span>REPLACE = ffi::G_APPLICATION_REPLACE <span class="kw">as _</span>;
     }
 }
@@ -2837,7 +2837,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>ApplicationFlags {
     <span class="kw">type </span>GlibType = ffi::GApplicationFlags;
 
@@ -2846,7 +2846,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GApplicationFlags&gt; <span class="kw">for </span>ApplicationFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GApplicationFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -2889,25 +2889,25 @@
     <span class="doccomment">/// [`AskPasswordFlags`][crate::AskPasswordFlags] are used to request specific information from the
     /// user, or to notify the user of their choices in an authentication
     /// situation.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GAskPasswordFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GAskPasswordFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>AskPasswordFlags: u32 {
         <span class="doccomment">/// operation requires a password.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_ASK_PASSWORD_NEED_PASSWORD&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_ASK_PASSWORD_NEED_PASSWORD&quot;</span>)]
         </span><span class="kw">const </span>NEED_PASSWORD = ffi::G_ASK_PASSWORD_NEED_PASSWORD <span class="kw">as _</span>;
         <span class="doccomment">/// operation requires a username.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_ASK_PASSWORD_NEED_USERNAME&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_ASK_PASSWORD_NEED_USERNAME&quot;</span>)]
         </span><span class="kw">const </span>NEED_USERNAME = ffi::G_ASK_PASSWORD_NEED_USERNAME <span class="kw">as _</span>;
         <span class="doccomment">/// operation requires a domain.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_ASK_PASSWORD_NEED_DOMAIN&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_ASK_PASSWORD_NEED_DOMAIN&quot;</span>)]
         </span><span class="kw">const </span>NEED_DOMAIN = ffi::G_ASK_PASSWORD_NEED_DOMAIN <span class="kw">as _</span>;
         <span class="doccomment">/// operation supports saving settings.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_ASK_PASSWORD_SAVING_SUPPORTED&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_ASK_PASSWORD_SAVING_SUPPORTED&quot;</span>)]
         </span><span class="kw">const </span>SAVING_SUPPORTED = ffi::G_ASK_PASSWORD_SAVING_SUPPORTED <span class="kw">as _</span>;
         <span class="doccomment">/// operation supports anonymous users.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_ASK_PASSWORD_ANONYMOUS_SUPPORTED&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_ASK_PASSWORD_ANONYMOUS_SUPPORTED&quot;</span>)]
         </span><span class="kw">const </span>ANONYMOUS_SUPPORTED = ffi::G_ASK_PASSWORD_ANONYMOUS_SUPPORTED <span class="kw">as _</span>;
         <span class="doccomment">/// operation takes TCRYPT parameters (Since: 2.58)
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_ASK_PASSWORD_TCRYPT&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_ASK_PASSWORD_TCRYPT&quot;</span>)]
         </span><span class="kw">const </span>TCRYPT = ffi::G_ASK_PASSWORD_TCRYPT <span class="kw">as _</span>;
     }
 }
@@ -2918,7 +2918,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>AskPasswordFlags {
     <span class="kw">type </span>GlibType = ffi::GAskPasswordFlags;
 
@@ -2927,7 +2927,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GAskPasswordFlags&gt; <span class="kw">for </span>AskPasswordFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GAskPasswordFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -2968,21 +2968,21 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Flags used in `g_bus_own_name()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GBusNameOwnerFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GBusNameOwnerFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>BusNameOwnerFlags: u32 {
         <span class="doccomment">/// No flags set.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_BUS_NAME_OWNER_FLAGS_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_BUS_NAME_OWNER_FLAGS_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_BUS_NAME_OWNER_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Allow another message bus connection to claim the name.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_BUS_NAME_OWNER_FLAGS_ALLOW_REPLACEMENT&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_BUS_NAME_OWNER_FLAGS_ALLOW_REPLACEMENT&quot;</span>)]
         </span><span class="kw">const </span>ALLOW_REPLACEMENT = ffi::G_BUS_NAME_OWNER_FLAGS_ALLOW_REPLACEMENT <span class="kw">as _</span>;
         <span class="doccomment">/// If another message bus connection owns the name and have
         /// specified [`ALLOW_REPLACEMENT`][Self::ALLOW_REPLACEMENT], then take the name from the other connection.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_BUS_NAME_OWNER_FLAGS_REPLACE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_BUS_NAME_OWNER_FLAGS_REPLACE&quot;</span>)]
         </span><span class="kw">const </span>REPLACE = ffi::G_BUS_NAME_OWNER_FLAGS_REPLACE <span class="kw">as _</span>;
         <span class="doccomment">/// If another message bus connection owns the name, immediately
         /// return an error from `g_bus_own_name()` rather than entering the waiting queue for that name. (Since 2.54)
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_BUS_NAME_OWNER_FLAGS_DO_NOT_QUEUE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_BUS_NAME_OWNER_FLAGS_DO_NOT_QUEUE&quot;</span>)]
         </span><span class="kw">const </span>DO_NOT_QUEUE = ffi::G_BUS_NAME_OWNER_FLAGS_DO_NOT_QUEUE <span class="kw">as _</span>;
     }
 }
@@ -2993,7 +2993,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>BusNameOwnerFlags {
     <span class="kw">type </span>GlibType = ffi::GBusNameOwnerFlags;
 
@@ -3002,7 +3002,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GBusNameOwnerFlags&gt; <span class="kw">for </span>BusNameOwnerFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GBusNameOwnerFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -3043,15 +3043,15 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Flags used in `g_bus_watch_name()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GBusNameWatcherFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GBusNameWatcherFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>BusNameWatcherFlags: u32 {
         <span class="doccomment">/// No flags set.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_BUS_NAME_WATCHER_FLAGS_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_BUS_NAME_WATCHER_FLAGS_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_BUS_NAME_WATCHER_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// If no-one owns the name when
         /// beginning to watch the name, ask the bus to launch an owner for the
         /// name.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_BUS_NAME_WATCHER_FLAGS_AUTO_START&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_BUS_NAME_WATCHER_FLAGS_AUTO_START&quot;</span>)]
         </span><span class="kw">const </span>AUTO_START = ffi::G_BUS_NAME_WATCHER_FLAGS_AUTO_START <span class="kw">as _</span>;
     }
 }
@@ -3062,7 +3062,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>BusNameWatcherFlags {
     <span class="kw">type </span>GlibType = ffi::GBusNameWatcherFlags;
 
@@ -3071,7 +3071,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GBusNameWatcherFlags&gt; <span class="kw">for </span>BusNameWatcherFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GBusNameWatcherFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -3112,16 +3112,16 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Flags used when calling a [`ConverterExtManual::convert()`][crate::prelude::ConverterExtManual::convert()].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GConverterFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GConverterFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>ConverterFlags: u32 {
         <span class="doccomment">/// No flags.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_CONVERTER_NO_FLAGS&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_CONVERTER_NO_FLAGS&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_CONVERTER_NO_FLAGS <span class="kw">as _</span>;
         <span class="doccomment">/// At end of input data
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_CONVERTER_INPUT_AT_END&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_CONVERTER_INPUT_AT_END&quot;</span>)]
         </span><span class="kw">const </span>INPUT_AT_END = ffi::G_CONVERTER_INPUT_AT_END <span class="kw">as _</span>;
         <span class="doccomment">/// Flush data
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_CONVERTER_FLUSH&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_CONVERTER_FLUSH&quot;</span>)]
         </span><span class="kw">const </span>FLUSH = ffi::G_CONVERTER_FLUSH <span class="kw">as _</span>;
     }
 }
@@ -3132,7 +3132,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>ConverterFlags {
     <span class="kw">type </span>GlibType = ffi::GConverterFlags;
 
@@ -3141,7 +3141,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GConverterFlags&gt; <span class="kw">for </span>ConverterFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GConverterFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -3182,19 +3182,19 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Flags used in [`DBusConnection::call()`][crate::DBusConnection::call()] and similar APIs.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDBusCallFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDBusCallFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>DBusCallFlags: u32 {
         <span class="doccomment">/// No flags set.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_CALL_FLAGS_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_CALL_FLAGS_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_DBUS_CALL_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// The bus must not launch
         /// an owner for the destination name in response to this method
         /// invocation.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_CALL_FLAGS_NO_AUTO_START&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_CALL_FLAGS_NO_AUTO_START&quot;</span>)]
         </span><span class="kw">const </span>NO_AUTO_START = ffi::G_DBUS_CALL_FLAGS_NO_AUTO_START <span class="kw">as _</span>;
         <span class="doccomment">/// the caller is prepared to
         /// wait for interactive authorization. Since 2.46.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_CALL_FLAGS_ALLOW_INTERACTIVE_AUTHORIZATION&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_CALL_FLAGS_ALLOW_INTERACTIVE_AUTHORIZATION&quot;</span>)]
         </span><span class="kw">const </span>ALLOW_INTERACTIVE_AUTHORIZATION = ffi::G_DBUS_CALL_FLAGS_ALLOW_INTERACTIVE_AUTHORIZATION <span class="kw">as _</span>;
     }
 }
@@ -3205,7 +3205,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>DBusCallFlags {
     <span class="kw">type </span>GlibType = ffi::GDBusCallFlags;
 
@@ -3214,7 +3214,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GDBusCallFlags&gt; <span class="kw">for </span>DBusCallFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GDBusCallFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -3255,14 +3255,14 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Capabilities negotiated with the remote peer.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDBusCapabilityFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDBusCapabilityFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>DBusCapabilityFlags: u32 {
         <span class="doccomment">/// No flags set.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_CAPABILITY_FLAGS_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_CAPABILITY_FLAGS_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_DBUS_CAPABILITY_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// The connection
         /// supports exchanging UNIX file descriptors with the remote peer.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_CAPABILITY_FLAGS_UNIX_FD_PASSING&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_CAPABILITY_FLAGS_UNIX_FD_PASSING&quot;</span>)]
         </span><span class="kw">const </span>UNIX_FD_PASSING = ffi::G_DBUS_CAPABILITY_FLAGS_UNIX_FD_PASSING <span class="kw">as _</span>;
     }
 }
@@ -3273,7 +3273,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>DBusCapabilityFlags {
     <span class="kw">type </span>GlibType = ffi::GDBusCapabilityFlags;
 
@@ -3282,7 +3282,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GDBusCapabilityFlags&gt; <span class="kw">for </span>DBusCapabilityFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GDBusCapabilityFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -3323,33 +3323,33 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Flags used when creating a new [`DBusConnection`][crate::DBusConnection].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDBusConnectionFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDBusConnectionFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>DBusConnectionFlags: u32 {
         <span class="doccomment">/// No flags set.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_CONNECTION_FLAGS_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_CONNECTION_FLAGS_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_DBUS_CONNECTION_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Perform authentication against server.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_CLIENT&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_CLIENT&quot;</span>)]
         </span><span class="kw">const </span>AUTHENTICATION_CLIENT = ffi::G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_CLIENT <span class="kw">as _</span>;
         <span class="doccomment">/// Perform authentication against client.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_SERVER&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_SERVER&quot;</span>)]
         </span><span class="kw">const </span>AUTHENTICATION_SERVER = ffi::G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_SERVER <span class="kw">as _</span>;
         <span class="doccomment">/// When
         /// authenticating as a server, allow the anonymous authentication
         /// method.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_ALLOW_ANONYMOUS&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_ALLOW_ANONYMOUS&quot;</span>)]
         </span><span class="kw">const </span>AUTHENTICATION_ALLOW_ANONYMOUS = ffi::G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_ALLOW_ANONYMOUS <span class="kw">as _</span>;
         <span class="doccomment">/// Pass this flag if connecting to a peer that is a
         /// message bus. This means that the Hello() method will be invoked as part of the connection setup.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_CONNECTION_FLAGS_MESSAGE_BUS_CONNECTION&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_CONNECTION_FLAGS_MESSAGE_BUS_CONNECTION&quot;</span>)]
         </span><span class="kw">const </span>MESSAGE_BUS_CONNECTION = ffi::G_DBUS_CONNECTION_FLAGS_MESSAGE_BUS_CONNECTION <span class="kw">as _</span>;
         <span class="doccomment">/// If set, processing of D-Bus messages is
         /// delayed until [`DBusConnection::start_message_processing()`][crate::DBusConnection::start_message_processing()] is called.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_CONNECTION_FLAGS_DELAY_MESSAGE_PROCESSING&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_CONNECTION_FLAGS_DELAY_MESSAGE_PROCESSING&quot;</span>)]
         </span><span class="kw">const </span>DELAY_MESSAGE_PROCESSING = ffi::G_DBUS_CONNECTION_FLAGS_DELAY_MESSAGE_PROCESSING <span class="kw">as _</span>;
         <span class="doccomment">/// When authenticating
         /// as a server, require the UID of the peer to be the same as the UID of the server. (Since: 2.68)
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_REQUIRE_SAME_USER&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_REQUIRE_SAME_USER&quot;</span>)]
         </span><span class="kw">const </span>AUTHENTICATION_REQUIRE_SAME_USER = ffi::G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_REQUIRE_SAME_USER <span class="kw">as _</span>;
         <span class="doccomment">/// When authenticating, try to use
         ///  protocols that work across a Linux user namespace boundary, even if this
@@ -3357,7 +3357,7 @@
         ///  affects client-side `EXTERNAL` authentication, for which this flag makes
         ///  connections to a server in another user namespace succeed, but causes
         ///  a deadlock when connecting to a GDBus server older than 2.73.3. Since: 2.74
-        </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+        </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
         #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
         #[doc(alias = <span class="string">&quot;G_DBUS_CONNECTION_FLAGS_CROSS_NAMESPACE&quot;</span>)]
         </span><span class="kw">const </span>CROSS_NAMESPACE = ffi::G_DBUS_CONNECTION_FLAGS_CROSS_NAMESPACE <span class="kw">as _</span>;
@@ -3370,7 +3370,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>DBusConnectionFlags {
     <span class="kw">type </span>GlibType = ffi::GDBusConnectionFlags;
 
@@ -3379,7 +3379,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GDBusConnectionFlags&gt; <span class="kw">for </span>DBusConnectionFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GDBusConnectionFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -3420,16 +3420,16 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Flags describing the behavior of a [`DBusInterfaceSkeleton`][crate::DBusInterfaceSkeleton] instance.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDBusInterfaceSkeletonFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDBusInterfaceSkeletonFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>DBusInterfaceSkeletonFlags: u32 {
         <span class="doccomment">/// No flags set.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_INTERFACE_SKELETON_FLAGS_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_INTERFACE_SKELETON_FLAGS_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_DBUS_INTERFACE_SKELETON_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Each method invocation is handled in
         ///  a thread dedicated to the invocation. This means that the method implementation can use blocking IO
         ///  without blocking any other part of the process. It also means that the method implementation must
         ///  use locking to access data structures used by other threads.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_INTERFACE_SKELETON_FLAGS_HANDLE_METHOD_INVOCATIONS_IN_THREAD&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_INTERFACE_SKELETON_FLAGS_HANDLE_METHOD_INVOCATIONS_IN_THREAD&quot;</span>)]
         </span><span class="kw">const </span>HANDLE_METHOD_INVOCATIONS_IN_THREAD = ffi::G_DBUS_INTERFACE_SKELETON_FLAGS_HANDLE_METHOD_INVOCATIONS_IN_THREAD <span class="kw">as _</span>;
     }
 }
@@ -3440,7 +3440,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>DBusInterfaceSkeletonFlags {
     <span class="kw">type </span>GlibType = ffi::GDBusInterfaceSkeletonFlags;
 
@@ -3449,7 +3449,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GDBusInterfaceSkeletonFlags&gt; <span class="kw">for </span>DBusInterfaceSkeletonFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GDBusInterfaceSkeletonFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -3490,22 +3490,22 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Message flags used in [`DBusMessage`][crate::DBusMessage].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDBusMessageFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDBusMessageFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>DBusMessageFlags: u32 {
         <span class="doccomment">/// No flags set.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_FLAGS_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_FLAGS_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_DBUS_MESSAGE_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// A reply is not expected.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_FLAGS_NO_REPLY_EXPECTED&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_FLAGS_NO_REPLY_EXPECTED&quot;</span>)]
         </span><span class="kw">const </span>NO_REPLY_EXPECTED = ffi::G_DBUS_MESSAGE_FLAGS_NO_REPLY_EXPECTED <span class="kw">as _</span>;
         <span class="doccomment">/// The bus must not launch an
         /// owner for the destination name in response to this message.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_FLAGS_NO_AUTO_START&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_FLAGS_NO_AUTO_START&quot;</span>)]
         </span><span class="kw">const </span>NO_AUTO_START = ffi::G_DBUS_MESSAGE_FLAGS_NO_AUTO_START <span class="kw">as _</span>;
         <span class="doccomment">/// If set on a method
         /// call, this flag means that the caller is prepared to wait for interactive
         /// authorization. Since 2.46.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_FLAGS_ALLOW_INTERACTIVE_AUTHORIZATION&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_FLAGS_ALLOW_INTERACTIVE_AUTHORIZATION&quot;</span>)]
         </span><span class="kw">const </span>ALLOW_INTERACTIVE_AUTHORIZATION = ffi::G_DBUS_MESSAGE_FLAGS_ALLOW_INTERACTIVE_AUTHORIZATION <span class="kw">as _</span>;
     }
 }
@@ -3516,7 +3516,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>DBusMessageFlags {
     <span class="kw">type </span>GlibType = ffi::GDBusMessageFlags;
 
@@ -3525,7 +3525,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GDBusMessageFlags&gt; <span class="kw">for </span>DBusMessageFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GDBusMessageFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -3566,35 +3566,35 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Flags used when constructing an instance of a [`DBusProxy`][crate::DBusProxy] derived class.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDBusProxyFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDBusProxyFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>DBusProxyFlags: u32 {
         <span class="doccomment">/// No flags set.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_PROXY_FLAGS_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_PROXY_FLAGS_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_DBUS_PROXY_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Don&#39;t load properties.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES&quot;</span>)]
         </span><span class="kw">const </span>DO_NOT_LOAD_PROPERTIES = ffi::G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES <span class="kw">as _</span>;
         <span class="doccomment">/// Don&#39;t connect to signals on the remote object.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS&quot;</span>)]
         </span><span class="kw">const </span>DO_NOT_CONNECT_SIGNALS = ffi::G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS <span class="kw">as _</span>;
         <span class="doccomment">/// If the proxy is for a well-known name,
         /// do not ask the bus to launch an owner during proxy initialization or a method call.
         /// This flag is only meaningful in proxies for well-known names.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START&quot;</span>)]
         </span><span class="kw">const </span>DO_NOT_AUTO_START = ffi::G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START <span class="kw">as _</span>;
         <span class="doccomment">/// If set, the property value for any __invalidated property__ will be (asynchronously) retrieved upon receiving the [`PropertiesChanged`](http://dbus.freedesktop.org/doc/dbus-specification.html`standard`-interfaces-properties) D-Bus signal and the property will not cause emission of the `signal::DBusProxy::g-properties-changed` signal. When the value is received the `signal::DBusProxy::g-properties-changed` signal is emitted for the property along with the retrieved value. Since 2.32.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_PROXY_FLAGS_GET_INVALIDATED_PROPERTIES&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_PROXY_FLAGS_GET_INVALIDATED_PROPERTIES&quot;</span>)]
         </span><span class="kw">const </span>GET_INVALIDATED_PROPERTIES = ffi::G_DBUS_PROXY_FLAGS_GET_INVALIDATED_PROPERTIES <span class="kw">as _</span>;
         <span class="doccomment">/// If the proxy is for a well-known name,
         /// do not ask the bus to launch an owner during proxy initialization, but allow it to be
         /// autostarted by a method call. This flag is only meaningful in proxies for well-known names,
         /// and only if [`DO_NOT_AUTO_START`][Self::DO_NOT_AUTO_START] is not also specified.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START_AT_CONSTRUCTION&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START_AT_CONSTRUCTION&quot;</span>)]
         </span><span class="kw">const </span>DO_NOT_AUTO_START_AT_CONSTRUCTION = ffi::G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START_AT_CONSTRUCTION <span class="kw">as _</span>;
         <span class="doccomment">/// Don&#39;t actually send the AddMatch D-Bus
         ///  call for this signal subscription. This gives you more control
         ///  over which match rules you add (but you must add them manually). (Since: 2.72)
-        </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+        </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
         #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
         #[doc(alias = <span class="string">&quot;G_DBUS_PROXY_FLAGS_NO_MATCH_RULE&quot;</span>)]
         </span><span class="kw">const </span>NO_MATCH_RULE = ffi::G_DBUS_PROXY_FLAGS_NO_MATCH_RULE <span class="kw">as _</span>;
@@ -3607,7 +3607,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>DBusProxyFlags {
     <span class="kw">type </span>GlibType = ffi::GDBusProxyFlags;
 
@@ -3616,7 +3616,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GDBusProxyFlags&gt; <span class="kw">for </span>DBusProxyFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GDBusProxyFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -3657,15 +3657,15 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Flags used when sending `GDBusMessages` on a [`DBusConnection`][crate::DBusConnection].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDBusSendMessageFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDBusSendMessageFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>DBusSendMessageFlags: u32 {
         <span class="doccomment">/// No flags set.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_SEND_MESSAGE_FLAGS_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_SEND_MESSAGE_FLAGS_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_DBUS_SEND_MESSAGE_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Do not automatically
         /// assign a serial number from the [`DBusConnection`][crate::DBusConnection] object when
         /// sending a message.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_SEND_MESSAGE_FLAGS_PRESERVE_SERIAL&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_SEND_MESSAGE_FLAGS_PRESERVE_SERIAL&quot;</span>)]
         </span><span class="kw">const </span>PRESERVE_SERIAL = ffi::G_DBUS_SEND_MESSAGE_FLAGS_PRESERVE_SERIAL <span class="kw">as _</span>;
     }
 }
@@ -3676,7 +3676,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>DBusSendMessageFlags {
     <span class="kw">type </span>GlibType = ffi::GDBusSendMessageFlags;
 
@@ -3685,7 +3685,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GDBusSendMessageFlags&gt; <span class="kw">for </span>DBusSendMessageFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GDBusSendMessageFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -3726,23 +3726,23 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Flags used when creating a [`DBusServer`][crate::DBusServer].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDBusServerFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDBusServerFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>DBusServerFlags: u32 {
         <span class="doccomment">/// No flags set.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_SERVER_FLAGS_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_SERVER_FLAGS_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_DBUS_SERVER_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// All `signal::DBusServer::new-connection`
         /// signals will run in separated dedicated threads (see signal for
         /// details).
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_SERVER_FLAGS_RUN_IN_THREAD&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_SERVER_FLAGS_RUN_IN_THREAD&quot;</span>)]
         </span><span class="kw">const </span>RUN_IN_THREAD = ffi::G_DBUS_SERVER_FLAGS_RUN_IN_THREAD <span class="kw">as _</span>;
         <span class="doccomment">/// Allow the anonymous
         /// authentication method.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_SERVER_FLAGS_AUTHENTICATION_ALLOW_ANONYMOUS&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_SERVER_FLAGS_AUTHENTICATION_ALLOW_ANONYMOUS&quot;</span>)]
         </span><span class="kw">const </span>AUTHENTICATION_ALLOW_ANONYMOUS = ffi::G_DBUS_SERVER_FLAGS_AUTHENTICATION_ALLOW_ANONYMOUS <span class="kw">as _</span>;
         <span class="doccomment">/// Require the UID of the
         /// peer to be the same as the UID of the server when authenticating. (Since: 2.68)
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_SERVER_FLAGS_AUTHENTICATION_REQUIRE_SAME_USER&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_SERVER_FLAGS_AUTHENTICATION_REQUIRE_SAME_USER&quot;</span>)]
         </span><span class="kw">const </span>AUTHENTICATION_REQUIRE_SAME_USER = ffi::G_DBUS_SERVER_FLAGS_AUTHENTICATION_REQUIRE_SAME_USER <span class="kw">as _</span>;
     }
 }
@@ -3753,7 +3753,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>DBusServerFlags {
     <span class="kw">type </span>GlibType = ffi::GDBusServerFlags;
 
@@ -3762,7 +3762,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GDBusServerFlags&gt; <span class="kw">for </span>DBusServerFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GDBusServerFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -3803,24 +3803,24 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Flags used when subscribing to signals via [`DBusConnection::signal_subscribe()`][crate::DBusConnection::signal_subscribe()].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDBusSignalFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDBusSignalFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>DBusSignalFlags: u32 {
         <span class="doccomment">/// No flags set.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_SIGNAL_FLAGS_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_SIGNAL_FLAGS_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_DBUS_SIGNAL_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Don&#39;t actually send the AddMatch
         /// D-Bus call for this signal subscription. This gives you more control
         /// over which match rules you add (but you must add them manually).
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_SIGNAL_FLAGS_NO_MATCH_RULE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_SIGNAL_FLAGS_NO_MATCH_RULE&quot;</span>)]
         </span><span class="kw">const </span>NO_MATCH_RULE = ffi::G_DBUS_SIGNAL_FLAGS_NO_MATCH_RULE <span class="kw">as _</span>;
         <span class="doccomment">/// Match first arguments that
         /// contain a bus or interface name with the given namespace.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_SIGNAL_FLAGS_MATCH_ARG0_NAMESPACE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_SIGNAL_FLAGS_MATCH_ARG0_NAMESPACE&quot;</span>)]
         </span><span class="kw">const </span>MATCH_ARG0_NAMESPACE = ffi::G_DBUS_SIGNAL_FLAGS_MATCH_ARG0_NAMESPACE <span class="kw">as _</span>;
         <span class="doccomment">/// Match first arguments that
         /// contain an object path that is either equivalent to the given path,
         /// or one of the paths is a subpath of the other.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_SIGNAL_FLAGS_MATCH_ARG0_PATH&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_SIGNAL_FLAGS_MATCH_ARG0_PATH&quot;</span>)]
         </span><span class="kw">const </span>MATCH_ARG0_PATH = ffi::G_DBUS_SIGNAL_FLAGS_MATCH_ARG0_PATH <span class="kw">as _</span>;
     }
 }
@@ -3831,7 +3831,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>DBusSignalFlags {
     <span class="kw">type </span>GlibType = ffi::GDBusSignalFlags;
 
@@ -3840,7 +3840,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GDBusSignalFlags&gt; <span class="kw">for </span>DBusSignalFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GDBusSignalFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -3881,10 +3881,10 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Flags used when starting a drive.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDriveStartFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDriveStartFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>DriveStartFlags: u32 {
         <span class="doccomment">/// No flags set.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DRIVE_START_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DRIVE_START_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_DRIVE_START_NONE <span class="kw">as _</span>;
     }
 }
@@ -3895,7 +3895,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>DriveStartFlags {
     <span class="kw">type </span>GlibType = ffi::GDriveStartFlags;
 
@@ -3904,7 +3904,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GDriveStartFlags&gt; <span class="kw">for </span>DriveStartFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GDriveStartFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -3945,16 +3945,16 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Flags specifying the behaviour of an attribute.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GFileAttributeInfoFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GFileAttributeInfoFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>FileAttributeInfoFlags: u32 {
         <span class="doccomment">/// no flags set.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_INFO_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_INFO_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_FILE_ATTRIBUTE_INFO_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// copy the attribute values when the file is copied.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_INFO_COPY_WITH_FILE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_INFO_COPY_WITH_FILE&quot;</span>)]
         </span><span class="kw">const </span>COPY_WITH_FILE = ffi::G_FILE_ATTRIBUTE_INFO_COPY_WITH_FILE <span class="kw">as _</span>;
         <span class="doccomment">/// copy the attribute values when the file is moved.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_INFO_COPY_WHEN_MOVED&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_INFO_COPY_WHEN_MOVED&quot;</span>)]
         </span><span class="kw">const </span>COPY_WHEN_MOVED = ffi::G_FILE_ATTRIBUTE_INFO_COPY_WHEN_MOVED <span class="kw">as _</span>;
     }
 }
@@ -3965,7 +3965,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>FileAttributeInfoFlags {
     <span class="kw">type </span>GlibType = ffi::GFileAttributeInfoFlags;
 
@@ -3974,7 +3974,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GFileAttributeInfoFlags&gt; <span class="kw">for </span>FileAttributeInfoFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GFileAttributeInfoFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -4015,28 +4015,28 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Flags used when copying or moving files.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GFileCopyFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GFileCopyFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>FileCopyFlags: u32 {
         <span class="doccomment">/// No flags set.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_COPY_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_COPY_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_FILE_COPY_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Overwrite any existing files
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_COPY_OVERWRITE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_COPY_OVERWRITE&quot;</span>)]
         </span><span class="kw">const </span>OVERWRITE = ffi::G_FILE_COPY_OVERWRITE <span class="kw">as _</span>;
         <span class="doccomment">/// Make a backup of any existing files.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_COPY_BACKUP&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_COPY_BACKUP&quot;</span>)]
         </span><span class="kw">const </span>BACKUP = ffi::G_FILE_COPY_BACKUP <span class="kw">as _</span>;
         <span class="doccomment">/// Don&#39;t follow symlinks.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_COPY_NOFOLLOW_SYMLINKS&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_COPY_NOFOLLOW_SYMLINKS&quot;</span>)]
         </span><span class="kw">const </span>NOFOLLOW_SYMLINKS = ffi::G_FILE_COPY_NOFOLLOW_SYMLINKS <span class="kw">as _</span>;
         <span class="doccomment">/// Copy all file metadata instead of just default set used for copy (see [`FileInfo`][crate::FileInfo]).
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_COPY_ALL_METADATA&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_COPY_ALL_METADATA&quot;</span>)]
         </span><span class="kw">const </span>ALL_METADATA = ffi::G_FILE_COPY_ALL_METADATA <span class="kw">as _</span>;
         <span class="doccomment">/// Don&#39;t use copy and delete fallback if native move not supported.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_COPY_NO_FALLBACK_FOR_MOVE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_COPY_NO_FALLBACK_FOR_MOVE&quot;</span>)]
         </span><span class="kw">const </span>NO_FALLBACK_FOR_MOVE = ffi::G_FILE_COPY_NO_FALLBACK_FOR_MOVE <span class="kw">as _</span>;
         <span class="doccomment">/// Leaves target file with default perms, instead of setting the source file perms.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_COPY_TARGET_DEFAULT_PERMS&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_COPY_TARGET_DEFAULT_PERMS&quot;</span>)]
         </span><span class="kw">const </span>TARGET_DEFAULT_PERMS = ffi::G_FILE_COPY_TARGET_DEFAULT_PERMS <span class="kw">as _</span>;
     }
 }
@@ -4047,7 +4047,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>FileCopyFlags {
     <span class="kw">type </span>GlibType = ffi::GFileCopyFlags;
 
@@ -4056,7 +4056,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GFileCopyFlags&gt; <span class="kw">for </span>FileCopyFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GFileCopyFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -4097,14 +4097,14 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Flags used when an operation may create a file.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GFileCreateFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GFileCreateFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>FileCreateFlags: u32 {
         <span class="doccomment">/// No flags set.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_CREATE_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_CREATE_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_FILE_CREATE_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Create a file that can only be
         ///  accessed by the current user.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_CREATE_PRIVATE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_CREATE_PRIVATE&quot;</span>)]
         </span><span class="kw">const </span>PRIVATE = ffi::G_FILE_CREATE_PRIVATE <span class="kw">as _</span>;
         <span class="doccomment">/// Replace the destination
         ///  as if it didn&#39;t exist before. Don&#39;t try to keep any old
@@ -4116,7 +4116,7 @@
         ///  be exactly like that. This flag can only be used with
         ///  [`FileExt::replace()`][crate::prelude::FileExt::replace()] and its variants, including [`FileExt::replace_contents()`][crate::prelude::FileExt::replace_contents()].
         ///  Since 2.20
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_CREATE_REPLACE_DESTINATION&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_CREATE_REPLACE_DESTINATION&quot;</span>)]
         </span><span class="kw">const </span>REPLACE_DESTINATION = ffi::G_FILE_CREATE_REPLACE_DESTINATION <span class="kw">as _</span>;
     }
 }
@@ -4127,7 +4127,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>FileCreateFlags {
     <span class="kw">type </span>GlibType = ffi::GFileCreateFlags;
 
@@ -4136,7 +4136,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GFileCreateFlags&gt; <span class="kw">for </span>FileCreateFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GFileCreateFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -4177,25 +4177,25 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Flags that can be used with [`FileExtManual::measure_disk_usage()`][crate::prelude::FileExtManual::measure_disk_usage()].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GFileMeasureFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GFileMeasureFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>FileMeasureFlags: u32 {
         <span class="doccomment">/// No flags set.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MEASURE_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_MEASURE_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_FILE_MEASURE_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Report any error encountered
         ///  while traversing the directory tree. Normally errors are only
         ///  reported for the toplevel file.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MEASURE_REPORT_ANY_ERROR&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_MEASURE_REPORT_ANY_ERROR&quot;</span>)]
         </span><span class="kw">const </span>REPORT_ANY_ERROR = ffi::G_FILE_MEASURE_REPORT_ANY_ERROR <span class="kw">as _</span>;
         <span class="doccomment">/// Tally usage based on apparent file
         ///  sizes. Normally, the block-size is used, if available, as this is a
         ///  more accurate representation of disk space used.
         ///  Compare with `du --apparent-size`.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MEASURE_APPARENT_SIZE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_MEASURE_APPARENT_SIZE&quot;</span>)]
         </span><span class="kw">const </span>APPARENT_SIZE = ffi::G_FILE_MEASURE_APPARENT_SIZE <span class="kw">as _</span>;
         <span class="doccomment">/// Do not cross mount point boundaries.
         ///  Compare with `du -x`.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MEASURE_NO_XDEV&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_MEASURE_NO_XDEV&quot;</span>)]
         </span><span class="kw">const </span>NO_XDEV = ffi::G_FILE_MEASURE_NO_XDEV <span class="kw">as _</span>;
     }
 }
@@ -4206,7 +4206,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>FileMeasureFlags {
     <span class="kw">type </span>GlibType = ffi::GFileMeasureFlags;
 
@@ -4215,7 +4215,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GFileMeasureFlags&gt; <span class="kw">for </span>FileMeasureFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GFileMeasureFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -4256,13 +4256,13 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Flags used to set what a [`FileMonitor`][crate::FileMonitor] will watch for.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GFileMonitorFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GFileMonitorFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>FileMonitorFlags: u32 {
         <span class="doccomment">/// No flags set.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_FILE_MONITOR_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Watch for mount events.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_WATCH_MOUNTS&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_WATCH_MOUNTS&quot;</span>)]
         </span><span class="kw">const </span>WATCH_MOUNTS = ffi::G_FILE_MONITOR_WATCH_MOUNTS <span class="kw">as _</span>;
         <span class="doccomment">/// Pair DELETED and CREATED events caused
         ///  by file renames (moves) and send a single G_FILE_MONITOR_EVENT_MOVED
@@ -4270,17 +4270,17 @@
         ///  behaviour -without specifying this flag- is to send single DELETED
         ///  and CREATED events). Deprecated since 2.46: use
         ///  [`WATCH_MOVES`][Self::WATCH_MOVES] instead.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_SEND_MOVED&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_SEND_MOVED&quot;</span>)]
         </span><span class="kw">const </span>SEND_MOVED = ffi::G_FILE_MONITOR_SEND_MOVED <span class="kw">as _</span>;
         <span class="doccomment">/// Watch for changes to the file made
         ///  via another hard link. Since 2.36.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_WATCH_HARD_LINKS&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_WATCH_HARD_LINKS&quot;</span>)]
         </span><span class="kw">const </span>WATCH_HARD_LINKS = ffi::G_FILE_MONITOR_WATCH_HARD_LINKS <span class="kw">as _</span>;
         <span class="doccomment">/// Watch for rename operations on a
         ///  monitored directory. This causes [`FileMonitorEvent::Renamed`][crate::FileMonitorEvent::Renamed],
         ///  [`FileMonitorEvent::MovedIn`][crate::FileMonitorEvent::MovedIn] and [`FileMonitorEvent::MovedOut`][crate::FileMonitorEvent::MovedOut]
         ///  events to be emitted when possible. Since: 2.46.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_WATCH_MOVES&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_WATCH_MOVES&quot;</span>)]
         </span><span class="kw">const </span>WATCH_MOVES = ffi::G_FILE_MONITOR_WATCH_MOVES <span class="kw">as _</span>;
     }
 }
@@ -4291,7 +4291,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>FileMonitorFlags {
     <span class="kw">type </span>GlibType = ffi::GFileMonitorFlags;
 
@@ -4300,7 +4300,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GFileMonitorFlags&gt; <span class="kw">for </span>FileMonitorFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GFileMonitorFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -4341,13 +4341,13 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Flags used when querying a [`FileInfo`][crate::FileInfo].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GFileQueryInfoFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GFileQueryInfoFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>FileQueryInfoFlags: u32 {
         <span class="doccomment">/// No flags set.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_QUERY_INFO_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_QUERY_INFO_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_FILE_QUERY_INFO_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Don&#39;t follow symlinks.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_QUERY_INFO_NOFOLLOW_SYMLINKS&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_QUERY_INFO_NOFOLLOW_SYMLINKS&quot;</span>)]
         </span><span class="kw">const </span>NOFOLLOW_SYMLINKS = ffi::G_FILE_QUERY_INFO_NOFOLLOW_SYMLINKS <span class="kw">as _</span>;
     }
 }
@@ -4358,7 +4358,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>FileQueryInfoFlags {
     <span class="kw">type </span>GlibType = ffi::GFileQueryInfoFlags;
 
@@ -4367,7 +4367,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GFileQueryInfoFlags&gt; <span class="kw">for </span>FileQueryInfoFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GFileQueryInfoFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -4408,22 +4408,22 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// GIOStreamSpliceFlags determine how streams should be spliced.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GIOStreamSpliceFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GIOStreamSpliceFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>IOStreamSpliceFlags: u32 {
         <span class="doccomment">/// Do not close either stream.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_STREAM_SPLICE_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_STREAM_SPLICE_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_IO_STREAM_SPLICE_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Close the first stream after
         ///  the splice.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_STREAM_SPLICE_CLOSE_STREAM1&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_STREAM_SPLICE_CLOSE_STREAM1&quot;</span>)]
         </span><span class="kw">const </span>CLOSE_STREAM1 = ffi::G_IO_STREAM_SPLICE_CLOSE_STREAM1 <span class="kw">as _</span>;
         <span class="doccomment">/// Close the second stream after
         ///  the splice.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_STREAM_SPLICE_CLOSE_STREAM2&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_STREAM_SPLICE_CLOSE_STREAM2&quot;</span>)]
         </span><span class="kw">const </span>CLOSE_STREAM2 = ffi::G_IO_STREAM_SPLICE_CLOSE_STREAM2 <span class="kw">as _</span>;
         <span class="doccomment">/// Wait for both splice operations to finish
         ///  before calling the callback.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_STREAM_SPLICE_WAIT_FOR_BOTH&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_STREAM_SPLICE_WAIT_FOR_BOTH&quot;</span>)]
         </span><span class="kw">const </span>WAIT_FOR_BOTH = ffi::G_IO_STREAM_SPLICE_WAIT_FOR_BOTH <span class="kw">as _</span>;
     }
 }
@@ -4434,7 +4434,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>IOStreamSpliceFlags {
     <span class="kw">type </span>GlibType = ffi::GIOStreamSpliceFlags;
 
@@ -4443,7 +4443,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GIOStreamSpliceFlags&gt; <span class="kw">for </span>IOStreamSpliceFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GIOStreamSpliceFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -4484,10 +4484,10 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Flags used when mounting a mount.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GMountMountFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GMountMountFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>MountMountFlags: u32 {
         <span class="doccomment">/// No flags set.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_MOUNT_MOUNT_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_MOUNT_MOUNT_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_MOUNT_MOUNT_NONE <span class="kw">as _</span>;
     }
 }
@@ -4498,7 +4498,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>MountMountFlags {
     <span class="kw">type </span>GlibType = ffi::GMountMountFlags;
 
@@ -4507,7 +4507,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GMountMountFlags&gt; <span class="kw">for </span>MountMountFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GMountMountFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -4548,14 +4548,14 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Flags used when an unmounting a mount.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GMountUnmountFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GMountUnmountFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>MountUnmountFlags: u32 {
         <span class="doccomment">/// No flags set.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_MOUNT_UNMOUNT_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_MOUNT_UNMOUNT_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_MOUNT_UNMOUNT_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Unmount even if there are outstanding
         ///  file operations on the mount.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_MOUNT_UNMOUNT_FORCE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_MOUNT_UNMOUNT_FORCE&quot;</span>)]
         </span><span class="kw">const </span>FORCE = ffi::G_MOUNT_UNMOUNT_FORCE <span class="kw">as _</span>;
     }
 }
@@ -4566,7 +4566,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>MountUnmountFlags {
     <span class="kw">type </span>GlibType = ffi::GMountUnmountFlags;
 
@@ -4575,7 +4575,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GMountUnmountFlags&gt; <span class="kw">for </span>MountUnmountFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GMountUnmountFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -4616,18 +4616,18 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// GOutputStreamSpliceFlags determine how streams should be spliced.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GOutputStreamSpliceFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GOutputStreamSpliceFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>OutputStreamSpliceFlags: u32 {
         <span class="doccomment">/// Do not close either stream.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_OUTPUT_STREAM_SPLICE_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_OUTPUT_STREAM_SPLICE_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_OUTPUT_STREAM_SPLICE_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// Close the source stream after
         ///  the splice.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_OUTPUT_STREAM_SPLICE_CLOSE_SOURCE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_OUTPUT_STREAM_SPLICE_CLOSE_SOURCE&quot;</span>)]
         </span><span class="kw">const </span>CLOSE_SOURCE = ffi::G_OUTPUT_STREAM_SPLICE_CLOSE_SOURCE <span class="kw">as _</span>;
         <span class="doccomment">/// Close the target stream after
         ///  the splice.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_OUTPUT_STREAM_SPLICE_CLOSE_TARGET&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_OUTPUT_STREAM_SPLICE_CLOSE_TARGET&quot;</span>)]
         </span><span class="kw">const </span>CLOSE_TARGET = ffi::G_OUTPUT_STREAM_SPLICE_CLOSE_TARGET <span class="kw">as _</span>;
     }
 }
@@ -4638,7 +4638,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>OutputStreamSpliceFlags {
     <span class="kw">type </span>GlibType = ffi::GOutputStreamSpliceFlags;
 
@@ -4647,7 +4647,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GOutputStreamSpliceFlags&gt; <span class="kw">for </span>OutputStreamSpliceFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GOutputStreamSpliceFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -4686,25 +4686,25 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="macro">bitflags! </span>{
     <span class="doccomment">/// Flags to modify lookup behavior.
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;GResolverNameLookupFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>ResolverNameLookupFlags: u32 {
         <span class="doccomment">/// default behavior (same as [`ResolverExt::lookup_by_name()`][crate::prelude::ResolverExt::lookup_by_name()])
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_RESOLVER_NAME_LOOKUP_FLAGS_DEFAULT&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_RESOLVER_NAME_LOOKUP_FLAGS_DEFAULT&quot;</span>)]
         </span><span class="kw">const </span>DEFAULT = ffi::G_RESOLVER_NAME_LOOKUP_FLAGS_DEFAULT <span class="kw">as _</span>;
         <span class="doccomment">/// only resolve ipv4 addresses
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_RESOLVER_NAME_LOOKUP_FLAGS_IPV4_ONLY&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_RESOLVER_NAME_LOOKUP_FLAGS_IPV4_ONLY&quot;</span>)]
         </span><span class="kw">const </span>IPV4_ONLY = ffi::G_RESOLVER_NAME_LOOKUP_FLAGS_IPV4_ONLY <span class="kw">as _</span>;
         <span class="doccomment">/// only resolve ipv6 addresses
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_RESOLVER_NAME_LOOKUP_FLAGS_IPV6_ONLY&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_RESOLVER_NAME_LOOKUP_FLAGS_IPV6_ONLY&quot;</span>)]
         </span><span class="kw">const </span>IPV6_ONLY = ffi::G_RESOLVER_NAME_LOOKUP_FLAGS_IPV6_ONLY <span class="kw">as _</span>;
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
 </span><span class="kw">impl </span>fmt::Display <span class="kw">for </span>ResolverNameLookupFlags {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter) -&gt; fmt::Result {
@@ -4712,7 +4712,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
 #[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>ResolverNameLookupFlags {
@@ -4723,7 +4723,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
 #[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GResolverNameLookupFlags&gt; <span class="kw">for </span>ResolverNameLookupFlags {
@@ -4732,7 +4732,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
 </span><span class="kw">impl </span>StaticType <span class="kw">for </span>ResolverNameLookupFlags {
     <span class="kw">fn </span>static_type() -&gt; Type {
@@ -4740,13 +4740,13 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
 </span><span class="kw">impl </span>glib::value::ValueType <span class="kw">for </span>ResolverNameLookupFlags {
     <span class="kw">type </span>Type = <span class="self">Self</span>;
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
 </span><span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span>ResolverNameLookupFlags {
     <span class="kw">type </span>Checker = glib::value::GenericValueTypeChecker&lt;<span class="self">Self</span>&gt;;
@@ -4756,7 +4756,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
 </span><span class="kw">impl </span>ToValue <span class="kw">for </span>ResolverNameLookupFlags {
     <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::Value {
@@ -4774,10 +4774,10 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// GResourceLookupFlags determine how resource path lookups are handled.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GResourceLookupFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GResourceLookupFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>ResourceLookupFlags: u32 {
         <span class="doccomment">/// No flags set.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_RESOURCE_LOOKUP_FLAGS_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_RESOURCE_LOOKUP_FLAGS_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_RESOURCE_LOOKUP_FLAGS_NONE <span class="kw">as _</span>;
     }
 }
@@ -4788,7 +4788,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>ResourceLookupFlags {
     <span class="kw">type </span>GlibType = ffi::GResourceLookupFlags;
 
@@ -4797,7 +4797,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GResourceLookupFlags&gt; <span class="kw">for </span>ResourceLookupFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GResourceLookupFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -4840,30 +4840,30 @@
     <span class="doccomment">/// Flags used when creating a binding. These flags determine in which
     /// direction the binding works. The default is to synchronize in both
     /// directions.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GSettingsBindFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GSettingsBindFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>SettingsBindFlags: u32 {
         <span class="doccomment">/// Equivalent to `G_SETTINGS_BIND_GET|G_SETTINGS_BIND_SET`
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SETTINGS_BIND_DEFAULT&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SETTINGS_BIND_DEFAULT&quot;</span>)]
         </span><span class="kw">const </span>DEFAULT = ffi::G_SETTINGS_BIND_DEFAULT <span class="kw">as _</span>;
         <span class="doccomment">/// Update the [`glib::Object`][crate::glib::Object] property when the setting changes.
         ///  It is an error to use this flag if the property is not writable.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SETTINGS_BIND_GET&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SETTINGS_BIND_GET&quot;</span>)]
         </span><span class="kw">const </span>GET = ffi::G_SETTINGS_BIND_GET <span class="kw">as _</span>;
         <span class="doccomment">/// Update the setting when the [`glib::Object`][crate::glib::Object] property changes.
         ///  It is an error to use this flag if the property is not readable.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SETTINGS_BIND_SET&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SETTINGS_BIND_SET&quot;</span>)]
         </span><span class="kw">const </span>SET = ffi::G_SETTINGS_BIND_SET <span class="kw">as _</span>;
         <span class="doccomment">/// Do not try to bind a &quot;sensitivity&quot; property to the writability of the setting
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SETTINGS_BIND_NO_SENSITIVITY&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SETTINGS_BIND_NO_SENSITIVITY&quot;</span>)]
         </span><span class="kw">const </span>NO_SENSITIVITY = ffi::G_SETTINGS_BIND_NO_SENSITIVITY <span class="kw">as _</span>;
         <span class="doccomment">/// When set in addition to [`GET`][Self::GET], set the [`glib::Object`][crate::glib::Object] property
         ///  value initially from the setting, but do not listen for changes of the setting
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SETTINGS_BIND_GET_NO_CHANGES&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SETTINGS_BIND_GET_NO_CHANGES&quot;</span>)]
         </span><span class="kw">const </span>GET_NO_CHANGES = ffi::G_SETTINGS_BIND_GET_NO_CHANGES <span class="kw">as _</span>;
         <span class="doccomment">/// When passed to [`SettingsExtManual::bind()`][crate::prelude::SettingsExtManual::bind()], uses a pair of mapping functions that invert
         ///  the boolean value when mapping between the setting and the property. The setting and property must both
         ///  be booleans. You cannot pass this flag to [`SettingsExtManual::bind_with_mapping()`][crate::prelude::SettingsExtManual::bind_with_mapping()].
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SETTINGS_BIND_INVERT_BOOLEAN&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SETTINGS_BIND_INVERT_BOOLEAN&quot;</span>)]
         </span><span class="kw">const </span>INVERT_BOOLEAN = ffi::G_SETTINGS_BIND_INVERT_BOOLEAN <span class="kw">as _</span>;
     }
 }
@@ -4874,7 +4874,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>SettingsBindFlags {
     <span class="kw">type </span>GlibType = ffi::GSettingsBindFlags;
 
@@ -4883,7 +4883,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GSettingsBindFlags&gt; <span class="kw">for </span>SettingsBindFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GSettingsBindFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -4932,53 +4932,53 @@
     /// Note that it is a programmer error to mix &#39;incompatible&#39; flags. For
     /// example, you may not request both [`STDOUT_PIPE`][Self::STDOUT_PIPE] and
     /// [`STDOUT_SILENCE`][Self::STDOUT_SILENCE].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GSubprocessFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GSubprocessFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>SubprocessFlags: u32 {
         <span class="doccomment">/// No flags.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_SUBPROCESS_FLAGS_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// create a pipe for the stdin of the
         ///  spawned process that can be accessed with
         ///  [`Subprocess::stdin_pipe()`][crate::Subprocess::stdin_pipe()].
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_STDIN_PIPE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_STDIN_PIPE&quot;</span>)]
         </span><span class="kw">const </span>STDIN_PIPE = ffi::G_SUBPROCESS_FLAGS_STDIN_PIPE <span class="kw">as _</span>;
         <span class="doccomment">/// stdin is inherited from the
         ///  calling process.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_STDIN_INHERIT&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_STDIN_INHERIT&quot;</span>)]
         </span><span class="kw">const </span>STDIN_INHERIT = ffi::G_SUBPROCESS_FLAGS_STDIN_INHERIT <span class="kw">as _</span>;
         <span class="doccomment">/// create a pipe for the stdout of the
         ///  spawned process that can be accessed with
         ///  [`Subprocess::stdout_pipe()`][crate::Subprocess::stdout_pipe()].
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_STDOUT_PIPE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_STDOUT_PIPE&quot;</span>)]
         </span><span class="kw">const </span>STDOUT_PIPE = ffi::G_SUBPROCESS_FLAGS_STDOUT_PIPE <span class="kw">as _</span>;
         <span class="doccomment">/// silence the stdout of the spawned
         ///  process (ie: redirect to `/dev/null`).
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_STDOUT_SILENCE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_STDOUT_SILENCE&quot;</span>)]
         </span><span class="kw">const </span>STDOUT_SILENCE = ffi::G_SUBPROCESS_FLAGS_STDOUT_SILENCE <span class="kw">as _</span>;
         <span class="doccomment">/// create a pipe for the stderr of the
         ///  spawned process that can be accessed with
         ///  [`Subprocess::stderr_pipe()`][crate::Subprocess::stderr_pipe()].
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_STDERR_PIPE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_STDERR_PIPE&quot;</span>)]
         </span><span class="kw">const </span>STDERR_PIPE = ffi::G_SUBPROCESS_FLAGS_STDERR_PIPE <span class="kw">as _</span>;
         <span class="doccomment">/// silence the stderr of the spawned
         ///  process (ie: redirect to `/dev/null`).
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_STDERR_SILENCE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_STDERR_SILENCE&quot;</span>)]
         </span><span class="kw">const </span>STDERR_SILENCE = ffi::G_SUBPROCESS_FLAGS_STDERR_SILENCE <span class="kw">as _</span>;
         <span class="doccomment">/// merge the stderr of the spawned
         ///  process with whatever the stdout happens to be. This is a good way
         ///  of directing both streams to a common log file, for example.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_STDERR_MERGE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_STDERR_MERGE&quot;</span>)]
         </span><span class="kw">const </span>STDERR_MERGE = ffi::G_SUBPROCESS_FLAGS_STDERR_MERGE <span class="kw">as _</span>;
         <span class="doccomment">/// spawned processes will inherit the
         ///  file descriptors of their parent, unless those descriptors have
         ///  been explicitly marked as close-on-exec. This flag has no effect
         ///  over the &quot;standard&quot; file descriptors (stdin, stdout, stderr).
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_INHERIT_FDS&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_INHERIT_FDS&quot;</span>)]
         </span><span class="kw">const </span>INHERIT_FDS = ffi::G_SUBPROCESS_FLAGS_INHERIT_FDS <span class="kw">as _</span>;
         <span class="doccomment">/// if path searching is
         ///  needed when spawning the subprocess, use the `PATH` in the launcher
         ///  environment. (Since: 2.72)
-        </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+        </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
         #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
         #[doc(alias = <span class="string">&quot;G_SUBPROCESS_FLAGS_SEARCH_PATH_FROM_ENVP&quot;</span>)]
         </span><span class="kw">const </span>SEARCH_PATH_FROM_ENVP = ffi::G_SUBPROCESS_FLAGS_SEARCH_PATH_FROM_ENVP <span class="kw">as _</span>;
@@ -4991,7 +4991,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>SubprocessFlags {
     <span class="kw">type </span>GlibType = ffi::GSubprocessFlags;
 
@@ -5000,7 +5000,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GSubprocessFlags&gt; <span class="kw">for </span>SubprocessFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GSubprocessFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -5051,38 +5051,38 @@
     /// [`EXPIRED`][Self::EXPIRED] if you want to allow expired certificates,
     /// because this could potentially be the only error flag set even if
     /// other problems exist with the certificate.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GTlsCertificateFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GTlsCertificateFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>TlsCertificateFlags: u32 {
         <span class="doccomment">/// The signing certificate authority is
         ///  not known.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_UNKNOWN_CA&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_UNKNOWN_CA&quot;</span>)]
         </span><span class="kw">const </span>UNKNOWN_CA = ffi::G_TLS_CERTIFICATE_UNKNOWN_CA <span class="kw">as _</span>;
         <span class="doccomment">/// The certificate does not match the
         ///  expected identity of the site that it was retrieved from.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_BAD_IDENTITY&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_BAD_IDENTITY&quot;</span>)]
         </span><span class="kw">const </span>BAD_IDENTITY = ffi::G_TLS_CERTIFICATE_BAD_IDENTITY <span class="kw">as _</span>;
         <span class="doccomment">/// The certificate&#39;s activation time
         ///  is still in the future
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_NOT_ACTIVATED&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_NOT_ACTIVATED&quot;</span>)]
         </span><span class="kw">const </span>NOT_ACTIVATED = ffi::G_TLS_CERTIFICATE_NOT_ACTIVATED <span class="kw">as _</span>;
         <span class="doccomment">/// The certificate has expired
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_EXPIRED&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_EXPIRED&quot;</span>)]
         </span><span class="kw">const </span>EXPIRED = ffi::G_TLS_CERTIFICATE_EXPIRED <span class="kw">as _</span>;
         <span class="doccomment">/// The certificate has been revoked
         ///  according to the [`TlsConnection`][crate::TlsConnection]&#39;s certificate revocation list.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_REVOKED&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_REVOKED&quot;</span>)]
         </span><span class="kw">const </span>REVOKED = ffi::G_TLS_CERTIFICATE_REVOKED <span class="kw">as _</span>;
         <span class="doccomment">/// The certificate&#39;s algorithm is
         ///  considered insecure.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_INSECURE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_INSECURE&quot;</span>)]
         </span><span class="kw">const </span>INSECURE = ffi::G_TLS_CERTIFICATE_INSECURE <span class="kw">as _</span>;
         <span class="doccomment">/// Some other error occurred validating
         ///  the certificate
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_GENERIC_ERROR&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_GENERIC_ERROR&quot;</span>)]
         </span><span class="kw">const </span>GENERIC_ERROR = ffi::G_TLS_CERTIFICATE_GENERIC_ERROR <span class="kw">as _</span>;
         <span class="doccomment">/// the combination of all of the above
         ///  flags
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_VALIDATE_ALL&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_VALIDATE_ALL&quot;</span>)]
         </span><span class="kw">const </span>VALIDATE_ALL = ffi::G_TLS_CERTIFICATE_VALIDATE_ALL <span class="kw">as _</span>;
     }
 }
@@ -5093,7 +5093,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>TlsCertificateFlags {
     <span class="kw">type </span>GlibType = ffi::GTlsCertificateFlags;
 
@@ -5102,7 +5102,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GTlsCertificateFlags&gt; <span class="kw">for </span>TlsCertificateFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GTlsCertificateFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -5143,10 +5143,10 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Flags for [`TlsDatabaseExt::verify_chain()`][crate::prelude::TlsDatabaseExt::verify_chain()].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GTlsDatabaseVerifyFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GTlsDatabaseVerifyFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>TlsDatabaseVerifyFlags: u32 {
         <span class="doccomment">/// No verification flags
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_DATABASE_VERIFY_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_DATABASE_VERIFY_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_TLS_DATABASE_VERIFY_NONE <span class="kw">as _</span>;
     }
 }
@@ -5157,7 +5157,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>TlsDatabaseVerifyFlags {
     <span class="kw">type </span>GlibType = ffi::GTlsDatabaseVerifyFlags;
 
@@ -5166,7 +5166,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GTlsDatabaseVerifyFlags&gt; <span class="kw">for </span>TlsDatabaseVerifyFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GTlsDatabaseVerifyFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -5207,33 +5207,33 @@
 
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// Various flags for the password.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GTlsPasswordFlags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GTlsPasswordFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>TlsPasswordFlags: u32 {
         <span class="doccomment">/// No flags
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_PASSWORD_NONE&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_PASSWORD_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_TLS_PASSWORD_NONE <span class="kw">as _</span>;
         <span class="doccomment">/// The password was wrong, and the user should retry.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_PASSWORD_RETRY&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_PASSWORD_RETRY&quot;</span>)]
         </span><span class="kw">const </span>RETRY = ffi::G_TLS_PASSWORD_RETRY <span class="kw">as _</span>;
         <span class="doccomment">/// Hint to the user that the password has been
         ///  wrong many times, and the user may not have many chances left.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_PASSWORD_MANY_TRIES&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_PASSWORD_MANY_TRIES&quot;</span>)]
         </span><span class="kw">const </span>MANY_TRIES = ffi::G_TLS_PASSWORD_MANY_TRIES <span class="kw">as _</span>;
         <span class="doccomment">/// Hint to the user that this is the last try to get
         ///  this password right.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_PASSWORD_FINAL_TRY&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_PASSWORD_FINAL_TRY&quot;</span>)]
         </span><span class="kw">const </span>FINAL_TRY = ffi::G_TLS_PASSWORD_FINAL_TRY <span class="kw">as _</span>;
         <span class="doccomment">/// For PKCS `11`, the user PIN is required.
         ///  Since: 2.70.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_PASSWORD_PKCS11_USER&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_PASSWORD_PKCS11_USER&quot;</span>)]
         </span><span class="kw">const </span>PKCS11_USER = ffi::G_TLS_PASSWORD_PKCS11_USER <span class="kw">as _</span>;
         <span class="doccomment">/// For PKCS `11`, the security officer
         ///  PIN is required. Since: 2.70.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_PASSWORD_PKCS11_SECURITY_OFFICER&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_PASSWORD_PKCS11_SECURITY_OFFICER&quot;</span>)]
         </span><span class="kw">const </span>PKCS11_SECURITY_OFFICER = ffi::G_TLS_PASSWORD_PKCS11_SECURITY_OFFICER <span class="kw">as _</span>;
         <span class="doccomment">/// For PKCS `11`, the context-specific
         ///  PIN is required. Since: 2.70.
-        </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_PASSWORD_PKCS11_CONTEXT_SPECIFIC&quot;</span>)]
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_PASSWORD_PKCS11_CONTEXT_SPECIFIC&quot;</span>)]
         </span><span class="kw">const </span>PKCS11_CONTEXT_SPECIFIC = ffi::G_TLS_PASSWORD_PKCS11_CONTEXT_SPECIFIC <span class="kw">as _</span>;
     }
 }
@@ -5244,7 +5244,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>TlsPasswordFlags {
     <span class="kw">type </span>GlibType = ffi::GTlsPasswordFlags;
 
@@ -5253,7 +5253,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GTlsPasswordFlags&gt; <span class="kw">for </span>TlsPasswordFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GTlsPasswordFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
@@ -5292,4 +5292,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

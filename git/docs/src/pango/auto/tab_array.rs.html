@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pango/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pango/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -352,7 +352,7 @@
 
 </span><span class="kw">use </span><span class="kw">crate</span>::TabAlign;
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 </span><span class="kw">use </span>std::fmt;
 <span class="kw">use </span>std::mem;
@@ -363,7 +363,7 @@
     /// [`TabArray`][crate::TabArray] can be used to set tab stops in a [`Layout`][crate::Layout].
     /// Each tab stop has an alignment, a position, and optionally
     /// a character to use as decimal point.
-    </span><span class="attribute">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    </span><span class="attr">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
     </span><span class="kw">pub struct </span>TabArray(Boxed&lt;ffi::PangoTabArray&gt;);
 
     <span class="kw">match fn </span>{
@@ -387,7 +387,7 @@
     ///
     /// the newly allocated [`TabArray`][crate::TabArray], which should
     ///   be freed with `Pango::TabArray::free()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_tab_array_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_tab_array_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(initial_size: i32, positions_in_pixels: bool) -&gt; TabArray {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::pango_tab_array_new(
@@ -413,7 +413,7 @@
     /// decimal point according to the current locale.
     /// ## `tab_index`
     /// the index of a tab stop
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_tab_array_get_decimal_point&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_decimal_point&quot;</span>)]
@@ -433,7 +433,7 @@
     /// # Returns
     ///
     /// whether positions are in pixels.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_tab_array_get_positions_in_pixels&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_tab_array_get_positions_in_pixels&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_positions_in_pixels&quot;</span>)]
     </span><span class="kw">pub fn </span>is_positions_in_pixels(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -448,7 +448,7 @@
     /// # Returns
     ///
     /// the number of tab stops in the array.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_tab_array_get_size&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_tab_array_get_size&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_size&quot;</span>)]
     </span><span class="kw">pub fn </span>size(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::pango_tab_array_get_size(mut_override(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -466,7 +466,7 @@
     ///
     /// ## `location`
     /// location to store tab position
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_tab_array_get_tab&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_tab_array_get_tab&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_tab&quot;</span>)]
     </span><span class="kw">pub fn </span>tab(<span class="kw-2">&amp;</span><span class="self">self</span>, tab_index: i32) -&gt; (TabAlign, i32) {
         <span class="kw">unsafe </span>{
@@ -488,7 +488,7 @@
     /// that were added as a result of growing the array.
     /// ## `new_size`
     /// new size of the array
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_tab_array_resize&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_tab_array_resize&quot;</span>)]
     </span><span class="kw">pub fn </span>resize(<span class="kw-2">&amp;mut </span><span class="self">self</span>, new_size: i32) {
         <span class="kw">unsafe </span>{
             ffi::pango_tab_array_resize(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>, new_size);
@@ -507,7 +507,7 @@
     /// the index of a tab stop
     /// ## `decimal_point`
     /// the decimal point to use
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_tab_array_set_decimal_point&quot;</span>)]
     </span><span class="kw">pub fn </span>set_decimal_point(<span class="kw-2">&amp;mut </span><span class="self">self</span>, tab_index: i32, decimal_point: char) {
@@ -524,7 +524,7 @@
     /// pixels.
     /// ## `positions_in_pixels`
     /// whether positions are in pixels
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_tab_array_set_positions_in_pixels&quot;</span>)]
     </span><span class="kw">pub fn </span>set_positions_in_pixels(<span class="kw-2">&amp;mut </span><span class="self">self</span>, positions_in_pixels: bool) {
@@ -543,7 +543,7 @@
     /// tab alignment
     /// ## `location`
     /// tab location in Pango units
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_tab_array_set_tab&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_tab_array_set_tab&quot;</span>)]
     </span><span class="kw">pub fn </span>set_tab(<span class="kw-2">&amp;mut </span><span class="self">self</span>, tab_index: i32, alignment: TabAlign, location: i32) {
         <span class="kw">unsafe </span>{
             ffi::pango_tab_array_set_tab(
@@ -556,7 +556,7 @@
     }
 
     <span class="doccomment">/// Utility function to ensure that the tab stops are in increasing order.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_tab_array_sort&quot;</span>)]
     </span><span class="kw">pub fn </span>sort(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
@@ -577,7 +577,7 @@
     /// # Returns
     ///
     /// a newly allocated string
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_tab_array_to_string&quot;</span>)]
     #[doc(alias = <span class="string">&quot;to_string&quot;</span>)]
@@ -599,7 +599,7 @@
     /// # Returns
     ///
     /// a new [`TabArray`][crate::TabArray]
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_tab_array_from_string&quot;</span>)]
     </span><span class="kw">pub fn </span>from_string(text: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;TabArray, glib::BoolError&gt; {
@@ -610,10 +610,10 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 </span><span class="kw">impl </span>fmt::Display <span class="kw">for </span>TabArray {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter) -&gt; fmt::Result {
         f.write_str(<span class="kw-2">&amp;</span><span class="self">self</span>.to_str())
     }
@@ -622,4 +622,4 @@
 <span class="kw">unsafe impl </span>Send <span class="kw">for </span>TabArray {}
 <span class="kw">unsafe impl </span>Sync <span class="kw">for </span>TabArray {}
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

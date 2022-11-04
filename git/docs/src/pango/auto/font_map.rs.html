@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pango/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pango/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -332,7 +332,7 @@
     /// # Implements
     ///
     /// [`FontMapExt`][trait@crate::prelude::FontMapExt], [`trait@gio::prelude::ListModelExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PangoFontMap&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PangoFontMap&quot;</span>)]
     </span><span class="kw">pub struct </span>FontMap(Object&lt;ffi::PangoFontMap, ffi::PangoFontMapClass&gt;) @implements gio::ListModel;
 
     <span class="kw">match fn </span>{
@@ -357,7 +357,7 @@
     /// for Pango, something applications won&#39;t do. Backends should
     /// call this function if they have attached extra data to the
     /// context and such data is changed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_font_map_changed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_font_map_changed&quot;</span>)]
     </span><span class="kw">fn </span>changed(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
     <span class="doccomment">/// Creates a [`Context`][crate::Context] connected to @self.
@@ -374,7 +374,7 @@
     ///
     /// the newly allocated [`Context`][crate::Context],
     ///   which should be freed with g_object_unref().
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_font_map_create_context&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_font_map_create_context&quot;</span>)]
     </span><span class="kw">fn </span>create_context(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Context;
 
     <span class="doccomment">/// Gets a font family by name.
@@ -384,7 +384,7 @@
     /// # Returns
     ///
     /// the [`FontFamily`][crate::FontFamily]
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_46&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_font_map_get_family&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_family&quot;</span>)]
@@ -406,7 +406,7 @@
     /// # Returns
     ///
     /// The current serial number of @self.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_font_map_get_serial&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_font_map_get_serial&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_serial&quot;</span>)]
     </span><span class="kw">fn </span>serial(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32;
 
@@ -424,7 +424,7 @@
     /// location to
     ///   store a pointer to an array of [`FontFamily`][crate::FontFamily] *.
     ///   This array should be freed with g_free().
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_font_map_list_families&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_font_map_list_families&quot;</span>)]
     </span><span class="kw">fn </span>list_families(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;FontFamily&gt;;
 
     <span class="doccomment">/// Load the font in the fontmap that is the closest match for @desc.
@@ -437,7 +437,7 @@
     ///
     /// the newly allocated [`Font`][crate::Font]
     ///   loaded, or [`None`] if no font matched.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_font_map_load_font&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_font_map_load_font&quot;</span>)]
     </span><span class="kw">fn </span>load_font(<span class="kw-2">&amp;</span><span class="self">self</span>, context: <span class="kw-2">&amp;</span>Context, desc: <span class="kw-2">&amp;</span>FontDescription) -&gt; <span class="prelude-ty">Option</span>&lt;Font&gt;;
 
     <span class="doccomment">/// Load a set of fonts in the fontmap that can be used to render
@@ -453,7 +453,7 @@
     ///
     /// the newly allocated
     ///   [`Fontset`][crate::Fontset] loaded, or [`None`] if no font matched.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_font_map_load_fontset&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_font_map_load_fontset&quot;</span>)]
     </span><span class="kw">fn </span>load_fontset(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         context: <span class="kw-2">&amp;</span>Context,
@@ -477,7 +477,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_46&quot;</span>)))]
     </span><span class="kw">fn </span>family(<span class="kw-2">&amp;</span><span class="self">self</span>, name: <span class="kw-2">&amp;</span>str) -&gt; FontFamily {
         <span class="kw">unsafe </span>{
@@ -538,4 +538,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

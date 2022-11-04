@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -678,7 +678,7 @@
     /// optional [`Cancellable`][crate::Cancellable] object, [`None`] to ignore.
     /// ## `callback`
     /// callback to call when the request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_output_stream_write_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_output_stream_write_async&quot;</span>)]
     </span><span class="kw">fn </span>write_async&lt;
         B: AsRef&lt;[u8]&gt; + Send + <span class="lifetime">&#39;static</span>,
         Q: FnOnce(<span class="prelude-ty">Result</span>&lt;(B, usize), (B, glib::Error)&gt;) + <span class="lifetime">&#39;static</span>,
@@ -722,7 +722,7 @@
     /// ## `bytes_written`
     /// location to store the number of bytes that was
     ///  written to the stream
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_output_stream_write_all&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_output_stream_write_all&quot;</span>)]
     </span><span class="kw">fn </span>write_all&lt;C: IsA&lt;Cancellable&gt;&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         buffer: <span class="kw-2">&amp;</span>[u8],
@@ -752,7 +752,7 @@
     /// optional [`Cancellable`][crate::Cancellable] object, [`None`] to ignore
     /// ## `callback`
     /// callback to call when the request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_output_stream_write_all_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_output_stream_write_all_async&quot;</span>)]
     </span><span class="kw">fn </span>write_all_async&lt;
         B: AsRef&lt;[u8]&gt; + Send + <span class="lifetime">&#39;static</span>,
         Q: FnOnce(<span class="prelude-ty">Result</span>&lt;(B, usize, <span class="prelude-ty">Option</span>&lt;glib::Error&gt;), (B, glib::Error)&gt;) + <span class="lifetime">&#39;static</span>,
@@ -1004,7 +1004,7 @@
     }
 }
 
-<span class="attribute">#[derive(Debug)]
+<span class="attr">#[derive(Debug)]
 </span><span class="kw">pub struct </span>OutputStreamWrite&lt;T: IsA&lt;OutputStream&gt;&gt;(T);
 
 <span class="kw">impl</span>&lt;T: IsA&lt;OutputStream&gt;&gt; OutputStreamWrite&lt;T&gt; {
@@ -1048,7 +1048,7 @@
     }
 }
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
     <span class="kw">use </span><span class="kw">crate</span>::test_util::run_async;
@@ -1057,7 +1057,7 @@
     <span class="kw">use </span>glib::Bytes;
     <span class="kw">use </span>std::io::Write;
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>splice_async() {
         <span class="kw">let </span>ret = run_async(|tx, l| {
             <span class="kw">let </span>input = MemoryInputStream::new();
@@ -1080,7 +1080,7 @@
         <span class="macro">assert_eq!</span>(ret.unwrap(), <span class="number">3</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>write_async() {
         <span class="kw">let </span>ret = run_async(|tx, l| {
             <span class="kw">let </span>strm = MemoryOutputStream::new_resizable();
@@ -1102,7 +1102,7 @@
         <span class="macro">assert_eq!</span>(size, <span class="number">3</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>write_all_async() {
         <span class="kw">let </span>ret = run_async(|tx, l| {
             <span class="kw">let </span>strm = MemoryOutputStream::new_resizable();
@@ -1125,7 +1125,7 @@
         <span class="macro">assert!</span>(err.is_none());
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>write_bytes_async() {
         <span class="kw">let </span>ret = run_async(|tx, l| {
             <span class="kw">let </span>strm = MemoryOutputStream::new_resizable();
@@ -1145,7 +1145,7 @@
         <span class="macro">assert_eq!</span>(ret.unwrap(), <span class="number">3</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>std_io_write() {
         <span class="kw">let </span>b = Bytes::from_owned(<span class="macro">vec!</span>[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);
         <span class="kw">let </span><span class="kw-2">mut </span>write = MemoryOutputStream::new_resizable().into_write();
@@ -1158,7 +1158,7 @@
         <span class="macro">assert_eq!</span>(stream.steal_as_bytes(), [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].as_ref());
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>into_output_stream() {
         <span class="kw">let </span>stream = MemoryOutputStream::new_resizable();
         <span class="kw">let </span>stream_clone = stream.clone();
@@ -1168,4 +1168,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

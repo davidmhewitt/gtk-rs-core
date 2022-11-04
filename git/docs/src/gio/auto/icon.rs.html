@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -285,7 +285,7 @@
     /// # Implements
     ///
     /// [`IconExt`][trait@crate::prelude::IconExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GIcon&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GIcon&quot;</span>)]
     </span><span class="kw">pub struct </span>Icon(Interface&lt;ffi::GIcon, ffi::GIconIface&gt;);
 
     <span class="kw">match fn </span>{
@@ -303,12 +303,12 @@
     /// # Returns
     ///
     /// a [`Icon`][crate::Icon], or [`None`] when deserialization fails.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_icon_deserialize&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_icon_deserialize&quot;</span>)]
     </span><span class="kw">pub fn </span>deserialize(value: <span class="kw-2">&amp;</span>glib::Variant) -&gt; <span class="prelude-ty">Option</span>&lt;Icon&gt; {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_icon_deserialize(value.to_glib_none().<span class="number">0</span>)) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_icon_hash&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_icon_hash&quot;</span>)]
     </span><span class="kw">pub fn </span>hash(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{
             ffi::g_icon_hash(
@@ -330,7 +330,7 @@
     ///
     /// An object implementing the [`Icon`][crate::Icon]
     ///  interface or [`None`] if `error` is set.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_icon_new_for_string&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_icon_new_for_string&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_for_string&quot;</span>)]
     </span><span class="kw">pub fn </span>for_string(str: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;Icon, glib::Error&gt; {
         <span class="kw">unsafe </span>{
@@ -351,7 +351,7 @@
 ///
 /// [`BytesIcon`][struct@crate::BytesIcon], [`Emblem`][struct@crate::Emblem], [`EmblemedIcon`][struct@crate::EmblemedIcon], [`FileIcon`][struct@crate::FileIcon], [`Icon`][struct@crate::Icon], [`LoadableIcon`][struct@crate::LoadableIcon], [`ThemedIcon`][struct@crate::ThemedIcon]
 </span><span class="kw">pub trait </span>IconExt: <span class="lifetime">&#39;static </span>{
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_icon_equal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_icon_equal&quot;</span>)]
     </span><span class="kw">fn </span>equal(<span class="kw-2">&amp;</span><span class="self">self</span>, icon2: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Icon&gt;&gt;) -&gt; bool;
 
     <span class="doccomment">/// Serializes a [`Icon`][crate::Icon] into a [`glib::Variant`][struct@crate::glib::Variant]. An equivalent [`Icon`][crate::Icon] can be retrieved
@@ -363,7 +363,7 @@
     /// # Returns
     ///
     /// a [`glib::Variant`][struct@crate::glib::Variant], or [`None`] when serialization fails. The [`glib::Variant`][struct@crate::glib::Variant] will not be floating.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_icon_serialize&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_icon_serialize&quot;</span>)]
     </span><span class="kw">fn </span>serialize(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::Variant&gt;;
 
     <span class="doccomment">/// Generates a textual representation of `self` that can be used for
@@ -387,7 +387,7 @@
     ///
     /// An allocated NUL-terminated UTF8 string or
     /// [`None`] if `self` can&#39;t be serialized. Use `g_free()` to free.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_icon_to_string&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_icon_to_string&quot;</span>)]
     </span><span class="kw">fn </span>to_string(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 }
 
@@ -416,4 +416,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

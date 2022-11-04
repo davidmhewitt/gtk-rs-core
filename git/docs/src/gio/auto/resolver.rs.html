@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -995,7 +995,7 @@
 </span><span class="kw">use </span><span class="kw">crate</span>::AsyncResult;
 <span class="kw">use </span><span class="kw">crate</span>::Cancellable;
 <span class="kw">use </span><span class="kw">crate</span>::InetAddress;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
 </span><span class="kw">use </span><span class="kw">crate</span>::ResolverNameLookupFlags;
 <span class="kw">use </span><span class="kw">crate</span>::ResolverRecordType;
@@ -1026,7 +1026,7 @@
     /// # Implements
     ///
     /// [`ResolverExt`][trait@crate::prelude::ResolverExt], [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GResolver&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GResolver&quot;</span>)]
     </span><span class="kw">pub struct </span>Resolver(Object&lt;ffi::GResolver, ffi::GResolverClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -1054,7 +1054,7 @@
     /// # Returns
     ///
     /// the default [`Resolver`][crate::Resolver].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_resolver_get_default&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_resolver_get_default&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_default&quot;</span>)]
     #[allow(clippy::should_implement_trait)]
     </span><span class="kw">pub fn </span>default() -&gt; Resolver {
@@ -1086,7 +1086,7 @@
     ///
     /// a hostname (either ASCII-only, or in ASCII-encoded
     ///  form), or [`None`] on error.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_resolver_lookup_by_address&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_resolver_lookup_by_address&quot;</span>)]
     </span><span class="kw">fn </span>lookup_by_address(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         address: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;InetAddress&gt;,
@@ -1102,7 +1102,7 @@
     /// a [`Cancellable`][crate::Cancellable], or [`None`]
     /// ## `callback`
     /// callback to call after resolution completes
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_resolver_lookup_by_address_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_resolver_lookup_by_address_async&quot;</span>)]
     </span><span class="kw">fn </span>lookup_by_address_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;glib::GString, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         address: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;InetAddress&gt;,
@@ -1149,7 +1149,7 @@
     /// of [`InetAddress`][crate::InetAddress], or [`None`] on error. You
     /// must unref each of the addresses and free the list when you are
     /// done with it. (You can use `g_resolver_free_addresses()` to do this.)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_resolver_lookup_by_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_resolver_lookup_by_name&quot;</span>)]
     </span><span class="kw">fn </span>lookup_by_name(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         hostname: <span class="kw-2">&amp;</span>str,
@@ -1166,7 +1166,7 @@
     /// a [`Cancellable`][crate::Cancellable], or [`None`]
     /// ## `callback`
     /// callback to call after resolution completes
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_resolver_lookup_by_name_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_resolver_lookup_by_name_async&quot;</span>)]
     </span><span class="kw">fn </span>lookup_by_name_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;Vec&lt;InetAddress&gt;, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         hostname: <span class="kw-2">&amp;</span>str,
@@ -1195,7 +1195,7 @@
     /// of [`InetAddress`][crate::InetAddress], or [`None`] on error. You
     /// must unref each of the addresses and free the list when you are
     /// done with it. (You can use `g_resolver_free_addresses()` to do this.)
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_resolver_lookup_by_name_with_flags&quot;</span>)]
     </span><span class="kw">fn </span>lookup_by_name_with_flags(
@@ -1217,7 +1217,7 @@
     /// a [`Cancellable`][crate::Cancellable], or [`None`]
     /// ## `callback`
     /// callback to call after resolution completes
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_resolver_lookup_by_name_with_flags_async&quot;</span>)]
     </span><span class="kw">fn </span>lookup_by_name_with_flags_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;Vec&lt;InetAddress&gt;, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
@@ -1228,7 +1228,7 @@
         callback: P,
     );
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
     </span><span class="kw">fn </span>lookup_by_name_with_flags_future(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -1259,7 +1259,7 @@
     /// [`glib::Variant`][struct@crate::glib::Variant], or [`None`] on error. You must free each of the records and the list
     /// when you are done with it. (You can use `g_list_free_full()` with
     /// `g_variant_unref()` to do this.)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_resolver_lookup_records&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_resolver_lookup_records&quot;</span>)]
     </span><span class="kw">fn </span>lookup_records(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         rrname: <span class="kw-2">&amp;</span>str,
@@ -1279,7 +1279,7 @@
     /// a [`Cancellable`][crate::Cancellable], or [`None`]
     /// ## `callback`
     /// callback to call after resolution completes
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_resolver_lookup_records_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_resolver_lookup_records_async&quot;</span>)]
     </span><span class="kw">fn </span>lookup_records_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;Vec&lt;glib::Variant&gt;, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         rrname: <span class="kw-2">&amp;</span>str,
@@ -1332,7 +1332,7 @@
     /// [`SrvTarget`][crate::SrvTarget], or [`None`] on error. You must free each of the targets and the
     /// list when you are done with it. (You can use `g_resolver_free_targets()` to do
     /// this.)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_resolver_lookup_service&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_resolver_lookup_service&quot;</span>)]
     </span><span class="kw">fn </span>lookup_service(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         service: <span class="kw-2">&amp;</span>str,
@@ -1356,7 +1356,7 @@
     /// a [`Cancellable`][crate::Cancellable], or [`None`]
     /// ## `callback`
     /// callback to call after resolution completes
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_resolver_lookup_service_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_resolver_lookup_service_async&quot;</span>)]
     </span><span class="kw">fn </span>lookup_service_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;Vec&lt;SrvTarget&gt;, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         service: <span class="kw-2">&amp;</span>str,
@@ -1382,12 +1382,12 @@
     /// calls the original default resolver for DNS operations, and
     /// implements its own cache policies on top of that, and then set
     /// itself as the default resolver for all later code to use.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_resolver_set_default&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_resolver_set_default&quot;</span>)]
     </span><span class="kw">fn </span>set_default(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
     <span class="doccomment">/// Emitted when the resolver notices that the system resolver
     /// configuration has changed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;reload&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;reload&quot;</span>)]
     </span><span class="kw">fn </span>connect_reload&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -1566,7 +1566,7 @@
         ))
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
     </span><span class="kw">fn </span>lookup_by_name_with_flags(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -1591,7 +1591,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
     </span><span class="kw">fn </span>lookup_by_name_with_flags_async&lt;
         P: FnOnce(<span class="prelude-ty">Result</span>&lt;Vec&lt;InetAddress&gt;, glib::Error&gt;) + <span class="lifetime">&#39;static</span>,
@@ -1650,7 +1650,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
     </span><span class="kw">fn </span>lookup_by_name_with_flags_future(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -1906,4 +1906,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

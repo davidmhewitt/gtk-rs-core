@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -542,14 +542,14 @@
 //
 // The WakerSource is set up as a child source of the TaskSource, i.e.
 // whenever it is ready also the TaskSource is ready.
-</span><span class="attribute">#[repr(C)]
+</span><span class="attr">#[repr(C)]
 </span><span class="kw">struct </span>TaskSource {
     source: ffi::GSource,
     future: FutureWrapper,
     waker: Waker,
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">struct </span>WakerSource {
     source: ffi::GSource,
 }
@@ -657,7 +657,7 @@
 <span class="kw">unsafe impl </span>Sync <span class="kw">for </span>WakerSource {}
 
 <span class="kw">impl </span>TaskSource {
-    <span class="attribute">#[allow(clippy::new_ret_no_self)]
+    <span class="attr">#[allow(clippy::new_ret_no_self)]
     </span><span class="comment">// checker-ignore-item
     </span><span class="kw">fn </span>new(priority: Priority, future: FutureWrapper) -&gt; Source {
         <span class="kw">unsafe </span>{
@@ -803,7 +803,7 @@
     ///
     /// This must only be called if no `MainLoop` or anything else is running on this specific main
     /// context.
-    </span><span class="attribute">#[allow(clippy::transmute_ptr_to_ptr)]
+    </span><span class="attr">#[allow(clippy::transmute_ptr_to_ptr)]
     </span><span class="kw">pub fn </span>block_on&lt;F: Future&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; F::Output {
         <span class="kw">let </span><span class="kw-2">mut </span>res = <span class="prelude-val">None</span>;
         <span class="kw">let </span>l = MainLoop::new(<span class="prelude-val">Some</span>(<span class="self">self</span>), <span class="bool-val">false</span>);
@@ -851,7 +851,7 @@
     }
 }
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use </span>futures_channel::oneshot;
@@ -859,7 +859,7 @@
     <span class="kw">use </span>std::sync::mpsc;
     <span class="kw">use </span>std::thread;
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_spawn() {
         <span class="kw">let </span>c = MainContext::new();
         <span class="kw">let </span>l = <span class="kw">crate</span>::MainLoop::new(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span>c), <span class="bool-val">false</span>);
@@ -891,7 +891,7 @@
         receiver.recv().unwrap();
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_spawn_local() {
         <span class="kw">let </span>c = MainContext::new();
         <span class="kw">let </span>l = <span class="kw">crate</span>::MainLoop::new(<span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span>c), <span class="bool-val">false</span>);
@@ -907,7 +907,7 @@
         .unwrap();
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_block_on() {
         <span class="kw">let </span>c = MainContext::new();
 
@@ -928,4 +928,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

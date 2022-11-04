@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gdk_pixbuf_sys/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gdk_pixbuf_sys/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -973,7 +973,7 @@
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
 
-</span><span class="attribute">#![allow(non_camel_case_types, non_upper_case_globals, non_snake_case)]
+</span><span class="attr">#![allow(non_camel_case_types, non_upper_case_globals, non_snake_case)]
 #![allow(
     clippy::approx_constant,
     clippy::type_complexity,
@@ -988,7 +988,7 @@
     intptr_t, size_t, ssize_t, uintptr_t, FILE,
 };
 
-<span class="attribute">#[allow(unused_imports)]
+<span class="attr">#[allow(unused_imports)]
 </span><span class="kw">use </span>glib::{gboolean, gconstpointer, gpointer, GType};
 
 <span class="comment">// Enums
@@ -1081,7 +1081,7 @@
     <span class="prelude-ty">Option</span>&lt;<span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn</span>(<span class="kw-2">*const </span>u8, size_t, <span class="kw-2">*mut *mut </span>glib::GError, gpointer) -&gt; gboolean&gt;;
 
 <span class="comment">// Records
-</span><span class="attribute">#[derive(Copy, Clone)]
+</span><span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GdkPixbufAnimationClass {
     <span class="kw">pub </span>parent_class: gobject::GObjectClass,
@@ -1108,7 +1108,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GdkPixbufAnimationIterClass {
     <span class="kw">pub </span>parent_class: gobject::GObjectClass,
@@ -1136,7 +1136,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GdkPixbufFormat {
     <span class="kw">pub </span>name: <span class="kw-2">*mut </span>c_char,
@@ -1166,7 +1166,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GdkPixbufLoaderClass {
     <span class="kw">pub </span>parent_class: gobject::GObjectClass,
@@ -1189,7 +1189,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GdkPixbufModule {
     <span class="kw">pub </span>module_name: <span class="kw-2">*mut </span>c_char,
@@ -1235,7 +1235,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GdkPixbufModulePattern {
     <span class="kw">pub </span>prefix: <span class="kw-2">*mut </span>c_char,
@@ -1253,7 +1253,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>_GdkPixbufSimpleAnimClass {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -1262,7 +1262,7 @@
 <span class="kw">pub type </span>GdkPixbufSimpleAnimClass = <span class="kw-2">*mut </span>_GdkPixbufSimpleAnimClass;
 
 <span class="comment">// Classes
-</span><span class="attribute">#[repr(C)]
+</span><span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GdkPixbuf {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -1274,7 +1274,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GdkPixbufAnimation {
     <span class="kw">pub </span>parent_instance: gobject::GObject,
@@ -1288,7 +1288,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GdkPixbufAnimationIter {
     <span class="kw">pub </span>parent_instance: gobject::GObject,
@@ -1302,7 +1302,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GdkPixbufLoader {
     <span class="kw">pub </span>parent_instance: gobject::GObject,
@@ -1316,7 +1316,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GdkPixbufNonAnim {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -1329,7 +1329,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GdkPixbufSimpleAnim {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -1342,7 +1342,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GdkPixbufSimpleAnimIter {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -1355,7 +1355,7 @@
     }
 }
 
-<span class="attribute">#[link(name = <span class="string">&quot;gdk_pixbuf-2.0&quot;</span>)]
+<span class="attr">#[link(name = <span class="string">&quot;gdk_pixbuf-2.0&quot;</span>)]
 </span><span class="kw">extern </span><span class="string">&quot;C&quot; </span>{
 
     <span class="comment">//=========================================================================
@@ -1512,7 +1512,7 @@
         error: <span class="kw-2">*mut *mut </span>glib::GError,
     ) -&gt; <span class="kw-2">*mut </span>GdkPixbufFormat;
     <span class="kw">pub fn </span>gdk_pixbuf_get_formats() -&gt; <span class="kw-2">*mut </span>glib::GSList;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_40&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_40&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_40&quot;</span>)))]
     </span><span class="kw">pub fn </span>gdk_pixbuf_init_modules(path: <span class="kw-2">*const </span>c_char, error: <span class="kw-2">*mut *mut </span>glib::GError) -&gt; gboolean;
     <span class="kw">pub fn </span>gdk_pixbuf_new_from_stream_async(
@@ -1868,4 +1868,4 @@
 
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gdk_pixbuf_sys" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gdk_pixbuf_sys" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

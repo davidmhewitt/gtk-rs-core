@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -217,7 +217,7 @@
 <span class="kw">use </span>std::slice;
 
 <span class="macro">wrapper! </span>{
-    <span class="attribute">#[derive(Debug)]
+    <span class="attr">#[derive(Debug)]
     #[doc(alias = <span class="string">&quot;GValueArray&quot;</span>)]
     </span><span class="kw">pub struct </span>ValueArray(Boxed&lt;gobject_ffi::GValueArray&gt;);
 
@@ -229,12 +229,12 @@
 }
 
 <span class="kw">impl </span>ValueArray {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_value_array_new&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_value_array_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(n_prealloced: u32) -&gt; ValueArray {
         <span class="kw">unsafe </span>{ from_glib_full(gobject_ffi::g_value_array_new(n_prealloced)) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_value_array_append&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_value_array_append&quot;</span>)]
     </span><span class="kw">pub fn </span>append(<span class="kw-2">&amp;mut </span><span class="self">self</span>, value: <span class="kw-2">&amp;</span>Value) {
         <span class="kw">let </span>value = value.to_glib_none();
         <span class="kw">unsafe </span>{
@@ -251,7 +251,7 @@
         value.<span class="number">1</span>.n_values <span class="kw">as </span>usize
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_nth&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_nth&quot;</span>)]
     #[doc(alias = <span class="string">&quot;g_value_array_get_nth&quot;</span>)]
     </span><span class="kw">pub fn </span>nth(<span class="kw-2">&amp;</span><span class="self">self</span>, index_: u32) -&gt; <span class="prelude-ty">Option</span>&lt;Value&gt; {
         <span class="kw">unsafe </span>{
@@ -262,7 +262,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_value_array_insert&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_value_array_insert&quot;</span>)]
     </span><span class="kw">pub fn </span>insert(<span class="kw-2">&amp;mut </span><span class="self">self</span>, index_: u32, value: <span class="kw-2">&amp;</span>Value) {
         <span class="kw">let </span>value = value.to_glib_none();
         <span class="kw">unsafe </span>{
@@ -270,7 +270,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_value_array_prepend&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_value_array_prepend&quot;</span>)]
     </span><span class="kw">pub fn </span>prepend(<span class="kw-2">&amp;mut </span><span class="self">self</span>, value: <span class="kw-2">&amp;</span>Value) {
         <span class="kw">let </span>value = value.to_glib_none();
         <span class="kw">unsafe </span>{
@@ -278,14 +278,14 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_value_array_remove&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_value_array_remove&quot;</span>)]
     </span><span class="kw">pub fn </span>remove(<span class="kw-2">&amp;mut </span><span class="self">self</span>, index_: u32) {
         <span class="kw">unsafe </span>{
             gobject_ffi::g_value_array_remove(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>, index_);
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_value_array_sort_with_data&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_value_array_sort_with_data&quot;</span>)]
     </span><span class="kw">pub fn </span>sort_with_data&lt;F: FnMut(<span class="kw-2">&amp;</span>Value, <span class="kw-2">&amp;</span>Value) -&gt; Ordering&gt;(<span class="kw-2">&amp;mut </span><span class="self">self</span>, compare_func: F) {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>compare_func_trampoline(
             a: ffi::gconstpointer,
@@ -346,4 +346,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1810,7 +1810,7 @@
     /// # Implements
     ///
     /// [`SocketExt`][trait@crate::prelude::SocketExt], [`trait@glib::ObjectExt`], [`InitableExt`][trait@crate::prelude::InitableExt], [`SocketExtManual`][trait@crate::prelude::SocketExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GSocket&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GSocket&quot;</span>)]
     </span><span class="kw">pub struct </span>Socket(Object&lt;ffi::GSocket, ffi::GSocketClass&gt;) @implements Initable;
 
     <span class="kw">match fn </span>{
@@ -1845,7 +1845,7 @@
     ///
     /// a [`Socket`][crate::Socket] or [`None`] on error.
     ///  Free the returned object with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(
         family: SocketFamily,
         type_: SocketType,
@@ -1891,7 +1891,7 @@
     ///
     /// a new [`Socket`][crate::Socket], or [`None`] on error.
     ///  Free the returned object with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_accept&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_accept&quot;</span>)]
     </span><span class="kw">fn </span>accept(<span class="kw-2">&amp;</span><span class="self">self</span>, cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;Socket, glib::Error&gt;;
 
     <span class="doccomment">/// When a socket is created it is attached to an address family, but it
@@ -1925,7 +1925,7 @@
     /// # Returns
     ///
     /// [`true`] on success, [`false`] on error.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_bind&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_bind&quot;</span>)]
     </span><span class="kw">fn </span>bind(<span class="kw-2">&amp;</span><span class="self">self</span>, address: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;SocketAddress&gt;, allow_reuse: bool)
         -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
@@ -1936,7 +1936,7 @@
     /// # Returns
     ///
     /// [`true`] if no error, [`false`] otherwise, setting `error` to the error
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_check_connect_result&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_check_connect_result&quot;</span>)]
     </span><span class="kw">fn </span>check_connect_result(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
     <span class="doccomment">/// Closes the socket, shutting down any active connection.
@@ -1972,7 +1972,7 @@
     /// # Returns
     ///
     /// [`true`] on success, [`false`] on error
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_close&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_close&quot;</span>)]
     </span><span class="kw">fn </span>close(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
     <span class="doccomment">/// Checks on the readiness of `self` to perform operations.
@@ -1998,7 +1998,7 @@
     /// # Returns
     ///
     /// the [`glib::IOCondition`][crate::glib::IOCondition] mask of the current state
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_condition_check&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_condition_check&quot;</span>)]
     </span><span class="kw">fn </span>condition_check(<span class="kw-2">&amp;</span><span class="self">self</span>, condition: glib::IOCondition) -&gt; glib::IOCondition;
 
     <span class="doccomment">/// Waits for up to `timeout_us` microseconds for `condition` to become true
@@ -2027,7 +2027,7 @@
     /// # Returns
     ///
     /// [`true`] if the condition was met, [`false`] otherwise
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_condition_timed_wait&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_condition_timed_wait&quot;</span>)]
     </span><span class="kw">fn </span>condition_timed_wait(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         condition: glib::IOCondition,
@@ -2053,7 +2053,7 @@
     /// # Returns
     ///
     /// [`true`] if the condition was met, [`false`] otherwise
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_condition_wait&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_condition_wait&quot;</span>)]
     </span><span class="kw">fn </span>condition_wait(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         condition: glib::IOCondition,
@@ -2084,7 +2084,7 @@
     /// # Returns
     ///
     /// [`true`] if connected, [`false`] on error.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_connect&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_connect&quot;</span>)]
     </span><span class="kw">fn </span>connect(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         address: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;SocketAddress&gt;,
@@ -2097,7 +2097,7 @@
     /// # Returns
     ///
     /// a [`SocketConnection`][crate::SocketConnection]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_connection_factory_create_connection&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_connection_factory_create_connection&quot;</span>)]
     </span><span class="kw">fn </span>connection_factory_create_connection(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; SocketConnection;
 
     <span class="doccomment">/// Get the amount of data pending in the OS input buffer, without blocking.
@@ -2117,7 +2117,7 @@
     ///
     /// the number of bytes that can be read from the socket
     /// without blocking or truncating, or -1 on error.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_get_available_bytes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_get_available_bytes&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_available_bytes&quot;</span>)]
     </span><span class="kw">fn </span>available_bytes(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; isize;
 
@@ -2127,7 +2127,7 @@
     /// # Returns
     ///
     /// [`true`] if blocking I/O is used, [`false`] otherwise.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_get_blocking&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_get_blocking&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_blocking&quot;</span>)]
     </span><span class="kw">fn </span>is_blocking(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -2138,7 +2138,7 @@
     /// # Returns
     ///
     /// the broadcast setting on `self`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_get_broadcast&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_get_broadcast&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_broadcast&quot;</span>)]
     </span><span class="kw">fn </span>is_broadcast(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -2167,7 +2167,7 @@
     ///
     /// [`None`] if `error` is set, otherwise a [`Credentials`][crate::Credentials] object
     /// that must be freed with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_get_credentials&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_get_credentials&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_credentials&quot;</span>)]
     </span><span class="kw">fn </span>credentials(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;Credentials, glib::Error&gt;;
 
@@ -2176,7 +2176,7 @@
     /// # Returns
     ///
     /// a [`SocketFamily`][crate::SocketFamily]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_get_family&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_get_family&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_family&quot;</span>)]
     </span><span class="kw">fn </span>family(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; SocketFamily;
 
@@ -2186,7 +2186,7 @@
     /// # Returns
     ///
     /// [`true`] if keepalive is active, [`false`] otherwise.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_get_keepalive&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_get_keepalive&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_keepalive&quot;</span>)]
     </span><span class="kw">fn </span>is_keepalive(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -2196,7 +2196,7 @@
     /// # Returns
     ///
     /// the maximum number of pending connections.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_get_listen_backlog&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_get_listen_backlog&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_listen_backlog&quot;</span>)]
     </span><span class="kw">fn </span>listen_backlog(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
 
@@ -2208,7 +2208,7 @@
     ///
     /// a [`SocketAddress`][crate::SocketAddress] or [`None`] on error.
     ///  Free the returned object with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_get_local_address&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_get_local_address&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_local_address&quot;</span>)]
     </span><span class="kw">fn </span>local_address(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;SocketAddress, glib::Error&gt;;
 
@@ -2219,7 +2219,7 @@
     /// # Returns
     ///
     /// the multicast loopback setting on `self`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_get_multicast_loopback&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_get_multicast_loopback&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_multicast_loopback&quot;</span>)]
     </span><span class="kw">fn </span>is_multicast_loopback(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -2229,7 +2229,7 @@
     /// # Returns
     ///
     /// the multicast time-to-live setting on `self`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_get_multicast_ttl&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_get_multicast_ttl&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_multicast_ttl&quot;</span>)]
     </span><span class="kw">fn </span>multicast_ttl(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32;
 
@@ -2259,7 +2259,7 @@
     ///
     /// ## `value`
     /// return location for the option value
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_get_option&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_get_option&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_option&quot;</span>)]
     </span><span class="kw">fn </span>option(<span class="kw-2">&amp;</span><span class="self">self</span>, level: i32, optname: i32) -&gt; <span class="prelude-ty">Result</span>&lt;i32, glib::Error&gt;;
 
@@ -2269,7 +2269,7 @@
     /// # Returns
     ///
     /// a protocol id, or -1 if unknown
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_get_protocol&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_get_protocol&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_protocol&quot;</span>)]
     </span><span class="kw">fn </span>protocol(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; SocketProtocol;
 
@@ -2280,7 +2280,7 @@
     ///
     /// a [`SocketAddress`][crate::SocketAddress] or [`None`] on error.
     ///  Free the returned object with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_get_remote_address&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_get_remote_address&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_remote_address&quot;</span>)]
     </span><span class="kw">fn </span>remote_address(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;SocketAddress, glib::Error&gt;;
 
@@ -2289,7 +2289,7 @@
     /// # Returns
     ///
     /// a [`SocketType`][crate::SocketType]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_get_socket_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_get_socket_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_socket_type&quot;</span>)]
     </span><span class="kw">fn </span>socket_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; SocketType;
 
@@ -2299,7 +2299,7 @@
     /// # Returns
     ///
     /// the timeout in seconds
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_get_timeout&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_get_timeout&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_timeout&quot;</span>)]
     </span><span class="kw">fn </span>timeout(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32;
 
@@ -2309,7 +2309,7 @@
     /// # Returns
     ///
     /// the time-to-live setting on `self`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_get_ttl&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_get_ttl&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_ttl&quot;</span>)]
     </span><span class="kw">fn </span>ttl(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32;
 
@@ -2318,7 +2318,7 @@
     /// # Returns
     ///
     /// [`true`] if socket is closed, [`false`] otherwise
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_is_closed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_is_closed&quot;</span>)]
     </span><span class="kw">fn </span>is_closed(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
     <span class="doccomment">/// Check whether the socket is connected. This is only useful for
@@ -2332,7 +2332,7 @@
     /// # Returns
     ///
     /// [`true`] if socket is connected, [`false`] otherwise.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_is_connected&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_is_connected&quot;</span>)]
     </span><span class="kw">fn </span>is_connected(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
     <span class="doccomment">/// Registers `self` to receive multicast messages sent to `group`.
@@ -2359,7 +2359,7 @@
     /// # Returns
     ///
     /// [`true`] on success, [`false`] on error.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_join_multicast_group&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_join_multicast_group&quot;</span>)]
     </span><span class="kw">fn </span>join_multicast_group(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         group: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;InetAddress&gt;,
@@ -2393,7 +2393,7 @@
     /// # Returns
     ///
     /// [`true`] on success, [`false`] on error.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_join_multicast_group_ssm&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_join_multicast_group_ssm&quot;</span>)]
     </span><span class="kw">fn </span>join_multicast_group_ssm(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         group: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;InetAddress&gt;,
@@ -2420,7 +2420,7 @@
     /// # Returns
     ///
     /// [`true`] on success, [`false`] on error.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_leave_multicast_group&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_leave_multicast_group&quot;</span>)]
     </span><span class="kw">fn </span>leave_multicast_group(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         group: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;InetAddress&gt;,
@@ -2445,7 +2445,7 @@
     /// # Returns
     ///
     /// [`true`] on success, [`false`] on error.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_leave_multicast_group_ssm&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_leave_multicast_group_ssm&quot;</span>)]
     </span><span class="kw">fn </span>leave_multicast_group_ssm(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         group: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;InetAddress&gt;,
@@ -2465,7 +2465,7 @@
     /// # Returns
     ///
     /// [`true`] on success, [`false`] on error.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_listen&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_listen&quot;</span>)]
     </span><span class="kw">fn </span>listen(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
     <span class="doccomment">/// Sets the blocking mode of the socket. In blocking mode
@@ -2479,7 +2479,7 @@
     /// is a GSocket level feature.
     /// ## `blocking`
     /// Whether to use blocking I/O or not.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_set_blocking&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_set_blocking&quot;</span>)]
     </span><span class="kw">fn </span>set_blocking(<span class="kw-2">&amp;</span><span class="self">self</span>, blocking: bool);
 
     <span class="doccomment">/// Sets whether `self` should allow sending to broadcast addresses.
@@ -2487,7 +2487,7 @@
     /// ## `broadcast`
     /// whether `self` should allow sending to broadcast
     ///  addresses
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_set_broadcast&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_set_broadcast&quot;</span>)]
     </span><span class="kw">fn </span>set_broadcast(<span class="kw-2">&amp;</span><span class="self">self</span>, broadcast: bool);
 
     <span class="doccomment">/// Sets or unsets the `SO_KEEPALIVE` flag on the underlying socket. When
@@ -2507,7 +2507,7 @@
     /// garbage-collected if clients crash or become unreachable.
     /// ## `keepalive`
     /// Value for the keepalive flag
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_set_keepalive&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_set_keepalive&quot;</span>)]
     </span><span class="kw">fn </span>set_keepalive(<span class="kw-2">&amp;</span><span class="self">self</span>, keepalive: bool);
 
     <span class="doccomment">/// Sets the maximum number of outstanding connections allowed
@@ -2519,7 +2519,7 @@
     /// effect if called after that.
     /// ## `backlog`
     /// the maximum number of pending connections.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_set_listen_backlog&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_set_listen_backlog&quot;</span>)]
     </span><span class="kw">fn </span>set_listen_backlog(<span class="kw-2">&amp;</span><span class="self">self</span>, backlog: i32);
 
     <span class="doccomment">/// Sets whether outgoing multicast packets will be received by sockets
@@ -2528,7 +2528,7 @@
     /// ## `loopback`
     /// whether `self` should receive messages sent to its
     ///  multicast groups from the local host
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_set_multicast_loopback&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_set_multicast_loopback&quot;</span>)]
     </span><span class="kw">fn </span>set_multicast_loopback(<span class="kw-2">&amp;</span><span class="self">self</span>, loopback: bool);
 
     <span class="doccomment">/// Sets the time-to-live for outgoing multicast datagrams on `self`.
@@ -2536,7 +2536,7 @@
     /// the local network.
     /// ## `ttl`
     /// the time-to-live value for all multicast datagrams on `self`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_set_multicast_ttl&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_set_multicast_ttl&quot;</span>)]
     </span><span class="kw">fn </span>set_multicast_ttl(<span class="kw-2">&amp;</span><span class="self">self</span>, ttl: u32);
 
     <span class="doccomment">/// Sets the value of an integer-valued option on `self`, as with
@@ -2560,7 +2560,7 @@
     /// success or failure. On failure, `error` will be set, and
     ///  the system error value (`errno` or WSAGetLastError()) will still
     ///  be set to the result of the `setsockopt()` call.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_set_option&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_set_option&quot;</span>)]
     </span><span class="kw">fn </span>set_option(<span class="kw-2">&amp;</span><span class="self">self</span>, level: i32, optname: i32, value: i32) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
     <span class="doccomment">/// Sets the time in seconds after which I/O operations on `self` will
@@ -2585,14 +2585,14 @@
     /// cause the timeout to be reset.
     /// ## `timeout`
     /// the timeout for `self`, in seconds, or 0 for none
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_set_timeout&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_set_timeout&quot;</span>)]
     </span><span class="kw">fn </span>set_timeout(<span class="kw-2">&amp;</span><span class="self">self</span>, timeout: u32);
 
     <span class="doccomment">/// Sets the time-to-live for outgoing unicast packets on `self`.
     /// By default the platform-specific default value is used.
     /// ## `ttl`
     /// the time-to-live value for all unicast packets on `self`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_set_ttl&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_set_ttl&quot;</span>)]
     </span><span class="kw">fn </span>set_ttl(<span class="kw-2">&amp;</span><span class="self">self</span>, ttl: u32);
 
     <span class="doccomment">/// Shut down part or all of a full-duplex connection.
@@ -2617,7 +2617,7 @@
     /// # Returns
     ///
     /// [`true`] on success, [`false`] on error
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_shutdown&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_shutdown&quot;</span>)]
     </span><span class="kw">fn </span>shutdown(<span class="kw-2">&amp;</span><span class="self">self</span>, shutdown_read: bool, shutdown_write: bool) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
     <span class="doccomment">/// Checks if a socket is capable of speaking IPv4.
@@ -2633,40 +2633,40 @@
     /// # Returns
     ///
     /// [`true`] if this socket can be used with IPv4.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_speaks_ipv4&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_speaks_ipv4&quot;</span>)]
     </span><span class="kw">fn </span>speaks_ipv4(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;type&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;type&quot;</span>)]
     </span><span class="kw">fn </span>type_(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; SocketType;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;blocking&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;blocking&quot;</span>)]
     </span><span class="kw">fn </span>connect_blocking_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;broadcast&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;broadcast&quot;</span>)]
     </span><span class="kw">fn </span>connect_broadcast_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;keepalive&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;keepalive&quot;</span>)]
     </span><span class="kw">fn </span>connect_keepalive_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;listen-backlog&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;listen-backlog&quot;</span>)]
     </span><span class="kw">fn </span>connect_listen_backlog_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;local-address&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;local-address&quot;</span>)]
     </span><span class="kw">fn </span>connect_local_address_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;multicast-loopback&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;multicast-loopback&quot;</span>)]
     </span><span class="kw">fn </span>connect_multicast_loopback_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;multicast-ttl&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;multicast-ttl&quot;</span>)]
     </span><span class="kw">fn </span>connect_multicast_ttl_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;remote-address&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;remote-address&quot;</span>)]
     </span><span class="kw">fn </span>connect_remote_address_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;timeout&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;timeout&quot;</span>)]
     </span><span class="kw">fn </span>connect_timeout_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;ttl&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;ttl&quot;</span>)]
     </span><span class="kw">fn </span>connect_ttl_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -3388,4 +3388,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

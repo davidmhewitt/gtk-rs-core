@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../graphene/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../graphene/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -532,7 +532,7 @@
     /// # Returns
     ///
     /// the initialized matrix
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_init_from_2d&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_init_from_2d&quot;</span>)]
     #[doc(alias = <span class="string">&quot;init_from_2d&quot;</span>)]
     </span><span class="kw">pub fn </span>from_2d(xx: f64, yx: f64, xy: f64, yy: f64, x_0: f64, y_0: f64) -&gt; <span class="self">Self </span>{
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -552,7 +552,7 @@
     /// # Returns
     ///
     /// the initialized matrix
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_init_from_float&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_init_from_float&quot;</span>)]
     #[doc(alias = <span class="string">&quot;init_from_float&quot;</span>)]
     </span><span class="kw">pub fn </span>from_float(v: [f32; <span class="number">16</span>]) -&gt; <span class="self">Self </span>{
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -577,7 +577,7 @@
     /// # Returns
     ///
     /// the initialized matrix
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_init_from_vec4&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_init_from_vec4&quot;</span>)]
     #[doc(alias = <span class="string">&quot;init_from_vec4&quot;</span>)]
     </span><span class="kw">pub fn </span>from_vec4(v0: <span class="kw-2">&amp;</span>Vec4, v1: <span class="kw-2">&amp;</span>Vec4, v2: <span class="kw-2">&amp;</span>Vec4, v3: <span class="kw-2">&amp;</span>Vec4) -&gt; <span class="self">Self </span>{
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -613,7 +613,7 @@
     /// # Returns
     ///
     /// the initialized matrix
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_init_frustum&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_init_frustum&quot;</span>)]
     #[doc(alias = <span class="string">&quot;init_frustum&quot;</span>)]
     </span><span class="kw">pub fn </span>new_frustum(
         left: f32,
@@ -644,7 +644,7 @@
     /// # Returns
     ///
     /// the initialized matrix
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_init_identity&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_init_identity&quot;</span>)]
     #[doc(alias = <span class="string">&quot;init_identity&quot;</span>)]
     </span><span class="kw">pub fn </span>new_identity() -&gt; <span class="self">Self </span>{
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -682,7 +682,7 @@
     /// # Returns
     ///
     /// the initialized matrix
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_init_look_at&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_init_look_at&quot;</span>)]
     #[doc(alias = <span class="string">&quot;init_look_at&quot;</span>)]
     </span><span class="kw">pub fn </span>new_look_at(eye: <span class="kw-2">&amp;</span>Vec3, center: <span class="kw-2">&amp;</span>Vec3, up: <span class="kw-2">&amp;</span>Vec3) -&gt; <span class="self">Self </span>{
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -715,7 +715,7 @@
     /// # Returns
     ///
     /// the initialized matrix
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_init_ortho&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_init_ortho&quot;</span>)]
     #[doc(alias = <span class="string">&quot;init_ortho&quot;</span>)]
     </span><span class="kw">pub fn </span>new_ortho(
         left: f32,
@@ -754,7 +754,7 @@
     /// # Returns
     ///
     /// the initialized matrix
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_init_perspective&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_init_perspective&quot;</span>)]
     #[doc(alias = <span class="string">&quot;init_perspective&quot;</span>)]
     </span><span class="kw">pub fn </span>new_perspective(fovy: f32, aspect: f32, z_near: f32, z_far: f32) -&gt; <span class="self">Self </span>{
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -781,7 +781,7 @@
     /// # Returns
     ///
     /// the initialized matrix
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_init_rotate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_init_rotate&quot;</span>)]
     #[doc(alias = <span class="string">&quot;init_rotate&quot;</span>)]
     </span><span class="kw">pub fn </span>new_rotate(angle: f32, axis: <span class="kw-2">&amp;</span>Vec3) -&gt; <span class="self">Self </span>{
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -807,7 +807,7 @@
     /// # Returns
     ///
     /// the initialized matrix
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_init_scale&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_init_scale&quot;</span>)]
     #[doc(alias = <span class="string">&quot;init_scale&quot;</span>)]
     </span><span class="kw">pub fn </span>new_scale(x: f32, y: f32, z: f32) -&gt; <span class="self">Self </span>{
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -828,7 +828,7 @@
     /// # Returns
     ///
     /// the initialized matrix
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_init_skew&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_init_skew&quot;</span>)]
     #[doc(alias = <span class="string">&quot;init_skew&quot;</span>)]
     </span><span class="kw">pub fn </span>new_skew(x_skew: f32, y_skew: f32) -&gt; <span class="self">Self </span>{
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -847,7 +847,7 @@
     /// # Returns
     ///
     /// the initialized matrix
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_init_translate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_init_translate&quot;</span>)]
     #[doc(alias = <span class="string">&quot;init_translate&quot;</span>)]
     </span><span class="kw">pub fn </span>new_translate(p: <span class="kw-2">&amp;</span>Point3D) -&gt; <span class="self">Self </span>{
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -868,7 +868,7 @@
     /// return location
     ///  for an array of floating point values. The array must be capable
     ///  of holding at least 16 values.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_to_float&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_to_float&quot;</span>)]
     </span><span class="kw">pub fn </span>to_float(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; [f32; <span class="number">16</span>] {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>out = std::mem::MaybeUninit::uninit();
@@ -890,10 +890,10 @@
     }
 }
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use </span><span class="kw">super</span>::Matrix;
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_matrix_values() {
         <span class="kw">let </span>matrix = Matrix::new_identity();
         <span class="macro">assert_eq!</span>(
@@ -908,4 +908,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

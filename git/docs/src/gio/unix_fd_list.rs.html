@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -261,10 +261,10 @@
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 <span class="kw">use </span>std::{mem, ptr};
 
-<span class="attribute">#[cfg(unix)]
+<span class="attr">#[cfg(unix)]
 </span><span class="kw">use </span>std::os::unix::io::{AsRawFd, IntoRawFd, RawFd};
 
-<span class="attribute">#[cfg(all(not(unix), feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(all(not(unix), feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span>socket::{AsRawFd, IntoRawFd, RawFd};
 
 <span class="kw">impl </span>UnixFDList {
@@ -282,7 +282,7 @@
     /// # Returns
     ///
     /// a new [`UnixFDList`][crate::UnixFDList]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_fd_list_new_from_array&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_unix_fd_list_new_from_array&quot;</span>)]
     </span><span class="kw">pub fn </span>from_array(fds: <span class="kw">impl </span>IntoIterator&lt;Item = <span class="kw">impl </span>IntoRawFd&gt;) -&gt; UnixFDList {
         <span class="kw">let </span>fds = fds.into_iter().map(|t| t.into_raw_fd()).collect::&lt;Vec&lt;<span class="kw">_</span>&gt;&gt;();
         <span class="kw">unsafe </span>{
@@ -314,7 +314,7 @@
     ///
     /// the index of the appended fd in case of success, else -1
     ///  (and `error` is set)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_fd_list_append&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_unix_fd_list_append&quot;</span>)]
     </span><span class="kw">fn </span>append&lt;T: AsRawFd&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, fd: T) -&gt; <span class="prelude-ty">Result</span>&lt;i32, glib::Error&gt;;
 
     <span class="doccomment">/// Gets a file descriptor out of `self`.
@@ -335,7 +335,7 @@
     /// # Returns
     ///
     /// the file descriptor, or -1 in case of error
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_fd_list_get&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_unix_fd_list_get&quot;</span>)]
     </span><span class="kw">fn </span>get(<span class="kw-2">&amp;</span><span class="self">self</span>, index_: i32) -&gt; <span class="prelude-ty">Result</span>&lt;RawFd, glib::Error&gt;;
 
     <span class="doccomment">/// Returns the array of file descriptors that is contained in this
@@ -356,7 +356,7 @@
     ///
     /// an array of file
     ///  descriptors
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_fd_list_peek_fds&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_unix_fd_list_peek_fds&quot;</span>)]
     </span><span class="kw">fn </span>peek_fds(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;RawFd&gt;;
 
     <span class="doccomment">/// Returns the array of file descriptors that is contained in this
@@ -382,7 +382,7 @@
     ///
     /// an array of file
     ///  descriptors
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_fd_list_steal_fds&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_unix_fd_list_steal_fds&quot;</span>)]
     </span><span class="kw">fn </span>steal_fds(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;RawFd&gt;;
 }
 
@@ -438,4 +438,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

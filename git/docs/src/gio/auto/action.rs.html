@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -595,7 +595,7 @@
     /// # Implements
     ///
     /// [`ActionExt`][trait@crate::prelude::ActionExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GAction&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GAction&quot;</span>)]
     </span><span class="kw">pub struct </span>Action(Interface&lt;ffi::GAction, ffi::GActionInterface&gt;);
 
     <span class="kw">match fn </span>{
@@ -619,7 +619,7 @@
     /// # Returns
     ///
     /// [`true`] if `action_name` is valid
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_name_is_valid&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_name_is_valid&quot;</span>)]
     </span><span class="kw">pub fn </span>name_is_valid(action_name: <span class="kw-2">&amp;</span>str) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_action_name_is_valid(action_name.to_glib_none().<span class="number">0</span>)) }
     }
@@ -660,7 +660,7 @@
     ///
     /// ## `target_value`
     /// the target value, or [`None`] for no target
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_parse_detailed_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_parse_detailed_name&quot;</span>)]
     </span><span class="kw">pub fn </span>parse_detailed_name(
         detailed_name: <span class="kw-2">&amp;</span>str,
     ) -&gt; <span class="prelude-ty">Result</span>&lt;(glib::GString, glib::Variant), glib::Error&gt; {
@@ -701,7 +701,7 @@
     /// # Returns
     ///
     /// a detailed format string
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_print_detailed_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_print_detailed_name&quot;</span>)]
     </span><span class="kw">pub fn </span>print_detailed_name(
         action_name: <span class="kw-2">&amp;</span>str,
         target_value: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>glib::Variant&gt;,
@@ -730,7 +730,7 @@
     /// If the `parameter` GVariant is floating, it is consumed.
     /// ## `parameter`
     /// the parameter to the activation
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_activate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_activate&quot;</span>)]
     </span><span class="kw">fn </span>activate(<span class="kw-2">&amp;</span><span class="self">self</span>, parameter: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>glib::Variant&gt;);
 
     <span class="doccomment">/// Request for the state of `self` to be changed to `value`.
@@ -745,7 +745,7 @@
     /// If the `value` GVariant is floating, it is consumed.
     /// ## `value`
     /// the new state
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_change_state&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_change_state&quot;</span>)]
     </span><span class="kw">fn </span>change_state(<span class="kw-2">&amp;</span><span class="self">self</span>, value: <span class="kw-2">&amp;</span>glib::Variant);
 
     <span class="doccomment">/// Checks if `self` is currently enabled.
@@ -756,7 +756,7 @@
     /// # Returns
     ///
     /// whether the action is enabled
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_get_enabled&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_get_enabled&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_enabled&quot;</span>)]
     </span><span class="kw">fn </span>is_enabled(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -765,7 +765,7 @@
     /// # Returns
     ///
     /// the name of the action
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_get_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_get_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_name&quot;</span>)]
     </span><span class="kw">fn </span>name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString;
 
@@ -781,7 +781,7 @@
     /// # Returns
     ///
     /// the parameter type
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_get_parameter_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_get_parameter_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_parameter_type&quot;</span>)]
     </span><span class="kw">fn </span>parameter_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::VariantType&gt;;
 
@@ -797,7 +797,7 @@
     /// # Returns
     ///
     /// the current state of the action
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_get_state&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_get_state&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_state&quot;</span>)]
     </span><span class="kw">fn </span>state(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::Variant&gt;;
 
@@ -823,7 +823,7 @@
     /// # Returns
     ///
     /// the state range hint
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_get_state_hint&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_get_state_hint&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_state_hint&quot;</span>)]
     </span><span class="kw">fn </span>state_hint(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::Variant&gt;;
 
@@ -843,23 +843,23 @@
     /// # Returns
     ///
     /// the state type, if the action is stateful
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_get_state_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_get_state_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_state_type&quot;</span>)]
     </span><span class="kw">fn </span>state_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::VariantType&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;enabled&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;enabled&quot;</span>)]
     </span><span class="kw">fn </span>connect_enabled_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;name&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;name&quot;</span>)]
     </span><span class="kw">fn </span>connect_name_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;parameter-type&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;parameter-type&quot;</span>)]
     </span><span class="kw">fn </span>connect_parameter_type_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;state&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;state&quot;</span>)]
     </span><span class="kw">fn </span>connect_state_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;state-type&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;state-type&quot;</span>)]
     </span><span class="kw">fn </span>connect_state_type_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -1024,4 +1024,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -318,7 +318,7 @@
     /// # Implements
     ///
     /// [`NetworkAddressExt`][trait@crate::prelude::NetworkAddressExt], [`trait@glib::ObjectExt`], [`SocketConnectableExt`][trait@crate::prelude::SocketConnectableExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GNetworkAddress&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GNetworkAddress&quot;</span>)]
     </span><span class="kw">pub struct </span>NetworkAddress(Object&lt;ffi::GNetworkAddress, ffi::GNetworkAddressClass&gt;) @implements SocketConnectable;
 
     <span class="kw">match fn </span>{
@@ -345,7 +345,7 @@
     /// # Returns
     ///
     /// the new [`NetworkAddress`][crate::NetworkAddress]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_network_address_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_network_address_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(hostname: <span class="kw-2">&amp;</span>str, port: u16) -&gt; NetworkAddress {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_network_address_new(hostname.to_glib_none().<span class="number">0</span>, port)) }
     }
@@ -368,7 +368,7 @@
     /// # Returns
     ///
     /// the new [`NetworkAddress`][crate::NetworkAddress]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_network_address_new_loopback&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_network_address_new_loopback&quot;</span>)]
     </span><span class="kw">pub fn </span>new_loopback(port: u16) -&gt; NetworkAddress {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_network_address_new_loopback(port)) }
     }
@@ -403,7 +403,7 @@
     ///
     /// the new
     ///  [`NetworkAddress`][crate::NetworkAddress], or [`None`] on error
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_network_address_parse&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_network_address_parse&quot;</span>)]
     </span><span class="kw">pub fn </span>parse(host_and_port: <span class="kw-2">&amp;</span>str, default_port: u16) -&gt; <span class="prelude-ty">Result</span>&lt;NetworkAddress, glib::Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
@@ -435,7 +435,7 @@
     ///
     /// the new
     ///  [`NetworkAddress`][crate::NetworkAddress], or [`None`] on error
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_network_address_parse_uri&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_network_address_parse_uri&quot;</span>)]
     </span><span class="kw">pub fn </span>parse_uri(uri: <span class="kw-2">&amp;</span>str, default_port: u16) -&gt; <span class="prelude-ty">Result</span>&lt;NetworkAddress, glib::Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
@@ -465,7 +465,7 @@
     /// # Returns
     ///
     /// `self`&#39;s hostname
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_network_address_get_hostname&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_network_address_get_hostname&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_hostname&quot;</span>)]
     </span><span class="kw">fn </span>hostname(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString;
 
@@ -474,7 +474,7 @@
     /// # Returns
     ///
     /// `self`&#39;s port (which may be 0)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_network_address_get_port&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_network_address_get_port&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_port&quot;</span>)]
     </span><span class="kw">fn </span>port(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u16;
 
@@ -483,7 +483,7 @@
     /// # Returns
     ///
     /// `self`&#39;s scheme ([`None`] if not built from URI)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_network_address_get_scheme&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_network_address_get_scheme&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_scheme&quot;</span>)]
     </span><span class="kw">fn </span>scheme(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 }
@@ -516,4 +516,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

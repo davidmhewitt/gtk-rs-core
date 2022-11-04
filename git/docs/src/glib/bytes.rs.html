@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -369,7 +369,7 @@
     /// let b = Bytes::from_static(s);
     /// assert_eq!(&amp;s[..], b);
     /// ```
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GBytes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GBytes&quot;</span>)]
     </span><span class="kw">pub struct </span>Bytes(Shared&lt;ffi::GBytes&gt;);
 
     <span class="kw">match fn </span>{
@@ -382,7 +382,7 @@
 <span class="kw">impl </span>Bytes {
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Copies `data` into a new shared slice.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_bytes_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_bytes_new&quot;</span>)]
     </span><span class="kw">fn </span>new&lt;T: AsRef&lt;[u8]&gt;&gt;(data: T) -&gt; Bytes {
         <span class="kw">let </span>data = data.as_ref();
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_bytes_new(data.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>, data.len())) }
@@ -390,7 +390,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Creates a view into static `data` without copying.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_bytes_new_static&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_bytes_new_static&quot;</span>)]
     </span><span class="kw">pub fn </span>from_static(data: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>[u8]) -&gt; Bytes {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::g_bytes_new_static(
@@ -465,7 +465,7 @@
 }
 
 <span class="kw">impl </span>PartialEq <span class="kw">for </span>Bytes {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_bytes_equal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_bytes_equal&quot;</span>)]
     </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::g_bytes_equal(
@@ -504,37 +504,37 @@
 
 <span class="macro">macro_rules! </span>impl_cmp {
     (<span class="macro-nonterminal">$lhs</span>:ty, <span class="macro-nonterminal">$rhs</span>: ty) =&gt; {
-        <span class="attribute">#[allow(clippy::redundant_slicing)]
+        <span class="attr">#[allow(clippy::redundant_slicing)]
         #[allow(clippy::extra_unused_lifetimes)]
         </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>, <span class="lifetime">&#39;b</span>&gt; PartialEq&lt;<span class="macro-nonterminal">$rhs</span>&gt; <span class="kw">for </span><span class="macro-nonterminal">$lhs </span>{
-            <span class="attribute">#[inline]
+            <span class="attr">#[inline]
             </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="macro-nonterminal">$rhs</span>) -&gt; bool {
                 <span class="self">self</span>[..].eq(<span class="kw-2">&amp;</span>other[..])
             }
         }
 
-        <span class="attribute">#[allow(clippy::redundant_slicing)]
+        <span class="attr">#[allow(clippy::redundant_slicing)]
         #[allow(clippy::extra_unused_lifetimes)]
         </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>, <span class="lifetime">&#39;b</span>&gt; PartialEq&lt;<span class="macro-nonterminal">$lhs</span>&gt; <span class="kw">for </span><span class="macro-nonterminal">$rhs </span>{
-            <span class="attribute">#[inline]
+            <span class="attr">#[inline]
             </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="macro-nonterminal">$lhs</span>) -&gt; bool {
                 <span class="self">self</span>[..].eq(<span class="kw-2">&amp;</span>other[..])
             }
         }
 
-        <span class="attribute">#[allow(clippy::redundant_slicing)]
+        <span class="attr">#[allow(clippy::redundant_slicing)]
         #[allow(clippy::extra_unused_lifetimes)]
         </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>, <span class="lifetime">&#39;b</span>&gt; PartialOrd&lt;<span class="macro-nonterminal">$rhs</span>&gt; <span class="kw">for </span><span class="macro-nonterminal">$lhs </span>{
-            <span class="attribute">#[inline]
+            <span class="attr">#[inline]
             </span><span class="kw">fn </span>partial_cmp(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="macro-nonterminal">$rhs</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Ordering&gt; {
                 <span class="self">self</span>[..].partial_cmp(<span class="kw-2">&amp;</span>other[..])
             }
         }
 
-        <span class="attribute">#[allow(clippy::redundant_slicing)]
+        <span class="attr">#[allow(clippy::redundant_slicing)]
         #[allow(clippy::extra_unused_lifetimes)]
         </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>, <span class="lifetime">&#39;b</span>&gt; PartialOrd&lt;<span class="macro-nonterminal">$lhs</span>&gt; <span class="kw">for </span><span class="macro-nonterminal">$rhs </span>{
-            <span class="attribute">#[inline]
+            <span class="attr">#[inline]
             </span><span class="kw">fn </span>partial_cmp(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="macro-nonterminal">$lhs</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Ordering&gt; {
                 <span class="self">self</span>[..].partial_cmp(<span class="kw-2">&amp;</span>other[..])
             }
@@ -555,12 +555,12 @@
     }
 }
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use </span>std::collections::HashSet;
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>eq() {
         <span class="kw">let </span>abc: <span class="kw-2">&amp;</span>[u8] = <span class="string">b&quot;abc&quot;</span>;
         <span class="kw">let </span>def: <span class="kw-2">&amp;</span>[u8] = <span class="string">b&quot;def&quot;</span>;
@@ -573,7 +573,7 @@
         <span class="macro">assert_ne!</span>(a1, def);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>ord() {
         <span class="kw">let </span>abc: <span class="kw-2">&amp;</span>[u8] = <span class="string">b&quot;abc&quot;</span>;
         <span class="kw">let </span>def: <span class="kw-2">&amp;</span>[u8] = <span class="string">b&quot;def&quot;</span>;
@@ -587,7 +587,7 @@
         <span class="macro">assert!</span>(def &gt; a);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>hash() {
         <span class="kw">let </span>b1 = Bytes::from(<span class="string">b&quot;this is a test&quot;</span>);
         <span class="kw">let </span>b2 = Bytes::from(<span class="string">b&quot;this is a test&quot;</span>);
@@ -598,18 +598,18 @@
         <span class="macro">assert!</span>(!set.contains(<span class="kw-2">&amp;</span>b3));
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>from_static() {
         <span class="kw">let </span>b1 = Bytes::from_static(<span class="string">b&quot;this is a test&quot;</span>);
         <span class="kw">let </span>b2 = Bytes::from(<span class="string">b&quot;this is a test&quot;</span>);
         <span class="macro">assert_eq!</span>(b1, b2);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>from_owned() {
         <span class="kw">let </span>b = Bytes::from_owned(<span class="macro">vec!</span>[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);
         <span class="macro">assert_eq!</span>(b, [<span class="number">1u8</span>, <span class="number">2u8</span>, <span class="number">3u8</span>].as_ref());
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

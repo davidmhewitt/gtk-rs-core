@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -512,7 +512,7 @@
     /// # Implements
     ///
     /// [`IOStreamExt`][trait@crate::prelude::IOStreamExt], [`trait@glib::ObjectExt`], [`IOStreamExtManual`][trait@crate::prelude::IOStreamExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GIOStream&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GIOStream&quot;</span>)]
     </span><span class="kw">pub struct </span>IOStream(Object&lt;ffi::GIOStream, ffi::GIOStreamClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -531,7 +531,7 @@
 /// [`FileIOStream`][struct@crate::FileIOStream], [`IOStream`][struct@crate::IOStream], [`SimpleIOStream`][struct@crate::SimpleIOStream], [`SocketConnection`][struct@crate::SocketConnection], [`TlsConnection`][struct@crate::TlsConnection]
 </span><span class="kw">pub trait </span>IOStreamExt: <span class="lifetime">&#39;static </span>{
     <span class="doccomment">/// Clears the pending flag on `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_io_stream_clear_pending&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_io_stream_clear_pending&quot;</span>)]
     </span><span class="kw">fn </span>clear_pending(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
     <span class="doccomment">/// Closes the stream, releasing resources related to it. This will also
@@ -573,7 +573,7 @@
     /// # Returns
     ///
     /// [`true`] on success, [`false`] on failure
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_io_stream_close&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_io_stream_close&quot;</span>)]
     </span><span class="kw">fn </span>close(<span class="kw-2">&amp;</span><span class="self">self</span>, cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
     <span class="doccomment">/// Requests an asynchronous close of the stream, releasing resources
@@ -592,7 +592,7 @@
     /// optional cancellable object
     /// ## `callback`
     /// callback to call when the request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_io_stream_close_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_io_stream_close_async&quot;</span>)]
     </span><span class="kw">fn </span>close_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         io_priority: glib::Priority,
@@ -612,7 +612,7 @@
     ///
     /// a [`InputStream`][crate::InputStream], owned by the [`IOStream`][crate::IOStream].
     /// Do not free.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_io_stream_get_input_stream&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_io_stream_get_input_stream&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_input_stream&quot;</span>)]
     </span><span class="kw">fn </span>input_stream(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; InputStream;
 
@@ -623,7 +623,7 @@
     ///
     /// a [`OutputStream`][crate::OutputStream], owned by the [`IOStream`][crate::IOStream].
     /// Do not free.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_io_stream_get_output_stream&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_io_stream_get_output_stream&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_output_stream&quot;</span>)]
     </span><span class="kw">fn </span>output_stream(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; OutputStream;
 
@@ -632,7 +632,7 @@
     /// # Returns
     ///
     /// [`true`] if `self` has pending actions.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_io_stream_has_pending&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_io_stream_has_pending&quot;</span>)]
     </span><span class="kw">fn </span>has_pending(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
     <span class="doccomment">/// Checks if a stream is closed.
@@ -640,7 +640,7 @@
     /// # Returns
     ///
     /// [`true`] if the stream is closed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_io_stream_is_closed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_io_stream_is_closed&quot;</span>)]
     </span><span class="kw">fn </span>is_closed(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
     <span class="doccomment">/// Sets `self` to have actions pending. If the pending flag is
@@ -650,10 +650,10 @@
     /// # Returns
     ///
     /// [`true`] if pending was previously unset and is now set.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_io_stream_set_pending&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_io_stream_set_pending&quot;</span>)]
     </span><span class="kw">fn </span>set_pending(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;closed&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;closed&quot;</span>)]
     </span><span class="kw">fn </span>connect_closed_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -810,4 +810,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

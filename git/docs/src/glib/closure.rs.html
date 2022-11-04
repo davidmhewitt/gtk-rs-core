@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -535,7 +535,7 @@
 <span class="kw">use </span><span class="kw">crate</span>::Value;
 
 <span class="macro">wrapper! </span>{
-    <span class="attribute">#[derive(PartialEq, Eq, PartialOrd, Ord, Debug, Hash)]
+    <span class="attr">#[derive(PartialEq, Eq, PartialOrd, Ord, Debug, Hash)]
     #[doc(alias = <span class="string">&quot;GClosure&quot;</span>)]
     </span><span class="kw">pub struct </span>Closure(Shared&lt;gobject_ffi::GClosure&gt;);
 
@@ -549,7 +549,7 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, PartialEq, Eq, PartialOrd, Ord, Debug, Hash)]
+<span class="attr">#[derive(Clone, PartialEq, Eq, PartialOrd, Ord, Debug, Hash)]
 </span><span class="kw">pub struct </span>RustClosure(Closure);
 
 <span class="kw">impl </span>RustClosure {
@@ -579,7 +579,7 @@
     ///     2,
     /// );
     /// ```
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_closure_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_closure_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new&lt;F: Fn(<span class="kw-2">&amp;</span>[Value]) -&gt; <span class="prelude-ty">Option</span>&lt;Value&gt; + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(callback: F) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>(Closure::new(callback))
     }
@@ -596,7 +596,7 @@
     /// will panic.
     ///
     /// Invoking the closure from a different thread than this one will panic.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_closure_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_closure_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new_local&lt;F: Fn(<span class="kw-2">&amp;</span>[Value]) -&gt; <span class="prelude-ty">Option</span>&lt;Value&gt; + <span class="lifetime">&#39;static</span>&gt;(callback: F) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>(Closure::new_local(callback))
     }
@@ -612,7 +612,7 @@
     ///
     /// The argument types and return value type must match the ones expected by the closure or
     /// otherwise this function panics.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_closure_invoke&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_closure_invoke&quot;</span>)]
     </span><span class="kw">pub fn </span>invoke&lt;R: TryFromClosureReturnValue&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, values: <span class="kw-2">&amp;</span>[<span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue]) -&gt; R {
         <span class="kw">let </span>values = values
             .iter()
@@ -633,7 +633,7 @@
     ///
     /// The argument types and return value type must match the ones expected by the closure or
     /// otherwise this function panics.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_closure_invoke&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_closure_invoke&quot;</span>)]
     </span><span class="kw">pub fn </span>invoke_with_values(<span class="kw-2">&amp;</span><span class="self">self</span>, return_type: Type, values: <span class="kw-2">&amp;</span>[Value]) -&gt; <span class="prelude-ty">Option</span>&lt;Value&gt; {
         <span class="kw">unsafe </span>{ <span class="self">self</span>.<span class="number">0</span>.invoke_with_values(return_type, values) }
     }
@@ -642,7 +642,7 @@
     </span><span class="doccomment">/// Invalidates the closure.
     ///
     /// Invoking an invalidated closure has no effect.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_closure_invalidate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_closure_invalidate&quot;</span>)]
     </span><span class="kw">pub fn </span>invalidate(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="self">self</span>.<span class="number">0</span>.invalidate();
     }
@@ -700,7 +700,7 @@
     ///
     /// assert_eq!(res, 2);
     /// ```
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_closure_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_closure_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new&lt;F: Fn(<span class="kw-2">&amp;</span>[Value]) -&gt; <span class="prelude-ty">Option</span>&lt;Value&gt; + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(callback: F) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{ <span class="self">Self</span>::new_unsafe(callback) }
     }
@@ -717,7 +717,7 @@
     /// will panic.
     ///
     /// Invoking the closure from a different thread than this one will panic.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_closure_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_closure_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new_local&lt;F: Fn(<span class="kw-2">&amp;</span>[Value]) -&gt; <span class="prelude-ty">Option</span>&lt;Value&gt; + <span class="lifetime">&#39;static</span>&gt;(callback: F) -&gt; <span class="self">Self </span>{
         <span class="kw">let </span>callback = <span class="kw">crate</span>::thread_guard::ThreadGuard::new(callback);
 
@@ -732,7 +732,7 @@
     /// The captured variables of the closure must stay valid as long as the return value of this
     /// constructor does, and it must be valid to call the closure from any thread that is used by
     /// callers.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_closure_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_closure_new&quot;</span>)]
     </span><span class="kw">pub unsafe fn </span>new_unsafe&lt;F: Fn(<span class="kw-2">&amp;</span>[Value]) -&gt; <span class="prelude-ty">Option</span>&lt;Value&gt;&gt;(callback: F) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>marshal&lt;F&gt;(
             _closure: <span class="kw-2">*mut </span>gobject_ffi::GClosure,
@@ -819,7 +819,7 @@
     ///
     /// Closures created from Rust via e.g. [`Closure::new`] will panic on type mismatches but
     /// this is not guaranteed for closures created from other languages.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_closure_invoke&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_closure_invoke&quot;</span>)]
     </span><span class="kw">pub unsafe fn </span>invoke_with_values(<span class="kw-2">&amp;</span><span class="self">self</span>, return_type: Type, values: <span class="kw-2">&amp;</span>[Value]) -&gt; <span class="prelude-ty">Option</span>&lt;Value&gt; {
         <span class="kw">let </span><span class="kw-2">mut </span>result = <span class="kw">if </span>return_type == Type::UNIT {
             Value::uninitialized()
@@ -851,7 +851,7 @@
     </span><span class="doccomment">/// Invalidates the closure.
     ///
     /// Invoking an invalidated closure has no effect.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_closure_invalidate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_closure_invalidate&quot;</span>)]
     </span><span class="kw">pub fn </span>invalidate(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             gobject_ffi::g_closure_invalidate(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
@@ -914,14 +914,14 @@
 <span class="kw">unsafe impl </span>Send <span class="kw">for </span>Closure {}
 <span class="kw">unsafe impl </span>Sync <span class="kw">for </span>Closure {}
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use </span>std::sync::atomic::{AtomicUsize, Ordering};
     <span class="kw">use </span>std::sync::Arc;
 
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
 
-    <span class="attribute">#[allow(clippy::unnecessary_wraps)]
+    <span class="attr">#[allow(clippy::unnecessary_wraps)]
     </span><span class="kw">fn </span>closure_fn(values: <span class="kw-2">&amp;</span>[Value]) -&gt; <span class="prelude-ty">Option</span>&lt;Value&gt; {
         <span class="macro">assert_eq!</span>(values.len(), <span class="number">2</span>);
         <span class="kw">let </span>string_arg = values[<span class="number">0</span>].get::&lt;<span class="kw-2">&amp;</span>str&gt;();
@@ -931,7 +931,7 @@
         <span class="prelude-val">Some</span>(<span class="number">24</span>.to_value())
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_closure() {
         <span class="kw">let </span>call_count = Arc::new(AtomicUsize::new(<span class="number">0</span>));
 
@@ -964,4 +964,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

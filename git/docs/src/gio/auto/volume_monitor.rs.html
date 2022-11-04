@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -685,7 +685,7 @@
     /// # Implements
     ///
     /// [`VolumeMonitorExt`][trait@crate::prelude::VolumeMonitorExt], [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GVolumeMonitor&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GVolumeMonitor&quot;</span>)]
     </span><span class="kw">pub struct </span>VolumeMonitor(Object&lt;ffi::GVolumeMonitor, ffi::GVolumeMonitorClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -702,7 +702,7 @@
     ///
     /// a reference to the [`VolumeMonitor`][crate::VolumeMonitor] used by gio. Call
     ///  `g_object_unref()` when done with it.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_volume_monitor_get&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_volume_monitor_get&quot;</span>)]
     </span><span class="kw">pub fn </span>get() -&gt; VolumeMonitor {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_volume_monitor_get()) }
     }
@@ -722,7 +722,7 @@
     /// # Returns
     ///
     /// a `GList` of connected [`Drive`][crate::Drive] objects.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_volume_monitor_get_connected_drives&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_volume_monitor_get_connected_drives&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_connected_drives&quot;</span>)]
     </span><span class="kw">fn </span>connected_drives(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;Drive&gt;;
 
@@ -734,7 +734,7 @@
     ///
     /// a [`Mount`][crate::Mount] or [`None`] if no such mount is available.
     ///  Free the returned object with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_volume_monitor_get_mount_for_uuid&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_volume_monitor_get_mount_for_uuid&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_mount_for_uuid&quot;</span>)]
     </span><span class="kw">fn </span>mount_for_uuid(<span class="kw-2">&amp;</span><span class="self">self</span>, uuid: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;Mount&gt;;
 
@@ -746,7 +746,7 @@
     /// # Returns
     ///
     /// a `GList` of [`Mount`][crate::Mount] objects.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_volume_monitor_get_mounts&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_volume_monitor_get_mounts&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_mounts&quot;</span>)]
     </span><span class="kw">fn </span>mounts(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;Mount&gt;;
 
@@ -758,7 +758,7 @@
     ///
     /// a [`Volume`][crate::Volume] or [`None`] if no such volume is available.
     ///  Free the returned object with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_volume_monitor_get_volume_for_uuid&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_volume_monitor_get_volume_for_uuid&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_volume_for_uuid&quot;</span>)]
     </span><span class="kw">fn </span>volume_for_uuid(<span class="kw-2">&amp;</span><span class="self">self</span>, uuid: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;Volume&gt;;
 
@@ -770,50 +770,50 @@
     /// # Returns
     ///
     /// a `GList` of [`Volume`][crate::Volume] objects.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_volume_monitor_get_volumes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_volume_monitor_get_volumes&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_volumes&quot;</span>)]
     </span><span class="kw">fn </span>volumes(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;Volume&gt;;
 
     <span class="doccomment">/// Emitted when a drive changes.
     /// ## `drive`
     /// the drive that changed
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;drive-changed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;drive-changed&quot;</span>)]
     </span><span class="kw">fn </span>connect_drive_changed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>Drive) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// Emitted when a drive is connected to the system.
     /// ## `drive`
     /// a [`Drive`][crate::Drive] that was connected.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;drive-connected&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;drive-connected&quot;</span>)]
     </span><span class="kw">fn </span>connect_drive_connected&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>Drive) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// Emitted when a drive is disconnected from the system.
     /// ## `drive`
     /// a [`Drive`][crate::Drive] that was disconnected.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;drive-disconnected&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;drive-disconnected&quot;</span>)]
     </span><span class="kw">fn </span>connect_drive_disconnected&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>Drive) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// Emitted when the eject button is pressed on `drive`.
     /// ## `drive`
     /// the drive where the eject button was pressed
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;drive-eject-button&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;drive-eject-button&quot;</span>)]
     </span><span class="kw">fn </span>connect_drive_eject_button&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>Drive) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// Emitted when the stop button is pressed on `drive`.
     /// ## `drive`
     /// the drive where the stop button was pressed
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;drive-stop-button&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;drive-stop-button&quot;</span>)]
     </span><span class="kw">fn </span>connect_drive_stop_button&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>Drive) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// Emitted when a mount is added.
     /// ## `mount`
     /// a [`Mount`][crate::Mount] that was added.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;mount-added&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;mount-added&quot;</span>)]
     </span><span class="kw">fn </span>connect_mount_added&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>Mount) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// Emitted when a mount changes.
     /// ## `mount`
     /// a [`Mount`][crate::Mount] that changed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;mount-changed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;mount-changed&quot;</span>)]
     </span><span class="kw">fn </span>connect_mount_changed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>Mount) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// May be emitted when a mount is about to be removed.
@@ -822,31 +822,31 @@
     /// GIO was used to unmount.
     /// ## `mount`
     /// a [`Mount`][crate::Mount] that is being unmounted.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;mount-pre-unmount&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;mount-pre-unmount&quot;</span>)]
     </span><span class="kw">fn </span>connect_mount_pre_unmount&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>Mount) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// Emitted when a mount is removed.
     /// ## `mount`
     /// a [`Mount`][crate::Mount] that was removed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;mount-removed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;mount-removed&quot;</span>)]
     </span><span class="kw">fn </span>connect_mount_removed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>Mount) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// Emitted when a mountable volume is added to the system.
     /// ## `volume`
     /// a [`Volume`][crate::Volume] that was added.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;volume-added&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;volume-added&quot;</span>)]
     </span><span class="kw">fn </span>connect_volume_added&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>Volume) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// Emitted when mountable volume is changed.
     /// ## `volume`
     /// a [`Volume`][crate::Volume] that changed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;volume-changed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;volume-changed&quot;</span>)]
     </span><span class="kw">fn </span>connect_volume_changed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>Volume) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// Emitted when a mountable volume is removed from the system.
     /// ## `volume`
     /// a [`Volume`][crate::Volume] that was removed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;volume-removed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;volume-removed&quot;</span>)]
     </span><span class="kw">fn </span>connect_volume_removed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>Volume) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -1236,4 +1236,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

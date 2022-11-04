@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gobject_sys/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gobject_sys/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -2868,7 +2868,7 @@
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
 
-</span><span class="attribute">#![allow(non_camel_case_types, non_upper_case_globals, non_snake_case)]
+</span><span class="attr">#![allow(non_camel_case_types, non_upper_case_globals, non_snake_case)]
 #![allow(
     clippy::approx_constant,
     clippy::type_complexity,
@@ -2883,7 +2883,7 @@
     intptr_t, size_t, ssize_t, uintptr_t, FILE,
 };
 
-<span class="attribute">#[allow(unused_imports)]
+<span class="attr">#[allow(unused_imports)]
 </span><span class="kw">use </span>glib::{gboolean, gconstpointer, gpointer, GType};
 
 <span class="kw">pub const </span>G_TYPE_INVALID: GType = <span class="number">0 </span>&lt;&lt; G_TYPE_FUNDAMENTAL_SHIFT;
@@ -2995,7 +2995,7 @@
 <span class="kw">pub const </span>G_TYPE_FLAG_DEEP_DERIVABLE: GTypeFundamentalFlags = <span class="number">8</span>;
 
 <span class="comment">// Unions
-</span><span class="attribute">#[repr(C)]
+</span><span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GTypeCValue {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -3007,7 +3007,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub union </span>GValue_data {
     <span class="kw">pub </span>v_int: c_int,
@@ -3037,7 +3037,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub union </span>GWeakRef_priv {
     <span class="kw">pub </span>p: gpointer,
@@ -3098,7 +3098,7 @@
 <span class="kw">pub type </span>GWeakNotify = <span class="prelude-ty">Option</span>&lt;<span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn</span>(gpointer, <span class="kw-2">*mut </span>GObject)&gt;;
 
 <span class="comment">// Records
-</span><span class="attribute">#[repr(C)]
+</span><span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GCClosure {
     _truncated_record_marker: c_void,
     <span class="comment">// /*Ignored*/field closure has incomplete type
@@ -3110,7 +3110,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GClosure {
     <span class="kw">pub </span>ref_count: c_uint,
     _truncated_record_marker: c_void,
@@ -3123,7 +3123,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GClosureNotifyData {
     <span class="kw">pub </span>data: gpointer,
@@ -3139,7 +3139,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GEnumClass {
     <span class="kw">pub </span>g_type_class: GTypeClass,
@@ -3161,7 +3161,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GEnumValue {
     <span class="kw">pub </span>value: c_int,
@@ -3179,7 +3179,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GFlagsClass {
     <span class="kw">pub </span>g_type_class: GTypeClass,
@@ -3199,7 +3199,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GFlagsValue {
     <span class="kw">pub </span>value: c_uint,
@@ -3217,7 +3217,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GInitiallyUnownedClass {
     <span class="kw">pub </span>g_type_class: GTypeClass,
@@ -3260,7 +3260,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GInterfaceInfo {
     <span class="kw">pub </span>interface_init: GInterfaceInitFunc,
@@ -3278,7 +3278,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GObjectClass {
     <span class="kw">pub </span>g_type_class: GTypeClass,
@@ -3321,7 +3321,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GObjectConstructParam {
     <span class="kw">pub </span>pspec: <span class="kw-2">*mut </span>GParamSpec,
@@ -3337,7 +3337,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecClass {
     <span class="kw">pub </span>g_type_class: GTypeClass,
@@ -3365,7 +3365,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>_GParamSpecPool {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -3373,7 +3373,7 @@
 
 <span class="kw">pub type </span>GParamSpecPool = <span class="kw-2">*mut </span>_GParamSpecPool;
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecTypeInfo {
     <span class="kw">pub </span>instance_size: u16,
@@ -3402,7 +3402,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParameter {
     <span class="kw">pub </span>name: <span class="kw-2">*const </span>c_char,
@@ -3418,7 +3418,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GSignalInvocationHint {
     <span class="kw">pub </span>signal_id: c_uint,
@@ -3436,7 +3436,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GSignalQuery {
     <span class="kw">pub </span>signal_id: c_uint,
@@ -3462,7 +3462,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GTypeClass {
     <span class="kw">pub </span>g_type: GType,
@@ -3474,7 +3474,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GTypeFundamentalInfo {
     <span class="kw">pub </span>type_flags: GTypeFundamentalFlags,
@@ -3488,7 +3488,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GTypeInfo {
     <span class="kw">pub </span>class_size: u16,
@@ -3520,7 +3520,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GTypeInstance {
     <span class="kw">pub </span>g_class: <span class="kw-2">*mut </span>GTypeClass,
@@ -3533,7 +3533,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GTypeInterface {
     <span class="kw">pub </span>g_type: GType,
@@ -3547,7 +3547,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GTypeModuleClass {
     <span class="kw">pub </span>parent_class: GObjectClass,
@@ -3573,7 +3573,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GTypePluginClass {
     <span class="kw">pub </span>base_iface: GTypeInterface,
@@ -3594,7 +3594,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GTypeQuery {
     <span class="kw">pub </span>type_: GType,
@@ -3614,7 +3614,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GTypeValueTable {
     <span class="kw">pub </span>value_init: <span class="prelude-ty">Option</span>&lt;<span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn</span>(<span class="kw-2">*mut </span>GValue)&gt;,
@@ -3646,7 +3646,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GValue {
     <span class="kw">pub </span>g_type: GType,
@@ -3661,7 +3661,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GValueArray {
     <span class="kw">pub </span>n_values: c_uint,
@@ -3678,7 +3678,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GWeakRef {
     <span class="kw">pub </span>priv_: GWeakRef_priv,
@@ -3693,7 +3693,7 @@
 }
 
 <span class="comment">// Classes
-</span><span class="attribute">#[repr(C)]
+</span><span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GBinding {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -3705,7 +3705,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GBindingGroup {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -3718,7 +3718,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GInitiallyUnowned {
     <span class="kw">pub </span>g_type_instance: GTypeInstance,
@@ -3734,7 +3734,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GObject {
     <span class="kw">pub </span>g_type_instance: GTypeInstance,
@@ -3750,7 +3750,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpec {
     <span class="kw">pub </span>g_type_instance: GTypeInstance,
@@ -3777,7 +3777,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecBoolean {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -3793,7 +3793,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecBoxed {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -3807,7 +3807,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecChar {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -3827,7 +3827,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecDouble {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -3849,7 +3849,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecEnum {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -3867,7 +3867,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecFlags {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -3885,7 +3885,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecFloat {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -3907,7 +3907,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecGType {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -3923,7 +3923,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecInt {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -3943,7 +3943,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecInt64 {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -3963,7 +3963,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecLong {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -3983,7 +3983,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecObject {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -3997,7 +3997,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecOverride {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -4011,7 +4011,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecParam {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -4025,7 +4025,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecPointer {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -4039,7 +4039,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecString {
     <span class="kw">pub </span>parent_instance: GParamSpec,
     <span class="kw">pub </span>default_value: <span class="kw-2">*mut </span>c_char,
@@ -4064,7 +4064,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecUChar {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -4084,7 +4084,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecUInt {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -4104,7 +4104,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecUInt64 {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -4124,7 +4124,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecULong {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -4144,7 +4144,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecUnichar {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -4160,7 +4160,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecValueArray {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -4178,7 +4178,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecVariant {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -4197,7 +4197,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GSignalGroup {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -4209,7 +4209,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GTypeModule {
     <span class="kw">pub </span>parent_instance: GObject,
@@ -4232,7 +4232,7 @@
 }
 
 <span class="comment">// Interfaces
-</span><span class="attribute">#[repr(C)]
+</span><span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GTypePlugin {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -4244,7 +4244,7 @@
     }
 }
 
-<span class="attribute">#[link(name = <span class="string">&quot;gobject-2.0&quot;</span>)]
+<span class="attr">#[link(name = <span class="string">&quot;gobject-2.0&quot;</span>)]
 </span><span class="kw">extern </span><span class="string">&quot;C&quot; </span>{
 
     <span class="comment">//=========================================================================
@@ -4616,7 +4616,7 @@
         instance_type: GType,
         interface_type: GType,
     ) -&gt; <span class="kw-2">*mut </span>GTypePlugin;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_type_interface_instantiatable_prerequisite(interface_type: GType) -&gt; GType;
     <span class="kw">pub fn </span>g_type_interface_peek(instance_class: gpointer, iface_type: GType) -&gt; gpointer;
@@ -4678,7 +4678,7 @@
     <span class="kw">pub fn </span>g_value_set_instance(value: <span class="kw-2">*mut </span>GValue, instance: gpointer);
     <span class="kw">pub fn </span>g_value_set_int(value: <span class="kw-2">*mut </span>GValue, v_int: c_int);
     <span class="kw">pub fn </span>g_value_set_int64(value: <span class="kw-2">*mut </span>GValue, v_int64: i64);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_value_set_interned_string(value: <span class="kw-2">*mut </span>GValue, v_string: <span class="kw-2">*const </span>c_char);
     <span class="kw">pub fn </span>g_value_set_long(value: <span class="kw-2">*mut </span>GValue, v_long: c_long);
@@ -4756,10 +4756,10 @@
     // GBinding
     //=========================================================================
     </span><span class="kw">pub fn </span>g_binding_get_type() -&gt; GType;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_binding_dup_source(binding: <span class="kw-2">*mut </span>GBinding) -&gt; <span class="kw-2">*mut </span>GObject;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_binding_dup_target(binding: <span class="kw-2">*mut </span>GBinding) -&gt; <span class="kw-2">*mut </span>GObject;
     <span class="kw">pub fn </span>g_binding_get_flags(binding: <span class="kw-2">*mut </span>GBinding) -&gt; GBindingFlags;
@@ -4772,13 +4772,13 @@
     <span class="comment">//=========================================================================
     // GBindingGroup
     //=========================================================================
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_binding_group_get_type() -&gt; GType;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_binding_group_new() -&gt; <span class="kw-2">*mut </span>GBindingGroup;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_binding_group_bind(
         self_: <span class="kw-2">*mut </span>GBindingGroup,
@@ -4787,7 +4787,7 @@
         target_property: <span class="kw-2">*const </span>c_char,
         flags: GBindingFlags,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_binding_group_bind_full(
         self_: <span class="kw-2">*mut </span>GBindingGroup,
@@ -4800,7 +4800,7 @@
         user_data: gpointer,
         user_data_destroy: glib::GDestroyNotify,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_binding_group_bind_with_closures(
         self_: <span class="kw-2">*mut </span>GBindingGroup,
@@ -4811,10 +4811,10 @@
         transform_to: <span class="kw-2">*mut </span>GClosure,
         transform_from: <span class="kw-2">*mut </span>GClosure,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_binding_group_dup_source(self_: <span class="kw-2">*mut </span>GBindingGroup) -&gt; <span class="kw-2">*mut </span>GObject;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_binding_group_set_source(self_: <span class="kw-2">*mut </span>GBindingGroup, source: <span class="kw-2">*mut </span>GObject);
 
@@ -4967,7 +4967,7 @@
     );
     <span class="kw">pub fn </span>g_object_steal_data(object: <span class="kw-2">*mut </span>GObject, key: <span class="kw-2">*const </span>c_char) -&gt; gpointer;
     <span class="kw">pub fn </span>g_object_steal_qdata(object: <span class="kw-2">*mut </span>GObject, quark: glib::GQuark) -&gt; gpointer;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_object_take_ref(object: <span class="kw-2">*mut </span>GObject) -&gt; <span class="kw-2">*mut </span>GObject;
     <span class="kw">pub fn </span>g_object_thaw_notify(object: <span class="kw-2">*mut </span>GObject);
@@ -4986,7 +4986,7 @@
         blurb: <span class="kw-2">*const </span>c_char,
         flags: GParamFlags,
     ) -&gt; <span class="kw-2">*mut </span>GParamSpec;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_param_spec_is_valid_name(name: <span class="kw-2">*const </span>c_char) -&gt; gboolean;
     <span class="kw">pub fn </span>g_param_spec_get_blurb(pspec: <span class="kw-2">*mut </span>GParamSpec) -&gt; <span class="kw-2">*const </span>c_char;
@@ -5012,16 +5012,16 @@
     <span class="comment">//=========================================================================
     // GSignalGroup
     //=========================================================================
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_group_get_type() -&gt; GType;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_group_new(target_type: GType) -&gt; <span class="kw-2">*mut </span>GSignalGroup;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_group_block(self_: <span class="kw-2">*mut </span>GSignalGroup);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_group_connect(
         self_: <span class="kw-2">*mut </span>GSignalGroup,
@@ -5029,7 +5029,7 @@
         c_handler: GCallback,
         data: gpointer,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_group_connect_after(
         self_: <span class="kw-2">*mut </span>GSignalGroup,
@@ -5037,7 +5037,7 @@
         c_handler: GCallback,
         data: gpointer,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_group_connect_closure(
         self_: <span class="kw-2">*mut </span>GSignalGroup,
@@ -5045,7 +5045,7 @@
         closure: <span class="kw-2">*mut </span>GClosure,
         after: gboolean,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_group_connect_data(
         self_: <span class="kw-2">*mut </span>GSignalGroup,
@@ -5055,7 +5055,7 @@
         notify: GClosureNotify,
         flags: GConnectFlags,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_group_connect_object(
         self_: <span class="kw-2">*mut </span>GSignalGroup,
@@ -5064,7 +5064,7 @@
         object: gpointer,
         flags: GConnectFlags,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_group_connect_swapped(
         self_: <span class="kw-2">*mut </span>GSignalGroup,
@@ -5072,13 +5072,13 @@
         c_handler: GCallback,
         data: gpointer,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_group_dup_target(self_: <span class="kw-2">*mut </span>GSignalGroup) -&gt; <span class="kw-2">*mut </span>GObject;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_group_set_target(self_: <span class="kw-2">*mut </span>GSignalGroup, target: <span class="kw-2">*mut </span>GObject);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_group_unblock(self_: <span class="kw-2">*mut </span>GSignalGroup);
 
@@ -5143,7 +5143,7 @@
         boxed_free: GBoxedFreeFunc,
     ) -&gt; GType;
     <span class="kw">pub fn </span>g_clear_object(object_ptr: <span class="kw-2">*mut *mut </span>GObject);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_62&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_clear_signal_handler(handler_id_ptr: <span class="kw-2">*mut </span>c_ulong, instance: <span class="kw-2">*mut </span>GObject);
     <span class="kw">pub fn </span>g_enum_complete_type_info(
@@ -5379,7 +5379,7 @@
         strict_validation: gboolean,
     ) -&gt; gboolean;
     <span class="kw">pub fn </span>g_param_value_defaults(pspec: <span class="kw-2">*mut </span>GParamSpec, value: <span class="kw-2">*const </span>GValue) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_param_value_is_valid(pspec: <span class="kw-2">*mut </span>GParamSpec, value: <span class="kw-2">*const </span>GValue) -&gt; gboolean;
     <span class="kw">pub fn </span>g_param_value_set_default(pspec: <span class="kw-2">*mut </span>GParamSpec, value: <span class="kw-2">*mut </span>GValue);
@@ -5499,7 +5499,7 @@
         detail: glib::GQuark,
         may_be_blocked: gboolean,
     ) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_is_valid_name(name: <span class="kw-2">*const </span>c_char) -&gt; gboolean;
     <span class="kw">pub fn </span>g_signal_list_ids(itype: GType, n_ids: <span class="kw-2">*mut </span>c_uint) -&gt; <span class="kw-2">*mut </span>c_uint;
@@ -5658,4 +5658,4 @@
 
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gobject_sys" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gobject_sys" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

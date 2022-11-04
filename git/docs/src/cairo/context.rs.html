@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../cairo/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../cairo/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1090,7 +1090,7 @@
     Antialias, Content, FillRule, FontSlant, FontWeight, LineCap, LineJoin, Operator,
     TextClusterFlags,
 };
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 <span class="kw">use </span>std::ffi::CString;
 <span class="kw">use </span>std::fmt;
@@ -1147,50 +1147,50 @@
     }
 }
 
-<span class="attribute">#[derive(Debug)]
+<span class="attr">#[derive(Debug)]
 #[repr(transparent)]
 </span><span class="kw">pub struct </span>Context(ptr::NonNull&lt;cairo_t&gt;);
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::cairo_t&gt; <span class="kw">for </span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Context {
     <span class="kw">type </span>Storage = <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Context;
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::cairo_t, <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Context&gt; {
         Stash(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), <span class="kw-2">*</span><span class="self">self</span>)
     }
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*mut </span>ffi::cairo_t {
         <span class="kw">unsafe </span>{ ffi::cairo_reference(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">impl </span>FromGlibPtrNone&lt;<span class="kw-2">*mut </span>ffi::cairo_t&gt; <span class="kw">for </span>Context {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_none(ptr: <span class="kw-2">*mut </span>ffi::cairo_t) -&gt; Context {
         <span class="self">Self</span>::from_raw_none(ptr)
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">impl </span>FromGlibPtrBorrow&lt;<span class="kw-2">*mut </span>ffi::cairo_t&gt; <span class="kw">for </span>Context {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_borrow(ptr: <span class="kw-2">*mut </span>ffi::cairo_t) -&gt; <span class="kw">crate</span>::Borrowed&lt;Context&gt; {
         <span class="self">Self</span>::from_raw_borrow(ptr)
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">impl </span>FromGlibPtrFull&lt;<span class="kw-2">*mut </span>ffi::cairo_t&gt; <span class="kw">for </span>Context {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*mut </span>ffi::cairo_t) -&gt; Context {
         <span class="self">Self</span>::from_raw_full(ptr)
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="macro">gvalue_impl!</span>(
     Context,
     cairo_t,
@@ -1212,20 +1212,20 @@
 }
 
 <span class="kw">impl </span>Context {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_raw_none(ptr: <span class="kw-2">*mut </span>ffi::cairo_t) -&gt; Context {
         <span class="macro">assert!</span>(!ptr.is_null());
         ffi::cairo_reference(ptr);
         Context(ptr::NonNull::new_unchecked(ptr))
     }
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_raw_borrow(ptr: <span class="kw-2">*mut </span>ffi::cairo_t) -&gt; <span class="kw">crate</span>::Borrowed&lt;Context&gt; {
         <span class="macro">assert!</span>(!ptr.is_null());
         <span class="kw">crate</span>::Borrowed::new(Context(ptr::NonNull::new_unchecked(ptr)))
     }
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_raw_full(ptr: <span class="kw-2">*mut </span>ffi::cairo_t) -&gt; Context {
         <span class="macro">assert!</span>(!ptr.is_null());
         Context(ptr::NonNull::new_unchecked(ptr))
@@ -1235,7 +1235,7 @@
         <span class="self">self</span>.<span class="number">0</span>.as_ptr()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_status&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_status&quot;</span>)]
     </span><span class="kw">pub fn </span>status(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">let </span>status = <span class="kw">unsafe </span>{ ffi::cairo_status(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) };
         status_to_result(status)
@@ -1246,63 +1246,63 @@
         ctx.status().map(|<span class="kw">_</span>| ctx)
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_save&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_save&quot;</span>)]
     </span><span class="kw">pub fn </span>save(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">unsafe </span>{ ffi::cairo_save(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
         <span class="self">self</span>.status()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_restore&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_restore&quot;</span>)]
     </span><span class="kw">pub fn </span>restore(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">unsafe </span>{ ffi::cairo_restore(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
         <span class="self">self</span>.status()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_target&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_target&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_get_target&quot;</span>)]
     </span><span class="kw">pub fn </span>target(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Surface {
         <span class="kw">unsafe </span>{ Surface::from_raw_none(ffi::cairo_get_target(<span class="self">self</span>.<span class="number">0</span>.as_ptr())) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_push_group&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_push_group&quot;</span>)]
     </span><span class="kw">pub fn </span>push_group(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{ ffi::cairo_push_group(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_push_group_with_content&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_push_group_with_content&quot;</span>)]
     </span><span class="kw">pub fn </span>push_group_with_content(<span class="kw-2">&amp;</span><span class="self">self</span>, content: Content) {
         <span class="kw">unsafe </span>{ ffi::cairo_push_group_with_content(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), content.into()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pop_group&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pop_group&quot;</span>)]
     </span><span class="kw">pub fn </span>pop_group(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;Pattern, Error&gt; {
         <span class="kw">let </span>pattern = <span class="kw">unsafe </span>{ Pattern::from_raw_full(ffi::cairo_pop_group(<span class="self">self</span>.<span class="number">0</span>.as_ptr())) };
         <span class="self">self</span>.status().map(|<span class="kw">_</span>| pattern)
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pop_group_to_source&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pop_group_to_source&quot;</span>)]
     </span><span class="kw">pub fn </span>pop_group_to_source(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">unsafe </span>{ ffi::cairo_pop_group_to_source(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) };
         <span class="self">self</span>.status()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_group_target&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_group_target&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_get_group_target&quot;</span>)]
     </span><span class="kw">pub fn </span>group_target(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Surface {
         <span class="kw">unsafe </span>{ Surface::from_raw_none(ffi::cairo_get_group_target(<span class="self">self</span>.<span class="number">0</span>.as_ptr())) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_set_source_rgb&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_set_source_rgb&quot;</span>)]
     </span><span class="kw">pub fn </span>set_source_rgb(<span class="kw-2">&amp;</span><span class="self">self</span>, red: f64, green: f64, blue: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_set_source_rgb(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), red, green, blue) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_set_source_rgba&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_set_source_rgba&quot;</span>)]
     </span><span class="kw">pub fn </span>set_source_rgba(<span class="kw-2">&amp;</span><span class="self">self</span>, red: f64, green: f64, blue: f64, alpha: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_set_source_rgba(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), red, green, blue, alpha) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_set_source&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_set_source&quot;</span>)]
     </span><span class="kw">pub fn </span>set_source(<span class="kw-2">&amp;</span><span class="self">self</span>, source: <span class="kw">impl </span>AsRef&lt;Pattern&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">let </span>source = source.as_ref();
         source.status()<span class="question-mark">?</span>;
@@ -1312,13 +1312,13 @@
         <span class="self">self</span>.status()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_source&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_source&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_get_source&quot;</span>)]
     </span><span class="kw">pub fn </span>source(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Pattern {
         <span class="kw">unsafe </span>{ Pattern::from_raw_none(ffi::cairo_get_source(<span class="self">self</span>.<span class="number">0</span>.as_ptr())) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_set_source_surface&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_set_source_surface&quot;</span>)]
     </span><span class="kw">pub fn </span>set_source_surface(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         surface: <span class="kw">impl </span>AsRef&lt;Surface&gt;,
@@ -1333,18 +1333,18 @@
         <span class="self">self</span>.status()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_set_antialias&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_set_antialias&quot;</span>)]
     </span><span class="kw">pub fn </span>set_antialias(<span class="kw-2">&amp;</span><span class="self">self</span>, antialias: Antialias) {
         <span class="kw">unsafe </span>{ ffi::cairo_set_antialias(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), antialias.into()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_antialias&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_antialias&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_get_antialias&quot;</span>)]
     </span><span class="kw">pub fn </span>antialias(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Antialias {
         <span class="kw">unsafe </span>{ Antialias::from(ffi::cairo_get_antialias(<span class="self">self</span>.<span class="number">0</span>.as_ptr())) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_set_dash&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_set_dash&quot;</span>)]
     </span><span class="kw">pub fn </span>set_dash(<span class="kw-2">&amp;</span><span class="self">self</span>, dashes: <span class="kw-2">&amp;</span>[f64], offset: f64) {
         <span class="kw">unsafe </span>{
             ffi::cairo_set_dash(
@@ -1356,13 +1356,13 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_dash_count&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_dash_count&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_get_dash_count&quot;</span>)]
     </span><span class="kw">pub fn </span>dash_count(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::cairo_get_dash_count(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_dash&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_dash&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_get_dash&quot;</span>)]
     </span><span class="kw">pub fn </span>dash(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (Vec&lt;f64&gt;, f64) {
         <span class="kw">let </span>dash_count = <span class="self">self</span>.dash_count() <span class="kw">as </span>usize;
@@ -1376,123 +1376,123 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_dash_dashes&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_dash_dashes&quot;</span>)]
     </span><span class="kw">pub fn </span>dash_dashes(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;f64&gt; {
         <span class="kw">let </span>(dashes, <span class="kw">_</span>) = <span class="self">self</span>.dash();
         dashes
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_dash_offset&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_dash_offset&quot;</span>)]
     </span><span class="kw">pub fn </span>dash_offset(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f64 {
         <span class="kw">let </span>(<span class="kw">_</span>, offset) = <span class="self">self</span>.dash();
         offset
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_set_fill_rule&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_set_fill_rule&quot;</span>)]
     </span><span class="kw">pub fn </span>set_fill_rule(<span class="kw-2">&amp;</span><span class="self">self</span>, fill_rule: FillRule) {
         <span class="kw">unsafe </span>{
             ffi::cairo_set_fill_rule(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), fill_rule.into());
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_fill_rule&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_fill_rule&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_get_fill_rule&quot;</span>)]
     </span><span class="kw">pub fn </span>fill_rule(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; FillRule {
         <span class="kw">unsafe </span>{ FillRule::from(ffi::cairo_get_fill_rule(<span class="self">self</span>.<span class="number">0</span>.as_ptr())) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_set_line_cap&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_set_line_cap&quot;</span>)]
     </span><span class="kw">pub fn </span>set_line_cap(<span class="kw-2">&amp;</span><span class="self">self</span>, arg: LineCap) {
         <span class="kw">unsafe </span>{ ffi::cairo_set_line_cap(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), arg.into()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_line_cap&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_line_cap&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_get_line_cap&quot;</span>)]
     </span><span class="kw">pub fn </span>line_cap(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; LineCap {
         <span class="kw">unsafe </span>{ LineCap::from(ffi::cairo_get_line_cap(<span class="self">self</span>.<span class="number">0</span>.as_ptr())) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_set_line_join&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_set_line_join&quot;</span>)]
     </span><span class="kw">pub fn </span>set_line_join(<span class="kw-2">&amp;</span><span class="self">self</span>, arg: LineJoin) {
         <span class="kw">unsafe </span>{ ffi::cairo_set_line_join(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), arg.into()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_line_join&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_line_join&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_get_line_join&quot;</span>)]
     </span><span class="kw">pub fn </span>line_join(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; LineJoin {
         <span class="kw">unsafe </span>{ LineJoin::from(ffi::cairo_get_line_join(<span class="self">self</span>.<span class="number">0</span>.as_ptr())) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_set_line_width&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_set_line_width&quot;</span>)]
     </span><span class="kw">pub fn </span>set_line_width(<span class="kw-2">&amp;</span><span class="self">self</span>, arg: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_set_line_width(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), arg) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_line_width&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_line_width&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_get_line_width&quot;</span>)]
     </span><span class="kw">pub fn </span>line_width(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f64 {
         <span class="kw">unsafe </span>{ ffi::cairo_get_line_width(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_18&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_18&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[doc(alias = <span class="string">&quot;cairo_set_hairline&quot;</span>)]
     </span><span class="kw">pub fn </span>set_hairline(<span class="kw-2">&amp;</span><span class="self">self</span>, set_hairline: bool) {
         <span class="kw">unsafe </span>{ ffi::cairo_set_hairline(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), set_hairline.into()) }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_18&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_18&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[doc(alias = <span class="string">&quot;get_hairline&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_get_hairline&quot;</span>)]
     </span><span class="kw">pub fn </span>hairline(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::cairo_get_hairline(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }.as_bool()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_set_miter_limit&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_set_miter_limit&quot;</span>)]
     </span><span class="kw">pub fn </span>set_miter_limit(<span class="kw-2">&amp;</span><span class="self">self</span>, arg: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_set_miter_limit(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), arg) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_miter_limit&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_miter_limit&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_get_miter_limit&quot;</span>)]
     </span><span class="kw">pub fn </span>miter_limit(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f64 {
         <span class="kw">unsafe </span>{ ffi::cairo_get_miter_limit(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_set_operator&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_set_operator&quot;</span>)]
     </span><span class="kw">pub fn </span>set_operator(<span class="kw-2">&amp;</span><span class="self">self</span>, op: Operator) {
         <span class="kw">unsafe </span>{
             ffi::cairo_set_operator(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), op.into());
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_operator&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_operator&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_get_operator&quot;</span>)]
     </span><span class="kw">pub fn </span>operator(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Operator {
         <span class="kw">unsafe </span>{ Operator::from(ffi::cairo_get_operator(<span class="self">self</span>.<span class="number">0</span>.as_ptr())) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_set_tolerance&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_set_tolerance&quot;</span>)]
     </span><span class="kw">pub fn </span>set_tolerance(<span class="kw-2">&amp;</span><span class="self">self</span>, arg: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_set_tolerance(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), arg) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_tolerance&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_tolerance&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_get_tolerance&quot;</span>)]
     </span><span class="kw">pub fn </span>tolerance(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f64 {
         <span class="kw">unsafe </span>{ ffi::cairo_get_tolerance(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_clip&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_clip&quot;</span>)]
     </span><span class="kw">pub fn </span>clip(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{ ffi::cairo_clip(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_clip_preserve&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_clip_preserve&quot;</span>)]
     </span><span class="kw">pub fn </span>clip_preserve(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{ ffi::cairo_clip_preserve(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_clip_extents&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_clip_extents&quot;</span>)]
     </span><span class="kw">pub fn </span>clip_extents(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(f64, f64, f64, f64), Error&gt; {
         <span class="kw">let </span><span class="kw-2">mut </span>x1: f64 = <span class="number">0.0</span>;
         <span class="kw">let </span><span class="kw-2">mut </span>y1: f64 = <span class="number">0.0</span>;
@@ -1505,18 +1505,18 @@
         <span class="self">self</span>.status().map(|<span class="kw">_</span>| (x1, y1, x2, y2))
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_in_clip&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_in_clip&quot;</span>)]
     </span><span class="kw">pub fn </span>in_clip(<span class="kw-2">&amp;</span><span class="self">self</span>, x: f64, y: f64) -&gt; <span class="prelude-ty">Result</span>&lt;bool, Error&gt; {
         <span class="kw">let </span>in_clip = <span class="kw">unsafe </span>{ ffi::cairo_in_clip(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), x, y).as_bool() };
         <span class="self">self</span>.status().map(|<span class="kw">_</span>| in_clip)
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_reset_clip&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_reset_clip&quot;</span>)]
     </span><span class="kw">pub fn </span>reset_clip(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{ ffi::cairo_reset_clip(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_copy_clip_rectangle_list&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_copy_clip_rectangle_list&quot;</span>)]
     </span><span class="kw">pub fn </span>copy_clip_rectangle_list(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;RectangleList, Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>rectangle_list = ffi::cairo_copy_clip_rectangle_list(<span class="self">self</span>.<span class="number">0</span>.as_ptr());
@@ -1529,19 +1529,19 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_fill&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_fill&quot;</span>)]
     </span><span class="kw">pub fn </span>fill(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">unsafe </span>{ ffi::cairo_fill(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) };
         <span class="self">self</span>.status()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_fill_preserve&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_fill_preserve&quot;</span>)]
     </span><span class="kw">pub fn </span>fill_preserve(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">unsafe </span>{ ffi::cairo_fill_preserve(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) };
         <span class="self">self</span>.status()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_fill_extents&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_fill_extents&quot;</span>)]
     </span><span class="kw">pub fn </span>fill_extents(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(f64, f64, f64, f64), Error&gt; {
         <span class="kw">let </span><span class="kw-2">mut </span>x1: f64 = <span class="number">0.0</span>;
         <span class="kw">let </span><span class="kw-2">mut </span>y1: f64 = <span class="number">0.0</span>;
@@ -1554,13 +1554,13 @@
         <span class="self">self</span>.status().map(|<span class="kw">_</span>| (x1, y1, x2, y2))
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_in_fill&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_in_fill&quot;</span>)]
     </span><span class="kw">pub fn </span>in_fill(<span class="kw-2">&amp;</span><span class="self">self</span>, x: f64, y: f64) -&gt; <span class="prelude-ty">Result</span>&lt;bool, Error&gt; {
         <span class="kw">let </span>in_fill = <span class="kw">unsafe </span>{ ffi::cairo_in_fill(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), x, y).as_bool() };
         <span class="self">self</span>.status().map(|<span class="kw">_</span>| in_fill)
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_mask&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_mask&quot;</span>)]
     </span><span class="kw">pub fn </span>mask(<span class="kw-2">&amp;</span><span class="self">self</span>, pattern: <span class="kw">impl </span>AsRef&lt;Pattern&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">let </span>pattern = pattern.as_ref();
         pattern.status()<span class="question-mark">?</span>;
@@ -1568,7 +1568,7 @@
         <span class="self">self</span>.status()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_mask_surface&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_mask_surface&quot;</span>)]
     </span><span class="kw">pub fn </span>mask_surface(<span class="kw-2">&amp;</span><span class="self">self</span>, surface: <span class="kw">impl </span>AsRef&lt;Surface&gt;, x: f64, y: f64) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">let </span>surface = surface.as_ref();
         surface.status()<span class="question-mark">?</span>;
@@ -1578,31 +1578,31 @@
         <span class="self">self</span>.status()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_paint&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_paint&quot;</span>)]
     </span><span class="kw">pub fn </span>paint(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">unsafe </span>{ ffi::cairo_paint(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) };
         <span class="self">self</span>.status()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_paint_with_alpha&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_paint_with_alpha&quot;</span>)]
     </span><span class="kw">pub fn </span>paint_with_alpha(<span class="kw-2">&amp;</span><span class="self">self</span>, alpha: f64) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">unsafe </span>{ ffi::cairo_paint_with_alpha(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), alpha) };
         <span class="self">self</span>.status()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_stroke&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_stroke&quot;</span>)]
     </span><span class="kw">pub fn </span>stroke(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">unsafe </span>{ ffi::cairo_stroke(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) };
         <span class="self">self</span>.status()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_stroke_preserve&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_stroke_preserve&quot;</span>)]
     </span><span class="kw">pub fn </span>stroke_preserve(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">unsafe </span>{ ffi::cairo_stroke_preserve(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) };
         <span class="self">self</span>.status()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_stroke_extents&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_stroke_extents&quot;</span>)]
     </span><span class="kw">pub fn </span>stroke_extents(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(f64, f64, f64, f64), Error&gt; {
         <span class="kw">let </span><span class="kw-2">mut </span>x1: f64 = <span class="number">0.0</span>;
         <span class="kw">let </span><span class="kw-2">mut </span>y1: f64 = <span class="number">0.0</span>;
@@ -1615,61 +1615,61 @@
         <span class="self">self</span>.status().map(|<span class="kw">_</span>| (x1, y1, x2, y2))
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_in_stroke&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_in_stroke&quot;</span>)]
     </span><span class="kw">pub fn </span>in_stroke(<span class="kw-2">&amp;</span><span class="self">self</span>, x: f64, y: f64) -&gt; <span class="prelude-ty">Result</span>&lt;bool, Error&gt; {
         <span class="kw">let </span>in_stroke = <span class="kw">unsafe </span>{ ffi::cairo_in_stroke(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), x, y).as_bool() };
         <span class="self">self</span>.status().map(|<span class="kw">_</span>| in_stroke)
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_copy_page&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_copy_page&quot;</span>)]
     </span><span class="kw">pub fn </span>copy_page(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">unsafe </span>{ ffi::cairo_copy_page(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) };
         <span class="self">self</span>.status()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_show_page&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_show_page&quot;</span>)]
     </span><span class="kw">pub fn </span>show_page(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">unsafe </span>{ ffi::cairo_show_page(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) };
         <span class="self">self</span>.status()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_reference_count&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_reference_count&quot;</span>)]
     </span><span class="kw">pub fn </span>reference_count(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::cairo_get_reference_count(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
     }
 
     <span class="comment">// transformations stuff
 
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;cairo_translate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;cairo_translate&quot;</span>)]
     </span><span class="kw">pub fn </span>translate(<span class="kw-2">&amp;</span><span class="self">self</span>, tx: f64, ty: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_translate(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), tx, ty) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_scale&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_scale&quot;</span>)]
     </span><span class="kw">pub fn </span>scale(<span class="kw-2">&amp;</span><span class="self">self</span>, sx: f64, sy: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_scale(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), sx, sy) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_rotate&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_rotate&quot;</span>)]
     </span><span class="kw">pub fn </span>rotate(<span class="kw-2">&amp;</span><span class="self">self</span>, angle: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_rotate(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), angle) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_transform&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_transform&quot;</span>)]
     </span><span class="kw">pub fn </span>transform(<span class="kw-2">&amp;</span><span class="self">self</span>, matrix: Matrix) {
         <span class="kw">unsafe </span>{
             ffi::cairo_transform(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), matrix.ptr());
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_set_matrix&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_set_matrix&quot;</span>)]
     </span><span class="kw">pub fn </span>set_matrix(<span class="kw-2">&amp;</span><span class="self">self</span>, matrix: Matrix) {
         <span class="kw">unsafe </span>{
             ffi::cairo_set_matrix(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), matrix.ptr());
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_matrix&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_matrix&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_get_matrix&quot;</span>)]
     </span><span class="kw">pub fn </span>matrix(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Matrix {
         <span class="kw">let </span><span class="kw-2">mut </span>matrix = Matrix::null();
@@ -1679,12 +1679,12 @@
         matrix
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_identity_matrix&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_identity_matrix&quot;</span>)]
     </span><span class="kw">pub fn </span>identity_matrix(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{ ffi::cairo_identity_matrix(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_user_to_device&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_user_to_device&quot;</span>)]
     </span><span class="kw">pub fn </span>user_to_device(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="kw-2">mut </span>x: f64, <span class="kw-2">mut </span>y: f64) -&gt; (f64, f64) {
         <span class="kw">unsafe </span>{
             ffi::cairo_user_to_device(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), <span class="kw-2">&amp;mut </span>x, <span class="kw-2">&amp;mut </span>y);
@@ -1692,7 +1692,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_user_to_device_distance&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_user_to_device_distance&quot;</span>)]
     </span><span class="kw">pub fn </span>user_to_device_distance(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="kw-2">mut </span>dx: f64, <span class="kw-2">mut </span>dy: f64) -&gt; <span class="prelude-ty">Result</span>&lt;(f64, f64), Error&gt; {
         <span class="kw">unsafe </span>{
             ffi::cairo_user_to_device_distance(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), <span class="kw-2">&amp;mut </span>dx, <span class="kw-2">&amp;mut </span>dy);
@@ -1700,7 +1700,7 @@
         <span class="self">self</span>.status().map(|<span class="kw">_</span>| (dx, dy))
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_device_to_user&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_device_to_user&quot;</span>)]
     </span><span class="kw">pub fn </span>device_to_user(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="kw-2">mut </span>x: f64, <span class="kw-2">mut </span>y: f64) -&gt; <span class="prelude-ty">Result</span>&lt;(f64, f64), Error&gt; {
         <span class="kw">unsafe </span>{
             ffi::cairo_device_to_user(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), <span class="kw-2">&amp;mut </span>x, <span class="kw-2">&amp;mut </span>y);
@@ -1708,7 +1708,7 @@
         <span class="self">self</span>.status().map(|<span class="kw">_</span>| (x, y))
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_device_to_user_distance&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_device_to_user_distance&quot;</span>)]
     </span><span class="kw">pub fn </span>device_to_user_distance(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="kw-2">mut </span>dx: f64, <span class="kw-2">mut </span>dy: f64) -&gt; <span class="prelude-ty">Result</span>&lt;(f64, f64), Error&gt; {
         <span class="kw">unsafe </span>{
             ffi::cairo_device_to_user_distance(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), <span class="kw-2">&amp;mut </span>dx, <span class="kw-2">&amp;mut </span>dy);
@@ -1718,7 +1718,7 @@
 
     <span class="comment">// font stuff
 
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;cairo_select_font_face&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;cairo_select_font_face&quot;</span>)]
     </span><span class="kw">pub fn </span>select_font_face(<span class="kw-2">&amp;</span><span class="self">self</span>, family: <span class="kw-2">&amp;</span>str, slant: FontSlant, weight: FontWeight) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>family = CString::new(family).unwrap();
@@ -1731,18 +1731,18 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_set_font_size&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_set_font_size&quot;</span>)]
     </span><span class="kw">pub fn </span>set_font_size(<span class="kw-2">&amp;</span><span class="self">self</span>, size: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_set_font_size(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), size) }
     }
 
     <span class="comment">// FIXME probably needs a heap allocation
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;cairo_set_font_matrix&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;cairo_set_font_matrix&quot;</span>)]
     </span><span class="kw">pub fn </span>set_font_matrix(<span class="kw-2">&amp;</span><span class="self">self</span>, matrix: Matrix) {
         <span class="kw">unsafe </span>{ ffi::cairo_set_font_matrix(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), matrix.ptr()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_font_matrix&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_font_matrix&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_get_font_matrix&quot;</span>)]
     </span><span class="kw">pub fn </span>font_matrix(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Matrix {
         <span class="kw">let </span><span class="kw-2">mut </span>matrix = Matrix::null();
@@ -1752,12 +1752,12 @@
         matrix
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_set_font_options&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_set_font_options&quot;</span>)]
     </span><span class="kw">pub fn </span>set_font_options(<span class="kw-2">&amp;</span><span class="self">self</span>, options: <span class="kw-2">&amp;</span>FontOptions) {
         <span class="kw">unsafe </span>{ ffi::cairo_set_font_options(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), options.to_raw_none()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_font_options&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_font_options&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_get_font_options&quot;</span>)]
     </span><span class="kw">pub fn </span>font_options(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;FontOptions, Error&gt; {
         <span class="kw">let </span>out = FontOptions::new()<span class="question-mark">?</span>;
@@ -1767,29 +1767,29 @@
         <span class="prelude-val">Ok</span>(out)
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_set_font_face&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_set_font_face&quot;</span>)]
     </span><span class="kw">pub fn </span>set_font_face(<span class="kw-2">&amp;</span><span class="self">self</span>, font_face: <span class="kw-2">&amp;</span>FontFace) {
         <span class="kw">unsafe </span>{ ffi::cairo_set_font_face(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), font_face.to_raw_none()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_font_face&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_font_face&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_get_font_face&quot;</span>)]
     </span><span class="kw">pub fn </span>font_face(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; FontFace {
         <span class="kw">unsafe </span>{ FontFace::from_raw_none(ffi::cairo_get_font_face(<span class="self">self</span>.<span class="number">0</span>.as_ptr())) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_set_scaled_font&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_set_scaled_font&quot;</span>)]
     </span><span class="kw">pub fn </span>set_scaled_font(<span class="kw-2">&amp;</span><span class="self">self</span>, scaled_font: <span class="kw-2">&amp;</span>ScaledFont) {
         <span class="kw">unsafe </span>{ ffi::cairo_set_scaled_font(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), scaled_font.to_raw_none()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_scaled_font&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_scaled_font&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_get_scaled_font&quot;</span>)]
     </span><span class="kw">pub fn </span>scaled_font(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; ScaledFont {
         <span class="kw">unsafe </span>{ ScaledFont::from_raw_none(ffi::cairo_get_scaled_font(<span class="self">self</span>.<span class="number">0</span>.as_ptr())) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_show_text&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_show_text&quot;</span>)]
     </span><span class="kw">pub fn </span>show_text(<span class="kw-2">&amp;</span><span class="self">self</span>, text: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>text = CString::new(text).unwrap();
@@ -1798,7 +1798,7 @@
         <span class="self">self</span>.status()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_show_glyphs&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_show_glyphs&quot;</span>)]
     </span><span class="kw">pub fn </span>show_glyphs(<span class="kw-2">&amp;</span><span class="self">self</span>, glyphs: <span class="kw-2">&amp;</span>[Glyph]) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">unsafe </span>{
             ffi::cairo_show_glyphs(
@@ -1810,7 +1810,7 @@
         <span class="self">self</span>.status()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_show_text_glyphs&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_show_text_glyphs&quot;</span>)]
     </span><span class="kw">pub fn </span>show_text_glyphs(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         text: <span class="kw-2">&amp;</span>str,
@@ -1834,7 +1834,7 @@
         <span class="self">self</span>.status()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_font_extents&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_font_extents&quot;</span>)]
     </span><span class="kw">pub fn </span>font_extents(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;FontExtents, Error&gt; {
         <span class="kw">let </span><span class="kw-2">mut </span>extents = MaybeUninit::&lt;FontExtents&gt;::uninit();
 
@@ -1844,7 +1844,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_text_extents&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_text_extents&quot;</span>)]
     </span><span class="kw">pub fn </span>text_extents(<span class="kw-2">&amp;</span><span class="self">self</span>, text: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;TextExtents, Error&gt; {
         <span class="kw">let </span><span class="kw-2">mut </span>extents = MaybeUninit::&lt;TextExtents&gt;::uninit();
 
@@ -1859,7 +1859,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_glyph_extents&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_glyph_extents&quot;</span>)]
     </span><span class="kw">pub fn </span>glyph_extents(<span class="kw-2">&amp;</span><span class="self">self</span>, glyphs: <span class="kw-2">&amp;</span>[Glyph]) -&gt; <span class="prelude-ty">Result</span>&lt;TextExtents, Error&gt; {
         <span class="kw">let </span><span class="kw-2">mut </span>extents = MaybeUninit::&lt;TextExtents&gt;::uninit();
 
@@ -1876,30 +1876,30 @@
 
     <span class="comment">// paths stuff
 
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;cairo_copy_path&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;cairo_copy_path&quot;</span>)]
     </span><span class="kw">pub fn </span>copy_path(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;Path, Error&gt; {
         <span class="kw">let </span>path = <span class="kw">unsafe </span>{ Path::from_raw_full(ffi::cairo_copy_path(<span class="self">self</span>.<span class="number">0</span>.as_ptr())) };
         <span class="self">self</span>.status().map(|<span class="kw">_</span>| path)
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_copy_path_flat&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_copy_path_flat&quot;</span>)]
     </span><span class="kw">pub fn </span>copy_path_flat(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;Path, Error&gt; {
         <span class="kw">let </span>path = <span class="kw">unsafe </span>{ Path::from_raw_full(ffi::cairo_copy_path_flat(<span class="self">self</span>.<span class="number">0</span>.as_ptr())) };
         <span class="self">self</span>.status().map(|<span class="kw">_</span>| path)
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_append_path&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_append_path&quot;</span>)]
     </span><span class="kw">pub fn </span>append_path(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="kw-2">&amp;</span>Path) {
         <span class="kw">unsafe </span>{ ffi::cairo_append_path(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), path.as_ptr()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_has_current_point&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_has_current_point&quot;</span>)]
     </span><span class="kw">pub fn </span>has_current_point(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;bool, Error&gt; {
         <span class="kw">let </span>has_current_point = <span class="kw">unsafe </span>{ ffi::cairo_has_current_point(<span class="self">self</span>.<span class="number">0</span>.as_ptr()).as_bool() };
         <span class="self">self</span>.status().map(|<span class="kw">_</span>| has_current_point)
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_current_point&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_current_point&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_get_current_point&quot;</span>)]
     </span><span class="kw">pub fn </span>current_point(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(f64, f64), Error&gt; {
         <span class="kw">unsafe </span>{
@@ -1910,52 +1910,52 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_new_path&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_new_path&quot;</span>)]
     </span><span class="kw">pub fn </span>new_path(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{ ffi::cairo_new_path(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_new_sub_path&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_new_sub_path&quot;</span>)]
     </span><span class="kw">pub fn </span>new_sub_path(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{ ffi::cairo_new_sub_path(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_close_path&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_close_path&quot;</span>)]
     </span><span class="kw">pub fn </span>close_path(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{ ffi::cairo_close_path(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_arc&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_arc&quot;</span>)]
     </span><span class="kw">pub fn </span>arc(<span class="kw-2">&amp;</span><span class="self">self</span>, xc: f64, yc: f64, radius: f64, angle1: f64, angle2: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_arc(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), xc, yc, radius, angle1, angle2) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_arc_negative&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_arc_negative&quot;</span>)]
     </span><span class="kw">pub fn </span>arc_negative(<span class="kw-2">&amp;</span><span class="self">self</span>, xc: f64, yc: f64, radius: f64, angle1: f64, angle2: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_arc_negative(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), xc, yc, radius, angle1, angle2) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_curve_to&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_curve_to&quot;</span>)]
     </span><span class="kw">pub fn </span>curve_to(<span class="kw-2">&amp;</span><span class="self">self</span>, x1: f64, y1: f64, x2: f64, y2: f64, x3: f64, y3: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_curve_to(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), x1, y1, x2, y2, x3, y3) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_line_to&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_line_to&quot;</span>)]
     </span><span class="kw">pub fn </span>line_to(<span class="kw-2">&amp;</span><span class="self">self</span>, x: f64, y: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_line_to(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), x, y) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_move_to&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_move_to&quot;</span>)]
     </span><span class="kw">pub fn </span>move_to(<span class="kw-2">&amp;</span><span class="self">self</span>, x: f64, y: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_move_to(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), x, y) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_rectangle&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_rectangle&quot;</span>)]
     </span><span class="kw">pub fn </span>rectangle(<span class="kw-2">&amp;</span><span class="self">self</span>, x: f64, y: f64, width: f64, height: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_rectangle(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), x, y, width, height) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_text_path&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_text_path&quot;</span>)]
     </span><span class="kw">pub fn </span>text_path(<span class="kw-2">&amp;</span><span class="self">self</span>, str_: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>str_ = CString::new(str_).unwrap();
@@ -1963,7 +1963,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_glyph_path&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_glyph_path&quot;</span>)]
     </span><span class="kw">pub fn </span>glyph_path(<span class="kw-2">&amp;</span><span class="self">self</span>, glyphs: <span class="kw-2">&amp;</span>[Glyph]) {
         <span class="kw">unsafe </span>{
             ffi::cairo_glyph_path(
@@ -1974,22 +1974,22 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_rel_curve_to&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_rel_curve_to&quot;</span>)]
     </span><span class="kw">pub fn </span>rel_curve_to(<span class="kw-2">&amp;</span><span class="self">self</span>, dx1: f64, dy1: f64, dx2: f64, dy2: f64, dx3: f64, dy3: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_rel_curve_to(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), dx1, dy1, dx2, dy2, dx3, dy3) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_rel_line_to&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_rel_line_to&quot;</span>)]
     </span><span class="kw">pub fn </span>rel_line_to(<span class="kw-2">&amp;</span><span class="self">self</span>, dx: f64, dy: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_rel_line_to(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), dx, dy) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_rel_move_to&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_rel_move_to&quot;</span>)]
     </span><span class="kw">pub fn </span>rel_move_to(<span class="kw-2">&amp;</span><span class="self">self</span>, dx: f64, dy: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_rel_move_to(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), dx, dy) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_path_extents&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_path_extents&quot;</span>)]
     </span><span class="kw">pub fn </span>path_extents(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(f64, f64, f64, f64), Error&gt; {
         <span class="kw">let </span><span class="kw-2">mut </span>x1: f64 = <span class="number">0.0</span>;
         <span class="kw">let </span><span class="kw-2">mut </span>y1: f64 = <span class="number">0.0</span>;
@@ -2002,7 +2002,7 @@
         <span class="self">self</span>.status().map(|<span class="kw">_</span>| (x1, y1, x2, y2))
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_16&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_16&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[doc(alias = <span class="string">&quot;cairo_tag_begin&quot;</span>)]
     </span><span class="kw">pub fn </span>tag_begin(<span class="kw-2">&amp;</span><span class="self">self</span>, tag_name: <span class="kw-2">&amp;</span>str, attributes: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
@@ -2012,7 +2012,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_16&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_16&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[doc(alias = <span class="string">&quot;cairo_tag_end&quot;</span>)]
     </span><span class="kw">pub fn </span>tag_end(<span class="kw-2">&amp;</span><span class="self">self</span>, tag_name: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
@@ -2028,7 +2028,7 @@
     }
 }
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use </span><span class="kw">crate</span>::enums::Format;
@@ -2041,7 +2041,7 @@
         Context::new(<span class="kw-2">&amp;</span>surface).expect(<span class="string">&quot;Can&#39;t create a Cairo context&quot;</span>)
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>invalid_surface_cant_create_context() {
         <span class="kw">unsafe </span>{
             <span class="comment">// The size here will create an image surface in an error state
@@ -2058,20 +2058,20 @@
         }
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>drop_non_reference_pattern_from_ctx() {
         <span class="kw">let </span>ctx = create_ctx();
         ctx.source();
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>drop_non_reference_pattern() {
         <span class="kw">let </span>ctx = create_ctx();
         <span class="kw">let </span>pattern = LinearGradient::new(<span class="number">1.0f64</span>, <span class="number">2.0f64</span>, <span class="number">3.0f64</span>, <span class="number">4.0f64</span>);
         ctx.set_source(<span class="kw-2">&amp;</span>pattern).expect(<span class="string">&quot;Invalid surface state&quot;</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>clip_rectangle() {
         <span class="kw">let </span>ctx = create_ctx();
         <span class="kw">let </span>rect = ctx
@@ -2086,4 +2086,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

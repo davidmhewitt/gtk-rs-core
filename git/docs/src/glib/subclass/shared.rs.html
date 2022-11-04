@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../glib/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../glib/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -463,7 +463,7 @@
     }
 }
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>test {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="comment">// We rename the current crate as glib, since the macros in glib-macros
@@ -472,26 +472,26 @@
     </span><span class="kw">use crate as </span>glib;
     <span class="kw">use </span><span class="kw">crate</span>::value::ToValue;
 
-    <span class="attribute">#[derive(Clone, Debug, PartialEq, Eq)]
+    <span class="attr">#[derive(Clone, Debug, PartialEq, Eq)]
     </span><span class="kw">struct </span>MySharedInner {
         foo: String,
     }
 
-    <span class="attribute">#[derive(Clone, Debug, PartialEq, Eq, glib::SharedBoxed)]
+    <span class="attr">#[derive(Clone, Debug, PartialEq, Eq, glib::SharedBoxed)]
     #[shared_boxed_type(name = <span class="string">&quot;MySharedArc&quot;</span>)]
     </span><span class="kw">struct </span>MySharedArc(std::sync::Arc&lt;MySharedInner&gt;);
 
-    <span class="attribute">#[derive(Clone, Debug, PartialEq, Eq, glib::SharedBoxed)]
+    <span class="attr">#[derive(Clone, Debug, PartialEq, Eq, glib::SharedBoxed)]
     #[shared_boxed_type(name = <span class="string">&quot;MySharedRc&quot;</span>)]
     </span><span class="kw">struct </span>MySharedRc(std::rc::Rc&lt;MySharedInner&gt;);
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_register() {
         <span class="macro">assert_ne!</span>(<span class="kw">crate</span>::Type::INVALID, MySharedArc::static_type());
         <span class="macro">assert_ne!</span>(<span class="kw">crate</span>::Type::INVALID, MySharedRc::static_type());
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_value_arc() {
         <span class="macro">assert_ne!</span>(<span class="kw">crate</span>::Type::INVALID, MySharedArc::static_type());
 
@@ -503,7 +503,7 @@
         <span class="macro">assert!</span>(std::sync::Arc::ptr_eq(<span class="kw-2">&amp;</span>b.<span class="number">0</span>, <span class="kw-2">&amp;</span>b2.<span class="number">0</span>));
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_value_rc() {
         <span class="macro">assert_ne!</span>(<span class="kw">crate</span>::Type::INVALID, MySharedRc::static_type());
 
@@ -515,7 +515,7 @@
         <span class="macro">assert!</span>(std::rc::Rc::ptr_eq(<span class="kw-2">&amp;</span>b.<span class="number">0</span>, <span class="kw-2">&amp;</span>b2.<span class="number">0</span>));
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>same_ffi_pointer_arc() {
         <span class="macro">assert_ne!</span>(<span class="kw">crate</span>::Type::INVALID, MySharedArc::static_type());
 
@@ -539,7 +539,7 @@
         <span class="macro">assert_eq!</span>(std::sync::Arc::strong_count(<span class="kw-2">&amp;</span>b.<span class="number">0</span>), <span class="number">1</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>same_ffi_pointer_rc() {
         <span class="macro">assert_ne!</span>(<span class="kw">crate</span>::Type::INVALID, MySharedRc::static_type());
 
@@ -564,4 +564,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

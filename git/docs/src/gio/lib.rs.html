@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -211,7 +211,7 @@
 <span id="138">138</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="attribute">#![cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, feature(doc_cfg))]
+</span><span class="attr">#![cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, feature(doc_cfg))]
 #![allow(unknown_lints)]
 #![allow(clippy::type_complexity)]
 #![allow(clippy::too_many_arguments)]
@@ -246,10 +246,10 @@
 <span class="kw">mod </span>dbus_message;
 <span class="kw">mod </span>dbus_method_invocation;
 <span class="kw">mod </span>dbus_node_info;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
 </span><span class="kw">mod </span>debug_controller_dbus;
-<span class="attribute">#[cfg(any(all(not(windows), not(target_os = <span class="string">&quot;macos&quot;</span>)), feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(all(not(windows), not(target_os = <span class="string">&quot;macos&quot;</span>)), feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">mod </span>desktop_app_info;
 <span class="kw">mod </span>error;
 <span class="kw">mod </span>file;
@@ -271,9 +271,9 @@
 <span class="kw">pub use </span><span class="kw">crate</span>::input_stream::{InputStreamAsyncBufRead, InputStreamRead};
 <span class="kw">mod </span>list_model;
 <span class="kw">mod </span>list_store;
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>memory_input_stream;
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>memory_output_stream;
 <span class="kw">mod </span>output_stream;
 <span class="kw">pub use </span><span class="kw">crate</span>::output_stream::OutputStreamWrite;
@@ -290,20 +290,20 @@
 <span class="kw">mod </span>subprocess;
 <span class="kw">mod </span>subprocess_launcher;
 <span class="kw">mod </span>threaded_socket_service;
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">mod </span>unix_fd_list;
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">mod </span>unix_input_stream;
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">mod </span>unix_mount_entry;
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">mod </span>unix_mount_point;
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">mod </span>unix_output_stream;
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">mod </span>unix_socket_address;
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>test_util;
 
 <span class="kw">pub use </span><span class="kw">crate</span>::auto::functions::<span class="kw-2">*</span>;
@@ -312,7 +312,7 @@
 <span class="kw">pub use </span>auto::builders;
 <span class="kw">pub mod </span>prelude;
 
-<span class="attribute">#[allow(clippy::wrong_self_convention)]
+<span class="attr">#[allow(clippy::wrong_self_convention)]
 #[allow(clippy::new_ret_no_self)]
 #[allow(unused_imports)]
 </span><span class="kw">mod </span>auto;
@@ -329,7 +329,7 @@
 <span class="kw">mod </span>task;
 <span class="kw">pub use </span><span class="kw">crate</span>::task::<span class="kw-2">*</span>;
 
-<span class="attribute">#[macro_use]
+<span class="attr">#[macro_use]
 </span><span class="kw">pub mod </span>subclass;
 <span class="kw">mod </span>read_input_stream;
 <span class="kw">pub use </span><span class="kw">crate</span>::read_input_stream::ReadInputStream;
@@ -338,14 +338,14 @@
 <span class="kw">mod </span>dbus_proxy;
 <span class="kw">mod </span>tls_connection;
 
-<span class="attribute">#[cfg(target_family = <span class="string">&quot;windows&quot;</span>)]
+<span class="attr">#[cfg(target_family = <span class="string">&quot;windows&quot;</span>)]
 </span><span class="kw">mod </span>win32_input_stream;
-<span class="attribute">#[cfg(target_family = <span class="string">&quot;windows&quot;</span>)]
+<span class="attr">#[cfg(target_family = <span class="string">&quot;windows&quot;</span>)]
 </span><span class="kw">pub use </span><span class="self">self</span>::win32_input_stream::Win32InputStream;
 
-<span class="attribute">#[cfg(target_family = <span class="string">&quot;windows&quot;</span>)]
+<span class="attr">#[cfg(target_family = <span class="string">&quot;windows&quot;</span>)]
 </span><span class="kw">mod </span>win32_output_stream;
-<span class="attribute">#[cfg(target_family = <span class="string">&quot;windows&quot;</span>)]
+<span class="attr">#[cfg(target_family = <span class="string">&quot;windows&quot;</span>)]
 </span><span class="kw">pub use </span><span class="self">self</span>::win32_output_stream::Win32OutputStream;
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

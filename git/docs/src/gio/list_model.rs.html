@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -406,7 +406,7 @@
 <span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
 <span class="kw">use </span><span class="kw">crate</span>::ListModel;
 
-<span class="attribute">#[derive(thiserror::Error, Debug, PartialEq, Eq)]
+<span class="attr">#[derive(thiserror::Error, Debug, PartialEq, Eq)]
 #[error(<span class="string">&quot;can&#39;t downcast ListModel&#39;s items (`{actual}`) to the requested type `{requested}`&quot;</span>)]
 </span><span class="kw">pub struct </span>ListModelItemsTypeErr {
     actual: glib::Type,
@@ -463,7 +463,7 @@
     }
 }
 
-<span class="attribute">#[derive(thiserror::Error, Debug, PartialEq, Eq)]
+<span class="attr">#[derive(thiserror::Error, Debug, PartialEq, Eq)]
 #[error(<span class="string">&quot;the list model was mutated during iteration&quot;</span>)]
 </span><span class="kw">pub struct </span>ListModelMutatedDuringIter;
 
@@ -597,7 +597,7 @@
     }
 }
 
-<span class="attribute">#[test]
+<span class="attr">#[test]
 </span><span class="kw">fn </span>list_model_iter_ok() {
     <span class="kw">let </span>list = <span class="kw">crate</span>::ListStore::new(<span class="kw">crate</span>::Menu::static_type());
     <span class="kw">let </span>m1 = <span class="kw">crate</span>::Menu::new();
@@ -623,7 +623,7 @@
     <span class="macro">assert_eq!</span>(iter.next_back(), <span class="prelude-val">None</span>);
 }
 
-<span class="attribute">#[test]
+<span class="attr">#[test]
 </span><span class="kw">fn </span>list_model_iter_err() {
     <span class="kw">let </span>list = <span class="kw">crate</span>::ListStore::new(<span class="kw">crate</span>::Menu::static_type());
     <span class="kw">let </span>m1 = <span class="kw">crate</span>::Menu::new();
@@ -655,7 +655,7 @@
     </span><span class="macro">assert_eq!</span>(iter.next(), <span class="prelude-val">None</span>);
 }
 
-<span class="attribute">#[test]
+<span class="attr">#[test]
 </span><span class="kw">fn </span>list_model_iter_nth() {
     <span class="kw">let </span>list = <span class="kw">crate</span>::ListStore::new(<span class="kw">crate</span>::Menu::static_type());
     <span class="kw">let </span>m1 = <span class="kw">crate</span>::Menu::new();
@@ -684,7 +684,7 @@
     <span class="macro">assert_eq!</span>(iter.next_back(), <span class="prelude-val">None</span>);
 }
 
-<span class="attribute">#[test]
+<span class="attr">#[test]
 </span><span class="kw">fn </span>list_model_iter_last() {
     <span class="kw">let </span>list = <span class="kw">crate</span>::ListStore::new(<span class="kw">crate</span>::Menu::static_type());
     <span class="kw">let </span>m1 = <span class="kw">crate</span>::Menu::new();
@@ -701,7 +701,7 @@
     <span class="macro">assert_eq!</span>(iter.last(), <span class="prelude-val">Some</span>(<span class="prelude-val">Ok</span>(m3)));
 }
 
-<span class="attribute">#[test]
+<span class="attr">#[test]
 </span><span class="kw">fn </span>list_model_iter_count() {
     <span class="kw">let </span>list = <span class="kw">crate</span>::ListStore::new(<span class="kw">crate</span>::Menu::static_type());
     <span class="kw">let </span>m1 = <span class="kw">crate</span>::Menu::new();
@@ -718,4 +718,4 @@
     <span class="macro">assert_eq!</span>(iter.count(), <span class="number">3</span>);
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

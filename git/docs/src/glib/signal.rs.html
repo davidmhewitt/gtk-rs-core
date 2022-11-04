@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -294,7 +294,7 @@
 ///     }
 /// }
 /// ```
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq)]
 </span><span class="kw">pub struct </span>SignalHandlerId(NonZeroU64);
 
 <span class="kw">impl </span>SignalHandlerId {
@@ -306,7 +306,7 @@
 }
 
 <span class="kw">impl </span>FromGlib&lt;c_ulong&gt; <span class="kw">for </span>SignalHandlerId {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib(val: c_ulong) -&gt; <span class="self">Self </span>{
         <span class="macro">assert_ne!</span>(val, <span class="number">0</span>);
         <span class="self">Self</span>(NonZeroU64::new_unchecked(val <span class="kw">as _</span>))
@@ -317,14 +317,14 @@
 </span><span class="doccomment">/// Whether to propagate the signal to the default handler.
 ///
 /// Don&#39;t inhibit default handlers without a reason, they&#39;re usually helpful.
-</span><span class="attribute">#[derive(Clone, Copy, Debug, Default, Eq, PartialEq)]
+</span><span class="attr">#[derive(Clone, Copy, Debug, Default, Eq, PartialEq)]
 </span><span class="kw">pub struct </span>Inhibit(<span class="kw">pub </span>bool);
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>Inhibit {
     <span class="kw">type </span>GlibType = gboolean;
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>into_glib(<span class="self">self</span>) -&gt; gboolean {
         <span class="self">self</span>.<span class="number">0</span>.into_glib()
     }
@@ -364,7 +364,7 @@
     from_glib(handle)
 }
 
-<span class="attribute">#[doc(alias = <span class="string">&quot;g_signal_handler_block&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_signal_handler_block&quot;</span>)]
 </span><span class="kw">pub fn </span>signal_handler_block&lt;T: ObjectType&gt;(instance: <span class="kw-2">&amp;</span>T, handler_id: <span class="kw-2">&amp;</span>SignalHandlerId) {
     <span class="kw">unsafe </span>{
         gobject_ffi::g_signal_handler_block(
@@ -374,7 +374,7 @@
     }
 }
 
-<span class="attribute">#[doc(alias = <span class="string">&quot;g_signal_handler_unblock&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_signal_handler_unblock&quot;</span>)]
 </span><span class="kw">pub fn </span>signal_handler_unblock&lt;T: ObjectType&gt;(instance: <span class="kw-2">&amp;</span>T, handler_id: <span class="kw-2">&amp;</span>SignalHandlerId) {
     <span class="kw">unsafe </span>{
         gobject_ffi::g_signal_handler_unblock(
@@ -384,7 +384,7 @@
     }
 }
 
-<span class="attribute">#[allow(clippy::needless_pass_by_value)]
+<span class="attr">#[allow(clippy::needless_pass_by_value)]
 #[doc(alias = <span class="string">&quot;g_signal_handler_disconnect&quot;</span>)]
 </span><span class="kw">pub fn </span>signal_handler_disconnect&lt;T: ObjectType&gt;(instance: <span class="kw-2">&amp;</span>T, handler_id: SignalHandlerId) {
     <span class="kw">unsafe </span>{
@@ -395,7 +395,7 @@
     }
 }
 
-<span class="attribute">#[doc(alias = <span class="string">&quot;g_signal_stop_emission_by_name&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_signal_stop_emission_by_name&quot;</span>)]
 </span><span class="kw">pub fn </span>signal_stop_emission_by_name&lt;T: ObjectType&gt;(instance: <span class="kw-2">&amp;</span>T, signal_name: <span class="kw-2">&amp;</span>str) {
     <span class="kw">unsafe </span>{
         gobject_ffi::g_signal_stop_emission_by_name(
@@ -405,7 +405,7 @@
     }
 }
 
-<span class="attribute">#[doc(alias = <span class="string">&quot;g_signal_has_handler_pending&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_signal_has_handler_pending&quot;</span>)]
 </span><span class="kw">pub fn </span>signal_has_handler_pending&lt;T: ObjectType&gt;(
     instance: <span class="kw-2">&amp;</span>T,
     signal_id: <span class="kw">crate</span>::subclass::SignalId,
@@ -422,4 +422,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

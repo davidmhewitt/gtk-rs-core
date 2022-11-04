@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../cairo/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../cairo/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -175,7 +175,7 @@
 /// cairo objects have been dropped).
 ///
 /// This function is thread safe.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;cairo_debug_reset_static_data&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;cairo_debug_reset_static_data&quot;</span>)]
 </span><span class="kw">pub unsafe fn </span>debug_reset_static_data() {
     ffi::cairo_debug_reset_static_data()
 }
@@ -187,7 +187,7 @@
     }
 }
 
-<span class="attribute">#[doc(alias = <span class="string">&quot;cairo_version_string&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;cairo_version_string&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_version_string&quot;</span>)]
 </span><span class="kw">pub fn </span>version_string() -&gt; <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str {
     <span class="kw">unsafe </span>{
@@ -198,7 +198,7 @@
     }
 }
 
-<span class="attribute">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Clone, Copy)]
+<span class="attr">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Clone, Copy)]
 </span><span class="kw">pub struct </span>Version {
     major: u8,
     minor: u8,
@@ -206,7 +206,7 @@
 }
 
 <span class="kw">impl </span>Version {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_version&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_version&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_version&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; Version {
         <span class="kw">let </span>version = <span class="kw">unsafe </span>{ ffi::cairo_version() };
@@ -240,14 +240,14 @@
     }
 }
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>check_versions() {
         <span class="macro">assert_eq!</span>(version_string(), Version::new().to_string());
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

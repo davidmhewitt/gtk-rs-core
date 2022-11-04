@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../pangocairo/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../pangocairo/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -149,7 +149,7 @@
     /// # Returns
     ///
     /// the [`cairo::FontType`][crate::cairo::FontType] cairo font backend type
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_cairo_font_map_get_font_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_cairo_font_map_get_font_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_font_type&quot;</span>)]
     </span><span class="kw">fn </span>font_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; cairo::FontType;
 }
@@ -161,7 +161,7 @@
 }
 
 <span class="kw">impl </span>FontMap {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;pango_cairo_font_map_new_for_font_type&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;pango_cairo_font_map_new_for_font_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_for_font_type&quot;</span>)]
     </span><span class="kw">pub fn </span>for_font_type(fonttype: cairo::FontType) -&gt; <span class="prelude-ty">Option</span>&lt;pango::FontMap&gt; {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::pango_cairo_font_map_new_for_font_type(fonttype.into())) }
@@ -190,13 +190,13 @@
     ///
     /// the newly allocated [`pango::FontMap`][crate::pango::FontMap],
     ///  which should be freed with `g_object_unref()`.
-    </span><span class="attribute">#[allow(clippy::new_ret_no_self)]
+    </span><span class="attr">#[allow(clippy::new_ret_no_self)]
     #[doc(alias = <span class="string">&quot;pango_cairo_font_map_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; pango::FontMap {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::pango_cairo_font_map_new()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;pango_cairo_font_map_set_default&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;pango_cairo_font_map_set_default&quot;</span>)]
     </span><span class="kw">pub fn </span>set_default(font_map: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="self">Self</span>&gt;) {
         <span class="kw">unsafe </span>{
             ffi::pango_cairo_font_map_set_default(font_map.as_ref().to_glib_none().<span class="number">0</span>);
@@ -204,4 +204,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="pangocairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="pangocairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

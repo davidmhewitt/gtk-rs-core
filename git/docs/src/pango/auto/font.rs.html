@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pango/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pango/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -408,12 +408,12 @@
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
 
-</span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 </span><span class="kw">use </span><span class="kw">crate</span>::Context;
 <span class="kw">use </span><span class="kw">crate</span>::Coverage;
 <span class="kw">use </span><span class="kw">crate</span>::FontDescription;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_46&quot;</span>)))]
 </span><span class="kw">use </span><span class="kw">crate</span>::FontFace;
 <span class="kw">use </span><span class="kw">crate</span>::FontMap;
@@ -424,7 +424,7 @@
 <span class="kw">use </span>glib::object::IsA;
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 <span class="kw">use </span>std::fmt;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 </span><span class="kw">use </span>std::ptr;
 
@@ -437,7 +437,7 @@
     /// # Implements
     ///
     /// [`FontExt`][trait@crate::prelude::FontExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PangoFont&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PangoFont&quot;</span>)]
     </span><span class="kw">pub struct </span>Font(Object&lt;ffi::PangoFont, ffi::PangoFontClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -463,7 +463,7 @@
     /// # Returns
     ///
     /// a new [`Font`][crate::Font]
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_font_deserialize&quot;</span>)]
     </span><span class="kw">pub fn </span>deserialize(
@@ -500,7 +500,7 @@
     /// # Returns
     ///
     /// a newly-allocated [`FontDescription`][crate::FontDescription] object.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_font_describe&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_font_describe&quot;</span>)]
     </span><span class="kw">fn </span>describe(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; FontDescription;
 
     <span class="doccomment">/// Returns a description of the font, with absolute font size set
@@ -511,7 +511,7 @@
     /// # Returns
     ///
     /// a newly-allocated [`FontDescription`][crate::FontDescription] object.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_font_describe_with_absolute_size&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_font_describe_with_absolute_size&quot;</span>)]
     </span><span class="kw">fn </span>describe_with_absolute_size(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; FontDescription;
 
     <span class="doccomment">/// Computes the coverage map for a given font and language tag.
@@ -522,7 +522,7 @@
     ///
     /// a newly-allocated [`Coverage`][crate::Coverage]
     ///   object.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_font_get_coverage&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_font_get_coverage&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_coverage&quot;</span>)]
     </span><span class="kw">fn </span>coverage(<span class="kw-2">&amp;</span><span class="self">self</span>, language: <span class="kw-2">&amp;</span>Language) -&gt; Coverage;
 
@@ -531,7 +531,7 @@
     /// # Returns
     ///
     /// the [`FontFace`][crate::FontFace]
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_46&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_font_get_face&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_face&quot;</span>)]
@@ -559,7 +559,7 @@
     ///
     /// the [`FontMap`][crate::FontMap]
     ///   for the font
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_font_get_font_map&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_font_get_font_map&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_font_map&quot;</span>)]
     </span><span class="kw">fn </span>font_map(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;FontMap&gt;;
 
@@ -585,7 +585,7 @@
     ///
     /// ## `logical_rect`
     /// rectangle used to store the logical extents of the glyph
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_font_get_glyph_extents&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_font_get_glyph_extents&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_glyph_extents&quot;</span>)]
     </span><span class="kw">fn </span>glyph_extents(<span class="kw-2">&amp;</span><span class="self">self</span>, glyph: Glyph) -&gt; (Rectangle, Rectangle);
 
@@ -612,7 +612,7 @@
     ///
     /// a [`FontMetrics`][crate::FontMetrics] object. The caller must call
     ///   `Pango::FontMetrics::unref()` when finished using the object.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_font_get_metrics&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_font_get_metrics&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_metrics&quot;</span>)]
     </span><span class="kw">fn </span>metrics(<span class="kw-2">&amp;</span><span class="self">self</span>, language: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>Language&gt;) -&gt; FontMetrics;
 
@@ -623,7 +623,7 @@
     /// # Returns
     ///
     /// `TRUE` if @self can render @wc
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_44&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_font_has_char&quot;</span>)]
     </span><span class="kw">fn </span>has_char(<span class="kw-2">&amp;</span><span class="self">self</span>, wc: char) -&gt; bool;
@@ -641,7 +641,7 @@
     /// # Returns
     ///
     /// a `GBytes` containing the serialized form of @self
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_font_serialize&quot;</span>)]
     </span><span class="kw">fn </span>serialize(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::Bytes;
@@ -669,7 +669,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_46&quot;</span>)))]
     </span><span class="kw">fn </span>face(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; FontFace {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::pango_font_get_face(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>)) }
@@ -714,7 +714,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_44&quot;</span>)))]
     </span><span class="kw">fn </span>has_char(<span class="kw-2">&amp;</span><span class="self">self</span>, wc: char) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -725,7 +725,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     </span><span class="kw">fn </span>serialize(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::Bytes {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::pango_font_serialize(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>)) }
@@ -738,4 +738,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

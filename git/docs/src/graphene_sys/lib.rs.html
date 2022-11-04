@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../graphene_sys/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../graphene_sys/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1734,7 +1734,7 @@
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
 
-</span><span class="attribute">#![allow(non_camel_case_types, non_upper_case_globals, non_snake_case)]
+</span><span class="attr">#![allow(non_camel_case_types, non_upper_case_globals, non_snake_case)]
 #![allow(
     clippy::approx_constant,
     clippy::type_complexity,
@@ -1749,7 +1749,7 @@
     intptr_t, size_t, ssize_t, uintptr_t, FILE,
 };
 
-<span class="attribute">#[allow(unused_imports)]
+<span class="attr">#[allow(unused_imports)]
 </span><span class="kw">use </span>glib::{gboolean, gconstpointer, gpointer, GType};
 
 <span class="comment">// Enums
@@ -1797,7 +1797,7 @@
 <span class="kw">pub const </span>GRAPHENE_VEC4_LEN: c_int = <span class="number">4</span>;
 
 <span class="comment">// Records
-</span><span class="attribute">#[derive(Copy, Clone)]
+</span><span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>graphene_box_t {
     <span class="kw">pub </span>min: graphene_vec3_t,
@@ -1811,7 +1811,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>graphene_euler_t {
     <span class="kw">pub </span>angles: graphene_vec3_t,
@@ -1825,7 +1825,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>graphene_frustum_t {
     <span class="kw">pub </span>planes: [graphene_plane_t; <span class="number">6</span>],
@@ -1838,7 +1838,7 @@
     }
 }
 
-<span class="attribute">#[repr(align(<span class="number">16</span>))]
+<span class="attr">#[repr(align(<span class="number">16</span>))]
 #[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>graphene_matrix_t {
@@ -1852,7 +1852,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>graphene_plane_t {
     <span class="kw">pub </span>normal: graphene_vec3_t,
@@ -1866,7 +1866,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>graphene_point3d_t {
     <span class="kw">pub </span>x: c_float,
@@ -1884,7 +1884,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>graphene_point_t {
     <span class="kw">pub </span>x: c_float,
@@ -1900,7 +1900,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>graphene_quad_t {
     <span class="kw">pub </span>points: [graphene_point_t; <span class="number">4</span>],
@@ -1913,7 +1913,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>graphene_quaternion_t {
     <span class="kw">pub </span>x: c_float,
@@ -1929,7 +1929,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>graphene_ray_t {
     <span class="kw">pub </span>origin: graphene_vec3_t,
@@ -1943,7 +1943,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>graphene_rect_t {
     <span class="kw">pub </span>origin: graphene_point_t,
@@ -1959,7 +1959,7 @@
     }
 }
 
-<span class="attribute">#[repr(align(<span class="number">16</span>))]
+<span class="attr">#[repr(align(<span class="number">16</span>))]
 #[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>graphene_simd4f_t {
@@ -1976,7 +1976,7 @@
     }
 }
 
-<span class="attribute">#[repr(align(<span class="number">16</span>))]
+<span class="attr">#[repr(align(<span class="number">16</span>))]
 #[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>graphene_simd4x4f_t {
@@ -1993,7 +1993,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>graphene_size_t {
     <span class="kw">pub </span>width: c_float,
@@ -2009,7 +2009,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>graphene_sphere_t {
     <span class="kw">pub </span>center: graphene_vec3_t,
@@ -2023,7 +2023,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>graphene_triangle_t {
     <span class="kw">pub </span>a: graphene_vec3_t,
@@ -2038,7 +2038,7 @@
     }
 }
 
-<span class="attribute">#[repr(align(<span class="number">16</span>))]
+<span class="attr">#[repr(align(<span class="number">16</span>))]
 #[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>graphene_vec2_t {
@@ -2052,7 +2052,7 @@
     }
 }
 
-<span class="attribute">#[repr(align(<span class="number">16</span>))]
+<span class="attr">#[repr(align(<span class="number">16</span>))]
 #[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>graphene_vec3_t {
@@ -2066,7 +2066,7 @@
     }
 }
 
-<span class="attribute">#[repr(align(<span class="number">16</span>))]
+<span class="attr">#[repr(align(<span class="number">16</span>))]
 #[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>graphene_vec4_t {
@@ -2080,7 +2080,7 @@
     }
 }
 
-<span class="attribute">#[link(name = <span class="string">&quot;graphene-1.0&quot;</span>)]
+<span class="attr">#[link(name = <span class="string">&quot;graphene-1.0&quot;</span>)]
 </span><span class="kw">extern </span><span class="string">&quot;C&quot; </span>{
 
     <span class="comment">//=========================================================================
@@ -3390,4 +3390,4 @@
 
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="graphene_sys" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="graphene_sys" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

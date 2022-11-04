@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../graphene/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../graphene/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -222,7 +222,7 @@
     ///
     /// a pointer to the initialized
     ///  vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec4_init&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec4_init&quot;</span>)]
     </span><span class="kw">pub fn </span>new(x: f32, y: f32, z: f32, w: f32) -&gt; <span class="self">Self </span>{
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{
@@ -244,7 +244,7 @@
     /// # Returns
     ///
     /// the initialized vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec4_init_from_vec2&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec4_init_from_vec2&quot;</span>)]
     #[doc(alias = <span class="string">&quot;init_from_vec2&quot;</span>)]
     </span><span class="kw">pub fn </span>from_vec2(src: <span class="kw-2">&amp;</span>Vec2, z: f32, w: f32) -&gt; <span class="self">Self </span>{
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -265,7 +265,7 @@
     /// # Returns
     ///
     /// the initialized vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec4_init_from_vec3&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec4_init_from_vec3&quot;</span>)]
     #[doc(alias = <span class="string">&quot;init_from_vec3&quot;</span>)]
     </span><span class="kw">pub fn </span>from_vec3(src: <span class="kw-2">&amp;</span>Vec3, w: f32) -&gt; <span class="self">Self </span>{
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -283,7 +283,7 @@
     /// # Returns
     ///
     /// the initialized vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec4_init_from_float&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec4_init_from_float&quot;</span>)]
     #[doc(alias = <span class="string">&quot;init_from_float&quot;</span>)]
     </span><span class="kw">pub fn </span>from_float(src: [f32; <span class="number">4</span>]) -&gt; <span class="self">Self </span>{
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -303,7 +303,7 @@
     /// ## `dest`
     /// return location for
     ///  an array of floating point values
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec4_to_float&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec4_to_float&quot;</span>)]
     </span><span class="kw">pub fn </span>to_float(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; [f32; <span class="number">4</span>] {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>out = std::mem::MaybeUninit::uninit();
@@ -324,4 +324,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

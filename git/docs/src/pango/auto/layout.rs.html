@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pango/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pango/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1516,14 +1516,14 @@
 </span><span class="kw">use </span><span class="kw">crate</span>::Alignment;
 <span class="kw">use </span><span class="kw">crate</span>::AttrList;
 <span class="kw">use </span><span class="kw">crate</span>::Context;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_46&quot;</span>)))]
 </span><span class="kw">use </span><span class="kw">crate</span>::Direction;
 <span class="kw">use </span><span class="kw">crate</span>::EllipsizeMode;
 <span class="kw">use </span><span class="kw">crate</span>::FontDescription;
 <span class="kw">use </span><span class="kw">crate</span>::LayoutIter;
 <span class="kw">use </span><span class="kw">crate</span>::LayoutLine;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 </span><span class="kw">use </span><span class="kw">crate</span>::LayoutSerializeFlags;
 <span class="kw">use </span><span class="kw">crate</span>::Rectangle;
@@ -1532,7 +1532,7 @@
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 <span class="kw">use </span>std::fmt;
 <span class="kw">use </span>std::mem;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
 </span><span class="kw">use </span>std::ptr;
 
@@ -1575,7 +1575,7 @@
     ///
     /// It is possible, as well, to ignore the 2-D setup,
     /// and simply treat the results of a [`Layout`][crate::Layout] as a list of lines.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PangoLayout&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PangoLayout&quot;</span>)]
     </span><span class="kw">pub struct </span>Layout(Object&lt;ffi::PangoLayout, ffi::PangoLayoutClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -1592,7 +1592,7 @@
     /// # Returns
     ///
     /// the newly allocated [`Layout`][crate::Layout]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(context: <span class="kw-2">&amp;</span>Context) -&gt; Layout {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::pango_layout_new(context.to_glib_none().<span class="number">0</span>)) }
     }
@@ -1602,14 +1602,14 @@
     ///
     /// This function should be called if you make changes to the context
     /// subsequent to creating the layout.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_context_changed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_context_changed&quot;</span>)]
     </span><span class="kw">pub fn </span>context_changed(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::pango_layout_context_changed(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_copy&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_copy&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>copy(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Layout {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::pango_layout_copy(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1621,7 +1621,7 @@
     /// # Returns
     ///
     /// the alignment
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_alignment&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_alignment&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_alignment&quot;</span>)]
     </span><span class="kw">pub fn </span>alignment(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Alignment {
         <span class="kw">unsafe </span>{ from_glib(ffi::pango_layout_get_alignment(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1632,7 +1632,7 @@
     /// # Returns
     ///
     /// a [`AttrList`][crate::AttrList]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_attributes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_attributes&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_attributes&quot;</span>)]
     </span><span class="kw">pub fn </span>attributes(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;AttrList&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::pango_layout_get_attributes(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1647,7 +1647,7 @@
     ///
     /// [`true`] if the bidirectional base direction
     ///   is computed from the layout&#39;s contents, [`false`] otherwise
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_auto_dir&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_auto_dir&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_auto_dir&quot;</span>)]
     </span><span class="kw">pub fn </span>is_auto_dir(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::pango_layout_get_auto_dir(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1658,7 +1658,7 @@
     /// # Returns
     ///
     /// baseline of first line, from top of @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_baseline&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_baseline&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_baseline&quot;</span>)]
     </span><span class="kw">pub fn </span>baseline(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::pango_layout_get_baseline(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -1686,7 +1686,7 @@
     ///
     /// ## `weak_pos`
     /// location to store the weak cursor position
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_layout_get_caret_pos&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_caret_pos&quot;</span>)]
@@ -1711,7 +1711,7 @@
     ///
     /// the number of Unicode characters
     ///   in the text of @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_character_count&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_character_count&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_character_count&quot;</span>)]
     </span><span class="kw">pub fn </span>character_count(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::pango_layout_get_character_count(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -1722,7 +1722,7 @@
     /// # Returns
     ///
     /// the [`Context`][crate::Context] for the layout
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_context&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_context&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_context&quot;</span>)]
     </span><span class="kw">pub fn </span>context(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Context {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::pango_layout_get_context(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1766,7 +1766,7 @@
     ///
     /// ## `weak_pos`
     /// location to store the weak cursor position
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_cursor_pos&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_cursor_pos&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_cursor_pos&quot;</span>)]
     </span><span class="kw">pub fn </span>cursor_pos(<span class="kw-2">&amp;</span><span class="self">self</span>, index_: i32) -&gt; (Rectangle, Rectangle) {
         <span class="kw">unsafe </span>{
@@ -1789,7 +1789,7 @@
     /// # Returns
     ///
     /// the text direction at @index
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_46&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_layout_get_direction&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_direction&quot;</span>)]
@@ -1812,7 +1812,7 @@
     /// # Returns
     ///
     /// the current ellipsization mode for @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_ellipsize&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_ellipsize&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_ellipsize&quot;</span>)]
     </span><span class="kw">pub fn </span>ellipsize(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; EllipsizeMode {
         <span class="kw">unsafe </span>{ from_glib(ffi::pango_layout_get_ellipsize(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1839,7 +1839,7 @@
     /// ## `logical_rect`
     /// rectangle used to store the logical
     ///   extents of the layout
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_extents&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_extents&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_extents&quot;</span>)]
     </span><span class="kw">pub fn </span>extents(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (Rectangle, Rectangle) {
         <span class="kw">unsafe </span>{
@@ -1861,7 +1861,7 @@
     /// a pointer to the
     ///   layout&#39;s font description, or [`None`] if the font description
     ///   from the layout&#39;s context is inherited.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_font_description&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_font_description&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_font_description&quot;</span>)]
     </span><span class="kw">pub fn </span>font_description(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;FontDescription&gt; {
         <span class="kw">unsafe </span>{
@@ -1879,7 +1879,7 @@
     ///
     /// the height, in Pango units if positive,
     ///   or number of lines if negative.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_height&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_height&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_height&quot;</span>)]
     </span><span class="kw">pub fn </span>height(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::pango_layout_get_height(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -1892,7 +1892,7 @@
     /// # Returns
     ///
     /// the indent in Pango units
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_indent&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_indent&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_indent&quot;</span>)]
     </span><span class="kw">pub fn </span>indent(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::pango_layout_get_indent(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -1903,7 +1903,7 @@
     /// # Returns
     ///
     /// the new [`LayoutIter`][crate::LayoutIter]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_iter&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_iter&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_iter&quot;</span>)]
     </span><span class="kw">pub fn </span>iter(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; LayoutIter {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::pango_layout_get_iter(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1915,7 +1915,7 @@
     /// # Returns
     ///
     /// the justify value
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_justify&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_justify&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_justify&quot;</span>)]
     </span><span class="kw">pub fn </span>is_justify(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::pango_layout_get_justify(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1927,7 +1927,7 @@
     /// # Returns
     ///
     /// the justify value
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_layout_get_justify_last_line&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_justify_last_line&quot;</span>)]
@@ -1953,7 +1953,7 @@
     ///   or [`None`] if the index is out of range. This layout line can be ref&#39;ed
     ///   and retained, but will become invalid if changes are made to the
     ///   [`Layout`][crate::Layout].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_line&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_line&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_line&quot;</span>)]
     </span><span class="kw">pub fn </span>line(<span class="kw-2">&amp;</span><span class="self">self</span>, line: i32) -&gt; <span class="prelude-ty">Option</span>&lt;LayoutLine&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::pango_layout_get_line(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, line)) }
@@ -1964,7 +1964,7 @@
     /// # Returns
     ///
     /// the line count
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_line_count&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_line_count&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_line_count&quot;</span>)]
     </span><span class="kw">pub fn </span>line_count(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::pango_layout_get_line_count(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -1985,7 +1985,7 @@
     ///   or [`None`] if the index is out of range. This layout line can be ref&#39;ed
     ///   and retained, but will become invalid if changes are made to the
     ///   [`Layout`][crate::Layout]. No changes should be made to the line.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_line_readonly&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_line_readonly&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_line_readonly&quot;</span>)]
     </span><span class="kw">pub fn </span>line_readonly(<span class="kw-2">&amp;</span><span class="self">self</span>, line: i32) -&gt; <span class="prelude-ty">Option</span>&lt;LayoutLine&gt; {
         <span class="kw">unsafe </span>{
@@ -1999,7 +1999,7 @@
     <span class="doccomment">/// Gets the line spacing factor of @self.
     ///
     /// See [`set_line_spacing()`][Self::set_line_spacing()].
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_44&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_layout_get_line_spacing&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_line_spacing&quot;</span>)]
@@ -2018,7 +2018,7 @@
     ///   containing the lines in the layout. This points to internal data of the
     ///   [`Layout`][crate::Layout] and must be used with care. It will become invalid on any
     ///   change to the layout&#39;s text or properties.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_lines&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_lines&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_lines&quot;</span>)]
     </span><span class="kw">pub fn </span>lines(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;LayoutLine&gt; {
         <span class="kw">unsafe </span>{
@@ -2039,7 +2039,7 @@
     ///   [`Layout`][crate::Layout] and must be used with care. It will become invalid on any
     ///   change to the layout&#39;s text or properties. No changes should be made to
     ///   the lines.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_lines_readonly&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_lines_readonly&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_lines_readonly&quot;</span>)]
     </span><span class="kw">pub fn </span>lines_readonly(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;LayoutLine&gt; {
         <span class="kw">unsafe </span>{
@@ -2078,7 +2078,7 @@
     /// ## `logical_rect`
     /// rectangle used to store the logical
     ///   extents of the layout
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_pixel_extents&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_pixel_extents&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_pixel_extents&quot;</span>)]
     </span><span class="kw">pub fn </span>pixel_extents(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (Rectangle, Rectangle) {
         <span class="kw">unsafe </span>{
@@ -2108,7 +2108,7 @@
     ///
     /// ## `height`
     /// location to store the logical height
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_pixel_size&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_pixel_size&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_pixel_size&quot;</span>)]
     </span><span class="kw">pub fn </span>pixel_size(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (i32, i32) {
         <span class="kw">unsafe </span>{
@@ -2139,7 +2139,7 @@
     /// # Returns
     ///
     /// The current serial number of @self.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_serial&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_serial&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_serial&quot;</span>)]
     </span><span class="kw">pub fn </span>serial(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::pango_layout_get_serial(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -2153,7 +2153,7 @@
     ///
     /// [`true`] if the layout does not break paragraphs
     ///   at paragraph separator characters, [`false`] otherwise
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_single_paragraph_mode&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_single_paragraph_mode&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_single_paragraph_mode&quot;</span>)]
     </span><span class="kw">pub fn </span>is_single_paragraph_mode(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -2176,7 +2176,7 @@
     ///
     /// ## `height`
     /// location to store the logical height
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_size&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_size&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_size&quot;</span>)]
     </span><span class="kw">pub fn </span>size(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (i32, i32) {
         <span class="kw">unsafe </span>{
@@ -2196,7 +2196,7 @@
     /// # Returns
     ///
     /// the spacing in Pango units
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_spacing&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_spacing&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_spacing&quot;</span>)]
     </span><span class="kw">pub fn </span>spacing(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::pango_layout_get_spacing(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -2212,7 +2212,7 @@
     /// # Returns
     ///
     /// a copy of the tabs for this layout
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_tabs&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_tabs&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_tabs&quot;</span>)]
     </span><span class="kw">pub fn </span>tabs(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;TabArray&gt; {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::pango_layout_get_tabs(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -2225,7 +2225,7 @@
     /// # Returns
     ///
     /// the text in the @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_text&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_text&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_text&quot;</span>)]
     </span><span class="kw">pub fn </span>text(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::pango_layout_get_text(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -2241,7 +2241,7 @@
     /// # Returns
     ///
     /// The number of unknown glyphs in @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_unknown_glyphs_count&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_unknown_glyphs_count&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_unknown_glyphs_count&quot;</span>)]
     </span><span class="kw">pub fn </span>unknown_glyphs_count(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::pango_layout_get_unknown_glyphs_count(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -2252,7 +2252,7 @@
     /// # Returns
     ///
     /// the width in Pango units, or -1 if no width set.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_width&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_width&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_width&quot;</span>)]
     </span><span class="kw">pub fn </span>width(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::pango_layout_get_width(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -2266,7 +2266,7 @@
     /// # Returns
     ///
     /// active wrap mode.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_get_wrap&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_get_wrap&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_wrap&quot;</span>)]
     </span><span class="kw">pub fn </span>wrap(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; WrapMode {
         <span class="kw">unsafe </span>{ from_glib(ffi::pango_layout_get_wrap(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -2292,7 +2292,7 @@
     /// ## `x_pos`
     /// location to store resulting position within line
     ///   (`PANGO_SCALE` units per device unit)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_index_to_line_x&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_index_to_line_x&quot;</span>)]
     </span><span class="kw">pub fn </span>index_to_line_x(<span class="kw-2">&amp;</span><span class="self">self</span>, index_: i32, trailing: bool) -&gt; (i32, i32) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>line = mem::MaybeUninit::uninit();
@@ -2323,7 +2323,7 @@
     ///
     /// ## `pos`
     /// rectangle in which to store the position of the grapheme
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_index_to_pos&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_index_to_pos&quot;</span>)]
     </span><span class="kw">pub fn </span>index_to_pos(<span class="kw-2">&amp;</span><span class="self">self</span>, index_: i32) -&gt; Rectangle {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>pos = Rectangle::uninitialized();
@@ -2343,7 +2343,7 @@
     ///
     /// [`true`] if any paragraphs had to be ellipsized,
     ///   [`false`] otherwise
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_is_ellipsized&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_is_ellipsized&quot;</span>)]
     </span><span class="kw">pub fn </span>is_ellipsized(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::pango_layout_is_ellipsized(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
@@ -2359,7 +2359,7 @@
     ///
     /// [`true`] if any paragraphs had to be wrapped, [`false`]
     ///   otherwise
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_is_wrapped&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_is_wrapped&quot;</span>)]
     </span><span class="kw">pub fn </span>is_wrapped(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::pango_layout_is_wrapped(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
@@ -2409,7 +2409,7 @@
     ///   position at the beginning of one line from the position at the
     ///   end of the preceding line. @new_index is always on the line where
     ///   the cursor should be displayed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_move_cursor_visually&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_move_cursor_visually&quot;</span>)]
     </span><span class="kw">pub fn </span>move_cursor_visually(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         strong: bool,
@@ -2447,7 +2447,7 @@
     /// # Returns
     ///
     /// a `GBytes` containing the serialized form of @self
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_layout_serialize&quot;</span>)]
     </span><span class="kw">pub fn </span>serialize(<span class="kw-2">&amp;</span><span class="self">self</span>, flags: LayoutSerializeFlags) -&gt; glib::Bytes {
@@ -2465,7 +2465,7 @@
     /// The default alignment is [`Alignment::Left`][crate::Alignment::Left].
     /// ## `alignment`
     /// the alignment
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_set_alignment&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_set_alignment&quot;</span>)]
     </span><span class="kw">pub fn </span>set_alignment(<span class="kw-2">&amp;</span><span class="self">self</span>, alignment: Alignment) {
         <span class="kw">unsafe </span>{
             ffi::pango_layout_set_alignment(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, alignment.into_glib());
@@ -2477,7 +2477,7 @@
     /// References @attrs, so the caller can unref its reference.
     /// ## `attrs`
     /// a [`AttrList`][crate::AttrList]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_set_attributes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_set_attributes&quot;</span>)]
     </span><span class="kw">pub fn </span>set_attributes(<span class="kw-2">&amp;</span><span class="self">self</span>, attrs: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>AttrList&gt;) {
         <span class="kw">unsafe </span>{
             ffi::pango_layout_set_attributes(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, attrs.to_glib_none().<span class="number">0</span>);
@@ -2503,7 +2503,7 @@
     /// ## `auto_dir`
     /// if [`true`], compute the bidirectional base direction
     ///   from the layout&#39;s contents
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_set_auto_dir&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_set_auto_dir&quot;</span>)]
     </span><span class="kw">pub fn </span>set_auto_dir(<span class="kw-2">&amp;</span><span class="self">self</span>, auto_dir: bool) {
         <span class="kw">unsafe </span>{
             ffi::pango_layout_set_auto_dir(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, auto_dir.into_glib());
@@ -2527,7 +2527,7 @@
     /// See [`set_height()`][Self::set_height()] for details.
     /// ## `ellipsize`
     /// the new ellipsization mode for @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_set_ellipsize&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_set_ellipsize&quot;</span>)]
     </span><span class="kw">pub fn </span>set_ellipsize(<span class="kw-2">&amp;</span><span class="self">self</span>, ellipsize: EllipsizeMode) {
         <span class="kw">unsafe </span>{
             ffi::pango_layout_set_ellipsize(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, ellipsize.into_glib());
@@ -2541,7 +2541,7 @@
     /// ## `desc`
     /// the new [`FontDescription`][crate::FontDescription]
     ///   to unset the current font description
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_set_font_description&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_set_font_description&quot;</span>)]
     </span><span class="kw">pub fn </span>set_font_description(<span class="kw-2">&amp;</span><span class="self">self</span>, desc: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>FontDescription&gt;) {
         <span class="kw">unsafe </span>{
             ffi::pango_layout_set_font_description(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, desc.to_glib_none().<span class="number">0</span>);
@@ -2576,7 +2576,7 @@
     /// ## `height`
     /// the desired height of the layout in Pango units if positive,
     ///   or desired number of lines if negative.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_set_height&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_set_height&quot;</span>)]
     </span><span class="kw">pub fn </span>set_height(<span class="kw-2">&amp;</span><span class="self">self</span>, height: i32) {
         <span class="kw">unsafe </span>{
             ffi::pango_layout_set_height(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, height);
@@ -2595,7 +2595,7 @@
     /// The default value is 0.
     /// ## `indent`
     /// the amount by which to indent
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_set_indent&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_set_indent&quot;</span>)]
     </span><span class="kw">pub fn </span>set_indent(<span class="kw-2">&amp;</span><span class="self">self</span>, indent: i32) {
         <span class="kw">unsafe </span>{
             ffi::pango_layout_set_indent(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, indent);
@@ -2621,7 +2621,7 @@
     /// Also see [`set_justify_last_line()`][Self::set_justify_last_line()].
     /// ## `justify`
     /// whether the lines in the layout should be justified
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_set_justify&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_set_justify&quot;</span>)]
     </span><span class="kw">pub fn </span>set_justify(<span class="kw-2">&amp;</span><span class="self">self</span>, justify: bool) {
         <span class="kw">unsafe </span>{
             ffi::pango_layout_set_justify(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, justify.into_glib());
@@ -2637,7 +2637,7 @@
     /// The default value is [`false`].
     /// ## `justify`
     /// whether the last line in the layout should be justified
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_layout_set_justify_last_line&quot;</span>)]
     </span><span class="kw">pub fn </span>set_justify_last_line(<span class="kw-2">&amp;</span><span class="self">self</span>, justify: bool) {
@@ -2664,7 +2664,7 @@
     /// property, see `attr_line_height_new()`.
     /// ## `factor`
     /// the new line spacing factor
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_44&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_layout_set_line_spacing&quot;</span>)]
     </span><span class="kw">pub fn </span>set_line_spacing(<span class="kw-2">&amp;</span><span class="self">self</span>, factor: f32) {
@@ -2686,7 +2686,7 @@
     /// ## `length`
     /// length of marked-up text in bytes, or -1 if @markup is
     ///   `NUL`-terminated
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_set_markup&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_set_markup&quot;</span>)]
     </span><span class="kw">pub fn </span>set_markup(<span class="kw-2">&amp;</span><span class="self">self</span>, markup: <span class="kw-2">&amp;</span>str) {
         <span class="kw">let </span>length = markup.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
@@ -2721,7 +2721,7 @@
     /// ## `accel_char`
     /// return location
     ///   for first located accelerator
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_set_markup_with_accel&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_set_markup_with_accel&quot;</span>)]
     </span><span class="kw">pub fn </span>set_markup_with_accel(<span class="kw-2">&amp;</span><span class="self">self</span>, markup: <span class="kw-2">&amp;</span>str, accel_marker: char) -&gt; char {
         <span class="kw">let </span>length = markup.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
@@ -2748,7 +2748,7 @@
     /// The default value is [`false`].
     /// ## `setting`
     /// new setting
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_set_single_paragraph_mode&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_set_single_paragraph_mode&quot;</span>)]
     </span><span class="kw">pub fn </span>set_single_paragraph_mode(<span class="kw-2">&amp;</span><span class="self">self</span>, setting: bool) {
         <span class="kw">unsafe </span>{
             ffi::pango_layout_set_single_paragraph_mode(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, setting.into_glib());
@@ -2773,7 +2773,7 @@
     /// property, see `attr_line_height_new()`.
     /// ## `spacing`
     /// the amount of spacing
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_set_spacing&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_set_spacing&quot;</span>)]
     </span><span class="kw">pub fn </span>set_spacing(<span class="kw-2">&amp;</span><span class="self">self</span>, spacing: i32) {
         <span class="kw">unsafe </span>{
             ffi::pango_layout_set_spacing(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, spacing);
@@ -2795,7 +2795,7 @@
     /// [`Alignment::Left`][crate::Alignment::Left].
     /// ## `tabs`
     /// a [`TabArray`][crate::TabArray]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_set_tabs&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_set_tabs&quot;</span>)]
     </span><span class="kw">pub fn </span>set_tabs(<span class="kw-2">&amp;</span><span class="self">self</span>, tabs: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>TabArray&gt;) {
         <span class="kw">unsafe </span>{
             ffi::pango_layout_set_tabs(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, mut_override(tabs.to_glib_none().<span class="number">0</span>));
@@ -2819,7 +2819,7 @@
     ///   the string is nul-terminated and the length should be calculated.
     ///   The text will also be truncated on encountering a nul-termination
     ///   even when @length is positive.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_set_text&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_set_text&quot;</span>)]
     </span><span class="kw">pub fn </span>set_text(<span class="kw-2">&amp;</span><span class="self">self</span>, text: <span class="kw-2">&amp;</span>str) {
         <span class="kw">let </span>length = text.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
@@ -2834,7 +2834,7 @@
     /// ## `width`
     /// the desired width in Pango units, or -1 to indicate that no
     ///   wrapping or ellipsization should be performed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_set_width&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_set_width&quot;</span>)]
     </span><span class="kw">pub fn </span>set_width(<span class="kw-2">&amp;</span><span class="self">self</span>, width: i32) {
         <span class="kw">unsafe </span>{
             ffi::pango_layout_set_width(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, width);
@@ -2850,7 +2850,7 @@
     /// The default value is [`WrapMode::Word`][crate::WrapMode::Word].
     /// ## `wrap`
     /// the wrap mode
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_set_wrap&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_set_wrap&quot;</span>)]
     </span><span class="kw">pub fn </span>set_wrap(<span class="kw-2">&amp;</span><span class="self">self</span>, wrap: WrapMode) {
         <span class="kw">unsafe </span>{
             ffi::pango_layout_set_wrap(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, wrap.into_glib());
@@ -2874,7 +2874,7 @@
     /// # Returns
     ///
     /// [`true`] if saving was successful
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_layout_write_to_file&quot;</span>)]
     </span><span class="kw">pub fn </span>write_to_file(
@@ -2925,7 +2925,7 @@
     ///   in the grapheme the user clicked. It will either be zero, or the
     ///   number of characters in the grapheme. 0 represents the leading edge
     ///   of the grapheme.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_xy_to_index&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_xy_to_index&quot;</span>)]
     </span><span class="kw">pub fn </span>xy_to_index(<span class="kw-2">&amp;</span><span class="self">self</span>, x: i32, y: i32) -&gt; (bool, i32, i32) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>index_ = mem::MaybeUninit::uninit();
@@ -2948,4 +2948,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../cairo/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../cairo/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -402,23 +402,23 @@
 <span id="329">329</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="attribute">#![cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, feature(doc_cfg))]
+</span><span class="attr">#![cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, feature(doc_cfg))]
 #![allow(clippy::missing_safety_doc)]
 #![allow(clippy::wrong_self_convention)]
 #![allow(clippy::non_send_fields_in_send_ty)]
 #![doc = <span class="macro">include_str!</span>(<span class="string">&quot;../README.md&quot;</span>)]
 
 </span><span class="kw">pub use </span>ffi;
-<span class="attribute">#[cfg(feature = <span class="string">&quot;freetype&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;freetype&quot;</span>)]
 </span><span class="kw">pub use </span>freetype;
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">pub use </span>glib;
 
 <span class="comment">// Helper macros for our GValue related trait impls
-</span><span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+</span><span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="macro">macro_rules! </span>gvalue_impl_inner {
     (<span class="macro-nonterminal">$name</span>:ty, <span class="macro-nonterminal">$ffi_name</span>:ty, <span class="macro-nonterminal">$get_type</span>:expr) =&gt; {
-        <span class="attribute">#[allow(unused_imports)]
+        <span class="attr">#[allow(unused_imports)]
         </span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 
         <span class="kw">impl </span>glib::types::StaticType <span class="kw">for </span><span class="macro-nonterminal">$name </span>{
@@ -435,7 +435,7 @@
     };
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="macro">macro_rules! </span>gvalue_impl {
     (<span class="macro-nonterminal">$name</span>:ty, <span class="macro-nonterminal">$ffi_name</span>:ty, <span class="macro-nonterminal">$get_type</span>:expr) =&gt; {
         <span class="macro">gvalue_impl_inner!</span>(<span class="macro-nonterminal">$name</span>, <span class="macro-nonterminal">$ffi_name</span>, <span class="macro-nonterminal">$get_type</span>);
@@ -504,7 +504,7 @@
     };
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="macro">macro_rules! </span>gvalue_impl_inline {
     (<span class="macro-nonterminal">$name</span>:ty, <span class="macro-nonterminal">$ffi_name</span>:ty, <span class="macro-nonterminal">$get_type</span>:expr) =&gt; {
         <span class="macro">gvalue_impl_inner!</span>(<span class="macro-nonterminal">$name</span>, <span class="macro-nonterminal">$ffi_name</span>, <span class="macro-nonterminal">$get_type</span>);
@@ -614,27 +614,27 @@
 
 <span class="kw">pub use </span><span class="kw">crate</span>::image_surface::{ImageSurface, ImageSurfaceData, ImageSurfaceDataOwned};
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;pdf&quot;</span>, feature = <span class="string">&quot;svg&quot;</span>, feature = <span class="string">&quot;ps&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;pdf&quot;</span>, feature = <span class="string">&quot;svg&quot;</span>, feature = <span class="string">&quot;ps&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">pub use </span>stream::StreamWithError;
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;pdf&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;pdf&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">pub use </span>pdf::PdfSurface;
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;ps&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;ps&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">pub use </span>ps::PsSurface;
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;svg&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;svg&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">pub use </span>svg::SvgSurface;
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;xcb&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;xcb&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">pub use </span>xcb::{
     XCBConnection, XCBDrawable, XCBPixmap, XCBRenderPictFormInfo, XCBScreen, XCBSurface,
     XCBVisualType,
 };
 
-<span class="attribute">#[macro_use]
+<span class="attr">#[macro_use]
 </span><span class="kw">mod </span>surface_macros;
-<span class="attribute">#[macro_use]
+<span class="attr">#[macro_use]
 </span><span class="kw">mod </span>user_data;
 <span class="kw">mod </span>constants;
 <span class="kw">pub use </span><span class="kw">crate</span>::constants::<span class="kw-2">*</span>;
@@ -654,33 +654,33 @@
 <span class="kw">mod </span>rectangle_int;
 <span class="kw">mod </span>region;
 <span class="kw">mod </span>surface;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;png&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;png&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">mod </span>surface_png;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;xcb&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;xcb&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">mod </span>xcb;
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;pdf&quot;</span>, feature = <span class="string">&quot;svg&quot;</span>, feature = <span class="string">&quot;ps&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;pdf&quot;</span>, feature = <span class="string">&quot;svg&quot;</span>, feature = <span class="string">&quot;ps&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[macro_use]
 </span><span class="kw">mod </span>stream;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;pdf&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;pdf&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">mod </span>pdf;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;ps&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;ps&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">mod </span>ps;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;svg&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;svg&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">mod </span>svg;
 
-<span class="attribute">#[cfg(any(target_os = <span class="string">&quot;macos&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(target_os = <span class="string">&quot;macos&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">mod </span>quartz_surface;
-<span class="attribute">#[cfg(any(target_os = <span class="string">&quot;macos&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(target_os = <span class="string">&quot;macos&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">pub use </span>quartz_surface::QuartzSurface;
 
-<span class="attribute">#[cfg(any(all(windows, feature = <span class="string">&quot;win32-surface&quot;</span>), feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(all(windows, feature = <span class="string">&quot;win32-surface&quot;</span>), feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">mod </span>win32_surface;
 
-<span class="attribute">#[cfg(any(all(windows, feature = <span class="string">&quot;win32-surface&quot;</span>), feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(all(windows, feature = <span class="string">&quot;win32-surface&quot;</span>), feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">pub use </span>win32_surface::Win32Surface;
 
-<span class="attribute">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
+<span class="attr">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
 </span><span class="kw">mod </span>borrowed {
     <span class="kw">use </span>std::mem;
 
@@ -691,7 +691,7 @@
     ///
     /// Borrowed values must never be passed by value or mutable reference to safe Rust code and must
     /// not leave the C scope in which they are valid.
-    </span><span class="attribute">#[derive(Debug)]
+    </span><span class="attr">#[derive(Debug)]
     </span><span class="kw">pub struct </span>Borrowed&lt;T&gt;(mem::ManuallyDrop&lt;T&gt;);
 
     <span class="kw">impl</span>&lt;T&gt; Borrowed&lt;T&gt; {
@@ -724,10 +724,10 @@
     }
 }
 
-<span class="attribute">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
+<span class="attr">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
 </span><span class="kw">pub use </span>borrowed::Borrowed;
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">use </span>glib::translate::Borrowed;
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

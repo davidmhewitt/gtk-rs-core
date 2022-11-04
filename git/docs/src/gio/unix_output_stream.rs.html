@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -161,10 +161,10 @@
 <span class="kw">use </span>glib::object::{Cast, IsA};
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 
-<span class="attribute">#[cfg(unix)]
+<span class="attr">#[cfg(unix)]
 </span><span class="kw">use </span>std::os::unix::io::{AsRawFd, FromRawFd, IntoRawFd, RawFd};
 
-<span class="attribute">#[cfg(all(not(unix), feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(all(not(unix), feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span>socket::{AsRawFd, FromRawFd, IntoRawFd, RawFd};
 
 <span class="kw">impl </span>UnixOutputStream {
@@ -175,7 +175,7 @@
     /// You must not close the fd unless you&#39;ve previously called [`UnixOutputStreamExtManual::set_close_fd`]
     /// on this stream. At which point you may only do so when all references to this stream have
     /// been dropped.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_output_stream_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_unix_output_stream_new&quot;</span>)]
     </span><span class="kw">pub unsafe fn </span>take_fd(fd: <span class="kw">impl </span>IntoRawFd) -&gt; UnixOutputStream {
         <span class="kw">let </span>fd = fd.into_raw_fd();
         <span class="kw">let </span>close_fd = <span class="bool-val">true</span>.into_glib();
@@ -187,7 +187,7 @@
     ///
     /// # Safety
     /// You may only close the fd if all references to this stream have been dropped.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_output_stream_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_unix_output_stream_new&quot;</span>)]
     </span><span class="kw">pub unsafe fn </span>with_fd&lt;T: AsRawFd&gt;(fd: T) -&gt; UnixOutputStream {
         <span class="kw">let </span>fd = fd.as_raw_fd();
         <span class="kw">let </span>close_fd = <span class="bool-val">false</span>.into_glib();
@@ -207,7 +207,7 @@
     /// # Returns
     ///
     /// The file descriptor of `self`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_output_stream_get_fd&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_unix_output_stream_get_fd&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_fd&quot;</span>)]
     </span><span class="kw">fn </span>fd&lt;T: FromRawFd&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; T;
 
@@ -217,7 +217,7 @@
     /// # Safety
     /// If you pass in `false` as the parameter, you may only close the fd if the all references
     /// to the stream have been dropped. If you pass in `true`, you must never call close.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_output_stream_set_close_fd&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_unix_output_stream_set_close_fd&quot;</span>)]
     </span><span class="kw">unsafe fn </span>set_close_fd(<span class="kw-2">&amp;</span><span class="self">self</span>, close_fd: bool);
 }
 
@@ -238,4 +238,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

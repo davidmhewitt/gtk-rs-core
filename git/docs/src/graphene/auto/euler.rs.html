@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../graphene/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../graphene/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -319,7 +319,7 @@
 }
 
 <span class="kw">impl </span>Euler {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;graphene_euler_equal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;graphene_euler_equal&quot;</span>)]
     </span><span class="kw">fn </span>equal(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Euler) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_euler_equal(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, b.to_glib_none().<span class="number">0</span>) }
     }
@@ -332,7 +332,7 @@
     /// # Returns
     ///
     /// the first component of the Euler angle vector, in radians
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_euler_get_alpha&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_euler_get_alpha&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_alpha&quot;</span>)]
     </span><span class="kw">pub fn </span>alpha(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_euler_get_alpha(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -346,7 +346,7 @@
     /// # Returns
     ///
     /// the second component of the Euler angle vector, in radians
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_euler_get_beta&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_euler_get_beta&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_beta&quot;</span>)]
     </span><span class="kw">pub fn </span>beta(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_euler_get_beta(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -360,7 +360,7 @@
     /// # Returns
     ///
     /// the third component of the Euler angle vector, in radians
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_euler_get_gamma&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_euler_get_gamma&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_gamma&quot;</span>)]
     </span><span class="kw">pub fn </span>gamma(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_euler_get_gamma(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -377,7 +377,7 @@
     /// # Returns
     ///
     /// the order used to apply the rotations
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_euler_get_order&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_euler_get_order&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_order&quot;</span>)]
     </span><span class="kw">pub fn </span>order(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; EulerOrder {
         <span class="kw">unsafe </span>{ from_glib(ffi::graphene_euler_get_order(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -388,7 +388,7 @@
     /// # Returns
     ///
     /// the rotation angle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_euler_get_x&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_euler_get_x&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_x&quot;</span>)]
     </span><span class="kw">pub fn </span>x(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_euler_get_x(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -399,7 +399,7 @@
     /// # Returns
     ///
     /// the rotation angle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_euler_get_y&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_euler_get_y&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_y&quot;</span>)]
     </span><span class="kw">pub fn </span>y(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_euler_get_y(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -410,7 +410,7 @@
     /// # Returns
     ///
     /// the rotation angle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_euler_get_z&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_euler_get_z&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_z&quot;</span>)]
     </span><span class="kw">pub fn </span>z(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_euler_get_z(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -430,7 +430,7 @@
     /// ## `res`
     /// return location for the reordered
     ///  [`Euler`][crate::Euler]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_euler_reorder&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_euler_reorder&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>reorder(<span class="kw-2">&amp;</span><span class="self">self</span>, order: EulerOrder) -&gt; Euler {
         <span class="kw">unsafe </span>{
@@ -466,7 +466,7 @@
     ///
     /// ## `res`
     /// return location for a [`Matrix`][crate::Matrix]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_euler_to_matrix&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_euler_to_matrix&quot;</span>)]
     </span><span class="kw">pub fn </span>to_matrix(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Matrix {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>res = Matrix::uninitialized();
@@ -482,7 +482,7 @@
     ///
     /// ## `res`
     /// return location for a [`Quaternion`][crate::Quaternion]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_euler_to_quaternion&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_euler_to_quaternion&quot;</span>)]
     </span><span class="kw">pub fn </span>to_quaternion(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Quaternion {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>res = Quaternion::uninitialized();
@@ -499,7 +499,7 @@
     ///
     /// ## `res`
     /// return location for a [`Vec3`][crate::Vec3]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_euler_to_vec3&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_euler_to_vec3&quot;</span>)]
     </span><span class="kw">pub fn </span>to_vec3(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec3 {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>res = Vec3::uninitialized();
@@ -510,7 +510,7 @@
 }
 
 <span class="kw">impl </span>PartialEq <span class="kw">for </span>Euler {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool {
         <span class="self">self</span>.equal(other)
     }
@@ -518,4 +518,4 @@
 
 <span class="kw">impl </span>Eq <span class="kw">for </span>Euler {}
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

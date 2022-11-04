@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../graphene/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../graphene/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -352,7 +352,7 @@
     /// ## `res`
     /// return location for the cross
     ///  product
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_point3d_cross&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_point3d_cross&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>cross(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Point3D) -&gt; Point3D {
         <span class="kw">unsafe </span>{
@@ -377,7 +377,7 @@
     /// ## `delta`
     /// return location for the distance
     ///  components on the X, Y, and Z axis
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_point3d_distance&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_point3d_distance&quot;</span>)]
     </span><span class="kw">pub fn </span>distance(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Point3D) -&gt; (f32, Vec3) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>delta = Vec3::uninitialized();
@@ -397,12 +397,12 @@
     /// # Returns
     ///
     /// the value of the dot product
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_point3d_dot&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_point3d_dot&quot;</span>)]
     </span><span class="kw">pub fn </span>dot(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Point3D) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_point3d_dot(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, b.to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;graphene_point3d_equal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;graphene_point3d_equal&quot;</span>)]
     </span><span class="kw">fn </span>equal(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Point3D) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_point3d_equal(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, b.to_glib_none().<span class="number">0</span>) }
     }
@@ -420,7 +420,7 @@
     /// ## `res`
     /// the return location for the
     ///  interpolated [`Point3D`][crate::Point3D]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_point3d_interpolate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_point3d_interpolate&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>interpolate(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Point3D, factor: f64) -&gt; Point3D {
         <span class="kw">unsafe </span>{
@@ -441,7 +441,7 @@
     /// # Returns
     ///
     /// the length of the vector represented by the point
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_point3d_length&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_point3d_length&quot;</span>)]
     </span><span class="kw">pub fn </span>length(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_point3d_length(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
@@ -456,7 +456,7 @@
     /// # Returns
     ///
     /// `true` if the points are near each other
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_point3d_near&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_point3d_near&quot;</span>)]
     </span><span class="kw">pub fn </span>near(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Point3D, epsilon: f32) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_point3d_near(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, b.to_glib_none().<span class="number">0</span>, epsilon) }
     }
@@ -470,7 +470,7 @@
     /// ## `res`
     /// return location for the normalized
     ///  [`Point3D`][crate::Point3D]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_point3d_normalize&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_point3d_normalize&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>normalize(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Point3D {
         <span class="kw">unsafe </span>{
@@ -500,7 +500,7 @@
     /// ## `res`
     /// the return location for the
     ///  normalized [`Point3D`][crate::Point3D]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_point3d_normalize_viewport&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_point3d_normalize_viewport&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>normalize_viewport(<span class="kw-2">&amp;</span><span class="self">self</span>, viewport: <span class="kw-2">&amp;</span>Rect, z_near: f32, z_far: f32) -&gt; Point3D {
         <span class="kw">unsafe </span>{
@@ -526,7 +526,7 @@
     ///
     /// ## `res`
     /// return location for the scaled point
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_point3d_scale&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_point3d_scale&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>scale(<span class="kw-2">&amp;</span><span class="self">self</span>, factor: f32) -&gt; Point3D {
         <span class="kw">unsafe </span>{
@@ -544,7 +544,7 @@
     ///
     /// ## `v`
     /// return location for a [`Vec3`][crate::Vec3]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_point3d_to_vec3&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_point3d_to_vec3&quot;</span>)]
     </span><span class="kw">pub fn </span>to_vec3(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec3 {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>v = Vec3::uninitialized();
@@ -558,7 +558,7 @@
     /// # Returns
     ///
     /// a zero point
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_point3d_zero&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_point3d_zero&quot;</span>)]
     </span><span class="kw">pub fn </span>zero() -&gt; Point3D {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ from_glib_none(ffi::graphene_point3d_zero()) }
@@ -566,7 +566,7 @@
 }
 
 <span class="kw">impl </span>PartialEq <span class="kw">for </span>Point3D {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool {
         <span class="self">self</span>.equal(other)
     }
@@ -574,4 +574,4 @@
 
 <span class="kw">impl </span>Eq <span class="kw">for </span>Point3D {}
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

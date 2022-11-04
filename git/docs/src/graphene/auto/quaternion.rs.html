@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../graphene/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../graphene/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -423,7 +423,7 @@
     ///
     /// ## `res`
     /// the result of the operation
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_quaternion_add&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_quaternion_add&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>add(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Quaternion) -&gt; Quaternion {
         <span class="kw">unsafe </span>{
@@ -444,12 +444,12 @@
     /// # Returns
     ///
     /// the value of the dot products
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_quaternion_dot&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_quaternion_dot&quot;</span>)]
     </span><span class="kw">pub fn </span>dot(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Quaternion) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_quaternion_dot(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, b.to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;graphene_quaternion_equal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;graphene_quaternion_equal&quot;</span>)]
     </span><span class="kw">fn </span>equal(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Quaternion) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_quaternion_equal(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, b.to_glib_none().<span class="number">0</span>) }
     }
@@ -463,7 +463,7 @@
     /// ## `res`
     /// return location for the inverted
     ///  quaternion
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_quaternion_invert&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_quaternion_invert&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>invert(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Quaternion {
         <span class="kw">unsafe </span>{
@@ -482,7 +482,7 @@
     ///
     /// ## `res`
     /// the result of the operation
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_quaternion_multiply&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_quaternion_multiply&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>multiply(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Quaternion) -&gt; Quaternion {
         <span class="kw">unsafe </span>{
@@ -504,7 +504,7 @@
     /// ## `res`
     /// return location for the normalized
     ///  quaternion
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_quaternion_normalize&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_quaternion_normalize&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>normalize(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Quaternion {
         <span class="kw">unsafe </span>{
@@ -524,7 +524,7 @@
     ///
     /// ## `res`
     /// the result of the operation
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_quaternion_scale&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_quaternion_scale&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>scale(<span class="kw-2">&amp;</span><span class="self">self</span>, factor: f32) -&gt; Quaternion {
         <span class="kw">unsafe </span>{
@@ -548,7 +548,7 @@
     /// ## `res`
     /// return location for the interpolated
     ///  quaternion
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_quaternion_slerp&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_quaternion_slerp&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>slerp(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Quaternion, factor: f32) -&gt; Quaternion {
         <span class="kw">unsafe </span>{
@@ -573,7 +573,7 @@
     ///
     /// ## `axis`
     /// return location for the rotation axis
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_quaternion_to_angle_vec3&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_quaternion_to_angle_vec3&quot;</span>)]
     </span><span class="kw">pub fn </span>to_angle_vec3(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (f32, Vec3) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>angle = mem::MaybeUninit::uninit();
@@ -605,7 +605,7 @@
     /// ## `deg_z`
     /// return location for the rotation angle on
     ///  the Z axis (roll), in degrees
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_quaternion_to_angles&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_quaternion_to_angles&quot;</span>)]
     </span><span class="kw">pub fn </span>to_angles(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (f32, f32, f32) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>deg_x = mem::MaybeUninit::uninit();
@@ -633,7 +633,7 @@
     ///
     /// ## `m`
     /// a [`Matrix`][crate::Matrix]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_quaternion_to_matrix&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_quaternion_to_matrix&quot;</span>)]
     </span><span class="kw">pub fn </span>to_matrix(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Matrix {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>m = Matrix::uninitialized();
@@ -660,7 +660,7 @@
     /// ## `rad_z`
     /// return location for the rotation angle on
     ///  the Z axis (roll), in radians
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_quaternion_to_radians&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_quaternion_to_radians&quot;</span>)]
     </span><span class="kw">pub fn </span>to_radians(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (f32, f32, f32) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>rad_x = mem::MaybeUninit::uninit();
@@ -689,7 +689,7 @@
     /// ## `res`
     /// return location for a
     ///  [`Vec4`][crate::Vec4]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_quaternion_to_vec4&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_quaternion_to_vec4&quot;</span>)]
     </span><span class="kw">pub fn </span>to_vec4(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec4 {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>res = Vec4::uninitialized();
@@ -700,7 +700,7 @@
 }
 
 <span class="kw">impl </span>PartialEq <span class="kw">for </span>Quaternion {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool {
         <span class="self">self</span>.equal(other)
     }
@@ -708,4 +708,4 @@
 
 <span class="kw">impl </span>Eq <span class="kw">for </span>Quaternion {}
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

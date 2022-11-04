@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -339,7 +339,7 @@
 <span class="kw">use </span><span class="kw">crate</span>::KeyFile;
 
 <span class="kw">impl </span>KeyFile {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_save_to_file&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_save_to_file&quot;</span>)]
     </span><span class="kw">pub fn </span>save_to_file&lt;T: AsRef&lt;std::path::Path&gt;&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, filename: T) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
@@ -356,7 +356,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_load_from_data_dirs&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_load_from_data_dirs&quot;</span>)]
     </span><span class="kw">pub fn </span>load_from_data_dirs&lt;T: AsRef&lt;std::path::Path&gt;&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         file: T,
@@ -381,7 +381,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_load_from_dirs&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_load_from_dirs&quot;</span>)]
     </span><span class="kw">pub fn </span>load_from_dirs&lt;T: AsRef&lt;std::path::Path&gt;, U: AsRef&lt;std::path::Path&gt;&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         file: T,
@@ -410,7 +410,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_to_data&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_to_data&quot;</span>)]
     </span><span class="kw">pub fn </span>to_data(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; GString {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>ret =
@@ -419,7 +419,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_get_boolean&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_get_boolean&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_boolean&quot;</span>)]
     </span><span class="kw">pub fn </span>boolean(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str, key: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;bool, Error&gt; {
         <span class="kw">unsafe </span>{
@@ -438,7 +438,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_has_key&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_has_key&quot;</span>)]
     </span><span class="kw">pub fn </span>has_key(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str, key: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;bool, Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
@@ -456,7 +456,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_get_boolean_list&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_get_boolean_list&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_boolean_list&quot;</span>)]
     </span><span class="kw">pub fn </span>boolean_list(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str, key: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;Vec&lt;bool&gt;, Error&gt; {
         <span class="kw">unsafe </span>{
@@ -479,7 +479,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_get_string&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_get_string&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_string&quot;</span>)]
     </span><span class="kw">pub fn </span>string(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str, key: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;GString, Error&gt; {
         <span class="kw">unsafe </span>{
@@ -499,7 +499,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_get_string_list&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_get_string_list&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_string_list&quot;</span>)]
     </span><span class="kw">pub fn </span>string_list(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str, key: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;Vec&lt;GString&gt;, Error&gt; {
         <span class="kw">unsafe </span>{
@@ -524,7 +524,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_get_locale_string&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_get_locale_string&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_locale_string&quot;</span>)]
     </span><span class="kw">pub fn </span>locale_string(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -550,7 +550,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_get_locale_string_list&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_get_locale_string_list&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_locale_string_list&quot;</span>)]
     </span><span class="kw">pub fn </span>locale_string_list(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -582,4 +582,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -294,7 +294,7 @@
     /// # Implements
     ///
     /// [`MemoryMonitorExt`][trait@crate::prelude::MemoryMonitorExt], [`InitableExt`][trait@crate::prelude::InitableExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GMemoryMonitor&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GMemoryMonitor&quot;</span>)]
     </span><span class="kw">pub struct </span>MemoryMonitor(Interface&lt;ffi::GMemoryMonitor, ffi::GMemoryMonitorInterface&gt;) @requires Initable;
 
     <span class="kw">match fn </span>{
@@ -310,7 +310,7 @@
     /// # Returns
     ///
     /// a new reference to the default [`MemoryMonitor`][crate::MemoryMonitor]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_memory_monitor_dup_default&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_memory_monitor_dup_default&quot;</span>)]
     </span><span class="kw">pub fn </span>dup_default() -&gt; MemoryMonitor {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_memory_monitor_dup_default()) }
     }
@@ -328,7 +328,7 @@
     /// details.
     /// ## `level`
     /// the [`MemoryMonitorWarningLevel`][crate::MemoryMonitorWarningLevel] warning level
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_64&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;low-memory-warning&quot;</span>)]
     </span><span class="kw">fn </span>connect_low_memory_warning&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, MemoryMonitorWarningLevel) + <span class="lifetime">&#39;static</span>&gt;(
@@ -338,7 +338,7 @@
 }
 
 <span class="kw">impl</span>&lt;O: IsA&lt;MemoryMonitor&gt;&gt; MemoryMonitorExt <span class="kw">for </span>O {
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_64&quot;</span>)))]
     </span><span class="kw">fn </span>connect_low_memory_warning&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, MemoryMonitorWarningLevel) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -378,4 +378,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

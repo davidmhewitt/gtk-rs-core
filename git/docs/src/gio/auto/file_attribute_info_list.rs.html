@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -151,7 +151,7 @@
 <span class="macro">glib::wrapper! </span>{
     <span class="doccomment">/// Acts as a lightweight registry for possible valid file attributes.
     /// The registry stores Key-Value pair formats as `GFileAttributeInfos`.
-    </span><span class="attribute">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    </span><span class="attr">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
     </span><span class="kw">pub struct </span>FileAttributeInfoList(Shared&lt;ffi::GFileAttributeInfoList&gt;);
 
     <span class="kw">match fn </span>{
@@ -167,7 +167,7 @@
     /// # Returns
     ///
     /// a [`FileAttributeInfoList`][crate::FileAttributeInfoList].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_attribute_info_list_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_attribute_info_list_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; FileAttributeInfoList {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_file_attribute_info_list_new()) }
     }
@@ -180,7 +180,7 @@
     /// the [`FileAttributeType`][crate::FileAttributeType] for the attribute.
     /// ## `flags`
     /// [`FileAttributeInfoFlags`][crate::FileAttributeInfoFlags] for the attribute.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_attribute_info_list_add&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_attribute_info_list_add&quot;</span>)]
     </span><span class="kw">pub fn </span>add(<span class="kw-2">&amp;</span><span class="self">self</span>, name: <span class="kw-2">&amp;</span>str, type_: FileAttributeType, flags: FileAttributeInfoFlags) {
         <span class="kw">unsafe </span>{
             ffi::g_file_attribute_info_list_add(
@@ -197,7 +197,7 @@
     /// # Returns
     ///
     /// a copy of the given `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_attribute_info_list_dup&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_attribute_info_list_dup&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>dup(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; FileAttributeInfoList {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_file_attribute_info_list_dup(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -210,4 +210,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

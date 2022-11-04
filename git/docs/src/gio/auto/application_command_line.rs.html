@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -671,7 +671,7 @@
     /// # Implements
     ///
     /// [`ApplicationCommandLineExt`][trait@crate::prelude::ApplicationCommandLineExt], [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GApplicationCommandLine&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GApplicationCommandLine&quot;</span>)]
     </span><span class="kw">pub struct </span>ApplicationCommandLine(Object&lt;ffi::GApplicationCommandLine, ffi::GApplicationCommandLineClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -701,42 +701,42 @@
     /// # Returns
     ///
     /// a new [`File`][crate::File]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_command_line_create_file_for_arg&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_command_line_create_file_for_arg&quot;</span>)]
     </span><span class="kw">fn </span>create_file_for_arg(<span class="kw-2">&amp;</span><span class="self">self</span>, arg: <span class="kw">impl </span>AsRef&lt;std::ffi::OsStr&gt;) -&gt; File;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_application_command_line_get_arguments&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_application_command_line_get_arguments&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_arguments&quot;</span>)]
     </span><span class="kw">fn </span>arguments(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;std::ffi::OsString&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_application_command_line_get_cwd&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_application_command_line_get_cwd&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_cwd&quot;</span>)]
     </span><span class="kw">fn </span>cwd(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;std::path::PathBuf&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_application_command_line_get_environ&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_application_command_line_get_environ&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_environ&quot;</span>)]
     </span><span class="kw">fn </span>environ(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;std::ffi::OsString&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_application_command_line_get_exit_status&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_application_command_line_get_exit_status&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_exit_status&quot;</span>)]
     </span><span class="kw">fn </span>exit_status(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_application_command_line_get_is_remote&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_application_command_line_get_is_remote&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_is_remote&quot;</span>)]
     </span><span class="kw">fn </span>is_remote(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_application_command_line_get_options_dict&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_application_command_line_get_options_dict&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_options_dict&quot;</span>)]
     </span><span class="kw">fn </span>options_dict(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::VariantDict;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_application_command_line_get_platform_data&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_application_command_line_get_platform_data&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_platform_data&quot;</span>)]
     </span><span class="kw">fn </span>platform_data(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::Variant&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_application_command_line_get_stdin&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_application_command_line_get_stdin&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_stdin&quot;</span>)]
     </span><span class="kw">fn </span>stdin(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;InputStream&gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_application_command_line_getenv&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_application_command_line_getenv&quot;</span>)]
     </span><span class="kw">fn </span>getenv(<span class="kw-2">&amp;</span><span class="self">self</span>, name: <span class="kw">impl </span>AsRef&lt;std::ffi::OsStr&gt;) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
     <span class="comment">//#[doc(alias = &quot;g_application_command_line_print&quot;)]
@@ -745,10 +745,10 @@
     //#[doc(alias = &quot;g_application_command_line_printerr&quot;)]
     //fn printerr(&amp;self, format: &amp;str, : /*Unknown conversion*//*Unimplemented*/Basic: VarArgs);
 
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_command_line_set_exit_status&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_command_line_set_exit_status&quot;</span>)]
     </span><span class="kw">fn </span>set_exit_status(<span class="kw-2">&amp;</span><span class="self">self</span>, exit_status: i32);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;is-remote&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;is-remote&quot;</span>)]
     </span><span class="kw">fn </span>connect_is_remote_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -886,4 +886,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

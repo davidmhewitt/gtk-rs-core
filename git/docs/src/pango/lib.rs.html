@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../pango/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../pango/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -224,14 +224,14 @@
 <span id="151">151</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="attribute">#![cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, feature(doc_cfg))]
+</span><span class="attr">#![cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, feature(doc_cfg))]
 #![doc = <span class="macro">include_str!</span>(<span class="string">&quot;../README.md&quot;</span>)]
 #![allow(clippy::missing_safety_doc)]
 
 </span><span class="kw">pub use </span>ffi;
 <span class="kw">pub use </span>glib;
 
-<span class="attribute">#[allow(clippy::too_many_arguments)]
+<span class="attr">#[allow(clippy::too_many_arguments)]
 #[allow(clippy::derive_hash_xor_eq)]
 #[allow(unused_imports)]
 </span><span class="kw">mod </span>auto;
@@ -247,32 +247,32 @@
 ///
 /// When setting font sizes, device units are always considered to be
 /// points (as in &quot;12 point font&quot;), rather than pixels.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_SCALE&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_SCALE&quot;</span>)]
 </span><span class="kw">pub const </span>SCALE: i32 = ffi::PANGO_SCALE;
 <span class="doccomment">/// Whether the segment should be shifted to center around the baseline.
 ///
 /// This is mainly used in vertical writing directions.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ANALYSIS_FLAG_CENTERED_BASELINE&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ANALYSIS_FLAG_CENTERED_BASELINE&quot;</span>)]
 </span><span class="kw">pub const </span>ANALYSIS_FLAG_CENTERED_BASELINE: i32 = ffi::PANGO_ANALYSIS_FLAG_CENTERED_BASELINE;
 <span class="doccomment">/// Whether this run holds ellipsized text.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ANALYSIS_FLAG_IS_ELLIPSIS&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ANALYSIS_FLAG_IS_ELLIPSIS&quot;</span>)]
 </span><span class="kw">pub const </span>ANALYSIS_FLAG_IS_ELLIPSIS: i32 = ffi::PANGO_ANALYSIS_FLAG_IS_ELLIPSIS;
 <span class="doccomment">/// Whether to add a hyphen at the end of the run during shaping.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ANALYSIS_FLAG_NEED_HYPHEN&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ANALYSIS_FLAG_NEED_HYPHEN&quot;</span>)]
 </span><span class="kw">pub const </span>ANALYSIS_FLAG_NEED_HYPHEN: i32 = ffi::PANGO_ANALYSIS_FLAG_NEED_HYPHEN;
 <span class="doccomment">/// Value for @start_index in [`Attribute`][crate::Attribute] that indicates
 /// the beginning of the text.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_INDEX_FROM_TEXT_BEGINNING&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_INDEX_FROM_TEXT_BEGINNING&quot;</span>)]
 </span><span class="kw">pub const </span>ATTR_INDEX_FROM_TEXT_BEGINNING: u32 = ffi::PANGO_ATTR_INDEX_FROM_TEXT_BEGINNING;
 <span class="doccomment">/// Value for @end_index in [`Attribute`][crate::Attribute] that indicates
 /// the end of the text.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_ATTR_INDEX_TO_TEXT_END&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_ATTR_INDEX_TO_TEXT_END&quot;</span>)]
 </span><span class="kw">pub const </span>ATTR_INDEX_TO_TEXT_END: u32 = ffi::PANGO_ATTR_INDEX_TO_TEXT_END;
 <span class="doccomment">/// A `PangoGlyph` value that indicates a zero-width empty glpyh.
 ///
 /// This is useful for example in shaper modules, to use as the glyph for
 /// various zero-width Unicode characters (those passing [`is_zero_width()`][crate::is_zero_width()]).
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_GLYPH_EMPTY&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_GLYPH_EMPTY&quot;</span>)]
 </span><span class="kw">pub const </span>GLYPH_EMPTY: Glyph = ffi::PANGO_GLYPH_EMPTY;
 <span class="doccomment">/// A `PangoGlyph` value for invalid input.
 ///
@@ -281,13 +281,13 @@
 ///
 /// Note that this value is defined such that it has the `PANGO_GLYPH_UNKNOWN_FLAG`
 /// set.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_GLYPH_INVALID_INPUT&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_GLYPH_INVALID_INPUT&quot;</span>)]
 </span><span class="kw">pub const </span>GLYPH_INVALID_INPUT: Glyph = ffi::PANGO_GLYPH_INVALID_INPUT;
 <span class="doccomment">/// Flag used in `PangoGlyph` to turn a `gunichar` value of a valid Unicode
 /// character into an unknown-character glyph for that `gunichar`.
 ///
 /// Such unknown-character glyphs may be rendered as a &#39;hex box&#39;.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;PANGO_GLYPH_UNKNOWN_FLAG&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;PANGO_GLYPH_UNKNOWN_FLAG&quot;</span>)]
 </span><span class="kw">pub const </span>GLYPH_UNKNOWN_FLAG: Glyph = ffi::PANGO_GLYPH_UNKNOWN_FLAG;
 
 <span class="comment">// rustdoc-stripper-ignore-next
@@ -320,7 +320,7 @@
 
 <span class="kw">pub mod </span>prelude;
 
-<span class="attribute">#[macro_use]
+<span class="attr">#[macro_use]
 </span><span class="kw">mod </span>attribute;
 <span class="kw">pub use </span>attribute::IsAttribute;
 
@@ -374,4 +374,4 @@
 <span class="kw">pub use </span>script_iter::{ScriptIntoIter, ScriptIter};
 <span class="kw">mod </span>tab_array;
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

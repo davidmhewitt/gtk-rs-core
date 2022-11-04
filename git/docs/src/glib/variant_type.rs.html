@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1495,7 +1495,7 @@
 /// so this type string corresponds to `G_VARIANT_TYPE_DICTIONARY`. Note
 /// that, due to the restriction that the key of a dictionary entry must
 /// be a basic type, &quot;{**}&quot; is not a valid type string.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;GVariantType&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;GVariantType&quot;</span>)]
 </span><span class="kw">pub struct </span>VariantType {
     <span class="comment">// GVariantType* essentially is a char*, that always is valid UTF-8 but
     // isn&#39;t NUL-terminated.
@@ -1544,7 +1544,7 @@
     /// a new dictionary entry [`VariantType`][crate::VariantType]
     ///
     /// Since 2.24
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_type_new_dict_entry&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_type_new_dict_entry&quot;</span>)]
     </span><span class="kw">pub fn </span>new_dict_entry(key_type: <span class="kw-2">&amp;</span>VariantTy, value_type: <span class="kw-2">&amp;</span>VariantTy) -&gt; VariantType {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::g_variant_type_new_dict_entry(
@@ -1569,7 +1569,7 @@
     /// a new array [`VariantType`][crate::VariantType]
     ///
     /// Since 2.24
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_type_new_array&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_type_new_array&quot;</span>)]
     </span><span class="kw">pub fn </span>new_array(elem_type: <span class="kw-2">&amp;</span>VariantTy) -&gt; VariantType {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_variant_type_new_array(elem_type.to_glib_none().<span class="number">0</span>)) }
     }
@@ -1589,7 +1589,7 @@
     /// a new maybe [`VariantType`][crate::VariantType]
     ///
     /// Since 2.24
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_type_new_maybe&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_type_new_maybe&quot;</span>)]
     </span><span class="kw">pub fn </span>new_maybe(child_type: <span class="kw-2">&amp;</span>VariantTy) -&gt; VariantType {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_variant_type_new_maybe(child_type.to_glib_none().<span class="number">0</span>)) }
     }
@@ -1611,7 +1611,7 @@
     /// a new tuple [`VariantType`][crate::VariantType]
     ///
     /// Since 2.24
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_type_new_tuple&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_type_new_tuple&quot;</span>)]
     </span><span class="kw">pub fn </span>new_tuple(items: <span class="kw">impl </span>IntoIterator&lt;Item = <span class="kw">impl </span>AsRef&lt;VariantTy&gt;&gt;) -&gt; VariantType {
         <span class="kw">let </span><span class="kw-2">mut </span>builder = <span class="kw">crate</span>::GStringBuilder::new(<span class="string">&quot;(&quot;</span>);
 
@@ -1679,7 +1679,7 @@
 <span class="kw">impl </span>Deref <span class="kw">for </span>VariantType {
     <span class="kw">type </span>Target = VariantTy;
 
-    <span class="attribute">#[allow(clippy::cast_slice_from_raw_parts)]
+    <span class="attr">#[allow(clippy::cast_slice_from_raw_parts)]
     </span><span class="kw">fn </span>deref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>VariantTy {
         <span class="kw">unsafe </span>{
             <span class="kw-2">&amp;*</span>(slice::from_raw_parts(<span class="self">self</span>.ptr.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span>u8, <span class="self">self</span>.len) <span class="kw">as </span><span class="kw-2">*const </span>[u8]
@@ -1720,7 +1720,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>ffi::GVariantType&gt; <span class="kw">for </span>VariantType {
     <span class="kw">type </span>Storage = <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">Self</span>;
 
@@ -1733,7 +1733,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::GVariantType&gt; <span class="kw">for </span>VariantType {
     <span class="kw">type </span>Storage = <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">Self</span>;
 
@@ -1746,7 +1746,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtrMut&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::GVariantType&gt; <span class="kw">for </span>VariantType {
     <span class="kw">type </span>Storage = <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="kw-2">mut </span><span class="self">Self</span>;
 
@@ -1755,14 +1755,14 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibPtrNone&lt;<span class="kw-2">*const </span>ffi::GVariantType&gt; <span class="kw">for </span>VariantType {
     <span class="kw">unsafe fn </span>from_glib_none(ptr: <span class="kw-2">*const </span>ffi::GVariantType) -&gt; VariantType {
         VariantTy::from_ptr(ptr).to_owned()
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibPtrFull&lt;<span class="kw-2">*const </span>ffi::GVariantType&gt; <span class="kw">for </span>VariantType {
     <span class="kw">unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*const </span>ffi::GVariantType) -&gt; VariantType {
         <span class="comment">// Don&#39;t assume ownership of a const pointer.
@@ -1771,7 +1771,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibPtrFull&lt;<span class="kw-2">*mut </span>ffi::GVariantType&gt; <span class="kw">for </span>VariantType {
     <span class="kw">unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*mut </span>ffi::GVariantType) -&gt; VariantType {
         <span class="macro">assert!</span>(!ptr.is_null());
@@ -1788,7 +1788,7 @@
 ///
 /// This is a borrowed counterpart of [`VariantType`](struct.VariantType.html).
 /// Essentially it&#39;s a `str` statically guaranteed to be a valid type string.
-</span><span class="attribute">#[repr(transparent)]
+</span><span class="attr">#[repr(transparent)]
 #[derive(Debug, PartialEq, Eq, Hash)]
 </span><span class="kw">pub struct </span>VariantTy {
     inner: str,
@@ -1797,163 +1797,163 @@
 <span class="kw">impl </span>VariantTy {
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// `bool`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_BOOLEAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_BOOLEAN&quot;</span>)]
     </span><span class="kw">pub const </span>BOOLEAN: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_BOOLEAN) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// `u8`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_BYTE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_BYTE&quot;</span>)]
     </span><span class="kw">pub const </span>BYTE: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_BYTE) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// `i16`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_INT16&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_INT16&quot;</span>)]
     </span><span class="kw">pub const </span>INT16: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_INT16) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// `u16`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_UINT16&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_UINT16&quot;</span>)]
     </span><span class="kw">pub const </span>UINT16: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_UINT16) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// `i32`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_INT32&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_INT32&quot;</span>)]
     </span><span class="kw">pub const </span>INT32: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_INT32) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// `u32`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_UINT32&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_UINT32&quot;</span>)]
     </span><span class="kw">pub const </span>UINT32: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_UINT32) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// `i64`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_INT64&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_INT64&quot;</span>)]
     </span><span class="kw">pub const </span>INT64: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_INT64) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// `u64`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_UINT64&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_UINT64&quot;</span>)]
     </span><span class="kw">pub const </span>UINT64: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_UINT64) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// `f64`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_DOUBLE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_DOUBLE&quot;</span>)]
     </span><span class="kw">pub const </span>DOUBLE: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_DOUBLE) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// `&amp;str`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_STRING&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_STRING&quot;</span>)]
     </span><span class="kw">pub const </span>STRING: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_STRING) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// DBus object path.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_OBJECT_PATH&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_OBJECT_PATH&quot;</span>)]
     </span><span class="kw">pub const </span>OBJECT_PATH: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_OBJECT_PATH) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Type signature.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_SIGNATURE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_SIGNATURE&quot;</span>)]
     </span><span class="kw">pub const </span>SIGNATURE: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_SIGNATURE) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Variant.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_VARIANT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_VARIANT&quot;</span>)]
     </span><span class="kw">pub const </span>VARIANT: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_VARIANT) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Handle.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_HANDLE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_HANDLE&quot;</span>)]
     </span><span class="kw">pub const </span>HANDLE: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_HANDLE) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Unit, i.e. `()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_UNIT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_UNIT&quot;</span>)]
     </span><span class="kw">pub const </span>UNIT: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_UNIT) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// An indefinite type that is a supertype of every type (including itself).
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_ANY&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_ANY&quot;</span>)]
     </span><span class="kw">pub const </span>ANY: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_ANY) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Any basic type.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_BASIC&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_BASIC&quot;</span>)]
     </span><span class="kw">pub const </span>BASIC: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_BASIC) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Any maybe type, i.e. `Option&lt;T&gt;`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_MAYBE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_MAYBE&quot;</span>)]
     </span><span class="kw">pub const </span>MAYBE: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_MAYBE) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Any array type, i.e. `[T]`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_ARRAY&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_ARRAY&quot;</span>)]
     </span><span class="kw">pub const </span>ARRAY: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_ARRAY) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Any tuple type, i.e. `(T)`, `(T, T)`, etc.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_TUPLE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_TUPLE&quot;</span>)]
     </span><span class="kw">pub const </span>TUPLE: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_TUPLE) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Any dict entry type, i.e. `DictEntry&lt;K, V&gt;`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_DICT_ENTRY&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_DICT_ENTRY&quot;</span>)]
     </span><span class="kw">pub const </span>DICT_ENTRY: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_DICT_ENTRY) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Any dictionary type, i.e. `HashMap&lt;K, V&gt;`, `BTreeMap&lt;K, V&gt;`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_DICTIONARY&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_DICTIONARY&quot;</span>)]
     </span><span class="kw">pub const </span>DICTIONARY: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_DICTIONARY) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// String array, i.e. `[&amp;str]`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_STRING_ARRAY&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_STRING_ARRAY&quot;</span>)]
     </span><span class="kw">pub const </span>STRING_ARRAY: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_STRING_ARRAY) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Object path array, i.e. `[&amp;str]`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_OBJECT_PATH_ARRAY&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_OBJECT_PATH_ARRAY&quot;</span>)]
     </span><span class="kw">pub const </span>OBJECT_PATH_ARRAY: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_OBJECT_PATH_ARRAY) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Byte string, i.e. `[u8]`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_BYTE_STRING&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_BYTE_STRING&quot;</span>)]
     </span><span class="kw">pub const </span>BYTE_STRING: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_BYTE_STRING) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Byte string array, i.e. `[[u8]]`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_BYTE_STRING_ARRAY&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_BYTE_STRING_ARRAY&quot;</span>)]
     </span><span class="kw">pub const </span>BYTE_STRING_ARRAY: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_BYTE_STRING_ARRAY) };
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Variant dictionary, i.e. `HashMap&lt;String, Variant&gt;`, `BTreeMap&lt;String, Variant&gt;`, etc.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_VARDICT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_VARIANT_TYPE_VARDICT&quot;</span>)]
     </span><span class="kw">pub const </span>VARDICT: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>VariantTy =
         <span class="kw">unsafe </span>{ VariantTy::from_str_unchecked(ffi::G_VARIANT_TYPE_VARDICT) };
 
@@ -1993,7 +1993,7 @@
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Creates `&amp;VariantTy` with a wildcard lifetime from a `GVariantType`
     /// pointer.
-    </span><span class="attribute">#[doc(hidden)]
+    </span><span class="attr">#[doc(hidden)]
     #[allow(clippy::cast_slice_from_raw_parts)]
     </span><span class="kw">pub unsafe fn </span>from_ptr&lt;<span class="lifetime">&#39;a</span>&gt;(ptr: <span class="kw-2">*const </span>ffi::GVariantType) -&gt; <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>VariantTy {
         <span class="macro">assert!</span>(!ptr.is_null());
@@ -2004,7 +2004,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Returns a `GVariantType` pointer.
-    </span><span class="attribute">#[doc(hidden)]
+    </span><span class="attr">#[doc(hidden)]
     </span><span class="kw">pub fn </span>as_ptr(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*const </span>ffi::GVariantType {
         <span class="self">self</span>.inner.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_
     </span>}
@@ -2017,63 +2017,63 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Check if this variant type is a definite type.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_type_is_definite&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_type_is_definite&quot;</span>)]
     </span><span class="kw">pub fn </span>is_definite(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_variant_type_is_definite(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Check if this variant type is a container type.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_type_is_container&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_type_is_container&quot;</span>)]
     </span><span class="kw">pub fn </span>is_container(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_variant_type_is_container(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Check if this variant type is a basic type.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_type_is_basic&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_type_is_basic&quot;</span>)]
     </span><span class="kw">pub fn </span>is_basic(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_variant_type_is_basic(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Check if this variant type is a maybe type.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_type_is_maybe&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_type_is_maybe&quot;</span>)]
     </span><span class="kw">pub fn </span>is_maybe(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_variant_type_is_maybe(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Check if this variant type is an array type.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_type_is_array&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_type_is_array&quot;</span>)]
     </span><span class="kw">pub fn </span>is_array(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_variant_type_is_array(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Check if this variant type is a tuple type.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_type_is_tuple&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_type_is_tuple&quot;</span>)]
     </span><span class="kw">pub fn </span>is_tuple(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_variant_type_is_tuple(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Check if this variant type is a dict entry type.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_type_is_dict_entry&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_type_is_dict_entry&quot;</span>)]
     </span><span class="kw">pub fn </span>is_dict_entry(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_variant_type_is_dict_entry(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Check if this variant type is a variant.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_type_is_variant&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_type_is_variant&quot;</span>)]
     </span><span class="kw">pub fn </span>is_variant(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_variant_type_is_variant(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Check if this variant type is a subtype of another.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_type_is_subtype_of&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_type_is_subtype_of&quot;</span>)]
     </span><span class="kw">pub fn </span>is_subtype_of(<span class="kw-2">&amp;</span><span class="self">self</span>, supertype: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::g_variant_type_is_subtype_of(
@@ -2089,7 +2089,7 @@
     /// # Panics
     ///
     /// This function panics if not called with an array or maybe type.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_type_element&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_type_element&quot;</span>)]
     </span><span class="kw">pub fn </span>element(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>VariantTy {
         <span class="macro">assert!</span>(<span class="self">self</span>.is_array() || <span class="self">self</span>.is_maybe());
 
@@ -2115,7 +2115,7 @@
     /// # Panics
     ///
     /// This function panics if not called with a tuple or dictionary entry type.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_type_first&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_type_first&quot;</span>)]
     </span><span class="kw">pub fn </span>first(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>VariantTy&gt; {
         <span class="macro">assert!</span>(<span class="self">self</span>.as_str().starts_with(<span class="string">&#39;(&#39;</span>) || <span class="self">self</span>.as_str().starts_with(<span class="string">&#39;{&#39;</span>));
 
@@ -2131,7 +2131,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Return the next type of this variant type.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_type_next&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_type_next&quot;</span>)]
     </span><span class="kw">pub fn </span>next(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>VariantTy&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>next = ffi::g_variant_type_next(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
@@ -2145,7 +2145,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Return the number of items in this variant type.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_type_n_items&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_type_n_items&quot;</span>)]
     </span><span class="kw">pub fn </span>n_items(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; usize {
         <span class="kw">unsafe </span>{ ffi::g_variant_type_n_items(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
@@ -2156,7 +2156,7 @@
     /// # Panics
     ///
     /// This function panics if not called with a dictionary entry type.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_type_key&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_type_key&quot;</span>)]
     </span><span class="kw">pub fn </span>key(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>VariantTy {
         <span class="macro">assert!</span>(<span class="self">self</span>.as_str().starts_with(<span class="string">&#39;{&#39;</span>));
 
@@ -2172,7 +2172,7 @@
     /// # Panics
     ///
     /// This function panics if not called with a dictionary entry type.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_type_value&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_type_value&quot;</span>)]
     </span><span class="kw">pub fn </span>value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>VariantTy {
         <span class="macro">assert!</span>(<span class="self">self</span>.as_str().starts_with(<span class="string">&#39;{&#39;</span>));
 
@@ -2203,7 +2203,7 @@
 
 <span class="kw">unsafe impl </span>Sync <span class="kw">for </span>VariantTy {}
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>ffi::GVariantType&gt; <span class="kw">for </span>VariantTy {
     <span class="kw">type </span>Storage = <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">Self</span>;
 
@@ -2249,7 +2249,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">crate</span>::value::FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>VariantTy {
     <span class="kw">type </span>Checker = <span class="kw">crate</span>::value::GenericValueTypeOrNoneChecker&lt;<span class="self">Self</span>&gt;;
 
@@ -2260,7 +2260,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span><span class="kw">crate</span>::value::ToValue <span class="kw">for </span>VariantTy {
     <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Value {
         <span class="kw">unsafe </span>{
@@ -2278,7 +2278,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span><span class="kw">crate</span>::value::ToValue <span class="kw">for </span><span class="kw-2">&amp;</span>VariantTy {
     <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Value {
         (<span class="kw-2">*</span><span class="self">self</span>).to_value()
@@ -2289,7 +2289,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span><span class="kw">crate</span>::value::ToValueOptional <span class="kw">for </span><span class="kw-2">&amp;</span>VariantTy {
     <span class="kw">fn </span>to_value_optional(s: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="self">Self</span>&gt;) -&gt; <span class="kw">crate</span>::Value {
         <span class="kw">let </span><span class="kw-2">mut </span>value = <span class="kw">crate</span>::Value::for_value_type::&lt;VariantType&gt;();
@@ -2310,15 +2310,15 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span><span class="kw">crate</span>::value::ValueType <span class="kw">for </span>VariantType {
     <span class="kw">type </span>Type = VariantType;
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span><span class="kw">crate</span>::value::ValueTypeOptional <span class="kw">for </span>VariantType {}
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">crate</span>::value::FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span>VariantType {
     <span class="kw">type </span>Checker = <span class="kw">crate</span>::value::GenericValueTypeOrNoneChecker&lt;<span class="self">Self</span>&gt;;
 
@@ -2329,7 +2329,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span><span class="kw">crate</span>::value::ToValue <span class="kw">for </span>VariantType {
     <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Value {
         <span class="kw">unsafe </span>{
@@ -2347,7 +2347,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span><span class="kw">crate</span>::value::ToValueOptional <span class="kw">for </span>VariantType {
     <span class="kw">fn </span>to_value_optional(s: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="self">Self</span>&gt;) -&gt; <span class="kw">crate</span>::Value {
         <span class="kw">let </span><span class="kw-2">mut </span>value = <span class="kw">crate</span>::Value::for_value_type::&lt;<span class="self">Self</span>&gt;();
@@ -2363,7 +2363,7 @@
 }
 
 <span class="kw">impl </span>PartialEq <span class="kw">for </span>VariantType {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool {
         &lt;VariantTy <span class="kw">as </span>PartialEq&gt;::eq(<span class="self">self</span>, other)
     }
@@ -2371,17 +2371,17 @@
 
 <span class="macro">macro_rules! </span>impl_eq {
     (<span class="macro-nonterminal">$lhs</span>:ty, <span class="macro-nonterminal">$rhs</span>: ty) =&gt; {
-        <span class="attribute">#[allow(clippy::extra_unused_lifetimes)]
+        <span class="attr">#[allow(clippy::extra_unused_lifetimes)]
         </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>, <span class="lifetime">&#39;b</span>&gt; PartialEq&lt;<span class="macro-nonterminal">$rhs</span>&gt; <span class="kw">for </span><span class="macro-nonterminal">$lhs </span>{
-            <span class="attribute">#[inline]
+            <span class="attr">#[inline]
             </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="macro-nonterminal">$rhs</span>) -&gt; bool {
                 &lt;VariantTy <span class="kw">as </span>PartialEq&gt;::eq(<span class="self">self</span>, other)
             }
         }
 
-        <span class="attribute">#[allow(clippy::extra_unused_lifetimes)]
+        <span class="attr">#[allow(clippy::extra_unused_lifetimes)]
         </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>, <span class="lifetime">&#39;b</span>&gt; PartialEq&lt;<span class="macro-nonterminal">$lhs</span>&gt; <span class="kw">for </span><span class="macro-nonterminal">$rhs </span>{
-            <span class="attribute">#[inline]
+            <span class="attr">#[inline]
             </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="macro-nonterminal">$lhs</span>) -&gt; bool {
                 &lt;VariantTy <span class="kw">as </span>PartialEq&gt;::eq(<span class="self">self</span>, other)
             }
@@ -2396,18 +2396,18 @@
 
 <span class="macro">macro_rules! </span>impl_str_eq {
     (<span class="macro-nonterminal">$lhs</span>:ty, <span class="macro-nonterminal">$rhs</span>: ty) =&gt; {
-        <span class="attribute">#[allow(clippy::redundant_slicing)]
+        <span class="attr">#[allow(clippy::redundant_slicing)]
         #[allow(clippy::extra_unused_lifetimes)]
         </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>, <span class="lifetime">&#39;b</span>&gt; PartialEq&lt;<span class="macro-nonterminal">$rhs</span>&gt; <span class="kw">for </span><span class="macro-nonterminal">$lhs </span>{
-            <span class="attribute">#[inline]
+            <span class="attr">#[inline]
             </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="macro-nonterminal">$rhs</span>) -&gt; bool {
                 <span class="self">self</span>.as_str().eq(<span class="kw-2">&amp;</span>other[..])
             }
         }
 
-        <span class="attribute">#[allow(clippy::extra_unused_lifetimes)]
+        <span class="attr">#[allow(clippy::extra_unused_lifetimes)]
         </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>, <span class="lifetime">&#39;b</span>&gt; PartialEq&lt;<span class="macro-nonterminal">$lhs</span>&gt; <span class="kw">for </span><span class="macro-nonterminal">$rhs </span>{
-            <span class="attribute">#[inline]
+            <span class="attr">#[inline]
             </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="macro-nonterminal">$lhs</span>) -&gt; bool {
                 <span class="self">self</span>[..].eq(other.as_str())
             }
@@ -2430,7 +2430,7 @@
 </span><span class="doccomment">/// An iterator over the individual components of a tuple [VariantTy].
 ///
 /// This can be conveniently constructed using [VariantTy::tuple_types].
-</span><span class="attribute">#[derive(Debug, Copy, Clone)]
+</span><span class="attr">#[derive(Debug, Copy, Clone)]
 </span><span class="kw">pub struct </span>VariantTyIterator&lt;<span class="lifetime">&#39;a</span>&gt; {
     elem: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>VariantTy&gt;,
 }
@@ -2455,7 +2455,7 @@
 <span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; Iterator <span class="kw">for </span>VariantTyIterator&lt;<span class="lifetime">&#39;a</span>&gt; {
     <span class="kw">type </span>Item = <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>VariantTy;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_type_next&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_variant_type_next&quot;</span>)]
     </span><span class="kw">fn </span>next(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="self">Self</span>::Item&gt; {
         <span class="kw">let </span>elem = <span class="self">self</span>.elem<span class="question-mark">?</span>;
         <span class="self">self</span>.elem = elem.next();
@@ -2465,7 +2465,7 @@
 
 <span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; iter::FusedIterator <span class="kw">for </span>VariantTyIterator&lt;<span class="lifetime">&#39;a</span>&gt; {}
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use </span><span class="kw">crate</span>::ToValue;
@@ -2477,7 +2477,7 @@
         ))
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>new() {
         <span class="kw">let </span>ty = VariantTy::new(<span class="string">&quot;((iii)s)&quot;</span>).unwrap();
         <span class="kw">unsafe </span>{
@@ -2485,27 +2485,27 @@
         }
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>new_empty() {
         <span class="macro">assert!</span>(VariantTy::new(<span class="string">&quot;&quot;</span>).is_err());
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>new_with_nul() {
         <span class="macro">assert!</span>(VariantTy::new(<span class="string">&quot;((iii\0)s)&quot;</span>).is_err());
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>new_too_short() {
         <span class="macro">assert!</span>(VariantTy::new(<span class="string">&quot;((iii&quot;</span>).is_err());
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>new_too_long() {
         <span class="macro">assert!</span>(VariantTy::new(<span class="string">&quot;(iii)s&quot;</span>).is_err());
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>eq() {
         <span class="kw">let </span>ty1 = VariantTy::new(<span class="string">&quot;((iii)s)&quot;</span>).unwrap();
         <span class="kw">let </span>ty2 = VariantTy::new(<span class="string">&quot;((iii)s)&quot;</span>).unwrap();
@@ -2516,7 +2516,7 @@
         }
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>ne() {
         <span class="kw">let </span>ty1 = VariantTy::new(<span class="string">&quot;((iii)s)&quot;</span>).unwrap();
         <span class="kw">let </span>ty2 = VariantTy::new(<span class="string">&quot;((iii)o)&quot;</span>).unwrap();
@@ -2527,7 +2527,7 @@
         }
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>from_bytes() {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>ty = VariantTy::from_ptr(<span class="string">b&quot;((iii)s)&quot; </span><span class="kw">as </span><span class="kw-2">*const </span>u8 <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>);
@@ -2536,7 +2536,7 @@
         }
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>to_owned() {
         <span class="kw">let </span>ty1 = VariantTy::new(<span class="string">&quot;((iii)s)&quot;</span>).unwrap();
         <span class="kw">let </span>ty2 = ty1.to_owned();
@@ -2547,7 +2547,7 @@
         }
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>value() {
         <span class="kw">let </span>ty1 = VariantType::new(<span class="string">&quot;*&quot;</span>).unwrap();
         <span class="kw">let </span>tyv = ty1.to_value();
@@ -2565,12 +2565,12 @@
         <span class="macro">assert_eq!</span>(ty5, ty6);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>type_() {
         <span class="macro">assert_eq!</span>(VariantTy::static_type(), VariantType::static_type())
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>tuple_iter() {
         <span class="kw">let </span>ty = VariantTy::new(<span class="string">&quot;((iii)s)&quot;</span>).unwrap();
         <span class="kw">let </span>types: Vec&lt;<span class="kw">_</span>&gt; = ty.tuple_types().map(|t| t.as_str()).collect();
@@ -2578,4 +2578,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

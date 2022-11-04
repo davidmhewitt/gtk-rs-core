@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -454,7 +454,7 @@
     /// # Implements
     ///
     /// [`SocketConnectionExt`][trait@crate::prelude::SocketConnectionExt], [`IOStreamExt`][trait@crate::prelude::IOStreamExt], [`trait@glib::ObjectExt`], [`IOStreamExtManual`][trait@crate::prelude::IOStreamExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GSocketConnection&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GSocketConnection&quot;</span>)]
     </span><span class="kw">pub struct </span>SocketConnection(Object&lt;ffi::GSocketConnection, ffi::GSocketConnectionClass&gt;) @extends IOStream;
 
     <span class="kw">match fn </span>{
@@ -479,7 +479,7 @@
     /// # Returns
     ///
     /// a `GType`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_connection_factory_lookup_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_connection_factory_lookup_type&quot;</span>)]
     </span><span class="kw">pub fn </span>factory_lookup_type(
         family: SocketFamily,
         type_: SocketType,
@@ -506,7 +506,7 @@
     /// a [`SocketType`][crate::SocketType]
     /// ## `protocol`
     /// a protocol id
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_connection_factory_register_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_connection_factory_register_type&quot;</span>)]
     </span><span class="kw">pub fn </span>factory_register_type(
         g_type: glib::types::Type,
         family: SocketFamily,
@@ -539,7 +539,7 @@
     /// # Returns
     ///
     /// [`true`] if the connection succeeded, [`false`] on error
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_connection_connect&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_connection_connect&quot;</span>)]
     </span><span class="kw">fn </span>connect(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         address: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;SocketAddress&gt;,
@@ -558,7 +558,7 @@
     /// a `GCancellable` or [`None`]
     /// ## `callback`
     /// a `GAsyncReadyCallback`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_connection_connect_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_connection_connect_async&quot;</span>)]
     </span><span class="kw">fn </span>connect_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         address: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;SocketAddress&gt;,
@@ -577,7 +577,7 @@
     ///
     /// a [`SocketAddress`][crate::SocketAddress] or [`None`] on error.
     ///  Free the returned object with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_connection_get_local_address&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_connection_get_local_address&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_local_address&quot;</span>)]
     </span><span class="kw">fn </span>local_address(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;SocketAddress, glib::Error&gt;;
 
@@ -594,7 +594,7 @@
     ///
     /// a [`SocketAddress`][crate::SocketAddress] or [`None`] on error.
     ///  Free the returned object with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_connection_get_remote_address&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_connection_get_remote_address&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_remote_address&quot;</span>)]
     </span><span class="kw">fn </span>remote_address(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;SocketAddress, glib::Error&gt;;
 
@@ -605,7 +605,7 @@
     /// # Returns
     ///
     /// a [`Socket`][crate::Socket] or [`None`] on error.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_connection_get_socket&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_connection_get_socket&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_socket&quot;</span>)]
     </span><span class="kw">fn </span>socket(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Socket;
 
@@ -615,7 +615,7 @@
     /// # Returns
     ///
     /// whether `self` is connected
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_connection_is_connected&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_connection_is_connected&quot;</span>)]
     </span><span class="kw">fn </span>is_connected(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 }
 
@@ -760,4 +760,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

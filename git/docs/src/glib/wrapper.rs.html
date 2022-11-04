@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -791,11 +791,11 @@
 /// [#object]: #object
 /// [#non-derivable-classes]: #non-derivable-classes
 
-</span><span class="attribute">#[macro_export]
+</span><span class="attr">#[macro_export]
 </span><span class="macro">macro_rules! </span>wrapper {
     <span class="comment">// Boxed
     </span>(
-        $(<span class="attribute">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
+        $(<span class="attr">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
         <span class="macro-nonterminal">$visibility</span>:vis <span class="kw">struct </span><span class="macro-nonterminal">$name</span>:ident $(&lt;$(<span class="macro-nonterminal">$generic</span>:ident $(: <span class="macro-nonterminal">$bound</span>:tt $(+ <span class="macro-nonterminal">$bound2</span>:tt)<span class="kw-2">*</span>)<span class="question-mark">?</span>),+&gt;)<span class="question-mark">? </span>(Boxed&lt;<span class="macro-nonterminal">$ffi_name</span>:ty&gt;);
 
         <span class="kw">match fn </span>{
@@ -815,7 +815,7 @@
 
     <span class="comment">// BoxedInline
     </span>(
-        $(<span class="attribute">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
+        $(<span class="attr">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
         <span class="macro-nonterminal">$visibility</span>:vis <span class="kw">struct </span><span class="macro-nonterminal">$name</span>:ident $(&lt;$(<span class="macro-nonterminal">$generic</span>:ident $(: <span class="macro-nonterminal">$bound</span>:tt $(+ <span class="macro-nonterminal">$bound2</span>:tt)<span class="kw-2">*</span>)<span class="question-mark">?</span>),+&gt;)<span class="question-mark">? </span>(BoxedInline&lt;<span class="macro-nonterminal">$ffi_name</span>:ty&gt;);
 
         <span class="kw">match fn </span>{
@@ -843,7 +843,7 @@
 
     <span class="comment">// BoxedInline
     </span>(
-        $(<span class="attribute">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
+        $(<span class="attr">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
         <span class="macro-nonterminal">$visibility</span>:vis <span class="kw">struct </span><span class="macro-nonterminal">$name</span>:ident $(&lt;$(<span class="macro-nonterminal">$generic</span>:ident $(: <span class="macro-nonterminal">$bound</span>:tt $(+ <span class="macro-nonterminal">$bound2</span>:tt)<span class="kw-2">*</span>)<span class="question-mark">?</span>),+&gt;)<span class="question-mark">? </span>(BoxedInline&lt;<span class="macro-nonterminal">$ffi_name</span>:ty&gt;);
     ) =&gt; {
         <span class="macro-nonterminal">$</span><span class="macro">crate::glib_boxed_inline_wrapper!</span>(
@@ -853,7 +853,7 @@
 
     <span class="comment">// Shared
     </span>(
-        $(<span class="attribute">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
+        $(<span class="attr">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
         <span class="macro-nonterminal">$visibility</span>:vis <span class="kw">struct </span><span class="macro-nonterminal">$name</span>:ident $(&lt;$(<span class="macro-nonterminal">$generic</span>:ident $(: <span class="macro-nonterminal">$bound</span>:tt $(+ <span class="macro-nonterminal">$bound2</span>:tt)<span class="kw-2">*</span>)<span class="question-mark">?</span>),+&gt;)<span class="question-mark">? </span>(Shared&lt;<span class="macro-nonterminal">$ffi_name</span>:ty&gt;);
 
         <span class="kw">match fn </span>{
@@ -873,7 +873,7 @@
 
     <span class="comment">// Object, no parents
     </span>(
-        $(<span class="attribute">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
+        $(<span class="attr">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
         <span class="macro-nonterminal">$visibility</span>:vis <span class="kw">struct </span><span class="macro-nonterminal">$name</span>:ident $(&lt;$(<span class="macro-nonterminal">$generic</span>:ident $(: <span class="macro-nonterminal">$bound</span>:tt $(+ <span class="macro-nonterminal">$bound2</span>:tt)<span class="kw-2">*</span>)<span class="question-mark">?</span>),+&gt;)<span class="question-mark">? </span>(Object&lt;<span class="macro-nonterminal">$ffi_name</span>:ty $(, <span class="macro-nonterminal">$ffi_class_name</span>:ty)<span class="question-mark">?</span>&gt;) $(@implements $(<span class="macro-nonterminal">$implements</span>:path),+)<span class="question-mark">?</span>;
 
         <span class="kw">match fn </span>{
@@ -891,7 +891,7 @@
 
     <span class="comment">// Object, parents
     </span>(
-        $(<span class="attribute">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
+        $(<span class="attr">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
         <span class="macro-nonterminal">$visibility</span>:vis <span class="kw">struct </span><span class="macro-nonterminal">$name</span>:ident $(&lt;$(<span class="macro-nonterminal">$generic</span>:ident $(: <span class="macro-nonterminal">$bound</span>:tt $(+ <span class="macro-nonterminal">$bound2</span>:tt)<span class="kw-2">*</span>)<span class="question-mark">?</span>),+&gt;)<span class="question-mark">? </span>(Object&lt;<span class="macro-nonterminal">$ffi_name</span>:ty $(, <span class="macro-nonterminal">$ffi_class_name</span>:ty)<span class="question-mark">?</span>&gt;) @extends $(<span class="macro-nonterminal">$extends</span>:path),+ $(, @implements $(<span class="macro-nonterminal">$implements</span>:path),+)<span class="question-mark">?</span>;
 
         <span class="kw">match fn </span>{
@@ -909,7 +909,7 @@
 
     <span class="comment">// ObjectSubclass, no parents
     </span>(
-        $(<span class="attribute">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
+        $(<span class="attr">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
         <span class="macro-nonterminal">$visibility</span>:vis <span class="kw">struct </span><span class="macro-nonterminal">$name</span>:ident $(&lt;$(<span class="macro-nonterminal">$generic</span>:ident $(: <span class="macro-nonterminal">$bound</span>:tt $(+ <span class="macro-nonterminal">$bound2</span>:tt)<span class="kw-2">*</span>)<span class="question-mark">?</span>),+&gt;)<span class="question-mark">? </span>(ObjectSubclass&lt;<span class="macro-nonterminal">$subclass</span>:ty&gt;) $(@implements $(<span class="macro-nonterminal">$implements</span>:path),+)<span class="question-mark">?</span>;
     ) =&gt; {
         <span class="macro-nonterminal">$</span><span class="macro">crate::glib_object_wrapper!</span>(
@@ -921,7 +921,7 @@
 
     <span class="comment">// ObjectSubclass, parents
     </span>(
-        $(<span class="attribute">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
+        $(<span class="attr">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
         <span class="macro-nonterminal">$visibility</span>:vis <span class="kw">struct </span><span class="macro-nonterminal">$name</span>:ident $(&lt;$(<span class="macro-nonterminal">$generic</span>:ident $(: <span class="macro-nonterminal">$bound</span>:tt $(+ <span class="macro-nonterminal">$bound2</span>:tt)<span class="kw-2">*</span>)<span class="question-mark">?</span>),+&gt;)<span class="question-mark">? </span>(ObjectSubclass&lt;<span class="macro-nonterminal">$subclass</span>:ty&gt;) @extends $(<span class="macro-nonterminal">$extends</span>:path),+ $(, @implements $(<span class="macro-nonterminal">$implements</span>:path),+)<span class="question-mark">?</span>;
     ) =&gt; {
         <span class="macro-nonterminal">$</span><span class="macro">crate::glib_object_wrapper!</span>(
@@ -933,7 +933,7 @@
 
     <span class="comment">// Interface
     </span>(
-        $(<span class="attribute">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
+        $(<span class="attr">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
         <span class="macro-nonterminal">$visibility</span>:vis <span class="kw">struct </span><span class="macro-nonterminal">$name</span>:ident $(&lt;$(<span class="macro-nonterminal">$generic</span>:ident $(: <span class="macro-nonterminal">$bound</span>:tt $(+ <span class="macro-nonterminal">$bound2</span>:tt)<span class="kw-2">*</span>)<span class="question-mark">?</span>),+&gt;)<span class="question-mark">? </span>(Interface&lt;<span class="macro-nonterminal">$ffi_name</span>:ty $(, <span class="macro-nonterminal">$ffi_class_name</span>:ty)<span class="question-mark">?</span>&gt;) $(@requires $(<span class="macro-nonterminal">$requires</span>:path),+)<span class="question-mark">?</span>;
 
         <span class="kw">match fn </span>{
@@ -950,7 +950,7 @@
 
     <span class="comment">// ObjectInterface
     </span>(
-        $(<span class="attribute">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
+        $(<span class="attr">#[<span class="macro-nonterminal">$attr</span>:meta]</span>)*
         <span class="macro-nonterminal">$visibility</span>:vis <span class="kw">struct </span><span class="macro-nonterminal">$name</span>:ident $(&lt;$(<span class="macro-nonterminal">$generic</span>:ident $(: <span class="macro-nonterminal">$bound</span>:tt $(+ <span class="macro-nonterminal">$bound2</span>:tt)<span class="kw-2">*</span>)<span class="question-mark">?</span>),+&gt;)<span class="question-mark">? </span>(ObjectInterface&lt;<span class="macro-nonterminal">$iface_name</span>:ty&gt;) $(@requires $(<span class="macro-nonterminal">$requires</span>:path),+)<span class="question-mark">?</span>;
     ) =&gt; {
         <span class="macro-nonterminal">$</span><span class="macro">crate::glib_object_wrapper!</span>(
@@ -962,4 +962,4 @@
     };
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

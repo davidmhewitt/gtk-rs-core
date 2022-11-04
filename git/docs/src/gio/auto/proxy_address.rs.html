@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -304,7 +304,7 @@
     /// # Implements
     ///
     /// [`ProxyAddressExt`][trait@crate::prelude::ProxyAddressExt], [`InetSocketAddressExt`][trait@crate::prelude::InetSocketAddressExt], [`SocketAddressExt`][trait@crate::prelude::SocketAddressExt], [`trait@glib::ObjectExt`], [`SocketConnectableExt`][trait@crate::prelude::SocketConnectableExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GProxyAddress&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GProxyAddress&quot;</span>)]
     </span><span class="kw">pub struct </span>ProxyAddress(Object&lt;ffi::GProxyAddress, ffi::GProxyAddressClass&gt;) @extends InetSocketAddress, SocketAddress, @implements SocketConnectable;
 
     <span class="kw">match fn </span>{
@@ -341,7 +341,7 @@
     /// # Returns
     ///
     /// a new [`ProxyAddress`][crate::ProxyAddress]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_proxy_address_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_proxy_address_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(
         inetaddr: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;InetAddress&gt;,
         port: u16,
@@ -382,7 +382,7 @@
     /// # Returns
     ///
     /// the `self`&#39;s destination hostname
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_proxy_address_get_destination_hostname&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_proxy_address_get_destination_hostname&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_destination_hostname&quot;</span>)]
     </span><span class="kw">fn </span>destination_hostname(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString;
 
@@ -393,7 +393,7 @@
     /// # Returns
     ///
     /// the `self`&#39;s destination port
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_proxy_address_get_destination_port&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_proxy_address_get_destination_port&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_destination_port&quot;</span>)]
     </span><span class="kw">fn </span>destination_port(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u16;
 
@@ -403,7 +403,7 @@
     /// # Returns
     ///
     /// the `self`&#39;s destination protocol
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_proxy_address_get_destination_protocol&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_proxy_address_get_destination_protocol&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_destination_protocol&quot;</span>)]
     </span><span class="kw">fn </span>destination_protocol(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString;
 
@@ -412,7 +412,7 @@
     /// # Returns
     ///
     /// the `self`&#39;s password
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_proxy_address_get_password&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_proxy_address_get_password&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_password&quot;</span>)]
     </span><span class="kw">fn </span>password(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
@@ -421,7 +421,7 @@
     /// # Returns
     ///
     /// the `self`&#39;s protocol
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_proxy_address_get_protocol&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_proxy_address_get_protocol&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_protocol&quot;</span>)]
     </span><span class="kw">fn </span>protocol(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString;
 
@@ -430,7 +430,7 @@
     /// # Returns
     ///
     /// the `self`&#39;s URI, or [`None`] if unknown
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_proxy_address_get_uri&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_proxy_address_get_uri&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_uri&quot;</span>)]
     </span><span class="kw">fn </span>uri(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
@@ -439,7 +439,7 @@
     /// # Returns
     ///
     /// the `self`&#39;s username
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_proxy_address_get_username&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_proxy_address_get_username&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_username&quot;</span>)]
     </span><span class="kw">fn </span>username(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 }
@@ -500,4 +500,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

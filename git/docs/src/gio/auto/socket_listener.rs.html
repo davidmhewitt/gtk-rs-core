@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -832,7 +832,7 @@
     /// # Implements
     ///
     /// [`SocketListenerExt`][trait@crate::prelude::SocketListenerExt], [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GSocketListener&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GSocketListener&quot;</span>)]
     </span><span class="kw">pub struct </span>SocketListener(Object&lt;ffi::GSocketListener, ffi::GSocketListenerClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -850,7 +850,7 @@
     /// # Returns
     ///
     /// a new [`SocketListener`][crate::SocketListener].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_listener_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_listener_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; SocketListener {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_socket_listener_new()) }
     }
@@ -888,7 +888,7 @@
     ///
     /// ## `source_object`
     /// location where [`glib::Object`][crate::glib::Object] pointer will be stored, or [`None`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_listener_accept&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_listener_accept&quot;</span>)]
     </span><span class="kw">fn </span>accept(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
@@ -903,7 +903,7 @@
     /// a [`Cancellable`][crate::Cancellable], or [`None`]
     /// ## `callback`
     /// a `GAsyncReadyCallback`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_listener_accept_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_listener_accept_async&quot;</span>)]
     </span><span class="kw">fn </span>accept_async&lt;
         P: FnOnce(<span class="prelude-ty">Result</span>&lt;(SocketConnection, <span class="prelude-ty">Option</span>&lt;glib::Object&gt;), glib::Error&gt;) + <span class="lifetime">&#39;static</span>,
     &gt;(
@@ -945,7 +945,7 @@
     ///
     /// ## `source_object`
     /// location where [`glib::Object`][crate::glib::Object] pointer will be stored, or [`None`].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_listener_accept_socket&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_listener_accept_socket&quot;</span>)]
     </span><span class="kw">fn </span>accept_socket(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
@@ -960,7 +960,7 @@
     /// a [`Cancellable`][crate::Cancellable], or [`None`]
     /// ## `callback`
     /// a `GAsyncReadyCallback`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_listener_accept_socket_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_listener_accept_socket_async&quot;</span>)]
     </span><span class="kw">fn </span>accept_socket_async&lt;
         P: FnOnce(<span class="prelude-ty">Result</span>&lt;(Socket, <span class="prelude-ty">Option</span>&lt;glib::Object&gt;), glib::Error&gt;) + <span class="lifetime">&#39;static</span>,
     &gt;(
@@ -1016,7 +1016,7 @@
     ///
     /// ## `effective_address`
     /// location to store the address that was bound to, or [`None`].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_listener_add_address&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_listener_add_address&quot;</span>)]
     </span><span class="kw">fn </span>add_address(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         address: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;SocketAddress&gt;,
@@ -1041,7 +1041,7 @@
     /// # Returns
     ///
     /// the port number, or 0 in case of failure.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_listener_add_any_inet_port&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_listener_add_any_inet_port&quot;</span>)]
     </span><span class="kw">fn </span>add_any_inet_port(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         source_object: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;glib::Object&gt;&gt;,
@@ -1067,7 +1067,7 @@
     /// # Returns
     ///
     /// [`true`] on success, [`false`] on error.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_listener_add_inet_port&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_listener_add_inet_port&quot;</span>)]
     </span><span class="kw">fn </span>add_inet_port(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         port: u16,
@@ -1095,7 +1095,7 @@
     /// # Returns
     ///
     /// [`true`] on success, [`false`] on error.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_listener_add_socket&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_listener_add_socket&quot;</span>)]
     </span><span class="kw">fn </span>add_socket(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         socket: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Socket&gt;,
@@ -1103,7 +1103,7 @@
     ) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
     <span class="doccomment">/// Closes all the sockets in the listener.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_listener_close&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_listener_close&quot;</span>)]
     </span><span class="kw">fn </span>close(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
     <span class="doccomment">/// Sets the listen backlog on the sockets in the listener. This must be called
@@ -1113,13 +1113,13 @@
     /// See [`SocketExt::set_listen_backlog()`][crate::prelude::SocketExt::set_listen_backlog()] for details
     /// ## `listen_backlog`
     /// an integer
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_socket_listener_set_backlog&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_socket_listener_set_backlog&quot;</span>)]
     </span><span class="kw">fn </span>set_backlog(<span class="kw-2">&amp;</span><span class="self">self</span>, listen_backlog: i32);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;listen-backlog&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;listen-backlog&quot;</span>)]
     </span><span class="kw">fn </span>listen_backlog(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;listen-backlog&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;listen-backlog&quot;</span>)]
     </span><span class="kw">fn </span>set_listen_backlog(<span class="kw-2">&amp;</span><span class="self">self</span>, listen_backlog: i32);
 
     <span class="doccomment">/// Emitted when `listener`&#39;s activity on `socket` changes state.
@@ -1130,13 +1130,13 @@
     /// the event that is occurring
     /// ## `socket`
     /// the [`Socket`][crate::Socket] the event is occurring on
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;event&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;event&quot;</span>)]
     </span><span class="kw">fn </span>connect_event&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, SocketListenerEvent, <span class="kw-2">&amp;</span>Socket) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
     ) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;listen-backlog&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;listen-backlog&quot;</span>)]
     </span><span class="kw">fn </span>connect_listen_backlog_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -1506,4 +1506,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

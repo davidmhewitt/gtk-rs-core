@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -409,7 +409,7 @@
     /// # Implements
     ///
     /// [`VfsExt`][trait@crate::prelude::VfsExt], [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GVfs&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GVfs&quot;</span>)]
     </span><span class="kw">pub struct </span>Vfs(Object&lt;ffi::GVfs, ffi::GVfsClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -426,7 +426,7 @@
     ///
     /// a [`Vfs`][crate::Vfs], which will be the local
     ///  file system [`Vfs`][crate::Vfs] if no other implementation is available.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_vfs_get_default&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_vfs_get_default&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_default&quot;</span>)]
     #[allow(clippy::should_implement_trait)]
     </span><span class="kw">pub fn </span>default() -&gt; Vfs {
@@ -438,7 +438,7 @@
     /// # Returns
     ///
     /// a [`Vfs`][crate::Vfs].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_vfs_get_local&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_vfs_get_local&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_local&quot;</span>)]
     </span><span class="kw">pub fn </span>local() -&gt; Vfs {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_vfs_get_local()) }
@@ -462,7 +462,7 @@
     ///
     /// a [`File`][crate::File].
     ///  Free the returned object with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_vfs_get_file_for_path&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_vfs_get_file_for_path&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_file_for_path&quot;</span>)]
     </span><span class="kw">fn </span>file_for_path(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="kw-2">&amp;</span>str) -&gt; File;
 
@@ -478,7 +478,7 @@
     ///
     /// a [`File`][crate::File].
     ///  Free the returned object with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_vfs_get_file_for_uri&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_vfs_get_file_for_uri&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_file_for_uri&quot;</span>)]
     </span><span class="kw">fn </span>file_for_uri(<span class="kw-2">&amp;</span><span class="self">self</span>, uri: <span class="kw-2">&amp;</span>str) -&gt; File;
 
@@ -489,7 +489,7 @@
     /// a [`None`]-terminated array of strings.
     ///  The returned array belongs to GIO and must
     ///  not be freed or modified.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_vfs_get_supported_uri_schemes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_vfs_get_supported_uri_schemes&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_supported_uri_schemes&quot;</span>)]
     </span><span class="kw">fn </span>supported_uri_schemes(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;glib::GString&gt;;
 
@@ -499,7 +499,7 @@
     ///
     /// [`true`] if construction of the `self` was successful
     ///  and it is now active.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_vfs_is_active&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_vfs_is_active&quot;</span>)]
     </span><span class="kw">fn </span>is_active(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
     <span class="doccomment">/// This operation never fails, but the returned object might
@@ -512,7 +512,7 @@
     ///
     /// a [`File`][crate::File] for the given `parse_name`.
     ///  Free the returned object with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_vfs_parse_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_vfs_parse_name&quot;</span>)]
     </span><span class="kw">fn </span>parse_name(<span class="kw-2">&amp;</span><span class="self">self</span>, parse_name: <span class="kw-2">&amp;</span>str) -&gt; File;
 
     <span class="doccomment">/// Registers `uri_func` and `parse_name_func` as the [`File`][crate::File] URI and parse name
@@ -559,7 +559,7 @@
     ///
     /// [`true`] if `scheme` was successfully registered, or [`false`] if a handler
     ///  for `scheme` already exists.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_vfs_register_uri_scheme&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_vfs_register_uri_scheme&quot;</span>)]
     </span><span class="kw">fn </span>register_uri_scheme(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         scheme: <span class="kw-2">&amp;</span>str,
@@ -576,7 +576,7 @@
     ///
     /// [`true`] if `scheme` was successfully unregistered, or [`false`] if a
     ///  handler for `scheme` does not exist.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_vfs_unregister_uri_scheme&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_vfs_unregister_uri_scheme&quot;</span>)]
     </span><span class="kw">fn </span>unregister_uri_scheme(<span class="kw-2">&amp;</span><span class="self">self</span>, scheme: <span class="kw-2">&amp;</span>str) -&gt; bool;
 }
 
@@ -716,4 +716,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

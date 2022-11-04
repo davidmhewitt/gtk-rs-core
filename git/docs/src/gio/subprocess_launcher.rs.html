@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -204,13 +204,13 @@
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::SubprocessLauncher;
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="attribute">#[cfg(any(unix, all(feature = <span class="string">&quot;dox&quot;</span>, unix)))]
+<span class="attr">#[cfg(any(unix, all(feature = <span class="string">&quot;dox&quot;</span>, unix)))]
 </span><span class="kw">use </span>std::os::unix::io::IntoRawFd;
 
-<span class="attribute">#[cfg(all(feature = <span class="string">&quot;dox&quot;</span>, not(unix)))]
+<span class="attr">#[cfg(all(feature = <span class="string">&quot;dox&quot;</span>, not(unix)))]
 </span><span class="kw">pub trait </span>IntoRawFd: Sized {
     <span class="kw">fn </span>into_raw_fd(<span class="self">self</span>) -&gt; i32 {
         <span class="number">0
@@ -234,7 +234,7 @@
     /// File descriptor in parent process
     /// ## `target_fd`
     /// Target descriptor for child process
-    </span><span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
     #[doc(alias = <span class="string">&quot;g_subprocess_launcher_take_fd&quot;</span>)]
     </span><span class="kw">pub fn </span>take_fd(<span class="kw-2">&amp;</span><span class="self">self</span>, source_fd: <span class="kw">impl </span>IntoRawFd, target_fd: <span class="kw">impl </span>IntoRawFd) {
@@ -265,7 +265,7 @@
     /// This feature is only available on UNIX.
     /// ## `fd`
     /// a file descriptor, or -1
-    </span><span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
     #[doc(alias = <span class="string">&quot;g_subprocess_launcher_take_stderr_fd&quot;</span>)]
     </span><span class="kw">pub fn </span>take_stderr_fd(<span class="kw-2">&amp;</span><span class="self">self</span>, fd: <span class="kw">impl </span>IntoRawFd) {
@@ -294,7 +294,7 @@
     /// This feature is only available on UNIX.
     /// ## `fd`
     /// a file descriptor, or -1
-    </span><span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
     #[doc(alias = <span class="string">&quot;g_subprocess_launcher_take_stdin_fd&quot;</span>)]
     </span><span class="kw">pub fn </span>take_stdin_fd(<span class="kw-2">&amp;</span><span class="self">self</span>, fd: <span class="kw">impl </span>IntoRawFd) {
@@ -322,7 +322,7 @@
     /// This feature is only available on UNIX.
     /// ## `fd`
     /// a file descriptor, or -1
-    </span><span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
     #[doc(alias = <span class="string">&quot;g_subprocess_launcher_take_stdout_fd&quot;</span>)]
     </span><span class="kw">pub fn </span>take_stdout_fd(<span class="kw-2">&amp;</span><span class="self">self</span>, fd: <span class="kw">impl </span>IntoRawFd) {
@@ -332,4 +332,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

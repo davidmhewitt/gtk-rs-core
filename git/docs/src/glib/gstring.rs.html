@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1292,7 +1292,7 @@
 ///
 /// This type is very similar to [`std::ffi::CStr`], but with one added constraint: the string
 /// must also be valid UTF-8.
-</span><span class="attribute">#[derive(Debug, Eq, Hash, Ord, PartialEq, PartialOrd)]
+</span><span class="attr">#[derive(Debug, Eq, Hash, Ord, PartialEq, PartialOrd)]
 #[repr(transparent)]
 </span><span class="kw">pub struct </span>GStr(str);
 
@@ -1314,7 +1314,7 @@
     /// This function will cast the provided `bytes` to a `GStr` wrapper without performing any
     /// sanity checks. The provided slice **must** be valid UTF-8, nul-terminated and not contain
     /// any interior nul bytes.
-    </span><span class="attribute">#[inline]
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub const unsafe fn </span>from_bytes_with_nul_unchecked(bytes: <span class="kw-2">&amp;</span>[u8]) -&gt; <span class="kw-2">&amp;</span><span class="self">Self </span>{
         <span class="macro">debug_assert!</span>(!bytes.is_empty() &amp;&amp; bytes[bytes.len() - <span class="number">1</span>] == <span class="number">0</span>);
         mem::transmute(bytes)
@@ -1323,7 +1323,7 @@
     </span><span class="doccomment">/// Wraps a raw C string with a safe GLib string wrapper. The provided C string **must** be
     /// valid UTF-8 and nul-terminated. All constraints from [`std::ffi::CStr::from_ptr`] also
     /// apply here.
-    </span><span class="attribute">#[inline]
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_ptr&lt;<span class="lifetime">&#39;a</span>&gt;(ptr: <span class="kw-2">*const </span>c_char) -&gt; <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">Self </span>{
         <span class="kw">let </span>cstr = CStr::from_ptr(ptr);
         <span class="self">Self</span>::from_bytes_with_nul_unchecked(cstr.to_bytes_with_nul())
@@ -1333,7 +1333,7 @@
     ///
     /// This function is the equivalent of [`GStr::to_bytes`] except that it will retain the
     /// trailing nul terminator instead of chopping it off.
-    </span><span class="attribute">#[inline]
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>to_bytes_with_nul(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>[u8] {
         <span class="self">self</span>.<span class="number">0</span>.as_bytes()
     }
@@ -1342,7 +1342,7 @@
     ///
     /// The returned slice will **not** contain the trailing nul terminator that this GLib
     /// string has.
-    </span><span class="attribute">#[inline]
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>to_bytes(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>[u8] {
         <span class="self">self</span>.as_str().as_bytes()
     }
@@ -1357,20 +1357,20 @@
     /// The returned pointer is read-only; writing to it (including passing it to C code that
     /// writes to it) causes undefined behavior. It is your responsibility to make
     /// sure that the underlying memory is not freed too early.
-    </span><span class="attribute">#[inline]
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>as_ptr(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*const </span>c_char {
         <span class="self">self</span>.<span class="number">0</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_
     </span>}
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Converts this GLib string to a string slice.
-    </span><span class="attribute">#[inline]
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>as_str(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>str {
         <span class="comment">// Clip off the nul byte
         </span><span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0</span>[<span class="number">0</span>..<span class="self">self</span>.<span class="number">0</span>.len() - <span class="number">1</span>]
     }
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Converts this GLib string to a C string slice.
-    </span><span class="attribute">#[inline]
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>as_c_str(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>CStr {
         <span class="kw">unsafe </span>{ CStr::from_bytes_with_nul_unchecked(<span class="self">self</span>.to_bytes_with_nul()) }
     }
@@ -1396,7 +1396,7 @@
 /// ```
 ///
 /// [`&amp;&#39;static GStr`]: crate::GStr
-</span><span class="attribute">#[macro_export]
+</span><span class="attr">#[macro_export]
 </span><span class="macro">macro_rules! </span>gstr {
     (<span class="macro-nonterminal">$s</span>:literal) =&gt; {
         <span class="kw">unsafe </span>{ <span class="macro-nonterminal">$crate::GStr::from_bytes_with_nul_unchecked</span>(<span class="macro-nonterminal">$</span><span class="macro">crate::cstr_bytes!</span>(<span class="macro-nonterminal">$s</span>)) }
@@ -1412,7 +1412,7 @@
 
 <span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; TryFrom&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>CStr&gt; <span class="kw">for </span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>GStr {
     <span class="kw">type </span>Error = std::str::Utf8Error;
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>try_from(s: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>CStr) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="self">Self</span>, <span class="self">Self</span>::Error&gt; {
         s.to_str()<span class="question-mark">?</span>;
         <span class="prelude-val">Ok</span>(<span class="kw">unsafe </span>{ GStr::from_bytes_with_nul_unchecked(s.to_bytes_with_nul()) })
@@ -1526,7 +1526,7 @@
 <span class="kw">impl </span>ToOwned <span class="kw">for </span>GStr {
     <span class="kw">type </span>Owned = GString;
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_owned(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="self">Self</span>::Owned {
         GString(Inner::Native(<span class="prelude-val">Some</span>(<span class="self">self</span>.as_c_str().to_owned())))
     }
@@ -1554,63 +1554,63 @@
 }
 
 <span class="kw">impl </span><span class="kw">crate</span>::value::ToValue <span class="kw">for </span>GStr {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Value {
         <span class="self">self</span>.as_str().to_value()
     }
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
         str::static_type()
     }
 }
 
 <span class="kw">impl </span><span class="kw">crate</span>::value::ToValue <span class="kw">for </span><span class="kw-2">&amp;</span>GStr {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Value {
         (<span class="kw-2">*</span><span class="self">self</span>).to_value()
     }
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
         str::static_type()
     }
 }
 
 <span class="kw">impl </span><span class="kw">crate</span>::value::ToValueOptional <span class="kw">for </span>GStr {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_value_optional(s: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="self">Self</span>&gt;) -&gt; <span class="kw">crate</span>::Value {
         <span class="kw">crate</span>::value::ToValueOptional::to_value_optional(s.map(|s| s.as_str()))
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>c_char&gt; <span class="kw">for </span>GStr {
     <span class="kw">type </span>Storage = GString;
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>c_char, <span class="self">Self</span>&gt; {
         <span class="kw">let </span>tmp = <span class="self">self</span>.to_owned();
         Stash(<span class="self">self</span>.as_ptr(), tmp)
     }
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*const </span>c_char {
         <span class="self">self</span>.as_str().to_glib_full()
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>c_char&gt; <span class="kw">for </span>GStr {
     <span class="kw">type </span>Storage = GString;
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>c_char, <span class="self">Self</span>&gt; {
         <span class="kw">let </span>tmp = <span class="self">self</span>.to_owned();
         Stash(tmp.as_ptr() <span class="kw">as </span><span class="kw-2">*mut </span>c_char, tmp)
     }
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*mut </span>c_char {
         <span class="self">self</span>.as_str().to_glib_full()
     }
@@ -1912,7 +1912,7 @@
 }
 
 <span class="kw">impl </span>From&lt;GString&gt; <span class="kw">for </span>String {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>from(<span class="kw-2">mut </span>s: GString) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>s.<span class="number">0 </span>{
             Inner::Foreign { len, .. } <span class="kw">if </span>len == <span class="number">0 </span>=&gt; String::new(),
@@ -1930,7 +1930,7 @@
 }
 
 <span class="kw">impl </span>From&lt;GString&gt; <span class="kw">for </span>Box&lt;str&gt; {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>from(s: GString) -&gt; <span class="self">Self </span>{
         <span class="comment">// Potentially creates a copy
         </span><span class="kw">let </span>st: String = s.into();
@@ -1939,7 +1939,7 @@
 }
 
 <span class="kw">impl </span>From&lt;String&gt; <span class="kw">for </span>GString {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>from(s: String) -&gt; <span class="self">Self </span>{
         <span class="comment">// Moves the content of the String
         </span><span class="kw">unsafe </span>{
@@ -1951,7 +1951,7 @@
 }
 
 <span class="kw">impl </span>From&lt;Box&lt;str&gt;&gt; <span class="kw">for </span>GString {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>from(s: Box&lt;str&gt;) -&gt; <span class="self">Self </span>{
         <span class="comment">// Moves the content of the String
         </span>s.into_string().into()
@@ -1959,14 +1959,14 @@
 }
 
 <span class="kw">impl </span>From&lt;<span class="kw-2">&amp;</span>GStr&gt; <span class="kw">for </span>GString {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>from(s: <span class="kw-2">&amp;</span>GStr) -&gt; GString {
         s.to_owned()
     }
 }
 
 <span class="kw">impl </span>From&lt;<span class="kw-2">&amp;</span>str&gt; <span class="kw">for </span>GString {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>from(s: <span class="kw-2">&amp;</span>str) -&gt; <span class="self">Self </span>{
         <span class="comment">// Allocates with the GLib allocator
         </span><span class="kw">unsafe </span>{
@@ -1984,7 +1984,7 @@
 }
 
 <span class="kw">impl </span>From&lt;Vec&lt;u8&gt;&gt; <span class="kw">for </span>GString {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>from(s: Vec&lt;u8&gt;) -&gt; <span class="self">Self </span>{
         <span class="comment">// Moves the content of the Vec
         // Also check if it&#39;s valid UTF-8
@@ -1994,7 +1994,7 @@
 }
 
 <span class="kw">impl </span>From&lt;CString&gt; <span class="kw">for </span>GString {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>from(s: CString) -&gt; <span class="self">Self </span>{
         <span class="comment">// Moves the content of the CString
         // Also check if it&#39;s valid UTF-8
@@ -2004,7 +2004,7 @@
 }
 
 <span class="kw">impl </span>From&lt;<span class="kw-2">&amp;</span>CStr&gt; <span class="kw">for </span>GString {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>from(c: <span class="kw-2">&amp;</span>CStr) -&gt; <span class="self">Self </span>{
         <span class="comment">// Creates a copy with the GLib allocator
         // Also check if it&#39;s valid UTF-8
@@ -2012,9 +2012,9 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibPtrFull&lt;<span class="kw-2">*mut </span>u8&gt; <span class="kw">for </span>GString {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*mut </span>u8) -&gt; <span class="self">Self </span>{
         <span class="macro">assert!</span>(!ptr.is_null());
 
@@ -2028,33 +2028,33 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibPtrFull&lt;<span class="kw-2">*mut </span>i8&gt; <span class="kw">for </span>GString {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*mut </span>i8) -&gt; <span class="self">Self </span>{
         from_glib_full(ptr <span class="kw">as </span><span class="kw-2">*mut </span>u8)
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibPtrFull&lt;<span class="kw-2">*const </span>u8&gt; <span class="kw">for </span>GString {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*const </span>u8) -&gt; <span class="self">Self </span>{
         from_glib_full(ptr <span class="kw">as </span><span class="kw-2">*mut </span>u8)
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibPtrFull&lt;<span class="kw-2">*const </span>i8&gt; <span class="kw">for </span>GString {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*const </span>i8) -&gt; <span class="self">Self </span>{
         from_glib_full(ptr <span class="kw">as </span><span class="kw-2">*mut </span>u8)
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibPtrNone&lt;<span class="kw-2">*const </span>u8&gt; <span class="kw">for </span>GString {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_none(ptr: <span class="kw-2">*const </span>u8) -&gt; <span class="self">Self </span>{
         <span class="macro">assert!</span>(!ptr.is_null());
         <span class="kw">let </span>cstr = CStr::from_ptr(ptr <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>);
@@ -2063,33 +2063,33 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibPtrNone&lt;<span class="kw-2">*const </span>i8&gt; <span class="kw">for </span>GString {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_none(ptr: <span class="kw-2">*const </span>i8) -&gt; <span class="self">Self </span>{
         from_glib_none(ptr <span class="kw">as </span><span class="kw-2">*const </span>u8)
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibPtrNone&lt;<span class="kw-2">*mut </span>u8&gt; <span class="kw">for </span>GString {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_none(ptr: <span class="kw-2">*mut </span>u8) -&gt; <span class="self">Self </span>{
         from_glib_none(ptr <span class="kw">as </span><span class="kw-2">*const </span>u8)
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibPtrNone&lt;<span class="kw-2">*mut </span>i8&gt; <span class="kw">for </span>GString {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_none(ptr: <span class="kw-2">*mut </span>i8) -&gt; <span class="self">Self </span>{
         from_glib_none(ptr <span class="kw">as </span><span class="kw-2">*const </span>u8)
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibPtrBorrow&lt;<span class="kw-2">*const </span>u8&gt; <span class="kw">for </span>GString {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_borrow(ptr: <span class="kw-2">*const </span>u8) -&gt; Borrowed&lt;<span class="self">Self</span>&gt; {
         <span class="macro">assert!</span>(!ptr.is_null());
 
@@ -2103,91 +2103,91 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibPtrBorrow&lt;<span class="kw-2">*const </span>i8&gt; <span class="kw">for </span>GString {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_borrow(ptr: <span class="kw-2">*const </span>i8) -&gt; Borrowed&lt;<span class="self">Self</span>&gt; {
         from_glib_borrow(ptr <span class="kw">as </span><span class="kw-2">*const </span>u8)
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibPtrBorrow&lt;<span class="kw-2">*mut </span>u8&gt; <span class="kw">for </span>GString {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_borrow(ptr: <span class="kw-2">*mut </span>u8) -&gt; Borrowed&lt;<span class="self">Self</span>&gt; {
         from_glib_borrow(ptr <span class="kw">as </span><span class="kw-2">*const </span>u8)
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibPtrBorrow&lt;<span class="kw-2">*mut </span>i8&gt; <span class="kw">for </span>GString {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_borrow(ptr: <span class="kw-2">*mut </span>i8) -&gt; Borrowed&lt;<span class="self">Self</span>&gt; {
         from_glib_borrow(ptr <span class="kw">as </span><span class="kw-2">*const </span>u8)
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>u8&gt; <span class="kw">for </span>GString {
     <span class="kw">type </span>Storage = <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">Self</span>;
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>u8, <span class="self">Self</span>&gt; {
         Stash(<span class="self">self</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span>u8, <span class="self">self</span>)
     }
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*const </span>u8 {
         <span class="kw">unsafe </span>{ <span class="self">self</span>.clone().into_glib_ptr() <span class="kw">as </span><span class="kw-2">*const </span>u8 }
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>i8&gt; <span class="kw">for </span>GString {
     <span class="kw">type </span>Storage = <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">Self</span>;
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>i8, <span class="self">Self</span>&gt; {
         Stash(<span class="self">self</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span>i8, <span class="self">self</span>)
     }
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*const </span>i8 {
         <span class="kw">unsafe </span>{ <span class="self">self</span>.clone().into_glib_ptr() <span class="kw">as </span><span class="kw-2">*const </span>i8 }
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>u8&gt; <span class="kw">for </span>GString {
     <span class="kw">type </span>Storage = <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">Self</span>;
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>u8, <span class="self">Self</span>&gt; {
         Stash(<span class="self">self</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*mut </span>u8, <span class="self">self</span>)
     }
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*mut </span>u8 {
         <span class="kw">unsafe </span>{ <span class="self">self</span>.clone().into_glib_ptr() <span class="kw">as </span><span class="kw-2">*mut </span>u8 }
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>i8&gt; <span class="kw">for </span>GString {
     <span class="kw">type </span>Storage = <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">Self</span>;
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>i8, <span class="self">Self</span>&gt; {
         Stash(<span class="self">self</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*mut </span>i8, <span class="self">self</span>)
     }
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*mut </span>i8 {
         <span class="kw">unsafe </span>{ <span class="self">self</span>.clone().into_glib_ptr() <span class="kw">as </span><span class="kw-2">*mut </span>i8 }
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibContainer&lt;<span class="kw-2">*const </span>c_char, <span class="kw-2">*const </span>i8&gt; <span class="kw">for </span>GString {
     <span class="kw">unsafe fn </span>from_glib_none_num(ptr: <span class="kw-2">*const </span>i8, num: usize) -&gt; <span class="self">Self </span>{
         <span class="kw">if </span>num == <span class="number">0 </span>|| ptr.is_null() {
@@ -2229,7 +2229,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibContainer&lt;<span class="kw-2">*const </span>c_char, <span class="kw-2">*mut </span>i8&gt; <span class="kw">for </span>GString {
     <span class="kw">unsafe fn </span>from_glib_none_num(ptr: <span class="kw-2">*mut </span>i8, num: usize) -&gt; <span class="self">Self </span>{
         FromGlibContainer::from_glib_none_num(ptr <span class="kw">as </span><span class="kw-2">*const </span>i8, num)
@@ -2244,7 +2244,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibContainer&lt;<span class="kw-2">*const </span>c_char, <span class="kw-2">*const </span>u8&gt; <span class="kw">for </span>GString {
     <span class="kw">unsafe fn </span>from_glib_none_num(ptr: <span class="kw-2">*const </span>u8, num: usize) -&gt; <span class="self">Self </span>{
         FromGlibContainer::from_glib_none_num(ptr <span class="kw">as </span><span class="kw-2">*const </span>i8, num)
@@ -2259,7 +2259,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibContainer&lt;<span class="kw-2">*const </span>c_char, <span class="kw-2">*mut </span>u8&gt; <span class="kw">for </span>GString {
     <span class="kw">unsafe fn </span>from_glib_none_num(ptr: <span class="kw-2">*mut </span>u8, num: usize) -&gt; <span class="self">Self </span>{
         FromGlibContainer::from_glib_none_num(ptr <span class="kw">as </span><span class="kw-2">*const </span>i8, num)
@@ -2351,13 +2351,13 @@
 <span class="macro">impl_from_glib_container_as_vec_string!</span>(GString, <span class="kw-2">*const </span>c_char);
 <span class="macro">impl_from_glib_container_as_vec_string!</span>(GString, <span class="kw-2">*mut </span>c_char);
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 #[allow(clippy::disallowed_names)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use </span>std::ffi::CString;
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_gstring() {
         <span class="kw">let </span>data = CString::new(<span class="string">&quot;foo&quot;</span>).unwrap();
         <span class="kw">let </span>ptr = data.as_ptr();
@@ -2371,7 +2371,7 @@
         }
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_owned_glib_string() {
         <span class="kw">let </span>data = CString::new(<span class="string">&quot;foo&quot;</span>).unwrap();
         <span class="kw">let </span>ptr = data.as_ptr();
@@ -2382,7 +2382,7 @@
         }
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_gstring_from_str() {
         <span class="kw">let </span>gstring: GString = <span class="string">&quot;foo&quot;</span>.into();
         <span class="macro">assert_eq!</span>(gstring.as_str(), <span class="string">&quot;foo&quot;</span>);
@@ -2390,7 +2390,7 @@
         <span class="macro">assert_eq!</span>(foo.as_ref(), <span class="string">&quot;foo&quot;</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_string_from_gstring() {
         <span class="kw">let </span>gstring = GString::from(<span class="string">&quot;foo&quot;</span>);
         <span class="macro">assert_eq!</span>(gstring.as_str(), <span class="string">&quot;foo&quot;</span>);
@@ -2398,7 +2398,7 @@
         <span class="macro">assert_eq!</span>(s, <span class="string">&quot;foo&quot;</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_gstring_from_cstring() {
         <span class="kw">let </span>cstr = CString::new(<span class="string">&quot;foo&quot;</span>).unwrap();
         <span class="kw">let </span>gstring = GString::from(cstr);
@@ -2407,7 +2407,7 @@
         <span class="macro">assert_eq!</span>(foo.as_ref(), <span class="string">&quot;foo&quot;</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_string_from_gstring_from_cstring() {
         <span class="kw">let </span>cstr = CString::new(<span class="string">&quot;foo&quot;</span>).unwrap();
         <span class="kw">let </span>gstring = GString::from(cstr);
@@ -2416,14 +2416,14 @@
         <span class="macro">assert_eq!</span>(s, <span class="string">&quot;foo&quot;</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_vec_u8_to_gstring() {
         <span class="kw">let </span>v: <span class="kw-2">&amp;</span>[u8] = <span class="string">b&quot;foo&quot;</span>;
         <span class="kw">let </span>s: GString = Vec::from(v).into();
         <span class="macro">assert_eq!</span>(s.as_str(), <span class="string">&quot;foo&quot;</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_as_ref_path() {
         <span class="kw">fn </span>foo&lt;P: AsRef&lt;Path&gt;&gt;(_path: P) {}
         <span class="kw">let </span>gstring: GString = <span class="string">&quot;/my/path/&quot;</span>.into();
@@ -2432,7 +2432,7 @@
         foo(gstring);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_from_glib_container() {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>test_a: GString = FromGlibContainer::from_glib_container_num(
@@ -2457,7 +2457,7 @@
         }
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_hashmap() {
         <span class="kw">use </span>std::collections::HashMap;
 
@@ -2470,4 +2470,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

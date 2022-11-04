@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -120,23 +120,23 @@
 // rustdoc-stripper-ignore-next
 </span><span class="doccomment">//! Traits and essential types intended for blanket imports.
 
-</span><span class="attribute">#[doc(hidden)]
+</span><span class="attr">#[doc(hidden)]
 </span><span class="kw">pub use </span>glib::prelude::<span class="kw-2">*</span>;
 
 <span class="kw">pub use </span><span class="kw">crate</span>::auto::traits::<span class="kw-2">*</span>;
 
 <span class="kw">pub use </span><span class="kw">crate</span>::action_map::ActionMapExtManual;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">pub use </span><span class="kw">crate</span>::app_info::AppInfoExtManual;
 <span class="kw">pub use </span><span class="kw">crate</span>::application::<span class="kw-2">*</span>;
 <span class="kw">pub use </span><span class="kw">crate</span>::cancellable::<span class="kw-2">*</span>;
 <span class="kw">pub use </span><span class="kw">crate</span>::converter::<span class="kw-2">*</span>;
 <span class="kw">pub use </span><span class="kw">crate</span>::data_input_stream::DataInputStreamExtManual;
 <span class="kw">pub use </span><span class="kw">crate</span>::dbus_proxy::DBusProxyExtManual;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
 </span><span class="kw">pub use </span><span class="kw">crate</span>::debug_controller_dbus::DebugControllerDBusExtManual;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg(any(all(not(windows), not(target_os = <span class="string">&quot;macos&quot;</span>)), feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">pub use </span><span class="kw">crate</span>::desktop_app_info::DesktopAppInfoExtManual;
 <span class="kw">pub use </span><span class="kw">crate</span>::file::FileExtManual;
@@ -151,13 +151,13 @@
 <span class="kw">pub use </span><span class="kw">crate</span>::simple_proxy_resolver::SimpleProxyResolverExtManual;
 <span class="kw">pub use </span><span class="kw">crate</span>::socket::<span class="kw-2">*</span>;
 <span class="kw">pub use </span><span class="kw">crate</span>::tls_connection::TlsConnectionExtManual;
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">pub use </span><span class="kw">crate</span>::unix_fd_list::UnixFDListExtManual;
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">pub use </span><span class="kw">crate</span>::unix_input_stream::UnixInputStreamExtManual;
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">pub use </span><span class="kw">crate</span>::unix_output_stream::UnixOutputStreamExtManual;
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">pub use </span><span class="kw">crate</span>::unix_socket_address::{UnixSocketAddressExtManual, UnixSocketAddressPath};
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

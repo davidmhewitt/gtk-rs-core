@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../rust-logo.svg" alt="logo"></div></a><h2></h2></nav><nav class="sidebar"><a class="sidebar-logo" href="../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../rust-logo.svg" alt="logo"></div></a><div class="sidebar-elems"><h2><a href="index.html">In glib</a></h2></div></nav><main><div class="width-limiter"><nav class="sub"><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="main-heading"><h1 class="fqn">Derive Macro <a href="index.html">glib</a>::<wbr><a class="derive" href="#">Variant</a><button id="copy-path" onclick="copy_path(this)" title="Copy item path to clipboard"><img src="../clipboard.svg" width="19" height="18" alt="Copy item path"></button></h1><span class="out-of-band"><a class="srclink" href="../src/glib_macros/lib.rs.html#817">source</a> · <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">[<span class="inner">&#x2212;</span>]</a></span></div><div class="item-decl"><pre class="rust derive"><code>#[derive(Variant)]
+<nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="sidebar-logo" href="../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../rust-logo.svg" alt="logo"></div></a><h2></h2></nav><nav class="sidebar"><a class="sidebar-logo" href="../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../rust-logo.svg" alt="logo"></div></a><div class="sidebar-elems"><h2><a href="index.html">In glib</a></h2></div></nav><main><div class="width-limiter"><nav class="sub"><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="main-heading"><h1 class="fqn">Derive Macro <a href="index.html">glib</a>::<wbr><a class="derive" href="#">Variant</a><button id="copy-path" onclick="copy_path(this)" title="Copy item path to clipboard"><img src="../clipboard.svg" width="19" height="18" alt="Copy item path"></button></h1><span class="out-of-band"><a class="srclink" href="../src/glib_macros/lib.rs.html#817">source</a> · <button id="toggle-all-docs" title="collapse all docs">[<span>&#x2212;</span>]</button></span></div><div class="item-decl"><pre class="rust derive"><code>#[derive(Variant)]
 {
     // Attributes available to this derive:
     #[variant_enum]
@@ -80,7 +80,7 @@
 <h2 id="example"><a href="#example">Example</a></h2>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>glib::prelude::<span class="kw-2">*</span>;
 
-<span class="attribute">#[derive(Debug, PartialEq, Eq, glib::Variant)]
+<span class="attr">#[derive(Debug, PartialEq, Eq, glib::Variant)]
 </span><span class="kw">struct </span>Foo {
     some_string: String,
     some_int: i32,
@@ -94,7 +94,7 @@
 <h2 id="example-1"><a href="#example-1">Example</a></h2>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>glib::prelude::<span class="kw-2">*</span>;
 
-<span class="attribute">#[derive(Debug, PartialEq, Eq, glib::Variant)]
+<span class="attr">#[derive(Debug, PartialEq, Eq, glib::Variant)]
 </span><span class="kw">struct </span>Foo {
     some_vec: glib::FixedSizeVariantArray&lt;Vec&lt;u32&gt;, u32&gt;,
     some_int: i32,
@@ -122,7 +122,7 @@ The type must also implement <code>Copy</code>.</li>
 <h2 id="example-2"><a href="#example-2">Example</a></h2>
 <div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>glib::prelude::<span class="kw-2">*</span>;
 
-<span class="attribute">#[derive(Debug, PartialEq, Eq, glib::Variant)]
+<span class="attr">#[derive(Debug, PartialEq, Eq, glib::Variant)]
 </span><span class="kw">enum </span>Foo {
     MyA,
     MyB(i32),
@@ -134,7 +134,7 @@ The type must also implement <code>Copy</code>.</li>
 <span class="macro">assert_eq!</span>(var.child_value(<span class="number">0</span>).str(), <span class="prelude-val">Some</span>(<span class="string">&quot;my-c&quot;</span>));
 <span class="macro">assert_eq!</span>(var.get::&lt;Foo&gt;(), <span class="prelude-val">Some</span>(v));
 
-<span class="attribute">#[derive(Debug, Copy, Clone, PartialEq, Eq, glib::Variant)]
+<span class="attr">#[derive(Debug, Copy, Clone, PartialEq, Eq, glib::Variant)]
 #[variant_enum(repr)]
 #[repr(u8)]
 </span><span class="kw">enum </span>Bar {
@@ -148,14 +148,14 @@ The type must also implement <code>Copy</code>.</li>
 <span class="macro">assert_eq!</span>(var.get::&lt;u8&gt;(), <span class="prelude-val">Some</span>(<span class="number">3</span>));
 <span class="macro">assert_eq!</span>(var.get::&lt;Bar&gt;(), <span class="prelude-val">Some</span>(v));
 
-<span class="attribute">#[derive(Debug, Copy, Clone, PartialEq, Eq, glib::Enum, glib::Variant)]
+<span class="attr">#[derive(Debug, Copy, Clone, PartialEq, Eq, glib::Enum, glib::Variant)]
 #[variant_enum(<span class="kw">enum</span>)]
 #[enum_type(name = <span class="string">&quot;MyEnum&quot;</span>)]
 </span><span class="kw">enum </span>MyEnum {
     Val,
-    <span class="attribute">#[enum_value(name = <span class="string">&quot;My Val&quot;</span>)]
+    <span class="attr">#[enum_value(name = <span class="string">&quot;My Val&quot;</span>)]
     </span>ValWithCustomName,
-    <span class="attribute">#[enum_value(name = <span class="string">&quot;My Other Val&quot;</span>, nick = <span class="string">&quot;other&quot;</span>)]
+    <span class="attr">#[enum_value(name = <span class="string">&quot;My Other Val&quot;</span>, nick = <span class="string">&quot;other&quot;</span>)]
     </span>ValWithCustomNameAndNick,
 }
 
@@ -163,4 +163,4 @@ The type must also implement <code>Copy</code>.</li>
 <span class="kw">let </span>var = v.to_variant();
 <span class="macro">assert_eq!</span>(var.str(), <span class="prelude-val">Some</span>(<span class="string">&quot;other&quot;</span>));
 <span class="macro">assert_eq!</span>(var.get::&lt;MyEnum&gt;(), <span class="prelude-val">Some</span>(v));</code></pre></div>
-</div></details></section></div></main><div id="rustdoc-vars" data-root-path="../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</div></details></section></div></main><div id="rustdoc-vars" data-root-path="../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../glib/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../glib/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -300,201 +300,201 @@
 
 </span><span class="kw">use </span>std::ffi::CStr;
 
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_CSET_A_2_Z&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_CSET_A_2_Z&quot;</span>)]
 </span><span class="kw">pub static </span>CSET_A_2_Z: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{ CStr::from_ptr(ffi::G_CSET_A_2_Z).to_str().unwrap() });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_CSET_DIGITS&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_CSET_DIGITS&quot;</span>)]
 </span><span class="kw">pub static </span>CSET_DIGITS: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{ CStr::from_ptr(ffi::G_CSET_DIGITS).to_str().unwrap() });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_CSET_a_2_z&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_CSET_a_2_z&quot;</span>)]
 </span><span class="kw">pub static </span>CSET_a_2_z: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{ CStr::from_ptr(ffi::G_CSET_a_2_z).to_str().unwrap() });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_GROUP&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_GROUP&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_GROUP: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_GROUP)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_ACTIONS&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_ACTIONS&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_KEY_ACTIONS: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_KEY_ACTIONS)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_CATEGORIES&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_CATEGORIES&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_KEY_CATEGORIES: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_KEY_CATEGORIES)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_COMMENT&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_COMMENT&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_KEY_COMMENT: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_KEY_COMMENT)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_DBUS_ACTIVATABLE&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_DBUS_ACTIVATABLE&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_KEY_DBUS_ACTIVATABLE: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_KEY_DBUS_ACTIVATABLE)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_EXEC&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_EXEC&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_KEY_EXEC: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_KEY_EXEC)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_GENERIC_NAME&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_GENERIC_NAME&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_KEY_GENERIC_NAME: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_KEY_GENERIC_NAME)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_HIDDEN&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_HIDDEN&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_KEY_HIDDEN: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_KEY_HIDDEN)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_ICON&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_ICON&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_KEY_ICON: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_KEY_ICON)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_MIME_TYPE&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_MIME_TYPE&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_KEY_MIME_TYPE: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_KEY_MIME_TYPE)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_NAME&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_NAME&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_KEY_NAME: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_KEY_NAME)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_KEY_NOT_SHOW_IN)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_KEY_NO_DISPLAY: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_KEY_ONLY_SHOW_IN)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_PATH&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_PATH&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_KEY_PATH: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_KEY_PATH)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_STARTUP_NOTIFY&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_STARTUP_NOTIFY&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_KEY_STARTUP_NOTIFY: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_KEY_STARTUP_NOTIFY)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_STARTUP_WM_CLASS&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_STARTUP_WM_CLASS&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_KEY_STARTUP_WM_CLASS: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_KEY_STARTUP_WM_CLASS)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_TERMINAL&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_TERMINAL&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_KEY_TERMINAL: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_KEY_TERMINAL)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_TRY_EXEC&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_TRY_EXEC&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_KEY_TRY_EXEC: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_KEY_TRY_EXEC)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_TYPE&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_TYPE&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_KEY_TYPE: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_KEY_TYPE)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_URL&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_URL&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_KEY_URL: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_KEY_URL)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_VERSION&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_KEY_VERSION&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_KEY_VERSION: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_KEY_VERSION)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_TYPE_APPLICATION&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_TYPE_APPLICATION&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_TYPE_APPLICATION: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_TYPE_APPLICATION)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_TYPE_DIRECTORY&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_TYPE_DIRECTORY&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_TYPE_DIRECTORY: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_TYPE_DIRECTORY)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_TYPE_LINK&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_KEY_FILE_DESKTOP_TYPE_LINK&quot;</span>)]
 </span><span class="kw">pub static </span>KEY_FILE_DESKTOP_TYPE_LINK: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_KEY_FILE_DESKTOP_TYPE_LINK)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_OPTION_REMAINING&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_OPTION_REMAINING&quot;</span>)]
 </span><span class="kw">pub static </span>OPTION_REMAINING: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_OPTION_REMAINING).to_str().unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_STR_DELIMITERS&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_STR_DELIMITERS&quot;</span>)]
 </span><span class="kw">pub static </span>STR_DELIMITERS: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_STR_DELIMITERS).to_str().unwrap()
     });
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
 #[doc(alias = <span class="string">&quot;G_TEST_OPTION_ISOLATE_DIRS&quot;</span>)]
 </span><span class="kw">pub static </span>TEST_OPTION_ISOLATE_DIRS: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
@@ -503,14 +503,14 @@
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_URI_RESERVED_CHARS_GENERIC_DELIMITERS&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_URI_RESERVED_CHARS_GENERIC_DELIMITERS&quot;</span>)]
 </span><span class="kw">pub static </span>URI_RESERVED_CHARS_GENERIC_DELIMITERS: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_URI_RESERVED_CHARS_GENERIC_DELIMITERS)
             .to_str()
             .unwrap()
     });
-<span class="attribute">#[doc(alias = <span class="string">&quot;G_URI_RESERVED_CHARS_SUBCOMPONENT_DELIMITERS&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;G_URI_RESERVED_CHARS_SUBCOMPONENT_DELIMITERS&quot;</span>)]
 </span><span class="kw">pub static </span>URI_RESERVED_CHARS_SUBCOMPONENT_DELIMITERS: once_cell::sync::Lazy&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; =
     once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
         CStr::from_ptr(ffi::G_URI_RESERVED_CHARS_SUBCOMPONENT_DELIMITERS)
@@ -518,4 +518,4 @@
             .unwrap()
     });
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

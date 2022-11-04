@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -210,7 +210,7 @@
     /// # Implements
     ///
     /// [`TcpConnectionExt`][trait@crate::prelude::TcpConnectionExt], [`SocketConnectionExt`][trait@crate::prelude::SocketConnectionExt], [`IOStreamExt`][trait@crate::prelude::IOStreamExt], [`trait@glib::ObjectExt`], [`IOStreamExtManual`][trait@crate::prelude::IOStreamExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GTcpConnection&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GTcpConnection&quot;</span>)]
     </span><span class="kw">pub struct </span>TcpConnection(Object&lt;ffi::GTcpConnection, ffi::GTcpConnectionClass&gt;) @extends SocketConnection, IOStream;
 
     <span class="kw">match fn </span>{
@@ -234,7 +234,7 @@
     /// # Returns
     ///
     /// [`true`] if graceful disconnect is used on close, [`false`] otherwise
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tcp_connection_get_graceful_disconnect&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tcp_connection_get_graceful_disconnect&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_graceful_disconnect&quot;</span>)]
     </span><span class="kw">fn </span>is_graceful_disconnect(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -249,10 +249,10 @@
     /// take a while. For this reason it is disabled by default.
     /// ## `graceful_disconnect`
     /// Whether to do graceful disconnects or not
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tcp_connection_set_graceful_disconnect&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tcp_connection_set_graceful_disconnect&quot;</span>)]
     </span><span class="kw">fn </span>set_graceful_disconnect(<span class="kw-2">&amp;</span><span class="self">self</span>, graceful_disconnect: bool);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;graceful-disconnect&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;graceful-disconnect&quot;</span>)]
     </span><span class="kw">fn </span>connect_graceful_disconnect_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -306,4 +306,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

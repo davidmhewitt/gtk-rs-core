@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1951,7 +1951,7 @@
 <span class="kw">use </span><span class="kw">crate</span>::DBusSendMessageFlags;
 <span class="kw">use </span><span class="kw">crate</span>::IOStream;
 <span class="kw">use </span><span class="kw">crate</span>::Initable;
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
 </span><span class="kw">use </span><span class="kw">crate</span>::UnixFDList;
 <span class="kw">use </span>glib::object::IsA;
@@ -2021,7 +2021,7 @@
     /// # Implements
     ///
     /// [`trait@glib::ObjectExt`], [`AsyncInitableExt`][trait@crate::prelude::AsyncInitableExt], [`InitableExt`][trait@crate::prelude::InitableExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDBusConnection&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDBusConnection&quot;</span>)]
     </span><span class="kw">pub struct </span>DBusConnection(Object&lt;ffi::GDBusConnection&gt;) @implements AsyncInitable, Initable;
 
     <span class="kw">match fn </span>{
@@ -2060,7 +2060,7 @@
     ///
     /// a [`DBusConnection`][crate::DBusConnection] or [`None`] if `error` is set.
     ///  Free with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_new_for_address_sync&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_new_for_address_sync&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_for_address_sync&quot;</span>)]
     </span><span class="kw">pub fn </span>for_address_sync(
         address: <span class="kw-2">&amp;</span>str,
@@ -2115,7 +2115,7 @@
     ///
     /// a [`DBusConnection`][crate::DBusConnection] or [`None`] if `error` is set.
     ///  Free with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_new_sync&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_new_sync&quot;</span>)]
     </span><span class="kw">pub fn </span>new_sync(
         stream: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;IOStream&gt;,
         guid: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
@@ -2216,7 +2216,7 @@
     /// a `GAsyncReadyCallback` to call when the request
     ///  is satisfied or [`None`] if you don&#39;t care about the result of the
     ///  method invocation
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_call&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_call&quot;</span>)]
     </span><span class="kw">pub fn </span>call&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;glib::Variant, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         bus_name: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
@@ -2385,7 +2385,7 @@
     ///
     /// [`None`] if `error` is set. Otherwise a non-floating
     ///  [`glib::Variant`][struct@crate::glib::Variant] tuple with return values. Free with `g_variant_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_call_sync&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_call_sync&quot;</span>)]
     </span><span class="kw">pub fn </span>call_sync(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         bus_name: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
@@ -2463,7 +2463,7 @@
     /// a `GAsyncReadyCallback` to call when the request is
     ///  satisfied or [`None`] if you don&#39;t * care about the result of the
     ///  method invocation
-    </span><span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
     #[doc(alias = <span class="string">&quot;g_dbus_connection_call_with_unix_fd_list&quot;</span>)]
     </span><span class="kw">pub fn </span>call_with_unix_fd_list&lt;
@@ -2539,7 +2539,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
     </span><span class="kw">pub fn </span>call_with_unix_fd_list_future(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -2623,7 +2623,7 @@
     ///
     /// ## `out_fd_list`
     /// return location for a [`UnixFDList`][crate::UnixFDList] or [`None`]
-    </span><span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
     #[doc(alias = <span class="string">&quot;g_dbus_connection_call_with_unix_fd_list_sync&quot;</span>)]
     </span><span class="kw">pub fn </span>call_with_unix_fd_list_sync(
@@ -2694,7 +2694,7 @@
     /// ## `callback`
     /// a `GAsyncReadyCallback` to call when the request is
     ///  satisfied or [`None`] if you don&#39;t care about the result
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_close&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_close&quot;</span>)]
     </span><span class="kw">pub fn </span>close&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
@@ -2763,7 +2763,7 @@
     /// # Returns
     ///
     /// [`true`] if the operation succeeded, [`false`] if `error` is set
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_close_sync&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_close_sync&quot;</span>)]
     </span><span class="kw">pub fn </span>close_sync(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
@@ -2807,7 +2807,7 @@
     /// # Returns
     ///
     /// [`true`] unless `error` is set
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_emit_signal&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_emit_signal&quot;</span>)]
     </span><span class="kw">pub fn </span>emit_signal(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         destination_bus_name: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
@@ -2855,7 +2855,7 @@
     /// ## `callback`
     /// a `GAsyncReadyCallback` to call when the
     ///  request is satisfied or [`None`] if you don&#39;t care about the result
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_flush&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_flush&quot;</span>)]
     </span><span class="kw">pub fn </span>flush&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
@@ -2924,7 +2924,7 @@
     /// # Returns
     ///
     /// [`true`] if the operation succeeded, [`false`] if `error` is set
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_flush_sync&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_flush_sync&quot;</span>)]
     </span><span class="kw">pub fn </span>flush_sync(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;,
@@ -2950,7 +2950,7 @@
     /// # Returns
     ///
     /// zero or more flags from the [`DBusCapabilityFlags`][crate::DBusCapabilityFlags] enumeration
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_get_capabilities&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_get_capabilities&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_capabilities&quot;</span>)]
     </span><span class="kw">pub fn </span>capabilities(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; DBusCapabilityFlags {
         <span class="kw">unsafe </span>{
@@ -2968,7 +2968,7 @@
     ///
     /// whether the process is terminated when `self` is
     ///  closed by the remote peer
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_get_exit_on_close&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_get_exit_on_close&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_exit_on_close&quot;</span>)]
     </span><span class="kw">pub fn </span>exits_on_close(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -2983,7 +2983,7 @@
     /// # Returns
     ///
     /// zero or more flags from the [`DBusConnectionFlags`][crate::DBusConnectionFlags] enumeration
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_dbus_connection_get_flags&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_flags&quot;</span>)]
@@ -2998,7 +2998,7 @@
     ///
     /// The GUID. Do not free this string, it is owned by
     ///  `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_get_guid&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_get_guid&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_guid&quot;</span>)]
     </span><span class="kw">pub fn </span>guid(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_dbus_connection_get_guid(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -3014,7 +3014,7 @@
     ///
     /// the last used serial or zero when no message has been sent
     ///  within the current thread
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_get_last_serial&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_get_last_serial&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_last_serial&quot;</span>)]
     </span><span class="kw">pub fn </span>last_serial(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::g_dbus_connection_get_last_serial(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -3034,7 +3034,7 @@
     ///
     /// a [`Credentials`][crate::Credentials] or [`None`] if not
     ///  available. Do not free this object, it is owned by `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_get_peer_credentials&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_get_peer_credentials&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_peer_credentials&quot;</span>)]
     </span><span class="kw">pub fn </span>peer_credentials(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Credentials&gt; {
         <span class="kw">unsafe </span>{
@@ -3053,7 +3053,7 @@
     /// # Returns
     ///
     /// the stream used for IO
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_get_stream&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_get_stream&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_stream&quot;</span>)]
     </span><span class="kw">pub fn </span>stream(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; IOStream {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_dbus_connection_get_stream(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -3068,7 +3068,7 @@
     /// the unique name or [`None`] if `self` is not a message
     ///  bus connection. Do not free this string, it is owned by
     ///  `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_get_unique_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_get_unique_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_unique_name&quot;</span>)]
     </span><span class="kw">pub fn </span>unique_name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{
@@ -3083,7 +3083,7 @@
     /// # Returns
     ///
     /// [`true`] if the connection is closed, [`false`] otherwise
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_is_closed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_is_closed&quot;</span>)]
     </span><span class="kw">pub fn </span>is_closed(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_dbus_connection_is_closed(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
@@ -3127,7 +3127,7 @@
     /// ## `out_serial`
     /// return location for serial number assigned
     ///  to `message` when sending it or [`None`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_send_message&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_send_message&quot;</span>)]
     </span><span class="kw">pub fn </span>send_message(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         message: <span class="kw-2">&amp;</span>DBusMessage,
@@ -3200,7 +3200,7 @@
     /// ## `out_serial`
     /// return location for serial number assigned
     ///  to `message` when sending it or [`None`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_send_message_with_reply&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_send_message_with_reply&quot;</span>)]
     </span><span class="kw">pub fn </span>send_message_with_reply&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;DBusMessage, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         message: <span class="kw-2">&amp;</span>DBusMessage,
@@ -3333,7 +3333,7 @@
     /// ## `out_serial`
     /// return location for serial number
     ///  assigned to `message` when sending it or [`None`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_send_message_with_reply_sync&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_send_message_with_reply_sync&quot;</span>)]
     </span><span class="kw">pub fn </span>send_message_with_reply_sync(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         message: <span class="kw-2">&amp;</span>DBusMessage,
@@ -3374,7 +3374,7 @@
     /// ## `exit_on_close`
     /// whether the process should be terminated
     ///  when `self` is closed by the remote peer
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_set_exit_on_close&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_set_exit_on_close&quot;</span>)]
     </span><span class="kw">pub fn </span>set_exit_on_close(<span class="kw-2">&amp;</span><span class="self">self</span>, exit_on_close: bool) {
         <span class="kw">unsafe </span>{
             ffi::g_dbus_connection_set_exit_on_close(
@@ -3388,7 +3388,7 @@
     /// [`DBusConnectionFlags::DELAY_MESSAGE_PROCESSING`][crate::DBusConnectionFlags::DELAY_MESSAGE_PROCESSING], this method
     /// starts processing messages. Does nothing on if `self` wasn&#39;t
     /// created with this flag or if the method has already been called.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_start_message_processing&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_start_message_processing&quot;</span>)]
     </span><span class="kw">pub fn </span>start_message_processing(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::g_dbus_connection_start_message_processing(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
@@ -3432,7 +3432,7 @@
     /// a [`Cancellable`][crate::Cancellable] or [`None`]
     /// ## `callback`
     /// a `GAsyncReadyCallback` to call when the request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;DBusConnection, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         stream: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;IOStream&gt;,
         guid: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
@@ -3545,7 +3545,7 @@
     /// a [`Cancellable`][crate::Cancellable] or [`None`]
     /// ## `callback`
     /// a `GAsyncReadyCallback` to call when the request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_new_for_address&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_new_for_address&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_for_address&quot;</span>)]
     </span><span class="kw">pub fn </span>for_address&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;DBusConnection, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         address: <span class="kw-2">&amp;</span>str,
@@ -3643,7 +3643,7 @@
     ///  remote peer closed its end of the connection
     /// ## `error`
     /// a [`glib::Error`][crate::glib::Error] with more details about the event or [`None`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;closed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;closed&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_closed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, bool, <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>glib::Error&gt;) + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -3678,7 +3678,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;capabilities&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;capabilities&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_capabilities_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -3706,7 +3706,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;closed&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;closed&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_closed_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -3734,7 +3734,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;exit-on-close&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;exit-on-close&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_exit_on_close_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -3762,7 +3762,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;unique-name&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;unique-name&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_unique_name_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -3800,4 +3800,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

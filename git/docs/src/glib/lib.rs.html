@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -256,7 +256,7 @@
 <span id="183">183</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="attribute">#![cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, feature(doc_cfg))]
+</span><span class="attr">#![cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, feature(doc_cfg))]
 #![allow(unknown_lints)]
 #![allow(clippy::missing_safety_doc)]
 #![allow(clippy::wrong_self_convention)]
@@ -266,10 +266,10 @@
 </span><span class="kw">pub use </span>ffi;
 <span class="kw">pub use </span>gobject_ffi;
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">pub use </span>bitflags;
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">pub use </span>once_cell;
 
 <span class="kw">pub use </span>glib_macros::{
@@ -277,7 +277,7 @@
     Enum, ErrorDomain, SharedBoxed, Variant,
 };
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">pub use </span>glib_macros::cstr_bytes;
 
 <span class="kw">pub use </span><span class="self">self</span>::byte_array::ByteArray;
@@ -305,17 +305,17 @@
 <span class="kw">pub use </span><span class="self">self</span>::variant_type::{VariantTy, VariantTyIterator, VariantType};
 
 <span class="kw">pub mod </span>clone;
-<span class="attribute">#[macro_use]
+<span class="attr">#[macro_use]
 </span><span class="kw">pub mod </span>wrapper;
-<span class="attribute">#[macro_use]
+<span class="attr">#[macro_use]
 </span><span class="kw">pub mod </span>boxed;
-<span class="attribute">#[macro_use]
+<span class="attr">#[macro_use]
 </span><span class="kw">pub mod </span>boxed_inline;
-<span class="attribute">#[macro_use]
+<span class="attr">#[macro_use]
 </span><span class="kw">pub mod </span>shared;
-<span class="attribute">#[macro_use]
+<span class="attr">#[macro_use]
 </span><span class="kw">pub mod </span>error;
-<span class="attribute">#[macro_use]
+<span class="attr">#[macro_use]
 </span><span class="kw">pub mod </span>object;
 
 <span class="kw">mod </span>boxed_any_object;
@@ -326,7 +326,7 @@
 
 <span class="kw">pub use </span><span class="self">self</span>::auto::functions::<span class="kw-2">*</span>;
 <span class="kw">pub use </span><span class="self">self</span>::auto::<span class="kw-2">*</span>;
-<span class="attribute">#[allow(non_upper_case_globals)]
+<span class="attr">#[allow(non_upper_case_globals)]
 #[allow(clippy::too_many_arguments)]
 #[allow(clippy::type_complexity)]
 #[allow(unused_imports)]
@@ -351,7 +351,7 @@
 <span class="kw">pub mod </span>signal;
 <span class="kw">pub mod </span>source;
 <span class="kw">pub use </span><span class="self">self</span>::source::<span class="kw-2">*</span>;
-<span class="attribute">#[macro_use]
+<span class="attr">#[macro_use]
 </span><span class="kw">pub mod </span>translate;
 <span class="kw">mod </span>gstring;
 <span class="kw">pub use </span><span class="self">self</span>::gstring::{GStr, GString};
@@ -382,7 +382,7 @@
 <span class="kw">pub use </span><span class="self">self</span>::param_spec::<span class="kw-2">*</span>;
 <span class="kw">mod </span>quark;
 <span class="kw">pub use </span><span class="self">self</span>::quark::Quark;
-<span class="attribute">#[macro_use]
+<span class="attr">#[macro_use]
 </span><span class="kw">mod </span>log;
 <span class="kw">pub use </span><span class="self">self</span>::log::log_set_handler;
 
@@ -394,24 +394,24 @@
     unset_printerr_handler, LogField, LogHandlerId, LogLevel, LogLevels,
 };
 
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">pub use </span><span class="self">self</span>::log::{log_writer_is_journald, log_writer_supports_color};
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">pub use </span><span class="self">self</span>::log::{log_writer_default_set_use_stderr, log_writer_default_would_drop};
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 #[cfg(any(feature = <span class="string">&quot;dox&quot;</span>, feature = <span class="string">&quot;log_macros&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;log_macros&quot;</span>)))]
 </span><span class="kw">pub use </span>rs_log;
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;log&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;log&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[macro_use]
 </span><span class="kw">mod </span>bridged_logging;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;log&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;log&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">pub use </span><span class="self">self</span>::bridged_logging::{rust_log_handler, GlibLogger, GlibLoggerDomain, GlibLoggerFormat};
 
-<span class="attribute">#[macro_use]
+<span class="attr">#[macro_use]
 </span><span class="kw">pub mod </span>subclass;
 
 <span class="kw">mod </span>main_context_futures;
@@ -432,10 +432,10 @@
 /// `log` functions.
 </span><span class="kw">pub const </span>CLONE_MACRO_LOG_DOMAIN: <span class="kw-2">&amp;</span>str = <span class="string">&quot;glib-rs-clone&quot;</span>;
 
-<span class="attribute">#[cfg(target_family = <span class="string">&quot;windows&quot;</span>)]
+<span class="attr">#[cfg(target_family = <span class="string">&quot;windows&quot;</span>)]
 </span><span class="kw">mod </span>win32;
 
-<span class="attribute">#[cfg(target_family = <span class="string">&quot;windows&quot;</span>)]
+<span class="attr">#[cfg(target_family = <span class="string">&quot;windows&quot;</span>)]
 </span><span class="kw">pub use </span><span class="self">self</span>::win32::<span class="kw-2">*</span>;
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

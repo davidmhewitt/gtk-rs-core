@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pango/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pango/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -288,7 +288,7 @@
     /// given by @new_matrix then applying the original transformation.
     /// ## `new_matrix`
     /// a [`Matrix`][crate::Matrix]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_matrix_concat&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_matrix_concat&quot;</span>)]
     </span><span class="kw">pub fn </span>concat(<span class="kw-2">&amp;mut </span><span class="self">self</span>, new_matrix: <span class="kw-2">&amp;</span>Matrix) {
         <span class="kw">unsafe </span>{
             ffi::pango_matrix_concat(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>, new_matrix.to_glib_none().<span class="number">0</span>);
@@ -305,7 +305,7 @@
     ///
     /// the scale factor of @self on the height of the font,
     ///   or 1.0 if @self is [`None`].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_matrix_get_font_scale_factor&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_matrix_get_font_scale_factor&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_font_scale_factor&quot;</span>)]
     </span><span class="kw">pub fn </span>font_scale_factor(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f64 {
         <span class="kw">unsafe </span>{ ffi::pango_matrix_get_font_scale_factor(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -327,7 +327,7 @@
     ///
     /// ## `yscale`
     /// output scale factor perpendicular to the x direction
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_matrix_get_font_scale_factors&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_matrix_get_font_scale_factors&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_font_scale_factors&quot;</span>)]
     </span><span class="kw">pub fn </span>font_scale_factors(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (f64, f64) {
         <span class="kw">unsafe </span>{
@@ -354,7 +354,7 @@
     /// # Returns
     ///
     /// the slant ratio of @self
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_matrix_get_slant_ratio&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_slant_ratio&quot;</span>)]
@@ -367,7 +367,7 @@
     /// counter-clockwise then applying the original transformation.
     /// ## `degrees`
     /// degrees to rotate counter-clockwise
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_matrix_rotate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_matrix_rotate&quot;</span>)]
     </span><span class="kw">pub fn </span>rotate(<span class="kw-2">&amp;mut </span><span class="self">self</span>, degrees: f64) {
         <span class="kw">unsafe </span>{
             ffi::pango_matrix_rotate(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>, degrees);
@@ -382,7 +382,7 @@
     /// amount to scale by in X direction
     /// ## `scale_y`
     /// amount to scale by in Y direction
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_matrix_scale&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_matrix_scale&quot;</span>)]
     </span><span class="kw">pub fn </span>scale(<span class="kw-2">&amp;mut </span><span class="self">self</span>, scale_x: f64, scale_y: f64) {
         <span class="kw">unsafe </span>{
             ffi::pango_matrix_scale(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>, scale_x, scale_y);
@@ -408,7 +408,7 @@
     /// in/out X component of a distance vector
     /// ## `dy`
     /// in/out Y component of a distance vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_matrix_transform_distance&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_matrix_transform_distance&quot;</span>)]
     </span><span class="kw">pub fn </span>transform_distance(<span class="kw-2">&amp;</span><span class="self">self</span>, dx: <span class="kw-2">&amp;mut </span>f64, dy: <span class="kw-2">&amp;mut </span>f64) {
         <span class="kw">unsafe </span>{
             ffi::pango_matrix_transform_distance(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, dx, dy);
@@ -420,7 +420,7 @@
     /// in/out X position
     /// ## `y`
     /// in/out Y position
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_matrix_transform_point&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_matrix_transform_point&quot;</span>)]
     </span><span class="kw">pub fn </span>transform_point(<span class="kw-2">&amp;</span><span class="self">self</span>, x: <span class="kw-2">&amp;mut </span>f64, y: <span class="kw-2">&amp;mut </span>f64) {
         <span class="kw">unsafe </span>{
             ffi::pango_matrix_transform_point(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, x, y);
@@ -434,7 +434,7 @@
     /// amount to translate in the X direction
     /// ## `ty`
     /// amount to translate in the Y direction
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_matrix_translate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_matrix_translate&quot;</span>)]
     </span><span class="kw">pub fn </span>translate(<span class="kw-2">&amp;mut </span><span class="self">self</span>, tx: f64, ty: f64) {
         <span class="kw">unsafe </span>{
             ffi::pango_matrix_translate(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>, tx, ty);
@@ -442,4 +442,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

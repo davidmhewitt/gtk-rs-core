@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../graphene/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../graphene/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -495,7 +495,7 @@
     /// # Returns
     ///
     /// `true` if the box is contained in the given box
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_contains_box&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_contains_box&quot;</span>)]
     </span><span class="kw">pub fn </span>contains_box(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Box) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_box_contains_box(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, b.to_glib_none().<span class="number">0</span>) }
     }
@@ -507,12 +507,12 @@
     /// # Returns
     ///
     /// `true` if the point is contained in the given box
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_contains_point&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_contains_point&quot;</span>)]
     </span><span class="kw">pub fn </span>contains_point(<span class="kw-2">&amp;</span><span class="self">self</span>, point: <span class="kw-2">&amp;</span>Point3D) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_box_contains_point(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, point.to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_equal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_equal&quot;</span>)]
     </span><span class="kw">fn </span>equal(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Box) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_box_equal(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, b.to_glib_none().<span class="number">0</span>) }
     }
@@ -526,7 +526,7 @@
     ///
     /// ## `res`
     /// return location for the expanded box
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_expand&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_expand&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>expand(<span class="kw-2">&amp;</span><span class="self">self</span>, point: <span class="kw-2">&amp;</span>Point3D) -&gt; Box {
         <span class="kw">unsafe </span>{
@@ -552,7 +552,7 @@
     ///
     /// ## `res`
     /// return location for the expanded box
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_expand_scalar&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_expand_scalar&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>expand_scalar(<span class="kw-2">&amp;</span><span class="self">self</span>, scalar: f32) -&gt; Box {
         <span class="kw">unsafe </span>{
@@ -576,7 +576,7 @@
     ///
     /// ## `res`
     /// return location for the expanded box
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_expand_vec3&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_expand_vec3&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>expand_vec3(<span class="kw-2">&amp;</span><span class="self">self</span>, vec: <span class="kw-2">&amp;</span>Vec3) -&gt; Box {
         <span class="kw">unsafe </span>{
@@ -598,7 +598,7 @@
     ///
     /// ## `sphere`
     /// return location for the bounding sphere
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_get_bounding_sphere&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_get_bounding_sphere&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_bounding_sphere&quot;</span>)]
     </span><span class="kw">pub fn </span>bounding_sphere(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Sphere {
         <span class="kw">unsafe </span>{
@@ -619,7 +619,7 @@
     /// ## `center`
     /// return location for the coordinates of
     ///  the center
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_get_center&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_get_center&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_center&quot;</span>)]
     </span><span class="kw">pub fn </span>center(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Point3D {
         <span class="kw">unsafe </span>{
@@ -634,7 +634,7 @@
     /// # Returns
     ///
     /// the depth of the box
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_get_depth&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_get_depth&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_depth&quot;</span>)]
     </span><span class="kw">pub fn </span>depth(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_box_get_depth(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -645,7 +645,7 @@
     /// # Returns
     ///
     /// the height of the box
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_get_height&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_get_height&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_height&quot;</span>)]
     </span><span class="kw">pub fn </span>height(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_box_get_height(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -659,7 +659,7 @@
     ///
     /// ## `max`
     /// return location for the maximum point
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_get_max&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_get_max&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_max&quot;</span>)]
     </span><span class="kw">pub fn </span>max(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Point3D {
         <span class="kw">unsafe </span>{
@@ -677,7 +677,7 @@
     ///
     /// ## `min`
     /// return location for the minimum point
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_get_min&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_get_min&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_min&quot;</span>)]
     </span><span class="kw">pub fn </span>min(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Point3D {
         <span class="kw">unsafe </span>{
@@ -695,7 +695,7 @@
     ///
     /// ## `size`
     /// return location for the size
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_get_size&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_get_size&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_size&quot;</span>)]
     </span><span class="kw">pub fn </span>size(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec3 {
         <span class="kw">unsafe </span>{
@@ -710,7 +710,7 @@
     /// # Returns
     ///
     /// the width of the box
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_get_width&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_get_width&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_width&quot;</span>)]
     </span><span class="kw">pub fn </span>width(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_box_get_width(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -729,7 +729,7 @@
     ///
     /// ## `res`
     /// return location for the result
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_intersection&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_intersection&quot;</span>)]
     </span><span class="kw">pub fn </span>intersection(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Box) -&gt; <span class="prelude-ty">Option</span>&lt;Box&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>res = Box::uninitialized();
@@ -755,7 +755,7 @@
     ///
     /// ## `res`
     /// return location for the result
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_union&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_union&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>union(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Box) -&gt; Box {
         <span class="kw">unsafe </span>{
@@ -776,7 +776,7 @@
     /// # Returns
     ///
     /// a [`Box`][crate::Box]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_empty&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_empty&quot;</span>)]
     </span><span class="kw">pub fn </span>empty() -&gt; Box {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ from_glib_none(ffi::graphene_box_empty()) }
@@ -789,7 +789,7 @@
     /// # Returns
     ///
     /// a [`Box`][crate::Box]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_infinite&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_infinite&quot;</span>)]
     </span><span class="kw">pub fn </span>infinite() -&gt; Box {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ from_glib_none(ffi::graphene_box_infinite()) }
@@ -803,7 +803,7 @@
     /// # Returns
     ///
     /// a [`Box`][crate::Box]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_minus_one&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_minus_one&quot;</span>)]
     </span><span class="kw">pub fn </span>minus_one() -&gt; Box {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ from_glib_none(ffi::graphene_box_minus_one()) }
@@ -817,7 +817,7 @@
     /// # Returns
     ///
     /// a [`Box`][crate::Box]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_one&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_one&quot;</span>)]
     </span><span class="kw">pub fn </span>one() -&gt; Box {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ from_glib_none(ffi::graphene_box_one()) }
@@ -831,7 +831,7 @@
     /// # Returns
     ///
     /// a [`Box`][crate::Box]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_one_minus_one&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_one_minus_one&quot;</span>)]
     </span><span class="kw">pub fn </span>one_minus_one() -&gt; Box {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ from_glib_none(ffi::graphene_box_one_minus_one()) }
@@ -844,7 +844,7 @@
     /// # Returns
     ///
     /// a [`Box`][crate::Box]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_zero&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_zero&quot;</span>)]
     </span><span class="kw">pub fn </span>zero() -&gt; Box {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ from_glib_none(ffi::graphene_box_zero()) }
@@ -852,7 +852,7 @@
 }
 
 <span class="kw">impl </span>PartialEq <span class="kw">for </span>Box {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool {
         <span class="self">self</span>.equal(other)
     }
@@ -860,4 +860,4 @@
 
 <span class="kw">impl </span>Eq <span class="kw">for </span>Box {}
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

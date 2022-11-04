@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -245,7 +245,7 @@
     /// # Implements
     ///
     /// [`RemoteActionGroupExt`][trait@crate::prelude::RemoteActionGroupExt], [`ActionGroupExt`][trait@crate::prelude::ActionGroupExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GRemoteActionGroup&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GRemoteActionGroup&quot;</span>)]
     </span><span class="kw">pub struct </span>RemoteActionGroup(Interface&lt;ffi::GRemoteActionGroup, ffi::GRemoteActionGroupInterface&gt;) @requires ActionGroup;
 
     <span class="kw">match fn </span>{
@@ -278,7 +278,7 @@
     /// the optional parameter to the activation
     /// ## `platform_data`
     /// the platform data to send
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_remote_action_group_activate_action_full&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_remote_action_group_activate_action_full&quot;</span>)]
     </span><span class="kw">fn </span>activate_action_full(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         action_name: <span class="kw-2">&amp;</span>str,
@@ -301,7 +301,7 @@
     /// the new requested value for the state
     /// ## `platform_data`
     /// the platform data to send
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_remote_action_group_change_action_state_full&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_remote_action_group_change_action_state_full&quot;</span>)]
     </span><span class="kw">fn </span>change_action_state_full(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         action_name: <span class="kw-2">&amp;</span>str,
@@ -350,4 +350,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

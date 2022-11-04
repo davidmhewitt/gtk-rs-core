@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../glib/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../glib/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1154,7 +1154,7 @@
 </span><span class="doccomment">/// A newly registered `glib::Type` that is currently still being initialized.
 ///
 /// This allows running additional type-setup functions.
-</span><span class="attribute">#[derive(Debug, PartialEq, Eq)]
+</span><span class="attr">#[derive(Debug, PartialEq, Eq)]
 </span><span class="kw">pub struct </span>InitializingType&lt;T&gt;(<span class="kw">pub</span>(<span class="kw">crate</span>) Type, <span class="kw">pub</span>(<span class="kw">crate</span>) marker::PhantomData&lt;<span class="kw-2">*const </span>T&gt;);
 
 <span class="kw">impl</span>&lt;T&gt; IntoGlib <span class="kw">for </span>InitializingType&lt;T&gt; {
@@ -1214,12 +1214,12 @@
     /// is the implementor of [`ObjectImpl`] or subtraits.
     ///
     /// [`ObjectImpl`]: ../object/trait.ObjectImpl.html
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;get_impl&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;get_impl&quot;</span>)]
     </span><span class="kw">fn </span>imp(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span><span class="self">Self</span>::Type;
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Returns the class struct for this specific instance.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;get_class&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;get_class&quot;</span>)]
     </span><span class="kw">fn </span>class(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>&lt;<span class="self">Self</span>::Type <span class="kw">as </span>ObjectSubclass&gt;::Class;
 }
 
@@ -1311,7 +1311,7 @@
 
 <span class="comment">// FIXME: It should be possible to make implemented for all instances of `IsSubclassable&lt;T&gt;`
 // with specialization, and make it private.
-</span><span class="attribute">#[doc(hidden)]
+</span><span class="attr">#[doc(hidden)]
 </span><span class="kw">pub trait </span>IsSubclassableDefault&lt;T: ObjectSubclass&gt;: IsClass {
     <span class="kw">fn </span>default_class_init(class: <span class="kw-2">&amp;mut </span><span class="kw">crate</span>::Class&lt;<span class="self">Self</span>&gt;);
     <span class="kw">fn </span>default_instance_init(instance: <span class="kw-2">&amp;mut </span>InitializingObject&lt;T&gt;);
@@ -1501,17 +1501,17 @@
 // the content of `TypeData` can be made private, and we can add a `const fn new`
 // for initialization by the `object_subclass_internal!` macro.
 </span><span class="kw">pub struct </span>TypeData {
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span><span class="kw">pub </span>type_: Type,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span><span class="kw">pub </span>parent_class: ffi::gpointer,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span><span class="kw">pub </span>parent_ifaces: <span class="prelude-ty">Option</span>&lt;BTreeMap&lt;Type, ffi::gpointer&gt;&gt;,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span><span class="kw">pub </span>class_data: <span class="prelude-ty">Option</span>&lt;BTreeMap&lt;Type, Box&lt;<span class="kw">dyn </span>Any + Send + Sync&gt;&gt;&gt;,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span><span class="kw">pub </span>private_offset: isize,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span><span class="kw">pub </span>private_imp_offset: isize,
 }
 
@@ -1521,7 +1521,7 @@
 <span class="kw">impl </span>TypeData {
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Returns the type ID.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;get_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;get_type&quot;</span>)]
     </span><span class="kw">pub fn </span>type_(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
         <span class="self">self</span>.type_
     }
@@ -1531,7 +1531,7 @@
     ///
     /// This is used for chaining up to the parent class&#39; implementation
     /// of virtual methods.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;get_parent_class&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;get_parent_class&quot;</span>)]
     </span><span class="kw">pub fn </span>parent_class(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; ffi::gpointer {
         <span class="macro">debug_assert!</span>(!<span class="self">self</span>.parent_class.is_null());
         <span class="self">self</span>.parent_class
@@ -1547,7 +1547,7 @@
     ///
     /// This function panics if the type to which the `TypeData` belongs does not implement the
     /// given interface or was not registered yet.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;get_parent_interface&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;get_parent_interface&quot;</span>)]
     </span><span class="kw">pub fn </span>parent_interface&lt;I: <span class="kw">crate</span>::object::IsInterface&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; ffi::gpointer {
         <span class="kw">match </span><span class="self">self</span>.parent_ifaces {
             <span class="prelude-val">None </span>=&gt; <span class="macro">unreachable!</span>(<span class="string">&quot;No parent interfaces&quot;</span>),
@@ -1561,7 +1561,7 @@
     </span><span class="doccomment">/// Returns a pointer to the class implementation specific data.
     ///
     /// This is used for class implementations to store additional data.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;get_class_data&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;get_class_data&quot;</span>)]
     </span><span class="kw">pub fn </span>class_data&lt;T: Any + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, type_: Type) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>T&gt; {
         <span class="kw">match </span><span class="self">self</span>.class_data {
             <span class="prelude-val">None </span>=&gt; <span class="prelude-val">None</span>,
@@ -1575,7 +1575,7 @@
     /// # Safety
     ///
     /// This can only be used while the type is being initialized.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;get_class_data_mut&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;get_class_data_mut&quot;</span>)]
     </span><span class="kw">pub unsafe fn </span>class_data_mut&lt;T: Any + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;mut </span><span class="self">self</span>,
         type_: Type,
@@ -1615,7 +1615,7 @@
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Returns the offset of the private implementation struct in bytes relative to the beginning
     /// of the instance struct.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;get_impl_offset&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;get_impl_offset&quot;</span>)]
     </span><span class="kw">pub fn </span>impl_offset(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; isize {
         <span class="self">self</span>.private_offset + <span class="self">self</span>.private_imp_offset
     }
@@ -1634,7 +1634,7 @@
     </span><span class="doccomment">/// Returns the `glib::Type` ID of the subclass.
     ///
     /// This will register the type with the type system on the first call.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;get_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;get_type&quot;</span>)]
     </span><span class="kw">fn </span>type_() -&gt; Type;
 }
 
@@ -1778,7 +1778,7 @@
 </span><span class="kw">pub trait </span>ObjectSubclassExt: ObjectSubclass {
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Returns the corresponding object instance.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;get_instance&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;get_instance&quot;</span>)]
     </span><span class="kw">fn </span>instance(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::BorrowedObject&lt;<span class="self">Self</span>::Type&gt;;
 
     <span class="comment">// rustdoc-stripper-ignore-next
@@ -1789,7 +1789,7 @@
     </span><span class="doccomment">/// Returns the corresponding object instance.
     ///
     /// Shorter alias for `instance()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;get_instance&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;get_instance&quot;</span>)]
     </span><span class="kw">fn </span>obj(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::BorrowedObject&lt;<span class="self">Self</span>::Type&gt;;
 
     <span class="comment">// rustdoc-stripper-ignore-next
@@ -1806,7 +1806,7 @@
     </span><span class="doccomment">/// Returns a pointer to the instance implementation specific data.
     ///
     /// This is used for the subclassing infrastructure to store additional instance data.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;get_instance_data&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;get_instance_data&quot;</span>)]
     </span><span class="kw">fn </span>instance_data&lt;U: Any + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, type_: Type) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>U&gt;;
 }
 
@@ -2198,4 +2198,4 @@
     <span class="prelude-val">Some</span>(result).filter(|r| r.type_().is_valid() &amp;&amp; r.type_() != Type::UNIT)
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

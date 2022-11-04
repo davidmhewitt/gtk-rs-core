@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../glib/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../glib/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -798,7 +798,7 @@
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Builder for signals.
-</span><span class="attribute">#[allow(clippy::type_complexity)]
+</span><span class="attr">#[allow(clippy::type_complexity)]
 #[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>SignalBuilder {
     name: String,
@@ -849,7 +849,7 @@
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Signal invocation hint passed to signal accumulators.
-</span><span class="attribute">#[repr(transparent)]
+</span><span class="attr">#[repr(transparent)]
 </span><span class="kw">pub struct </span>SignalInvocationHint(gobject_ffi::GSignalInvocationHint);
 
 <span class="kw">impl </span>SignalInvocationHint {
@@ -948,7 +948,7 @@
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Signal ID.
-</span><span class="attribute">#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+</span><span class="attr">#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 </span><span class="kw">pub struct </span>SignalId(NonZeroU32);
 
 <span class="kw">impl </span>SignalId {
@@ -962,7 +962,7 @@
         <span class="self">Self</span>(id)
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_signal_parse_name&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_signal_parse_name&quot;</span>)]
     </span><span class="kw">pub fn </span>parse_name(
         name: <span class="kw-2">&amp;</span>str,
         type_: Type,
@@ -992,7 +992,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Find a SignalId by its `name`, and the `type` it connects to.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_signal_lookup&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_signal_lookup&quot;</span>)]
     </span><span class="kw">pub fn </span>lookup(name: <span class="kw-2">&amp;</span>str, type_: Type) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="self">Self</span>&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>signal_id = gobject_ffi::g_signal_lookup(name.to_glib_none().<span class="number">0</span>, type_.into_glib());
@@ -1006,7 +1006,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Queries more in-depth information about the current signal.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_signal_query&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_signal_query&quot;</span>)]
     </span><span class="kw">pub fn </span>query(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; SignalQuery {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>query_ptr = std::mem::MaybeUninit::uninit();
@@ -1019,7 +1019,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Find the signal name.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_signal_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_signal_name&quot;</span>)]
     </span><span class="kw">pub fn </span>name&lt;<span class="lifetime">&#39;a</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>ptr = gobject_ffi::g_signal_name(<span class="self">self</span>.into_glib());
@@ -1028,7 +1028,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;u32&gt; <span class="kw">for </span>SignalId {
     <span class="kw">unsafe fn </span>from_glib(signal_id: u32) -&gt; <span class="self">Self </span>{
         <span class="macro">assert_ne!</span>(signal_id, <span class="number">0</span>);
@@ -1036,7 +1036,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>SignalId {
     <span class="kw">type </span>GlibType = u32;
 
@@ -1045,7 +1045,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone, Hash)]
+<span class="attr">#[derive(Copy, Clone, Hash)]
 #[repr(transparent)]
 </span><span class="kw">pub struct </span>SignalType(ffi::GType);
 
@@ -1104,14 +1104,14 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GType&gt; <span class="kw">for </span>SignalType {
     <span class="kw">unsafe fn </span>from_glib(type_: ffi::GType) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>(type_)
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>SignalType {
     <span class="kw">type </span>GlibType = ffi::GType;
 
@@ -1144,7 +1144,7 @@
     }
 }
 
-<span class="attribute">#[allow(clippy::type_complexity)]
+<span class="attr">#[allow(clippy::type_complexity)]
 </span><span class="kw">enum </span>SignalRegistration {
     Unregistered {
         class_handler: <span class="prelude-ty">Option</span>&lt;
@@ -1297,7 +1297,7 @@
     ///
     /// This does not register the signal yet, which only happens as part of object type
     /// registration.
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Signal returned from the builder must be used for it to be registered&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Signal returned from the builder must be used for it to be registered&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; Signal {
         <span class="kw">let </span>flags = <span class="kw">if </span><span class="self">self</span>.flags
             &amp; (SignalFlags::RUN_FIRST | SignalFlags::RUN_LAST | SignalFlags::RUN_CLEANUP)
@@ -1494,4 +1494,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

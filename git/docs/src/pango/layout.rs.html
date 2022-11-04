@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../pango/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../pango/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -198,7 +198,7 @@
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// The result of [`LayoutLine::x_to_index`].
-</span><span class="attribute">#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
+</span><span class="attr">#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
 </span><span class="kw">pub struct </span>HitPosition {
     index: i32,
     trailing: i32,
@@ -244,7 +244,7 @@
     /// the source [`Layout`].
     ///
     /// [`Layout`]: crate::Layout
-    </span><span class="attribute">#[cfg(not(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>)))]
+    </span><span class="attr">#[cfg(not(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>)))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(not(cfg(feature = <span class="string">&quot;v1_50&quot;</span>))))]
     </span><span class="kw">pub fn </span>start_index(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ (<span class="kw-2">*</span><span class="self">self</span>.as_ptr()).start_index }
@@ -252,13 +252,13 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// The length of this line&#39;s text, in bytes.
-    </span><span class="attribute">#[cfg(not(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>)))]
+    </span><span class="attr">#[cfg(not(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>)))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(not(cfg(feature = <span class="string">&quot;v1_50&quot;</span>))))]
     </span><span class="kw">pub fn </span>length(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ (<span class="kw-2">*</span><span class="self">self</span>.as_ptr()).length }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_line_runs&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_line_runs&quot;</span>)]
     </span><span class="kw">pub fn </span>runs(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;LayoutRun&gt; {
         <span class="kw">unsafe </span>{ FromGlibPtrContainer::from_glib_none((<span class="kw-2">*</span><span class="self">self</span>.as_ptr()).runs) }
     }
@@ -288,7 +288,7 @@
     /// location to store an integer indicating where in the
     ///   grapheme the user clicked. It will either be zero, or the number of
     ///   characters in the grapheme. 0 represents the leading edge of the grapheme.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_line_x_to_index&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_line_x_to_index&quot;</span>)]
     </span><span class="kw">pub fn </span>x_to_index(<span class="kw-2">&amp;</span><span class="self">self</span>, x_pos: i32) -&gt; HitPosition {
         <span class="kw">let </span><span class="kw-2">mut </span>index = <span class="number">0</span>;
         <span class="kw">let </span><span class="kw-2">mut </span>trailing = <span class="number">0</span>;
@@ -310,4 +310,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

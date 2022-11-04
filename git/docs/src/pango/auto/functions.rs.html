@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pango/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pango/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -818,7 +818,7 @@
 ///
 /// The direction corresponding to the first strong character.
 ///   If no such character is found, then [`Direction::Neutral`][crate::Direction::Neutral] is returned.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_find_base_dir&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_find_base_dir&quot;</span>)]
 </span><span class="kw">pub fn </span>find_base_dir(text: <span class="kw-2">&amp;</span>str) -&gt; Direction {
     <span class="kw">let </span>length = text.len() <span class="kw">as _</span>;
     <span class="kw">unsafe </span>{ from_glib(ffi::pango_find_base_dir(text.to_glib_none().<span class="number">0</span>, length)) }
@@ -853,7 +853,7 @@
 /// ## `next_paragraph_start`
 /// return location for start of next
 ///   paragraph
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_find_paragraph_boundary&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_find_paragraph_boundary&quot;</span>)]
 </span><span class="kw">pub fn </span>find_paragraph_boundary(text: <span class="kw-2">&amp;</span>str) -&gt; (i32, i32) {
     <span class="kw">let </span>length = text.len() <span class="kw">as _</span>;
     <span class="kw">unsafe </span>{
@@ -890,7 +890,7 @@
 /// # Returns
 ///
 /// [`true`] if @ch is a zero-width character, [`false`] otherwise
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_is_zero_width&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_is_zero_width&quot;</span>)]
 </span><span class="kw">pub fn </span>is_zero_width(ch: char) -&gt; bool {
     <span class="kw">unsafe </span>{ from_glib(ffi::pango_is_zero_width(ch.into_glib())) }
 }
@@ -927,7 +927,7 @@
 /// a `GList` of
 ///   [`Item`][crate::Item] structures. The items should be freed using
 ///   `Pango::Item::free()` in combination with `GLib::List::free_full()`.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_itemize&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_itemize&quot;</span>)]
 </span><span class="kw">pub fn </span>itemize(
     context: <span class="kw-2">&amp;</span>Context,
     text: <span class="kw-2">&amp;</span>str,
@@ -975,7 +975,7 @@
 /// a `GList` of
 ///   [`Item`][crate::Item] structures. The items should be freed using
 ///   `Pango::Item::free()` probably in combination with `GLib::List::free_full()`.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_itemize_with_base_dir&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_itemize_with_base_dir&quot;</span>)]
 </span><span class="kw">pub fn </span>itemize_with_base_dir(
     context: <span class="kw-2">&amp;</span>Context,
     base_dir: Direction,
@@ -1019,7 +1019,7 @@
 ///
 /// ## `accel_char`
 /// address of return location for accelerator char
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_markup_parser_finish&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_markup_parser_finish&quot;</span>)]
 </span><span class="kw">pub fn </span>markup_parser_finish(
     context: <span class="kw-2">&amp;</span>glib::MarkupParseContext,
 ) -&gt; <span class="prelude-ty">Result</span>&lt;(AttrList, glib::GString, char), glib::Error&gt; {
@@ -1078,7 +1078,7 @@
 ///
 /// a `GMarkupParseContext` that should be
 /// destroyed with `GLib::MarkupParseContext::free()`.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_markup_parser_new&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_markup_parser_new&quot;</span>)]
 </span><span class="kw">pub fn </span>markup_parser_new(accel_marker: char) -&gt; glib::MarkupParseContext {
     <span class="kw">unsafe </span>{ from_glib_none(ffi::pango_markup_parser_new(accel_marker.into_glib())) }
 }
@@ -1119,7 +1119,7 @@
 ///
 /// ## `accel_char`
 /// address of return location for accelerator char
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_parse_markup&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_parse_markup&quot;</span>)]
 </span><span class="kw">pub fn </span>parse_markup(
     markup_text: <span class="kw-2">&amp;</span>str,
     accel_marker: char,
@@ -1171,7 +1171,7 @@
 ///
 /// ## `stretch`
 /// a [`Stretch`][crate::Stretch] to store the result in.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_parse_stretch&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_parse_stretch&quot;</span>)]
 </span><span class="kw">pub fn </span>parse_stretch(str: <span class="kw-2">&amp;</span>str, warn: bool) -&gt; <span class="prelude-ty">Option</span>&lt;Stretch&gt; {
     <span class="kw">unsafe </span>{
         <span class="kw">let </span><span class="kw-2">mut </span>stretch = mem::MaybeUninit::uninit();
@@ -1204,7 +1204,7 @@
 ///
 /// ## `style`
 /// a [`Style`][crate::Style] to store the result in.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_parse_style&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_parse_style&quot;</span>)]
 </span><span class="kw">pub fn </span>parse_style(str: <span class="kw-2">&amp;</span>str, warn: bool) -&gt; <span class="prelude-ty">Option</span>&lt;Style&gt; {
     <span class="kw">unsafe </span>{
         <span class="kw">let </span><span class="kw-2">mut </span>style = mem::MaybeUninit::uninit();
@@ -1237,7 +1237,7 @@
 ///
 /// ## `variant`
 /// a [`Variant`][struct@crate::Variant] to store the result in.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_parse_variant&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_parse_variant&quot;</span>)]
 </span><span class="kw">pub fn </span>parse_variant(str: <span class="kw-2">&amp;</span>str, warn: bool) -&gt; <span class="prelude-ty">Option</span>&lt;Variant&gt; {
     <span class="kw">unsafe </span>{
         <span class="kw">let </span><span class="kw-2">mut </span>variant = mem::MaybeUninit::uninit();
@@ -1270,7 +1270,7 @@
 ///
 /// ## `weight`
 /// a [`Weight`][crate::Weight] to store the result in.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_parse_weight&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_parse_weight&quot;</span>)]
 </span><span class="kw">pub fn </span>parse_weight(str: <span class="kw-2">&amp;</span>str, warn: bool) -&gt; <span class="prelude-ty">Option</span>&lt;Weight&gt; {
     <span class="kw">unsafe </span>{
         <span class="kw">let </span><span class="kw-2">mut </span>weight = mem::MaybeUninit::uninit();
@@ -1299,7 +1299,7 @@
 /// pointer to the thickness of a line, in Pango units
 /// ## `position`
 /// corresponding position
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_quantize_line_geometry&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_quantize_line_geometry&quot;</span>)]
 </span><span class="kw">pub fn </span>quantize_line_geometry(thickness: <span class="kw-2">&amp;mut </span>i32, position: <span class="kw-2">&amp;mut </span>i32) {
     <span class="kw">unsafe </span>{
         ffi::pango_quantize_line_geometry(thickness, position);
@@ -1332,7 +1332,7 @@
 /// [`Analysis`][crate::Analysis] structure from [`itemize()`][crate::itemize()]
 /// ## `glyphs`
 /// glyph string in which to store results
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_shape&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_shape&quot;</span>)]
 </span><span class="kw">pub fn </span>shape(text: <span class="kw-2">&amp;</span>str, analysis: <span class="kw-2">&amp;</span>Analysis, glyphs: <span class="kw-2">&amp;mut </span>GlyphString) {
     <span class="kw">let </span>length = text.len() <span class="kw">as _</span>;
     <span class="kw">unsafe </span>{
@@ -1374,7 +1374,7 @@
 /// # Returns
 ///
 /// the direction of the character.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_unichar_direction&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_unichar_direction&quot;</span>)]
 </span><span class="kw">pub fn </span>unichar_direction(ch: char) -&gt; Direction {
     <span class="kw">unsafe </span>{ from_glib(ffi::pango_unichar_direction(ch.into_glib())) }
 }
@@ -1389,7 +1389,7 @@
 /// # Returns
 ///
 /// the value in Pango units.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_units_from_double&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_units_from_double&quot;</span>)]
 </span><span class="kw">pub fn </span>units_from_double(d: f64) -&gt; i32 {
     <span class="kw">unsafe </span>{ ffi::pango_units_from_double(d) }
 }
@@ -1403,7 +1403,7 @@
 /// # Returns
 ///
 /// the double value.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_units_to_double&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_units_to_double&quot;</span>)]
 </span><span class="kw">pub fn </span>units_to_double(i: i32) -&gt; f64 {
     <span class="kw">unsafe </span>{ ffi::pango_units_to_double(i) }
 }
@@ -1417,7 +1417,7 @@
 /// # Returns
 ///
 /// The encoded version of Pango library available at run time.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_version&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_version&quot;</span>)]
 </span><span class="kw">pub fn </span>version() -&gt; i32 {
     <span class="kw">unsafe </span>{ ffi::pango_version() }
 }
@@ -1452,7 +1452,7 @@
 ///   with the given version, or a string describing the version
 ///   mismatch.  The returned string is owned by Pango and should not
 ///   be modified or freed.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_version_check&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_version_check&quot;</span>)]
 </span><span class="kw">pub fn </span>version_check(
     required_major: i32,
     required_minor: i32,
@@ -1477,9 +1477,9 @@
 /// A string containing the version of Pango library available
 ///   at run time. The returned string is owned by Pango and should not
 ///   be modified or freed.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_version_string&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;pango_version_string&quot;</span>)]
 </span><span class="kw">pub fn </span>version_string() -&gt; glib::GString {
     <span class="kw">unsafe </span>{ from_glib_none(ffi::pango_version_string()) }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

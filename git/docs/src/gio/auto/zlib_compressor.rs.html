@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -205,7 +205,7 @@
     /// # Implements
     ///
     /// [`trait@glib::ObjectExt`], [`ConverterExt`][trait@crate::prelude::ConverterExt], [`ConverterExtManual`][trait@crate::prelude::ConverterExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GZlibCompressor&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GZlibCompressor&quot;</span>)]
     </span><span class="kw">pub struct </span>ZlibCompressor(Object&lt;ffi::GZlibCompressor, ffi::GZlibCompressorClass&gt;) @implements Converter;
 
     <span class="kw">match fn </span>{
@@ -223,7 +223,7 @@
     /// # Returns
     ///
     /// a new [`ZlibCompressor`][crate::ZlibCompressor]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_zlib_compressor_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_zlib_compressor_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(format: ZlibCompressorFormat, level: i32) -&gt; ZlibCompressor {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_zlib_compressor_new(format.into_glib(), level)) }
     }
@@ -233,7 +233,7 @@
     /// # Returns
     ///
     /// a [`FileInfo`][crate::FileInfo], or [`None`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_zlib_compressor_get_file_info&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_zlib_compressor_get_file_info&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_file_info&quot;</span>)]
     </span><span class="kw">pub fn </span>file_info(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;FileInfo&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_zlib_compressor_get_file_info(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -249,7 +249,7 @@
     /// or after resetting it with [`ConverterExt::reset()`][crate::prelude::ConverterExt::reset()].
     /// ## `file_info`
     /// a [`FileInfo`][crate::FileInfo]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_zlib_compressor_set_file_info&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_zlib_compressor_set_file_info&quot;</span>)]
     </span><span class="kw">pub fn </span>set_file_info(<span class="kw-2">&amp;</span><span class="self">self</span>, file_info: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>FileInfo&gt;) {
         <span class="kw">unsafe </span>{
             ffi::g_zlib_compressor_set_file_info(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, file_info.to_glib_none().<span class="number">0</span>);
@@ -264,7 +264,7 @@
         glib::ObjectExt::property(<span class="self">self</span>, <span class="string">&quot;level&quot;</span>)
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;file-info&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;file-info&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_file_info_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_file_info_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>ZlibCompressor) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GZlibCompressor,
@@ -294,4 +294,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio_sys/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio_sys/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -240,15 +240,15 @@
 <span id="167">167</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="attribute">#[cfg(not(target_family = <span class="string">&quot;windows&quot;</span>))]
+</span><span class="attr">#[cfg(not(target_family = <span class="string">&quot;windows&quot;</span>))]
 </span><span class="kw">pub use </span><span class="self">self</span>::libc_constants::<span class="kw-2">*</span>;
-<span class="attribute">#[cfg(target_family = <span class="string">&quot;windows&quot;</span>)]
+<span class="attr">#[cfg(target_family = <span class="string">&quot;windows&quot;</span>)]
 </span><span class="kw">pub use </span><span class="self">self</span>::windows_constants::<span class="kw-2">*</span>;
 
 <span class="kw">pub type </span>GSocketFamily = libc::c_int;
 <span class="kw">pub type </span>GSocketMsgFlags = libc::c_int;
 
-<span class="attribute">#[cfg(target_family = <span class="string">&quot;windows&quot;</span>)]
+<span class="attr">#[cfg(target_family = <span class="string">&quot;windows&quot;</span>)]
 </span><span class="kw">mod </span>windows_constants {
     <span class="kw">pub const </span>G_SOCKET_FAMILY_INVALID: <span class="kw">super</span>::GSocketFamily = winapi::shared::ws2def::AF_UNSPEC;
     <span class="kw">pub const </span>G_SOCKET_FAMILY_UNIX: <span class="kw">super</span>::GSocketFamily = winapi::shared::ws2def::AF_UNIX;
@@ -261,7 +261,7 @@
     <span class="kw">pub const </span>G_SOCKET_MSG_DONTROUTE: <span class="kw">super</span>::GSocketMsgFlags = winapi::um::winsock2::MSG_DONTROUTE;
 }
 
-<span class="attribute">#[cfg(not(target_family = <span class="string">&quot;windows&quot;</span>))]
+<span class="attr">#[cfg(not(target_family = <span class="string">&quot;windows&quot;</span>))]
 </span><span class="kw">mod </span>libc_constants {
     <span class="kw">pub const </span>G_SOCKET_FAMILY_INVALID: <span class="kw">super</span>::GSocketFamily = libc::AF_UNSPEC;
     <span class="kw">pub const </span>G_SOCKET_FAMILY_UNIX: <span class="kw">super</span>::GSocketFamily = libc::AF_UNIX;
@@ -274,17 +274,17 @@
     <span class="kw">pub const </span>G_SOCKET_MSG_DONTROUTE: <span class="kw">super</span>::GSocketMsgFlags = libc::MSG_DONTROUTE;
 }
 
-<span class="attribute">#[cfg(target_family = <span class="string">&quot;windows&quot;</span>)]
+<span class="attr">#[cfg(target_family = <span class="string">&quot;windows&quot;</span>)]
 </span><span class="kw">pub use </span><span class="self">self</span>::windows_streams::<span class="kw-2">*</span>;
 
-<span class="attribute">#[cfg(target_family = <span class="string">&quot;windows&quot;</span>)]
+<span class="attr">#[cfg(target_family = <span class="string">&quot;windows&quot;</span>)]
 </span><span class="kw">mod </span>windows_streams {
     <span class="kw">use crate</span>::{
         gboolean, GInputStream, GInputStreamClass, GOutputStream, GOutputStreamClass, GType,
     };
     <span class="kw">use </span>libc::c_void;
 
-    <span class="attribute">#[link(name = <span class="string">&quot;gio-2.0&quot;</span>)]
+    <span class="attr">#[link(name = <span class="string">&quot;gio-2.0&quot;</span>)]
     </span><span class="kw">extern </span><span class="string">&quot;C&quot; </span>{
         <span class="comment">//=========================================================================
         // GWin32InputStream
@@ -317,7 +317,7 @@
         );
     }
 
-    <span class="attribute">#[repr(C)]
+    <span class="attr">#[repr(C)]
     #[derive(Copy, Clone)]
     </span><span class="kw">pub struct </span>GWin32InputStreamClass {
         <span class="kw">pub </span>parent_class: GInputStreamClass,
@@ -341,12 +341,12 @@
         }
     }
 
-    <span class="attribute">#[repr(C)]
+    <span class="attr">#[repr(C)]
     </span><span class="kw">pub struct </span>_GWin32InputStreamPrivate(c_void);
 
     <span class="kw">pub type </span>GWin32InputStreamPrivate = <span class="kw-2">*mut </span>_GWin32InputStreamPrivate;
 
-    <span class="attribute">#[repr(C)]
+    <span class="attr">#[repr(C)]
     #[derive(Copy, Clone)]
     </span><span class="kw">pub struct </span>GWin32InputStream {
         <span class="kw">pub </span>parent_instance: GInputStream,
@@ -361,7 +361,7 @@
         }
     }
 
-    <span class="attribute">#[repr(C)]
+    <span class="attr">#[repr(C)]
     #[derive(Copy, Clone)]
     </span><span class="kw">pub struct </span>GWin32OutputStreamClass {
         <span class="kw">pub </span>parent_class: GOutputStreamClass,
@@ -385,12 +385,12 @@
         }
     }
 
-    <span class="attribute">#[repr(C)]
+    <span class="attr">#[repr(C)]
     </span><span class="kw">pub struct </span>_GWin32OutputStreamPrivate(c_void);
 
     <span class="kw">pub type </span>GWin32OutputStreamPrivate = <span class="kw-2">*mut </span>_GWin32OutputStreamPrivate;
 
-    <span class="attribute">#[repr(C)]
+    <span class="attr">#[repr(C)]
     #[derive(Copy, Clone)]
     </span><span class="kw">pub struct </span>GWin32OutputStream {
         <span class="kw">pub </span>parent_instance: GOutputStream,
@@ -406,4 +406,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio_sys" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio_sys" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

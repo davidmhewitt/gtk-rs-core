@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -356,7 +356,7 @@
     /// # Implements
     ///
     /// [`trait@glib::ObjectExt`], [`ActionExt`][trait@crate::prelude::ActionExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GSimpleAction&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GSimpleAction&quot;</span>)]
     </span><span class="kw">pub struct </span>SimpleAction(Object&lt;ffi::GSimpleAction&gt;) @implements Action;
 
     <span class="kw">match fn </span>{
@@ -378,7 +378,7 @@
     /// # Returns
     ///
     /// a new [`SimpleAction`][crate::SimpleAction]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_simple_action_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_simple_action_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(name: <span class="kw-2">&amp;</span>str, parameter_type: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>glib::VariantTy&gt;) -&gt; SimpleAction {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::g_simple_action_new(
@@ -405,7 +405,7 @@
     /// # Returns
     ///
     /// a new [`SimpleAction`][crate::SimpleAction]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_simple_action_new_stateful&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_simple_action_new_stateful&quot;</span>)]
     </span><span class="kw">pub fn </span>new_stateful(
         name: <span class="kw-2">&amp;</span>str,
         parameter_type: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>glib::VariantTy&gt;,
@@ -429,7 +429,7 @@
     /// of the action should not attempt to modify its enabled flag.
     /// ## `enabled`
     /// whether the action is enabled
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_simple_action_set_enabled&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_simple_action_set_enabled&quot;</span>)]
     </span><span class="kw">pub fn </span>set_enabled(<span class="kw-2">&amp;</span><span class="self">self</span>, enabled: bool) {
         <span class="kw">unsafe </span>{
             ffi::g_simple_action_set_enabled(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, enabled.into_glib());
@@ -448,7 +448,7 @@
     /// If the `value` GVariant is floating, it is consumed.
     /// ## `value`
     /// the new [`glib::Variant`][struct@crate::glib::Variant] for the state
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_simple_action_set_state&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_simple_action_set_state&quot;</span>)]
     </span><span class="kw">pub fn </span>set_state(<span class="kw-2">&amp;</span><span class="self">self</span>, value: <span class="kw-2">&amp;</span>glib::Variant) {
         <span class="kw">unsafe </span>{
             ffi::g_simple_action_set_state(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, value.to_glib_none().<span class="number">0</span>);
@@ -461,7 +461,7 @@
     /// action state hints.
     /// ## `state_hint`
     /// a [`glib::Variant`][struct@crate::glib::Variant] representing the state hint
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_simple_action_set_state_hint&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_simple_action_set_state_hint&quot;</span>)]
     </span><span class="kw">pub fn </span>set_state_hint(<span class="kw-2">&amp;</span><span class="self">self</span>, state_hint: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>glib::Variant&gt;) {
         <span class="kw">unsafe </span>{
             ffi::g_simple_action_set_state_hint(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, state_hint.to_glib_none().<span class="number">0</span>);
@@ -484,7 +484,7 @@
     /// ## `parameter`
     /// the parameter to the activation, or [`None`] if it has
     ///  no parameter
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;activate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;activate&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_activate&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>glib::Variant&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -556,7 +556,7 @@
     /// It could set it to any value at all, or take some other action.
     /// ## `value`
     /// the requested value for the state
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;change-state&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;change-state&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_change_state&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>glib::Variant&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -596,4 +596,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

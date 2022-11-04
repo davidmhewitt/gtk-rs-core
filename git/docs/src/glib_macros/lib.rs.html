@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib_macros/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib_macros/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1188,7 +1188,7 @@
 ///     }
 /// }
 /// ```
-</span><span class="attribute">#[proc_macro]
+</span><span class="attr">#[proc_macro]
 #[proc_macro_error]
 </span><span class="kw">pub fn </span>clone(item: TokenStream) -&gt; TokenStream {
     clone::clone_inner(item)
@@ -1328,7 +1328,7 @@
 /// // `a`, `c` still kept alive, `b` is dropped
 /// assert_eq!(closure.invoke::&lt;String&gt;(&amp;[]), &quot;Hello Moon!&quot;);
 /// ```
-</span><span class="attribute">#[proc_macro]
+</span><span class="attr">#[proc_macro]
 #[proc_macro_error]
 </span><span class="kw">pub fn </span>closure(item: TokenStream) -&gt; TokenStream {
     closure::closure_inner(item, <span class="string">&quot;new&quot;</span>)
@@ -1339,7 +1339,7 @@
 /// [`closure!`](crate::closure!) for details.
 ///
 /// [`Closure::new_local`]: ../glib/closure/struct.Closure.html#method.new_local
-</span><span class="attribute">#[proc_macro]
+</span><span class="attr">#[proc_macro]
 #[proc_macro_error]
 </span><span class="kw">pub fn </span>closure_local(item: TokenStream) -&gt; TokenStream {
     closure::closure_inner(item, <span class="string">&quot;new_local&quot;</span>)
@@ -1366,7 +1366,7 @@
 /// ```
 ///
 /// [`glib::Value`]: ../glib/value/struct.Value.html
-</span><span class="attribute">#[proc_macro_derive(Enum, attributes(enum_type, enum_value))]
+</span><span class="attr">#[proc_macro_derive(Enum, attributes(enum_type, enum_value))]
 #[proc_macro_error]
 </span><span class="kw">pub fn </span>enum_derive(input: TokenStream) -&gt; TokenStream {
     <span class="kw">let </span>input = <span class="macro">parse_macro_input!</span>(input <span class="kw">as </span>DeriveInput);
@@ -1404,7 +1404,7 @@
 /// ```
 ///
 /// [`glib::Value`]: ../glib/value/struct.Value.html
-</span><span class="attribute">#[proc_macro_attribute]
+</span><span class="attr">#[proc_macro_attribute]
 #[proc_macro_error]
 </span><span class="kw">pub fn </span>flags(attr: TokenStream, item: TokenStream) -&gt; TokenStream {
     <span class="kw">let </span>attr_meta = <span class="macro">parse_macro_input!</span>(attr <span class="kw">as </span>NestedMeta);
@@ -1431,7 +1431,7 @@
 /// ```
 ///
 /// [`ErrorDomain`]: ../glib/error/trait.ErrorDomain.html
-</span><span class="attribute">#[proc_macro_derive(ErrorDomain, attributes(error_domain))]
+</span><span class="attr">#[proc_macro_derive(ErrorDomain, attributes(error_domain))]
 #[proc_macro_error]
 </span><span class="kw">pub fn </span>error_domain_derive(input: TokenStream) -&gt; TokenStream {
     <span class="kw">let </span>input = <span class="macro">parse_macro_input!</span>(input <span class="kw">as </span>DeriveInput);
@@ -1455,7 +1455,7 @@
 ///
 /// [`BoxedType`]: ../glib/subclass/boxed/trait.BoxedType.html
 /// [`glib::Value`]: ../glib/value/struct.Value.html
-</span><span class="attribute">#[proc_macro_derive(Boxed, attributes(boxed_type))]
+</span><span class="attr">#[proc_macro_derive(Boxed, attributes(boxed_type))]
 #[proc_macro_error]
 </span><span class="kw">pub fn </span>boxed_derive(input: TokenStream) -&gt; TokenStream {
     <span class="kw">let </span>input = <span class="macro">parse_macro_input!</span>(input <span class="kw">as </span>DeriveInput);
@@ -1483,7 +1483,7 @@
 ///
 /// [`SharedType`]: ../glib/subclass/shared/trait.SharedType.html
 /// [`glib::Value`]: ../glib/value/struct.Value.html
-</span><span class="attribute">#[proc_macro_derive(SharedBoxed, attributes(shared_boxed_type))]
+</span><span class="attr">#[proc_macro_derive(SharedBoxed, attributes(shared_boxed_type))]
 #[proc_macro_error]
 </span><span class="kw">pub fn </span>shared_boxed_derive(input: TokenStream) -&gt; TokenStream {
     <span class="kw">let </span>input = <span class="macro">parse_macro_input!</span>(input <span class="kw">as </span>DeriveInput);
@@ -1520,7 +1520,7 @@
 /// ```
 ///
 /// [`ObjectSubclass`]: ../glib/subclass/types/trait.ObjectSubclass.html
-</span><span class="attribute">#[proc_macro_attribute]
+</span><span class="attr">#[proc_macro_attribute]
 #[proc_macro_error]
 </span><span class="kw">pub fn </span>object_subclass(_attr: TokenStream, item: TokenStream) -&gt; TokenStream {
     <span class="kw">use </span>proc_macro_error::abort_call_site;
@@ -1545,7 +1545,7 @@
 /// ```
 ///
 /// [`ObjectInterface`]: ../glib/subclass/interface/trait.ObjectInterface.html
-</span><span class="attribute">#[proc_macro_attribute]
+</span><span class="attr">#[proc_macro_attribute]
 #[proc_macro_error]
 </span><span class="kw">pub fn </span>object_interface(_attr: TokenStream, item: TokenStream) -&gt; TokenStream {
     <span class="kw">use </span>proc_macro_error::abort_call_site;
@@ -1614,7 +1614,7 @@
 ///
 /// [`glib::clone::Downgrade`]: ../glib/clone/trait.Downgrade.html
 /// [`glib::clone::Upgrade`]: ../glib/clone/trait.Upgrade.html
-</span><span class="attribute">#[proc_macro_derive(Downgrade)]
+</span><span class="attr">#[proc_macro_derive(Downgrade)]
 </span><span class="kw">pub fn </span>downgrade(input: TokenStream) -&gt; TokenStream {
     <span class="kw">let </span>input = <span class="macro">parse_macro_input!</span>(input <span class="kw">as </span>DeriveInput);
     downgrade_derive::impl_downgrade(input)
@@ -1724,14 +1724,14 @@
 /// [`EnumClass`]: ../glib/struct.EnumClass.html
 /// [`FlagsClass`]: ../glib/struct.FlagsClass.html
 /// [kebab case]: https://docs.rs/heck/0.4.0/heck/trait.ToKebabCase.html
-</span><span class="attribute">#[proc_macro_derive(Variant, attributes(variant_enum))]
+</span><span class="attr">#[proc_macro_derive(Variant, attributes(variant_enum))]
 #[proc_macro_error]
 </span><span class="kw">pub fn </span>variant_derive(input: TokenStream) -&gt; TokenStream {
     <span class="kw">let </span>input = <span class="macro">parse_macro_input!</span>(input <span class="kw">as </span>DeriveInput);
     variant_derive::impl_variant(input)
 }
 
-<span class="attribute">#[proc_macro]
+<span class="attr">#[proc_macro]
 </span><span class="kw">pub fn </span>cstr_bytes(item: TokenStream) -&gt; TokenStream {
     syn::parse::Parser::parse2(
         |stream: syn::parse::ParseStream&lt;<span class="lifetime">&#39;_</span>&gt;| {
@@ -1748,4 +1748,4 @@
     .unwrap_or_else(|e| e.into_compile_error().into())
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib_macros" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib_macros" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

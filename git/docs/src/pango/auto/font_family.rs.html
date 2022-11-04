@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pango/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pango/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -281,7 +281,7 @@
     /// # Implements
     ///
     /// [`FontFamilyExt`][trait@crate::prelude::FontFamilyExt], [`trait@gio::prelude::ListModelExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PangoFontFamily&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PangoFontFamily&quot;</span>)]
     </span><span class="kw">pub struct </span>FontFamily(Object&lt;ffi::PangoFontFamily, ffi::PangoFontFamilyClass&gt;) @implements gio::ListModel;
 
     <span class="kw">match fn </span>{
@@ -294,7 +294,7 @@
 }
 
 <span class="kw">impl </span>fmt::Display <span class="kw">for </span>FontFamily {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter) -&gt; fmt::Result {
         f.write_str(<span class="kw-2">&amp;</span>FontFamilyExt::name(<span class="self">self</span>))
     }
@@ -316,7 +316,7 @@
     ///
     /// the [`FontFace`][crate::FontFace],
     ///   or [`None`] if no face with the given name exists.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_46&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_font_family_get_face&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_face&quot;</span>)]
@@ -332,7 +332,7 @@
     ///
     /// the name of the family. This string is owned
     ///   by the family object and must not be modified or freed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_font_family_get_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_font_family_get_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_name&quot;</span>)]
     </span><span class="kw">fn </span>name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString;
 
@@ -354,7 +354,7 @@
     /// # Returns
     ///
     /// [`true`] if the family is monospace.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_font_family_is_monospace&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_font_family_is_monospace&quot;</span>)]
     </span><span class="kw">fn </span>is_monospace(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
     <span class="doccomment">/// A variable font is a font which has axes that can be modified to
@@ -366,7 +366,7 @@
     /// # Returns
     ///
     /// [`true`] if the family is variable
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_44&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_font_family_is_variable&quot;</span>)]
     </span><span class="kw">fn </span>is_variable(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
@@ -390,12 +390,12 @@
     ///   location to store an array of pointers to [`FontFace`][crate::FontFace] objects,
     ///   or [`None`]. This array should be freed with g_free() when it is no
     ///   longer needed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_font_family_list_faces&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_font_family_list_faces&quot;</span>)]
     </span><span class="kw">fn </span>list_faces(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;FontFace&gt;;
 }
 
 <span class="kw">impl</span>&lt;O: IsA&lt;FontFamily&gt;&gt; FontFamilyExt <span class="kw">for </span>O {
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_46&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_46&quot;</span>)))]
     </span><span class="kw">fn </span>face(<span class="kw-2">&amp;</span><span class="self">self</span>, name: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; <span class="prelude-ty">Option</span>&lt;FontFace&gt; {
         <span class="kw">unsafe </span>{
@@ -422,7 +422,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_44&quot;</span>)))]
     </span><span class="kw">fn </span>is_variable(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -446,4 +446,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -424,7 +424,7 @@
     /// # Implements
     ///
     /// [`TlsClientConnectionExt`][trait@crate::prelude::TlsClientConnectionExt], [`TlsConnectionExt`][trait@crate::prelude::TlsConnectionExt], [`IOStreamExt`][trait@crate::prelude::IOStreamExt], [`trait@glib::ObjectExt`], [`TlsConnectionExtManual`][trait@crate::prelude::TlsConnectionExtManual], [`IOStreamExtManual`][trait@crate::prelude::IOStreamExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GTlsClientConnection&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GTlsClientConnection&quot;</span>)]
     </span><span class="kw">pub struct </span>TlsClientConnection(Interface&lt;ffi::GTlsClientConnection, ffi::GTlsClientConnectionInterface&gt;) @requires TlsConnection, IOStream;
 
     <span class="kw">match fn </span>{
@@ -451,7 +451,7 @@
     ///
     /// the new
     /// [`TlsClientConnection`][crate::TlsClientConnection], or [`None`] on error
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_client_connection_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_client_connection_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(
         base_io_stream: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;IOStream&gt;,
         server_identity: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;SocketConnectable&gt;&gt;,
@@ -508,7 +508,7 @@
     /// ticket to be copied without regard for privacy considerations.
     /// ## `source`
     /// a [`TlsClientConnection`][crate::TlsClientConnection]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_client_connection_copy_session_state&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_client_connection_copy_session_state&quot;</span>)]
     </span><span class="kw">fn </span>copy_session_state(<span class="kw-2">&amp;</span><span class="self">self</span>, source: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;TlsClientConnection&gt;);
 
     <span class="doccomment">/// Gets the list of distinguished names of the Certificate Authorities
@@ -524,7 +524,7 @@
     /// the list of
     /// CA DNs. You should unref each element with `g_byte_array_unref()` and then
     /// the free the list with `g_list_free()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_client_connection_get_accepted_cas&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_client_connection_get_accepted_cas&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_accepted_cas&quot;</span>)]
     </span><span class="kw">fn </span>accepted_cas(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;glib::ByteArray&gt;;
 
@@ -535,7 +535,7 @@
     /// a [`SocketConnectable`][crate::SocketConnectable] describing the
     /// expected server identity, or [`None`] if the expected identity is not
     /// known.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_client_connection_get_server_identity&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_client_connection_get_server_identity&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_server_identity&quot;</span>)]
     </span><span class="kw">fn </span>server_identity(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;SocketConnectable&gt;;
 
@@ -552,7 +552,7 @@
     /// # Returns
     ///
     /// the validation flags
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v2_72&quot;</span>, deprecated = <span class="string">&quot;Since 2.72&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v2_72&quot;</span>, deprecated = <span class="string">&quot;Since 2.72&quot;</span>)]
     #[doc(alias = <span class="string">&quot;g_tls_client_connection_get_validation_flags&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_validation_flags&quot;</span>)]
     </span><span class="kw">fn </span>validation_flags(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; TlsCertificateFlags;
@@ -563,7 +563,7 @@
     /// performing [`TlsCertificateFlags::BAD_IDENTITY`][crate::TlsCertificateFlags::BAD_IDENTITY] validation, if enabled.
     /// ## `identity`
     /// a [`SocketConnectable`][crate::SocketConnectable] describing the expected server identity
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_client_connection_set_server_identity&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_client_connection_set_server_identity&quot;</span>)]
     </span><span class="kw">fn </span>set_server_identity(<span class="kw-2">&amp;</span><span class="self">self</span>, identity: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;SocketConnectable&gt;);
 
     <span class="doccomment">/// Sets `self`&#39;s validation flags, to override the default set of
@@ -579,17 +579,17 @@
     /// Do not attempt to ignore validation errors.
     /// ## `flags`
     /// the [`TlsCertificateFlags`][crate::TlsCertificateFlags] to use
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v2_72&quot;</span>, deprecated = <span class="string">&quot;Since 2.72&quot;</span>)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v2_72&quot;</span>, deprecated = <span class="string">&quot;Since 2.72&quot;</span>)]
     #[doc(alias = <span class="string">&quot;g_tls_client_connection_set_validation_flags&quot;</span>)]
     </span><span class="kw">fn </span>set_validation_flags(<span class="kw-2">&amp;</span><span class="self">self</span>, flags: TlsCertificateFlags);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;accepted-cas&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;accepted-cas&quot;</span>)]
     </span><span class="kw">fn </span>connect_accepted_cas_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;server-identity&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;server-identity&quot;</span>)]
     </span><span class="kw">fn </span>connect_server_identity_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v2_72&quot;</span>, deprecated = <span class="string">&quot;Since 2.72&quot;</span>)]
+    <span class="attr">#[cfg_attr(feature = <span class="string">&quot;v2_72&quot;</span>, deprecated = <span class="string">&quot;Since 2.72&quot;</span>)]
     #[doc(alias = <span class="string">&quot;validation-flags&quot;</span>)]
     </span><span class="kw">fn </span>connect_validation_flags_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
@@ -728,4 +728,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

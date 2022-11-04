@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../cairo/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../cairo/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -269,16 +269,16 @@
 <span id="196">196</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+</span><span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 <span class="kw">use </span>std::cmp::PartialEq;
 <span class="kw">use </span>std::hash;
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_16&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_16&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span><span class="kw">crate</span>::font::font_face::to_optional_string;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_16&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_16&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span>std::ffi::CString;
-<span class="attribute">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
+<span class="attr">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
 </span><span class="kw">use </span>std::ptr;
 
 <span class="kw">use </span><span class="kw">crate</span>::utils::status_to_result;
@@ -287,9 +287,9 @@
     Error,
 };
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="macro">glib::wrapper! </span>{
-    <span class="attribute">#[derive(Debug)]
+    <span class="attr">#[derive(Debug)]
     #[doc(alias = <span class="string">&quot;cairo_font_options_t&quot;</span>)]
     </span><span class="kw">pub struct </span>FontOptions(Boxed&lt;ffi::cairo_font_options_t&gt;);
 
@@ -305,7 +305,7 @@
     }
 }
 
-<span class="attribute">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
+<span class="attr">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
 #[derive(Debug)]
 #[doc(alias = <span class="string">&quot;cairo_font_options_t&quot;</span>)]
 </span><span class="kw">pub struct </span>FontOptions(ptr::NonNull&lt;ffi::cairo_font_options_t&gt;);
@@ -314,7 +314,7 @@
 <span class="kw">unsafe impl </span>Sync <span class="kw">for </span>FontOptions {}
 
 <span class="kw">impl </span>FontOptions {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_font_options_create&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_font_options_create&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; <span class="prelude-ty">Result</span>&lt;FontOptions, Error&gt; {
         <span class="kw">let </span>font_options: FontOptions =
             <span class="kw">unsafe </span>{ FontOptions::from_raw_full(ffi::cairo_font_options_create()) };
@@ -325,49 +325,49 @@
         <span class="prelude-val">Ok</span>(font_options)
     }
 
-    <span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
     </span><span class="kw">pub unsafe fn </span>from_raw_full(ptr: <span class="kw-2">*mut </span>ffi::cairo_font_options_t) -&gt; <span class="self">Self </span>{
         from_glib_full(ptr)
     }
 
-    <span class="attribute">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
+    <span class="attr">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
     </span><span class="kw">pub unsafe fn </span>from_raw_full(ptr: <span class="kw-2">*mut </span>ffi::cairo_font_options_t) -&gt; <span class="self">Self </span>{
         <span class="macro">assert!</span>(!ptr.is_null());
         <span class="self">Self</span>(ptr::NonNull::new_unchecked(ptr))
     }
 
-    <span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
     </span><span class="kw">pub fn </span>to_raw_none(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*mut </span>ffi::cairo_font_options_t {
         mut_override(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)
     }
 
-    <span class="attribute">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
+    <span class="attr">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
     </span><span class="kw">pub fn </span>to_raw_none(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*mut </span>ffi::cairo_font_options_t {
         <span class="self">self</span>.<span class="number">0</span>.as_ptr()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_font_options_merge&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_font_options_merge&quot;</span>)]
     </span><span class="kw">pub fn </span>merge(<span class="kw-2">&amp;mut </span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>FontOptions) {
         <span class="kw">unsafe </span>{ ffi::cairo_font_options_merge(<span class="self">self</span>.to_raw_none(), other.to_raw_none()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_font_options_set_antialias&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_font_options_set_antialias&quot;</span>)]
     </span><span class="kw">pub fn </span>set_antialias(<span class="kw-2">&amp;mut </span><span class="self">self</span>, antialias: Antialias) {
         <span class="kw">unsafe </span>{ ffi::cairo_font_options_set_antialias(<span class="self">self</span>.to_raw_none(), antialias.into()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_font_options_get_antialias&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_font_options_get_antialias&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_antialias&quot;</span>)]
     </span><span class="kw">pub fn </span>antialias(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Antialias {
         <span class="kw">unsafe </span>{ Antialias::from(ffi::cairo_font_options_get_antialias(<span class="self">self</span>.to_raw_none())) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_font_options_set_subpixel_order&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_font_options_set_subpixel_order&quot;</span>)]
     </span><span class="kw">pub fn </span>set_subpixel_order(<span class="kw-2">&amp;mut </span><span class="self">self</span>, order: SubpixelOrder) {
         <span class="kw">unsafe </span>{ ffi::cairo_font_options_set_subpixel_order(<span class="self">self</span>.to_raw_none(), order.into()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_font_options_get_subpixel_order&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_font_options_get_subpixel_order&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_subpixel_order&quot;</span>)]
     </span><span class="kw">pub fn </span>subpixel_order(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; SubpixelOrder {
         <span class="kw">unsafe </span>{
@@ -377,36 +377,36 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_font_options_set_hint_style&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_font_options_set_hint_style&quot;</span>)]
     </span><span class="kw">pub fn </span>set_hint_style(<span class="kw-2">&amp;mut </span><span class="self">self</span>, hint_style: HintStyle) {
         <span class="kw">unsafe </span>{ ffi::cairo_font_options_set_hint_style(<span class="self">self</span>.to_raw_none(), hint_style.into()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_font_options_get_hint_style&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_font_options_get_hint_style&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_hint_style&quot;</span>)]
     </span><span class="kw">pub fn </span>hint_style(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; HintStyle {
         <span class="kw">unsafe </span>{ HintStyle::from(ffi::cairo_font_options_get_hint_style(<span class="self">self</span>.to_raw_none())) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_font_options_set_hint_metrics&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_font_options_set_hint_metrics&quot;</span>)]
     </span><span class="kw">pub fn </span>set_hint_metrics(<span class="kw-2">&amp;mut </span><span class="self">self</span>, hint_metrics: HintMetrics) {
         <span class="kw">unsafe </span>{ ffi::cairo_font_options_set_hint_metrics(<span class="self">self</span>.to_raw_none(), hint_metrics.into()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_font_options_get_hint_metrics&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_font_options_get_hint_metrics&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_hint_metrics&quot;</span>)]
     </span><span class="kw">pub fn </span>hint_metrics(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; HintMetrics {
         <span class="kw">unsafe </span>{ HintMetrics::from(ffi::cairo_font_options_get_hint_metrics(<span class="self">self</span>.to_raw_none())) }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_16&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_16&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[doc(alias = <span class="string">&quot;cairo_font_options_get_variations&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_variations&quot;</span>)]
     </span><span class="kw">pub fn </span>variations(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;String&gt; {
         <span class="kw">unsafe </span>{ to_optional_string(ffi::cairo_font_options_get_variations(<span class="self">self</span>.to_raw_none())) }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_16&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_16&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[doc(alias = <span class="string">&quot;cairo_font_options_set_variations&quot;</span>)]
     </span><span class="kw">pub fn </span>set_variations(<span class="kw-2">&amp;</span><span class="self">self</span>, variations: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
         <span class="kw">unsafe </span>{
@@ -422,7 +422,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_font_options_status&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_font_options_status&quot;</span>)]
     </span><span class="kw">pub fn </span>status(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">let </span>status = <span class="kw">unsafe </span>{ ffi::cairo_font_options_status(<span class="self">self</span>.to_raw_none()) };
         status_to_result(status)
@@ -430,7 +430,7 @@
 }
 
 <span class="kw">impl </span>PartialEq <span class="kw">for </span>FontOptions {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_font_options_equal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_font_options_equal&quot;</span>)]
     </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>FontOptions) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::cairo_font_options_equal(<span class="self">self</span>.to_raw_none(), other.to_raw_none()).as_bool() }
     }
@@ -439,7 +439,7 @@
 <span class="kw">impl </span>Eq <span class="kw">for </span>FontOptions {}
 
 <span class="kw">impl </span>hash::Hash <span class="kw">for </span>FontOptions {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_font_options_hash&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_font_options_hash&quot;</span>)]
     </span><span class="kw">fn </span>hash&lt;H&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, state: <span class="kw-2">&amp;mut </span>H)
     <span class="kw">where
         </span>H: hash::Hasher,
@@ -448,7 +448,7 @@
     }
 }
 
-<span class="attribute">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
+<span class="attr">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
 </span><span class="kw">impl </span>Drop <span class="kw">for </span>FontOptions {
     <span class="kw">fn </span>drop(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
@@ -457,11 +457,11 @@
     }
 }
 
-<span class="attribute">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
+<span class="attr">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
 </span><span class="kw">impl </span>Clone <span class="kw">for </span>FontOptions {
     <span class="kw">fn </span>clone(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; FontOptions {
         <span class="kw">unsafe </span>{ FontOptions::from_raw_full(ffi::cairo_font_options_copy(<span class="self">self</span>.to_raw_none())) }
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

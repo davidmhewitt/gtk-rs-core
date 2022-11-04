@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -300,7 +300,7 @@
     /// ## `first_property_name`
     /// the name of the first property, or [`None`] if no
     ///  properties
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_async_initable_new_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_async_initable_new_async&quot;</span>)]
     #[track_caller]
     </span><span class="kw">pub fn </span>new_async&lt;
         O: Sized + IsClass + IsA&lt;Object&gt; + IsA&lt;AsyncInitable&gt;,
@@ -321,7 +321,7 @@
         )
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_async_initable_new_async&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_async_initable_new_async&quot;</span>)]
     #[track_caller]
     </span><span class="kw">pub fn </span>new_future&lt;O: Sized + IsClass + IsA&lt;Object&gt; + IsA&lt;AsyncInitable&gt;&gt;(
         properties: <span class="kw-2">&amp;</span>[(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)],
@@ -333,7 +333,7 @@
         )
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_async_initable_new_async&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_async_initable_new_async&quot;</span>)]
     #[track_caller]
     </span><span class="kw">pub fn </span>with_type&lt;P: IsA&lt;Cancellable&gt;, Q: FnOnce(<span class="prelude-ty">Result</span>&lt;Object, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         type_: Type,
@@ -363,7 +363,7 @@
         };
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_async_initable_new_async&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_async_initable_new_async&quot;</span>)]
     #[track_caller]
     </span><span class="kw">pub fn </span>with_type_future(
         type_: Type,
@@ -397,7 +397,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_async_initable_new_async&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_async_initable_new_async&quot;</span>)]
     #[track_caller]
     </span><span class="kw">pub fn </span>with_values&lt;P: IsA&lt;Cancellable&gt;, Q: FnOnce(<span class="prelude-ty">Result</span>&lt;Object, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         type_: Type,
@@ -427,7 +427,7 @@
         };
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_async_initable_new_async&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_async_initable_new_async&quot;</span>)]
     #[track_caller]
     </span><span class="kw">pub fn </span>with_values_future(
         type_: Type,
@@ -462,4 +462,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

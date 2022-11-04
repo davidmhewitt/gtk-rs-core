@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -325,7 +325,7 @@
     /// # Implements
     ///
     /// [`TlsBackendExt`][trait@crate::prelude::TlsBackendExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GTlsBackend&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GTlsBackend&quot;</span>)]
     </span><span class="kw">pub struct </span>TlsBackend(Interface&lt;ffi::GTlsBackend, ffi::GTlsBackendInterface&gt;);
 
     <span class="kw">match fn </span>{
@@ -342,7 +342,7 @@
     ///
     /// a [`TlsBackend`][crate::TlsBackend], which will be a
     ///  dummy object if no TLS backend is available
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_backend_get_default&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_backend_get_default&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_default&quot;</span>)]
     #[allow(clippy::should_implement_trait)]
     </span><span class="kw">pub fn </span>default() -&gt; TlsBackend {
@@ -362,7 +362,7 @@
     ///
     /// the `GType` of `self`&#39;s [`TlsCertificate`][crate::TlsCertificate]
     ///  implementation.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_backend_get_certificate_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_backend_get_certificate_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_certificate_type&quot;</span>)]
     </span><span class="kw">fn </span>certificate_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::types::Type;
 
@@ -372,7 +372,7 @@
     ///
     /// the `GType` of `self`&#39;s [`TlsClientConnection`][crate::TlsClientConnection]
     ///  implementation.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_backend_get_client_connection_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_backend_get_client_connection_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_client_connection_type&quot;</span>)]
     </span><span class="kw">fn </span>client_connection_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::types::Type;
 
@@ -382,7 +382,7 @@
     ///
     /// the default database, which should be
     ///  unreffed when done.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_backend_get_default_database&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_backend_get_default_database&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_default_database&quot;</span>)]
     </span><span class="kw">fn </span>default_database(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; TlsDatabase;
 
@@ -392,7 +392,7 @@
     ///
     /// the `GType` of `self`’s `GDtlsClientConnection`
     ///  implementation, or `G_TYPE_INVALID` if this backend doesn’t support DTLS.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_backend_get_dtls_client_connection_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_backend_get_dtls_client_connection_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_dtls_client_connection_type&quot;</span>)]
     </span><span class="kw">fn </span>dtls_client_connection_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::types::Type;
 
@@ -402,7 +402,7 @@
     ///
     /// the `GType` of `self`’s `GDtlsServerConnection`
     ///  implementation, or `G_TYPE_INVALID` if this backend doesn’t support DTLS.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_backend_get_dtls_server_connection_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_backend_get_dtls_server_connection_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_dtls_server_connection_type&quot;</span>)]
     </span><span class="kw">fn </span>dtls_server_connection_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::types::Type;
 
@@ -411,7 +411,7 @@
     /// # Returns
     ///
     /// the `GType` of backend&#39;s [`TlsFileDatabase`][crate::TlsFileDatabase] implementation.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_backend_get_file_database_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_backend_get_file_database_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_file_database_type&quot;</span>)]
     </span><span class="kw">fn </span>file_database_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::types::Type;
 
@@ -421,7 +421,7 @@
     ///
     /// the `GType` of `self`&#39;s [`TlsServerConnection`][crate::TlsServerConnection]
     ///  implementation.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_backend_get_server_connection_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_backend_get_server_connection_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_server_connection_type&quot;</span>)]
     </span><span class="kw">fn </span>server_connection_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::types::Type;
 
@@ -435,7 +435,7 @@
     /// database as if [`set_default_database()`][Self::set_default_database()] had never been called.
     /// ## `database`
     /// the [`TlsDatabase`][crate::TlsDatabase]
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_tls_backend_set_default_database&quot;</span>)]
     </span><span class="kw">fn </span>set_default_database(<span class="kw-2">&amp;</span><span class="self">self</span>, database: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;TlsDatabase&gt;&gt;);
@@ -446,7 +446,7 @@
     /// # Returns
     ///
     /// whether DTLS is supported
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_backend_supports_dtls&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_backend_supports_dtls&quot;</span>)]
     </span><span class="kw">fn </span>supports_dtls(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
     <span class="doccomment">/// Checks if TLS is supported; if this returns [`false`] for the default
@@ -455,7 +455,7 @@
     /// # Returns
     ///
     /// whether or not TLS is supported
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_tls_backend_supports_tls&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_tls_backend_supports_tls&quot;</span>)]
     </span><span class="kw">fn </span>supports_tls(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 }
 
@@ -516,7 +516,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
     </span><span class="kw">fn </span>set_default_database(<span class="kw-2">&amp;</span><span class="self">self</span>, database: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;TlsDatabase&gt;&gt;) {
         <span class="kw">unsafe </span>{
@@ -550,4 +550,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

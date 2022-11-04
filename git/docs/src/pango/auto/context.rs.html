@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pango/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pango/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -569,7 +569,7 @@
     /// default gravity, or default font.
     ///
     /// To obtain a [`Context`][crate::Context], use [`FontMapExt::create_context()`][crate::prelude::FontMapExt::create_context()].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;PangoContext&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;PangoContext&quot;</span>)]
     </span><span class="kw">pub struct </span>Context(Object&lt;ffi::PangoContext, ffi::PangoContextClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -594,7 +594,7 @@
     ///
     /// the newly allocated [`Context`][crate::Context],
     ///   which should be freed with g_object_unref().
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_context_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_context_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; Context {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::pango_context_new()) }
     }
@@ -606,7 +606,7 @@
     /// for Pango, something applications won&#39;t do. Backends should
     /// call this function if they have attached extra data to the context
     /// and such data is changed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_context_changed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_context_changed&quot;</span>)]
     </span><span class="kw">pub fn </span>changed(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::pango_context_changed(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
@@ -620,7 +620,7 @@
     /// # Returns
     ///
     /// the base direction for the context.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_context_get_base_dir&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_context_get_base_dir&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_base_dir&quot;</span>)]
     </span><span class="kw">pub fn </span>base_dir(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Direction {
         <span class="kw">unsafe </span>{ from_glib(ffi::pango_context_get_base_dir(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -633,7 +633,7 @@
     /// # Returns
     ///
     /// the base gravity for the context.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_context_get_base_gravity&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_context_get_base_gravity&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_base_gravity&quot;</span>)]
     </span><span class="kw">pub fn </span>base_gravity(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Gravity {
         <span class="kw">unsafe </span>{ from_glib(ffi::pango_context_get_base_gravity(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -645,7 +645,7 @@
     ///
     /// a pointer to the context&#39;s default font
     ///   description. This value must not be modified or freed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_context_get_font_description&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_context_get_font_description&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_font_description&quot;</span>)]
     </span><span class="kw">pub fn </span>font_description(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;FontDescription&gt; {
         <span class="kw">unsafe </span>{
@@ -662,7 +662,7 @@
     /// the font map for the.
     ///   [`Context`][crate::Context] This value is owned by Pango and should not be
     ///   unreferenced.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_context_get_font_map&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_context_get_font_map&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_font_map&quot;</span>)]
     </span><span class="kw">pub fn </span>font_map(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;FontMap&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::pango_context_get_font_map(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -678,7 +678,7 @@
     /// # Returns
     ///
     /// the resolved gravity for the context.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_context_get_gravity&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_context_get_gravity&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_gravity&quot;</span>)]
     </span><span class="kw">pub fn </span>gravity(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Gravity {
         <span class="kw">unsafe </span>{ from_glib(ffi::pango_context_get_gravity(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -691,7 +691,7 @@
     /// # Returns
     ///
     /// the gravity hint for the context.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_context_get_gravity_hint&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_context_get_gravity_hint&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_gravity_hint&quot;</span>)]
     </span><span class="kw">pub fn </span>gravity_hint(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; GravityHint {
         <span class="kw">unsafe </span>{ from_glib(ffi::pango_context_get_gravity_hint(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -702,7 +702,7 @@
     /// # Returns
     ///
     /// the global language tag.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_context_get_language&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_context_get_language&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_language&quot;</span>)]
     </span><span class="kw">pub fn </span>language(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Language&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::pango_context_get_language(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -719,7 +719,7 @@
     ///   matrix has been set (which is the same as the identity matrix).
     ///   The returned matrix is owned by Pango and must not be modified
     ///   or freed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_context_get_matrix&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_context_get_matrix&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_matrix&quot;</span>)]
     </span><span class="kw">pub fn </span>matrix(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Matrix&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::pango_context_get_matrix(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -750,7 +750,7 @@
     ///
     /// a [`FontMetrics`][crate::FontMetrics] object. The caller
     ///   must call `Pango::FontMetrics::unref()` when finished using the object.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_context_get_metrics&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_context_get_metrics&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_metrics&quot;</span>)]
     </span><span class="kw">pub fn </span>metrics(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -768,7 +768,7 @@
 
     <span class="doccomment">/// Returns whether font rendering with this context should
     /// round glyph positions and widths.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_44&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_context_get_round_glyph_positions&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_round_glyph_positions&quot;</span>)]
@@ -796,7 +796,7 @@
     /// # Returns
     ///
     /// The current serial number of @self.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_context_get_serial&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_context_get_serial&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_serial&quot;</span>)]
     </span><span class="kw">pub fn </span>serial(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::pango_context_get_serial(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -811,7 +811,7 @@
     /// location
     ///   to store a pointer to an array of [`FontFamily`][crate::FontFamily]. This array should
     ///   be freed with g_free().
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_context_list_families&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_context_list_families&quot;</span>)]
     </span><span class="kw">pub fn </span>list_families(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;FontFamily&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>families = ptr::null_mut();
@@ -834,7 +834,7 @@
     ///
     /// the newly allocated [`Font`][crate::Font]
     ///   that was loaded, or [`None`] if no font matched.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_context_load_font&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_context_load_font&quot;</span>)]
     </span><span class="kw">pub fn </span>load_font(<span class="kw-2">&amp;</span><span class="self">self</span>, desc: <span class="kw-2">&amp;</span>FontDescription) -&gt; <span class="prelude-ty">Option</span>&lt;Font&gt; {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::pango_context_load_font(
@@ -855,7 +855,7 @@
     ///
     /// the newly allocated
     ///   [`Fontset`][crate::Fontset] loaded, or [`None`] if no font matched.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_context_load_fontset&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_context_load_fontset&quot;</span>)]
     </span><span class="kw">pub fn </span>load_fontset(<span class="kw-2">&amp;</span><span class="self">self</span>, desc: <span class="kw-2">&amp;</span>FontDescription, language: <span class="kw-2">&amp;</span>Language) -&gt; <span class="prelude-ty">Option</span>&lt;Fontset&gt; {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::pango_context_load_fontset(
@@ -876,7 +876,7 @@
     /// for paragraphs that do not contain any strong characters themselves.
     /// ## `direction`
     /// the new base direction
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_context_set_base_dir&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_context_set_base_dir&quot;</span>)]
     </span><span class="kw">pub fn </span>set_base_dir(<span class="kw-2">&amp;</span><span class="self">self</span>, direction: Direction) {
         <span class="kw">unsafe </span>{
             ffi::pango_context_set_base_dir(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, direction.into_glib());
@@ -888,7 +888,7 @@
     /// The base gravity is used in laying vertical text out.
     /// ## `gravity`
     /// the new base gravity
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_context_set_base_gravity&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_context_set_base_gravity&quot;</span>)]
     </span><span class="kw">pub fn </span>set_base_gravity(<span class="kw-2">&amp;</span><span class="self">self</span>, gravity: Gravity) {
         <span class="kw">unsafe </span>{
             ffi::pango_context_set_base_gravity(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, gravity.into_glib());
@@ -898,7 +898,7 @@
     <span class="doccomment">/// Set the default font description for the context
     /// ## `desc`
     /// the new pango font description
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_context_set_font_description&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_context_set_font_description&quot;</span>)]
     </span><span class="kw">pub fn </span>set_font_description(<span class="kw-2">&amp;</span><span class="self">self</span>, desc: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>FontDescription&gt;) {
         <span class="kw">unsafe </span>{
             ffi::pango_context_set_font_description(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, desc.to_glib_none().<span class="number">0</span>);
@@ -913,7 +913,7 @@
     /// suitable font map.
     /// ## `font_map`
     /// the [`FontMap`][crate::FontMap] to set.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_context_set_font_map&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_context_set_font_map&quot;</span>)]
     </span><span class="kw">pub fn </span>set_font_map(<span class="kw-2">&amp;</span><span class="self">self</span>, font_map: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;FontMap&gt;&gt;) {
         <span class="kw">unsafe </span>{
             ffi::pango_context_set_font_map(
@@ -931,7 +931,7 @@
     /// or [`Gravity::West`][crate::Gravity::West].
     /// ## `hint`
     /// the new gravity hint
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_context_set_gravity_hint&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_context_set_gravity_hint&quot;</span>)]
     </span><span class="kw">pub fn </span>set_gravity_hint(<span class="kw-2">&amp;</span><span class="self">self</span>, hint: GravityHint) {
         <span class="kw">unsafe </span>{
             ffi::pango_context_set_gravity_hint(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, hint.into_glib());
@@ -944,7 +944,7 @@
     /// can be found using [`Language::default()`][crate::Language::default()].
     /// ## `language`
     /// the new language tag.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_context_set_language&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_context_set_language&quot;</span>)]
     </span><span class="kw">pub fn </span>set_language(<span class="kw-2">&amp;</span><span class="self">self</span>, language: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>Language&gt;) {
         <span class="kw">unsafe </span>{
             ffi::pango_context_set_language(
@@ -965,7 +965,7 @@
     /// ## `matrix`
     /// a [`Matrix`][crate::Matrix], or [`None`] to unset any existing
     /// matrix. (No matrix set is the same as setting the identity matrix.)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_context_set_matrix&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_context_set_matrix&quot;</span>)]
     </span><span class="kw">pub fn </span>set_matrix(<span class="kw-2">&amp;</span><span class="self">self</span>, matrix: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>Matrix&gt;) {
         <span class="kw">unsafe </span>{
             ffi::pango_context_set_matrix(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, matrix.to_glib_none().<span class="number">0</span>);
@@ -983,7 +983,7 @@
     /// compatible with previous Pango behavior.
     /// ## `round_positions`
     /// whether to round glyph positions
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_44&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_context_set_round_glyph_positions&quot;</span>)]
     </span><span class="kw">pub fn </span>set_round_glyph_positions(<span class="kw-2">&amp;</span><span class="self">self</span>, round_positions: bool) {
@@ -1008,4 +1008,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

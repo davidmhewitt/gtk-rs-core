@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -614,7 +614,7 @@
     /// # Implements
     ///
     /// [`DataInputStreamExt`][trait@crate::prelude::DataInputStreamExt], [`BufferedInputStreamExt`][trait@crate::prelude::BufferedInputStreamExt], [`FilterInputStreamExt`][trait@crate::prelude::FilterInputStreamExt], [`InputStreamExt`][trait@crate::prelude::InputStreamExt], [`trait@glib::ObjectExt`], [`SeekableExt`][trait@crate::prelude::SeekableExt], [`DataInputStreamExtManual`][trait@crate::prelude::DataInputStreamExtManual], [`InputStreamExtManual`][trait@crate::prelude::InputStreamExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDataInputStream&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDataInputStream&quot;</span>)]
     </span><span class="kw">pub struct </span>DataInputStream(Object&lt;ffi::GDataInputStream, ffi::GDataInputStreamClass&gt;) @extends BufferedInputStream, FilterInputStream, InputStream, @implements Seekable;
 
     <span class="kw">match fn </span>{
@@ -632,7 +632,7 @@
     /// # Returns
     ///
     /// a new [`DataInputStream`][crate::DataInputStream].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_input_stream_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_input_stream_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(base_stream: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;InputStream&gt;) -&gt; DataInputStream {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::g_data_input_stream_new(
@@ -656,12 +656,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`DataInputStream`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>DataInputStreamBuilder {
     byte_order: <span class="prelude-ty">Option</span>&lt;DataStreamByteOrder&gt;,
     newline_type: <span class="prelude-ty">Option</span>&lt;DataStreamNewlineType&gt;,
@@ -679,7 +679,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`DataInputStream`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; DataInputStream {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>byte_order) = <span class="self">self</span>.byte_order {
@@ -742,7 +742,7 @@
     /// # Returns
     ///
     /// the `self`&#39;s current [`DataStreamByteOrder`][crate::DataStreamByteOrder].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_input_stream_get_byte_order&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_input_stream_get_byte_order&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_byte_order&quot;</span>)]
     </span><span class="kw">fn </span>byte_order(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; DataStreamByteOrder;
 
@@ -751,7 +751,7 @@
     /// # Returns
     ///
     /// [`DataStreamNewlineType`][crate::DataStreamNewlineType] for the given `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_input_stream_get_newline_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_input_stream_get_newline_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_newline_type&quot;</span>)]
     </span><span class="kw">fn </span>newline_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; DataStreamNewlineType;
 
@@ -763,7 +763,7 @@
     ///
     /// an unsigned 8-bit/1-byte value read from the `self` or `0`
     /// if an error occurred.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_input_stream_read_byte&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_input_stream_read_byte&quot;</span>)]
     </span><span class="kw">fn </span>read_byte(<span class="kw-2">&amp;</span><span class="self">self</span>, cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;u8, glib::Error&gt;;
 
     <span class="doccomment">/// Reads a 16-bit/2-byte value from `self`.
@@ -777,7 +777,7 @@
     ///
     /// a signed 16-bit/2-byte value read from `self` or `0` if
     /// an error occurred.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_input_stream_read_int16&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_input_stream_read_int16&quot;</span>)]
     </span><span class="kw">fn </span>read_int16(<span class="kw-2">&amp;</span><span class="self">self</span>, cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;i16, glib::Error&gt;;
 
     <span class="doccomment">/// Reads a signed 32-bit/4-byte value from `self`.
@@ -795,7 +795,7 @@
     ///
     /// a signed 32-bit/4-byte value read from the `self` or `0` if
     /// an error occurred.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_input_stream_read_int32&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_input_stream_read_int32&quot;</span>)]
     </span><span class="kw">fn </span>read_int32(<span class="kw-2">&amp;</span><span class="self">self</span>, cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;i32, glib::Error&gt;;
 
     <span class="doccomment">/// Reads a 64-bit/8-byte value from `self`.
@@ -813,7 +813,7 @@
     ///
     /// a signed 64-bit/8-byte value read from `self` or `0` if
     /// an error occurred.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_input_stream_read_int64&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_input_stream_read_int64&quot;</span>)]
     </span><span class="kw">fn </span>read_int64(<span class="kw-2">&amp;</span><span class="self">self</span>, cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;i64, glib::Error&gt;;
 
     <span class="doccomment">/// Reads an unsigned 16-bit/2-byte value from `self`.
@@ -827,7 +827,7 @@
     ///
     /// an unsigned 16-bit/2-byte value read from the `self` or `0` if
     /// an error occurred.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_input_stream_read_uint16&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_input_stream_read_uint16&quot;</span>)]
     </span><span class="kw">fn </span>read_uint16(<span class="kw-2">&amp;</span><span class="self">self</span>, cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;u16, glib::Error&gt;;
 
     <span class="doccomment">/// Reads an unsigned 32-bit/4-byte value from `self`.
@@ -845,7 +845,7 @@
     ///
     /// an unsigned 32-bit/4-byte value read from the `self` or `0` if
     /// an error occurred.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_input_stream_read_uint32&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_input_stream_read_uint32&quot;</span>)]
     </span><span class="kw">fn </span>read_uint32(<span class="kw-2">&amp;</span><span class="self">self</span>, cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;u32, glib::Error&gt;;
 
     <span class="doccomment">/// Reads an unsigned 64-bit/8-byte value from `self`.
@@ -863,14 +863,14 @@
     ///
     /// an unsigned 64-bit/8-byte read from `self` or `0` if
     /// an error occurred.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_input_stream_read_uint64&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_input_stream_read_uint64&quot;</span>)]
     </span><span class="kw">fn </span>read_uint64(<span class="kw-2">&amp;</span><span class="self">self</span>, cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;u64, glib::Error&gt;;
 
     <span class="doccomment">/// This function sets the byte order for the given `self`. All subsequent
     /// reads from the `self` will be read in the given `order`.
     /// ## `order`
     /// a [`DataStreamByteOrder`][crate::DataStreamByteOrder] to set.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_input_stream_set_byte_order&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_input_stream_set_byte_order&quot;</span>)]
     </span><span class="kw">fn </span>set_byte_order(<span class="kw-2">&amp;</span><span class="self">self</span>, order: DataStreamByteOrder);
 
     <span class="doccomment">/// Sets the newline type for the `self`.
@@ -880,13 +880,13 @@
     /// &quot;CR LF&quot;, and this might block if there is no more data available.
     /// ## `type_`
     /// the type of new line return as [`DataStreamNewlineType`][crate::DataStreamNewlineType].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_input_stream_set_newline_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_input_stream_set_newline_type&quot;</span>)]
     </span><span class="kw">fn </span>set_newline_type(<span class="kw-2">&amp;</span><span class="self">self</span>, type_: DataStreamNewlineType);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;byte-order&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;byte-order&quot;</span>)]
     </span><span class="kw">fn </span>connect_byte_order_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;newline-type&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;newline-type&quot;</span>)]
     </span><span class="kw">fn </span>connect_newline_type_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -1094,4 +1094,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

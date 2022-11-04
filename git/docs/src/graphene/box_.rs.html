@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../graphene/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../graphene/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -226,7 +226,7 @@
     /// ## `vertices`
     /// return location for an array
     ///  of 8 [`Vec3`][crate::Vec3]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_get_vertices&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_get_vertices&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_vertices&quot;</span>)]
     </span><span class="kw">pub fn </span>vertices(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>[Vec3; <span class="number">8</span>] {
         <span class="kw">unsafe </span>{
@@ -245,7 +245,7 @@
     /// # Returns
     ///
     /// the initialized [`Box`][crate::Box]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_init&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_init&quot;</span>)]
     </span><span class="kw">pub fn </span>new(min: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>Point3D&gt;, max: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>Point3D&gt;) -&gt; <span class="self">Self </span>{
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{
@@ -270,7 +270,7 @@
     /// # Returns
     ///
     /// the initialized [`Box`][crate::Box]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_init_from_points&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_init_from_points&quot;</span>)]
     #[doc(alias = <span class="string">&quot;init_from_points&quot;</span>)]
     </span><span class="kw">pub fn </span>from_points(points: <span class="kw-2">&amp;</span>[Point3D]) -&gt; <span class="self">Self </span>{
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -294,7 +294,7 @@
     /// # Returns
     ///
     /// the initialized [`Box`][crate::Box]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_init_from_vec3&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_init_from_vec3&quot;</span>)]
     #[doc(alias = <span class="string">&quot;init_from_vec3&quot;</span>)]
     </span><span class="kw">pub fn </span>from_vec3(min: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>Vec3&gt;, max: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>Vec3&gt;) -&gt; <span class="self">Self </span>{
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -320,7 +320,7 @@
     /// # Returns
     ///
     /// the initialized [`Box`][crate::Box]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_box_init_from_vectors&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_box_init_from_vectors&quot;</span>)]
     #[doc(alias = <span class="string">&quot;init_from_vectors&quot;</span>)]
     </span><span class="kw">pub fn </span>from_vectors(vectors: <span class="kw-2">&amp;</span>[Vec3]) -&gt; <span class="self">Self </span>{
         <span class="macro">assert_initialized_main_thread!</span>();
@@ -348,4 +348,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

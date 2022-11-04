@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../cairo/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../cairo/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -298,12 +298,12 @@
 <span id="225">225</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+</span><span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 <span class="kw">use </span>std::ffi::{CStr, CString};
-<span class="attribute">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
+<span class="attr">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
 </span><span class="kw">use </span>std::ptr;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;freetype&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;freetype&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span>std::rc::Rc;
 
 <span class="kw">use crate</span>::{
@@ -311,17 +311,17 @@
     Error,
 };
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;freetype&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;freetype&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span><span class="kw">crate</span>::enums::FtSynthesize;
 
 <span class="kw">use </span><span class="kw">crate</span>::utils::status_to_result;
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;freetype&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;freetype&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">static </span>FT_FACE_KEY: <span class="kw">crate</span>::UserDataKey&lt;freetype::face::Face&gt; = <span class="kw">crate</span>::UserDataKey::new();
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="macro">glib::wrapper! </span>{
-    <span class="attribute">#[derive(Debug)]
+    <span class="attr">#[derive(Debug)]
     #[doc(alias = <span class="string">&quot;cairo_font_face_t&quot;</span>)]
     </span><span class="kw">pub struct </span>FontFace(Shared&lt;ffi::cairo_font_face_t&gt;);
 
@@ -332,13 +332,13 @@
     }
 }
 
-<span class="attribute">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
+<span class="attr">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
 #[derive(Debug)]
 #[doc(alias = <span class="string">&quot;cairo_font_face_t&quot;</span>)]
 </span><span class="kw">pub struct </span>FontFace(ptr::NonNull&lt;ffi::cairo_font_face_t&gt;);
 
 <span class="kw">impl </span>FontFace {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_toy_font_face_create&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_toy_font_face_create&quot;</span>)]
     </span><span class="kw">pub fn </span>toy_create(
         family: <span class="kw-2">&amp;</span>str,
         slant: FontSlant,
@@ -360,7 +360,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Creates a new font face for the FreeType backend from an already opened FreeType face.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;freetype&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;freetype&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[doc(alias = <span class="string">&quot;cairo_ft_font_face_create_for_ft_face&quot;</span>)]
     </span><span class="kw">pub fn </span>create_from_ft(face: <span class="kw-2">&amp;</span>freetype::face::Face) -&gt; <span class="prelude-ty">Result</span>&lt;FontFace, Error&gt; {
         <span class="comment">// Increase reference count of `FT_Face`.
@@ -384,7 +384,7 @@
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Creates a new font face for the FreeType backend from an already opened FreeType face,
     /// additionally allowing you to pass flags to the underlying C API.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;freetype&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;freetype&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[doc(alias = <span class="string">&quot;cairo_ft_font_face_create_for_ft_face&quot;</span>)]
     </span><span class="kw">pub fn </span>create_from_ft_with_flags(
         face: <span class="kw-2">&amp;</span>freetype::face::Face,
@@ -408,85 +408,85 @@
         <span class="prelude-val">Ok</span>(font_face)
     }
 
-    <span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
     </span><span class="kw">pub unsafe fn </span>from_raw_full(ptr: <span class="kw-2">*mut </span>ffi::cairo_font_face_t) -&gt; FontFace {
         from_glib_full(ptr)
     }
 
-    <span class="attribute">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
+    <span class="attr">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
     </span><span class="kw">pub unsafe fn </span>from_raw_full(ptr: <span class="kw-2">*mut </span>ffi::cairo_font_face_t) -&gt; FontFace {
         <span class="macro">assert!</span>(!ptr.is_null());
         FontFace(ptr::NonNull::new_unchecked(ptr))
     }
 
-    <span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
     </span><span class="kw">pub unsafe fn </span>from_raw_none(ptr: <span class="kw-2">*mut </span>ffi::cairo_font_face_t) -&gt; FontFace {
         from_glib_none(ptr)
     }
 
-    <span class="attribute">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
+    <span class="attr">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
     </span><span class="kw">pub unsafe fn </span>from_raw_none(ptr: <span class="kw-2">*mut </span>ffi::cairo_font_face_t) -&gt; FontFace {
         <span class="macro">assert!</span>(!ptr.is_null());
         FontFace(ptr::NonNull::new_unchecked(ptr))
     }
 
-    <span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
     </span><span class="kw">pub fn </span>to_raw_none(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*mut </span>ffi::cairo_font_face_t {
         <span class="self">self</span>.to_glib_none().<span class="number">0
     </span>}
 
-    <span class="attribute">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
+    <span class="attr">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
     </span><span class="kw">pub fn </span>to_raw_none(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*mut </span>ffi::cairo_font_face_t {
         <span class="self">self</span>.<span class="number">0</span>.as_ptr()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_toy_font_face_get_family&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_toy_font_face_get_family&quot;</span>)]
     </span><span class="kw">pub fn </span>toy_get_family(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;String&gt; {
         <span class="kw">unsafe </span>{ to_optional_string(ffi::cairo_toy_font_face_get_family(<span class="self">self</span>.to_raw_none())) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_toy_font_face_get_slant&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_toy_font_face_get_slant&quot;</span>)]
     </span><span class="kw">pub fn </span>toy_get_slant(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; FontSlant {
         <span class="kw">unsafe </span>{ FontSlant::from(ffi::cairo_toy_font_face_get_slant(<span class="self">self</span>.to_raw_none())) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_toy_font_face_get_weight&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_toy_font_face_get_weight&quot;</span>)]
     </span><span class="kw">pub fn </span>toy_get_weight(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; FontWeight {
         <span class="kw">unsafe </span>{ FontWeight::from(ffi::cairo_toy_font_face_get_weight(<span class="self">self</span>.to_raw_none())) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_font_face_get_type&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_font_face_get_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_type&quot;</span>)]
     </span><span class="kw">pub fn </span>type_(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; FontType {
         <span class="kw">unsafe </span>{ FontType::from(ffi::cairo_font_face_get_type(<span class="self">self</span>.to_raw_none())) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_font_face_get_reference_count&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_font_face_get_reference_count&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_reference_count&quot;</span>)]
     </span><span class="kw">pub fn </span>reference_count(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; usize {
         <span class="kw">unsafe </span>{ ffi::cairo_font_face_get_reference_count(<span class="self">self</span>.to_raw_none()) <span class="kw">as </span>usize }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_ft_font_face_get_synthesize&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_ft_font_face_get_synthesize&quot;</span>)]
     #[cfg(any(feature = <span class="string">&quot;freetype&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[doc(alias = <span class="string">&quot;get_synthesize&quot;</span>)]
     </span><span class="kw">pub fn </span>synthesize(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; FtSynthesize {
         <span class="kw">unsafe </span>{ FtSynthesize::from(ffi::cairo_ft_font_face_get_synthesize(<span class="self">self</span>.to_raw_none())) }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;freetype&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;freetype&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[doc(alias = <span class="string">&quot;cairo_ft_font_face_set_synthesize&quot;</span>)]
     </span><span class="kw">pub fn </span>set_synthesize(<span class="kw-2">&amp;</span><span class="self">self</span>, synth_flags: FtSynthesize) {
         <span class="kw">unsafe </span>{ ffi::cairo_ft_font_face_set_synthesize(<span class="self">self</span>.to_raw_none(), synth_flags.into()) }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;freetype&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;freetype&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[doc(alias = <span class="string">&quot;cairo_ft_font_face_unset_synthesize&quot;</span>)]
     </span><span class="kw">pub fn </span>unset_synthesize(<span class="kw-2">&amp;</span><span class="self">self</span>, synth_flags: FtSynthesize) {
         <span class="kw">unsafe </span>{ ffi::cairo_ft_font_face_unset_synthesize(<span class="self">self</span>.to_raw_none(), synth_flags.into()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_font_face_status&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_font_face_status&quot;</span>)]
     </span><span class="kw">pub fn </span>status(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">let </span>status = <span class="kw">unsafe </span>{ ffi::cairo_font_face_status(<span class="self">self</span>.to_raw_none()) };
         status_to_result(status)
@@ -498,7 +498,7 @@
     }
 }
 
-<span class="attribute">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
+<span class="attr">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
 </span><span class="kw">impl </span>Drop <span class="kw">for </span>FontFace {
     <span class="kw">fn </span>drop(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
@@ -507,7 +507,7 @@
     }
 }
 
-<span class="attribute">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
+<span class="attr">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
 </span><span class="kw">impl </span>Clone <span class="kw">for </span>FontFace {
     <span class="kw">fn </span>clone(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; FontFace {
         <span class="kw">unsafe </span>{ FontFace::from_raw_none(<span class="self">self</span>.to_raw_none()) }
@@ -522,4 +522,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

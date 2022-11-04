@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pango/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pango/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -489,7 +489,7 @@
     /// To obtain a [`LayoutIter`][crate::LayoutIter], use [`Layout::iter()`][crate::Layout::iter()].
     ///
     /// The [`LayoutIter`][crate::LayoutIter] structure is opaque, and has no user-visible fields.
-    </span><span class="attribute">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    </span><span class="attr">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
     </span><span class="kw">pub struct </span>LayoutIter(Boxed&lt;ffi::PangoLayoutIter&gt;);
 
     <span class="kw">match fn </span>{
@@ -505,7 +505,7 @@
     /// # Returns
     ///
     /// [`true`] if @self is on the last line
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_iter_at_last_line&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_iter_at_last_line&quot;</span>)]
     </span><span class="kw">pub fn </span>at_last_line(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::pango_layout_iter_at_last_line(
@@ -522,7 +522,7 @@
     /// # Returns
     ///
     /// baseline of current line
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_baseline&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_baseline&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_baseline&quot;</span>)]
     </span><span class="kw">pub fn </span>baseline(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::pango_layout_iter_get_baseline(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>) }
@@ -541,7 +541,7 @@
     /// ## `logical_rect`
     /// rectangle to fill with
     ///   logical extents
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_char_extents&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_char_extents&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_char_extents&quot;</span>)]
     </span><span class="kw">pub fn </span>char_extents(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; Rectangle {
         <span class="kw">unsafe </span>{
@@ -566,7 +566,7 @@
     ///
     /// ## `logical_rect`
     /// rectangle to fill with logical extents
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_cluster_extents&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_cluster_extents&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_cluster_extents&quot;</span>)]
     </span><span class="kw">pub fn </span>cluster_extents(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; (Rectangle, Rectangle) {
         <span class="kw">unsafe </span>{
@@ -591,7 +591,7 @@
     /// # Returns
     ///
     /// current byte index
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_index&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_index&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_index&quot;</span>)]
     </span><span class="kw">pub fn </span>index(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::pango_layout_iter_get_index(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>) }
@@ -602,7 +602,7 @@
     /// # Returns
     ///
     /// the layout associated with @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_layout&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_layout&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_layout&quot;</span>)]
     </span><span class="kw">pub fn </span>layout(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Layout&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::pango_layout_iter_get_layout(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>)) }
@@ -618,7 +618,7 @@
     ///
     /// ## `logical_rect`
     /// rectangle to fill with logical extents
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_layout_extents&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_layout_extents&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_layout_extents&quot;</span>)]
     </span><span class="kw">pub fn </span>layout_extents(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; (Rectangle, Rectangle) {
         <span class="kw">unsafe </span>{
@@ -642,7 +642,7 @@
     /// # Returns
     ///
     /// the current line
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_line&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_line&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_line&quot;</span>)]
     </span><span class="kw">pub fn </span>line(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;LayoutLine&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::pango_layout_iter_get_line(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>)) }
@@ -663,7 +663,7 @@
     ///
     /// ## `logical_rect`
     /// rectangle to fill with logical extents
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_line_extents&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_line_extents&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_line_extents&quot;</span>)]
     </span><span class="kw">pub fn </span>line_extents(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; (Rectangle, Rectangle) {
         <span class="kw">unsafe </span>{
@@ -688,7 +688,7 @@
     ///
     /// the current line, that should not be
     ///   modified
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_line_readonly&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_line_readonly&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_line_readonly&quot;</span>)]
     </span><span class="kw">pub fn </span>line_readonly(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;LayoutLine&gt; {
         <span class="kw">unsafe </span>{
@@ -718,7 +718,7 @@
     ///
     /// ## `y1_`
     /// end of line
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_line_yrange&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_line_yrange&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_line_yrange&quot;</span>)]
     </span><span class="kw">pub fn </span>line_yrange(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; (i32, i32) {
         <span class="kw">unsafe </span>{
@@ -746,7 +746,7 @@
     /// # Returns
     ///
     /// the current run
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_run&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_run&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_run&quot;</span>)]
     </span><span class="kw">pub fn </span>run(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;LayoutRun&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::pango_layout_iter_get_run(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>)) }
@@ -759,7 +759,7 @@
     ///
     /// The run baseline can be different from the line baseline, for
     /// example due to superscript or subscript positioning.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_layout_iter_get_run_baseline&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_run_baseline&quot;</span>)]
@@ -779,7 +779,7 @@
     ///
     /// ## `logical_rect`
     /// rectangle to fill with logical extents
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_run_extents&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_run_extents&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_run_extents&quot;</span>)]
     </span><span class="kw">pub fn </span>run_extents(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; (Rectangle, Rectangle) {
         <span class="kw">unsafe </span>{
@@ -809,7 +809,7 @@
     ///
     /// the current run, that
     ///   should not be modified
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_run_readonly&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_iter_get_run_readonly&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_run_readonly&quot;</span>)]
     </span><span class="kw">pub fn </span>run_readonly(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;LayoutRun&gt; {
         <span class="kw">unsafe </span>{
@@ -826,7 +826,7 @@
     /// # Returns
     ///
     /// whether motion was possible
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_iter_next_char&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_iter_next_char&quot;</span>)]
     </span><span class="kw">pub fn </span>next_char(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::pango_layout_iter_next_char(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>)) }
     }
@@ -838,7 +838,7 @@
     /// # Returns
     ///
     /// whether motion was possible
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_iter_next_cluster&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_iter_next_cluster&quot;</span>)]
     </span><span class="kw">pub fn </span>next_cluster(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::pango_layout_iter_next_cluster(
@@ -854,7 +854,7 @@
     /// # Returns
     ///
     /// whether motion was possible
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_iter_next_line&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_iter_next_line&quot;</span>)]
     </span><span class="kw">pub fn </span>next_line(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::pango_layout_iter_next_line(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>)) }
     }
@@ -866,10 +866,10 @@
     /// # Returns
     ///
     /// whether motion was possible
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_layout_iter_next_run&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_layout_iter_next_run&quot;</span>)]
     </span><span class="kw">pub fn </span>next_run(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::pango_layout_iter_next_run(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>)) }
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

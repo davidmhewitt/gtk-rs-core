@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -4613,23 +4613,23 @@
 <span class="kw">use </span>std::fmt;
 
 <span class="doccomment">/// An enumeration for well-known message buses.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GBusType&quot;</span>)]
 </span><span class="kw">pub enum </span>BusType {
     <span class="doccomment">/// An alias for the message bus that activated the process, if any.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_BUS_TYPE_STARTER&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_BUS_TYPE_STARTER&quot;</span>)]
     </span>Starter,
     <span class="doccomment">/// Not a message bus.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_BUS_TYPE_NONE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_BUS_TYPE_NONE&quot;</span>)]
     </span><span class="prelude-val">None</span>,
     <span class="doccomment">/// The system-wide message bus.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_BUS_TYPE_SYSTEM&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_BUS_TYPE_SYSTEM&quot;</span>)]
     </span>System,
     <span class="doccomment">/// The login session message bus.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_BUS_TYPE_SESSION&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_BUS_TYPE_SESSION&quot;</span>)]
     </span>Session,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -4649,7 +4649,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>BusType {
     <span class="kw">type </span>GlibType = ffi::GBusType;
 
@@ -4664,7 +4664,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GBusType&gt; <span class="kw">for </span>BusType {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GBusType) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -4710,23 +4710,23 @@
 }
 
 <span class="doccomment">/// Results returned from [`ConverterExtManual::convert()`][crate::prelude::ConverterExtManual::convert()].
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GConverterResult&quot;</span>)]
 </span><span class="kw">pub enum </span>ConverterResult {
     <span class="doccomment">/// There was an error during conversion.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_CONVERTER_ERROR&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_CONVERTER_ERROR&quot;</span>)]
     </span>Error,
     <span class="doccomment">/// Some data was consumed or produced
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_CONVERTER_CONVERTED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_CONVERTER_CONVERTED&quot;</span>)]
     </span>Converted,
     <span class="doccomment">/// The conversion is finished
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_CONVERTER_FINISHED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_CONVERTER_FINISHED&quot;</span>)]
     </span>Finished,
     <span class="doccomment">/// Flushing is finished
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_CONVERTER_FLUSHED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_CONVERTER_FLUSHED&quot;</span>)]
     </span>Flushed,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -4746,7 +4746,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>ConverterResult {
     <span class="kw">type </span>GlibType = ffi::GConverterResult;
 
@@ -4761,7 +4761,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GConverterResult&gt; <span class="kw">for </span>ConverterResult {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GConverterResult) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -4807,37 +4807,37 @@
 }
 
 <span class="doccomment">/// Enumeration describing different kinds of native credential types.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GCredentialsType&quot;</span>)]
 </span><span class="kw">pub enum </span>CredentialsType {
     <span class="doccomment">/// Indicates an invalid native credential type.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_CREDENTIALS_TYPE_INVALID&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_CREDENTIALS_TYPE_INVALID&quot;</span>)]
     </span>Invalid,
     <span class="doccomment">/// The native credentials type is a `struct ucred`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_CREDENTIALS_TYPE_LINUX_UCRED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_CREDENTIALS_TYPE_LINUX_UCRED&quot;</span>)]
     </span>LinuxUcred,
     <span class="doccomment">/// The native credentials type is a `struct cmsgcred`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_CREDENTIALS_TYPE_FREEBSD_CMSGCRED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_CREDENTIALS_TYPE_FREEBSD_CMSGCRED&quot;</span>)]
     </span>FreebsdCmsgcred,
     <span class="doccomment">/// The native credentials type is a `struct sockpeercred`. Added in 2.30.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_CREDENTIALS_TYPE_OPENBSD_SOCKPEERCRED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_CREDENTIALS_TYPE_OPENBSD_SOCKPEERCRED&quot;</span>)]
     </span>OpenbsdSockpeercred,
     <span class="doccomment">/// The native credentials type is a `ucred_t`. Added in 2.40.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_CREDENTIALS_TYPE_SOLARIS_UCRED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_CREDENTIALS_TYPE_SOLARIS_UCRED&quot;</span>)]
     </span>SolarisUcred,
     <span class="doccomment">/// The native credentials type is a `struct unpcbid`. Added in 2.42.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_CREDENTIALS_TYPE_NETBSD_UNPCBID&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_CREDENTIALS_TYPE_NETBSD_UNPCBID&quot;</span>)]
     </span>NetbsdUnpcbid,
     <span class="doccomment">/// The native credentials type is a `struct xucred`. Added in 2.66.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_CREDENTIALS_TYPE_APPLE_XUCRED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_CREDENTIALS_TYPE_APPLE_XUCRED&quot;</span>)]
     </span>AppleXucred,
     <span class="doccomment">/// The native credentials type is a PID `DWORD`. Added in 2.72.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;G_CREDENTIALS_TYPE_WIN32_PID&quot;</span>)]
     </span>Win32Pid,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -4854,7 +4854,7 @@
                 <span class="self">Self</span>::SolarisUcred =&gt; <span class="string">&quot;SolarisUcred&quot;</span>,
                 <span class="self">Self</span>::NetbsdUnpcbid =&gt; <span class="string">&quot;NetbsdUnpcbid&quot;</span>,
                 <span class="self">Self</span>::AppleXucred =&gt; <span class="string">&quot;AppleXucred&quot;</span>,
-                <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
                 </span><span class="self">Self</span>::Win32Pid =&gt; <span class="string">&quot;Win32Pid&quot;</span>,
                 <span class="kw">_ </span>=&gt; <span class="string">&quot;Unknown&quot;</span>,
             }
@@ -4862,7 +4862,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>CredentialsType {
     <span class="kw">type </span>GlibType = ffi::GCredentialsType;
 
@@ -4875,14 +4875,14 @@
             <span class="self">Self</span>::SolarisUcred =&gt; ffi::G_CREDENTIALS_TYPE_SOLARIS_UCRED,
             <span class="self">Self</span>::NetbsdUnpcbid =&gt; ffi::G_CREDENTIALS_TYPE_NETBSD_UNPCBID,
             <span class="self">Self</span>::AppleXucred =&gt; ffi::G_CREDENTIALS_TYPE_APPLE_XUCRED,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span><span class="self">Self</span>::Win32Pid =&gt; ffi::G_CREDENTIALS_TYPE_WIN32_PID,
             <span class="self">Self</span>::__Unknown(value) =&gt; value,
         }
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GCredentialsType&gt; <span class="kw">for </span>CredentialsType {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GCredentialsType) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -4893,7 +4893,7 @@
             ffi::G_CREDENTIALS_TYPE_SOLARIS_UCRED =&gt; <span class="self">Self</span>::SolarisUcred,
             ffi::G_CREDENTIALS_TYPE_NETBSD_UNPCBID =&gt; <span class="self">Self</span>::NetbsdUnpcbid,
             ffi::G_CREDENTIALS_TYPE_APPLE_XUCRED =&gt; <span class="self">Self</span>::AppleXucred,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>ffi::G_CREDENTIALS_TYPE_WIN32_PID =&gt; <span class="self">Self</span>::Win32Pid,
             value =&gt; <span class="self">Self</span>::__Unknown(value),
         }
@@ -4933,17 +4933,17 @@
 }
 
 <span class="doccomment">/// Enumeration used to describe the byte order of a D-Bus message.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GDBusMessageByteOrder&quot;</span>)]
 </span><span class="kw">pub enum </span>DBusMessageByteOrder {
     <span class="doccomment">/// The byte order is big endian.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_BYTE_ORDER_BIG_ENDIAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_BYTE_ORDER_BIG_ENDIAN&quot;</span>)]
     </span>BigEndian,
     <span class="doccomment">/// The byte order is little endian.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_BYTE_ORDER_LITTLE_ENDIAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_BYTE_ORDER_LITTLE_ENDIAN&quot;</span>)]
     </span>LittleEndian,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -4961,7 +4961,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>DBusMessageByteOrder {
     <span class="kw">type </span>GlibType = ffi::GDBusMessageByteOrder;
 
@@ -4974,7 +4974,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GDBusMessageByteOrder&gt; <span class="kw">for </span>DBusMessageByteOrder {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GDBusMessageByteOrder) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -5018,41 +5018,41 @@
 }
 
 <span class="doccomment">/// Header fields used in [`DBusMessage`][crate::DBusMessage].
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GDBusMessageHeaderField&quot;</span>)]
 </span><span class="kw">pub enum </span>DBusMessageHeaderField {
     <span class="doccomment">/// Not a valid header field.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_HEADER_FIELD_INVALID&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_HEADER_FIELD_INVALID&quot;</span>)]
     </span>Invalid,
     <span class="doccomment">/// The object path.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_HEADER_FIELD_PATH&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_HEADER_FIELD_PATH&quot;</span>)]
     </span>Path,
     <span class="doccomment">/// The interface name.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_HEADER_FIELD_INTERFACE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_HEADER_FIELD_INTERFACE&quot;</span>)]
     </span>Interface,
     <span class="doccomment">/// The method or signal name.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_HEADER_FIELD_MEMBER&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_HEADER_FIELD_MEMBER&quot;</span>)]
     </span>Member,
     <span class="doccomment">/// The name of the error that occurred.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_HEADER_FIELD_ERROR_NAME&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_HEADER_FIELD_ERROR_NAME&quot;</span>)]
     </span>ErrorName,
     <span class="doccomment">/// The serial number the message is a reply to.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_HEADER_FIELD_REPLY_SERIAL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_HEADER_FIELD_REPLY_SERIAL&quot;</span>)]
     </span>ReplySerial,
     <span class="doccomment">/// The name the message is intended for.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_HEADER_FIELD_DESTINATION&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_HEADER_FIELD_DESTINATION&quot;</span>)]
     </span>Destination,
     <span class="doccomment">/// Unique name of the sender of the message (filled in by the bus).
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_HEADER_FIELD_SENDER&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_HEADER_FIELD_SENDER&quot;</span>)]
     </span>Sender,
     <span class="doccomment">/// The signature of the message body.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_HEADER_FIELD_SIGNATURE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_HEADER_FIELD_SIGNATURE&quot;</span>)]
     </span>Signature,
     <span class="doccomment">/// The number of UNIX file descriptors that accompany the message.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_HEADER_FIELD_NUM_UNIX_FDS&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_HEADER_FIELD_NUM_UNIX_FDS&quot;</span>)]
     </span>NumUnixFds,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -5078,7 +5078,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>DBusMessageHeaderField {
     <span class="kw">type </span>GlibType = ffi::GDBusMessageHeaderField;
 
@@ -5099,7 +5099,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GDBusMessageHeaderField&gt; <span class="kw">for </span>DBusMessageHeaderField {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GDBusMessageHeaderField) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -5151,26 +5151,26 @@
 }
 
 <span class="doccomment">/// Message types used in [`DBusMessage`][crate::DBusMessage].
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GDBusMessageType&quot;</span>)]
 </span><span class="kw">pub enum </span>DBusMessageType {
     <span class="doccomment">/// Message is of invalid type.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_TYPE_INVALID&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_TYPE_INVALID&quot;</span>)]
     </span>Invalid,
     <span class="doccomment">/// Method call.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_TYPE_METHOD_CALL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_TYPE_METHOD_CALL&quot;</span>)]
     </span>MethodCall,
     <span class="doccomment">/// Method reply.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_TYPE_METHOD_RETURN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_TYPE_METHOD_RETURN&quot;</span>)]
     </span>MethodReturn,
     <span class="doccomment">/// Error reply.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_TYPE_ERROR&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_TYPE_ERROR&quot;</span>)]
     </span>Error,
     <span class="doccomment">/// Signal emission.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_TYPE_SIGNAL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_MESSAGE_TYPE_SIGNAL&quot;</span>)]
     </span>Signal,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -5191,7 +5191,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>DBusMessageType {
     <span class="kw">type </span>GlibType = ffi::GDBusMessageType;
 
@@ -5207,7 +5207,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GDBusMessageType&gt; <span class="kw">for </span>DBusMessageType {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GDBusMessageType) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -5255,20 +5255,20 @@
 
 <span class="doccomment">/// [`DataStreamByteOrder`][crate::DataStreamByteOrder] is used to ensure proper endianness of streaming data sources
 /// across various machine architectures.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GDataStreamByteOrder&quot;</span>)]
 </span><span class="kw">pub enum </span>DataStreamByteOrder {
     <span class="doccomment">/// Selects Big Endian byte order.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DATA_STREAM_BYTE_ORDER_BIG_ENDIAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DATA_STREAM_BYTE_ORDER_BIG_ENDIAN&quot;</span>)]
     </span>BigEndian,
     <span class="doccomment">/// Selects Little Endian byte order.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DATA_STREAM_BYTE_ORDER_LITTLE_ENDIAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DATA_STREAM_BYTE_ORDER_LITTLE_ENDIAN&quot;</span>)]
     </span>LittleEndian,
     <span class="doccomment">/// Selects endianness based on host machine&#39;s architecture.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DATA_STREAM_BYTE_ORDER_HOST_ENDIAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DATA_STREAM_BYTE_ORDER_HOST_ENDIAN&quot;</span>)]
     </span>HostEndian,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -5287,7 +5287,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>DataStreamByteOrder {
     <span class="kw">type </span>GlibType = ffi::GDataStreamByteOrder;
 
@@ -5301,7 +5301,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GDataStreamByteOrder&gt; <span class="kw">for </span>DataStreamByteOrder {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GDataStreamByteOrder) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -5346,23 +5346,23 @@
 }
 
 <span class="doccomment">/// [`DataStreamNewlineType`][crate::DataStreamNewlineType] is used when checking for or setting the line endings for a given file.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GDataStreamNewlineType&quot;</span>)]
 </span><span class="kw">pub enum </span>DataStreamNewlineType {
     <span class="doccomment">/// Selects &quot;LF&quot; line endings, common on most modern UNIX platforms.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DATA_STREAM_NEWLINE_TYPE_LF&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DATA_STREAM_NEWLINE_TYPE_LF&quot;</span>)]
     </span>Lf,
     <span class="doccomment">/// Selects &quot;CR&quot; line endings.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DATA_STREAM_NEWLINE_TYPE_CR&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DATA_STREAM_NEWLINE_TYPE_CR&quot;</span>)]
     </span>Cr,
     <span class="doccomment">/// Selects &quot;CR, LF&quot; line ending, common on Microsoft Windows.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DATA_STREAM_NEWLINE_TYPE_CR_LF&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DATA_STREAM_NEWLINE_TYPE_CR_LF&quot;</span>)]
     </span>CrLf,
     <span class="doccomment">/// Automatically try to handle any line ending type.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DATA_STREAM_NEWLINE_TYPE_ANY&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DATA_STREAM_NEWLINE_TYPE_ANY&quot;</span>)]
     </span>Any,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -5382,7 +5382,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>DataStreamNewlineType {
     <span class="kw">type </span>GlibType = ffi::GDataStreamNewlineType;
 
@@ -5397,7 +5397,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GDataStreamNewlineType&gt; <span class="kw">for </span>DataStreamNewlineType {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GDataStreamNewlineType) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -5443,34 +5443,34 @@
 }
 
 <span class="doccomment">/// Enumeration describing how a drive can be started/stopped.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GDriveStartStopType&quot;</span>)]
 </span><span class="kw">pub enum </span>DriveStartStopType {
     <span class="doccomment">/// Unknown or drive doesn&#39;t support
     ///  start/stop.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DRIVE_START_STOP_TYPE_UNKNOWN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DRIVE_START_STOP_TYPE_UNKNOWN&quot;</span>)]
     </span>Unknown,
     <span class="doccomment">/// The stop method will physically
     ///  shut down the drive and e.g. power down the port the drive is
     ///  attached to.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DRIVE_START_STOP_TYPE_SHUTDOWN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DRIVE_START_STOP_TYPE_SHUTDOWN&quot;</span>)]
     </span>Shutdown,
     <span class="doccomment">/// The start/stop methods are used
     ///  for connecting/disconnect to the drive over the network.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DRIVE_START_STOP_TYPE_NETWORK&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DRIVE_START_STOP_TYPE_NETWORK&quot;</span>)]
     </span>Network,
     <span class="doccomment">/// The start/stop methods will
     ///  assemble/disassemble a virtual drive from several physical
     ///  drives.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DRIVE_START_STOP_TYPE_MULTIDISK&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DRIVE_START_STOP_TYPE_MULTIDISK&quot;</span>)]
     </span>Multidisk,
     <span class="doccomment">/// The start/stop methods will
     ///  unlock/lock the disk (for example using the ATA `&lt;quote&gt;`SECURITY
     ///  UNLOCK DEVICE`&lt;/quote&gt;` command)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_DRIVE_START_STOP_TYPE_PASSWORD&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DRIVE_START_STOP_TYPE_PASSWORD&quot;</span>)]
     </span>Password,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -5491,7 +5491,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>DriveStartStopType {
     <span class="kw">type </span>GlibType = ffi::GDriveStartStopType;
 
@@ -5507,7 +5507,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GDriveStartStopType&gt; <span class="kw">for </span>DriveStartStopType {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GDriveStartStopType) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -5555,23 +5555,23 @@
 
 <span class="doccomment">/// GEmblemOrigin is used to add information about the origin of the emblem
 /// to [`Emblem`][crate::Emblem].
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GEmblemOrigin&quot;</span>)]
 </span><span class="kw">pub enum </span>EmblemOrigin {
     <span class="doccomment">/// Emblem of unknown origin
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_EMBLEM_ORIGIN_UNKNOWN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_EMBLEM_ORIGIN_UNKNOWN&quot;</span>)]
     </span>Unknown,
     <span class="doccomment">/// Emblem adds device-specific information
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_EMBLEM_ORIGIN_DEVICE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_EMBLEM_ORIGIN_DEVICE&quot;</span>)]
     </span>Device,
     <span class="doccomment">/// Emblem depicts live metadata, such as &quot;readonly&quot;
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_EMBLEM_ORIGIN_LIVEMETADATA&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_EMBLEM_ORIGIN_LIVEMETADATA&quot;</span>)]
     </span>Livemetadata,
     <span class="doccomment">/// Emblem comes from a user-defined tag, e.g. set by nautilus (in the future)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_EMBLEM_ORIGIN_TAG&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_EMBLEM_ORIGIN_TAG&quot;</span>)]
     </span>Tag,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -5591,7 +5591,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>EmblemOrigin {
     <span class="kw">type </span>GlibType = ffi::GEmblemOrigin;
 
@@ -5606,7 +5606,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GEmblemOrigin&gt; <span class="kw">for </span>EmblemOrigin {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GEmblemOrigin) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -5652,20 +5652,20 @@
 }
 
 <span class="doccomment">/// Used by [`FileExt::set_attributes_from_info()`][crate::prelude::FileExt::set_attributes_from_info()] when setting file attributes.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GFileAttributeStatus&quot;</span>)]
 </span><span class="kw">pub enum </span>FileAttributeStatus {
     <span class="doccomment">/// Attribute value is unset (empty).
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_STATUS_UNSET&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_STATUS_UNSET&quot;</span>)]
     </span>Unset,
     <span class="doccomment">/// Attribute value is set.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_STATUS_SET&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_STATUS_SET&quot;</span>)]
     </span>Set,
     <span class="doccomment">/// Indicates an error in setting the value.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_STATUS_ERROR_SETTING&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_STATUS_ERROR_SETTING&quot;</span>)]
     </span>ErrorSetting,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -5684,7 +5684,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>FileAttributeStatus {
     <span class="kw">type </span>GlibType = ffi::GFileAttributeStatus;
 
@@ -5698,7 +5698,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GFileAttributeStatus&gt; <span class="kw">for </span>FileAttributeStatus {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GFileAttributeStatus) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -5743,41 +5743,41 @@
 }
 
 <span class="doccomment">/// The data types for file attributes.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GFileAttributeType&quot;</span>)]
 </span><span class="kw">pub enum </span>FileAttributeType {
     <span class="doccomment">/// indicates an invalid or uninitialized type.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_TYPE_INVALID&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_TYPE_INVALID&quot;</span>)]
     </span>Invalid,
     <span class="doccomment">/// a null terminated UTF8 string.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_TYPE_STRING&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_TYPE_STRING&quot;</span>)]
     </span>String,
     <span class="doccomment">/// a zero terminated string of non-zero bytes.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_TYPE_BYTE_STRING&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_TYPE_BYTE_STRING&quot;</span>)]
     </span>ByteString,
     <span class="doccomment">/// a boolean value.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_TYPE_BOOLEAN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_TYPE_BOOLEAN&quot;</span>)]
     </span>Boolean,
     <span class="doccomment">/// an unsigned 4-byte/32-bit integer.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_TYPE_UINT32&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_TYPE_UINT32&quot;</span>)]
     </span>Uint32,
     <span class="doccomment">/// a signed 4-byte/32-bit integer.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_TYPE_INT32&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_TYPE_INT32&quot;</span>)]
     </span>Int32,
     <span class="doccomment">/// an unsigned 8-byte/64-bit integer.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_TYPE_UINT64&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_TYPE_UINT64&quot;</span>)]
     </span>Uint64,
     <span class="doccomment">/// a signed 8-byte/64-bit integer.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_TYPE_INT64&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_TYPE_INT64&quot;</span>)]
     </span>Int64,
     <span class="doccomment">/// a [`glib::Object`][crate::glib::Object].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_TYPE_OBJECT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_TYPE_OBJECT&quot;</span>)]
     </span>Object,
     <span class="doccomment">/// a [`None`] terminated char **. Since 2.22
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_TYPE_STRINGV&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_ATTRIBUTE_TYPE_STRINGV&quot;</span>)]
     </span>Stringv,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -5803,7 +5803,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>FileAttributeType {
     <span class="kw">type </span>GlibType = ffi::GFileAttributeType;
 
@@ -5824,7 +5824,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GFileAttributeType&gt; <span class="kw">for </span>FileAttributeType {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GFileAttributeType) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -5876,51 +5876,51 @@
 }
 
 <span class="doccomment">/// Specifies what type of event a monitor event is.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GFileMonitorEvent&quot;</span>)]
 </span><span class="kw">pub enum </span>FileMonitorEvent {
     <span class="doccomment">/// a file changed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_EVENT_CHANGED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_EVENT_CHANGED&quot;</span>)]
     </span>Changed,
     <span class="doccomment">/// a hint that this was probably the last change in a set of changes.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_EVENT_CHANGES_DONE_HINT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_EVENT_CHANGES_DONE_HINT&quot;</span>)]
     </span>ChangesDoneHint,
     <span class="doccomment">/// a file was deleted.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_EVENT_DELETED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_EVENT_DELETED&quot;</span>)]
     </span>Deleted,
     <span class="doccomment">/// a file was created.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_EVENT_CREATED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_EVENT_CREATED&quot;</span>)]
     </span>Created,
     <span class="doccomment">/// a file attribute was changed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_EVENT_ATTRIBUTE_CHANGED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_EVENT_ATTRIBUTE_CHANGED&quot;</span>)]
     </span>AttributeChanged,
     <span class="doccomment">/// the file location will soon be unmounted.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_EVENT_PRE_UNMOUNT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_EVENT_PRE_UNMOUNT&quot;</span>)]
     </span>PreUnmount,
     <span class="doccomment">/// the file location was unmounted.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_EVENT_UNMOUNTED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_EVENT_UNMOUNTED&quot;</span>)]
     </span>Unmounted,
     <span class="doccomment">/// the file was moved -- only sent if the
     ///  (deprecated) [`FileMonitorFlags::SEND_MOVED`][crate::FileMonitorFlags::SEND_MOVED] flag is set
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_EVENT_MOVED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_EVENT_MOVED&quot;</span>)]
     </span>Moved,
     <span class="doccomment">/// the file was renamed within the
     ///  current directory -- only sent if the [`FileMonitorFlags::WATCH_MOVES`][crate::FileMonitorFlags::WATCH_MOVES]
     ///  flag is set. Since: 2.46.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_EVENT_RENAMED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_EVENT_RENAMED&quot;</span>)]
     </span>Renamed,
     <span class="doccomment">/// the file was moved into the
     ///  monitored directory from another location -- only sent if the
     ///  [`FileMonitorFlags::WATCH_MOVES`][crate::FileMonitorFlags::WATCH_MOVES] flag is set. Since: 2.46.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_EVENT_MOVED_IN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_EVENT_MOVED_IN&quot;</span>)]
     </span>MovedIn,
     <span class="doccomment">/// the file was moved out of the
     ///  monitored directory to another location -- only sent if the
     ///  [`FileMonitorFlags::WATCH_MOVES`][crate::FileMonitorFlags::WATCH_MOVES] flag is set. Since: 2.46
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_EVENT_MOVED_OUT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_MONITOR_EVENT_MOVED_OUT&quot;</span>)]
     </span>MovedOut,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -5947,7 +5947,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>FileMonitorEvent {
     <span class="kw">type </span>GlibType = ffi::GFileMonitorEvent;
 
@@ -5969,7 +5969,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GFileMonitorEvent&gt; <span class="kw">for </span>FileMonitorEvent {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GFileMonitorEvent) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -6031,34 +6031,34 @@
 /// [`FileType`][crate::FileType] enumeration cannot precisely represent this important distinction,
 /// which is why all Windows symlinks will continue to be reported as
 /// [`Regular`][Self::Regular] or [`Directory`][Self::Directory].
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GFileType&quot;</span>)]
 </span><span class="kw">pub enum </span>FileType {
     <span class="doccomment">/// File&#39;s type is unknown.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_TYPE_UNKNOWN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_TYPE_UNKNOWN&quot;</span>)]
     </span>Unknown,
     <span class="doccomment">/// File handle represents a regular file.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_TYPE_REGULAR&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_TYPE_REGULAR&quot;</span>)]
     </span>Regular,
     <span class="doccomment">/// File handle represents a directory.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_TYPE_DIRECTORY&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_TYPE_DIRECTORY&quot;</span>)]
     </span>Directory,
     <span class="doccomment">/// File handle represents a symbolic link
     ///  (Unix systems).
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_TYPE_SYMBOLIC_LINK&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_TYPE_SYMBOLIC_LINK&quot;</span>)]
     </span>SymbolicLink,
     <span class="doccomment">/// File is a &quot;special&quot; file, such as a socket, fifo,
     ///  block device, or character device.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_TYPE_SPECIAL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_TYPE_SPECIAL&quot;</span>)]
     </span>Special,
     <span class="doccomment">/// File is a shortcut (Windows systems).
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_TYPE_SHORTCUT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_TYPE_SHORTCUT&quot;</span>)]
     </span>Shortcut,
     <span class="doccomment">/// File is a mountable location.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_FILE_TYPE_MOUNTABLE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_FILE_TYPE_MOUNTABLE&quot;</span>)]
     </span>Mountable,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -6081,7 +6081,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>FileType {
     <span class="kw">type </span>GlibType = ffi::GFileType;
 
@@ -6099,7 +6099,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GFileType&gt; <span class="kw">for </span>FileType {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GFileType) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -6169,166 +6169,166 @@
 ///
 /// See also `GPollableReturn` for a cheaper way of returning
 /// [`WouldBlock`][Self::WouldBlock] to callers without allocating a [`glib::Error`][crate::glib::Error].
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GIOErrorEnum&quot;</span>)]
 </span><span class="kw">pub enum </span>IOErrorEnum {
     <span class="doccomment">/// Generic error condition for when an operation fails
     ///  and no more specific [`IOErrorEnum`][crate::IOErrorEnum] value is defined.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_FAILED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_FAILED&quot;</span>)]
     </span>Failed,
     <span class="doccomment">/// File not found.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_NOT_FOUND&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_NOT_FOUND&quot;</span>)]
     </span>NotFound,
     <span class="doccomment">/// File already exists.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_EXISTS&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_EXISTS&quot;</span>)]
     </span>Exists,
     <span class="doccomment">/// File is a directory.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_IS_DIRECTORY&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_IS_DIRECTORY&quot;</span>)]
     </span>IsDirectory,
     <span class="doccomment">/// File is not a directory.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_NOT_DIRECTORY&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_NOT_DIRECTORY&quot;</span>)]
     </span>NotDirectory,
     <span class="doccomment">/// File is a directory that isn&#39;t empty.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_NOT_EMPTY&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_NOT_EMPTY&quot;</span>)]
     </span>NotEmpty,
     <span class="doccomment">/// File is not a regular file.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_NOT_REGULAR_FILE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_NOT_REGULAR_FILE&quot;</span>)]
     </span>NotRegularFile,
     <span class="doccomment">/// File is not a symbolic link.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_NOT_SYMBOLIC_LINK&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_NOT_SYMBOLIC_LINK&quot;</span>)]
     </span>NotSymbolicLink,
     <span class="doccomment">/// File cannot be mounted.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_NOT_MOUNTABLE_FILE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_NOT_MOUNTABLE_FILE&quot;</span>)]
     </span>NotMountableFile,
     <span class="doccomment">/// Filename is too many characters.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_FILENAME_TOO_LONG&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_FILENAME_TOO_LONG&quot;</span>)]
     </span>FilenameTooLong,
     <span class="doccomment">/// Filename is invalid or contains invalid characters.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_INVALID_FILENAME&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_INVALID_FILENAME&quot;</span>)]
     </span>InvalidFilename,
     <span class="doccomment">/// File contains too many symbolic links.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_TOO_MANY_LINKS&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_TOO_MANY_LINKS&quot;</span>)]
     </span>TooManyLinks,
     <span class="doccomment">/// No space left on drive.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_NO_SPACE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_NO_SPACE&quot;</span>)]
     </span>NoSpace,
     <span class="doccomment">/// Invalid argument.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_INVALID_ARGUMENT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_INVALID_ARGUMENT&quot;</span>)]
     </span>InvalidArgument,
     <span class="doccomment">/// Permission denied.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_PERMISSION_DENIED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_PERMISSION_DENIED&quot;</span>)]
     </span>PermissionDenied,
     <span class="doccomment">/// Operation (or one of its parameters) not supported
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_NOT_SUPPORTED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_NOT_SUPPORTED&quot;</span>)]
     </span>NotSupported,
     <span class="doccomment">/// File isn&#39;t mounted.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_NOT_MOUNTED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_NOT_MOUNTED&quot;</span>)]
     </span>NotMounted,
     <span class="doccomment">/// File is already mounted.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_ALREADY_MOUNTED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_ALREADY_MOUNTED&quot;</span>)]
     </span>AlreadyMounted,
     <span class="doccomment">/// File was closed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_CLOSED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_CLOSED&quot;</span>)]
     </span>Closed,
     <span class="doccomment">/// Operation was cancelled. See [`Cancellable`][crate::Cancellable].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_CANCELLED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_CANCELLED&quot;</span>)]
     </span>Cancelled,
     <span class="doccomment">/// Operations are still pending.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_PENDING&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_PENDING&quot;</span>)]
     </span>Pending,
     <span class="doccomment">/// File is read only.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_READ_ONLY&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_READ_ONLY&quot;</span>)]
     </span>ReadOnly,
     <span class="doccomment">/// Backup couldn&#39;t be created.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_CANT_CREATE_BACKUP&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_CANT_CREATE_BACKUP&quot;</span>)]
     </span>CantCreateBackup,
     <span class="doccomment">/// File&#39;s Entity Tag was incorrect.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_WRONG_ETAG&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_WRONG_ETAG&quot;</span>)]
     </span>WrongEtag,
     <span class="doccomment">/// Operation timed out.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_TIMED_OUT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_TIMED_OUT&quot;</span>)]
     </span>TimedOut,
     <span class="doccomment">/// Operation would be recursive.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_WOULD_RECURSE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_WOULD_RECURSE&quot;</span>)]
     </span>WouldRecurse,
     <span class="doccomment">/// File is busy.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_BUSY&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_BUSY&quot;</span>)]
     </span>Busy,
     <span class="doccomment">/// Operation would block.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_WOULD_BLOCK&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_WOULD_BLOCK&quot;</span>)]
     </span>WouldBlock,
     <span class="doccomment">/// Host couldn&#39;t be found (remote operations).
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_HOST_NOT_FOUND&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_HOST_NOT_FOUND&quot;</span>)]
     </span>HostNotFound,
     <span class="doccomment">/// Operation would merge files.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_WOULD_MERGE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_WOULD_MERGE&quot;</span>)]
     </span>WouldMerge,
     <span class="doccomment">/// Operation failed and a helper program has
     ///  already interacted with the user. Do not display any error dialog.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_FAILED_HANDLED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_FAILED_HANDLED&quot;</span>)]
     </span>FailedHandled,
     <span class="doccomment">/// The current process has too many files
     ///  open and can&#39;t open any more. Duplicate descriptors do count toward
     ///  this limit. Since 2.20
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_TOO_MANY_OPEN_FILES&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_TOO_MANY_OPEN_FILES&quot;</span>)]
     </span>TooManyOpenFiles,
     <span class="doccomment">/// The object has not been initialized. Since 2.22
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_NOT_INITIALIZED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_NOT_INITIALIZED&quot;</span>)]
     </span>NotInitialized,
     <span class="doccomment">/// The requested address is already in use. Since 2.22
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_ADDRESS_IN_USE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_ADDRESS_IN_USE&quot;</span>)]
     </span>AddressInUse,
     <span class="doccomment">/// Need more input to finish operation. Since 2.24
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_PARTIAL_INPUT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_PARTIAL_INPUT&quot;</span>)]
     </span>PartialInput,
     <span class="doccomment">/// The input data was invalid. Since 2.24
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_INVALID_DATA&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_INVALID_DATA&quot;</span>)]
     </span>InvalidData,
     <span class="doccomment">/// A remote object generated an error that
     ///  doesn&#39;t correspond to a locally registered [`glib::Error`][crate::glib::Error] error
     ///  domain. Use `g_dbus_error_get_remote_error()` to extract the D-Bus
     ///  error name and `g_dbus_error_strip_remote_error()` to fix up the
     ///  message so it matches what was received on the wire. Since 2.26.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_DBUS_ERROR&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_DBUS_ERROR&quot;</span>)]
     </span>DbusError,
     <span class="doccomment">/// Host unreachable. Since 2.26
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_HOST_UNREACHABLE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_HOST_UNREACHABLE&quot;</span>)]
     </span>HostUnreachable,
     <span class="doccomment">/// Network unreachable. Since 2.26
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_NETWORK_UNREACHABLE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_NETWORK_UNREACHABLE&quot;</span>)]
     </span>NetworkUnreachable,
     <span class="doccomment">/// Connection refused. Since 2.26
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_CONNECTION_REFUSED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_CONNECTION_REFUSED&quot;</span>)]
     </span>ConnectionRefused,
     <span class="doccomment">/// Connection to proxy server failed. Since 2.26
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_PROXY_FAILED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_PROXY_FAILED&quot;</span>)]
     </span>ProxyFailed,
     <span class="doccomment">/// Proxy authentication failed. Since 2.26
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_PROXY_AUTH_FAILED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_PROXY_AUTH_FAILED&quot;</span>)]
     </span>ProxyAuthFailed,
     <span class="doccomment">/// Proxy server needs authentication. Since 2.26
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_PROXY_NEED_AUTH&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_PROXY_NEED_AUTH&quot;</span>)]
     </span>ProxyNeedAuth,
     <span class="doccomment">/// Proxy connection is not allowed by ruleset.
     ///  Since 2.26
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_PROXY_NOT_ALLOWED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_PROXY_NOT_ALLOWED&quot;</span>)]
     </span>ProxyNotAllowed,
     <span class="doccomment">/// Broken pipe. Since 2.36
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_BROKEN_PIPE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_BROKEN_PIPE&quot;</span>)]
     </span>BrokenPipe,
     <span class="doccomment">/// Transport endpoint is not connected. Since 2.44
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_NOT_CONNECTED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_NOT_CONNECTED&quot;</span>)]
     </span>NotConnected,
     <span class="doccomment">/// Message too large. Since 2.48.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_IO_ERROR_MESSAGE_TOO_LARGE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_IO_ERROR_MESSAGE_TOO_LARGE&quot;</span>)]
     </span>MessageTooLarge,
     <span class="doccomment">/// No such device found. Since 2.74
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;G_IO_ERROR_NO_SUCH_DEVICE&quot;</span>)]
     </span>NoSuchDevice,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -6385,7 +6385,7 @@
                 <span class="self">Self</span>::BrokenPipe =&gt; <span class="string">&quot;BrokenPipe&quot;</span>,
                 <span class="self">Self</span>::NotConnected =&gt; <span class="string">&quot;NotConnected&quot;</span>,
                 <span class="self">Self</span>::MessageTooLarge =&gt; <span class="string">&quot;MessageTooLarge&quot;</span>,
-                <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
                 </span><span class="self">Self</span>::NoSuchDevice =&gt; <span class="string">&quot;NoSuchDevice&quot;</span>,
                 <span class="kw">_ </span>=&gt; <span class="string">&quot;Unknown&quot;</span>,
             }
@@ -6393,7 +6393,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>IOErrorEnum {
     <span class="kw">type </span>GlibType = ffi::GIOErrorEnum;
 
@@ -6446,14 +6446,14 @@
             <span class="self">Self</span>::BrokenPipe =&gt; ffi::G_IO_ERROR_BROKEN_PIPE,
             <span class="self">Self</span>::NotConnected =&gt; ffi::G_IO_ERROR_NOT_CONNECTED,
             <span class="self">Self</span>::MessageTooLarge =&gt; ffi::G_IO_ERROR_MESSAGE_TOO_LARGE,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span><span class="self">Self</span>::NoSuchDevice =&gt; ffi::G_IO_ERROR_NO_SUCH_DEVICE,
             <span class="self">Self</span>::__Unknown(value) =&gt; value,
         }
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GIOErrorEnum&gt; <span class="kw">for </span>IOErrorEnum {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GIOErrorEnum) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -6504,7 +6504,7 @@
             ffi::G_IO_ERROR_BROKEN_PIPE =&gt; <span class="self">Self</span>::BrokenPipe,
             ffi::G_IO_ERROR_NOT_CONNECTED =&gt; <span class="self">Self</span>::NotConnected,
             ffi::G_IO_ERROR_MESSAGE_TOO_LARGE =&gt; <span class="self">Self</span>::MessageTooLarge,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>ffi::G_IO_ERROR_NO_SUCH_DEVICE =&gt; <span class="self">Self</span>::NoSuchDevice,
             value =&gt; <span class="self">Self</span>::__Unknown(value),
         }
@@ -6569,7 +6569,7 @@
             ffi::G_IO_ERROR_BROKEN_PIPE =&gt; <span class="prelude-val">Some</span>(<span class="self">Self</span>::BrokenPipe),
             ffi::G_IO_ERROR_NOT_CONNECTED =&gt; <span class="prelude-val">Some</span>(<span class="self">Self</span>::NotConnected),
             ffi::G_IO_ERROR_MESSAGE_TOO_LARGE =&gt; <span class="prelude-val">Some</span>(<span class="self">Self</span>::MessageTooLarge),
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>ffi::G_IO_ERROR_NO_SUCH_DEVICE =&gt; <span class="prelude-val">Some</span>(<span class="self">Self</span>::NoSuchDevice),
             <span class="kw">_ </span>=&gt; <span class="prelude-val">Some</span>(<span class="self">Self</span>::Failed),
         }
@@ -6620,7 +6620,7 @@
 /// if (warning_level &gt; G_MEMORY_MONITOR_WARNING_LEVEL_LOW)
 ///   drop_caches ();
 /// ```
-</span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_64&quot;</span>)))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
@@ -6629,23 +6629,23 @@
     <span class="doccomment">/// Memory on the device is low, processes
     ///  should free up unneeded resources (for example, in-memory caches) so they can
     ///  be used elsewhere.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_MEMORY_MONITOR_WARNING_LEVEL_LOW&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_MEMORY_MONITOR_WARNING_LEVEL_LOW&quot;</span>)]
     </span>Low,
     <span class="doccomment">/// Same as [`Low`][Self::Low]
     ///  but the device has even less free memory, so processes should try harder to free
     ///  up unneeded resources. If your process does not need to stay running, it is a
     ///  good time for it to quit.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_MEMORY_MONITOR_WARNING_LEVEL_MEDIUM&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_MEMORY_MONITOR_WARNING_LEVEL_MEDIUM&quot;</span>)]
     </span>Medium,
     <span class="doccomment">/// The system will soon start terminating
     ///  processes to reclaim memory, including background processes.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_MEMORY_MONITOR_WARNING_LEVEL_CRITICAL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_MEMORY_MONITOR_WARNING_LEVEL_CRITICAL&quot;</span>)]
     </span>Critical,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_64&quot;</span>)))]
 </span><span class="kw">impl </span>fmt::Display <span class="kw">for </span>MemoryMonitorWarningLevel {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter) -&gt; fmt::Result {
@@ -6662,7 +6662,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_64&quot;</span>)))]
 #[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>MemoryMonitorWarningLevel {
@@ -6678,7 +6678,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_64&quot;</span>)))]
 #[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GMemoryMonitorWarningLevel&gt; <span class="kw">for </span>MemoryMonitorWarningLevel {
@@ -6692,7 +6692,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_64&quot;</span>)))]
 </span><span class="kw">impl </span>StaticType <span class="kw">for </span>MemoryMonitorWarningLevel {
     <span class="kw">fn </span>static_type() -&gt; Type {
@@ -6700,13 +6700,13 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_64&quot;</span>)))]
 </span><span class="kw">impl </span>glib::value::ValueType <span class="kw">for </span>MemoryMonitorWarningLevel {
     <span class="kw">type </span>Type = <span class="self">Self</span>;
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_64&quot;</span>)))]
 </span><span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span>MemoryMonitorWarningLevel {
     <span class="kw">type </span>Checker = glib::value::GenericValueTypeChecker&lt;<span class="self">Self</span>&gt;;
@@ -6716,7 +6716,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_64&quot;</span>)))]
 </span><span class="kw">impl </span>ToValue <span class="kw">for </span>MemoryMonitorWarningLevel {
     <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::Value {
@@ -6734,23 +6734,23 @@
 
 <span class="doccomment">/// [`MountOperationResult`][crate::MountOperationResult] is returned as a result when a request for
 /// information is send by the mounting operation.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GMountOperationResult&quot;</span>)]
 </span><span class="kw">pub enum </span>MountOperationResult {
     <span class="doccomment">/// The request was fulfilled and the
     ///  user specified data is now available
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_MOUNT_OPERATION_HANDLED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_MOUNT_OPERATION_HANDLED&quot;</span>)]
     </span>Handled,
     <span class="doccomment">/// The user requested the mount operation
     ///  to be aborted
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_MOUNT_OPERATION_ABORTED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_MOUNT_OPERATION_ABORTED&quot;</span>)]
     </span>Aborted,
     <span class="doccomment">/// The request was unhandled (i.e. not
     ///  implemented)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_MOUNT_OPERATION_UNHANDLED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_MOUNT_OPERATION_UNHANDLED&quot;</span>)]
     </span>Unhandled,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -6769,7 +6769,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>MountOperationResult {
     <span class="kw">type </span>GlibType = ffi::GMountOperationResult;
 
@@ -6783,7 +6783,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GMountOperationResult&gt; <span class="kw">for </span>MountOperationResult {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GMountOperationResult) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -6828,29 +6828,29 @@
 }
 
 <span class="doccomment">/// The host&#39;s network connectivity state, as reported by [`NetworkMonitor`][crate::NetworkMonitor].
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GNetworkConnectivity&quot;</span>)]
 </span><span class="kw">pub enum </span>NetworkConnectivity {
     <span class="doccomment">/// The host is not configured with a
     ///  route to the Internet; it may or may not be connected to a local
     ///  network.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_NETWORK_CONNECTIVITY_LOCAL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_NETWORK_CONNECTIVITY_LOCAL&quot;</span>)]
     </span>Local,
     <span class="doccomment">/// The host is connected to a network, but
     ///  does not appear to be able to reach the full Internet, perhaps
     ///  due to upstream network problems.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_NETWORK_CONNECTIVITY_LIMITED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_NETWORK_CONNECTIVITY_LIMITED&quot;</span>)]
     </span>Limited,
     <span class="doccomment">/// The host is behind a captive portal and
     ///  cannot reach the full Internet.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_NETWORK_CONNECTIVITY_PORTAL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_NETWORK_CONNECTIVITY_PORTAL&quot;</span>)]
     </span>Portal,
     <span class="doccomment">/// The host is connected to a network, and
     ///  appears to be able to reach the full Internet.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_NETWORK_CONNECTIVITY_FULL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_NETWORK_CONNECTIVITY_FULL&quot;</span>)]
     </span>Full,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -6870,7 +6870,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>NetworkConnectivity {
     <span class="kw">type </span>GlibType = ffi::GNetworkConnectivity;
 
@@ -6885,7 +6885,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GNetworkConnectivity&gt; <span class="kw">for </span>NetworkConnectivity {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GNetworkConnectivity) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -6931,31 +6931,31 @@
 }
 
 <span class="doccomment">/// Priority levels for `GNotifications`.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GNotificationPriority&quot;</span>)]
 </span><span class="kw">pub enum </span>NotificationPriority {
     <span class="doccomment">/// the default priority, to be used for the
     ///  majority of notifications (for example email messages, software updates,
     ///  completed download/sync operations)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_NOTIFICATION_PRIORITY_NORMAL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_NOTIFICATION_PRIORITY_NORMAL&quot;</span>)]
     </span>Normal,
     <span class="doccomment">/// for notifications that do not require
     ///  immediate attention - typically used for contextual background
     ///  information, such as contact birthdays or local weather
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_NOTIFICATION_PRIORITY_LOW&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_NOTIFICATION_PRIORITY_LOW&quot;</span>)]
     </span>Low,
     <span class="doccomment">/// for events that require more attention,
     ///  usually because responses are time-sensitive (for example chat and SMS
     ///  messages or alarms)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_NOTIFICATION_PRIORITY_HIGH&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_NOTIFICATION_PRIORITY_HIGH&quot;</span>)]
     </span>High,
     <span class="doccomment">/// for urgent notifications, or notifications
     ///  that require a response in a short space of time (for example phone calls
     ///  or emergency warnings)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_NOTIFICATION_PRIORITY_URGENT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_NOTIFICATION_PRIORITY_URGENT&quot;</span>)]
     </span>Urgent,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -6975,7 +6975,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>NotificationPriority {
     <span class="kw">type </span>GlibType = ffi::GNotificationPriority;
 
@@ -6990,7 +6990,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GNotificationPriority&gt; <span class="kw">for </span>NotificationPriority {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GNotificationPriority) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -7039,20 +7039,20 @@
 ///
 /// `Gvfs` stores passwords in the Gnome keyring when this flag allows it
 /// to, and later retrieves it again from there.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GPasswordSave&quot;</span>)]
 </span><span class="kw">pub enum </span>PasswordSave {
     <span class="doccomment">/// never save a password.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_PASSWORD_SAVE_NEVER&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_PASSWORD_SAVE_NEVER&quot;</span>)]
     </span>Never,
     <span class="doccomment">/// save a password for the session.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_PASSWORD_SAVE_FOR_SESSION&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_PASSWORD_SAVE_FOR_SESSION&quot;</span>)]
     </span>ForSession,
     <span class="doccomment">/// save a password permanently.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_PASSWORD_SAVE_PERMANENTLY&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_PASSWORD_SAVE_PERMANENTLY&quot;</span>)]
     </span>Permanently,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -7071,7 +7071,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>PasswordSave {
     <span class="kw">type </span>GlibType = ffi::GPasswordSave;
 
@@ -7085,7 +7085,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GPasswordSave&gt; <span class="kw">for </span>PasswordSave {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GPasswordSave) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -7131,22 +7131,22 @@
 
 <span class="doccomment">/// An error code used with `G_RESOLVER_ERROR` in a [`glib::Error`][crate::glib::Error] returned
 /// from a [`Resolver`][crate::Resolver] routine.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GResolverError&quot;</span>)]
 </span><span class="kw">pub enum </span>ResolverError {
     <span class="doccomment">/// the requested name/address/service was not
     ///  found
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_RESOLVER_ERROR_NOT_FOUND&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_RESOLVER_ERROR_NOT_FOUND&quot;</span>)]
     </span>NotFound,
     <span class="doccomment">/// the requested information could not
     ///  be looked up due to a network error or similar problem
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_RESOLVER_ERROR_TEMPORARY_FAILURE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_RESOLVER_ERROR_TEMPORARY_FAILURE&quot;</span>)]
     </span>TemporaryFailure,
     <span class="doccomment">/// unknown error
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_RESOLVER_ERROR_INTERNAL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_RESOLVER_ERROR_INTERNAL&quot;</span>)]
     </span>Internal,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -7165,7 +7165,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>ResolverError {
     <span class="kw">type </span>GlibType = ffi::GResolverError;
 
@@ -7179,7 +7179,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GResolverError&gt; <span class="kw">for </span>ResolverError {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GResolverError) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -7272,26 +7272,26 @@
 ///
 /// [`Ns`][Self::Ns] records are returned as variants with the signature
 /// `(s)`, representing a string of the hostname of the name server.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GResolverRecordType&quot;</span>)]
 </span><span class="kw">pub enum </span>ResolverRecordType {
     <span class="doccomment">/// look up DNS SRV records for a domain
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_RESOLVER_RECORD_SRV&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_RESOLVER_RECORD_SRV&quot;</span>)]
     </span>Srv,
     <span class="doccomment">/// look up DNS MX records for a domain
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_RESOLVER_RECORD_MX&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_RESOLVER_RECORD_MX&quot;</span>)]
     </span>Mx,
     <span class="doccomment">/// look up DNS TXT records for a name
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_RESOLVER_RECORD_TXT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_RESOLVER_RECORD_TXT&quot;</span>)]
     </span>Txt,
     <span class="doccomment">/// look up DNS SOA records for a zone
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_RESOLVER_RECORD_SOA&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_RESOLVER_RECORD_SOA&quot;</span>)]
     </span>Soa,
     <span class="doccomment">/// look up DNS NS records for a domain
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_RESOLVER_RECORD_NS&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_RESOLVER_RECORD_NS&quot;</span>)]
     </span>Ns,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -7312,7 +7312,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>ResolverRecordType {
     <span class="kw">type </span>GlibType = ffi::GResolverRecordType;
 
@@ -7328,7 +7328,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GResolverRecordType&gt; <span class="kw">for </span>ResolverRecordType {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GResolverRecordType) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -7376,17 +7376,17 @@
 
 <span class="doccomment">/// An error code used with `G_RESOURCE_ERROR` in a [`glib::Error`][crate::glib::Error] returned
 /// from a [`Resource`][crate::Resource] routine.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GResourceError&quot;</span>)]
 </span><span class="kw">pub enum </span>ResourceError {
     <span class="doccomment">/// no file was found at the requested path
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_RESOURCE_ERROR_NOT_FOUND&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_RESOURCE_ERROR_NOT_FOUND&quot;</span>)]
     </span>NotFound,
     <span class="doccomment">/// unknown error
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_RESOURCE_ERROR_INTERNAL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_RESOURCE_ERROR_INTERNAL&quot;</span>)]
     </span>Internal,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -7404,7 +7404,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>ResourceError {
     <span class="kw">type </span>GlibType = ffi::GResourceError;
 
@@ -7417,7 +7417,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GResourceError&gt; <span class="kw">for </span>ResourceError {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GResourceError) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -7482,45 +7482,45 @@
 /// `signal::SocketClient::event` signal for more details.
 ///
 /// Additional values may be added to this type in the future.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GSocketClientEvent&quot;</span>)]
 </span><span class="kw">pub enum </span>SocketClientEvent {
     <span class="doccomment">/// The client is doing a DNS lookup.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_CLIENT_RESOLVING&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_CLIENT_RESOLVING&quot;</span>)]
     </span>Resolving,
     <span class="doccomment">/// The client has completed a DNS lookup.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_CLIENT_RESOLVED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_CLIENT_RESOLVED&quot;</span>)]
     </span>Resolved,
     <span class="doccomment">/// The client is connecting to a remote
     ///  host (either a proxy or the destination server).
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_CLIENT_CONNECTING&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_CLIENT_CONNECTING&quot;</span>)]
     </span>Connecting,
     <span class="doccomment">/// The client has connected to a remote
     ///  host.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_CLIENT_CONNECTED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_CLIENT_CONNECTED&quot;</span>)]
     </span>Connected,
     <span class="doccomment">/// The client is negotiating
     ///  with a proxy to connect to the destination server.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_CLIENT_PROXY_NEGOTIATING&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_CLIENT_PROXY_NEGOTIATING&quot;</span>)]
     </span>ProxyNegotiating,
     <span class="doccomment">/// The client has negotiated
     ///  with the proxy server.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_CLIENT_PROXY_NEGOTIATED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_CLIENT_PROXY_NEGOTIATED&quot;</span>)]
     </span>ProxyNegotiated,
     <span class="doccomment">/// The client is performing a
     ///  TLS handshake.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_CLIENT_TLS_HANDSHAKING&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_CLIENT_TLS_HANDSHAKING&quot;</span>)]
     </span>TlsHandshaking,
     <span class="doccomment">/// The client has performed a
     ///  TLS handshake.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_CLIENT_TLS_HANDSHAKED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_CLIENT_TLS_HANDSHAKED&quot;</span>)]
     </span>TlsHandshaked,
     <span class="doccomment">/// The client is done with a particular
     ///  [`SocketConnectable`][crate::SocketConnectable].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_CLIENT_COMPLETE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_CLIENT_COMPLETE&quot;</span>)]
     </span>Complete,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -7545,7 +7545,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>SocketClientEvent {
     <span class="kw">type </span>GlibType = ffi::GSocketClientEvent;
 
@@ -7565,7 +7565,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GSocketClientEvent&gt; <span class="kw">for </span>SocketClientEvent {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GSocketClientEvent) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -7618,23 +7618,23 @@
 <span class="doccomment">/// The protocol family of a [`SocketAddress`][crate::SocketAddress]. (These values are
 /// identical to the system defines `AF_INET`, `AF_INET6` and `AF_UNIX`,
 /// if available.)
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GSocketFamily&quot;</span>)]
 </span><span class="kw">pub enum </span>SocketFamily {
     <span class="doccomment">/// no address family
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_FAMILY_INVALID&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_FAMILY_INVALID&quot;</span>)]
     </span>Invalid,
     <span class="doccomment">/// the UNIX domain family
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_FAMILY_UNIX&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_FAMILY_UNIX&quot;</span>)]
     </span>Unix,
     <span class="doccomment">/// the IPv4 family
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_FAMILY_IPV4&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_FAMILY_IPV4&quot;</span>)]
     </span>Ipv4,
     <span class="doccomment">/// the IPv6 family
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_FAMILY_IPV6&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_FAMILY_IPV6&quot;</span>)]
     </span>Ipv6,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -7654,7 +7654,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>SocketFamily {
     <span class="kw">type </span>GlibType = ffi::GSocketFamily;
 
@@ -7669,7 +7669,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GSocketFamily&gt; <span class="kw">for </span>SocketFamily {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GSocketFamily) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -7718,25 +7718,25 @@
 /// `signal::SocketListener::event` signal for more details.
 ///
 /// Additional values may be added to this type in the future.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GSocketListenerEvent&quot;</span>)]
 </span><span class="kw">pub enum </span>SocketListenerEvent {
     <span class="doccomment">/// The listener is about to bind a socket.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_LISTENER_BINDING&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_LISTENER_BINDING&quot;</span>)]
     </span>Binding,
     <span class="doccomment">/// The listener has bound a socket.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_LISTENER_BOUND&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_LISTENER_BOUND&quot;</span>)]
     </span>Bound,
     <span class="doccomment">/// The listener is about to start
     ///  listening on this socket.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_LISTENER_LISTENING&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_LISTENER_LISTENING&quot;</span>)]
     </span>Listening,
     <span class="doccomment">/// The listener is now listening on
     ///  this socket.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_LISTENER_LISTENED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_LISTENER_LISTENED&quot;</span>)]
     </span>Listened,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -7756,7 +7756,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>SocketListenerEvent {
     <span class="kw">type </span>GlibType = ffi::GSocketListenerEvent;
 
@@ -7771,7 +7771,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GSocketListenerEvent&gt; <span class="kw">for </span>SocketListenerEvent {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GSocketListenerEvent) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -7823,26 +7823,26 @@
 /// This enum contains a set of commonly available and used protocols. You
 /// can also pass any other identifiers handled by the platform in order to
 /// use protocols not listed here.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GSocketProtocol&quot;</span>)]
 </span><span class="kw">pub enum </span>SocketProtocol {
     <span class="doccomment">/// The protocol type is unknown
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_PROTOCOL_UNKNOWN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_PROTOCOL_UNKNOWN&quot;</span>)]
     </span>Unknown,
     <span class="doccomment">/// The default protocol for the family/type
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_PROTOCOL_DEFAULT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_PROTOCOL_DEFAULT&quot;</span>)]
     </span>Default,
     <span class="doccomment">/// TCP over IP
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_PROTOCOL_TCP&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_PROTOCOL_TCP&quot;</span>)]
     </span>Tcp,
     <span class="doccomment">/// UDP over IP
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_PROTOCOL_UDP&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_PROTOCOL_UDP&quot;</span>)]
     </span>Udp,
     <span class="doccomment">/// SCTP over IP
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_PROTOCOL_SCTP&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_PROTOCOL_SCTP&quot;</span>)]
     </span>Sctp,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -7863,7 +7863,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>SocketProtocol {
     <span class="kw">type </span>GlibType = ffi::GSocketProtocol;
 
@@ -7879,7 +7879,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GSocketProtocol&gt; <span class="kw">for </span>SocketProtocol {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GSocketProtocol) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -7927,25 +7927,25 @@
 
 <span class="doccomment">/// Flags used when creating a [`Socket`][crate::Socket]. Some protocols may not implement
 /// all the socket types.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GSocketType&quot;</span>)]
 </span><span class="kw">pub enum </span>SocketType {
     <span class="doccomment">/// Type unknown or wrong
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_TYPE_INVALID&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_TYPE_INVALID&quot;</span>)]
     </span>Invalid,
     <span class="doccomment">/// Reliable connection-based byte streams (e.g. TCP).
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_TYPE_STREAM&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_TYPE_STREAM&quot;</span>)]
     </span>Stream,
     <span class="doccomment">/// Connectionless, unreliable datagram passing.
     ///  (e.g. UDP)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_TYPE_DATAGRAM&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_TYPE_DATAGRAM&quot;</span>)]
     </span>Datagram,
     <span class="doccomment">/// Reliable connection-based passing of datagrams
     ///  of fixed maximum length (e.g. SCTP).
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_SOCKET_TYPE_SEQPACKET&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SOCKET_TYPE_SEQPACKET&quot;</span>)]
     </span>Seqpacket,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -7965,7 +7965,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>SocketType {
     <span class="kw">type </span>GlibType = ffi::GSocketType;
 
@@ -7980,7 +7980,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GSocketType&gt; <span class="kw">for </span>SocketType {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GSocketType) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -8026,20 +8026,20 @@
 }
 
 <span class="doccomment">/// The client authentication mode for a [`TlsServerConnection`][crate::TlsServerConnection].
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GTlsAuthenticationMode&quot;</span>)]
 </span><span class="kw">pub enum </span>TlsAuthenticationMode {
     <span class="doccomment">/// client authentication not required
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_AUTHENTICATION_NONE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_AUTHENTICATION_NONE&quot;</span>)]
     </span><span class="prelude-val">None</span>,
     <span class="doccomment">/// client authentication is requested
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_AUTHENTICATION_REQUESTED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_AUTHENTICATION_REQUESTED&quot;</span>)]
     </span>Requested,
     <span class="doccomment">/// client authentication is required
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_AUTHENTICATION_REQUIRED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_AUTHENTICATION_REQUIRED&quot;</span>)]
     </span>Required,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -8058,7 +8058,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>TlsAuthenticationMode {
     <span class="kw">type </span>GlibType = ffi::GTlsAuthenticationMode;
 
@@ -8072,7 +8072,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GTlsAuthenticationMode&gt; <span class="kw">for </span>TlsAuthenticationMode {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GTlsAuthenticationMode) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -8119,14 +8119,14 @@
 <span class="doccomment">/// Flags for [`TlsInteractionExt::request_certificate()`][crate::prelude::TlsInteractionExt::request_certificate()],
 /// [`TlsInteractionExt::request_certificate_async()`][crate::prelude::TlsInteractionExt::request_certificate_async()], and
 /// [`TlsInteractionExt::invoke_request_certificate()`][crate::prelude::TlsInteractionExt::invoke_request_certificate()].
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GTlsCertificateRequestFlags&quot;</span>)]
 </span><span class="kw">pub enum </span>TlsCertificateRequestFlags {
     <span class="doccomment">/// No flags
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_REQUEST_NONE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_CERTIFICATE_REQUEST_NONE&quot;</span>)]
     </span><span class="prelude-val">None</span>,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -8143,7 +8143,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>TlsCertificateRequestFlags {
     <span class="kw">type </span>GlibType = ffi::GTlsCertificateRequestFlags;
 
@@ -8155,7 +8155,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GTlsCertificateRequestFlags&gt; <span class="kw">for </span>TlsCertificateRequestFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GTlsCertificateRequestFlags) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -8201,7 +8201,7 @@
 /// or `GDtlsConnection`, as documented by RFC 5929 or RFC 9266. The
 /// [`tls-unique-for-telnet`](https://tools.ietf.org/html/rfc5929`section`-5)
 /// binding type is not currently implemented.
-</span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
@@ -8209,23 +8209,23 @@
 </span><span class="kw">pub enum </span>TlsChannelBindingType {
     <span class="doccomment">/// [`tls-unique`](https://tools.ietf.org/html/rfc5929`section`-3) binding
     ///  type
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_CHANNEL_BINDING_TLS_UNIQUE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_CHANNEL_BINDING_TLS_UNIQUE&quot;</span>)]
     </span>Unique,
     <span class="doccomment">/// [`tls-server-end-point`](https://tools.ietf.org/html/rfc5929`section`-4)
     ///  binding type
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_CHANNEL_BINDING_TLS_SERVER_END_POINT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_CHANNEL_BINDING_TLS_SERVER_END_POINT&quot;</span>)]
     </span>ServerEndPoint,
     <span class="doccomment">/// [`tls-exporter`](https://www.rfc-editor.org/rfc/rfc9266.html) binding
     ///  type. Since: 2.74
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;G_TLS_CHANNEL_BINDING_TLS_EXPORTER&quot;</span>)]
     </span>Exporter,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
 </span><span class="kw">impl </span>fmt::Display <span class="kw">for </span>TlsChannelBindingType {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter) -&gt; fmt::Result {
@@ -8235,7 +8235,7 @@
             <span class="kw">match </span><span class="kw-2">*</span><span class="self">self </span>{
                 <span class="self">Self</span>::Unique =&gt; <span class="string">&quot;Unique&quot;</span>,
                 <span class="self">Self</span>::ServerEndPoint =&gt; <span class="string">&quot;ServerEndPoint&quot;</span>,
-                <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
                 </span><span class="self">Self</span>::Exporter =&gt; <span class="string">&quot;Exporter&quot;</span>,
                 <span class="kw">_ </span>=&gt; <span class="string">&quot;Unknown&quot;</span>,
             }
@@ -8243,7 +8243,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
 #[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>TlsChannelBindingType {
@@ -8253,14 +8253,14 @@
         <span class="kw">match </span><span class="self">self </span>{
             <span class="self">Self</span>::Unique =&gt; ffi::G_TLS_CHANNEL_BINDING_TLS_UNIQUE,
             <span class="self">Self</span>::ServerEndPoint =&gt; ffi::G_TLS_CHANNEL_BINDING_TLS_SERVER_END_POINT,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span><span class="self">Self</span>::Exporter =&gt; ffi::G_TLS_CHANNEL_BINDING_TLS_EXPORTER,
             <span class="self">Self</span>::__Unknown(value) =&gt; value,
         }
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
 #[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GTlsChannelBindingType&gt; <span class="kw">for </span>TlsChannelBindingType {
@@ -8268,14 +8268,14 @@
         <span class="kw">match </span>value {
             ffi::G_TLS_CHANNEL_BINDING_TLS_UNIQUE =&gt; <span class="self">Self</span>::Unique,
             ffi::G_TLS_CHANNEL_BINDING_TLS_SERVER_END_POINT =&gt; <span class="self">Self</span>::ServerEndPoint,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>ffi::G_TLS_CHANNEL_BINDING_TLS_EXPORTER =&gt; <span class="self">Self</span>::Exporter,
             value =&gt; <span class="self">Self</span>::__Unknown(value),
         }
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
 </span><span class="kw">impl </span>StaticType <span class="kw">for </span>TlsChannelBindingType {
     <span class="kw">fn </span>static_type() -&gt; Type {
@@ -8283,13 +8283,13 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
 </span><span class="kw">impl </span>glib::value::ValueType <span class="kw">for </span>TlsChannelBindingType {
     <span class="kw">type </span>Type = <span class="self">Self</span>;
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
 </span><span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span>TlsChannelBindingType {
     <span class="kw">type </span>Checker = glib::value::GenericValueTypeChecker&lt;<span class="self">Self</span>&gt;;
@@ -8299,7 +8299,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
 </span><span class="kw">impl </span>ToValue <span class="kw">for </span>TlsChannelBindingType {
     <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::Value {
@@ -8318,18 +8318,18 @@
 <span class="doccomment">/// Flags for [`TlsDatabaseExt::lookup_certificate_for_handle()`][crate::prelude::TlsDatabaseExt::lookup_certificate_for_handle()],
 /// [`TlsDatabaseExt::lookup_certificate_issuer()`][crate::prelude::TlsDatabaseExt::lookup_certificate_issuer()],
 /// and [`TlsDatabaseExt::lookup_certificates_issued_by()`][crate::prelude::TlsDatabaseExt::lookup_certificates_issued_by()].
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GTlsDatabaseLookupFlags&quot;</span>)]
 </span><span class="kw">pub enum </span>TlsDatabaseLookupFlags {
     <span class="doccomment">/// No lookup flags
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_DATABASE_LOOKUP_NONE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_DATABASE_LOOKUP_NONE&quot;</span>)]
     </span><span class="prelude-val">None</span>,
     <span class="doccomment">/// Restrict lookup to certificates that have
     ///  a private key.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_DATABASE_LOOKUP_KEYPAIR&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_DATABASE_LOOKUP_KEYPAIR&quot;</span>)]
     </span>Keypair,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -8347,7 +8347,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>TlsDatabaseLookupFlags {
     <span class="kw">type </span>GlibType = ffi::GTlsDatabaseLookupFlags;
 
@@ -8360,7 +8360,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GTlsDatabaseLookupFlags&gt; <span class="kw">for </span>TlsDatabaseLookupFlags {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GTlsDatabaseLookupFlags) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -8405,50 +8405,50 @@
 
 <span class="doccomment">/// An error code used with `G_TLS_ERROR` in a [`glib::Error`][crate::glib::Error] returned from a
 /// TLS-related routine.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GTlsError&quot;</span>)]
 </span><span class="kw">pub enum </span>TlsError {
     <span class="doccomment">/// No TLS provider is available
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_ERROR_UNAVAILABLE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_ERROR_UNAVAILABLE&quot;</span>)]
     </span>Unavailable,
     <span class="doccomment">/// Miscellaneous TLS error
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_ERROR_MISC&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_ERROR_MISC&quot;</span>)]
     </span>Misc,
     <span class="doccomment">/// The certificate presented could not
     ///  be parsed or failed validation.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_ERROR_BAD_CERTIFICATE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_ERROR_BAD_CERTIFICATE&quot;</span>)]
     </span>BadCertificate,
     <span class="doccomment">/// The TLS handshake failed because the
     ///  peer does not seem to be a TLS server.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_ERROR_NOT_TLS&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_ERROR_NOT_TLS&quot;</span>)]
     </span>NotTls,
     <span class="doccomment">/// The TLS handshake failed because the
     ///  peer&#39;s certificate was not acceptable.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_ERROR_HANDSHAKE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_ERROR_HANDSHAKE&quot;</span>)]
     </span>Handshake,
     <span class="doccomment">/// The TLS handshake failed because
     ///  the server requested a client-side certificate, but none was
     ///  provided. See [`TlsConnectionExt::set_certificate()`][crate::prelude::TlsConnectionExt::set_certificate()].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_ERROR_CERTIFICATE_REQUIRED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_ERROR_CERTIFICATE_REQUIRED&quot;</span>)]
     </span>CertificateRequired,
     <span class="doccomment">/// The TLS connection was closed without proper
     ///  notice, which may indicate an attack. See
     ///  [`TlsConnectionExt::set_require_close_notify()`][crate::prelude::TlsConnectionExt::set_require_close_notify()].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_ERROR_EOF&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_ERROR_EOF&quot;</span>)]
     </span>Eof,
     <span class="doccomment">/// The TLS handshake failed
     ///  because the client sent the fallback SCSV, indicating a protocol
     ///  downgrade attack. Since: 2.60
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_ERROR_INAPPROPRIATE_FALLBACK&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_ERROR_INAPPROPRIATE_FALLBACK&quot;</span>)]
     </span>InappropriateFallback,
     <span class="doccomment">/// The certificate failed
     ///  to load because a password was incorrect. Since: 2.72
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;G_TLS_ERROR_BAD_CERTIFICATE_PASSWORD&quot;</span>)]
     </span>BadCertificatePassword,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -8466,7 +8466,7 @@
                 <span class="self">Self</span>::CertificateRequired =&gt; <span class="string">&quot;CertificateRequired&quot;</span>,
                 <span class="self">Self</span>::Eof =&gt; <span class="string">&quot;Eof&quot;</span>,
                 <span class="self">Self</span>::InappropriateFallback =&gt; <span class="string">&quot;InappropriateFallback&quot;</span>,
-                <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+                <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
                 </span><span class="self">Self</span>::BadCertificatePassword =&gt; <span class="string">&quot;BadCertificatePassword&quot;</span>,
                 <span class="kw">_ </span>=&gt; <span class="string">&quot;Unknown&quot;</span>,
             }
@@ -8474,7 +8474,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>TlsError {
     <span class="kw">type </span>GlibType = ffi::GTlsError;
 
@@ -8488,14 +8488,14 @@
             <span class="self">Self</span>::CertificateRequired =&gt; ffi::G_TLS_ERROR_CERTIFICATE_REQUIRED,
             <span class="self">Self</span>::Eof =&gt; ffi::G_TLS_ERROR_EOF,
             <span class="self">Self</span>::InappropriateFallback =&gt; ffi::G_TLS_ERROR_INAPPROPRIATE_FALLBACK,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span><span class="self">Self</span>::BadCertificatePassword =&gt; ffi::G_TLS_ERROR_BAD_CERTIFICATE_PASSWORD,
             <span class="self">Self</span>::__Unknown(value) =&gt; value,
         }
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GTlsError&gt; <span class="kw">for </span>TlsError {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GTlsError) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -8507,7 +8507,7 @@
             ffi::G_TLS_ERROR_CERTIFICATE_REQUIRED =&gt; <span class="self">Self</span>::CertificateRequired,
             ffi::G_TLS_ERROR_EOF =&gt; <span class="self">Self</span>::Eof,
             ffi::G_TLS_ERROR_INAPPROPRIATE_FALLBACK =&gt; <span class="self">Self</span>::InappropriateFallback,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>ffi::G_TLS_ERROR_BAD_CERTIFICATE_PASSWORD =&gt; <span class="self">Self</span>::BadCertificatePassword,
             value =&gt; <span class="self">Self</span>::__Unknown(value),
         }
@@ -8533,7 +8533,7 @@
             ffi::G_TLS_ERROR_CERTIFICATE_REQUIRED =&gt; <span class="prelude-val">Some</span>(<span class="self">Self</span>::CertificateRequired),
             ffi::G_TLS_ERROR_EOF =&gt; <span class="prelude-val">Some</span>(<span class="self">Self</span>::Eof),
             ffi::G_TLS_ERROR_INAPPROPRIATE_FALLBACK =&gt; <span class="prelude-val">Some</span>(<span class="self">Self</span>::InappropriateFallback),
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>ffi::G_TLS_ERROR_BAD_CERTIFICATE_PASSWORD =&gt; <span class="prelude-val">Some</span>(<span class="self">Self</span>::BadCertificatePassword),
             value =&gt; <span class="prelude-val">Some</span>(<span class="self">Self</span>::__Unknown(value)),
         }
@@ -8574,23 +8574,23 @@
 
 <span class="doccomment">/// [`TlsInteractionResult`][crate::TlsInteractionResult] is returned by various functions in [`TlsInteraction`][crate::TlsInteraction]
 /// when finishing an interaction request.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GTlsInteractionResult&quot;</span>)]
 </span><span class="kw">pub enum </span>TlsInteractionResult {
     <span class="doccomment">/// The interaction was unhandled (i.e. not
     ///  implemented).
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_INTERACTION_UNHANDLED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_INTERACTION_UNHANDLED&quot;</span>)]
     </span>Unhandled,
     <span class="doccomment">/// The interaction completed, and resulting data
     ///  is available.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_INTERACTION_HANDLED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_INTERACTION_HANDLED&quot;</span>)]
     </span>Handled,
     <span class="doccomment">/// The interaction has failed, or was cancelled.
     ///  and the operation should be aborted.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_INTERACTION_FAILED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_INTERACTION_FAILED&quot;</span>)]
     </span>Failed,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -8609,7 +8609,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>TlsInteractionResult {
     <span class="kw">type </span>GlibType = ffi::GTlsInteractionResult;
 
@@ -8623,7 +8623,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GTlsInteractionResult&gt; <span class="kw">for </span>TlsInteractionResult {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GTlsInteractionResult) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -8676,41 +8676,41 @@
 /// protocol version that GLib does not yet know about. This means that
 /// it&#39;s possible for an unknown DTLS protocol version to compare less
 /// than the TLS protocol versions.
-</span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GTlsProtocolVersion&quot;</span>)]
 </span><span class="kw">pub enum </span>TlsProtocolVersion {
     <span class="doccomment">/// No protocol version or unknown protocol version
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_PROTOCOL_VERSION_UNKNOWN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_PROTOCOL_VERSION_UNKNOWN&quot;</span>)]
     </span>Unknown,
     <span class="doccomment">/// SSL 3.0, which is insecure and should not be used
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_PROTOCOL_VERSION_SSL_3_0&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_PROTOCOL_VERSION_SSL_3_0&quot;</span>)]
     </span>Ssl30,
     <span class="doccomment">/// TLS 1.0, which is insecure and should not be used
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_PROTOCOL_VERSION_TLS_1_0&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_PROTOCOL_VERSION_TLS_1_0&quot;</span>)]
     </span>Tls10,
     <span class="doccomment">/// TLS 1.1, which is insecure and should not be used
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_PROTOCOL_VERSION_TLS_1_1&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_PROTOCOL_VERSION_TLS_1_1&quot;</span>)]
     </span>Tls11,
     <span class="doccomment">/// TLS 1.2, defined by [RFC 5246](https://datatracker.ietf.org/doc/html/rfc5246)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_PROTOCOL_VERSION_TLS_1_2&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_PROTOCOL_VERSION_TLS_1_2&quot;</span>)]
     </span>Tls12,
     <span class="doccomment">/// TLS 1.3, defined by [RFC 8446](https://datatracker.ietf.org/doc/html/rfc8446)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_PROTOCOL_VERSION_TLS_1_3&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_PROTOCOL_VERSION_TLS_1_3&quot;</span>)]
     </span>Tls13,
     <span class="doccomment">/// DTLS 1.0, which is insecure and should not be used
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_PROTOCOL_VERSION_DTLS_1_0&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_PROTOCOL_VERSION_DTLS_1_0&quot;</span>)]
     </span>Dtls10,
     <span class="doccomment">/// DTLS 1.2, defined by [RFC 6347](https://datatracker.ietf.org/doc/html/rfc6347)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_PROTOCOL_VERSION_DTLS_1_2&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_PROTOCOL_VERSION_DTLS_1_2&quot;</span>)]
     </span>Dtls12,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
 </span><span class="kw">impl </span>fmt::Display <span class="kw">for </span>TlsProtocolVersion {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter) -&gt; fmt::Result {
@@ -8732,7 +8732,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
 #[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>TlsProtocolVersion {
@@ -8753,7 +8753,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
 #[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GTlsProtocolVersion&gt; <span class="kw">for </span>TlsProtocolVersion {
@@ -8772,7 +8772,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
 </span><span class="kw">impl </span>StaticType <span class="kw">for </span>TlsProtocolVersion {
     <span class="kw">fn </span>static_type() -&gt; Type {
@@ -8780,13 +8780,13 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
 </span><span class="kw">impl </span>glib::value::ValueType <span class="kw">for </span>TlsProtocolVersion {
     <span class="kw">type </span>Type = <span class="self">Self</span>;
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
 </span><span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span>TlsProtocolVersion {
     <span class="kw">type </span>Checker = glib::value::GenericValueTypeChecker&lt;<span class="self">Self</span>&gt;;
@@ -8796,7 +8796,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
 </span><span class="kw">impl </span>ToValue <span class="kw">for </span>TlsProtocolVersion {
     <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::Value {
@@ -8820,21 +8820,21 @@
 /// Changing the rehandshake mode is no longer
 ///  required for compatibility. Also, rehandshaking has been removed
 ///  from the TLS protocol in TLS 1.3.
-</span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v2_60&quot;</span>, deprecated = <span class="string">&quot;Since 2.60&quot;</span>)]
+</span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v2_60&quot;</span>, deprecated = <span class="string">&quot;Since 2.60&quot;</span>)]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GTlsRehandshakeMode&quot;</span>)]
 </span><span class="kw">pub enum </span>TlsRehandshakeMode {
     <span class="doccomment">/// Never allow rehandshaking
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_REHANDSHAKE_NEVER&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_REHANDSHAKE_NEVER&quot;</span>)]
     </span>Never,
     <span class="doccomment">/// Allow safe rehandshaking only
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_REHANDSHAKE_SAFELY&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_REHANDSHAKE_SAFELY&quot;</span>)]
     </span>Safely,
     <span class="doccomment">/// Allow unsafe rehandshaking
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_TLS_REHANDSHAKE_UNSAFELY&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_TLS_REHANDSHAKE_UNSAFELY&quot;</span>)]
     </span>Unsafely,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -8853,7 +8853,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>TlsRehandshakeMode {
     <span class="kw">type </span>GlibType = ffi::GTlsRehandshakeMode;
 
@@ -8867,7 +8867,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GTlsRehandshakeMode&gt; <span class="kw">for </span>TlsRehandshakeMode {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GTlsRehandshakeMode) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -8924,33 +8924,33 @@
 /// However, many programs instead just use a portion of `sun_path`, and
 /// pass an appropriate smaller length to `bind()` or `connect()`. This is
 /// [`Abstract`][Self::Abstract].
-</span><span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GUnixSocketAddressType&quot;</span>)]
 </span><span class="kw">pub enum </span>UnixSocketAddressType {
     <span class="doccomment">/// invalid
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNIX_SOCKET_ADDRESS_INVALID&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_UNIX_SOCKET_ADDRESS_INVALID&quot;</span>)]
     </span>Invalid,
     <span class="doccomment">/// anonymous
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNIX_SOCKET_ADDRESS_ANONYMOUS&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_UNIX_SOCKET_ADDRESS_ANONYMOUS&quot;</span>)]
     </span>Anonymous,
     <span class="doccomment">/// a filesystem path
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNIX_SOCKET_ADDRESS_PATH&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_UNIX_SOCKET_ADDRESS_PATH&quot;</span>)]
     </span>Path,
     <span class="doccomment">/// an abstract name
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNIX_SOCKET_ADDRESS_ABSTRACT&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_UNIX_SOCKET_ADDRESS_ABSTRACT&quot;</span>)]
     </span>Abstract,
     <span class="doccomment">/// an abstract name, 0-padded
     ///  to the full length of a unix socket name
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_UNIX_SOCKET_ADDRESS_ABSTRACT_PADDED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_UNIX_SOCKET_ADDRESS_ABSTRACT_PADDED&quot;</span>)]
     </span>AbstractPadded,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">impl </span>fmt::Display <span class="kw">for </span>UnixSocketAddressType {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter) -&gt; fmt::Result {
         <span class="macro">write!</span>(
@@ -8968,7 +8968,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 #[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>UnixSocketAddressType {
     <span class="kw">type </span>GlibType = ffi::GUnixSocketAddressType;
@@ -8985,7 +8985,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 #[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GUnixSocketAddressType&gt; <span class="kw">for </span>UnixSocketAddressType {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GUnixSocketAddressType) -&gt; <span class="self">Self </span>{
@@ -9000,19 +9000,19 @@
     }
 }
 
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">impl </span>StaticType <span class="kw">for </span>UnixSocketAddressType {
     <span class="kw">fn </span>static_type() -&gt; Type {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_unix_socket_address_type_get_type()) }
     }
 }
 
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">impl </span>glib::value::ValueType <span class="kw">for </span>UnixSocketAddressType {
     <span class="kw">type </span>Type = <span class="self">Self</span>;
 }
 
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span>UnixSocketAddressType {
     <span class="kw">type </span>Checker = glib::value::GenericValueTypeChecker&lt;<span class="self">Self</span>&gt;;
 
@@ -9021,7 +9021,7 @@
     }
 }
 
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">impl </span>ToValue <span class="kw">for </span>UnixSocketAddressType {
     <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::Value {
         <span class="kw">let </span><span class="kw-2">mut </span>value = glib::Value::for_value_type::&lt;<span class="self">Self</span>&gt;();
@@ -9038,20 +9038,20 @@
 
 <span class="doccomment">/// Used to select the type of data format to use for [`ZlibDecompressor`][crate::ZlibDecompressor]
 /// and [`ZlibCompressor`][crate::ZlibCompressor].
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GZlibCompressorFormat&quot;</span>)]
 </span><span class="kw">pub enum </span>ZlibCompressorFormat {
     <span class="doccomment">/// deflate compression with zlib header
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_ZLIB_COMPRESSOR_FORMAT_ZLIB&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_ZLIB_COMPRESSOR_FORMAT_ZLIB&quot;</span>)]
     </span>Zlib,
     <span class="doccomment">/// gzip file format
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_ZLIB_COMPRESSOR_FORMAT_GZIP&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_ZLIB_COMPRESSOR_FORMAT_GZIP&quot;</span>)]
     </span>Gzip,
     <span class="doccomment">/// deflate compression with no header
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;G_ZLIB_COMPRESSOR_FORMAT_RAW&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;G_ZLIB_COMPRESSOR_FORMAT_RAW&quot;</span>)]
     </span>Raw,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -9070,7 +9070,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>ZlibCompressorFormat {
     <span class="kw">type </span>GlibType = ffi::GZlibCompressorFormat;
 
@@ -9084,7 +9084,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GZlibCompressorFormat&gt; <span class="kw">for </span>ZlibCompressorFormat {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GZlibCompressorFormat) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -9128,4 +9128,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

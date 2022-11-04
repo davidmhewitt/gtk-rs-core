@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -651,7 +651,7 @@
     }
 }
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
@@ -664,7 +664,7 @@
 
         <span class="kw">pub struct </span>AsyncInitableTestType(<span class="kw">pub </span>Cell&lt;u64&gt;);
 
-        <span class="attribute">#[glib::object_subclass]
+        <span class="attr">#[glib::object_subclass]
         </span><span class="kw">impl </span>ObjectSubclass <span class="kw">for </span>AsyncInitableTestType {
             <span class="kw">const </span>NAME: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str = <span class="string">&quot;AsyncInitableTestType&quot;</span>;
             <span class="kw">type </span>Type = <span class="kw">super</span>::AsyncInitableTestType;
@@ -709,7 +709,7 @@
             @implements AsyncInitable;
     }
 
-    <span class="attribute">#[allow(clippy::new_without_default)]
+    <span class="attr">#[allow(clippy::new_without_default)]
     </span><span class="kw">impl </span>AsyncInitableTestType {
         <span class="kw">pub async fn </span>new() -&gt; <span class="self">Self </span>{
             AsyncInitable::new_future(<span class="kw-2">&amp;</span>[], glib::PRIORITY_DEFAULT)
@@ -731,7 +731,7 @@
         }
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_async_initable_with_init() {
         glib::MainContext::new().block_on(<span class="kw">async </span>{
             <span class="kw">let </span>res = <span class="kw">unsafe </span>{
@@ -748,7 +748,7 @@
         });
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_async_initable_with_initable_new() {
         glib::MainContext::new().block_on(<span class="kw">async </span>{
             <span class="kw">let </span>test = AsyncInitableTestType::new().<span class="kw">await</span>;
@@ -756,7 +756,7 @@
         });
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     #[should_panic = <span class="string">&quot;&quot;</span>]
     </span><span class="kw">fn </span>test_async_initable_new_failure() {
         glib::MainContext::new().block_on(<span class="kw">async </span>{
@@ -770,7 +770,7 @@
         });
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_async_initable_with_initable_with_type() {
         glib::MainContext::new().block_on(<span class="kw">async </span>{
             <span class="kw">let </span>test = AsyncInitable::with_type_future(
@@ -786,7 +786,7 @@
         });
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_async_initable_with_async_initable_with_values() {
         glib::MainContext::new().block_on(<span class="kw">async </span>{
             <span class="kw">let </span>test = AsyncInitable::with_values_future(
@@ -802,7 +802,7 @@
         });
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_async_initable_through_ffi() {
         <span class="kw">use </span>futures_channel::oneshot;
 
@@ -860,4 +860,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

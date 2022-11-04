@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -660,17 +660,17 @@
 <span class="kw">use </span>std::boxed::Box <span class="kw">as </span>Box_;
 <span class="kw">use </span>std::num::NonZeroU32;
 
-<span class="attribute">#[derive(Debug, Eq, PartialEq)]
+<span class="attr">#[derive(Debug, Eq, PartialEq)]
 </span><span class="kw">pub struct </span>RegistrationId(NonZeroU32);
-<span class="attribute">#[derive(Debug, Eq, PartialEq)]
+<span class="attr">#[derive(Debug, Eq, PartialEq)]
 </span><span class="kw">pub struct </span>WatcherId(NonZeroU32);
-<span class="attribute">#[derive(Debug, Eq, PartialEq)]
+<span class="attr">#[derive(Debug, Eq, PartialEq)]
 </span><span class="kw">pub struct </span>ActionGroupExportId(NonZeroU32);
-<span class="attribute">#[derive(Debug, Eq, PartialEq)]
+<span class="attr">#[derive(Debug, Eq, PartialEq)]
 </span><span class="kw">pub struct </span>MenuModelExportId(NonZeroU32);
-<span class="attribute">#[derive(Debug, Eq, PartialEq)]
+<span class="attr">#[derive(Debug, Eq, PartialEq)]
 </span><span class="kw">pub struct </span>FilterId(NonZeroU32);
-<span class="attribute">#[derive(Debug, Eq, PartialEq)]
+<span class="attr">#[derive(Debug, Eq, PartialEq)]
 </span><span class="kw">pub struct </span>SignalSubscriptionId(NonZeroU32);
 
 <span class="kw">impl </span>DBusConnection {
@@ -723,7 +723,7 @@
     ///
     /// 0 if `error` is set, otherwise a registration id (never 0)
     ///  that can be used with [`unregister_object()`][Self::unregister_object()]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_register_object_with_closures&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_register_object_with_closures&quot;</span>)]
     </span><span class="kw">pub fn </span>register_object&lt;MethodCall, SetProperty, GetProperty&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         object_path: <span class="kw-2">&amp;</span>str,
@@ -821,7 +821,7 @@
     /// # Returns
     ///
     /// [`true`] if the object was unregistered, [`false`] otherwise
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_unregister_object&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_unregister_object&quot;</span>)]
     </span><span class="kw">pub fn </span>unregister_object(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         registration_id: RegistrationId,
@@ -866,7 +866,7 @@
     /// # Returns
     ///
     /// the ID of the export (never zero), or 0 in case of failure
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_export_action_group&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_export_action_group&quot;</span>)]
     </span><span class="kw">pub fn </span>export_action_group&lt;P: IsA&lt;ActionGroup&gt;&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         object_path: <span class="kw-2">&amp;</span>str,
@@ -896,7 +896,7 @@
     /// same ID more than once.
     /// ## `export_id`
     /// the ID from [`export_action_group()`][Self::export_action_group()]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_unexport_action_group&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_unexport_action_group&quot;</span>)]
     </span><span class="kw">pub fn </span>unexport_action_group(<span class="kw-2">&amp;</span><span class="self">self</span>, export_id: ActionGroupExportId) {
         <span class="kw">unsafe </span>{
             ffi::g_dbus_connection_unexport_action_group(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, export_id.<span class="number">0</span>.into());
@@ -923,7 +923,7 @@
     /// # Returns
     ///
     /// the ID of the export (never zero), or 0 in case of failure
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_export_menu_model&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_export_menu_model&quot;</span>)]
     </span><span class="kw">pub fn </span>export_menu_model&lt;P: IsA&lt;MenuModel&gt;&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         object_path: <span class="kw-2">&amp;</span>str,
@@ -953,7 +953,7 @@
     /// same ID more than once.
     /// ## `export_id`
     /// the ID from [`export_menu_model()`][Self::export_menu_model()]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_unexport_menu_model&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_unexport_menu_model&quot;</span>)]
     </span><span class="kw">pub fn </span>unexport_menu_model(<span class="kw-2">&amp;</span><span class="self">self</span>, export_id: MenuModelExportId) {
         <span class="kw">unsafe </span>{
             ffi::g_dbus_connection_unexport_menu_model(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, export_id.<span class="number">0</span>.into());
@@ -994,7 +994,7 @@
     ///
     /// a filter identifier that can be used with
     ///  [`remove_filter()`][Self::remove_filter()]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_add_filter&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_add_filter&quot;</span>)]
     </span><span class="kw">pub fn </span>add_filter&lt;
         P: Fn(<span class="kw-2">&amp;</span>DBusConnection, <span class="kw-2">&amp;</span>DBusMessage, bool) -&gt; <span class="prelude-ty">Option</span>&lt;DBusMessage&gt; + <span class="lifetime">&#39;static</span>,
     &gt;(
@@ -1048,7 +1048,7 @@
     /// called when it is guaranteed that the data is no longer needed.
     /// ## `filter_id`
     /// an identifier obtained from [`add_filter()`][Self::add_filter()]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_remove_filter&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_remove_filter&quot;</span>)]
     </span><span class="kw">pub fn </span>remove_filter(<span class="kw-2">&amp;</span><span class="self">self</span>, filter_id: FilterId) {
         <span class="kw">unsafe </span>{
             ffi::g_dbus_connection_remove_filter(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, filter_id.<span class="number">0</span>.into());
@@ -1128,7 +1128,7 @@
     /// # Returns
     ///
     /// a subscription identifier that can be used with [`signal_unsubscribe()`][Self::signal_unsubscribe()]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_signal_subscribe&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_signal_subscribe&quot;</span>)]
     </span><span class="kw">pub fn </span>signal_subscribe&lt;
         P: Fn(<span class="kw-2">&amp;</span>DBusConnection, <span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span>glib::Variant) + <span class="lifetime">&#39;static</span>,
     &gt;(
@@ -1211,7 +1211,7 @@
     /// ## `subscription_id`
     /// a subscription id obtained from
     ///  [`signal_subscribe()`][Self::signal_subscribe()]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_connection_signal_unsubscribe&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_connection_signal_unsubscribe&quot;</span>)]
     </span><span class="kw">pub fn </span>signal_unsubscribe(<span class="kw-2">&amp;</span><span class="self">self</span>, subscription_id: SignalSubscriptionId) {
         <span class="kw">unsafe </span>{
             ffi::g_dbus_connection_signal_unsubscribe(
@@ -1222,4 +1222,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

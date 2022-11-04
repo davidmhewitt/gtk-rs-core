@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk_pixbuf/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk_pixbuf/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -652,14 +652,14 @@
 /// the gdk-pixbuf library.
 ///
 /// Currently only RGB is supported.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GdkColorspace&quot;</span>)]
 </span><span class="kw">pub enum </span>Colorspace {
     <span class="doccomment">/// Indicates a red/green/blue additive color space.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_COLORSPACE_RGB&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_COLORSPACE_RGB&quot;</span>)]
     </span>Rgb,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -676,7 +676,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>Colorspace {
     <span class="kw">type </span>GlibType = ffi::GdkColorspace;
 
@@ -688,7 +688,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GdkColorspace&gt; <span class="kw">for </span>Colorspace {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GdkColorspace) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -739,28 +739,28 @@
 ///
 /// **Note**: Cubic filtering is missing from the list; hyperbolic
 /// interpolation is just as fast and results in higher quality.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GdkInterpType&quot;</span>)]
 </span><span class="kw">pub enum </span>InterpType {
     <span class="doccomment">/// Nearest neighbor sampling; this is the fastest
     ///  and lowest quality mode. Quality is normally unacceptable when scaling
     ///  down, but may be OK when scaling up.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_INTERP_NEAREST&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_INTERP_NEAREST&quot;</span>)]
     </span>Nearest,
     <span class="doccomment">/// This is an accurate simulation of the PostScript
     ///  image operator without any interpolation enabled.  Each pixel is
     ///  rendered as a tiny parallelogram of solid color, the edges of which
     ///  are implemented with antialiasing.  It resembles nearest neighbor for
     ///  enlargement, and bilinear for reduction.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_INTERP_TILES&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_INTERP_TILES&quot;</span>)]
     </span>Tiles,
     <span class="doccomment">/// Best quality/speed balance; use this mode by
     ///  default. Bilinear interpolation.  For enlargement, it is
     ///  equivalent to point-sampling the ideal bilinear-interpolated image.
     ///  For reduction, it is equivalent to laying down small tiles and
     ///  integrating over the coverage area.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_INTERP_BILINEAR&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_INTERP_BILINEAR&quot;</span>)]
     </span>Bilinear,
     <span class="doccomment">/// This is the slowest and highest quality
     ///  reconstruction function. It is derived from the hyperbolic filters in
@@ -770,9 +770,9 @@
     ///  **Deprecated**: this interpolation filter is deprecated, as in reality
     ///  it has a lower quality than the @GDK_INTERP_BILINEAR filter
     ///  (Since: 2.38)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_INTERP_HYPER&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_INTERP_HYPER&quot;</span>)]
     </span>Hyper,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -792,7 +792,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>InterpType {
     <span class="kw">type </span>GlibType = ffi::GdkInterpType;
 
@@ -807,7 +807,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GdkInterpType&gt; <span class="kw">for </span>InterpType {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GdkInterpType) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -870,7 +870,7 @@
 /// There is no user of GdkPixbufAlphaMode in GdkPixbuf,
 ///   and the Xlib utility functions have been split out to their own
 ///   library, gdk-pixbuf-xlib
-</span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v2_42&quot;</span>, deprecated = <span class="string">&quot;Since 2.42&quot;</span>)]
+</span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v2_42&quot;</span>, deprecated = <span class="string">&quot;Since 2.42&quot;</span>)]
 #[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GdkPixbufAlphaMode&quot;</span>)]
@@ -879,13 +879,13 @@
     ///  will be created and used to draw the image.  Pixels below 0.5 opacity
     ///  will be considered fully transparent, and all others will be
     ///  considered fully opaque.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ALPHA_BILEVEL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ALPHA_BILEVEL&quot;</span>)]
     </span>Bilevel,
     <span class="doccomment">/// For now falls back to #GDK_PIXBUF_ALPHA_BILEVEL.
     ///  In the future it will do full alpha compositing.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ALPHA_FULL&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ALPHA_FULL&quot;</span>)]
     </span>Full,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -903,7 +903,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>PixbufAlphaMode {
     <span class="kw">type </span>GlibType = ffi::GdkPixbufAlphaMode;
 
@@ -916,7 +916,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GdkPixbufAlphaMode&gt; <span class="kw">for </span>PixbufAlphaMode {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GdkPixbufAlphaMode) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -963,33 +963,33 @@
 ///
 /// Many gdk-pixbuf operations can cause errors in this domain, or in
 /// the `G_FILE_ERROR` domain.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GdkPixbufError&quot;</span>)]
 </span><span class="kw">pub enum </span>PixbufError {
     <span class="doccomment">/// An image file was broken somehow.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ERROR_CORRUPT_IMAGE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ERROR_CORRUPT_IMAGE&quot;</span>)]
     </span>CorruptImage,
     <span class="doccomment">/// Not enough memory.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY&quot;</span>)]
     </span>InsufficientMemory,
     <span class="doccomment">/// A bad option was passed to a pixbuf save module.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ERROR_BAD_OPTION&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ERROR_BAD_OPTION&quot;</span>)]
     </span>BadOption,
     <span class="doccomment">/// Unknown image type.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ERROR_UNKNOWN_TYPE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ERROR_UNKNOWN_TYPE&quot;</span>)]
     </span>UnknownType,
     <span class="doccomment">/// Don&#39;t know how to perform the
     ///  given operation on the type of image at hand.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ERROR_UNSUPPORTED_OPERATION&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ERROR_UNSUPPORTED_OPERATION&quot;</span>)]
     </span>UnsupportedOperation,
     <span class="doccomment">/// Generic failure code, something went wrong.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ERROR_FAILED&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ERROR_FAILED&quot;</span>)]
     </span>Failed,
     <span class="doccomment">/// Only part of the animation was loaded.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ERROR_INCOMPLETE_ANIMATION&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ERROR_INCOMPLETE_ANIMATION&quot;</span>)]
     </span>IncompleteAnimation,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -1012,7 +1012,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>PixbufError {
     <span class="kw">type </span>GlibType = ffi::GdkPixbufError;
 
@@ -1030,7 +1030,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GdkPixbufError&gt; <span class="kw">for </span>PixbufError {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GdkPixbufError) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -1104,23 +1104,23 @@
 <span class="doccomment">/// The possible rotations which can be passed to gdk_pixbuf_rotate_simple().
 ///
 /// To make them easier to use, their numerical values are the actual degrees.
-</span><span class="attribute">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
+</span><span class="attr">#[derive(Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Clone, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;GdkPixbufRotation&quot;</span>)]
 </span><span class="kw">pub enum </span>PixbufRotation {
     <span class="doccomment">/// No rotation.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ROTATE_NONE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ROTATE_NONE&quot;</span>)]
     </span><span class="prelude-val">None</span>,
     <span class="doccomment">/// Rotate by 90 degrees.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ROTATE_COUNTERCLOCKWISE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ROTATE_COUNTERCLOCKWISE&quot;</span>)]
     </span>Counterclockwise,
     <span class="doccomment">/// Rotate by 180 degrees.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ROTATE_UPSIDEDOWN&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ROTATE_UPSIDEDOWN&quot;</span>)]
     </span>Upsidedown,
     <span class="doccomment">/// Rotate by 270 degrees.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ROTATE_CLOCKWISE&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDK_PIXBUF_ROTATE_CLOCKWISE&quot;</span>)]
     </span>Clockwise,
-    <span class="attribute">#[doc(hidden)]
+    <span class="attr">#[doc(hidden)]
     </span>__Unknown(i32),
 }
 
@@ -1140,7 +1140,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>PixbufRotation {
     <span class="kw">type </span>GlibType = ffi::GdkPixbufRotation;
 
@@ -1155,7 +1155,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GdkPixbufRotation&gt; <span class="kw">for </span>PixbufRotation {
     <span class="kw">unsafe fn </span>from_glib(value: ffi::GdkPixbufRotation) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -1200,4 +1200,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk_pixbuf" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk_pixbuf" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -581,7 +581,7 @@
     ///
     /// ## `length`
     /// a `gsize` to get the length of the data read in.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_input_stream_read_line&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_input_stream_read_line&quot;</span>)]
     </span><span class="kw">fn </span>read_line&lt;P: IsA&lt;Cancellable&gt;&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>P&gt;,
@@ -599,7 +599,7 @@
     /// optional [`Cancellable`][crate::Cancellable] object, [`None`] to ignore.
     /// ## `callback`
     /// callback to call when the request is satisfied.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_input_stream_read_line_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_input_stream_read_line_async&quot;</span>)]
     </span><span class="kw">fn </span>read_line_async&lt;P: IsA&lt;Cancellable&gt;, Q: FnOnce(<span class="prelude-ty">Result</span>&lt;Vec&lt;u8&gt;, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         io_priority: glib::Priority,
@@ -632,7 +632,7 @@
     ///
     /// ## `length`
     /// a `gsize` to get the length of the data read in.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_input_stream_read_line_utf8&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_input_stream_read_line_utf8&quot;</span>)]
     </span><span class="kw">fn </span>read_line_utf8&lt;P: IsA&lt;Cancellable&gt;&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>P&gt;,
@@ -682,7 +682,7 @@
     ///
     /// ## `length`
     /// a `gsize` to get the length of the data read in
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_input_stream_read_upto&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_input_stream_read_upto&quot;</span>)]
     </span><span class="kw">fn </span>read_upto&lt;P: IsA&lt;Cancellable&gt;&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         stop_chars: <span class="kw-2">&amp;</span>[u8],
@@ -714,7 +714,7 @@
     /// optional [`Cancellable`][crate::Cancellable] object, [`None`] to ignore
     /// ## `callback`
     /// callback to call when the request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_input_stream_read_upto_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_input_stream_read_upto_async&quot;</span>)]
     </span><span class="kw">fn </span>read_upto_async&lt;P: IsA&lt;Cancellable&gt;, Q: FnOnce(<span class="prelude-ty">Result</span>&lt;Vec&lt;u8&gt;, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         stop_chars: <span class="kw-2">&amp;</span>[u8],
@@ -1024,4 +1024,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

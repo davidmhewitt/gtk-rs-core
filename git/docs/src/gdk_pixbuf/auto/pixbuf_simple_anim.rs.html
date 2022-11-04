@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk_pixbuf/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk_pixbuf/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -198,7 +198,7 @@
     /// # Implements
     ///
     /// [`PixbufAnimationExt`][trait@crate::prelude::PixbufAnimationExt], [`PixbufAnimationExtManual`][trait@crate::prelude::PixbufAnimationExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GdkPixbufSimpleAnim&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GdkPixbufSimpleAnim&quot;</span>)]
     </span><span class="kw">pub struct </span>PixbufSimpleAnim(Object&lt;ffi::GdkPixbufSimpleAnim, ffi::GdkPixbufSimpleAnimClass&gt;) @extends PixbufAnimation;
 
     <span class="kw">match fn </span>{
@@ -218,7 +218,7 @@
     /// # Returns
     ///
     /// a newly allocated #GdkPixbufSimpleAnim
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_simple_anim_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_simple_anim_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(width: i32, height: i32, rate: f32) -&gt; PixbufSimpleAnim {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::gdk_pixbuf_simple_anim_new(width, height, rate)) }
     }
@@ -228,7 +228,7 @@
     /// was constructed.
     /// ## `pixbuf`
     /// the pixbuf to add
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_simple_anim_add_frame&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_simple_anim_add_frame&quot;</span>)]
     </span><span class="kw">pub fn </span>add_frame(<span class="kw-2">&amp;</span><span class="self">self</span>, pixbuf: <span class="kw-2">&amp;</span>Pixbuf) {
         <span class="kw">unsafe </span>{
             ffi::gdk_pixbuf_simple_anim_add_frame(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, pixbuf.to_glib_none().<span class="number">0</span>);
@@ -240,7 +240,7 @@
     /// # Returns
     ///
     /// [`true`] if the animation loops forever, [`false`] otherwise
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_simple_anim_get_loop&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_simple_anim_get_loop&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_loop&quot;</span>)]
     </span><span class="kw">pub fn </span>is_loop(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::gdk_pixbuf_simple_anim_get_loop(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -249,14 +249,14 @@
     <span class="doccomment">/// Sets whether @self should loop indefinitely when it reaches the end.
     /// ## `loop_`
     /// whether to loop the animation
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_simple_anim_set_loop&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_simple_anim_set_loop&quot;</span>)]
     </span><span class="kw">pub fn </span>set_loop(<span class="kw-2">&amp;</span><span class="self">self</span>, loop_: bool) {
         <span class="kw">unsafe </span>{
             ffi::gdk_pixbuf_simple_anim_set_loop(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, loop_.into_glib());
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;loop&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;loop&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_loop_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_loop_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>PixbufSimpleAnim) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GdkPixbufSimpleAnim,
@@ -286,4 +286,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk_pixbuf" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk_pixbuf" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

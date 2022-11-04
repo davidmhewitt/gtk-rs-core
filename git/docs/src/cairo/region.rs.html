@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../cairo/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../cairo/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -355,74 +355,74 @@
 <span class="kw">use </span><span class="kw">crate</span>::error::Error;
 <span class="kw">use </span><span class="kw">crate</span>::utils::status_to_result;
 <span class="kw">use </span><span class="kw">crate</span>::RectangleInt;
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 <span class="kw">use </span>std::fmt;
 <span class="kw">use </span>std::ptr;
 
 <span class="kw">use </span><span class="kw">crate</span>::ffi::cairo_region_t;
 
-<span class="attribute">#[derive(Debug)]
+<span class="attr">#[derive(Debug)]
 #[repr(transparent)]
 </span><span class="kw">pub struct </span>Region(ptr::NonNull&lt;cairo_region_t&gt;);
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 #[doc(hidden)]
 </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::cairo_region_t&gt; <span class="kw">for </span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Region {
     <span class="kw">type </span>Storage = <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Region;
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::cairo_region_t, <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Region&gt; {
         Stash(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), <span class="kw-2">*</span><span class="self">self</span>)
     }
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*mut </span>ffi::cairo_region_t {
         <span class="kw">unsafe </span>{ ffi::cairo_region_reference(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 #[doc(hidden)]
 </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtrMut&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::cairo_region_t&gt; <span class="kw">for </span>Region {
     <span class="kw">type </span>Storage = <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="kw-2">mut </span><span class="self">Self</span>;
 
     <span class="comment">// FIXME: This is unsafe: regions are reference counted, so we could get multiple mutable
     // references here
-    </span><span class="attribute">#[inline]
+    </span><span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_none_mut(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="kw-2">mut </span><span class="self">self</span>) -&gt; StashMut&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::cairo_region_t, <span class="self">Self</span>&gt; {
         StashMut(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), <span class="self">self</span>)
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 #[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibPtrNone&lt;<span class="kw-2">*mut </span>ffi::cairo_region_t&gt; <span class="kw">for </span>Region {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_none(ptr: <span class="kw-2">*mut </span>ffi::cairo_region_t) -&gt; Region {
         <span class="self">Self</span>::from_raw_none(ptr)
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 #[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibPtrBorrow&lt;<span class="kw-2">*mut </span>ffi::cairo_region_t&gt; <span class="kw">for </span>Region {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_borrow(ptr: <span class="kw-2">*mut </span>ffi::cairo_region_t) -&gt; <span class="kw">crate</span>::Borrowed&lt;Region&gt; {
         <span class="self">Self</span>::from_raw_borrow(ptr)
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 #[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibPtrFull&lt;<span class="kw-2">*mut </span>ffi::cairo_region_t&gt; <span class="kw">for </span>Region {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*mut </span>ffi::cairo_region_t) -&gt; Region {
         <span class="self">Self</span>::from_raw_full(ptr)
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="macro">gvalue_impl!</span>(
     Region,
     ffi::cairo_region_t,
@@ -444,7 +444,7 @@
 }
 
 <span class="kw">impl </span>PartialEq <span class="kw">for </span>Region {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_region_equal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_region_equal&quot;</span>)]
     </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>Region) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::cairo_region_equal(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), other.<span class="number">0</span>.as_ptr()).as_bool() }
     }
@@ -453,20 +453,20 @@
 <span class="kw">impl </span>Eq <span class="kw">for </span>Region {}
 
 <span class="kw">impl </span>Region {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_raw_none(ptr: <span class="kw-2">*mut </span>ffi::cairo_region_t) -&gt; Region {
         <span class="macro">assert!</span>(!ptr.is_null());
         ffi::cairo_region_reference(ptr);
         Region(ptr::NonNull::new_unchecked(ptr))
     }
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_raw_borrow(ptr: <span class="kw-2">*mut </span>ffi::cairo_region_t) -&gt; <span class="kw">crate</span>::Borrowed&lt;Region&gt; {
         <span class="macro">assert!</span>(!ptr.is_null());
         <span class="kw">crate</span>::Borrowed::new(Region(ptr::NonNull::new_unchecked(ptr)))
     }
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_raw_full(ptr: <span class="kw-2">*mut </span>ffi::cairo_region_t) -&gt; Region {
         <span class="macro">assert!</span>(!ptr.is_null());
         Region(ptr::NonNull::new_unchecked(ptr))
@@ -476,17 +476,17 @@
         <span class="self">self</span>.<span class="number">0</span>.as_ptr()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_region_create&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_region_create&quot;</span>)]
     </span><span class="kw">pub fn </span>create() -&gt; Region {
         <span class="kw">unsafe </span>{ <span class="self">Self</span>::from_raw_full(ffi::cairo_region_create()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_region_create_rectangle&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_region_create_rectangle&quot;</span>)]
     </span><span class="kw">pub fn </span>create_rectangle(rectangle: <span class="kw-2">&amp;</span>RectangleInt) -&gt; Region {
         <span class="kw">unsafe </span>{ <span class="self">Self</span>::from_raw_full(ffi::cairo_region_create_rectangle(rectangle.to_raw_none())) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_region_create_rectangles&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_region_create_rectangles&quot;</span>)]
     </span><span class="kw">pub fn </span>create_rectangles(rectangles: <span class="kw-2">&amp;</span>[RectangleInt]) -&gt; Region {
         <span class="kw">unsafe </span>{
             <span class="self">Self</span>::from_raw_full(ffi::cairo_region_create_rectangles(
@@ -496,24 +496,24 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_region_copy&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_region_copy&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>copy(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Region {
         <span class="kw">unsafe </span>{ <span class="self">Self</span>::from_raw_full(ffi::cairo_region_copy(<span class="self">self</span>.<span class="number">0</span>.as_ptr())) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_extents&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_extents&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_region_get_extents&quot;</span>)]
     </span><span class="kw">pub fn </span>extents(<span class="kw-2">&amp;</span><span class="self">self</span>, rectangle: <span class="kw-2">&amp;mut </span>RectangleInt) {
         <span class="kw">unsafe </span>{ ffi::cairo_region_get_extents(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), rectangle.to_raw_none()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_region_num_rectangles&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_region_num_rectangles&quot;</span>)]
     </span><span class="kw">pub fn </span>num_rectangles(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::cairo_region_num_rectangles(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_rectangle&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_rectangle&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_region_get_rectangle&quot;</span>)]
     </span><span class="kw">pub fn </span>rectangle(<span class="kw-2">&amp;</span><span class="self">self</span>, nth: i32) -&gt; RectangleInt {
         <span class="kw">unsafe </span>{
@@ -523,17 +523,17 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_region_is_empty&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_region_is_empty&quot;</span>)]
     </span><span class="kw">pub fn </span>is_empty(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::cairo_region_is_empty(<span class="self">self</span>.<span class="number">0</span>.as_ptr()).as_bool() }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_region_contains_point&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_region_contains_point&quot;</span>)]
     </span><span class="kw">pub fn </span>contains_point(<span class="kw-2">&amp;</span><span class="self">self</span>, x: i32, y: i32) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::cairo_region_contains_point(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), x, y).as_bool() }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_region_contains_rectangle&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_region_contains_rectangle&quot;</span>)]
     </span><span class="kw">pub fn </span>contains_rectangle(<span class="kw-2">&amp;</span><span class="self">self</span>, rectangle: <span class="kw-2">&amp;</span>RectangleInt) -&gt; RegionOverlap {
         <span class="kw">unsafe </span>{
             RegionOverlap::from(ffi::cairo_region_contains_rectangle(
@@ -543,12 +543,12 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_region_translate&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_region_translate&quot;</span>)]
     </span><span class="kw">pub fn </span>translate(<span class="kw-2">&amp;</span><span class="self">self</span>, dx: i32, dy: i32) {
         <span class="kw">unsafe </span>{ ffi::cairo_region_translate(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), dx, dy) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_region_intersect&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_region_intersect&quot;</span>)]
     </span><span class="kw">pub fn </span>intersect(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>Region) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>status = ffi::cairo_region_intersect(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), other.<span class="number">0</span>.as_ptr());
@@ -556,7 +556,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_region_intersect_rectangle&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_region_intersect_rectangle&quot;</span>)]
     </span><span class="kw">pub fn </span>intersect_rectangle(<span class="kw-2">&amp;</span><span class="self">self</span>, rectangle: <span class="kw-2">&amp;</span>RectangleInt) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>status =
@@ -565,7 +565,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_region_subtract&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_region_subtract&quot;</span>)]
     </span><span class="kw">pub fn </span>subtract(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>Region) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>status = ffi::cairo_region_subtract(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), other.<span class="number">0</span>.as_ptr());
@@ -573,7 +573,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_region_subtract_rectangle&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_region_subtract_rectangle&quot;</span>)]
     </span><span class="kw">pub fn </span>subtract_rectangle(<span class="kw-2">&amp;</span><span class="self">self</span>, rectangle: <span class="kw-2">&amp;</span>RectangleInt) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>status =
@@ -582,7 +582,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_region_union&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_region_union&quot;</span>)]
     </span><span class="kw">pub fn </span>union(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>Region) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>status = ffi::cairo_region_union(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), other.<span class="number">0</span>.as_ptr());
@@ -590,7 +590,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_region_union_rectangle&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_region_union_rectangle&quot;</span>)]
     </span><span class="kw">pub fn </span>union_rectangle(<span class="kw-2">&amp;</span><span class="self">self</span>, rectangle: <span class="kw-2">&amp;</span>RectangleInt) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>status =
@@ -599,7 +599,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_region_xor&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_region_xor&quot;</span>)]
     </span><span class="kw">pub fn </span>xor(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>Region) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>status = ffi::cairo_region_xor(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), other.<span class="number">0</span>.as_ptr());
@@ -607,7 +607,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_region_xor_rectangle&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_region_xor_rectangle&quot;</span>)]
     </span><span class="kw">pub fn </span>xor_rectangle(<span class="kw-2">&amp;</span><span class="self">self</span>, rectangle: <span class="kw-2">&amp;</span>RectangleInt) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>status = ffi::cairo_region_xor_rectangle(<span class="self">self</span>.<span class="number">0</span>.as_ptr(), rectangle.to_raw_none());
@@ -615,7 +615,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_region_status&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_region_status&quot;</span>)]
     </span><span class="kw">pub fn </span>status(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">let </span>status = <span class="kw">unsafe </span>{ ffi::cairo_region_status(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) };
         status_to_result(status)
@@ -628,4 +628,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

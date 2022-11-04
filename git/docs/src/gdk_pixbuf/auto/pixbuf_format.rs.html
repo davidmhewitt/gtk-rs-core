@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk_pixbuf/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk_pixbuf/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -273,7 +273,7 @@
     ///
     /// Only modules should access the fields directly, applications should
     /// use the `gdk_pixbuf_format_*` family of functions.
-    </span><span class="attribute">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    </span><span class="attr">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
     </span><span class="kw">pub struct </span>PixbufFormat(Boxed&lt;ffi::GdkPixbufFormat&gt;);
 
     <span class="kw">match fn </span>{
@@ -289,7 +289,7 @@
     /// # Returns
     ///
     /// a description of the format.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_format_get_description&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_format_get_description&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_description&quot;</span>)]
     </span><span class="kw">pub fn </span>description(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{
@@ -306,7 +306,7 @@
     ///
     /// an array of
     ///   filename extensions
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_format_get_extensions&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_format_get_extensions&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_extensions&quot;</span>)]
     </span><span class="kw">pub fn </span>extensions(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{
@@ -324,7 +324,7 @@
     /// # Returns
     ///
     /// a string describing the license of the pixbuf format
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_format_get_license&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_format_get_license&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_license&quot;</span>)]
     </span><span class="kw">pub fn </span>license(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{
@@ -339,7 +339,7 @@
     /// # Returns
     ///
     /// an array of mime types
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_format_get_mime_types&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_format_get_mime_types&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_mime_types&quot;</span>)]
     </span><span class="kw">pub fn </span>mime_types(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{
@@ -354,7 +354,7 @@
     /// # Returns
     ///
     /// the name of the format.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_format_get_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_format_get_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_name&quot;</span>)]
     </span><span class="kw">pub fn </span>name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{
@@ -371,7 +371,7 @@
     /// # Returns
     ///
     /// whether this image format is disabled.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_format_is_disabled&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_format_is_disabled&quot;</span>)]
     </span><span class="kw">pub fn </span>is_disabled(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gdk_pixbuf_format_is_disabled(mut_override(
@@ -390,7 +390,7 @@
     /// # Returns
     ///
     /// `TRUE` if the specified option is supported
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_format_is_save_option_supported&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_format_is_save_option_supported&quot;</span>)]
     </span><span class="kw">pub fn </span>is_save_option_supported(<span class="kw-2">&amp;</span><span class="self">self</span>, option_key: <span class="kw-2">&amp;</span>str) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gdk_pixbuf_format_is_save_option_supported(
@@ -409,7 +409,7 @@
     /// # Returns
     ///
     /// whether this image format is scalable.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_format_is_scalable&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_format_is_scalable&quot;</span>)]
     </span><span class="kw">pub fn </span>is_scalable(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gdk_pixbuf_format_is_scalable(mut_override(
@@ -423,7 +423,7 @@
     /// # Returns
     ///
     /// whether pixbufs can be saved in the given format.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_format_is_writable&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_format_is_writable&quot;</span>)]
     </span><span class="kw">pub fn </span>is_writable(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::gdk_pixbuf_format_is_writable(mut_override(
@@ -441,7 +441,7 @@
     /// inappropriate license, see gdk_pixbuf_format_get_license().
     /// ## `disabled`
     /// `TRUE` to disable the format @self
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_format_set_disabled&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_format_set_disabled&quot;</span>)]
     </span><span class="kw">pub fn </span>set_disabled(<span class="kw-2">&amp;mut </span><span class="self">self</span>, disabled: bool) {
         <span class="kw">unsafe </span>{
             ffi::gdk_pixbuf_format_set_disabled(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>, disabled.into_glib());
@@ -452,4 +452,4 @@
 <span class="kw">unsafe impl </span>Send <span class="kw">for </span>PixbufFormat {}
 <span class="kw">unsafe impl </span>Sync <span class="kw">for </span>PixbufFormat {}
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk_pixbuf" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk_pixbuf" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

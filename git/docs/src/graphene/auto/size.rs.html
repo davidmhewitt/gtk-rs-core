@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../graphene/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../graphene/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -179,7 +179,7 @@
 }
 
 <span class="kw">impl </span>Size {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;graphene_size_equal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;graphene_size_equal&quot;</span>)]
     </span><span class="kw">fn </span>equal(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Size) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_size_equal(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, b.to_glib_none().<span class="number">0</span>) }
     }
@@ -196,7 +196,7 @@
     ///
     /// ## `res`
     /// return location for the interpolated size
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_size_interpolate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_size_interpolate&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>interpolate(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Size, factor: f64) -&gt; Size {
         <span class="kw">unsafe </span>{
@@ -220,7 +220,7 @@
     ///
     /// ## `res`
     /// return location for the scaled size
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_size_scale&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_size_scale&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>scale(<span class="kw-2">&amp;</span><span class="self">self</span>, factor: f32) -&gt; Size {
         <span class="kw">unsafe </span>{
@@ -236,7 +236,7 @@
     /// # Returns
     ///
     /// a constant size
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_size_zero&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_size_zero&quot;</span>)]
     </span><span class="kw">pub fn </span>zero() -&gt; Size {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ from_glib_none(ffi::graphene_size_zero()) }
@@ -244,7 +244,7 @@
 }
 
 <span class="kw">impl </span>PartialEq <span class="kw">for </span>Size {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool {
         <span class="self">self</span>.equal(other)
     }
@@ -252,4 +252,4 @@
 
 <span class="kw">impl </span>Eq <span class="kw">for </span>Size {}
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

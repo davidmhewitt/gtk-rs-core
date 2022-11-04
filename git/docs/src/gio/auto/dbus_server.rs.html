@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -410,7 +410,7 @@
     /// # Implements
     ///
     /// [`trait@glib::ObjectExt`], [`InitableExt`][trait@crate::prelude::InitableExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDBusServer&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDBusServer&quot;</span>)]
     </span><span class="kw">pub struct </span>DBusServer(Object&lt;ffi::GDBusServer&gt;) @implements Initable;
 
     <span class="kw">match fn </span>{
@@ -454,7 +454,7 @@
     ///
     /// A [`DBusServer`][crate::DBusServer] or [`None`] if `error` is set. Free with
     /// `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_server_new_sync&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_server_new_sync&quot;</span>)]
     </span><span class="kw">pub fn </span>new_sync(
         address: <span class="kw-2">&amp;</span>str,
         flags: DBusServerFlags,
@@ -490,7 +490,7 @@
     ///
     /// A D-Bus address string. Do not free, the string is owned
     /// by `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_server_get_client_address&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_server_get_client_address&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_client_address&quot;</span>)]
     </span><span class="kw">pub fn </span>client_address(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_dbus_server_get_client_address(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -501,7 +501,7 @@
     /// # Returns
     ///
     /// A set of flags from the [`DBusServerFlags`][crate::DBusServerFlags] enumeration.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_server_get_flags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_server_get_flags&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_flags&quot;</span>)]
     </span><span class="kw">pub fn </span>flags(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; DBusServerFlags {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_dbus_server_get_flags(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -512,7 +512,7 @@
     /// # Returns
     ///
     /// A D-Bus GUID. Do not free this string, it is owned by `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_server_get_guid&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_server_get_guid&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_guid&quot;</span>)]
     </span><span class="kw">pub fn </span>guid(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_dbus_server_get_guid(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -523,13 +523,13 @@
     /// # Returns
     ///
     /// [`true`] if server is active, [`false`] otherwise.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_server_is_active&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_server_is_active&quot;</span>)]
     </span><span class="kw">pub fn </span>is_active(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_dbus_server_is_active(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
     <span class="doccomment">/// Starts `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_server_start&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_server_start&quot;</span>)]
     </span><span class="kw">pub fn </span>start(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::g_dbus_server_start(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
@@ -537,7 +537,7 @@
     }
 
     <span class="doccomment">/// Stops `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_server_stop&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_server_stop&quot;</span>)]
     </span><span class="kw">pub fn </span>stop(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::g_dbus_server_stop(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
@@ -550,7 +550,7 @@
     }
 
     <span class="doccomment">/// A [`DBusAuthObserver`][crate::DBusAuthObserver] object to assist in the authentication process or [`None`].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;authentication-observer&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;authentication-observer&quot;</span>)]
     </span><span class="kw">pub fn </span>authentication_observer(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;DBusAuthObserver&gt; {
         glib::ObjectExt::property(<span class="self">self</span>, <span class="string">&quot;authentication-observer&quot;</span>)
     }
@@ -583,7 +583,7 @@
     ///
     /// [`true`] to claim `connection`, [`false`] to let other handlers
     /// run.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;new-connection&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;new-connection&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_new_connection&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>DBusConnection) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -611,7 +611,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;active&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;active&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_active_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_active_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>DBusServer) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GDBusServer,
@@ -634,7 +634,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;client-address&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;client-address&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_client_address_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_client_address_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>DBusServer) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GDBusServer,
@@ -664,4 +664,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

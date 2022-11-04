@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../graphene/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../graphene/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -380,7 +380,7 @@
 }
 
 <span class="kw">impl </span>Ray {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;graphene_ray_equal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;graphene_ray_equal&quot;</span>)]
     </span><span class="kw">fn </span>equal(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Ray) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_ray_equal(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, b.to_glib_none().<span class="number">0</span>) }
     }
@@ -395,7 +395,7 @@
     ///
     /// ## `res`
     /// return location for the closest point3d
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_ray_get_closest_point_to_point&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_ray_get_closest_point_to_point&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_closest_point_to_point&quot;</span>)]
     </span><span class="kw">pub fn </span>closest_point_to_point(<span class="kw-2">&amp;</span><span class="self">self</span>, p: <span class="kw-2">&amp;</span>Point3D) -&gt; Point3D {
         <span class="kw">unsafe </span>{
@@ -416,7 +416,7 @@
     ///
     /// ## `direction`
     /// return location for the direction
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_ray_get_direction&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_ray_get_direction&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_direction&quot;</span>)]
     </span><span class="kw">pub fn </span>direction(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec3 {
         <span class="kw">unsafe </span>{
@@ -436,7 +436,7 @@
     /// # Returns
     ///
     /// the distance of the origin of the ray from the plane
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_ray_get_distance_to_plane&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_ray_get_distance_to_plane&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_distance_to_plane&quot;</span>)]
     </span><span class="kw">pub fn </span>distance_to_plane(<span class="kw-2">&amp;</span><span class="self">self</span>, p: <span class="kw-2">&amp;</span>Plane) -&gt; f32 {
         <span class="kw">unsafe </span>{
@@ -456,7 +456,7 @@
     /// # Returns
     ///
     /// the distance of the point
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_ray_get_distance_to_point&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_ray_get_distance_to_point&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_distance_to_point&quot;</span>)]
     </span><span class="kw">pub fn </span>distance_to_point(<span class="kw-2">&amp;</span><span class="self">self</span>, p: <span class="kw-2">&amp;</span>Point3D) -&gt; f32 {
         <span class="kw">unsafe </span>{
@@ -471,7 +471,7 @@
     ///
     /// ## `origin`
     /// return location for the origin
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_ray_get_origin&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_ray_get_origin&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_origin&quot;</span>)]
     </span><span class="kw">pub fn </span>origin(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Point3D {
         <span class="kw">unsafe </span>{
@@ -491,7 +491,7 @@
     ///
     /// ## `position`
     /// return location for the position
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_ray_get_position_at&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_ray_get_position_at&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_position_at&quot;</span>)]
     </span><span class="kw">pub fn </span>position_at(<span class="kw-2">&amp;</span><span class="self">self</span>, t: f32) -&gt; Point3D {
         <span class="kw">unsafe </span>{
@@ -516,7 +516,7 @@
     ///
     /// ## `t_out`
     /// the distance of the point on the ray that intersects the box
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_ray_intersect_box&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_ray_intersect_box&quot;</span>)]
     </span><span class="kw">pub fn </span>intersect_box(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Box) -&gt; (RayIntersectionKind, f32) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>t_out = mem::MaybeUninit::uninit();
@@ -540,7 +540,7 @@
     ///
     /// ## `t_out`
     /// the distance of the point on the ray that intersects the sphere
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_ray_intersect_sphere&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_ray_intersect_sphere&quot;</span>)]
     </span><span class="kw">pub fn </span>intersect_sphere(<span class="kw-2">&amp;</span><span class="self">self</span>, s: <span class="kw-2">&amp;</span>Sphere) -&gt; (RayIntersectionKind, f32) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>t_out = mem::MaybeUninit::uninit();
@@ -564,7 +564,7 @@
     ///
     /// ## `t_out`
     /// the distance of the point on the ray that intersects the triangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_ray_intersect_triangle&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_ray_intersect_triangle&quot;</span>)]
     </span><span class="kw">pub fn </span>intersect_triangle(<span class="kw-2">&amp;</span><span class="self">self</span>, t: <span class="kw-2">&amp;</span>Triangle) -&gt; (RayIntersectionKind, f32) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>t_out = mem::MaybeUninit::uninit();
@@ -587,7 +587,7 @@
     /// # Returns
     ///
     /// `true` if the ray intersects the box
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_ray_intersects_box&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_ray_intersects_box&quot;</span>)]
     </span><span class="kw">pub fn </span>intersects_box(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Box) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_ray_intersects_box(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, b.to_glib_none().<span class="number">0</span>) }
     }
@@ -602,7 +602,7 @@
     /// # Returns
     ///
     /// `true` if the ray intersects the sphere
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_ray_intersects_sphere&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_ray_intersects_sphere&quot;</span>)]
     </span><span class="kw">pub fn </span>intersects_sphere(<span class="kw-2">&amp;</span><span class="self">self</span>, s: <span class="kw-2">&amp;</span>Sphere) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_ray_intersects_sphere(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, s.to_glib_none().<span class="number">0</span>) }
     }
@@ -617,14 +617,14 @@
     /// # Returns
     ///
     /// `true` if the ray intersects the triangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_ray_intersects_triangle&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_ray_intersects_triangle&quot;</span>)]
     </span><span class="kw">pub fn </span>intersects_triangle(<span class="kw-2">&amp;</span><span class="self">self</span>, t: <span class="kw-2">&amp;</span>Triangle) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_ray_intersects_triangle(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, t.to_glib_none().<span class="number">0</span>) }
     }
 }
 
 <span class="kw">impl </span>PartialEq <span class="kw">for </span>Ray {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool {
         <span class="self">self</span>.equal(other)
     }
@@ -632,4 +632,4 @@
 
 <span class="kw">impl </span>Eq <span class="kw">for </span>Ray {}
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

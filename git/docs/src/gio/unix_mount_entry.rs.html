@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -288,7 +288,7 @@
 <span class="kw">use </span>std::mem;
 
 <span class="kw">impl </span>UnixMountEntry {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_mount_at&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_unix_mount_at&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_at&quot;</span>)]
     </span><span class="kw">pub fn </span>for_mount_path&lt;P: AsRef&lt;std::path::Path&gt;&gt;(
         mount_path: P,
@@ -304,7 +304,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_mount_for&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_unix_mount_for&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_for&quot;</span>)]
     </span><span class="kw">pub fn </span>for_file_path&lt;P: AsRef&lt;std::path::Path&gt;&gt;(file_path: P) -&gt; (<span class="prelude-ty">Option</span>&lt;UnixMountEntry&gt;, u64) {
         <span class="kw">unsafe </span>{
@@ -318,7 +318,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_mounts_get&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_unix_mounts_get&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_mounts&quot;</span>)]
     </span><span class="kw">pub fn </span>mounts() -&gt; (Vec&lt;UnixMountEntry&gt;, u64) {
         <span class="kw">unsafe </span>{
@@ -331,7 +331,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_mount_compare&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_unix_mount_compare&quot;</span>)]
     </span><span class="kw">pub fn </span>compare(<span class="kw-2">&amp;</span><span class="self">self</span>, mount2: <span class="kw-2">&amp;</span>UnixMountEntry) -&gt; i32 {
         <span class="kw">unsafe </span>{
             ffi::g_unix_mount_compare(
@@ -341,7 +341,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_mount_get_device_path&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_unix_mount_get_device_path&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_device_path&quot;</span>)]
     </span><span class="kw">pub fn </span>device_path(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; std::path::PathBuf {
         <span class="kw">unsafe </span>{
@@ -351,7 +351,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_mount_get_fs_type&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_unix_mount_get_fs_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_fs_type&quot;</span>)]
     </span><span class="kw">pub fn </span>fs_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; GString {
         <span class="kw">unsafe </span>{
@@ -361,7 +361,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_mount_get_mount_path&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_unix_mount_get_mount_path&quot;</span>)]
     </span><span class="kw">pub fn </span>unix_mount_get_mount_path(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; std::path::PathBuf {
         <span class="kw">unsafe </span>{
             from_glib_none(ffi::g_unix_mount_get_mount_path(mut_override(
@@ -370,7 +370,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_unix_mount_get_options&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_options&quot;</span>)]
@@ -382,7 +382,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_unix_mount_get_root_path&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_root_path&quot;</span>)]
@@ -394,7 +394,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_mount_guess_can_eject&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_unix_mount_guess_can_eject&quot;</span>)]
     </span><span class="kw">pub fn </span>guess_can_eject(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::g_unix_mount_guess_can_eject(mut_override(
@@ -403,7 +403,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_mount_guess_icon&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_unix_mount_guess_icon&quot;</span>)]
     </span><span class="kw">pub fn </span>guess_icon(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Icon {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::g_unix_mount_guess_icon(mut_override(
@@ -412,7 +412,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_mount_guess_name&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_unix_mount_guess_name&quot;</span>)]
     </span><span class="kw">pub fn </span>guess_name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; GString {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::g_unix_mount_guess_name(mut_override(
@@ -421,7 +421,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_mount_guess_should_display&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_unix_mount_guess_should_display&quot;</span>)]
     </span><span class="kw">pub fn </span>guess_should_display(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::g_unix_mount_guess_should_display(mut_override(
@@ -430,7 +430,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_mount_guess_symbolic_icon&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_unix_mount_guess_symbolic_icon&quot;</span>)]
     </span><span class="kw">pub fn </span>guess_symbolic_icon(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Icon {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::g_unix_mount_guess_symbolic_icon(mut_override(
@@ -439,7 +439,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_mount_is_readonly&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_unix_mount_is_readonly&quot;</span>)]
     </span><span class="kw">pub fn </span>is_readonly(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::g_unix_mount_is_readonly(mut_override(
@@ -448,7 +448,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_mount_is_system_internal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_unix_mount_is_system_internal&quot;</span>)]
     </span><span class="kw">pub fn </span>is_system_internal(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::g_unix_mount_is_system_internal(mut_override(
@@ -457,14 +457,14 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_mounts_changed_since&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_unix_mounts_changed_since&quot;</span>)]
     </span><span class="kw">pub fn </span>is_changed_since(time: u64) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_unix_mounts_changed_since(time)) }
     }
 }
 
 <span class="kw">impl </span>PartialEq <span class="kw">for </span>UnixMountEntry {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool {
         <span class="self">self</span>.compare(other) == <span class="number">0
     </span>}
@@ -473,17 +473,17 @@
 <span class="kw">impl </span>Eq <span class="kw">for </span>UnixMountEntry {}
 
 <span class="kw">impl </span>PartialOrd <span class="kw">for </span>UnixMountEntry {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>partial_cmp(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;cmp::Ordering&gt; {
         <span class="self">self</span>.compare(other).partial_cmp(<span class="kw-2">&amp;</span><span class="number">0</span>)
     }
 }
 
 <span class="kw">impl </span>Ord <span class="kw">for </span>UnixMountEntry {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>cmp(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; cmp::Ordering {
         <span class="self">self</span>.compare(other).cmp(<span class="kw-2">&amp;</span><span class="number">0</span>)
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../cairo/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../cairo/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -338,7 +338,7 @@
 <span class="kw">use </span><span class="kw">crate</span>::error::Error;
 <span class="kw">use </span><span class="kw">crate</span>::surface::Surface;
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 
 <span class="kw">impl </span>PsLevel {
@@ -354,7 +354,7 @@
 <span class="macro">declare_surface!</span>(PsSurface, SurfaceType::Ps);
 
 <span class="kw">impl </span>PsSurface {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_ps_surface_create&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_ps_surface_create&quot;</span>)]
     </span><span class="kw">pub fn </span>new&lt;P: AsRef&lt;Path&gt;&gt;(width: f64, height: f64, path: P) -&gt; <span class="prelude-ty">Result</span>&lt;PsSurface, Error&gt; {
         <span class="kw">let </span>path = path.as_ref().to_string_lossy().into_owned();
         <span class="kw">let </span>path = CString::new(path).unwrap();
@@ -364,7 +364,7 @@
 
     <span class="macro">for_stream_constructors!</span>(cairo_ps_surface_create_for_stream);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_ps_get_levels&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_ps_get_levels&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_levels&quot;</span>)]
     </span><span class="kw">pub fn </span>levels() -&gt; <span class="kw">impl </span>Iterator&lt;Item = PsLevel&gt; {
         <span class="kw">let </span>lvls_slice = <span class="kw">unsafe </span>{
@@ -383,48 +383,48 @@
         lvls_slice.iter().map(|v| PsLevel::from(<span class="kw-2">*</span>v))
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_ps_surface_restrict_to_level&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_ps_surface_restrict_to_level&quot;</span>)]
     </span><span class="kw">pub fn </span>restrict(<span class="kw-2">&amp;</span><span class="self">self</span>, level: PsLevel) {
         <span class="kw">unsafe </span>{
             ffi::cairo_ps_surface_restrict_to_level(<span class="self">self</span>.<span class="number">0</span>.to_raw_none(), level.into());
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_ps_surface_get_eps&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_ps_surface_get_eps&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_eps&quot;</span>)]
     </span><span class="kw">pub fn </span>is_eps(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::cairo_ps_surface_get_eps(<span class="self">self</span>.<span class="number">0</span>.to_raw_none()).as_bool() }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_ps_surface_set_eps&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_ps_surface_set_eps&quot;</span>)]
     </span><span class="kw">pub fn </span>set_eps(<span class="kw-2">&amp;</span><span class="self">self</span>, eps: bool) {
         <span class="kw">unsafe </span>{
             ffi::cairo_ps_surface_set_eps(<span class="self">self</span>.<span class="number">0</span>.to_raw_none(), eps.into());
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_ps_surface_set_size&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_ps_surface_set_size&quot;</span>)]
     </span><span class="kw">pub fn </span>set_size(<span class="kw-2">&amp;</span><span class="self">self</span>, width: f64, height: f64) {
         <span class="kw">unsafe </span>{
             ffi::cairo_ps_surface_set_size(<span class="self">self</span>.<span class="number">0</span>.to_raw_none(), width, height);
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_ps_surface_dsc_begin_setup&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_ps_surface_dsc_begin_setup&quot;</span>)]
     </span><span class="kw">pub fn </span>dsc_begin_setup(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::cairo_ps_surface_dsc_begin_setup(<span class="self">self</span>.<span class="number">0</span>.to_raw_none());
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_ps_surface_dsc_begin_page_setup&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_ps_surface_dsc_begin_page_setup&quot;</span>)]
     </span><span class="kw">pub fn </span>begin_page_setup(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::cairo_ps_surface_dsc_begin_page_setup(<span class="self">self</span>.<span class="number">0</span>.to_raw_none());
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_ps_surface_dsc_comment&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_ps_surface_dsc_comment&quot;</span>)]
     </span><span class="kw">pub fn </span>dsc_comment(<span class="kw-2">&amp;</span><span class="self">self</span>, comment: <span class="kw-2">&amp;</span>str) {
         <span class="kw">let </span>comment = CString::new(comment).unwrap();
         <span class="kw">unsafe </span>{
@@ -433,7 +433,7 @@
     }
 }
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>test {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use </span><span class="kw">crate</span>::context::<span class="kw-2">*</span>;
@@ -466,18 +466,18 @@
         <span class="kw-2">*</span>surface.finish_output_stream().unwrap().downcast().unwrap()
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>levels() {
         <span class="macro">assert!</span>(PsSurface::levels().any(|v| v == PsLevel::_2));
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>level_string() {
         <span class="kw">let </span>ver_str = PsLevel::_2.as_str().unwrap();
         <span class="macro">assert_eq!</span>(ver_str, <span class="string">&quot;PS Level 2&quot;</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>eps() {
         <span class="kw">let </span>buffer: Vec&lt;u8&gt; = <span class="macro">vec!</span>[];
         <span class="kw">let </span>surface = PsSurface::for_stream(<span class="number">100.</span>, <span class="number">100.</span>, buffer).unwrap();
@@ -485,7 +485,7 @@
         <span class="macro">assert!</span>(surface.is_eps());
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     #[cfg(unix)]
     </span><span class="kw">fn </span>file() {
         <span class="kw">let </span>surface = PsSurface::new(<span class="number">100.</span>, <span class="number">100.</span>, <span class="string">&quot;/dev/null&quot;</span>).unwrap();
@@ -493,7 +493,7 @@
         surface.finish();
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>writer() {
         <span class="kw">let </span>file = tempfile().expect(<span class="string">&quot;tempfile failed&quot;</span>);
         <span class="kw">let </span>surface = PsSurface::for_stream(<span class="number">100.</span>, <span class="number">100.</span>, file).unwrap();
@@ -507,7 +507,7 @@
         <span class="macro">assert_eq!</span>(file_size, buffer.len() <span class="kw">as </span>u64);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>ref_writer() {
         <span class="kw">let </span><span class="kw-2">mut </span>file = tempfile().expect(<span class="string">&quot;tempfile failed&quot;</span>);
         <span class="kw">let </span>surface = <span class="kw">unsafe </span>{ PsSurface::for_raw_stream(<span class="number">100.</span>, <span class="number">100.</span>, <span class="kw-2">&amp;mut </span>file).unwrap() };
@@ -516,7 +516,7 @@
         surface.finish_output_stream().unwrap();
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>buffer() {
         <span class="kw">let </span>buffer = draw_in_buffer();
 
@@ -524,7 +524,7 @@
         <span class="macro">assert_eq!</span>(<span class="kw-2">&amp;</span>buffer[..header.len()], header);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>custom_writer() {
         <span class="kw">struct </span>CustomWriter(usize);
 
@@ -569,11 +569,11 @@
         surface
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     #[should_panic]
     </span><span class="kw">fn </span>finish_stream_propagates_panic() {
         <span class="kw">let _ </span>= with_panicky_stream().finish_output_stream();
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

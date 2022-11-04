@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../cairo/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../cairo/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -384,7 +384,7 @@
 }
 
 <span class="kw">impl </span>ImageSurface {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_image_surface_create_from_png_stream&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_image_surface_create_from_png_stream&quot;</span>)]
     </span><span class="kw">pub fn </span>create_from_png&lt;R: Read&gt;(stream: <span class="kw-2">&amp;mut </span>R) -&gt; <span class="prelude-ty">Result</span>&lt;ImageSurface, IoError&gt; {
         <span class="kw">let </span><span class="kw-2">mut </span>env = ReadEnv {
             reader: stream,
@@ -417,7 +417,7 @@
     ///
     /// If the underlying surface does not support being written as a PNG, this will return
     /// [`Error::SurfaceTypeMismatch`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;cairo_surface_write_to_png_stream&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;cairo_surface_write_to_png_stream&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_surface_write_to_png&quot;</span>)]
     </span><span class="kw">pub fn </span>write_to_png&lt;W: Write&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, stream: <span class="kw-2">&amp;mut </span>W) -&gt; <span class="prelude-ty">Result</span>&lt;(), IoError&gt; {
         <span class="kw">let </span><span class="kw-2">mut </span>env = WriteEnv {
@@ -447,7 +447,7 @@
     }
 }
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use </span><span class="kw">crate</span>::enums::Format;
@@ -462,7 +462,7 @@
         }
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>valid_png_reads_correctly() {
         <span class="comment">// A 1x1 PNG, RGB, no alpha, with a single pixel with (42, 42, 42) values
         </span><span class="kw">let </span>png_data: Vec&lt;u8&gt; = <span class="macro">vec!</span>[
@@ -490,7 +490,7 @@
         <span class="macro">assert_eq!</span>(slice[<span class="number">2</span>], <span class="number">42</span>);
     }
 
-    <span class="attribute">#[cfg(not(target_os = <span class="string">&quot;macos&quot;</span>))]
+    <span class="attr">#[cfg(not(target_os = <span class="string">&quot;macos&quot;</span>))]
     #[test]
     </span><span class="kw">fn </span>invalid_png_yields_error() {
         <span class="kw">let </span>png_data: Vec&lt;u8&gt; = <span class="macro">vec!</span>[
@@ -508,7 +508,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(not(target_os = <span class="string">&quot;macos&quot;</span>))]
+    <span class="attr">#[cfg(not(target_os = <span class="string">&quot;macos&quot;</span>))]
     #[test]
     </span><span class="kw">fn </span>io_error_yields_cairo_read_error() {
         <span class="kw">let </span><span class="kw-2">mut </span>r = IoErrorReader;
@@ -520,4 +520,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1151,7 +1151,7 @@
     /// The constructors of `LocalTask` and `Task` is marked as unsafe because this API does
     /// not allow to automatically enforce all the invariants required to be a completely
     /// safe abstraction. See the `Task` type for more details.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GTask&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GTask&quot;</span>)]
     </span><span class="kw">pub struct </span>LocalTask&lt;V: ValueType&gt;(Object&lt;ffi::GTask, ffi::GTaskClass&gt;) @implements AsyncResult;
 
     <span class="kw">match fn </span>{
@@ -1697,7 +1697,7 @@
     /// # Implements
     ///
     /// [`trait@glib::ObjectExt`], [`AsyncResultExt`][trait@crate::prelude::AsyncResultExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GTask&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GTask&quot;</span>)]
     </span><span class="kw">pub struct </span>Task&lt;V: ValueType + Send&gt;(Object&lt;ffi::GTask, ffi::GTaskClass&gt;) @implements AsyncResult;
 
     <span class="kw">match fn </span>{
@@ -1708,7 +1708,7 @@
 <span class="macro">macro_rules! </span>task_impl {
     (<span class="macro-nonterminal">$name</span>:ident $(, @bound: <span class="macro-nonterminal">$bound</span>:tt)<span class="question-mark">? </span>$(, @safety: <span class="macro-nonterminal">$safety</span>:tt)<span class="question-mark">?</span>) =&gt; {
         <span class="kw">impl </span>&lt;V: ValueType $(+ <span class="macro-nonterminal">$bound</span>)<span class="question-mark">?</span>&gt; <span class="macro-nonterminal">$name</span>&lt;V&gt; {
-            <span class="attribute">#[doc(alias = <span class="string">&quot;g_task_new&quot;</span>)]
+            <span class="attr">#[doc(alias = <span class="string">&quot;g_task_new&quot;</span>)]
             #[allow(unused_unsafe)]
             </span><span class="kw">pub unsafe fn </span>new&lt;S, P, Q&gt;(
                 source_object: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>S&gt;,
@@ -1751,26 +1751,26 @@
                 }
             }
 
-            <span class="attribute">#[doc(alias = <span class="string">&quot;g_task_get_cancellable&quot;</span>)]
+            <span class="attr">#[doc(alias = <span class="string">&quot;g_task_get_cancellable&quot;</span>)]
             #[doc(alias = <span class="string">&quot;get_cancellable&quot;</span>)]
             </span><span class="kw">pub fn </span>cancellable(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Cancellable&gt; {
                 <span class="kw">unsafe </span>{ from_glib_none(ffi::g_task_get_cancellable(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
             }
 
-            <span class="attribute">#[doc(alias = <span class="string">&quot;g_task_get_check_cancellable&quot;</span>)]
+            <span class="attr">#[doc(alias = <span class="string">&quot;g_task_get_check_cancellable&quot;</span>)]
             #[doc(alias = <span class="string">&quot;get_check_cancellable&quot;</span>)]
             </span><span class="kw">pub fn </span>is_check_cancellable(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
                 <span class="kw">unsafe </span>{ from_glib(ffi::g_task_get_check_cancellable(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
             }
 
-            <span class="attribute">#[doc(alias = <span class="string">&quot;g_task_set_check_cancellable&quot;</span>)]
+            <span class="attr">#[doc(alias = <span class="string">&quot;g_task_set_check_cancellable&quot;</span>)]
             </span><span class="kw">pub fn </span>set_check_cancellable(<span class="kw-2">&amp;</span><span class="self">self</span>, check_cancellable: bool) {
                 <span class="kw">unsafe </span>{
                     ffi::g_task_set_check_cancellable(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, check_cancellable.into_glib());
                 }
             }
 
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
             #[doc(alias = <span class="string">&quot;g_task_set_name&quot;</span>)]
             </span><span class="kw">pub fn </span>set_name(<span class="kw-2">&amp;</span><span class="self">self</span>, name: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) {
@@ -1779,7 +1779,7 @@
                 }
             }
 
-            <span class="attribute">#[doc(alias = <span class="string">&quot;g_task_set_return_on_cancel&quot;</span>)]
+            <span class="attr">#[doc(alias = <span class="string">&quot;g_task_set_return_on_cancel&quot;</span>)]
             </span><span class="kw">pub fn </span>set_return_on_cancel(<span class="kw-2">&amp;</span><span class="self">self</span>, return_on_cancel: bool) -&gt; bool {
                 <span class="kw">unsafe </span>{
                     from_glib(ffi::g_task_set_return_on_cancel(
@@ -1789,7 +1789,7 @@
                 }
             }
 
-            <span class="attribute">#[doc(alias = <span class="string">&quot;g_task_is_valid&quot;</span>)]
+            <span class="attr">#[doc(alias = <span class="string">&quot;g_task_is_valid&quot;</span>)]
             </span><span class="kw">pub fn </span>is_valid(
                 result: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;AsyncResult&gt;,
                 source_object: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;glib::Object&gt;&gt;,
@@ -1802,32 +1802,32 @@
                 }
             }
 
-            <span class="attribute">#[doc(alias = <span class="string">&quot;get_priority&quot;</span>)]
+            <span class="attr">#[doc(alias = <span class="string">&quot;get_priority&quot;</span>)]
             #[doc(alias = <span class="string">&quot;g_task_get_priority&quot;</span>)]
             </span><span class="kw">pub fn </span>priority(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::source::Priority {
                 <span class="kw">unsafe </span>{ FromGlib::from_glib(ffi::g_task_get_priority(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
             }
 
-            <span class="attribute">#[doc(alias = <span class="string">&quot;g_task_set_priority&quot;</span>)]
+            <span class="attr">#[doc(alias = <span class="string">&quot;g_task_set_priority&quot;</span>)]
             </span><span class="kw">pub fn </span>set_priority(<span class="kw-2">&amp;</span><span class="self">self</span>, priority: glib::source::Priority) {
                 <span class="kw">unsafe </span>{
                     ffi::g_task_set_priority(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, priority.into_glib());
                 }
             }
 
-            <span class="attribute">#[doc(alias = <span class="string">&quot;g_task_get_completed&quot;</span>)]
+            <span class="attr">#[doc(alias = <span class="string">&quot;g_task_get_completed&quot;</span>)]
             #[doc(alias = <span class="string">&quot;get_completed&quot;</span>)]
             </span><span class="kw">pub fn </span>is_completed(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
                 <span class="kw">unsafe </span>{ from_glib(ffi::g_task_get_completed(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
             }
 
-            <span class="attribute">#[doc(alias = <span class="string">&quot;g_task_get_context&quot;</span>)]
+            <span class="attr">#[doc(alias = <span class="string">&quot;g_task_get_context&quot;</span>)]
             #[doc(alias = <span class="string">&quot;get_context&quot;</span>)]
             </span><span class="kw">pub fn </span>context(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::MainContext {
                 <span class="kw">unsafe </span>{ from_glib_none(ffi::g_task_get_context(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
             }
 
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
             #[doc(alias = <span class="string">&quot;g_task_get_name&quot;</span>)]
             #[doc(alias = <span class="string">&quot;get_name&quot;</span>)]
@@ -1835,18 +1835,18 @@
                 <span class="kw">unsafe </span>{ from_glib_none(ffi::g_task_get_name(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
             }
 
-            <span class="attribute">#[doc(alias = <span class="string">&quot;g_task_get_return_on_cancel&quot;</span>)]
+            <span class="attr">#[doc(alias = <span class="string">&quot;g_task_get_return_on_cancel&quot;</span>)]
             #[doc(alias = <span class="string">&quot;get_return_on_cancel&quot;</span>)]
             </span><span class="kw">pub fn </span>is_return_on_cancel(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
                 <span class="kw">unsafe </span>{ from_glib(ffi::g_task_get_return_on_cancel(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
             }
 
-            <span class="attribute">#[doc(alias = <span class="string">&quot;g_task_had_error&quot;</span>)]
+            <span class="attr">#[doc(alias = <span class="string">&quot;g_task_had_error&quot;</span>)]
             </span><span class="kw">pub fn </span>had_error(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
                 <span class="kw">unsafe </span>{ from_glib(ffi::g_task_had_error(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
             }
 
-            <span class="attribute">#[doc(alias = <span class="string">&quot;completed&quot;</span>)]
+            <span class="attr">#[doc(alias = <span class="string">&quot;completed&quot;</span>)]
             </span><span class="kw">pub fn </span>connect_completed_notify&lt;F&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId
             <span class="kw">where
                 </span>F: Fn(<span class="kw-2">&amp;</span><span class="macro-nonterminal">$name</span>&lt;V&gt;) $(+ <span class="macro-nonterminal">$bound</span>)<span class="question-mark">? </span>+ <span class="lifetime">&#39;static</span>,
@@ -1878,33 +1878,33 @@
             <span class="comment">// the following functions are marked unsafe since they cannot be called
             // more than once, but we have no way to enforce that since the task can be cloned
 
-            </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_task_return_error_if_cancelled&quot;</span>)]
+            </span><span class="attr">#[doc(alias = <span class="string">&quot;g_task_return_error_if_cancelled&quot;</span>)]
             #[allow(unused_unsafe)]
             </span><span class="kw">pub </span>$(<span class="macro-nonterminal">$safety</span>)<span class="question-mark">? </span><span class="kw">fn </span>return_error_if_cancelled(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
                 <span class="kw">unsafe </span>{ from_glib(ffi::g_task_return_error_if_cancelled(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
             }
 
-            <span class="attribute">#[doc(alias = <span class="string">&quot;g_task_return_value&quot;</span>)]
+            <span class="attr">#[doc(alias = <span class="string">&quot;g_task_return_value&quot;</span>)]
             #[doc(alias = <span class="string">&quot;g_task_return_boolean&quot;</span>)]
             #[doc(alias = <span class="string">&quot;g_task_return_int&quot;</span>)]
             #[doc(alias = <span class="string">&quot;g_task_return_pointer&quot;</span>)]
             #[doc(alias = <span class="string">&quot;g_task_return_error&quot;</span>)]
             #[allow(unused_unsafe)]
             </span><span class="kw">pub </span>$(<span class="macro-nonterminal">$safety</span>)<span class="question-mark">? </span><span class="kw">fn </span>return_result(<span class="self">self</span>, result: <span class="prelude-ty">Result</span>&lt;V, glib::Error&gt;) {
-                <span class="attribute">#[cfg(not(feature = <span class="string">&quot;v2_64&quot;</span>))]
+                <span class="attr">#[cfg(not(feature = <span class="string">&quot;v2_64&quot;</span>))]
                 </span><span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>value_free(value: <span class="kw-2">*mut </span>libc::c_void) {
                     <span class="kw">let _</span>: glib::Value = from_glib_full(value <span class="kw">as </span><span class="kw-2">*mut </span>glib::gobject_ffi::GValue);
                 }
 
                 <span class="kw">match </span>result {
-                    <span class="attribute">#[cfg(feature = <span class="string">&quot;v2_64&quot;</span>)]
+                    <span class="attr">#[cfg(feature = <span class="string">&quot;v2_64&quot;</span>)]
                     </span><span class="prelude-val">Ok</span>(v) =&gt; <span class="kw">unsafe </span>{
                         ffi::g_task_return_value(
                             <span class="self">self</span>.to_glib_none().<span class="number">0</span>,
                             v.to_value().to_glib_none().<span class="number">0 </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
                         )
                     },
-                    <span class="attribute">#[cfg(not(feature = <span class="string">&quot;v2_64&quot;</span>))]
+                    <span class="attr">#[cfg(not(feature = <span class="string">&quot;v2_64&quot;</span>))]
                     </span><span class="prelude-val">Ok</span>(v) =&gt; <span class="kw">unsafe </span>{
                         ffi::g_task_return_pointer(
                             <span class="self">self</span>.to_glib_none().<span class="number">0</span>,
@@ -1918,7 +1918,7 @@
                 }
             }
 
-            <span class="attribute">#[doc(alias = <span class="string">&quot;g_task_propagate_value&quot;</span>)]
+            <span class="attr">#[doc(alias = <span class="string">&quot;g_task_propagate_value&quot;</span>)]
             #[doc(alias = <span class="string">&quot;g_task_propagate_boolean&quot;</span>)]
             #[doc(alias = <span class="string">&quot;g_task_propagate_int&quot;</span>)]
             #[doc(alias = <span class="string">&quot;g_task_propagate_pointer&quot;</span>)]
@@ -1927,7 +1927,7 @@
                 <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
 
                 <span class="kw">unsafe </span>{
-                    <span class="attribute">#[cfg(feature = <span class="string">&quot;v2_64&quot;</span>)]
+                    <span class="attr">#[cfg(feature = <span class="string">&quot;v2_64&quot;</span>)]
                     </span>{
                         <span class="kw">let </span><span class="kw-2">mut </span>value = glib::Value::uninitialized();
                         ffi::g_task_propagate_value(
@@ -1943,7 +1943,7 @@
                         }
                     }
 
-                    <span class="attribute">#[cfg(not(feature = <span class="string">&quot;v2_64&quot;</span>))]
+                    <span class="attr">#[cfg(not(feature = <span class="string">&quot;v2_64&quot;</span>))]
                     </span>{
                         <span class="kw">let </span>value = ffi::g_task_propagate_pointer(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, <span class="kw-2">&amp;mut </span>error);
 
@@ -1973,7 +1973,7 @@
 <span class="macro">task_impl!</span>(Task, @bound: Send, @safety: <span class="kw">unsafe</span>);
 
 <span class="kw">impl</span>&lt;V: ValueType + Send&gt; Task&lt;V&gt; {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_task_run_in_thread&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_task_run_in_thread&quot;</span>)]
     </span><span class="kw">pub fn </span>run_in_thread&lt;S, Q&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, task_func: Q)
     <span class="kw">where
         </span>S: IsA&lt;glib::Object&gt; + Send,
@@ -2028,13 +2028,13 @@
 <span class="kw">unsafe impl</span>&lt;V: ValueType + Send&gt; Send <span class="kw">for </span>Task&lt;V&gt; {}
 <span class="kw">unsafe impl</span>&lt;V: ValueType + Send&gt; Sync <span class="kw">for </span>Task&lt;V&gt; {}
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>test {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
     <span class="kw">use </span><span class="kw">crate</span>::test_util::run_async_local;
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_int_async_result() {
         <span class="kw">match </span>run_async_local(|tx, l| {
             <span class="kw">let </span>cancellable = <span class="kw">crate</span>::Cancellable::new();
@@ -2055,14 +2055,14 @@
         }
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_object_async_result() {
         <span class="kw">use </span>glib::subclass::prelude::<span class="kw-2">*</span>;
         <span class="kw">pub struct </span>MySimpleObjectPrivate {
             <span class="kw">pub </span>size: std::cell::RefCell&lt;<span class="prelude-ty">Option</span>&lt;i64&gt;&gt;,
         }
 
-        <span class="attribute">#[glib::object_subclass]
+        <span class="attr">#[glib::object_subclass]
         </span><span class="kw">impl </span>ObjectSubclass <span class="kw">for </span>MySimpleObjectPrivate {
             <span class="kw">const </span>NAME: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str = <span class="string">&quot;MySimpleObjectPrivate&quot;</span>;
             <span class="kw">type </span>Type = MySimpleObject;
@@ -2085,7 +2085,7 @@
                 glib::Object::new(<span class="kw-2">&amp;</span>[])
             }
 
-            <span class="attribute">#[doc(alias = <span class="string">&quot;get_size&quot;</span>)]
+            <span class="attr">#[doc(alias = <span class="string">&quot;get_size&quot;</span>)]
             </span><span class="kw">pub fn </span>size(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;i64&gt; {
                 <span class="kw-2">*</span><span class="self">self</span>.imp().size.borrow()
             }
@@ -2125,7 +2125,7 @@
         }
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_error() {
         <span class="kw">match </span>run_async_local(|tx, l| {
             <span class="kw">let </span>cancellable = <span class="kw">crate</span>::Cancellable::new();
@@ -2152,7 +2152,7 @@
         }
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_cancelled() {
         <span class="kw">match </span>run_async_local(|tx, l| {
             <span class="kw">let </span>cancellable = <span class="kw">crate</span>::Cancellable::new();
@@ -2178,4 +2178,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

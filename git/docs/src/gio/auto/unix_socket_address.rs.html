@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -251,7 +251,7 @@
     /// # Implements
     ///
     /// [`UnixSocketAddressExt`][trait@crate::prelude::UnixSocketAddressExt], [`SocketAddressExt`][trait@crate::prelude::SocketAddressExt], [`trait@glib::ObjectExt`], [`SocketConnectableExt`][trait@crate::prelude::SocketConnectableExt], [`UnixSocketAddressExtManual`][trait@crate::prelude::UnixSocketAddressExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GUnixSocketAddress&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GUnixSocketAddress&quot;</span>)]
     </span><span class="kw">pub struct </span>UnixSocketAddress(Object&lt;ffi::GUnixSocketAddress, ffi::GUnixSocketAddressClass&gt;) @extends SocketAddress, @implements SocketConnectable;
 
     <span class="kw">match fn </span>{
@@ -278,7 +278,7 @@
     /// # Returns
     ///
     /// [`true`] if supported, [`false`] otherwise
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_socket_address_abstract_names_supported&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_unix_socket_address_abstract_names_supported&quot;</span>)]
     </span><span class="kw">pub fn </span>abstract_names_supported() -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_unix_socket_address_abstract_names_supported()) }
     }
@@ -298,7 +298,7 @@
     /// # Returns
     ///
     /// a [`UnixSocketAddressType`][crate::UnixSocketAddressType]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_socket_address_get_address_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_unix_socket_address_get_address_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_address_type&quot;</span>)]
     </span><span class="kw">fn </span>address_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; UnixSocketAddressType;
 
@@ -311,7 +311,7 @@
     /// # Returns
     ///
     /// [`true`] if the address is abstract, [`false`] otherwise
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_socket_address_get_is_abstract&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_unix_socket_address_get_is_abstract&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_is_abstract&quot;</span>)]
     </span><span class="kw">fn </span>is_abstract(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -322,11 +322,11 @@
     /// # Returns
     ///
     /// the length of the path
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_unix_socket_address_get_path_len&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_unix_socket_address_get_path_len&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_path_len&quot;</span>)]
     </span><span class="kw">fn </span>path_len(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; usize;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;path-as-array&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;path-as-array&quot;</span>)]
     </span><span class="kw">fn </span>path_as_array(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::ByteArray&gt;;
 }
 
@@ -362,4 +362,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

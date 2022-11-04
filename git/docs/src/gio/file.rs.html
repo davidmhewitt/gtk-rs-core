@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1435,9 +1435,9 @@
 <span class="kw">use </span>std::pin::Pin;
 <span class="kw">use </span>std::ptr;
 
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span><span class="kw">crate</span>::FileIOStream;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span>std::boxed::Box <span class="kw">as </span>Box_;
 
 <span class="kw">impl </span>File {
@@ -1456,7 +1456,7 @@
     /// optional [`Cancellable`][crate::Cancellable] object, [`None`] to ignore
     /// ## `callback`
     /// a `GAsyncReadyCallback` to call when the request is done
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_file_new_tmp_async&quot;</span>)]
     </span><span class="kw">pub fn </span>new_tmp_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;(File, FileIOStream), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
@@ -1509,7 +1509,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     </span><span class="kw">pub fn </span>new_tmp_future(
         tmpl: <span class="prelude-ty">Option</span>&lt;<span class="kw">impl </span>AsRef&lt;std::path::Path&gt;&gt;,
@@ -1549,7 +1549,7 @@
     /// optional [`Cancellable`][crate::Cancellable] object, [`None`] to ignore
     /// ## `callback`
     /// a `GAsyncReadyCallback` to call when the request is done
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_file_new_tmp_dir_async&quot;</span>)]
     </span><span class="kw">pub fn </span>new_tmp_dir_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;File, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
@@ -1601,7 +1601,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     </span><span class="kw">pub fn </span>new_tmp_dir_future(
         tmpl: <span class="prelude-ty">Option</span>&lt;<span class="kw">impl </span>AsRef&lt;std::path::Path&gt;&gt;,
@@ -1657,7 +1657,7 @@
     /// optional [`Cancellable`][crate::Cancellable] object, [`None`] to ignore
     /// ## `callback`
     /// a `GAsyncReadyCallback` to call when the request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_replace_contents_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_replace_contents_async&quot;</span>)]
     </span><span class="kw">fn </span>replace_contents_async&lt;
         B: AsRef&lt;[u8]&gt; + Send + <span class="lifetime">&#39;static</span>,
         R: FnOnce(<span class="prelude-ty">Result</span>&lt;(B, glib::GString), (B, glib::Error)&gt;) + <span class="lifetime">&#39;static</span>,
@@ -1685,7 +1685,7 @@
         &gt;,
     &gt;;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_file_enumerate_children_async&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_file_enumerate_children_async&quot;</span>)]
     </span><span class="kw">fn </span>enumerate_children_async&lt;
         P: IsA&lt;Cancellable&gt;,
         Q: FnOnce(<span class="prelude-ty">Result</span>&lt;FileEnumerator, glib::Error&gt;) + <span class="lifetime">&#39;static</span>,
@@ -1731,7 +1731,7 @@
     /// user data to pass to `progress_callback`
     /// ## `callback`
     /// a `GAsyncReadyCallback` to call when the request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_copy_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_copy_async&quot;</span>)]
     </span><span class="kw">fn </span>copy_async&lt;Q: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         destination: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;File&gt;,
@@ -1772,7 +1772,7 @@
     /// ## `callback`
     /// a `GAsyncReadyCallback` to call
     ///  when the request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_load_partial_contents_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_load_partial_contents_async&quot;</span>)]
     </span><span class="kw">fn </span>load_partial_contents_async&lt;
         P: FnMut(<span class="kw-2">&amp;</span>[u8]) -&gt; bool + <span class="lifetime">&#39;static</span>,
         Q: FnOnce(<span class="prelude-ty">Result</span>&lt;(Vec&lt;u8&gt;, <span class="prelude-ty">Option</span>&lt;glib::GString&gt;), glib::Error&gt;) + <span class="lifetime">&#39;static</span>,
@@ -1823,7 +1823,7 @@
     ///
     /// ## `num_files`
     /// the number of non-directories encountered
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_measure_disk_usage&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_measure_disk_usage&quot;</span>)]
     </span><span class="kw">fn </span>measure_disk_usage(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         flags: <span class="kw">crate</span>::FileMeasureFlags,
@@ -1847,7 +1847,7 @@
     /// user_data for `progress_callback`
     /// ## `callback`
     /// a `GAsyncReadyCallback` to call when complete
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_measure_disk_usage_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_measure_disk_usage_async&quot;</span>)]
     </span><span class="kw">fn </span>measure_disk_usage_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;(u64, u64, u64), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         flags: <span class="kw">crate</span>::FileMeasureFlags,
@@ -1893,7 +1893,7 @@
     /// ## `callback`
     /// a `GAsyncReadyCallback` to call
     ///  when the request is satisfied
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_file_move_async&quot;</span>)]
     </span><span class="kw">fn </span>move_async&lt;Q: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
@@ -1919,7 +1919,7 @@
     /// ## `callback`
     /// a `GAsyncReadyCallback` to call
     ///  when the request is satisfied
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_file_make_symbolic_link_async&quot;</span>)]
     </span><span class="kw">fn </span>make_symbolic_link_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
@@ -1930,7 +1930,7 @@
         callback: P,
     );
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     </span><span class="kw">fn </span>make_symbolic_link_future(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -1938,7 +1938,7 @@
         io_priority: glib::Priority,
     ) -&gt; Pin&lt;Box_&lt;<span class="kw">dyn </span>std::future::Future&lt;Output = <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;&gt; + <span class="lifetime">&#39;static</span>&gt;&gt;;
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">fn </span>move_future(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -2569,7 +2569,7 @@
         (fut, Box::pin(receiver))
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">fn </span>move_async&lt;Q: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -2658,7 +2658,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">fn </span>move_future(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -2694,7 +2694,7 @@
         (fut, Box::pin(receiver))
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     </span><span class="kw">fn </span>make_symbolic_link_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -2748,7 +2748,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     </span><span class="kw">fn </span>make_symbolic_link_future(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -2772,4 +2772,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

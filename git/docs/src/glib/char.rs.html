@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -339,13 +339,13 @@
 ///
 /// have_a_byte(Char::from(b&#39;a&#39;).into_glib());
 /// ```
-</span><span class="attribute">#[derive(Debug, Copy, Clone, Eq, PartialEq)]
+</span><span class="attr">#[derive(Debug, Copy, Clone, Eq, PartialEq)]
 </span><span class="kw">pub struct </span>Char(<span class="kw">pub </span>c_char);
 
 <span class="kw">impl </span>TryFrom&lt;char&gt; <span class="kw">for </span>Char {
     <span class="kw">type </span>Error = TryFromIntError;
 
-    <span class="attribute">#[allow(clippy::unnecessary_cast)]
+    <span class="attr">#[allow(clippy::unnecessary_cast)]
     </span><span class="kw">fn </span>try_from(c: char) -&gt; <span class="prelude-ty">Result</span>&lt;Char, <span class="self">Self</span>::Error&gt; {
         <span class="prelude-val">Ok</span>(<span class="self">Self</span>(u8::try_from(u32::from(c))<span class="question-mark">? </span><span class="kw">as </span>c_char))
     }
@@ -358,27 +358,27 @@
 }
 
 <span class="kw">impl </span>From&lt;u8&gt; <span class="kw">for </span>Char {
-    <span class="attribute">#[allow(clippy::unnecessary_cast)]
+    <span class="attr">#[allow(clippy::unnecessary_cast)]
     </span><span class="kw">fn </span>from(c: u8) -&gt; Char {
         Char(c <span class="kw">as </span>c_char)
     }
 }
 
 <span class="kw">impl </span>From&lt;Char&gt; <span class="kw">for </span>u8 {
-    <span class="attribute">#[allow(clippy::unnecessary_cast)]
+    <span class="attr">#[allow(clippy::unnecessary_cast)]
     </span><span class="kw">fn </span>from(c: Char) -&gt; u8 {
         c.<span class="number">0 </span><span class="kw">as </span>u8
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;c_char&gt; <span class="kw">for </span>Char {
     <span class="kw">unsafe fn </span>from_glib(value: c_char) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>(value)
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>Char {
     <span class="kw">type </span>GlibType = c_char;
 
@@ -412,13 +412,13 @@
 ///
 /// have_a_byte(UChar::from(b&#39;a&#39;).into_glib());
 /// ```
-</span><span class="attribute">#[derive(Debug, Copy, Clone, Eq, PartialEq)]
+</span><span class="attr">#[derive(Debug, Copy, Clone, Eq, PartialEq)]
 </span><span class="kw">pub struct </span>UChar(<span class="kw">pub </span>c_uchar);
 
 <span class="kw">impl </span>TryFrom&lt;char&gt; <span class="kw">for </span>UChar {
     <span class="kw">type </span>Error = TryFromIntError;
 
-    <span class="attribute">#[allow(clippy::unnecessary_cast)]
+    <span class="attr">#[allow(clippy::unnecessary_cast)]
     </span><span class="kw">fn </span>try_from(c: char) -&gt; <span class="prelude-ty">Result</span>&lt;UChar, <span class="self">Self</span>::Error&gt; {
         <span class="prelude-val">Ok</span>(<span class="self">Self</span>(u8::try_from(u32::from(c))<span class="question-mark">? </span><span class="kw">as </span>c_uchar))
     }
@@ -431,7 +431,7 @@
 }
 
 <span class="kw">impl </span>From&lt;u8&gt; <span class="kw">for </span>UChar {
-    <span class="attribute">#[allow(clippy::unnecessary_cast)]
+    <span class="attr">#[allow(clippy::unnecessary_cast)]
     </span><span class="kw">fn </span>from(c: u8) -&gt; UChar {
         UChar(c <span class="kw">as _</span>)
     }
@@ -443,14 +443,14 @@
     </span>}
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;c_uchar&gt; <span class="kw">for </span>UChar {
     <span class="kw">unsafe fn </span>from_glib(value: c_uchar) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>(value)
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>UChar {
     <span class="kw">type </span>GlibType = c_uchar;
 
@@ -459,12 +459,12 @@
     </span>}
 }
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use </span><span class="kw">crate</span>::translate::from_glib;
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     #[allow(clippy::unnecessary_cast)]
     </span><span class="kw">fn </span>converts_single_byte_chars() {
         <span class="macro">assert_eq!</span>(Char::try_from(<span class="number">0 </span><span class="kw">as </span>char), <span class="prelude-val">Ok</span>(Char(<span class="number">0 </span><span class="kw">as </span>c_char)));
@@ -473,32 +473,32 @@
         <span class="macro">assert_eq!</span>(UChar::try_from(<span class="string">&#39;ñ&#39;</span>), <span class="prelude-val">Ok</span>(UChar(<span class="number">241 </span><span class="kw">as </span>c_uchar)));
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>refuses_multibyte_chars() {
         <span class="macro">assert!</span>(Char::try_from(<span class="string">&#39;☔&#39;</span>).is_err()); <span class="comment">// no umbrella for you
         </span><span class="macro">assert!</span>(UChar::try_from(<span class="string">&#39;☔&#39;</span>).is_err());
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     #[allow(clippy::unnecessary_cast)]
     </span><span class="kw">fn </span>into_i8() {
         <span class="macro">assert_eq!</span>(Char::from(<span class="string">b&#39;A&#39;</span>).into_glib(), <span class="number">65 </span><span class="kw">as </span>c_char);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     #[allow(clippy::unnecessary_cast)]
     </span><span class="kw">fn </span>into_u8() {
         <span class="macro">assert_eq!</span>(UChar::from(<span class="string">b&#39;A&#39;</span>).into_glib(), <span class="number">65 </span><span class="kw">as </span>c_uchar);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     #[allow(clippy::unnecessary_cast)]
     </span><span class="kw">fn </span>into_char() {
         <span class="macro">assert_eq!</span>(char::from(Char(<span class="number">65 </span><span class="kw">as </span>c_char)), <span class="string">&#39;A&#39;</span>);
         <span class="macro">assert_eq!</span>(<span class="string">&#39;ñ&#39;</span>, UChar(<span class="number">241 </span><span class="kw">as </span>c_uchar).into());
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     #[allow(clippy::unnecessary_cast)]
     </span><span class="kw">fn </span>convert_from_glib() {
         <span class="macro">assert_eq!</span>(Char(<span class="number">65 </span><span class="kw">as </span>c_char), <span class="kw">unsafe </span>{ from_glib(<span class="number">65 </span><span class="kw">as </span>c_char) });
@@ -506,4 +506,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

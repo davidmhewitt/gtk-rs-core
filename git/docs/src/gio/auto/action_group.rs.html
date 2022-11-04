@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -769,7 +769,7 @@
     /// # Implements
     ///
     /// [`ActionGroupExt`][trait@crate::prelude::ActionGroupExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GActionGroup&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GActionGroup&quot;</span>)]
     </span><span class="kw">pub struct </span>ActionGroup(Interface&lt;ffi::GActionGroup, ffi::GActionGroupInterface&gt;);
 
     <span class="kw">match fn </span>{
@@ -792,7 +792,7 @@
     /// This function should only be called by [`ActionGroup`][crate::ActionGroup] implementations.
     /// ## `action_name`
     /// the name of an action in the group
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_group_action_added&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_group_action_added&quot;</span>)]
     </span><span class="kw">fn </span>action_added(<span class="kw-2">&amp;</span><span class="self">self</span>, action_name: <span class="kw-2">&amp;</span>str);
 
     <span class="doccomment">/// Emits the `signal::ActionGroup::action-enabled-changed` signal on `self`.
@@ -802,7 +802,7 @@
     /// the name of an action in the group
     /// ## `enabled`
     /// whether or not the action is now enabled
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_group_action_enabled_changed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_group_action_enabled_changed&quot;</span>)]
     </span><span class="kw">fn </span>action_enabled_changed(<span class="kw-2">&amp;</span><span class="self">self</span>, action_name: <span class="kw-2">&amp;</span>str, enabled: bool);
 
     <span class="doccomment">/// Emits the `signal::ActionGroup::action-removed` signal on `self`.
@@ -810,7 +810,7 @@
     /// This function should only be called by [`ActionGroup`][crate::ActionGroup] implementations.
     /// ## `action_name`
     /// the name of an action in the group
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_group_action_removed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_group_action_removed&quot;</span>)]
     </span><span class="kw">fn </span>action_removed(<span class="kw-2">&amp;</span><span class="self">self</span>, action_name: <span class="kw-2">&amp;</span>str);
 
     <span class="doccomment">/// Emits the `signal::ActionGroup::action-state-changed` signal on `self`.
@@ -820,7 +820,7 @@
     /// the name of an action in the group
     /// ## `state`
     /// the new state of the named action
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_group_action_state_changed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_group_action_state_changed&quot;</span>)]
     </span><span class="kw">fn </span>action_state_changed(<span class="kw-2">&amp;</span><span class="self">self</span>, action_name: <span class="kw-2">&amp;</span>str, state: <span class="kw-2">&amp;</span>glib::Variant);
 
     <span class="doccomment">/// Activate the named action within `self`.
@@ -864,7 +864,7 @@
     /// the name of the action to activate
     /// ## `parameter`
     /// parameters to the activation
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_group_activate_action&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_group_activate_action&quot;</span>)]
     </span><span class="kw">fn </span>activate_action(<span class="kw-2">&amp;</span><span class="self">self</span>, action_name: <span class="kw-2">&amp;</span>str, parameter: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>glib::Variant&gt;);
 
     <span class="doccomment">/// Request for the state of the named action within `self` to be
@@ -882,7 +882,7 @@
     /// the name of the action to request the change on
     /// ## `value`
     /// the new state
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_group_change_action_state&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_group_change_action_state&quot;</span>)]
     </span><span class="kw">fn </span>change_action_state(<span class="kw-2">&amp;</span><span class="self">self</span>, action_name: <span class="kw-2">&amp;</span>str, value: <span class="kw-2">&amp;</span>glib::Variant);
 
     <span class="doccomment">/// Checks if the named action within `self` is currently enabled.
@@ -895,7 +895,7 @@
     /// # Returns
     ///
     /// whether or not the action is currently enabled
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_group_get_action_enabled&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_group_get_action_enabled&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_action_enabled&quot;</span>)]
     </span><span class="kw">fn </span>is_action_enabled(<span class="kw-2">&amp;</span><span class="self">self</span>, action_name: <span class="kw-2">&amp;</span>str) -&gt; bool;
 
@@ -918,7 +918,7 @@
     /// # Returns
     ///
     /// the parameter type
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_group_get_action_parameter_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_group_get_action_parameter_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_action_parameter_type&quot;</span>)]
     </span><span class="kw">fn </span>action_parameter_type(<span class="kw-2">&amp;</span><span class="self">self</span>, action_name: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;glib::VariantType&gt;;
 
@@ -936,7 +936,7 @@
     /// # Returns
     ///
     /// the current state of the action
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_group_get_action_state&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_group_get_action_state&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_action_state&quot;</span>)]
     </span><span class="kw">fn </span>action_state(<span class="kw-2">&amp;</span><span class="self">self</span>, action_name: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;glib::Variant&gt;;
 
@@ -964,7 +964,7 @@
     /// # Returns
     ///
     /// the state range hint
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_group_get_action_state_hint&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_group_get_action_state_hint&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_action_state_hint&quot;</span>)]
     </span><span class="kw">fn </span>action_state_hint(<span class="kw-2">&amp;</span><span class="self">self</span>, action_name: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;glib::Variant&gt;;
 
@@ -990,7 +990,7 @@
     /// # Returns
     ///
     /// the state type, if the action is stateful
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_group_get_action_state_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_group_get_action_state_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_action_state_type&quot;</span>)]
     </span><span class="kw">fn </span>action_state_type(<span class="kw-2">&amp;</span><span class="self">self</span>, action_name: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;glib::VariantType&gt;;
 
@@ -1001,7 +1001,7 @@
     /// # Returns
     ///
     /// whether the named action exists
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_group_has_action&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_group_has_action&quot;</span>)]
     </span><span class="kw">fn </span>has_action(<span class="kw-2">&amp;</span><span class="self">self</span>, action_name: <span class="kw-2">&amp;</span>str) -&gt; bool;
 
     <span class="doccomment">/// Lists the actions contained within `self`.
@@ -1013,7 +1013,7 @@
     ///
     /// a [`None`]-terminated array of the names of the
     /// actions in the group
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_group_list_actions&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_group_list_actions&quot;</span>)]
     </span><span class="kw">fn </span>list_actions(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;glib::GString&gt;;
 
     <span class="doccomment">/// Signals that a new action was just added to the group.
@@ -1021,7 +1021,7 @@
     /// and is now visible.
     /// ## `action_name`
     /// the name of the action in `action_group`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;action-added&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;action-added&quot;</span>)]
     </span><span class="kw">fn </span>connect_action_added&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>str) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         detail: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
@@ -1033,7 +1033,7 @@
     /// the name of the action in `action_group`
     /// ## `enabled`
     /// whether the action is enabled or not
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;action-enabled-changed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;action-enabled-changed&quot;</span>)]
     </span><span class="kw">fn </span>connect_action_enabled_changed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>str, bool) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         detail: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
@@ -1045,7 +1045,7 @@
     /// is still visible and can be queried from the signal handler.
     /// ## `action_name`
     /// the name of the action in `action_group`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;action-removed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;action-removed&quot;</span>)]
     </span><span class="kw">fn </span>connect_action_removed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>str) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         detail: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
@@ -1057,7 +1057,7 @@
     /// the name of the action in `action_group`
     /// ## `value`
     /// the new value of the state
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;action-state-changed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;action-state-changed&quot;</span>)]
     </span><span class="kw">fn </span>connect_action_state_changed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span>glib::Variant) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         detail: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
@@ -1342,4 +1342,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

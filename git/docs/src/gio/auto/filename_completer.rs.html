@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -215,7 +215,7 @@
     /// # Implements
     ///
     /// [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GFilenameCompleter&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GFilenameCompleter&quot;</span>)]
     </span><span class="kw">pub struct </span>FilenameCompleter(Object&lt;ffi::GFilenameCompleter, ffi::GFilenameCompleterClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -229,7 +229,7 @@
     /// # Returns
     ///
     /// a [`FilenameCompleter`][crate::FilenameCompleter].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_filename_completer_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_filename_completer_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; FilenameCompleter {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_filename_completer_new()) }
     }
@@ -243,7 +243,7 @@
     /// a completed string, or [`None`] if no
     ///  completion exists. This string is not owned by GIO, so remember to `g_free()`
     ///  it when finished.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_filename_completer_get_completion_suffix&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_filename_completer_get_completion_suffix&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_completion_suffix&quot;</span>)]
     </span><span class="kw">pub fn </span>completion_suffix(<span class="kw-2">&amp;</span><span class="self">self</span>, initial_text: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{
@@ -262,7 +262,7 @@
     ///
     /// array of strings with possible completions for `initial_text`.
     /// This array must be freed by `g_strfreev()` when finished.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_filename_completer_get_completions&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_filename_completer_get_completions&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_completions&quot;</span>)]
     </span><span class="kw">pub fn </span>completions(<span class="kw-2">&amp;</span><span class="self">self</span>, initial_text: <span class="kw-2">&amp;</span>str) -&gt; Vec&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{
@@ -277,7 +277,7 @@
     /// complete directory names, and not file names.
     /// ## `dirs_only`
     /// a `gboolean`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_filename_completer_set_dirs_only&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_filename_completer_set_dirs_only&quot;</span>)]
     </span><span class="kw">pub fn </span>set_dirs_only(<span class="kw-2">&amp;</span><span class="self">self</span>, dirs_only: bool) {
         <span class="kw">unsafe </span>{
             ffi::g_filename_completer_set_dirs_only(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, dirs_only.into_glib());
@@ -285,7 +285,7 @@
     }
 
     <span class="doccomment">/// Emitted when the file name completion information comes available.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;got-completion-data&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;got-completion-data&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_got_completion_data&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>got_completion_data_trampoline&lt;F: Fn(<span class="kw-2">&amp;</span>FilenameCompleter) + <span class="lifetime">&#39;static</span>&gt;(
             this: <span class="kw-2">*mut </span>ffi::GFilenameCompleter,
@@ -320,4 +320,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

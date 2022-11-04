@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../cairo/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../cairo/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -651,7 +651,7 @@
 <span class="kw">use </span>std::ptr;
 
 <span class="comment">// See https://cairographics.org/manual/bindings-patterns.html for more info
-</span><span class="attribute">#[derive(Debug)]
+</span><span class="attr">#[derive(Debug)]
 </span><span class="kw">pub struct </span>Pattern {
     pointer: <span class="kw-2">*mut </span>cairo_pattern_t,
 }
@@ -681,46 +681,46 @@
         <span class="self">Self </span>{ pointer }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pattern_get_type&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pattern_get_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_type&quot;</span>)]
     </span><span class="kw">pub fn </span>type_(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; PatternType {
         <span class="kw">unsafe </span>{ ffi::cairo_pattern_get_type(<span class="self">self</span>.pointer).into() }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pattern_get_reference_count&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pattern_get_reference_count&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_reference_count&quot;</span>)]
     </span><span class="kw">pub fn </span>reference_count(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; isize {
         <span class="kw">unsafe </span>{ ffi::cairo_pattern_get_reference_count(<span class="self">self</span>.pointer) <span class="kw">as </span>isize }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pattern_set_extend&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pattern_set_extend&quot;</span>)]
     </span><span class="kw">pub fn </span>set_extend(<span class="kw-2">&amp;</span><span class="self">self</span>, extend: Extend) {
         <span class="kw">unsafe </span>{ ffi::cairo_pattern_set_extend(<span class="self">self</span>.pointer, extend.into()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pattern_get_extend&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pattern_get_extend&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_extend&quot;</span>)]
     </span><span class="kw">pub fn </span>extend(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Extend {
         <span class="kw">unsafe </span>{ Extend::from(ffi::cairo_pattern_get_extend(<span class="self">self</span>.pointer)) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pattern_set_filter&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pattern_set_filter&quot;</span>)]
     </span><span class="kw">pub fn </span>set_filter(<span class="kw-2">&amp;</span><span class="self">self</span>, filter: Filter) {
         <span class="kw">unsafe </span>{ ffi::cairo_pattern_set_filter(<span class="self">self</span>.pointer, filter.into()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pattern_get_filter&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pattern_get_filter&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_filter&quot;</span>)]
     </span><span class="kw">pub fn </span>filter(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Filter {
         <span class="kw">unsafe </span>{ Filter::from(ffi::cairo_pattern_get_filter(<span class="self">self</span>.pointer)) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pattern_set_matrix&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pattern_set_matrix&quot;</span>)]
     </span><span class="kw">pub fn </span>set_matrix(<span class="kw-2">&amp;</span><span class="self">self</span>, matrix: Matrix) {
         <span class="kw">unsafe </span>{ ffi::cairo_pattern_set_matrix(<span class="self">self</span>.pointer, matrix.ptr()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pattern_get_matrix&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pattern_get_matrix&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_matrix&quot;</span>)]
     </span><span class="kw">pub fn </span>matrix(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Matrix {
         <span class="kw">let </span><span class="kw-2">mut </span>matrix = Matrix::null();
@@ -730,7 +730,7 @@
         matrix
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pattern_status&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pattern_status&quot;</span>)]
     </span><span class="kw">pub fn </span>status(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">let </span>status = <span class="kw">unsafe </span>{ ffi::cairo_pattern_status(<span class="self">self</span>.pointer) };
         status_to_result(status)
@@ -781,7 +781,7 @@
     <span class="comment">//Signals without arguments
     </span>(<span class="macro-nonterminal">$pattern_type</span>:ident $( = <span class="macro-nonterminal">$variant</span>: ident)<span class="kw-2">*</span>) =&gt; (
 
-        <span class="attribute">#[derive(Debug, Clone)]
+        <span class="attr">#[derive(Debug, Clone)]
         </span><span class="kw">pub struct </span><span class="macro-nonterminal">$pattern_type</span>(Pattern);
 
         <span class="kw">impl </span>Deref <span class="kw">for </span><span class="macro-nonterminal">$pattern_type </span>{
@@ -813,7 +813,7 @@
 <span class="macro">pattern_type!</span>(SolidPattern = Solid);
 
 <span class="kw">impl </span>SolidPattern {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pattern_create_rgb&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pattern_create_rgb&quot;</span>)]
     </span><span class="kw">pub fn </span>from_rgb(red: f64, green: f64, blue: f64) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{
             <span class="self">Self</span>(Pattern::from_raw_full(ffi::cairo_pattern_create_rgb(
@@ -822,7 +822,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pattern_create_rgba&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pattern_create_rgba&quot;</span>)]
     </span><span class="kw">pub fn </span>from_rgba(red: f64, green: f64, blue: f64, alpha: f64) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{
             <span class="self">Self</span>(Pattern::from_raw_full(ffi::cairo_pattern_create_rgba(
@@ -831,7 +831,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pattern_get_rgba&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pattern_get_rgba&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_rgba&quot;</span>)]
     </span><span class="kw">pub fn </span>rgba(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(f64, f64, f64, f64), Error&gt; {
         <span class="kw">unsafe </span>{
@@ -858,19 +858,19 @@
 <span class="macro">convert!</span>(Pattern =&gt; Gradient = LinearGradient | RadialGradient);
 
 <span class="kw">impl </span>Gradient {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pattern_add_color_stop_rgb&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pattern_add_color_stop_rgb&quot;</span>)]
     </span><span class="kw">pub fn </span>add_color_stop_rgb(<span class="kw-2">&amp;</span><span class="self">self</span>, offset: f64, red: f64, green: f64, blue: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_pattern_add_color_stop_rgb(<span class="self">self</span>.pointer, offset, red, green, blue) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pattern_add_color_stop_rgba&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pattern_add_color_stop_rgba&quot;</span>)]
     </span><span class="kw">pub fn </span>add_color_stop_rgba(<span class="kw-2">&amp;</span><span class="self">self</span>, offset: f64, red: f64, green: f64, blue: f64, alpha: f64) {
         <span class="kw">unsafe </span>{
             ffi::cairo_pattern_add_color_stop_rgba(<span class="self">self</span>.pointer, offset, red, green, blue, alpha)
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pattern_get_color_stop_count&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pattern_get_color_stop_count&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_color_stop_count&quot;</span>)]
     </span><span class="kw">pub fn </span>color_stop_count(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;isize, Error&gt; {
         <span class="kw">unsafe </span>{
@@ -882,7 +882,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pattern_get_color_stop_rgba&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pattern_get_color_stop_rgba&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_color_stop_rgba&quot;</span>)]
     </span><span class="kw">pub fn </span>color_stop_rgba(<span class="kw-2">&amp;</span><span class="self">self</span>, index: isize) -&gt; <span class="prelude-ty">Result</span>&lt;(f64, f64, f64, f64, f64), Error&gt; {
         <span class="kw">unsafe </span>{
@@ -909,7 +909,7 @@
 
 <span class="macro">macro_rules! </span>gradient_type {
     (<span class="macro-nonterminal">$gradient_type</span>: ident) =&gt; {
-        <span class="attribute">#[derive(Debug, Clone)]
+        <span class="attr">#[derive(Debug, Clone)]
         </span><span class="kw">pub struct </span><span class="macro-nonterminal">$gradient_type</span>(Gradient);
 
         <span class="kw">impl </span>Deref <span class="kw">for </span><span class="macro-nonterminal">$gradient_type </span>{
@@ -946,7 +946,7 @@
 <span class="macro">gradient_type!</span>(LinearGradient);
 
 <span class="kw">impl </span>LinearGradient {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pattern_create_linear&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pattern_create_linear&quot;</span>)]
     </span><span class="kw">pub fn </span>new(x0: f64, y0: f64, x1: f64, y1: f64) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{
             <span class="self">Self</span>(Gradient(Pattern::from_raw_full(
@@ -955,7 +955,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pattern_get_linear_points&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pattern_get_linear_points&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_linear_points&quot;</span>)]
     </span><span class="kw">pub fn </span>linear_points(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(f64, f64, f64, f64), Error&gt; {
         <span class="kw">unsafe </span>{
@@ -980,7 +980,7 @@
 <span class="macro">gradient_type!</span>(RadialGradient);
 
 <span class="kw">impl </span>RadialGradient {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pattern_create_radial&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pattern_create_radial&quot;</span>)]
     </span><span class="kw">pub fn </span>new(x0: f64, y0: f64, r0: f64, x1: f64, y1: f64, r1: f64) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{
             <span class="self">Self</span>(Gradient(Pattern::from_raw_full(
@@ -989,7 +989,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pattern_get_radial_circles&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pattern_get_radial_circles&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_radial_circles&quot;</span>)]
     </span><span class="kw">pub fn </span>radial_circles(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(f64, f64, f64, f64, f64, f64), Error&gt; {
         <span class="kw">unsafe </span>{
@@ -1018,7 +1018,7 @@
 <span class="macro">pattern_type!</span>(SurfacePattern = Surface);
 
 <span class="kw">impl </span>SurfacePattern {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pattern_create_for_surface&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pattern_create_for_surface&quot;</span>)]
     </span><span class="kw">pub fn </span>create(surface: <span class="kw">impl </span>AsRef&lt;Surface&gt;) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{
             <span class="self">Self</span>(Pattern::from_raw_full(
@@ -1027,7 +1027,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pattern_get_surface&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pattern_get_surface&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_surface&quot;</span>)]
     </span><span class="kw">pub fn </span>surface(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;Surface, Error&gt; {
         <span class="kw">unsafe </span>{
@@ -1042,42 +1042,42 @@
 <span class="macro">pattern_type!</span>(Mesh = Mesh);
 
 <span class="kw">impl </span>Mesh {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_pattern_create_mesh&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_pattern_create_mesh&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{ <span class="self">Self</span>(Pattern::from_raw_full(ffi::cairo_pattern_create_mesh())) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_mesh_pattern_begin_patch&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_mesh_pattern_begin_patch&quot;</span>)]
     </span><span class="kw">pub fn </span>begin_patch(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{ ffi::cairo_mesh_pattern_begin_patch(<span class="self">self</span>.pointer) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_mesh_pattern_end_patch&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_mesh_pattern_end_patch&quot;</span>)]
     </span><span class="kw">pub fn </span>end_patch(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{ ffi::cairo_mesh_pattern_end_patch(<span class="self">self</span>.pointer) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_mesh_pattern_move_to&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_mesh_pattern_move_to&quot;</span>)]
     </span><span class="kw">pub fn </span>move_to(<span class="kw-2">&amp;</span><span class="self">self</span>, x: f64, y: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_mesh_pattern_move_to(<span class="self">self</span>.pointer, x, y) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_mesh_pattern_line_to&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_mesh_pattern_line_to&quot;</span>)]
     </span><span class="kw">pub fn </span>line_to(<span class="kw-2">&amp;</span><span class="self">self</span>, x: f64, y: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_mesh_pattern_line_to(<span class="self">self</span>.pointer, x, y) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_mesh_pattern_curve_to&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_mesh_pattern_curve_to&quot;</span>)]
     </span><span class="kw">pub fn </span>curve_to(<span class="kw-2">&amp;</span><span class="self">self</span>, x1: f64, y1: f64, x2: f64, y2: f64, x3: f64, y3: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_mesh_pattern_curve_to(<span class="self">self</span>.pointer, x1, y1, x2, y2, x3, y3) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_mesh_pattern_set_control_point&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_mesh_pattern_set_control_point&quot;</span>)]
     </span><span class="kw">pub fn </span>set_control_point(<span class="kw-2">&amp;</span><span class="self">self</span>, corner: MeshCorner, x: f64, y: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_mesh_pattern_set_control_point(<span class="self">self</span>.pointer, corner.into(), x, y) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_mesh_pattern_get_control_point&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_mesh_pattern_get_control_point&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_control_point&quot;</span>)]
     </span><span class="kw">pub fn </span>control_point(<span class="kw-2">&amp;</span><span class="self">self</span>, patch_num: usize, corner: MeshCorner) -&gt; <span class="prelude-ty">Result</span>&lt;(f64, f64), Error&gt; {
         <span class="kw">let </span><span class="kw-2">mut </span>x: c_double = <span class="number">0.0</span>;
@@ -1096,7 +1096,7 @@
         <span class="prelude-val">Ok</span>((x, y))
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_mesh_pattern_set_corner_color_rgb&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_mesh_pattern_set_corner_color_rgb&quot;</span>)]
     </span><span class="kw">pub fn </span>set_corner_color_rgb(<span class="kw-2">&amp;</span><span class="self">self</span>, corner: MeshCorner, red: f64, green: f64, blue: f64) {
         <span class="kw">unsafe </span>{
             ffi::cairo_mesh_pattern_set_corner_color_rgb(
@@ -1109,7 +1109,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_mesh_pattern_set_corner_color_rgba&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_mesh_pattern_set_corner_color_rgba&quot;</span>)]
     </span><span class="kw">pub fn </span>set_corner_color_rgba(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         corner: MeshCorner,
@@ -1130,7 +1130,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_mesh_pattern_get_corner_color_rgba&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_mesh_pattern_get_corner_color_rgba&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_corner_color_rgba&quot;</span>)]
     </span><span class="kw">pub fn </span>corner_color_rgba(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -1157,7 +1157,7 @@
         <span class="prelude-val">Ok</span>((red, green, blue, alpha))
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_mesh_pattern_get_patch_count&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_mesh_pattern_get_patch_count&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_patch_count&quot;</span>)]
     </span><span class="kw">pub fn </span>patch_count(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;usize, Error&gt; {
         <span class="kw">let </span><span class="kw-2">mut </span>count: c_uint = <span class="number">0</span>;
@@ -1168,7 +1168,7 @@
         <span class="prelude-val">Ok</span>(count <span class="kw">as </span>usize)
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_mesh_pattern_get_path&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_mesh_pattern_get_path&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_path&quot;</span>)]
     </span><span class="kw">pub fn </span>path(<span class="kw-2">&amp;</span><span class="self">self</span>, patch_num: usize) -&gt; <span class="prelude-ty">Result</span>&lt;Path, Error&gt; {
         <span class="kw">let </span>path: Path = <span class="kw">unsafe </span>{
@@ -1192,7 +1192,7 @@
     }
 }
 
-<span class="attribute">#[test]
+<span class="attr">#[test]
 </span><span class="kw">fn </span>try_from() {
     <span class="kw">let </span>linear = LinearGradient::new(<span class="number">0.</span>, <span class="number">0.</span>, <span class="number">1.</span>, <span class="number">1.</span>);
     <span class="kw">let </span>gradient = Gradient::clone(<span class="kw-2">&amp;</span>linear);
@@ -1202,4 +1202,4 @@
     <span class="macro">assert!</span>(LinearGradient::try_from(pattern).is_ok());
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

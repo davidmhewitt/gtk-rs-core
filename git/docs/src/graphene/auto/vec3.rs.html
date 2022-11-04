@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../graphene/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../graphene/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -609,7 +609,7 @@
     ///
     /// ## `res`
     /// return location for the resulting vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_add&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_add&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>add(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Vec3) -&gt; Vec3 {
         <span class="kw">unsafe </span>{
@@ -632,7 +632,7 @@
     ///
     /// ## `res`
     /// return location for the resulting vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_cross&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_cross&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>cross(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Vec3) -&gt; Vec3 {
         <span class="kw">unsafe </span>{
@@ -657,7 +657,7 @@
     ///
     /// ## `res`
     /// return location for the resulting vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_divide&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_divide&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>divide(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Vec3) -&gt; Vec3 {
         <span class="kw">unsafe </span>{
@@ -678,12 +678,12 @@
     /// # Returns
     ///
     /// the value of the dot product
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_dot&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_dot&quot;</span>)]
     </span><span class="kw">pub fn </span>dot(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Vec3) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_vec3_dot(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, b.to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_equal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_equal&quot;</span>)]
     </span><span class="kw">fn </span>equal(<span class="kw-2">&amp;</span><span class="self">self</span>, v2: <span class="kw-2">&amp;</span>Vec3) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_vec3_equal(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, v2.to_glib_none().<span class="number">0</span>) }
     }
@@ -693,7 +693,7 @@
     /// # Returns
     ///
     /// the value of the first component of the vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_get_x&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_get_x&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_x&quot;</span>)]
     </span><span class="kw">pub fn </span>x(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_vec3_get_x(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -707,7 +707,7 @@
     ///
     /// ## `res`
     /// return location for a [`Vec2`][crate::Vec2]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_get_xy&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_get_xy&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_xy&quot;</span>)]
     </span><span class="kw">pub fn </span>xy(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec2 {
         <span class="kw">unsafe </span>{
@@ -725,7 +725,7 @@
     ///
     /// ## `res`
     /// return location for a [`Vec3`][crate::Vec3]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_get_xy0&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_get_xy0&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_xy0&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>xy0(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec3 {
@@ -744,7 +744,7 @@
     ///
     /// ## `res`
     /// return location for the vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_get_xyz0&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_get_xyz0&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_xyz0&quot;</span>)]
     </span><span class="kw">pub fn </span>xyz0(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec4 {
         <span class="kw">unsafe </span>{
@@ -762,7 +762,7 @@
     ///
     /// ## `res`
     /// return location for the vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_get_xyz1&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_get_xyz1&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_xyz1&quot;</span>)]
     </span><span class="kw">pub fn </span>xyz1(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec4 {
         <span class="kw">unsafe </span>{
@@ -782,7 +782,7 @@
     ///
     /// ## `res`
     /// return location for the vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_get_xyzw&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_get_xyzw&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_xyzw&quot;</span>)]
     </span><span class="kw">pub fn </span>xyzw(<span class="kw-2">&amp;</span><span class="self">self</span>, w: f32) -&gt; Vec4 {
         <span class="kw">unsafe </span>{
@@ -797,7 +797,7 @@
     /// # Returns
     ///
     /// the value of the second component of the vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_get_y&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_get_y&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_y&quot;</span>)]
     </span><span class="kw">pub fn </span>y(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_vec3_get_y(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -808,7 +808,7 @@
     /// # Returns
     ///
     /// the value of the third component of the vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_get_z&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_get_z&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_z&quot;</span>)]
     </span><span class="kw">pub fn </span>z(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_vec3_get_z(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -825,7 +825,7 @@
     ///
     /// ## `res`
     /// the interpolated vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_interpolate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_interpolate&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>interpolate(<span class="kw-2">&amp;</span><span class="self">self</span>, v2: <span class="kw-2">&amp;</span>Vec3, factor: f64) -&gt; Vec3 {
         <span class="kw">unsafe </span>{
@@ -845,7 +845,7 @@
     /// # Returns
     ///
     /// the value of the length of the vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_length&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_length&quot;</span>)]
     </span><span class="kw">pub fn </span>length(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_vec3_length(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
@@ -860,7 +860,7 @@
     ///
     /// ## `res`
     /// return location for the result vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_max&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_max&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>max(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Vec3) -&gt; Vec3 {
         <span class="kw">unsafe </span>{
@@ -884,7 +884,7 @@
     ///
     /// ## `res`
     /// return location for the result vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_min&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_min&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>min(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Vec3) -&gt; Vec3 {
         <span class="kw">unsafe </span>{
@@ -907,7 +907,7 @@
     ///
     /// ## `res`
     /// return location for the resulting vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_multiply&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_multiply&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>multiply(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Vec3) -&gt; Vec3 {
         <span class="kw">unsafe </span>{
@@ -931,7 +931,7 @@
     /// # Returns
     ///
     /// `true` if the two vectors are near each other
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_near&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_near&quot;</span>)]
     </span><span class="kw">pub fn </span>near(<span class="kw-2">&amp;</span><span class="self">self</span>, v2: <span class="kw-2">&amp;</span>Vec3, epsilon: f32) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_vec3_near(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, v2.to_glib_none().<span class="number">0</span>, epsilon) }
     }
@@ -943,7 +943,7 @@
     ///
     /// ## `res`
     /// return location for the result vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_negate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_negate&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>negate(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec3 {
         <span class="kw">unsafe </span>{
@@ -960,7 +960,7 @@
     ///
     /// ## `res`
     /// return location for the normalized vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_normalize&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_normalize&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>normalize(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec3 {
         <span class="kw">unsafe </span>{
@@ -979,7 +979,7 @@
     ///
     /// ## `res`
     /// return location for the result vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_scale&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_scale&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>scale(<span class="kw-2">&amp;</span><span class="self">self</span>, factor: f32) -&gt; Vec3 {
         <span class="kw">unsafe </span>{
@@ -1000,7 +1000,7 @@
     ///
     /// ## `res`
     /// return location for the resulting vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_subtract&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_subtract&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>subtract(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Vec3) -&gt; Vec3 {
         <span class="kw">unsafe </span>{
@@ -1020,7 +1020,7 @@
     /// # Returns
     ///
     /// a constant vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_one&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_one&quot;</span>)]
     </span><span class="kw">pub fn </span>one() -&gt; Vec3 {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ from_glib_none(ffi::graphene_vec3_one()) }
@@ -1032,7 +1032,7 @@
     /// # Returns
     ///
     /// a constant vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_x_axis&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_x_axis&quot;</span>)]
     </span><span class="kw">pub fn </span>x_axis() -&gt; Vec3 {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ from_glib_none(ffi::graphene_vec3_x_axis()) }
@@ -1044,7 +1044,7 @@
     /// # Returns
     ///
     /// a constant vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_y_axis&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_y_axis&quot;</span>)]
     </span><span class="kw">pub fn </span>y_axis() -&gt; Vec3 {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ from_glib_none(ffi::graphene_vec3_y_axis()) }
@@ -1056,7 +1056,7 @@
     /// # Returns
     ///
     /// a constant vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_z_axis&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_z_axis&quot;</span>)]
     </span><span class="kw">pub fn </span>z_axis() -&gt; Vec3 {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ from_glib_none(ffi::graphene_vec3_z_axis()) }
@@ -1068,7 +1068,7 @@
     /// # Returns
     ///
     /// a constant vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_vec3_zero&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_vec3_zero&quot;</span>)]
     </span><span class="kw">pub fn </span>zero() -&gt; Vec3 {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ from_glib_none(ffi::graphene_vec3_zero()) }
@@ -1076,7 +1076,7 @@
 }
 
 <span class="kw">impl </span>PartialEq <span class="kw">for </span>Vec3 {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool {
         <span class="self">self</span>.equal(other)
     }
@@ -1084,4 +1084,4 @@
 
 <span class="kw">impl </span>Eq <span class="kw">for </span>Vec3 {}
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

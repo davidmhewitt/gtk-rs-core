@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -577,7 +577,7 @@
     /// Substitutions must start with a slash, and must not contain a trailing slash before the &#39;=&#39;. The path after
     /// the slash should ideally be absolute, but this is not strictly required. It is possible to overlay the
     /// location of a single resource with an individual file.
-    </span><span class="attribute">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    </span><span class="attr">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
     </span><span class="kw">pub struct </span>Resource(Shared&lt;ffi::GResource&gt;);
 
     <span class="kw">match fn </span>{
@@ -604,7 +604,7 @@
     /// # Returns
     ///
     /// an array of constant strings
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_resource_enumerate_children&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_resource_enumerate_children&quot;</span>)]
     </span><span class="kw">pub fn </span>enumerate_children(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         path: <span class="kw-2">&amp;</span>str,
@@ -646,7 +646,7 @@
     /// ## `flags`
     /// a location to place the flags about the file,
     ///  or [`None`] if the length is not needed
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_resource_get_info&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_resource_get_info&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_info&quot;</span>)]
     </span><span class="kw">pub fn </span>info(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -697,7 +697,7 @@
     ///
     /// [`glib::Bytes`][crate::glib::Bytes] or [`None`] on error.
     ///  Free the returned object with `g_bytes_unref()`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_resource_lookup_data&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_resource_lookup_data&quot;</span>)]
     </span><span class="kw">pub fn </span>lookup_data(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         path: <span class="kw-2">&amp;</span>str,
@@ -732,7 +732,7 @@
     ///
     /// [`InputStream`][crate::InputStream] or [`None`] on error.
     ///  Free the returned object with `g_object_unref()`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_resource_open_stream&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_resource_open_stream&quot;</span>)]
     </span><span class="kw">pub fn </span>open_stream(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         path: <span class="kw-2">&amp;</span>str,
@@ -770,7 +770,7 @@
     /// # Returns
     ///
     /// a new [`Resource`][crate::Resource], or [`None`] on error
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_resource_load&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_resource_load&quot;</span>)]
     </span><span class="kw">pub fn </span>load(filename: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;Resource, glib::Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
@@ -784,4 +784,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk_pixbuf/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gdk_pixbuf/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -669,7 +669,7 @@
     /// # Implements
     ///
     /// [`PixbufLoaderExt`][trait@crate::prelude::PixbufLoaderExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GdkPixbufLoader&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GdkPixbufLoader&quot;</span>)]
     </span><span class="kw">pub struct </span>PixbufLoader(Object&lt;ffi::GdkPixbufLoader, ffi::GdkPixbufLoaderClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -685,7 +685,7 @@
     /// # Returns
     ///
     /// A newly-created pixbuf loader.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_loader_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_loader_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; PixbufLoader {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::gdk_pixbuf_loader_new()) }
     }
@@ -711,7 +711,7 @@
     /// # Returns
     ///
     /// A newly-created pixbuf loader.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_loader_new_with_mime_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_loader_new_with_mime_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_with_mime_type&quot;</span>)]
     </span><span class="kw">pub fn </span>with_mime_type(mime_type: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;PixbufLoader, glib::Error&gt; {
         <span class="kw">unsafe </span>{
@@ -746,7 +746,7 @@
     /// # Returns
     ///
     /// A newly-created pixbuf loader.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_loader_new_with_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_loader_new_with_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_with_type&quot;</span>)]
     </span><span class="kw">pub fn </span>with_type(image_type: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;PixbufLoader, glib::Error&gt; {
         <span class="kw">unsafe </span>{
@@ -793,7 +793,7 @@
     ///
     /// `TRUE` if all image data written so far was successfully
     ///   passed out via the update_area signal
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_loader_close&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_loader_close&quot;</span>)]
     </span><span class="kw">fn </span>close(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
     <span class="doccomment">/// Queries the #GdkPixbufAnimation that a pixbuf loader is currently creating.
@@ -809,7 +809,7 @@
     ///
     /// The animation that the loader is
     ///   currently loading
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_loader_get_animation&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_loader_get_animation&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_animation&quot;</span>)]
     </span><span class="kw">fn </span>animation(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;PixbufAnimation&gt;;
 
@@ -819,7 +819,7 @@
     /// # Returns
     ///
     /// A #GdkPixbufFormat
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_loader_get_format&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_loader_get_format&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_format&quot;</span>)]
     </span><span class="kw">fn </span>format(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;PixbufFormat&gt;;
 
@@ -843,7 +843,7 @@
     ///
     /// The pixbuf that the loader is
     ///   creating
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_loader_get_pixbuf&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_loader_get_pixbuf&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_pixbuf&quot;</span>)]
     </span><span class="kw">fn </span>pixbuf(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Pixbuf&gt;;
 
@@ -859,7 +859,7 @@
     /// The desired width of the image being loaded.
     /// ## `height`
     /// The desired height of the image being loaded.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_loader_set_size&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_loader_set_size&quot;</span>)]
     </span><span class="kw">fn </span>set_size(<span class="kw-2">&amp;</span><span class="self">self</span>, width: i32, height: i32);
 
     <span class="doccomment">/// Parses the next `count` bytes in the given image buffer.
@@ -870,7 +870,7 @@
     ///
     /// `TRUE` if the write was successful, or
     ///   `FALSE` if the loader cannot parse the buffer
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_loader_write&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_loader_write&quot;</span>)]
     </span><span class="kw">fn </span>write(<span class="kw-2">&amp;</span><span class="self">self</span>, buf: <span class="kw-2">&amp;</span>[u8]) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
     <span class="doccomment">/// Parses the next contents of the given image buffer.
@@ -881,7 +881,7 @@
     ///
     /// `TRUE` if the write was successful, or `FALSE` if
     ///   the loader cannot parse the buffer
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_loader_write_bytes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_loader_write_bytes&quot;</span>)]
     </span><span class="kw">fn </span>write_bytes(<span class="kw-2">&amp;</span><span class="self">self</span>, buffer: <span class="kw-2">&amp;</span>glib::Bytes) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
     <span class="doccomment">/// This signal is emitted when the pixbuf loader has allocated the
@@ -890,7 +890,7 @@
     /// After this signal is emitted, applications can call
     /// gdk_pixbuf_loader_get_pixbuf() to fetch the partially-loaded
     /// pixbuf.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;area-prepared&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;area-prepared&quot;</span>)]
     </span><span class="kw">fn </span>connect_area_prepared&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// This signal is emitted when a significant area of the image being
@@ -909,7 +909,7 @@
     /// Width of updated area.
     /// ## `height`
     /// Height of updated area.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;area-updated&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;area-updated&quot;</span>)]
     </span><span class="kw">fn </span>connect_area_updated&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, i32, i32, i32, i32) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -920,7 +920,7 @@
     /// It can be used by different parts of an application to receive
     /// notification when an image loader is closed by the code that
     /// drives it.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;closed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;closed&quot;</span>)]
     </span><span class="kw">fn </span>connect_closed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// This signal is emitted when the pixbuf loader has been fed the
@@ -934,7 +934,7 @@
     /// the original width of the image
     /// ## `height`
     /// the original height of the image
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;size-prepared&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;size-prepared&quot;</span>)]
     </span><span class="kw">fn </span>connect_size_prepared&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, i32, i32) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -1134,4 +1134,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk_pixbuf" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gdk_pixbuf" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

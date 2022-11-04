@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -396,7 +396,7 @@
     /// # Implements
     ///
     /// [`AppLaunchContextExt`][trait@crate::prelude::AppLaunchContextExt], [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GAppLaunchContext&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GAppLaunchContext&quot;</span>)]
     </span><span class="kw">pub struct </span>AppLaunchContext(Object&lt;ffi::GAppLaunchContext, ffi::GAppLaunchContextClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -413,7 +413,7 @@
     /// # Returns
     ///
     /// a [`AppLaunchContext`][crate::AppLaunchContext].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_app_launch_context_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_app_launch_context_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; AppLaunchContext {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_app_launch_context_new()) }
     }
@@ -442,7 +442,7 @@
     /// # Returns
     ///
     /// a display string for the display.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_app_launch_context_get_display&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_app_launch_context_get_display&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_display&quot;</span>)]
     </span><span class="kw">fn </span>display(<span class="kw-2">&amp;</span><span class="self">self</span>, info: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;AppInfo&gt;, files: <span class="kw-2">&amp;</span>[File]) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
@@ -455,7 +455,7 @@
     ///
     ///
     ///  the child&#39;s environment
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_app_launch_context_get_environment&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_app_launch_context_get_environment&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_environment&quot;</span>)]
     </span><span class="kw">fn </span>environment(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;std::ffi::OsString&gt;;
 
@@ -473,7 +473,7 @@
     ///
     /// a startup notification ID for the application, or [`None`] if
     ///  not supported.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_app_launch_context_get_startup_notify_id&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_app_launch_context_get_startup_notify_id&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_startup_notify_id&quot;</span>)]
     </span><span class="kw">fn </span>startup_notify_id(<span class="kw-2">&amp;</span><span class="self">self</span>, info: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;AppInfo&gt;, files: <span class="kw-2">&amp;</span>[File]) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
@@ -481,7 +481,7 @@
     /// the application startup notification started in [`startup_notify_id()`][Self::startup_notify_id()].
     /// ## `startup_notify_id`
     /// the startup notification id that was returned by [`startup_notify_id()`][Self::startup_notify_id()].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_app_launch_context_launch_failed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_app_launch_context_launch_failed&quot;</span>)]
     </span><span class="kw">fn </span>launch_failed(<span class="kw-2">&amp;</span><span class="self">self</span>, startup_notify_id: <span class="kw-2">&amp;</span>str);
 
     <span class="doccomment">/// Arranges for `variable` to be set to `value` in the child&#39;s
@@ -490,16 +490,16 @@
     /// the environment variable to set
     /// ## `value`
     /// the value for to set the variable to.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_app_launch_context_setenv&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_app_launch_context_setenv&quot;</span>)]
     </span><span class="kw">fn </span>setenv(<span class="kw-2">&amp;</span><span class="self">self</span>, variable: <span class="kw">impl </span>AsRef&lt;std::ffi::OsStr&gt;, value: <span class="kw">impl </span>AsRef&lt;std::ffi::OsStr&gt;);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_app_launch_context_unsetenv&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_app_launch_context_unsetenv&quot;</span>)]
     </span><span class="kw">fn </span>unsetenv(<span class="kw-2">&amp;</span><span class="self">self</span>, variable: <span class="kw">impl </span>AsRef&lt;std::ffi::OsStr&gt;);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;launch-failed&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;launch-failed&quot;</span>)]
     </span><span class="kw">fn </span>connect_launch_failed&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>str) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;launch-started&quot;</span>)]
     </span><span class="kw">fn </span>connect_launch_started&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>AppInfo, <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>glib::Variant&gt;) + <span class="lifetime">&#39;static</span>&gt;(
@@ -507,7 +507,7 @@
         f: F,
     ) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;launched&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;launched&quot;</span>)]
     </span><span class="kw">fn </span>connect_launched&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>AppInfo, <span class="kw-2">&amp;</span>glib::Variant) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -599,7 +599,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">fn </span>connect_launch_started&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>AppInfo, <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>glib::Variant&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -676,4 +676,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

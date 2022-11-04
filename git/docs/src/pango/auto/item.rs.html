@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pango/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../pango/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -173,7 +173,7 @@
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
 
-</span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_44&quot;</span>)))]
 </span><span class="kw">use </span><span class="kw">crate</span>::AttrIterator;
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
@@ -183,7 +183,7 @@
     ///
     /// You typically obtain `PangoItems` by itemizing a piece of text
     /// with [`itemize()`][crate::itemize()].
-    </span><span class="attribute">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    </span><span class="attr">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
     </span><span class="kw">pub struct </span>Item(Boxed&lt;ffi::PangoItem&gt;);
 
     <span class="kw">match fn </span>{
@@ -200,7 +200,7 @@
     ///
     /// the newly allocated [`Item`][crate::Item], which should
     ///   be freed with `Pango::Item::free()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_item_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_item_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; Item {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::pango_item_new()) }
     }
@@ -218,7 +218,7 @@
     /// the iter to each call.
     /// ## `iter`
     /// a [`AttrIterator`][crate::AttrIterator]
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_44&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pango_item_apply_attrs&quot;</span>)]
     </span><span class="kw">pub fn </span>apply_attrs(<span class="kw-2">&amp;mut </span><span class="self">self</span>, iter: <span class="kw-2">&amp;mut </span>AttrIterator) {
@@ -249,7 +249,7 @@
     ///
     /// new item representing text before @split_index, which
     ///   should be freed with `Pango::Item::free()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;pango_item_split&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;pango_item_split&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>split(<span class="kw-2">&amp;mut </span><span class="self">self</span>, split_index: i32, split_offset: i32) -&gt; Item {
         <span class="kw">unsafe </span>{
@@ -268,4 +268,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pango" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

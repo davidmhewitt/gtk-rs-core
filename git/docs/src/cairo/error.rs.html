@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../cairo/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../cairo/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -354,151 +354,151 @@
 <span class="kw">use </span>std::io;
 <span class="kw">use </span>thiserror::Error;
 
-<span class="attribute">#[derive(Error, Debug, Clone, PartialEq, Copy, Eq)]
+<span class="attr">#[derive(Error, Debug, Clone, PartialEq, Copy, Eq)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;cairo_status_t&quot;</span>)]
 </span><span class="kw">pub enum </span>Error {
-    <span class="attribute">#[error(<span class="string">&quot;No Memory&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;No Memory&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_NO_MEMORY&quot;</span>)]
     </span>NoMemory,
-    <span class="attribute">#[error(<span class="string">&quot;Invalid Restore&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Invalid Restore&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_INVALID_RESTORE&quot;</span>)]
     </span>InvalidRestore,
-    <span class="attribute">#[error(<span class="string">&quot;Invalid Pop Group&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Invalid Pop Group&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_INVALID_POP_GROUP&quot;</span>)]
     </span>InvalidPopGroup,
-    <span class="attribute">#[error(<span class="string">&quot;No Current Point&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;No Current Point&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_NO_CURRENT_POINT&quot;</span>)]
     </span>NoCurrentPoint,
-    <span class="attribute">#[error(<span class="string">&quot;Invalid Matrix&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Invalid Matrix&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_INVALID_MATRIX&quot;</span>)]
     </span>InvalidMatrix,
-    <span class="attribute">#[error(<span class="string">&quot;Invalid Status&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Invalid Status&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_INVALID_STATUS&quot;</span>)]
     </span>InvalidStatus,
-    <span class="attribute">#[error(<span class="string">&quot;Null Pointer&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Null Pointer&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_NULL_POINTER&quot;</span>)]
     </span>NullPointer,
-    <span class="attribute">#[error(<span class="string">&quot;Invalid String&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Invalid String&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_INVALID_STRING&quot;</span>)]
     </span>InvalidString,
-    <span class="attribute">#[error(<span class="string">&quot;Invalid Path Data&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Invalid Path Data&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_INVALID_PATH_DATA&quot;</span>)]
     </span>InvalidPathData,
-    <span class="attribute">#[error(<span class="string">&quot;Cairo : Read Error&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Cairo : Read Error&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_READ_ERROR&quot;</span>)]
     </span>ReadError,
-    <span class="attribute">#[error(<span class="string">&quot;Write Error&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Write Error&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_WRITE_ERROR&quot;</span>)]
     </span>WriteError,
-    <span class="attribute">#[error(<span class="string">&quot;Surface Finished&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Surface Finished&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_SURFACE_FINISHED&quot;</span>)]
     </span>SurfaceFinished,
-    <span class="attribute">#[error(<span class="string">&quot;Surface Type Mismatch&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Surface Type Mismatch&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_SURFACE_TYPE_MISMATCH&quot;</span>)]
     </span>SurfaceTypeMismatch,
-    <span class="attribute">#[error(<span class="string">&quot;Pattern Type Mismatch&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Pattern Type Mismatch&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_PATTERN_TYPE_MISMATCH&quot;</span>)]
     </span>PatternTypeMismatch,
-    <span class="attribute">#[error(<span class="string">&quot;Invalid Content&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Invalid Content&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_INVALID_CONTENT&quot;</span>)]
     </span>InvalidContent,
-    <span class="attribute">#[error(<span class="string">&quot;Invalid Format&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Invalid Format&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_INVALID_FORMAT&quot;</span>)]
     </span>InvalidFormat,
-    <span class="attribute">#[error(<span class="string">&quot;Invalid Visual&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Invalid Visual&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_INVALID_VISUAL&quot;</span>)]
     </span>InvalidVisual,
-    <span class="attribute">#[error(<span class="string">&quot;File Not Found&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;File Not Found&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_FILE_NOT_FOUND&quot;</span>)]
     </span>FileNotFound,
-    <span class="attribute">#[error(<span class="string">&quot;Invalid Dash&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Invalid Dash&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_INVALID_DASH&quot;</span>)]
     </span>InvalidDash,
-    <span class="attribute">#[error(<span class="string">&quot;Invalid Dash Comment&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Invalid Dash Comment&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_INVALID_DSC_COMMENT&quot;</span>)]
     </span>InvalidDscComment,
-    <span class="attribute">#[error(<span class="string">&quot;Invalid Index&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Invalid Index&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_INVALID_INDEX&quot;</span>)]
     </span>InvalidIndex,
-    <span class="attribute">#[error(<span class="string">&quot;Clip Not Representable&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Clip Not Representable&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_CLIP_NOT_REPRESENTABLE&quot;</span>)]
     </span>ClipNotRepresentable,
-    <span class="attribute">#[error(<span class="string">&quot;Temp File Error&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Temp File Error&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_TEMP_FILE_ERROR&quot;</span>)]
     </span>TempFileError,
-    <span class="attribute">#[error(<span class="string">&quot;Invalid Stride&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Invalid Stride&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_INVALID_STRIDE&quot;</span>)]
     </span>InvalidStride,
-    <span class="attribute">#[error(<span class="string">&quot;Font Type Mismatch&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Font Type Mismatch&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_FONT_TYPE_MISMATCH&quot;</span>)]
     </span>FontTypeMismatch,
-    <span class="attribute">#[error(<span class="string">&quot;User Font Immutable&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;User Font Immutable&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_USER_FONT_IMMUTABLE&quot;</span>)]
     </span>UserFontImmutable,
-    <span class="attribute">#[error(<span class="string">&quot;User Font Error&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;User Font Error&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_USER_FONT_ERROR&quot;</span>)]
     </span>UserFontError,
-    <span class="attribute">#[error(<span class="string">&quot;Negative Count&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Negative Count&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_NEGATIVE_COUNT&quot;</span>)]
     </span>NegativeCount,
-    <span class="attribute">#[error(<span class="string">&quot;Invalid Clusters&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Invalid Clusters&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_INVALID_CLUSTERS&quot;</span>)]
     </span>InvalidClusters,
-    <span class="attribute">#[error(<span class="string">&quot;Invalid Slant&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Invalid Slant&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_INVALID_SLANT&quot;</span>)]
     </span>InvalidSlant,
-    <span class="attribute">#[error(<span class="string">&quot;Invalid Weight&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Invalid Weight&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_INVALID_WEIGHT&quot;</span>)]
     </span>InvalidWeight,
-    <span class="attribute">#[error(<span class="string">&quot;Invalid Size&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Invalid Size&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_INVALID_SIZE&quot;</span>)]
     </span>InvalidSize,
-    <span class="attribute">#[error(<span class="string">&quot;User Font Not Implemented&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;User Font Not Implemented&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_USER_FONT_NOT_IMPLEMENTED&quot;</span>)]
     </span>UserFontNotImplemented,
-    <span class="attribute">#[error(<span class="string">&quot;Device Type Mismatch&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Device Type Mismatch&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_DEVICE_TYPE_MISMATCH&quot;</span>)]
     </span>DeviceTypeMismatch,
-    <span class="attribute">#[error(<span class="string">&quot;Device Error&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Device Error&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_DEVICE_ERROR&quot;</span>)]
     </span>DeviceError,
-    <span class="attribute">#[error(<span class="string">&quot;Invalid Mesh Construction&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Invalid Mesh Construction&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_INVALID_MESH_CONSTRUCTION&quot;</span>)]
     </span>InvalidMeshConstruction,
-    <span class="attribute">#[error(<span class="string">&quot;Device Finished&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Device Finished&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_DEVICE_FINISHED&quot;</span>)]
     </span>DeviceFinished,
-    <span class="attribute">#[error(<span class="string">&quot;JBig2Global Missing&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;JBig2Global Missing&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_J_BIG2_GLOBAL_MISSING&quot;</span>)]
     </span>JBig2GlobalMissing,
-    <span class="attribute">#[error(<span class="string">&quot;PNG Error&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;PNG Error&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_PNG_ERROR&quot;</span>)]
     </span>PngError,
-    <span class="attribute">#[error(<span class="string">&quot;Freetype Error&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Freetype Error&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_FREETYPE_ERROR&quot;</span>)]
     </span>FreetypeError,
-    <span class="attribute">#[error(<span class="string">&quot;Win32Gdi Error&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Win32Gdi Error&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_WIN32_GDI_ERROR&quot;</span>)]
     </span>Win32GdiError,
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_16&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_16&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_16&quot;</span>)))]
     #[error(<span class="string">&quot;Tag Error&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_TAG_ERROR&quot;</span>)]
     </span>TagError,
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_18&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_18&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_18&quot;</span>)))]
     #[error(<span class="string">&quot;Dwrite Error&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_DWRITE_ERROR&quot;</span>)]
     </span>DwriteError,
-    <span class="attribute">#[error(<span class="string">&quot;LastStatus&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;LastStatus&quot;</span>)]
     #[doc(alias = <span class="string">&quot;STATUS_LAST_STATUS&quot;</span>)]
     </span>LastStatus,
-    <span class="attribute">#[error(<span class="string">&quot;Unknown {0}&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Unknown {0}&quot;</span>)]
     #[doc(hidden)]
     </span>__Unknown(i32),
 }
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>From&lt;Error&gt; <span class="kw">for </span>ffi::cairo_status_t {
     <span class="kw">fn </span>from(err: Error) -&gt; ffi::cairo_status_t {
         <span class="kw">match </span>err {
@@ -543,9 +543,9 @@
             Error::PngError =&gt; ffi::STATUS_PNG_ERROR,
             Error::FreetypeError =&gt; ffi::STATUS_FREETYPE_ERROR,
             Error::Win32GdiError =&gt; ffi::STATUS_WIN32_GDI_ERROR,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_16&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_16&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>Error::TagError =&gt; ffi::STATUS_TAG_ERROR,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_18&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_18&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>Error::DwriteError =&gt; ffi::STATUS_DWRITE_ERROR,
             Error::LastStatus =&gt; ffi::STATUS_LAST_STATUS,
             Error::__Unknown(value) =&gt; value,
@@ -553,7 +553,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>From&lt;ffi::cairo_status_t&gt; <span class="kw">for </span>Error {
     <span class="kw">fn </span>from(value: ffi::cairo_status_t) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>value {
@@ -598,9 +598,9 @@
             ffi::STATUS_PNG_ERROR =&gt; <span class="self">Self</span>::PngError,
             ffi::STATUS_FREETYPE_ERROR =&gt; <span class="self">Self</span>::FreetypeError,
             ffi::STATUS_WIN32_GDI_ERROR =&gt; <span class="self">Self</span>::Win32GdiError,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_16&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_16&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>ffi::STATUS_TAG_ERROR =&gt; <span class="self">Self</span>::TagError,
-            <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v1_18&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+            <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_18&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
             </span>ffi::STATUS_DWRITE_ERROR =&gt; <span class="self">Self</span>::DwriteError,
             ffi::STATUS_LAST_STATUS =&gt; <span class="self">Self</span>::LastStatus,
             value =&gt; <span class="self">Self</span>::__Unknown(value),
@@ -608,22 +608,22 @@
     }
 }
 
-<span class="attribute">#[derive(Error, Debug)]
+<span class="attr">#[derive(Error, Debug)]
 </span><span class="kw">pub enum </span>IoError {
-    <span class="attribute">#[error(<span class="string">&quot;Cairo error: {0}&quot;</span>)]
-    </span>Cairo(<span class="attribute">#[from] </span>Error),
-    <span class="attribute">#[error(<span class="string">&quot;IO error: {0}&quot;</span>)]
-    </span>Io(<span class="attribute">#[from] </span>io::Error),
+    <span class="attr">#[error(<span class="string">&quot;Cairo error: {0}&quot;</span>)]
+    </span>Cairo(<span class="attr">#[from] </span>Error),
+    <span class="attr">#[error(<span class="string">&quot;IO error: {0}&quot;</span>)]
+    </span>Io(<span class="attr">#[from] </span>io::Error),
 }
 
-<span class="attribute">#[derive(Error, Debug)]
+<span class="attr">#[derive(Error, Debug)]
 </span><span class="kw">pub enum </span>BorrowError {
-    <span class="attribute">#[error(<span class="string">&quot;Failed to borrow with Cairo error: {0}&quot;</span>)]
-    </span>Cairo(<span class="attribute">#[from] </span><span class="kw">crate</span>::Error),
-    <span class="attribute">#[error(<span class="string">&quot;Can&#39;t get exclusive access&quot;</span>)]
+    <span class="attr">#[error(<span class="string">&quot;Failed to borrow with Cairo error: {0}&quot;</span>)]
+    </span>Cairo(<span class="attr">#[from] </span><span class="kw">crate</span>::Error),
+    <span class="attr">#[error(<span class="string">&quot;Can&#39;t get exclusive access&quot;</span>)]
     </span>NonExclusive,
 }
 
 <span class="kw">pub type </span><span class="prelude-ty">Result</span>&lt;T&gt; = std::result::Result&lt;T, Error&gt;;
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

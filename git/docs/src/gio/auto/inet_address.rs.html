@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -779,7 +779,7 @@
     /// # Implements
     ///
     /// [`InetAddressExt`][trait@crate::prelude::InetAddressExt], [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GInetAddress&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GInetAddress&quot;</span>)]
     </span><span class="kw">pub struct </span>InetAddress(Object&lt;ffi::GInetAddress, ffi::GInetAddressClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -800,7 +800,7 @@
     /// a new [`InetAddress`][crate::InetAddress] corresponding to the &quot;any&quot; address
     /// for `family`.
     ///  Free the returned object with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_inet_address_new_any&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_inet_address_new_any&quot;</span>)]
     </span><span class="kw">pub fn </span>new_any(family: SocketFamily) -&gt; InetAddress {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_inet_address_new_any(family.into_glib())) }
     }
@@ -814,7 +814,7 @@
     /// a new [`InetAddress`][crate::InetAddress] corresponding
     /// to `string`, or [`None`] if `string` could not be parsed.
     ///  Free the returned object with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_inet_address_new_from_string&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_inet_address_new_from_string&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_string&quot;</span>)]
     </span><span class="kw">pub fn </span>from_string(string: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;InetAddress&gt; {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_inet_address_new_from_string(string.to_glib_none().<span class="number">0</span>)) }
@@ -829,14 +829,14 @@
     /// a new [`InetAddress`][crate::InetAddress] corresponding to the loopback address
     /// for `family`.
     ///  Free the returned object with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_inet_address_new_loopback&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_inet_address_new_loopback&quot;</span>)]
     </span><span class="kw">pub fn </span>new_loopback(family: SocketFamily) -&gt; InetAddress {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_inet_address_new_loopback(family.into_glib())) }
     }
 }
 
 <span class="kw">impl </span>fmt::Display <span class="kw">for </span>InetAddress {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter) -&gt; fmt::Result {
         f.write_str(<span class="kw-2">&amp;</span>InetAddressExt::to_str(<span class="self">self</span>))
     }
@@ -851,7 +851,7 @@
 ///
 /// [`InetAddress`][struct@crate::InetAddress]
 </span><span class="kw">pub trait </span>InetAddressExt: <span class="lifetime">&#39;static </span>{
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_inet_address_equal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_inet_address_equal&quot;</span>)]
     </span><span class="kw">fn </span>equal(<span class="kw-2">&amp;</span><span class="self">self</span>, other_address: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;InetAddress&gt;) -&gt; bool;
 
     <span class="doccomment">/// Gets `self`&#39;s family
@@ -859,7 +859,7 @@
     /// # Returns
     ///
     /// `self`&#39;s family
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_inet_address_get_family&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_inet_address_get_family&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_family&quot;</span>)]
     </span><span class="kw">fn </span>family(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; SocketFamily;
 
@@ -868,7 +868,7 @@
     /// # Returns
     ///
     /// [`true`] if `self` is the &quot;any&quot; address for its family.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_inet_address_get_is_any&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_inet_address_get_is_any&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_is_any&quot;</span>)]
     </span><span class="kw">fn </span>is_any(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -879,7 +879,7 @@
     /// # Returns
     ///
     /// [`true`] if `self` is a link-local address.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_inet_address_get_is_link_local&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_inet_address_get_is_link_local&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_is_link_local&quot;</span>)]
     </span><span class="kw">fn </span>is_link_local(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -888,7 +888,7 @@
     /// # Returns
     ///
     /// [`true`] if `self` is the loopback address for its family.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_inet_address_get_is_loopback&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_inet_address_get_is_loopback&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_is_loopback&quot;</span>)]
     </span><span class="kw">fn </span>is_loopback(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -897,7 +897,7 @@
     /// # Returns
     ///
     /// [`true`] if `self` is a global multicast address.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_inet_address_get_is_mc_global&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_inet_address_get_is_mc_global&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_is_mc_global&quot;</span>)]
     </span><span class="kw">fn </span>is_mc_global(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -906,7 +906,7 @@
     /// # Returns
     ///
     /// [`true`] if `self` is a link-local multicast address.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_inet_address_get_is_mc_link_local&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_inet_address_get_is_mc_link_local&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_is_mc_link_local&quot;</span>)]
     </span><span class="kw">fn </span>is_mc_link_local(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -915,7 +915,7 @@
     /// # Returns
     ///
     /// [`true`] if `self` is a node-local multicast address.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_inet_address_get_is_mc_node_local&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_inet_address_get_is_mc_node_local&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_is_mc_node_local&quot;</span>)]
     </span><span class="kw">fn </span>is_mc_node_local(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -924,7 +924,7 @@
     /// # Returns
     ///
     /// [`true`] if `self` is an organization-local multicast address.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_inet_address_get_is_mc_org_local&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_inet_address_get_is_mc_org_local&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_is_mc_org_local&quot;</span>)]
     </span><span class="kw">fn </span>is_mc_org_local(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -933,7 +933,7 @@
     /// # Returns
     ///
     /// [`true`] if `self` is a site-local multicast address.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_inet_address_get_is_mc_site_local&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_inet_address_get_is_mc_site_local&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_is_mc_site_local&quot;</span>)]
     </span><span class="kw">fn </span>is_mc_site_local(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -942,7 +942,7 @@
     /// # Returns
     ///
     /// [`true`] if `self` is a multicast address.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_inet_address_get_is_multicast&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_inet_address_get_is_multicast&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_is_multicast&quot;</span>)]
     </span><span class="kw">fn </span>is_multicast(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -954,7 +954,7 @@
     /// # Returns
     ///
     /// [`true`] if `self` is a site-local address.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_inet_address_get_is_site_local&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_inet_address_get_is_site_local&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_is_site_local&quot;</span>)]
     </span><span class="kw">fn </span>is_site_local(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -964,7 +964,7 @@
     /// # Returns
     ///
     /// the number of bytes used for the native version of `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_inet_address_get_native_size&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_inet_address_get_native_size&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_native_size&quot;</span>)]
     </span><span class="kw">fn </span>native_size(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; usize;
 
@@ -974,64 +974,64 @@
     ///
     /// a representation of `self` as a string, which should be
     /// freed after use.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_inet_address_to_string&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_inet_address_to_string&quot;</span>)]
     #[doc(alias = <span class="string">&quot;to_string&quot;</span>)]
     </span><span class="kw">fn </span>to_str(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString;
 
     <span class="comment">//fn bytes(&amp;self) -&gt; /*Unimplemented*/Basic: Pointer;
 
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;is-any&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;is-any&quot;</span>)]
     </span><span class="kw">fn </span>connect_is_any_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;is-link-local&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;is-link-local&quot;</span>)]
     </span><span class="kw">fn </span>connect_is_link_local_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
     ) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;is-loopback&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;is-loopback&quot;</span>)]
     </span><span class="kw">fn </span>connect_is_loopback_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
     ) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;is-mc-global&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;is-mc-global&quot;</span>)]
     </span><span class="kw">fn </span>connect_is_mc_global_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
     ) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;is-mc-link-local&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;is-mc-link-local&quot;</span>)]
     </span><span class="kw">fn </span>connect_is_mc_link_local_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
     ) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;is-mc-node-local&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;is-mc-node-local&quot;</span>)]
     </span><span class="kw">fn </span>connect_is_mc_node_local_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
     ) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;is-mc-org-local&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;is-mc-org-local&quot;</span>)]
     </span><span class="kw">fn </span>connect_is_mc_org_local_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
     ) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;is-mc-site-local&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;is-mc-site-local&quot;</span>)]
     </span><span class="kw">fn </span>connect_is_mc_site_local_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
     ) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;is-multicast&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;is-multicast&quot;</span>)]
     </span><span class="kw">fn </span>connect_is_multicast_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
     ) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;is-site-local&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;is-site-local&quot;</span>)]
     </span><span class="kw">fn </span>connect_is_site_local_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -1430,4 +1430,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

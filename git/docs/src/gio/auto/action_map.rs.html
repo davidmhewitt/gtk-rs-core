@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -201,7 +201,7 @@
     /// # Implements
     ///
     /// [`ActionMapExt`][trait@crate::prelude::ActionMapExt], [`ActionMapExtManual`][trait@crate::prelude::ActionMapExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GActionMap&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GActionMap&quot;</span>)]
     </span><span class="kw">pub struct </span>ActionMap(Interface&lt;ffi::GActionMap, ffi::GActionMapInterface&gt;);
 
     <span class="kw">match fn </span>{
@@ -227,7 +227,7 @@
     /// The action map takes its own reference on `action`.
     /// ## `action`
     /// a [`Action`][crate::Action]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_map_add_action&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_map_add_action&quot;</span>)]
     </span><span class="kw">fn </span>add_action(<span class="kw-2">&amp;</span><span class="self">self</span>, action: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Action&gt;);
 
     <span class="doccomment">/// Looks up the action with the name `action_name` in `self`.
@@ -239,7 +239,7 @@
     /// # Returns
     ///
     /// a [`Action`][crate::Action], or [`None`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_map_lookup_action&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_map_lookup_action&quot;</span>)]
     </span><span class="kw">fn </span>lookup_action(<span class="kw-2">&amp;</span><span class="self">self</span>, action_name: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;Action&gt;;
 
     <span class="doccomment">/// Removes the named action from the action map.
@@ -247,7 +247,7 @@
     /// If no action of this name is in the map then nothing happens.
     /// ## `action_name`
     /// the name of the action
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_action_map_remove_action&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_action_map_remove_action&quot;</span>)]
     </span><span class="kw">fn </span>remove_action(<span class="kw-2">&amp;</span><span class="self">self</span>, action_name: <span class="kw-2">&amp;</span>str);
 }
 
@@ -286,4 +286,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -358,7 +358,7 @@
 <span class="macro">wrapper! </span>{
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// A mutable text buffer that grows automatically.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GString&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GString&quot;</span>)]
     #[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
     </span><span class="kw">pub struct </span>GStringBuilder(Boxed&lt;ffi::GString&gt;);
 
@@ -373,7 +373,7 @@
 <span class="kw">unsafe impl </span>Sync <span class="kw">for </span>GStringBuilder {}
 
 <span class="kw">impl </span>GStringBuilder {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_string_new_len&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_string_new_len&quot;</span>)]
     </span><span class="kw">pub fn </span>new&lt;T: AsRef&lt;[u8]&gt;&gt;(data: T) -&gt; GStringBuilder {
         <span class="kw">let </span>bytes = data.as_ref();
         <span class="kw">unsafe </span>{
@@ -384,7 +384,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_string_append&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_string_append&quot;</span>)]
     #[doc(alias = <span class="string">&quot;g_string_append_len&quot;</span>)]
     </span><span class="kw">pub fn </span>append(<span class="kw-2">&amp;mut </span><span class="self">self</span>, val: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
@@ -396,7 +396,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_string_prepend&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_string_prepend&quot;</span>)]
     #[doc(alias = <span class="string">&quot;g_string_prepend_len&quot;</span>)]
     </span><span class="kw">pub fn </span>prepend(<span class="kw-2">&amp;mut </span><span class="self">self</span>, val: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
@@ -408,7 +408,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_string_append_c&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_string_append_c&quot;</span>)]
     #[doc(alias = <span class="string">&quot;g_string_append_unichar&quot;</span>)]
     </span><span class="kw">pub fn </span>append_c(<span class="kw-2">&amp;mut </span><span class="self">self</span>, val: char) {
         <span class="kw">unsafe </span>{
@@ -416,7 +416,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_string_prepend_c&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_string_prepend_c&quot;</span>)]
     #[doc(alias = <span class="string">&quot;g_string_prepend_unichar&quot;</span>)]
     </span><span class="kw">pub fn </span>prepend_c(<span class="kw-2">&amp;mut </span><span class="self">self</span>, val: char) {
         <span class="kw">unsafe </span>{
@@ -448,7 +448,7 @@
     /// # Panics
     ///
     /// If the string builder contains invalid UTF-8 this function panics.
-    </span><span class="attribute">#[must_use = <span class="string">&quot;String returned from the builder should probably be used&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;String returned from the builder should probably be used&quot;</span>]
     </span><span class="kw">pub fn </span>into_string(<span class="self">self</span>) -&gt; <span class="kw">crate</span>::GString {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>s = mem::ManuallyDrop::new(<span class="self">self</span>);
@@ -565,9 +565,9 @@
     }
 }
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>append() {
         <span class="kw">let </span><span class="kw-2">mut </span>s = <span class="kw">crate</span>::GStringBuilder::new(<span class="string">&quot;&quot;</span>);
         s.append(<span class="string">&quot;Hello&quot;</span>);
@@ -577,26 +577,26 @@
         <span class="macro">assert_eq!</span>(s.into_string().as_str(), <span class="string">&quot;Hello there!&quot;</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>prepend() {
         <span class="kw">let </span><span class="kw-2">mut </span>s = <span class="kw">crate</span>::GStringBuilder::new(<span class="string">&quot;456&quot;</span>);
         s.prepend(<span class="string">&quot;123&quot;</span>);
         <span class="macro">assert_eq!</span>(<span class="kw-2">&amp;*</span>s, <span class="string">&quot;123456&quot;</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>default() {
         <span class="kw">let </span>s1: <span class="kw">crate</span>::GStringBuilder = Default::default();
         <span class="macro">assert_eq!</span>(<span class="kw-2">&amp;*</span>s1, <span class="string">&quot;&quot;</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>display() {
         <span class="kw">let </span>s: <span class="kw">crate</span>::GStringBuilder = <span class="kw">crate</span>::GStringBuilder::new(<span class="string">&quot;This is a string.&quot;</span>);
         <span class="macro">assert_eq!</span>(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;{}&quot;</span>, s), <span class="string">&quot;This is a string.&quot;</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>eq() {
         <span class="kw">let </span>a1 = <span class="kw">crate</span>::GStringBuilder::new(<span class="string">&quot;a&quot;</span>);
         <span class="kw">let </span>a2 = <span class="kw">crate</span>::GStringBuilder::new(<span class="string">&quot;a&quot;</span>);
@@ -606,7 +606,7 @@
         <span class="macro">assert_ne!</span>(a2, b);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>write() {
         <span class="kw">use </span>std::fmt::Write;
 
@@ -616,4 +616,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

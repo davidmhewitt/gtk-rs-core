@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -275,7 +275,7 @@
 <span class="macro">glib::wrapper! </span>{
     <span class="doccomment">/// [`SettingsSchemaKey`][crate::SettingsSchemaKey] is an opaque data structure and can only be accessed
     /// using the following functions.
-    </span><span class="attribute">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    </span><span class="attr">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
     </span><span class="kw">pub struct </span>SettingsSchemaKey(Shared&lt;ffi::GSettingsSchemaKey&gt;);
 
     <span class="kw">match fn </span>{
@@ -294,7 +294,7 @@
     /// # Returns
     ///
     /// the default value for the key
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_settings_schema_key_get_default_value&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_settings_schema_key_get_default_value&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_default_value&quot;</span>)]
     </span><span class="kw">pub fn </span>default_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::Variant {
         <span class="kw">unsafe </span>{
@@ -322,7 +322,7 @@
     /// # Returns
     ///
     /// the description for `self`, or [`None`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_settings_schema_key_get_description&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_settings_schema_key_get_description&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_description&quot;</span>)]
     </span><span class="kw">pub fn </span>description(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{
@@ -337,7 +337,7 @@
     /// # Returns
     ///
     /// the name of `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_settings_schema_key_get_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_settings_schema_key_get_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_name&quot;</span>)]
     </span><span class="kw">pub fn </span>name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_settings_schema_key_get_name(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -383,7 +383,7 @@
     /// # Returns
     ///
     /// a [`glib::Variant`][struct@crate::glib::Variant] describing the range
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_settings_schema_key_get_range&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_settings_schema_key_get_range&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_range&quot;</span>)]
     </span><span class="kw">pub fn </span>range(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::Variant {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_settings_schema_key_get_range(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -406,7 +406,7 @@
     /// # Returns
     ///
     /// the summary for `self`, or [`None`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_settings_schema_key_get_summary&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_settings_schema_key_get_summary&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_summary&quot;</span>)]
     </span><span class="kw">pub fn </span>summary(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{
@@ -421,7 +421,7 @@
     /// # Returns
     ///
     /// the type of `self`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_settings_schema_key_get_value_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_settings_schema_key_get_value_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_value_type&quot;</span>)]
     </span><span class="kw">pub fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::VariantType {
         <span class="kw">unsafe </span>{
@@ -442,7 +442,7 @@
     /// # Returns
     ///
     /// [`true`] if `value` is valid for `self`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_settings_schema_key_range_check&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_settings_schema_key_range_check&quot;</span>)]
     </span><span class="kw">pub fn </span>range_check(<span class="kw-2">&amp;</span><span class="self">self</span>, value: <span class="kw-2">&amp;</span>glib::Variant) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::g_settings_schema_key_range_check(
@@ -454,10 +454,10 @@
 }
 
 <span class="kw">impl </span>fmt::Display <span class="kw">for </span>SettingsSchemaKey {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter) -&gt; fmt::Result {
         f.write_str(<span class="kw-2">&amp;</span><span class="self">self</span>.name())
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

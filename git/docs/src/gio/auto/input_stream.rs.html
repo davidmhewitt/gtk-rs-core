@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -700,7 +700,7 @@
     /// # Implements
     ///
     /// [`InputStreamExt`][trait@crate::prelude::InputStreamExt], [`trait@glib::ObjectExt`], [`InputStreamExtManual`][trait@crate::prelude::InputStreamExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GInputStream&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GInputStream&quot;</span>)]
     </span><span class="kw">pub struct </span>InputStream(Object&lt;ffi::GInputStream, ffi::GInputStreamClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -719,7 +719,7 @@
 /// [`FileInputStream`][struct@crate::FileInputStream], [`FilterInputStream`][struct@crate::FilterInputStream], [`InputStream`][struct@crate::InputStream], [`MemoryInputStream`][struct@crate::MemoryInputStream], [`PollableInputStream`][struct@crate::PollableInputStream], [`UnixInputStream`][struct@crate::UnixInputStream]
 </span><span class="kw">pub trait </span>InputStreamExt: <span class="lifetime">&#39;static </span>{
     <span class="doccomment">/// Clears the pending flag on `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_input_stream_clear_pending&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_input_stream_clear_pending&quot;</span>)]
     </span><span class="kw">fn </span>clear_pending(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
     <span class="doccomment">/// Closes the stream, releasing resources related to it.
@@ -751,7 +751,7 @@
     /// # Returns
     ///
     /// [`true`] on success, [`false`] on failure
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_input_stream_close&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_input_stream_close&quot;</span>)]
     </span><span class="kw">fn </span>close(<span class="kw-2">&amp;</span><span class="self">self</span>, cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
     <span class="doccomment">/// Requests an asynchronous closes of the stream, releasing resources related to it.
@@ -770,7 +770,7 @@
     /// optional cancellable object
     /// ## `callback`
     /// callback to call when the request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_input_stream_close_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_input_stream_close_async&quot;</span>)]
     </span><span class="kw">fn </span>close_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         io_priority: glib::Priority,
@@ -788,7 +788,7 @@
     /// # Returns
     ///
     /// [`true`] if `self` has pending actions.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_input_stream_has_pending&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_input_stream_has_pending&quot;</span>)]
     </span><span class="kw">fn </span>has_pending(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
     <span class="doccomment">/// Checks if an input stream is closed.
@@ -796,7 +796,7 @@
     /// # Returns
     ///
     /// [`true`] if the stream is closed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_input_stream_is_closed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_input_stream_is_closed&quot;</span>)]
     </span><span class="kw">fn </span>is_closed(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
     <span class="doccomment">/// Like [`InputStreamExtManual::read()`][crate::prelude::InputStreamExtManual::read()], this tries to read `count` bytes from
@@ -831,7 +831,7 @@
     /// # Returns
     ///
     /// a new [`glib::Bytes`][crate::glib::Bytes], or [`None`] on error
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_input_stream_read_bytes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_input_stream_read_bytes&quot;</span>)]
     </span><span class="kw">fn </span>read_bytes(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         count: usize,
@@ -866,7 +866,7 @@
     /// optional [`Cancellable`][crate::Cancellable] object, [`None`] to ignore.
     /// ## `callback`
     /// callback to call when the request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_input_stream_read_bytes_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_input_stream_read_bytes_async&quot;</span>)]
     </span><span class="kw">fn </span>read_bytes_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;glib::Bytes, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         count: usize,
@@ -888,7 +888,7 @@
     /// # Returns
     ///
     /// [`true`] if pending was previously unset and is now set.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_input_stream_set_pending&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_input_stream_set_pending&quot;</span>)]
     </span><span class="kw">fn </span>set_pending(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
     <span class="doccomment">/// Tries to skip `count` bytes from the stream. Will block during the operation.
@@ -913,7 +913,7 @@
     /// # Returns
     ///
     /// Number of bytes skipped, or -1 on error
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_input_stream_skip&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_input_stream_skip&quot;</span>)]
     </span><span class="kw">fn </span>skip(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         count: usize,
@@ -951,7 +951,7 @@
     /// optional [`Cancellable`][crate::Cancellable] object, [`None`] to ignore.
     /// ## `callback`
     /// callback to call when the request is satisfied
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_input_stream_skip_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_input_stream_skip_async&quot;</span>)]
     </span><span class="kw">fn </span>skip_async&lt;P: FnOnce(<span class="prelude-ty">Result</span>&lt;isize, glib::Error&gt;) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         count: usize,
@@ -1266,4 +1266,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

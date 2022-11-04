@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -193,7 +193,7 @@
 <span class="kw">use </span>std::mem::transmute;
 
 <span class="kw">pub trait </span>DBusProxyExtManual: <span class="lifetime">&#39;static </span>{
-    <span class="attribute">#[cfg(feature = <span class="string">&quot;v2_72&quot;</span>)]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v2_72&quot;</span>)]
     #[doc(alias = <span class="string">&quot;g-signal&quot;</span>)]
     </span><span class="kw">fn </span>connect_g_signal&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, <span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span>glib::Variant) + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -201,7 +201,7 @@
         f: F,
     ) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[cfg(not(feature = <span class="string">&quot;v2_72&quot;</span>))]
+    <span class="attr">#[cfg(not(feature = <span class="string">&quot;v2_72&quot;</span>))]
     #[doc(alias = <span class="string">&quot;g-signal&quot;</span>)]
     </span><span class="kw">fn </span>connect_g_signal&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, <span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span>glib::Variant) + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -210,7 +210,7 @@
 }
 
 <span class="kw">impl</span>&lt;O: IsA&lt;DBusProxy&gt;&gt; DBusProxyExtManual <span class="kw">for </span>O {
-    <span class="attribute">#[cfg(not(feature = <span class="string">&quot;v2_72&quot;</span>))]
+    <span class="attr">#[cfg(not(feature = <span class="string">&quot;v2_72&quot;</span>))]
     </span><span class="kw">fn </span>connect_g_signal&lt;
         F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, <span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span>glib::Variant) + Send + Sync + <span class="lifetime">&#39;static</span>,
     &gt;(
@@ -250,7 +250,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(feature = <span class="string">&quot;v2_72&quot;</span>)]
+    <span class="attr">#[cfg(feature = <span class="string">&quot;v2_72&quot;</span>)]
     </span><span class="kw">fn </span>connect_g_signal&lt;
         F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, <span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span>glib::Variant) + Send + Sync + <span class="lifetime">&#39;static</span>,
     &gt;(
@@ -296,4 +296,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -383,9 +383,9 @@
     /// # Returns
     ///
     /// the exit status
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_run&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_run&quot;</span>)]
     </span><span class="kw">fn </span>run(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_application_run&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_application_run&quot;</span>)]
     </span><span class="kw">fn </span>run_with_args&lt;S: AsRef&lt;str&gt;&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, args: <span class="kw-2">&amp;</span>[S]) -&gt; i32;
     <span class="doccomment">/// The ::open signal is emitted on the primary instance when there are
     /// files to open. See [`ApplicationExt::open()`][crate::prelude::ApplicationExt::open()] for more information.
@@ -402,7 +402,7 @@
     /// when a toplevel window is on the screen.
     ///
     /// To cancel the hold, call [`ApplicationExtManual::release()`][crate::prelude::ApplicationExtManual::release()].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_hold&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_hold&quot;</span>)]
     </span><span class="kw">fn </span>hold(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; ApplicationHoldGuard;
 
     <span class="doccomment">/// Increases the busy count of `self`.
@@ -417,7 +417,7 @@
     /// To cancel the busy indication, use [`ApplicationExtManual::unmark_busy()`][crate::prelude::ApplicationExtManual::unmark_busy()].
     ///
     /// The application must be registered before calling this function.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_mark_busy&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_mark_busy&quot;</span>)]
     </span><span class="kw">fn </span>mark_busy(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; ApplicationBusyGuard;
 }
 
@@ -480,7 +480,7 @@
     }
 }
 
-<span class="attribute">#[derive(Debug)]
+<span class="attr">#[derive(Debug)]
 #[must_use = <span class="string">&quot;if unused the Application will immediately be released&quot;</span>]
 </span><span class="kw">pub struct </span>ApplicationHoldGuard(glib::WeakRef&lt;Application&gt;);
 
@@ -494,7 +494,7 @@
     }
 }
 
-<span class="attribute">#[derive(Debug)]
+<span class="attr">#[derive(Debug)]
 #[must_use = <span class="string">&quot;if unused the Application will immediately be unmarked busy&quot;</span>]
 </span><span class="kw">pub struct </span>ApplicationBusyGuard(glib::WeakRef&lt;Application&gt;);
 
@@ -508,4 +508,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

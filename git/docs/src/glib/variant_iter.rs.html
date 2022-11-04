@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -453,7 +453,7 @@
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Iterator over items in a variant.
-</span><span class="attribute">#[derive(Debug)]
+</span><span class="attr">#[derive(Debug)]
 </span><span class="kw">pub struct </span>VariantIter {
     variant: Variant,
     head: usize,
@@ -541,7 +541,7 @@
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Iterator over items in a variant of type `as`.
-</span><span class="attribute">#[derive(Debug)]
+</span><span class="attr">#[derive(Debug)]
 </span><span class="kw">pub struct </span>VariantStrIter&lt;<span class="lifetime">&#39;a</span>&gt; {
     variant: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Variant,
     head: usize,
@@ -643,20 +643,20 @@
 
 <span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; FusedIterator <span class="kw">for </span>VariantStrIter&lt;<span class="lifetime">&#39;a</span>&gt; {}
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
     <span class="kw">use </span><span class="kw">crate</span>::variant::{DictEntry, Variant};
     <span class="kw">use </span>std::collections::HashMap;
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_variant_iter_variant() {
         <span class="kw">let </span>v = Variant::from_variant(<span class="kw-2">&amp;</span><span class="string">&quot;foo&quot;</span>.to_string().to_variant());
         <span class="kw">let </span>vec: Vec&lt;String&gt; = v.iter().map(|i| i.get().unwrap()).collect();
         <span class="macro">assert_eq!</span>(vec, <span class="macro">vec!</span>[<span class="string">&quot;foo&quot;</span>.to_string()]);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_variant_iter_array() {
         <span class="kw">let </span>v = Variant::array_from_iter::&lt;String&gt;([
             <span class="string">&quot;foo&quot;</span>.to_string().to_variant(),
@@ -669,7 +669,7 @@
         <span class="macro">assert_eq!</span>(<span class="kw-2">&amp;</span>vec, <span class="kw-2">&amp;</span>a);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_variant_iter_tuple() {
         <span class="kw">let </span>v = Variant::tuple_from_iter([
             <span class="string">&quot;foo&quot;</span>.to_string().to_variant(),
@@ -679,14 +679,14 @@
         <span class="macro">assert_eq!</span>(vec, <span class="macro">vec!</span>[<span class="string">&quot;foo&quot;</span>.to_string(), <span class="string">&quot;bar&quot;</span>.to_string()]);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_variant_iter_dictentry() {
         <span class="kw">let </span>v = DictEntry::new(<span class="string">&quot;foo&quot;</span>, <span class="number">1337</span>).to_variant();
         <span class="macro">println!</span>(<span class="string">&quot;{:?}&quot;</span>, v.iter().collect::&lt;Vec&lt;<span class="kw">_</span>&gt;&gt;());
         <span class="macro">assert_eq!</span>(v.iter().count(), <span class="number">2</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_variant_iter_map() {
         <span class="kw">let </span><span class="kw-2">mut </span>map = HashMap::new();
         map.insert(<span class="string">&quot;foo&quot;</span>, <span class="number">1</span>);
@@ -695,7 +695,7 @@
         <span class="macro">assert_eq!</span>(v.iter().count(), <span class="number">2</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_variant_iter_nth() {
         <span class="kw">let </span>v = Variant::array_from_iter::&lt;String&gt;([
             <span class="string">&quot;0&quot;</span>.to_string().to_variant(),
@@ -727,7 +727,7 @@
         <span class="macro">assert_eq!</span>(iter.next_back(), <span class="prelude-val">None</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_variant_iter_count() {
         <span class="kw">let </span>v = Variant::array_from_iter::&lt;String&gt;([
             <span class="string">&quot;0&quot;</span>.to_string().to_variant(),
@@ -741,7 +741,7 @@
         <span class="macro">assert_eq!</span>(iter.count(), <span class="number">3</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_variant_iter_last() {
         <span class="kw">let </span>v = Variant::array_from_iter::&lt;String&gt;([
             <span class="string">&quot;0&quot;</span>.to_string().to_variant(),
@@ -758,7 +758,7 @@
         );
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_variant_str_iter_nth() {
         <span class="kw">let </span>v = Variant::array_from_iter::&lt;String&gt;([
             <span class="string">&quot;0&quot;</span>.to_string().to_variant(),
@@ -781,7 +781,7 @@
         <span class="macro">assert_eq!</span>(iter.next_back(), <span class="prelude-val">None</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_variant_str_iter_count() {
         <span class="kw">let </span>v = Variant::array_from_iter::&lt;String&gt;([
             <span class="string">&quot;0&quot;</span>.to_string().to_variant(),
@@ -795,7 +795,7 @@
         <span class="macro">assert_eq!</span>(iter.count(), <span class="number">3</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_variant_str_iter_last() {
         <span class="kw">let </span>v = Variant::array_from_iter::&lt;String&gt;([
             <span class="string">&quot;0&quot;</span>.to_string().to_variant(),
@@ -810,4 +810,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

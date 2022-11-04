@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -984,7 +984,7 @@
     /// # Implements
     ///
     /// [`MountOperationExt`][trait@crate::prelude::MountOperationExt], [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GMountOperation&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GMountOperation&quot;</span>)]
     </span><span class="kw">pub struct </span>MountOperation(Object&lt;ffi::GMountOperation, ffi::GMountOperationClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -1000,7 +1000,7 @@
     /// # Returns
     ///
     /// a [`MountOperation`][crate::MountOperation].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_mount_operation_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_mount_operation_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; MountOperation {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_mount_operation_new()) }
     }
@@ -1024,7 +1024,7 @@
     /// # Returns
     ///
     /// [`true`] if mount operation is anonymous.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_mount_operation_get_anonymous&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_mount_operation_get_anonymous&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_anonymous&quot;</span>)]
     </span><span class="kw">fn </span>is_anonymous(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -1034,7 +1034,7 @@
     ///
     /// an integer containing an index of the user&#39;s choice from
     /// the choice&#39;s list, or `0`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_mount_operation_get_choice&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_mount_operation_get_choice&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_choice&quot;</span>)]
     </span><span class="kw">fn </span>choice(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
 
@@ -1043,7 +1043,7 @@
     /// # Returns
     ///
     /// a string set to the domain.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_mount_operation_get_domain&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_mount_operation_get_domain&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_domain&quot;</span>)]
     </span><span class="kw">fn </span>domain(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
@@ -1053,7 +1053,7 @@
     /// # Returns
     ///
     /// [`true`] if mount operation is for hidden volume.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_mount_operation_get_is_tcrypt_hidden_volume&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_is_tcrypt_hidden_volume&quot;</span>)]
@@ -1065,7 +1065,7 @@
     /// # Returns
     ///
     /// [`true`] if mount operation is for system volume.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_mount_operation_get_is_tcrypt_system_volume&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_is_tcrypt_system_volume&quot;</span>)]
@@ -1076,7 +1076,7 @@
     /// # Returns
     ///
     /// a string containing the password within `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_mount_operation_get_password&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_mount_operation_get_password&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_password&quot;</span>)]
     </span><span class="kw">fn </span>password(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
@@ -1085,7 +1085,7 @@
     /// # Returns
     ///
     /// a [`PasswordSave`][crate::PasswordSave] flag.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_mount_operation_get_password_save&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_mount_operation_get_password_save&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_password_save&quot;</span>)]
     </span><span class="kw">fn </span>password_save(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; PasswordSave;
 
@@ -1094,7 +1094,7 @@
     /// # Returns
     ///
     /// The VeraCrypt PIM within `self`.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_mount_operation_get_pim&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_pim&quot;</span>)]
@@ -1105,38 +1105,38 @@
     /// # Returns
     ///
     /// a string containing the user name.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_mount_operation_get_username&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_mount_operation_get_username&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_username&quot;</span>)]
     </span><span class="kw">fn </span>username(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
     <span class="doccomment">/// Emits the `signal::MountOperation::reply` signal.
     /// ## `result`
     /// a [`MountOperationResult`][crate::MountOperationResult]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_mount_operation_reply&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_mount_operation_reply&quot;</span>)]
     </span><span class="kw">fn </span>reply(<span class="kw-2">&amp;</span><span class="self">self</span>, result: MountOperationResult);
 
     <span class="doccomment">/// Sets the mount operation to use an anonymous user if `anonymous` is [`true`].
     /// ## `anonymous`
     /// boolean value.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_mount_operation_set_anonymous&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_mount_operation_set_anonymous&quot;</span>)]
     </span><span class="kw">fn </span>set_anonymous(<span class="kw-2">&amp;</span><span class="self">self</span>, anonymous: bool);
 
     <span class="doccomment">/// Sets a default choice for the mount operation.
     /// ## `choice`
     /// an integer.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_mount_operation_set_choice&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_mount_operation_set_choice&quot;</span>)]
     </span><span class="kw">fn </span>set_choice(<span class="kw-2">&amp;</span><span class="self">self</span>, choice: i32);
 
     <span class="doccomment">/// Sets the mount operation&#39;s domain.
     /// ## `domain`
     /// the domain to set.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_mount_operation_set_domain&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_mount_operation_set_domain&quot;</span>)]
     </span><span class="kw">fn </span>set_domain(<span class="kw-2">&amp;</span><span class="self">self</span>, domain: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;);
 
     <span class="doccomment">/// Sets the mount operation to use a hidden volume if `hidden_volume` is [`true`].
     /// ## `hidden_volume`
     /// boolean value.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_mount_operation_set_is_tcrypt_hidden_volume&quot;</span>)]
     </span><span class="kw">fn </span>set_is_tcrypt_hidden_volume(<span class="kw-2">&amp;</span><span class="self">self</span>, hidden_volume: bool);
@@ -1144,7 +1144,7 @@
     <span class="doccomment">/// Sets the mount operation to use a system volume if `system_volume` is [`true`].
     /// ## `system_volume`
     /// boolean value.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_mount_operation_set_is_tcrypt_system_volume&quot;</span>)]
     </span><span class="kw">fn </span>set_is_tcrypt_system_volume(<span class="kw-2">&amp;</span><span class="self">self</span>, system_volume: bool);
@@ -1152,19 +1152,19 @@
     <span class="doccomment">/// Sets the mount operation&#39;s password to `password`.
     /// ## `password`
     /// password to set.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_mount_operation_set_password&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_mount_operation_set_password&quot;</span>)]
     </span><span class="kw">fn </span>set_password(<span class="kw-2">&amp;</span><span class="self">self</span>, password: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;);
 
     <span class="doccomment">/// Sets the state of saving passwords for the mount operation.
     /// ## `save`
     /// a set of [`PasswordSave`][crate::PasswordSave] flags.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_mount_operation_set_password_save&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_mount_operation_set_password_save&quot;</span>)]
     </span><span class="kw">fn </span>set_password_save(<span class="kw-2">&amp;</span><span class="self">self</span>, save: PasswordSave);
 
     <span class="doccomment">/// Sets the mount operation&#39;s PIM to `pim`.
     /// ## `pim`
     /// an unsigned integer.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_mount_operation_set_pim&quot;</span>)]
     </span><span class="kw">fn </span>set_pim(<span class="kw-2">&amp;</span><span class="self">self</span>, pim: u32);
@@ -1172,7 +1172,7 @@
     <span class="doccomment">/// Sets the user name within `self` to `username`.
     /// ## `username`
     /// input username.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_mount_operation_set_username&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_mount_operation_set_username&quot;</span>)]
     </span><span class="kw">fn </span>set_username(<span class="kw-2">&amp;</span><span class="self">self</span>, username: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;);
 
     <span class="doccomment">/// Emitted by the backend when e.g. a device becomes unavailable
@@ -1180,7 +1180,7 @@
     ///
     /// Implementations of GMountOperation should handle this signal
     /// by dismissing open password dialogs.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;aborted&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;aborted&quot;</span>)]
     </span><span class="kw">fn </span>connect_aborted&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// Emitted when a mount operation asks the user for a password.
@@ -1196,7 +1196,7 @@
     /// string containing the default domain.
     /// ## `flags`
     /// a set of [`AskPasswordFlags`][crate::AskPasswordFlags].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;ask-password&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;ask-password&quot;</span>)]
     </span><span class="kw">fn </span>connect_ask_password&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span>str, AskPasswordFlags) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -1208,7 +1208,7 @@
     </span><span class="doccomment">/// Emitted when the user has replied to the mount operation.
     /// ## `result`
     /// a [`MountOperationResult`][crate::MountOperationResult] indicating how the request was handled
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;reply&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;reply&quot;</span>)]
     </span><span class="kw">fn </span>connect_reply&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, MountOperationResult) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="comment">//#[doc(alias = &quot;show-processes&quot;)]
@@ -1239,22 +1239,22 @@
     /// the amount of bytes to be written before the operation
     ///  completes (or -1 if such amount is not known), or zero if the operation
     ///  is completed
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;show-unmount-progress&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;show-unmount-progress&quot;</span>)]
     </span><span class="kw">fn </span>connect_show_unmount_progress&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>str, i64, i64) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
     ) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;anonymous&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;anonymous&quot;</span>)]
     </span><span class="kw">fn </span>connect_anonymous_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;choice&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;choice&quot;</span>)]
     </span><span class="kw">fn </span>connect_choice_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;domain&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;domain&quot;</span>)]
     </span><span class="kw">fn </span>connect_domain_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;is-tcrypt-hidden-volume&quot;</span>)]
     </span><span class="kw">fn </span>connect_is_tcrypt_hidden_volume_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(
@@ -1262,7 +1262,7 @@
         f: F,
     ) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;is-tcrypt-system-volume&quot;</span>)]
     </span><span class="kw">fn </span>connect_is_tcrypt_system_volume_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(
@@ -1270,18 +1270,18 @@
         f: F,
     ) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;password&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;password&quot;</span>)]
     </span><span class="kw">fn </span>connect_password_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;password-save&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;password-save&quot;</span>)]
     </span><span class="kw">fn </span>connect_password_save_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;pim&quot;</span>)]
     </span><span class="kw">fn </span>connect_pim_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;username&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;username&quot;</span>)]
     </span><span class="kw">fn </span>connect_username_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -1306,7 +1306,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">fn </span>is_tcrypt_hidden_volume(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -1316,7 +1316,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">fn </span>is_tcrypt_system_volume(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -1342,7 +1342,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">fn </span>pim(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::g_mount_operation_get_pim(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>) }
@@ -1386,7 +1386,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">fn </span>set_is_tcrypt_hidden_volume(<span class="kw-2">&amp;</span><span class="self">self</span>, hidden_volume: bool) {
         <span class="kw">unsafe </span>{
@@ -1397,7 +1397,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">fn </span>set_is_tcrypt_system_volume(<span class="kw-2">&amp;</span><span class="self">self</span>, system_volume: bool) {
         <span class="kw">unsafe </span>{
@@ -1426,7 +1426,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">fn </span>set_pim(<span class="kw-2">&amp;</span><span class="self">self</span>, pim: u32) {
         <span class="kw">unsafe </span>{
@@ -1648,7 +1648,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">fn </span>connect_is_tcrypt_hidden_volume_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -1678,7 +1678,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">fn </span>connect_is_tcrypt_system_volume_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -1758,7 +1758,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">fn </span>connect_pim_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>notify_pim_trampoline&lt;P: IsA&lt;MountOperation&gt;, F: Fn(<span class="kw-2">&amp;</span>P) + <span class="lifetime">&#39;static</span>&gt;(
@@ -1814,4 +1814,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../glib/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../glib/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -610,7 +610,7 @@
 <span class="kw">use </span>std::ptr;
 
 <span class="macro">crate::wrapper! </span>{
-    <span class="attribute">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    <span class="attr">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
     </span><span class="kw">pub struct </span>KeyFile(Shared&lt;ffi::GKeyFile&gt;);
 
     <span class="kw">match fn </span>{
@@ -621,12 +621,12 @@
 }
 
 <span class="kw">impl </span>KeyFile {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_new&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; KeyFile {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_key_file_new()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_get_comment&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_get_comment&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_comment&quot;</span>)]
     </span><span class="kw">pub fn </span>comment(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -649,7 +649,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_get_double&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_get_double&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_double&quot;</span>)]
     </span><span class="kw">pub fn </span>double(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str, key: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;f64, <span class="kw">crate</span>::Error&gt; {
         <span class="kw">unsafe </span>{
@@ -668,7 +668,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_get_double_list&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_get_double_list&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_double_list&quot;</span>)]
     </span><span class="kw">pub fn </span>double_list(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str, key: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;Vec&lt;f64&gt;, <span class="kw">crate</span>::Error&gt; {
         <span class="kw">unsafe </span>{
@@ -692,7 +692,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_get_groups&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_get_groups&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_groups&quot;</span>)]
     </span><span class="kw">pub fn </span>groups(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (Vec&lt;<span class="kw">crate</span>::GString&gt;, usize) {
         <span class="kw">unsafe </span>{
@@ -705,7 +705,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_get_int64&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_get_int64&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_int64&quot;</span>)]
     </span><span class="kw">pub fn </span>int64(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str, key: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;i64, <span class="kw">crate</span>::Error&gt; {
         <span class="kw">unsafe </span>{
@@ -724,7 +724,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_get_integer&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_get_integer&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_integer&quot;</span>)]
     </span><span class="kw">pub fn </span>integer(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str, key: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;i32, <span class="kw">crate</span>::Error&gt; {
         <span class="kw">unsafe </span>{
@@ -743,7 +743,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_get_integer_list&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_get_integer_list&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_integer_list&quot;</span>)]
     </span><span class="kw">pub fn </span>integer_list(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str, key: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;Vec&lt;i32&gt;, <span class="kw">crate</span>::Error&gt; {
         <span class="kw">unsafe </span>{
@@ -767,7 +767,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_get_keys&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_get_keys&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_keys&quot;</span>)]
     </span><span class="kw">pub fn </span>keys(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;(Vec&lt;<span class="kw">crate</span>::GString&gt;, usize), <span class="kw">crate</span>::Error&gt; {
         <span class="kw">unsafe </span>{
@@ -790,7 +790,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_get_locale_for_key&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_get_locale_for_key&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_locale_for_key&quot;</span>)]
     </span><span class="kw">pub fn </span>locale_for_key(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
@@ -808,13 +808,13 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_get_start_group&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_get_start_group&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_start_group&quot;</span>)]
     </span><span class="kw">pub fn </span>start_group(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_key_file_get_start_group(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_get_uint64&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_get_uint64&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_uint64&quot;</span>)]
     </span><span class="kw">pub fn </span>uint64(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str, key: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;u64, <span class="kw">crate</span>::Error&gt; {
         <span class="kw">unsafe </span>{
@@ -833,7 +833,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_get_value&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_get_value&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_value&quot;</span>)]
     </span><span class="kw">pub fn </span>value(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str, key: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::GString, <span class="kw">crate</span>::Error&gt; {
         <span class="kw">unsafe </span>{
@@ -852,7 +852,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_has_group&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_has_group&quot;</span>)]
     </span><span class="kw">pub fn </span>has_group(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::g_key_file_has_group(
@@ -862,7 +862,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_load_from_bytes&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_load_from_bytes&quot;</span>)]
     </span><span class="kw">pub fn </span>load_from_bytes(<span class="kw-2">&amp;</span><span class="self">self</span>, bytes: <span class="kw-2">&amp;</span>Bytes, flags: KeyFileFlags) -&gt; <span class="prelude-ty">Result</span>&lt;(), <span class="kw">crate</span>::Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
@@ -881,7 +881,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_load_from_data&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_load_from_data&quot;</span>)]
     </span><span class="kw">pub fn </span>load_from_data(<span class="kw-2">&amp;</span><span class="self">self</span>, data: <span class="kw-2">&amp;</span>str, flags: KeyFileFlags) -&gt; <span class="prelude-ty">Result</span>&lt;(), <span class="kw">crate</span>::Error&gt; {
         <span class="kw">let </span>length = data.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
@@ -902,7 +902,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_load_from_file&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_load_from_file&quot;</span>)]
     </span><span class="kw">pub fn </span>load_from_file(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         file: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;,
@@ -925,7 +925,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_remove_comment&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_remove_comment&quot;</span>)]
     </span><span class="kw">pub fn </span>remove_comment(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         group_name: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
@@ -948,7 +948,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_remove_group&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_remove_group&quot;</span>)]
     </span><span class="kw">pub fn </span>remove_group(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;(), <span class="kw">crate</span>::Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
@@ -966,7 +966,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_remove_key&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_remove_key&quot;</span>)]
     </span><span class="kw">pub fn </span>remove_key(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str, key: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;(), <span class="kw">crate</span>::Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
@@ -985,7 +985,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_set_boolean&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_set_boolean&quot;</span>)]
     </span><span class="kw">pub fn </span>set_boolean(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str, key: <span class="kw-2">&amp;</span>str, value: bool) {
         <span class="kw">unsafe </span>{
             ffi::g_key_file_set_boolean(
@@ -1002,7 +1002,7 @@
     //    unsafe { TODO: call ffi:g_key_file_set_boolean_list() }
     //}
 
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_set_comment&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_set_comment&quot;</span>)]
     </span><span class="kw">pub fn </span>set_comment(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         group_name: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
@@ -1027,7 +1027,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_set_double&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_set_double&quot;</span>)]
     </span><span class="kw">pub fn </span>set_double(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str, key: <span class="kw-2">&amp;</span>str, value: f64) {
         <span class="kw">unsafe </span>{
             ffi::g_key_file_set_double(
@@ -1039,7 +1039,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_set_int64&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_set_int64&quot;</span>)]
     </span><span class="kw">pub fn </span>set_int64(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str, key: <span class="kw-2">&amp;</span>str, value: i64) {
         <span class="kw">unsafe </span>{
             ffi::g_key_file_set_int64(
@@ -1051,7 +1051,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_set_integer&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_set_integer&quot;</span>)]
     </span><span class="kw">pub fn </span>set_integer(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str, key: <span class="kw-2">&amp;</span>str, value: i32) {
         <span class="kw">unsafe </span>{
             ffi::g_key_file_set_integer(
@@ -1063,14 +1063,14 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_set_list_separator&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_set_list_separator&quot;</span>)]
     </span><span class="kw">pub fn </span>set_list_separator(<span class="kw-2">&amp;</span><span class="self">self</span>, separator: <span class="kw">crate</span>::Char) {
         <span class="kw">unsafe </span>{
             ffi::g_key_file_set_list_separator(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, separator.into_glib());
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_set_locale_string&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_set_locale_string&quot;</span>)]
     </span><span class="kw">pub fn </span>set_locale_string(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str, key: <span class="kw-2">&amp;</span>str, locale: <span class="kw-2">&amp;</span>str, string: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::g_key_file_set_locale_string(
@@ -1083,7 +1083,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_set_string&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_set_string&quot;</span>)]
     </span><span class="kw">pub fn </span>set_string(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str, key: <span class="kw-2">&amp;</span>str, string: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::g_key_file_set_string(
@@ -1095,7 +1095,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_set_uint64&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_set_uint64&quot;</span>)]
     </span><span class="kw">pub fn </span>set_uint64(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str, key: <span class="kw-2">&amp;</span>str, value: u64) {
         <span class="kw">unsafe </span>{
             ffi::g_key_file_set_uint64(
@@ -1107,7 +1107,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_key_file_set_value&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_set_value&quot;</span>)]
     </span><span class="kw">pub fn </span>set_value(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str, key: <span class="kw-2">&amp;</span>str, value: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::g_key_file_set_value(
@@ -1126,4 +1126,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

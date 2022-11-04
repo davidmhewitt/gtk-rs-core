@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1167,7 +1167,7 @@
     /// # Implements
     ///
     /// [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GFileInfo&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GFileInfo&quot;</span>)]
     </span><span class="kw">pub struct </span>FileInfo(Object&lt;ffi::GFileInfo, ffi::GFileInfoClass&gt;);
 
     <span class="kw">match fn </span>{
@@ -1181,13 +1181,13 @@
     /// # Returns
     ///
     /// a [`FileInfo`][crate::FileInfo].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; FileInfo {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_file_info_new()) }
     }
 
     <span class="doccomment">/// Clears the status information from `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_clear_status&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_clear_status&quot;</span>)]
     </span><span class="kw">pub fn </span>clear_status(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_clear_status(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
@@ -1198,7 +1198,7 @@
     /// and then copies all of the file attributes from `self` to `dest_info`.
     /// ## `dest_info`
     /// destination to copy attributes to.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_copy_into&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_copy_into&quot;</span>)]
     </span><span class="kw">pub fn </span>copy_into(<span class="kw-2">&amp;</span><span class="self">self</span>, dest_info: <span class="kw-2">&amp;</span>FileInfo) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_copy_into(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, dest_info.to_glib_none().<span class="number">0</span>);
@@ -1210,7 +1210,7 @@
     /// # Returns
     ///
     /// a duplicate [`FileInfo`][crate::FileInfo] of `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_dup&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_dup&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>dup(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; FileInfo {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_file_info_dup(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1229,7 +1229,7 @@
     /// # Returns
     ///
     /// access time, or [`None`] if unknown
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_file_info_get_access_date_time&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_access_date_time&quot;</span>)]
@@ -1248,7 +1248,7 @@
     /// a UTF-8 string associated with the given `attribute`, or
     ///  [`None`] if the attribute wasn’t set.
     ///  When you&#39;re done with the string it must be freed with `g_free()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_attribute_as_string&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_attribute_as_string&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_attribute_as_string&quot;</span>)]
     </span><span class="kw">pub fn </span>attribute_as_string(<span class="kw-2">&amp;</span><span class="self">self</span>, attribute: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{
@@ -1267,7 +1267,7 @@
     /// # Returns
     ///
     /// the boolean value contained within the attribute.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_attribute_boolean&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_attribute_boolean&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_attribute_boolean&quot;</span>)]
     </span><span class="kw">pub fn </span>boolean(<span class="kw-2">&amp;</span><span class="self">self</span>, attribute: <span class="kw-2">&amp;</span>str) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -1287,7 +1287,7 @@
     ///
     /// the contents of the `attribute` value as a byte string, or
     /// [`None`] otherwise.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_attribute_byte_string&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_attribute_byte_string&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_attribute_byte_string&quot;</span>)]
     </span><span class="kw">pub fn </span>attribute_byte_string(<span class="kw-2">&amp;</span><span class="self">self</span>, attribute: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{
@@ -1313,7 +1313,7 @@
     /// # Returns
     ///
     /// a signed 32-bit integer from the attribute.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_attribute_int32&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_attribute_int32&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_attribute_int32&quot;</span>)]
     </span><span class="kw">pub fn </span>attribute_int32(<span class="kw-2">&amp;</span><span class="self">self</span>, attribute: <span class="kw-2">&amp;</span>str) -&gt; i32 {
         <span class="kw">unsafe </span>{
@@ -1330,7 +1330,7 @@
     /// # Returns
     ///
     /// a signed 64-bit integer from the attribute.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_attribute_int64&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_attribute_int64&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_attribute_int64&quot;</span>)]
     </span><span class="kw">pub fn </span>attribute_int64(<span class="kw-2">&amp;</span><span class="self">self</span>, attribute: <span class="kw-2">&amp;</span>str) -&gt; i64 {
         <span class="kw">unsafe </span>{
@@ -1347,7 +1347,7 @@
     ///
     /// a [`glib::Object`][crate::glib::Object] associated with the given `attribute`,
     /// or [`None`] otherwise.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_attribute_object&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_attribute_object&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_attribute_object&quot;</span>)]
     </span><span class="kw">pub fn </span>attribute_object(<span class="kw-2">&amp;</span><span class="self">self</span>, attribute: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;glib::Object&gt; {
         <span class="kw">unsafe </span>{
@@ -1366,7 +1366,7 @@
     ///
     /// a [`FileAttributeStatus`][crate::FileAttributeStatus] for the given `attribute`, or
     ///  [`FileAttributeStatus::Unset`][crate::FileAttributeStatus::Unset] if the key is invalid.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_attribute_status&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_attribute_status&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_attribute_status&quot;</span>)]
     </span><span class="kw">pub fn </span>attribute_status(<span class="kw-2">&amp;</span><span class="self">self</span>, attribute: <span class="kw-2">&amp;</span>str) -&gt; FileAttributeStatus {
         <span class="kw">unsafe </span>{
@@ -1386,7 +1386,7 @@
     ///
     /// the contents of the `attribute` value as a UTF-8 string,
     /// or [`None`] otherwise.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_attribute_string&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_attribute_string&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_attribute_string&quot;</span>)]
     </span><span class="kw">pub fn </span>attribute_string(<span class="kw-2">&amp;</span><span class="self">self</span>, attribute: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{
@@ -1406,7 +1406,7 @@
     ///
     /// the contents of the `attribute` value as a stringv,
     /// or [`None`] otherwise. Do not free. These returned strings are UTF-8.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_attribute_stringv&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_attribute_stringv&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_attribute_stringv&quot;</span>)]
     </span><span class="kw">pub fn </span>attribute_stringv(<span class="kw-2">&amp;</span><span class="self">self</span>, attribute: <span class="kw-2">&amp;</span>str) -&gt; Vec&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{
@@ -1425,7 +1425,7 @@
     ///
     /// a [`FileAttributeType`][crate::FileAttributeType] for the given `attribute`, or
     /// [`FileAttributeType::Invalid`][crate::FileAttributeType::Invalid] if the key is not set.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_attribute_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_attribute_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_attribute_type&quot;</span>)]
     </span><span class="kw">pub fn </span>attribute_type(<span class="kw-2">&amp;</span><span class="self">self</span>, attribute: <span class="kw-2">&amp;</span>str) -&gt; FileAttributeType {
         <span class="kw">unsafe </span>{
@@ -1445,7 +1445,7 @@
     /// # Returns
     ///
     /// an unsigned 32-bit integer from the attribute.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_attribute_uint32&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_attribute_uint32&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_attribute_uint32&quot;</span>)]
     </span><span class="kw">pub fn </span>attribute_uint32(<span class="kw-2">&amp;</span><span class="self">self</span>, attribute: <span class="kw-2">&amp;</span>str) -&gt; u32 {
         <span class="kw">unsafe </span>{
@@ -1462,7 +1462,7 @@
     /// # Returns
     ///
     /// a unsigned 64-bit integer from the attribute.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_attribute_uint64&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_attribute_uint64&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_attribute_uint64&quot;</span>)]
     </span><span class="kw">pub fn </span>attribute_uint64(<span class="kw-2">&amp;</span><span class="self">self</span>, attribute: <span class="kw-2">&amp;</span>str) -&gt; u64 {
         <span class="kw">unsafe </span>{
@@ -1476,7 +1476,7 @@
     ///
     /// a string containing the file&#39;s content type,
     /// or [`None`] if unknown.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_content_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_content_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_content_type&quot;</span>)]
     </span><span class="kw">pub fn </span>content_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_file_info_get_content_type(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1495,7 +1495,7 @@
     /// # Returns
     ///
     /// creation time, or [`None`] if unknown
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_file_info_get_creation_date_time&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_creation_date_time&quot;</span>)]
@@ -1514,7 +1514,7 @@
     /// # Returns
     ///
     /// a [`glib::DateTime`][crate::glib::DateTime], or [`None`].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_deletion_date&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_deletion_date&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_deletion_date&quot;</span>)]
     </span><span class="kw">pub fn </span>deletion_date(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::DateTime&gt; {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_file_info_get_deletion_date(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1525,7 +1525,7 @@
     /// # Returns
     ///
     /// a string containing the display name.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_display_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_display_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_display_name&quot;</span>)]
     </span><span class="kw">pub fn </span>display_name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_file_info_get_display_name(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1536,7 +1536,7 @@
     /// # Returns
     ///
     /// a string containing the edit name.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_edit_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_edit_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_edit_name&quot;</span>)]
     </span><span class="kw">pub fn </span>edit_name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::GString {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_file_info_get_edit_name(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1548,7 +1548,7 @@
     /// # Returns
     ///
     /// a string containing the value of the &quot;etag:value&quot; attribute.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_etag&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_etag&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_etag&quot;</span>)]
     </span><span class="kw">pub fn </span>etag(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_file_info_get_etag(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1560,7 +1560,7 @@
     /// # Returns
     ///
     /// a [`FileType`][crate::FileType] for the given file.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_file_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_file_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_file_type&quot;</span>)]
     </span><span class="kw">pub fn </span>file_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; FileType {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_file_info_get_file_type(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1571,7 +1571,7 @@
     /// # Returns
     ///
     /// [`Icon`][crate::Icon] for the given `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_icon&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_icon&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_icon&quot;</span>)]
     </span><span class="kw">pub fn </span>icon(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Icon&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_file_info_get_icon(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1582,7 +1582,7 @@
     /// # Returns
     ///
     /// [`true`] if file is a backup file, [`false`] otherwise.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_is_backup&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_is_backup&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_is_backup&quot;</span>)]
     </span><span class="kw">pub fn </span>is_backup(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_file_info_get_is_backup(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1593,7 +1593,7 @@
     /// # Returns
     ///
     /// [`true`] if the file is a hidden file, [`false`] otherwise.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_is_hidden&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_is_hidden&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_is_hidden&quot;</span>)]
     </span><span class="kw">pub fn </span>is_hidden(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_file_info_get_is_hidden(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1604,7 +1604,7 @@
     /// # Returns
     ///
     /// [`true`] if the given `self` is a symlink.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_is_symlink&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_is_symlink&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_is_symlink&quot;</span>)]
     </span><span class="kw">pub fn </span>is_symlink(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_file_info_get_is_symlink(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1623,7 +1623,7 @@
     /// # Returns
     ///
     /// modification time, or [`None`] if unknown
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_62&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_file_info_get_modification_date_time&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_modification_date_time&quot;</span>)]
@@ -1640,7 +1640,7 @@
     /// # Returns
     ///
     /// a string containing the file name.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_name&quot;</span>)]
     </span><span class="kw">pub fn </span>name(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; std::path::PathBuf {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_file_info_get_name(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1653,7 +1653,7 @@
     /// # Returns
     ///
     /// a `goffset` containing the file&#39;s size (in bytes).
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_size&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_size&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_size&quot;</span>)]
     </span><span class="kw">pub fn </span>size(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i64 {
         <span class="kw">unsafe </span>{ ffi::g_file_info_get_size(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -1665,7 +1665,7 @@
     /// # Returns
     ///
     /// a `gint32` containing the value of the &quot;standard::sort_order&quot; attribute.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_sort_order&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_sort_order&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_sort_order&quot;</span>)]
     </span><span class="kw">pub fn </span>sort_order(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::g_file_info_get_sort_order(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -1676,7 +1676,7 @@
     /// # Returns
     ///
     /// [`Icon`][crate::Icon] for the given `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_symbolic_icon&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_symbolic_icon&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_symbolic_icon&quot;</span>)]
     </span><span class="kw">pub fn </span>symbolic_icon(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Icon&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_file_info_get_symbolic_icon(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1687,7 +1687,7 @@
     /// # Returns
     ///
     /// a string containing the symlink target.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_get_symlink_target&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_get_symlink_target&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_symlink_target&quot;</span>)]
     </span><span class="kw">pub fn </span>symlink_target(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_file_info_get_symlink_target(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -1701,7 +1701,7 @@
     ///
     /// [`true`] if `self` has an attribute named `attribute`,
     ///  [`false`] otherwise.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_has_attribute&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_has_attribute&quot;</span>)]
     </span><span class="kw">pub fn </span>has_attribute(<span class="kw-2">&amp;</span><span class="self">self</span>, attribute: <span class="kw-2">&amp;</span>str) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::g_file_info_has_attribute(
@@ -1720,7 +1720,7 @@
     ///
     /// [`true`] if `self` has an attribute in `name_space`,
     ///  [`false`] otherwise.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_has_namespace&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_has_namespace&quot;</span>)]
     </span><span class="kw">pub fn </span>has_namespace(<span class="kw-2">&amp;</span><span class="self">self</span>, name_space: <span class="kw-2">&amp;</span>str) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::g_file_info_has_namespace(
@@ -1740,7 +1740,7 @@
     /// a
     /// null-terminated array of strings of all of the possible attribute
     /// types for the given `name_space`, or [`None`] on error.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_list_attributes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_list_attributes&quot;</span>)]
     </span><span class="kw">pub fn </span>list_attributes(<span class="kw-2">&amp;</span><span class="self">self</span>, name_space: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;) -&gt; Vec&lt;glib::GString&gt; {
         <span class="kw">unsafe </span>{
             FromGlibPtrContainer::from_glib_full(ffi::g_file_info_list_attributes(
@@ -1753,7 +1753,7 @@
     <span class="doccomment">/// Removes all cases of `attribute` from `self` if it exists.
     /// ## `attribute`
     /// a file attribute key.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_remove_attribute&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_remove_attribute&quot;</span>)]
     </span><span class="kw">pub fn </span>remove_attribute(<span class="kw-2">&amp;</span><span class="self">self</span>, attribute: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_remove_attribute(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, attribute.to_glib_none().<span class="number">0</span>);
@@ -1767,7 +1767,7 @@
     /// [`FILE_ATTRIBUTE_TIME_ACCESS_NSEC`][crate::FILE_ATTRIBUTE_TIME_ACCESS_NSEC] will be cleared.
     /// ## `atime`
     /// a [`glib::DateTime`][crate::glib::DateTime].
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_file_info_set_access_date_time&quot;</span>)]
     </span><span class="kw">pub fn </span>set_access_date_time(<span class="kw-2">&amp;</span><span class="self">self</span>, atime: <span class="kw-2">&amp;</span>glib::DateTime) {
@@ -1787,7 +1787,7 @@
     /// a file attribute key.
     /// ## `attr_value`
     /// a boolean value.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_set_attribute_boolean&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_set_attribute_boolean&quot;</span>)]
     </span><span class="kw">pub fn </span>set_attribute_boolean(<span class="kw-2">&amp;</span><span class="self">self</span>, attribute: <span class="kw-2">&amp;</span>str, attr_value: bool) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_set_attribute_boolean(
@@ -1804,7 +1804,7 @@
     /// a file attribute key.
     /// ## `attr_value`
     /// a byte string.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_set_attribute_byte_string&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_set_attribute_byte_string&quot;</span>)]
     </span><span class="kw">pub fn </span>set_attribute_byte_string(<span class="kw-2">&amp;</span><span class="self">self</span>, attribute: <span class="kw-2">&amp;</span>str, attr_value: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_set_attribute_byte_string(
@@ -1821,7 +1821,7 @@
     /// a file attribute key.
     /// ## `attr_value`
     /// a signed 32-bit integer
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_set_attribute_int32&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_set_attribute_int32&quot;</span>)]
     </span><span class="kw">pub fn </span>set_attribute_int32(<span class="kw-2">&amp;</span><span class="self">self</span>, attribute: <span class="kw-2">&amp;</span>str, attr_value: i32) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_set_attribute_int32(
@@ -1838,7 +1838,7 @@
     /// attribute name to set.
     /// ## `attr_value`
     /// int64 value to set attribute to.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_set_attribute_int64&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_set_attribute_int64&quot;</span>)]
     </span><span class="kw">pub fn </span>set_attribute_int64(<span class="kw-2">&amp;</span><span class="self">self</span>, attribute: <span class="kw-2">&amp;</span>str, attr_value: i64) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_set_attribute_int64(
@@ -1852,7 +1852,7 @@
     <span class="doccomment">/// Sets `mask` on `self` to match specific attribute types.
     /// ## `mask`
     /// a [`FileAttributeMatcher`][crate::FileAttributeMatcher].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_set_attribute_mask&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_set_attribute_mask&quot;</span>)]
     </span><span class="kw">pub fn </span>set_attribute_mask(<span class="kw-2">&amp;</span><span class="self">self</span>, mask: <span class="kw-2">&amp;</span>FileAttributeMatcher) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_set_attribute_mask(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, mask.to_glib_none().<span class="number">0</span>);
@@ -1865,7 +1865,7 @@
     /// a file attribute key.
     /// ## `attr_value`
     /// a [`glib::Object`][crate::glib::Object].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_set_attribute_object&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_set_attribute_object&quot;</span>)]
     </span><span class="kw">pub fn </span>set_attribute_object(<span class="kw-2">&amp;</span><span class="self">self</span>, attribute: <span class="kw-2">&amp;</span>str, attr_value: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;glib::Object&gt;) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_set_attribute_object(
@@ -1890,7 +1890,7 @@
     /// # Returns
     ///
     /// [`true`] if the status was changed, [`false`] if the key was not set.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_set_attribute_status&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_set_attribute_status&quot;</span>)]
     </span><span class="kw">pub fn </span>set_attribute_status(<span class="kw-2">&amp;</span><span class="self">self</span>, attribute: <span class="kw-2">&amp;</span>str, status: FileAttributeStatus) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::g_file_info_set_attribute_status(
@@ -1907,7 +1907,7 @@
     /// a file attribute key.
     /// ## `attr_value`
     /// a UTF-8 string.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_set_attribute_string&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_set_attribute_string&quot;</span>)]
     </span><span class="kw">pub fn </span>set_attribute_string(<span class="kw-2">&amp;</span><span class="self">self</span>, attribute: <span class="kw-2">&amp;</span>str, attr_value: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_set_attribute_string(
@@ -1927,7 +1927,7 @@
     /// ## `attr_value`
     /// a [`None`]
     ///  terminated array of UTF-8 strings.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_set_attribute_stringv&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_set_attribute_stringv&quot;</span>)]
     </span><span class="kw">pub fn </span>set_attribute_stringv(<span class="kw-2">&amp;</span><span class="self">self</span>, attribute: <span class="kw-2">&amp;</span>str, attr_value: <span class="kw-2">&amp;</span>[<span class="kw-2">&amp;</span>str]) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_set_attribute_stringv(
@@ -1944,7 +1944,7 @@
     /// a file attribute key.
     /// ## `attr_value`
     /// an unsigned 32-bit integer.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_set_attribute_uint32&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_set_attribute_uint32&quot;</span>)]
     </span><span class="kw">pub fn </span>set_attribute_uint32(<span class="kw-2">&amp;</span><span class="self">self</span>, attribute: <span class="kw-2">&amp;</span>str, attr_value: u32) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_set_attribute_uint32(
@@ -1961,7 +1961,7 @@
     /// a file attribute key.
     /// ## `attr_value`
     /// an unsigned 64-bit integer.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_set_attribute_uint64&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_set_attribute_uint64&quot;</span>)]
     </span><span class="kw">pub fn </span>set_attribute_uint64(<span class="kw-2">&amp;</span><span class="self">self</span>, attribute: <span class="kw-2">&amp;</span>str, attr_value: u64) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_set_attribute_uint64(
@@ -1976,7 +1976,7 @@
     /// See [`FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE`][crate::FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE].
     /// ## `content_type`
     /// a content type. See [GContentType][gio-GContentType]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_set_content_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_set_content_type&quot;</span>)]
     </span><span class="kw">pub fn </span>set_content_type(<span class="kw-2">&amp;</span><span class="self">self</span>, content_type: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_set_content_type(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, content_type.to_glib_none().<span class="number">0</span>);
@@ -1990,7 +1990,7 @@
     /// [`FILE_ATTRIBUTE_TIME_CREATED_NSEC`][crate::FILE_ATTRIBUTE_TIME_CREATED_NSEC] will be cleared.
     /// ## `creation_time`
     /// a [`glib::DateTime`][crate::glib::DateTime].
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_file_info_set_creation_date_time&quot;</span>)]
     </span><span class="kw">pub fn </span>set_creation_date_time(<span class="kw-2">&amp;</span><span class="self">self</span>, creation_time: <span class="kw-2">&amp;</span>glib::DateTime) {
@@ -2006,7 +2006,7 @@
     /// See [`FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME`][crate::FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME].
     /// ## `display_name`
     /// a string containing a display name.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_set_display_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_set_display_name&quot;</span>)]
     </span><span class="kw">pub fn </span>set_display_name(<span class="kw-2">&amp;</span><span class="self">self</span>, display_name: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_set_display_name(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, display_name.to_glib_none().<span class="number">0</span>);
@@ -2017,7 +2017,7 @@
     /// See [`FILE_ATTRIBUTE_STANDARD_EDIT_NAME`][crate::FILE_ATTRIBUTE_STANDARD_EDIT_NAME].
     /// ## `edit_name`
     /// a string containing an edit name.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_set_edit_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_set_edit_name&quot;</span>)]
     </span><span class="kw">pub fn </span>set_edit_name(<span class="kw-2">&amp;</span><span class="self">self</span>, edit_name: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_set_edit_name(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, edit_name.to_glib_none().<span class="number">0</span>);
@@ -2028,7 +2028,7 @@
     /// See [`FILE_ATTRIBUTE_STANDARD_TYPE`][crate::FILE_ATTRIBUTE_STANDARD_TYPE].
     /// ## `type_`
     /// a [`FileType`][crate::FileType].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_set_file_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_set_file_type&quot;</span>)]
     </span><span class="kw">pub fn </span>set_file_type(<span class="kw-2">&amp;</span><span class="self">self</span>, type_: FileType) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_set_file_type(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, type_.into_glib());
@@ -2039,7 +2039,7 @@
     /// See [`FILE_ATTRIBUTE_STANDARD_ICON`][crate::FILE_ATTRIBUTE_STANDARD_ICON].
     /// ## `icon`
     /// a [`Icon`][crate::Icon].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_set_icon&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_set_icon&quot;</span>)]
     </span><span class="kw">pub fn </span>set_icon(<span class="kw-2">&amp;</span><span class="self">self</span>, icon: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Icon&gt;) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_set_icon(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, icon.as_ref().to_glib_none().<span class="number">0</span>);
@@ -2050,7 +2050,7 @@
     /// See [`FILE_ATTRIBUTE_STANDARD_IS_HIDDEN`][crate::FILE_ATTRIBUTE_STANDARD_IS_HIDDEN].
     /// ## `is_hidden`
     /// a `gboolean`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_set_is_hidden&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_set_is_hidden&quot;</span>)]
     </span><span class="kw">pub fn </span>set_is_hidden(<span class="kw-2">&amp;</span><span class="self">self</span>, is_hidden: bool) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_set_is_hidden(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, is_hidden.into_glib());
@@ -2061,7 +2061,7 @@
     /// See [`FILE_ATTRIBUTE_STANDARD_IS_SYMLINK`][crate::FILE_ATTRIBUTE_STANDARD_IS_SYMLINK].
     /// ## `is_symlink`
     /// a `gboolean`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_set_is_symlink&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_set_is_symlink&quot;</span>)]
     </span><span class="kw">pub fn </span>set_is_symlink(<span class="kw-2">&amp;</span><span class="self">self</span>, is_symlink: bool) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_set_is_symlink(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, is_symlink.into_glib());
@@ -2075,7 +2075,7 @@
     /// [`FILE_ATTRIBUTE_TIME_MODIFIED_NSEC`][crate::FILE_ATTRIBUTE_TIME_MODIFIED_NSEC] will be cleared.
     /// ## `mtime`
     /// a [`glib::DateTime`][crate::glib::DateTime].
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_62&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_file_info_set_modification_date_time&quot;</span>)]
     </span><span class="kw">pub fn </span>set_modification_date_time(<span class="kw-2">&amp;</span><span class="self">self</span>, mtime: <span class="kw-2">&amp;</span>glib::DateTime) {
@@ -2091,7 +2091,7 @@
     /// See [`FILE_ATTRIBUTE_STANDARD_NAME`][crate::FILE_ATTRIBUTE_STANDARD_NAME].
     /// ## `name`
     /// a string containing a name.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_set_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_set_name&quot;</span>)]
     </span><span class="kw">pub fn </span>set_name(<span class="kw-2">&amp;</span><span class="self">self</span>, name: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_set_name(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, name.as_ref().to_glib_none().<span class="number">0</span>);
@@ -2102,7 +2102,7 @@
     /// to the given size.
     /// ## `size`
     /// a `goffset` containing the file&#39;s size.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_set_size&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_set_size&quot;</span>)]
     </span><span class="kw">pub fn </span>set_size(<span class="kw-2">&amp;</span><span class="self">self</span>, size: i64) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_set_size(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, size);
@@ -2113,7 +2113,7 @@
     /// [`FILE_ATTRIBUTE_STANDARD_SORT_ORDER`][crate::FILE_ATTRIBUTE_STANDARD_SORT_ORDER].
     /// ## `sort_order`
     /// a sort order integer.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_set_sort_order&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_set_sort_order&quot;</span>)]
     </span><span class="kw">pub fn </span>set_sort_order(<span class="kw-2">&amp;</span><span class="self">self</span>, sort_order: i32) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_set_sort_order(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, sort_order);
@@ -2124,7 +2124,7 @@
     /// See [`FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON`][crate::FILE_ATTRIBUTE_STANDARD_SYMBOLIC_ICON].
     /// ## `icon`
     /// a [`Icon`][crate::Icon].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_set_symbolic_icon&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_set_symbolic_icon&quot;</span>)]
     </span><span class="kw">pub fn </span>set_symbolic_icon(<span class="kw-2">&amp;</span><span class="self">self</span>, icon: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Icon&gt;) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_set_symbolic_icon(
@@ -2138,7 +2138,7 @@
     /// to the given symlink target.
     /// ## `symlink_target`
     /// a static string containing a path to a symlink target.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_set_symlink_target&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_set_symlink_target&quot;</span>)]
     </span><span class="kw">pub fn </span>set_symlink_target(<span class="kw-2">&amp;</span><span class="self">self</span>, symlink_target: <span class="kw-2">&amp;</span>str) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_set_symlink_target(
@@ -2150,7 +2150,7 @@
 
     <span class="doccomment">/// Unsets a mask set by [`set_attribute_mask()`][Self::set_attribute_mask()], if one
     /// is set.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_file_info_unset_attribute_mask&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_file_info_unset_attribute_mask&quot;</span>)]
     </span><span class="kw">pub fn </span>unset_attribute_mask(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::g_file_info_unset_attribute_mask(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
@@ -2170,4 +2170,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

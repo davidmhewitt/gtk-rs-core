@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -514,7 +514,7 @@
     /// # Implements
     ///
     /// [`DBusInterfaceSkeletonExt`][trait@crate::prelude::DBusInterfaceSkeletonExt], [`trait@glib::ObjectExt`], [`DBusInterfaceExt`][trait@crate::prelude::DBusInterfaceExt]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDBusInterfaceSkeleton&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDBusInterfaceSkeleton&quot;</span>)]
     </span><span class="kw">pub struct </span>DBusInterfaceSkeleton(Object&lt;ffi::GDBusInterfaceSkeleton, ffi::GDBusInterfaceSkeletonClass&gt;) @implements DBusInterface;
 
     <span class="kw">match fn </span>{
@@ -548,7 +548,7 @@
     ///
     /// [`true`] if the interface was exported on `connection`, otherwise [`false`] with
     /// `error` set.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_interface_skeleton_export&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_interface_skeleton_export&quot;</span>)]
     </span><span class="kw">fn </span>export(<span class="kw-2">&amp;</span><span class="self">self</span>, connection: <span class="kw-2">&amp;</span>DBusConnection, object_path: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
     <span class="doccomment">/// If `self` has outstanding changes, request for these changes to be
@@ -559,7 +559,7 @@
     /// `org.freedesktop.DBus.Properties.PropertiesChanged`
     /// signal later (e.g. in an idle handler). This technique is useful
     /// for collapsing multiple property changes into one.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_interface_skeleton_flush&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_interface_skeleton_flush&quot;</span>)]
     </span><span class="kw">fn </span>flush(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
     <span class="doccomment">/// Gets the first connection that `self` is exported on, if any.
@@ -568,7 +568,7 @@
     ///
     /// A [`DBusConnection`][crate::DBusConnection] or [`None`] if `self` is
     /// not exported anywhere. Do not free, the object belongs to `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_interface_skeleton_get_connection&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_interface_skeleton_get_connection&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_connection&quot;</span>)]
     </span><span class="kw">fn </span>connection(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;DBusConnection&gt;;
 
@@ -580,7 +580,7 @@
     ///  all the connections that `self` is exported on. The returned
     ///  list should be freed with `g_list_free()` after each element has
     ///  been freed with `g_object_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_interface_skeleton_get_connections&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_interface_skeleton_get_connections&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_connections&quot;</span>)]
     </span><span class="kw">fn </span>connections(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Vec&lt;DBusConnection&gt;;
 
@@ -590,7 +590,7 @@
     /// # Returns
     ///
     /// One or more flags from the [`DBusInterfaceSkeletonFlags`][crate::DBusInterfaceSkeletonFlags] enumeration.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_interface_skeleton_get_flags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_interface_skeleton_get_flags&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_flags&quot;</span>)]
     </span><span class="kw">fn </span>flags(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; DBusInterfaceSkeletonFlags;
 
@@ -600,7 +600,7 @@
     /// # Returns
     ///
     /// A [`DBusInterfaceInfo`][crate::DBusInterfaceInfo] (never [`None`]). Do not free.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_interface_skeleton_get_info&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_interface_skeleton_get_info&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_info&quot;</span>)]
     </span><span class="kw">fn </span>info(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; DBusInterfaceInfo;
 
@@ -610,7 +610,7 @@
     ///
     /// A string owned by `self` or [`None`] if `self` is not exported
     /// anywhere. Do not free, the string belongs to `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_interface_skeleton_get_object_path&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_interface_skeleton_get_object_path&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_object_path&quot;</span>)]
     </span><span class="kw">fn </span>object_path(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
@@ -621,7 +621,7 @@
     /// A [`glib::Variant`][struct@crate::glib::Variant] of type
     /// [&#39;a{sv}&#39;][G-VARIANT-TYPE-VARDICT:CAPS].
     /// Free with `g_variant_unref()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_interface_skeleton_get_properties&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_interface_skeleton_get_properties&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_properties&quot;</span>)]
     </span><span class="kw">fn </span>properties(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::Variant;
 
@@ -636,20 +636,20 @@
     /// # Returns
     ///
     /// [`true`] if `self` is exported on `connection`, [`false`] otherwise.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_interface_skeleton_has_connection&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_interface_skeleton_has_connection&quot;</span>)]
     </span><span class="kw">fn </span>has_connection(<span class="kw-2">&amp;</span><span class="self">self</span>, connection: <span class="kw-2">&amp;</span>DBusConnection) -&gt; bool;
 
     <span class="doccomment">/// Sets flags describing what the behavior of `skeleton` should be.
     /// ## `flags`
     /// Flags from the [`DBusInterfaceSkeletonFlags`][crate::DBusInterfaceSkeletonFlags] enumeration.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_interface_skeleton_set_flags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_interface_skeleton_set_flags&quot;</span>)]
     </span><span class="kw">fn </span>set_flags(<span class="kw-2">&amp;</span><span class="self">self</span>, flags: DBusInterfaceSkeletonFlags);
 
     <span class="doccomment">/// Stops exporting `self` on all connections it is exported on.
     ///
     /// To unexport `self` from only a single connection, use
     /// [`unexport_from_connection()`][Self::unexport_from_connection()]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_interface_skeleton_unexport&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_interface_skeleton_unexport&quot;</span>)]
     </span><span class="kw">fn </span>unexport(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
     <span class="doccomment">/// Stops exporting `self` on `connection`.
@@ -658,15 +658,15 @@
     /// use [`unexport()`][Self::unexport()].
     /// ## `connection`
     /// A [`DBusConnection`][crate::DBusConnection].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_dbus_interface_skeleton_unexport_from_connection&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_dbus_interface_skeleton_unexport_from_connection&quot;</span>)]
     </span><span class="kw">fn </span>unexport_from_connection(<span class="kw-2">&amp;</span><span class="self">self</span>, connection: <span class="kw-2">&amp;</span>DBusConnection);
 
     <span class="doccomment">/// Flags from the [`DBusInterfaceSkeletonFlags`][crate::DBusInterfaceSkeletonFlags] enumeration.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g-flags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g-flags&quot;</span>)]
     </span><span class="kw">fn </span>g_flags(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; DBusInterfaceSkeletonFlags;
 
     <span class="doccomment">/// Flags from the [`DBusInterfaceSkeletonFlags`][crate::DBusInterfaceSkeletonFlags] enumeration.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g-flags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g-flags&quot;</span>)]
     </span><span class="kw">fn </span>set_g_flags(<span class="kw-2">&amp;</span><span class="self">self</span>, g_flags: DBusInterfaceSkeletonFlags);
 
     <span class="doccomment">/// Emitted when a method is invoked by a remote caller and used to
@@ -708,13 +708,13 @@
     /// # Returns
     ///
     /// [`true`] if the call is authorized, [`false`] otherwise.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g-authorize-method&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g-authorize-method&quot;</span>)]
     </span><span class="kw">fn </span>connect_g_authorize_method&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>DBusMethodInvocation) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
     ) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g-flags&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g-flags&quot;</span>)]
     </span><span class="kw">fn </span>connect_g_flags_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -900,4 +900,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

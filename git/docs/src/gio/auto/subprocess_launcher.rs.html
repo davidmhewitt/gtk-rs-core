@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -436,7 +436,7 @@
 </span><span class="kw">use </span><span class="kw">crate</span>::Subprocess;
 <span class="kw">use </span><span class="kw">crate</span>::SubprocessFlags;
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
 </span><span class="kw">use </span>std::boxed::Box <span class="kw">as </span>Box_;
 <span class="kw">use </span>std::fmt;
@@ -455,7 +455,7 @@
     /// # Implements
     ///
     /// [`trait@glib::ObjectExt`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GSubprocessLauncher&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GSubprocessLauncher&quot;</span>)]
     </span><span class="kw">pub struct </span>SubprocessLauncher(Object&lt;ffi::GSubprocessLauncher&gt;);
 
     <span class="kw">match fn </span>{
@@ -471,7 +471,7 @@
     /// and will be used as the environment that the process is launched in.
     /// ## `flags`
     /// [`SubprocessFlags`][crate::SubprocessFlags]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_subprocess_launcher_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_subprocess_launcher_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(flags: SubprocessFlags) -&gt; SubprocessLauncher {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_subprocess_launcher_new(flags.into_glib())) }
     }
@@ -486,7 +486,7 @@
     /// This function is called automatically when the [`SubprocessLauncher`][crate::SubprocessLauncher]
     /// is disposed, but is provided separately so that garbage collected
     /// language bindings can call it earlier to guarantee when FDs are closed.
-    </span><span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
     #[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
@@ -509,7 +509,7 @@
     ///
     /// the value of the environment variable,
     ///  [`None`] if unset
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_subprocess_launcher_getenv&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_subprocess_launcher_getenv&quot;</span>)]
     </span><span class="kw">pub fn </span>getenv(<span class="kw-2">&amp;</span><span class="self">self</span>, variable: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;) -&gt; <span class="prelude-ty">Option</span>&lt;std::path::PathBuf&gt; {
         <span class="kw">unsafe </span>{
             from_glib_none(ffi::g_subprocess_launcher_getenv(
@@ -536,7 +536,7 @@
     /// a `GSpawnChildSetupFunc` to use as the child setup function
     /// ## `destroy_notify`
     /// a `GDestroyNotify` for `user_data`
-    </span><span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
     #[doc(alias = <span class="string">&quot;g_subprocess_launcher_set_child_setup&quot;</span>)]
     </span><span class="kw">pub fn </span>set_child_setup&lt;P: Fn() + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, child_setup: P) {
@@ -568,7 +568,7 @@
     /// of the launching process at the time of launch.
     /// ## `cwd`
     /// the cwd for launched processes
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_subprocess_launcher_set_cwd&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_subprocess_launcher_set_cwd&quot;</span>)]
     </span><span class="kw">pub fn </span>set_cwd(<span class="kw-2">&amp;</span><span class="self">self</span>, cwd: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;) {
         <span class="kw">unsafe </span>{
             ffi::g_subprocess_launcher_set_cwd(
@@ -600,7 +600,7 @@
     /// ## `env`
     ///
     ///  the replacement environment
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_subprocess_launcher_set_environ&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_subprocess_launcher_set_environ&quot;</span>)]
     </span><span class="kw">pub fn </span>set_environ(<span class="kw-2">&amp;</span><span class="self">self</span>, env: <span class="kw-2">&amp;</span>[<span class="kw-2">&amp;</span>std::path::Path]) {
         <span class="kw">unsafe </span>{
             ffi::g_subprocess_launcher_set_environ(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, env.to_glib_none().<span class="number">0</span>);
@@ -621,7 +621,7 @@
     /// [`take_stdout_fd()`][Self::take_stdout_fd()].
     /// ## `flags`
     /// [`SubprocessFlags`][crate::SubprocessFlags]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_subprocess_launcher_set_flags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_subprocess_launcher_set_flags&quot;</span>)]
     </span><span class="kw">pub fn </span>set_flags(<span class="kw-2">&amp;</span><span class="self">self</span>, flags: SubprocessFlags) {
         <span class="kw">unsafe </span>{
             ffi::g_subprocess_launcher_set_flags(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, flags.into_glib());
@@ -644,7 +644,7 @@
     /// This feature is only available on UNIX.
     /// ## `path`
     /// a filename or [`None`]
-    </span><span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
     #[doc(alias = <span class="string">&quot;g_subprocess_launcher_set_stderr_file_path&quot;</span>)]
     </span><span class="kw">pub fn </span>set_stderr_file_path(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="prelude-ty">Option</span>&lt;<span class="kw">impl </span>AsRef&lt;std::path::Path&gt;&gt;) {
@@ -666,7 +666,7 @@
     /// the launcher flags contain any flags directing stdin elsewhere.
     ///
     /// This feature is only available on UNIX.
-    </span><span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
     #[doc(alias = <span class="string">&quot;g_subprocess_launcher_set_stdin_file_path&quot;</span>)]
     </span><span class="kw">pub fn </span>set_stdin_file_path(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="kw-2">&amp;</span>str) {
@@ -691,7 +691,7 @@
     /// This feature is only available on UNIX.
     /// ## `path`
     /// a filename or [`None`]
-    </span><span class="attribute">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
     #[doc(alias = <span class="string">&quot;g_subprocess_launcher_set_stdout_file_path&quot;</span>)]
     </span><span class="kw">pub fn </span>set_stdout_file_path(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="prelude-ty">Option</span>&lt;<span class="kw">impl </span>AsRef&lt;std::path::Path&gt;&gt;) {
@@ -716,7 +716,7 @@
     /// the new value for the variable
     /// ## `overwrite`
     /// whether to change the variable if it already exists
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_subprocess_launcher_setenv&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_subprocess_launcher_setenv&quot;</span>)]
     </span><span class="kw">pub fn </span>setenv(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         variable: <span class="kw">impl </span>AsRef&lt;std::ffi::OsStr&gt;,
@@ -745,7 +745,7 @@
     /// # Returns
     ///
     /// A new [`Subprocess`][crate::Subprocess], or [`None`] on error (and `error` will be set)
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_subprocess_launcher_spawnv&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_subprocess_launcher_spawnv&quot;</span>)]
     #[doc(alias = <span class="string">&quot;spawnv&quot;</span>)]
     </span><span class="kw">pub fn </span>spawn(<span class="kw-2">&amp;</span><span class="self">self</span>, argv: <span class="kw-2">&amp;</span>[<span class="kw-2">&amp;</span>std::ffi::OsStr]) -&gt; <span class="prelude-ty">Result</span>&lt;Subprocess, glib::Error&gt; {
         <span class="kw">unsafe </span>{
@@ -771,7 +771,7 @@
     /// ## `variable`
     /// the environment variable to unset,
     ///  must not contain &#39;=&#39;
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_subprocess_launcher_unsetenv&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_subprocess_launcher_unsetenv&quot;</span>)]
     </span><span class="kw">pub fn </span>unsetenv(<span class="kw-2">&amp;</span><span class="self">self</span>, variable: <span class="kw">impl </span>AsRef&lt;std::ffi::OsStr&gt;) {
         <span class="kw">unsafe </span>{
             ffi::g_subprocess_launcher_unsetenv(
@@ -788,4 +788,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gio/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -163,7 +163,7 @@
     ///
     /// ## `result`
     /// a `GTimeVal`.
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v2_62&quot;</span>, deprecated)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v2_62&quot;</span>, deprecated)]
     #[doc(alias = <span class="string">&quot;g_file_info_get_modification_time&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_modification_time&quot;</span>)]
     </span><span class="kw">pub fn </span>modification_time(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; SystemTime {
@@ -196,7 +196,7 @@
     ///  `GTimeVal` is deprecated due to the year 2038 problem.
     /// ## `mtime`
     /// a `GTimeVal`.
-    </span><span class="attribute">#[cfg_attr(feature = <span class="string">&quot;v2_62&quot;</span>, deprecated)]
+    </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v2_62&quot;</span>, deprecated)]
     #[doc(alias = <span class="string">&quot;g_file_info_set_modification_time&quot;</span>)]
     </span><span class="kw">pub fn </span>set_modification_time(<span class="kw-2">&amp;</span><span class="self">self</span>, mtime: SystemTime) {
         <span class="kw">let </span>diff = mtime
@@ -214,4 +214,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

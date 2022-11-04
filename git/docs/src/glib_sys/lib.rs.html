@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib_sys/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib_sys/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -6971,7 +6971,7 @@
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
 
-</span><span class="attribute">#![allow(non_camel_case_types, non_upper_case_globals, non_snake_case)]
+</span><span class="attr">#![allow(non_camel_case_types, non_upper_case_globals, non_snake_case)]
 #![allow(
     clippy::approx_constant,
     clippy::type_complexity,
@@ -6984,7 +6984,7 @@
 
 <span class="kw">pub use </span>manual::<span class="kw-2">*</span>;
 
-<span class="attribute">#[allow(unused_imports)]
+<span class="attr">#[allow(unused_imports)]
 </span><span class="kw">use </span>libc::{
     c_char, c_double, c_float, c_int, c_long, c_short, c_uchar, c_uint, c_ulong, c_ushort, c_void,
     intptr_t, size_t, ssize_t, uintptr_t, FILE,
@@ -7915,13 +7915,13 @@
 <span class="kw">pub const </span>G_SPAWN_FILE_AND_ARGV_ZERO: GSpawnFlags = <span class="number">64</span>;
 <span class="kw">pub const </span>G_SPAWN_SEARCH_PATH_FROM_ENVP: GSpawnFlags = <span class="number">128</span>;
 <span class="kw">pub const </span>G_SPAWN_CLOEXEC_PIPES: GSpawnFlags = <span class="number">256</span>;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
 </span><span class="kw">pub const </span>G_SPAWN_CHILD_INHERITS_STDOUT: GSpawnFlags = <span class="number">512</span>;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
 </span><span class="kw">pub const </span>G_SPAWN_CHILD_INHERITS_STDERR: GSpawnFlags = <span class="number">1024</span>;
-<span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
 </span><span class="kw">pub const </span>G_SPAWN_STDIN_FROM_DEV_NULL: GSpawnFlags = <span class="number">2048</span>;
 
@@ -7972,7 +7972,7 @@
 <span class="kw">pub const </span>G_URI_PARAMS_PARSE_RELAXED: GUriParamsFlags = <span class="number">4</span>;
 
 <span class="comment">// Unions
-</span><span class="attribute">#[repr(C)]
+</span><span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GDoubleIEEE754 {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -7985,7 +7985,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GFloatIEEE754 {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -7998,7 +7998,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub union </span>GMutex {
     <span class="kw">pub </span>p: gpointer,
@@ -8011,7 +8011,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub union </span>GTokenValue {
     <span class="kw">pub </span>v_symbol: gpointer,
@@ -8047,7 +8047,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub union </span>GVariantBuilder_u {
     <span class="kw">pub </span>s: GVariantBuilder_u_s,
@@ -8063,7 +8063,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub union </span>GVariantDict_u {
     <span class="kw">pub </span>s: GVariantDict_u_s,
@@ -8157,7 +8157,7 @@
 <span class="kw">pub type </span>GVoidFunc = <span class="prelude-ty">Option</span>&lt;<span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn</span>()&gt;;
 
 <span class="comment">// Records
-</span><span class="attribute">#[derive(Copy, Clone)]
+</span><span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GArray {
     <span class="kw">pub </span>data: <span class="kw-2">*mut </span>c_char,
@@ -8173,7 +8173,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>_GAsyncQueue {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -8181,7 +8181,7 @@
 
 <span class="kw">pub type </span>GAsyncQueue = <span class="kw-2">*mut </span>_GAsyncQueue;
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>_GBookmarkFile {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -8189,7 +8189,7 @@
 
 <span class="kw">pub type </span>GBookmarkFile = <span class="kw-2">*mut </span>_GBookmarkFile;
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GByteArray {
     <span class="kw">pub </span>data: <span class="kw-2">*mut </span>u8,
@@ -8205,7 +8205,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GBytes {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -8217,7 +8217,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GChecksum {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -8229,7 +8229,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GCond {
     <span class="kw">pub </span>p: gpointer,
@@ -8242,7 +8242,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>_GData {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -8250,7 +8250,7 @@
 
 <span class="kw">pub type </span>GData = <span class="kw-2">*mut </span>_GData;
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GDate {
     <span class="kw">pub </span>julian_days: c_uint,
@@ -8266,7 +8266,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GDateTime {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -8278,7 +8278,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GDebugKey {
     <span class="kw">pub </span>key: <span class="kw-2">*const </span>c_char,
@@ -8294,7 +8294,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>_GDir {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -8302,7 +8302,7 @@
 
 <span class="kw">pub type </span>GDir = <span class="kw-2">*mut </span>_GDir;
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GDoubleIEEE754_mpn {
     <span class="kw">pub </span>mantissa_low: c_uint,
     _truncated_record_marker: c_void,
@@ -8317,7 +8317,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GError {
     <span class="kw">pub </span>domain: GQuark,
@@ -8335,7 +8335,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GFloatIEEE754_mpn {
     <span class="kw">pub </span>mantissa: c_uint,
     _truncated_record_marker: c_void,
@@ -8350,7 +8350,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GHashTable {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -8362,7 +8362,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GHashTableIter {
     <span class="kw">pub </span>dummy1: gpointer,
@@ -8380,7 +8380,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>_GHmac {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -8388,7 +8388,7 @@
 
 <span class="kw">pub type </span>GHmac = <span class="kw-2">*mut </span>_GHmac;
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GHook {
     <span class="kw">pub </span>data: gpointer,
@@ -8416,13 +8416,13 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 #[derive(Copy, Clone)]
 </span><span class="kw">pub struct </span>GHookList {
     <span class="kw">pub </span>seq_id: c_ulong,
-    <span class="attribute">#[cfg(any(not(windows), not(target_pointer_width = <span class="string">&quot;64&quot;</span>)))]
+    <span class="attr">#[cfg(any(not(windows), not(target_pointer_width = <span class="string">&quot;64&quot;</span>)))]
     </span><span class="kw">pub </span>hook_size_and_setup: gpointer,
-    <span class="attribute">#[cfg(all(windows, target_pointer_width = <span class="string">&quot;64&quot;</span>))]
+    <span class="attr">#[cfg(all(windows, target_pointer_width = <span class="string">&quot;64&quot;</span>))]
     </span><span class="kw">pub </span>hook_size_and_setup: c_ulong,
     <span class="kw">pub </span>hooks: <span class="kw-2">*mut </span>GHook,
     <span class="kw">pub </span>dummy3: gpointer,
@@ -8436,7 +8436,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>_GIConv {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -8444,7 +8444,7 @@
 
 <span class="kw">pub type </span>GIConv = <span class="kw-2">*mut </span>_GIConv;
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GIOChannel {
     <span class="kw">pub </span>ref_count: c_int,
     <span class="kw">pub </span>funcs: <span class="kw-2">*mut </span>GIOFuncs,
@@ -8469,7 +8469,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GIOFuncs {
     <span class="kw">pub </span>io_read: <span class="prelude-ty">Option</span>&lt;
@@ -8517,7 +8517,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GKeyFile {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -8529,7 +8529,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GList {
     <span class="kw">pub </span>data: gpointer,
@@ -8547,7 +8547,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GLogField {
     <span class="kw">pub </span>key: <span class="kw-2">*const </span>c_char,
@@ -8565,7 +8565,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GMainContext {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -8577,7 +8577,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GMainLoop {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -8589,7 +8589,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GMappedFile {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -8601,7 +8601,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GMarkupParseContext {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -8614,7 +8614,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GMarkupParser {
     <span class="kw">pub </span>start_element: <span class="prelude-ty">Option</span>&lt;
@@ -8663,7 +8663,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GMatchInfo {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -8675,7 +8675,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GMemVTable {
     <span class="kw">pub </span>malloc: <span class="prelude-ty">Option</span>&lt;<span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn</span>(size_t) -&gt; gpointer&gt;,
@@ -8699,7 +8699,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GNode {
     <span class="kw">pub </span>data: gpointer,
@@ -8721,7 +8721,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GOnce {
     <span class="kw">pub </span>status: GOnceStatus,
@@ -8734,7 +8734,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>_GOptionContext {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -8742,7 +8742,7 @@
 
 <span class="kw">pub type </span>GOptionContext = <span class="kw-2">*mut </span>_GOptionContext;
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GOptionEntry {
     <span class="kw">pub </span>long_name: <span class="kw-2">*const </span>c_char,
@@ -8768,7 +8768,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GOptionGroup {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -8780,7 +8780,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GPatternSpec {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -8792,7 +8792,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GPrivate {
     <span class="kw">pub </span>p: gpointer,
@@ -8806,7 +8806,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GPtrArray {
     <span class="kw">pub </span>pdata: <span class="kw-2">*mut </span>gpointer,
@@ -8822,7 +8822,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GQueue {
     <span class="kw">pub </span>head: <span class="kw-2">*mut </span>GList,
@@ -8840,7 +8840,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GRWLock {
     <span class="kw">pub </span>p: gpointer,
@@ -8853,7 +8853,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>_GRand {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -8861,7 +8861,7 @@
 
 <span class="kw">pub type </span>GRand = <span class="kw-2">*mut </span>_GRand;
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GRecMutex {
     <span class="kw">pub </span>p: gpointer,
@@ -8874,7 +8874,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GRegex {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -8886,7 +8886,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GSList {
     <span class="kw">pub </span>data: gpointer,
@@ -8902,7 +8902,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GScanner {
     <span class="kw">pub </span>user_data: gpointer,
@@ -8950,7 +8950,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GScannerConfig {
     <span class="kw">pub </span>cset_skip_characters: <span class="kw-2">*mut </span>c_char,
     <span class="kw">pub </span>cset_identifier_first: <span class="kw-2">*mut </span>c_char,
@@ -8973,7 +8973,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>_GSequence {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -8981,7 +8981,7 @@
 
 <span class="kw">pub type </span>GSequence = <span class="kw-2">*mut </span>_GSequence;
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>_GSequenceIter {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -8989,7 +8989,7 @@
 
 <span class="kw">pub type </span>GSequenceIter = <span class="kw-2">*mut </span>_GSequenceIter;
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GSource {
     <span class="kw">pub </span>callback_data: gpointer,
@@ -9013,7 +9013,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GSourceCallbackFuncs {
     <span class="kw">pub </span>ref_: <span class="prelude-ty">Option</span>&lt;<span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn</span>(gpointer)&gt;,
@@ -9031,7 +9031,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GSourceFuncs {
     <span class="kw">pub </span>prepare: <span class="prelude-ty">Option</span>&lt;<span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn</span>(<span class="kw-2">*mut </span>GSource, <span class="kw-2">*mut </span>c_int) -&gt; gboolean&gt;,
@@ -9053,7 +9053,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>_GSourcePrivate {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -9061,7 +9061,7 @@
 
 <span class="kw">pub type </span>GSourcePrivate = <span class="kw-2">*mut </span>_GSourcePrivate;
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>_GStatBuf {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -9069,7 +9069,7 @@
 
 <span class="kw">pub type </span>GStatBuf = <span class="kw-2">*mut </span>_GStatBuf;
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GString {
     <span class="kw">pub </span>str: <span class="kw-2">*mut </span>c_char,
@@ -9087,7 +9087,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>_GStringChunk {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -9095,7 +9095,7 @@
 
 <span class="kw">pub type </span>GStringChunk = <span class="kw-2">*mut </span>_GStringChunk;
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>_GStrvBuilder {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -9103,7 +9103,7 @@
 
 <span class="kw">pub type </span>GStrvBuilder = <span class="kw-2">*mut </span>_GStrvBuilder;
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>_GTestCase {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -9111,7 +9111,7 @@
 
 <span class="kw">pub type </span>GTestCase = <span class="kw-2">*mut </span>_GTestCase;
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GTestConfig {
     <span class="kw">pub </span>test_initialized: gboolean,
@@ -9135,7 +9135,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GTestLogBuffer {
     <span class="kw">pub </span>data: <span class="kw-2">*mut </span>GString,
@@ -9149,7 +9149,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GTestLogMsg {
     <span class="kw">pub </span>log_type: GTestLogType,
     <span class="kw">pub </span>n_strings: c_uint,
@@ -9170,7 +9170,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>_GTestSuite {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -9178,7 +9178,7 @@
 
 <span class="kw">pub type </span>GTestSuite = <span class="kw-2">*mut </span>_GTestSuite;
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GThread {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -9190,7 +9190,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GThreadPool {
     <span class="kw">pub </span>func: GFunc,
@@ -9208,7 +9208,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GTimeVal {
     <span class="kw">pub </span>tv_sec: c_long,
@@ -9224,7 +9224,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GTimeZone {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -9236,7 +9236,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>_GTimer {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -9244,7 +9244,7 @@
 
 <span class="kw">pub type </span>GTimer = <span class="kw-2">*mut </span>_GTimer;
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GTrashStack {
     <span class="kw">pub </span>next: <span class="kw-2">*mut </span>GTrashStack,
@@ -9258,7 +9258,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GTree {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -9270,7 +9270,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>_GTreeNode {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -9278,7 +9278,7 @@
 
 <span class="kw">pub type </span>GTreeNode = <span class="kw-2">*mut </span>_GTreeNode;
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GUri {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -9290,7 +9290,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GUriParamsIter {
     <span class="kw">pub </span>dummy0: c_int,
@@ -9306,7 +9306,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GVariant {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -9318,7 +9318,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GVariantBuilder {
     <span class="kw">pub </span>u: GVariantBuilder_u,
@@ -9332,7 +9332,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GVariantBuilder_u_s {
     <span class="kw">pub </span>partial_magic: size_t,
@@ -9350,7 +9350,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GVariantDict {
     <span class="kw">pub </span>u: GVariantDict_u,
@@ -9364,7 +9364,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GVariantDict_u_s {
     <span class="kw">pub </span>asv: <span class="kw-2">*mut </span>GVariant,
@@ -9382,7 +9382,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GVariantIter {
     <span class="kw">pub </span>x: [size_t; <span class="number">16</span>],
@@ -9394,7 +9394,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GVariantType {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -9406,7 +9406,7 @@
     }
 }
 
-<span class="attribute">#[link(name = <span class="string">&quot;gobject-2.0&quot;</span>)]
+<span class="attr">#[link(name = <span class="string">&quot;gobject-2.0&quot;</span>)]
 #[link(name = <span class="string">&quot;glib-2.0&quot;</span>)]
 </span><span class="kw">extern </span><span class="string">&quot;C&quot; </span>{
 
@@ -9430,7 +9430,7 @@
     </span><span class="kw">pub fn </span>g_array_get_type() -&gt; GType;
     <span class="kw">pub fn </span>g_array_append_vals(array: <span class="kw-2">*mut </span>GArray, data: gconstpointer, len: c_uint)
         -&gt; <span class="kw-2">*mut </span>GArray;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_62&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_array_binary_search(
         array: <span class="kw-2">*mut </span>GArray,
@@ -9438,7 +9438,7 @@
         compare_func: GCompareFunc,
         out_match_index: <span class="kw-2">*mut </span>c_uint,
     ) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_62&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_array_copy(array: <span class="kw-2">*mut </span>GArray) -&gt; <span class="kw-2">*mut </span>GArray;
     <span class="kw">pub fn </span>g_array_free(array: <span class="kw-2">*mut </span>GArray, free_segment: gboolean) -&gt; <span class="kw-2">*mut </span>c_char;
@@ -9477,7 +9477,7 @@
         compare_func: GCompareDataFunc,
         user_data: gpointer,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_64&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_array_steal(array: <span class="kw-2">*mut </span>GArray, len: <span class="kw-2">*mut </span>size_t) -&gt; gpointer;
     <span class="kw">pub fn </span>g_array_unref(array: <span class="kw-2">*mut </span>GArray);
@@ -9551,7 +9551,7 @@
         uri: <span class="kw-2">*const </span>c_char,
         error: <span class="kw-2">*mut *mut </span>GError,
     ) -&gt; c_long;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_bookmark_file_get_added_date_time(
         bookmark: <span class="kw-2">*mut </span>GBookmarkFile,
@@ -9567,7 +9567,7 @@
         stamp: <span class="kw-2">*mut </span>c_long,
         error: <span class="kw-2">*mut *mut </span>GError,
     ) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_bookmark_file_get_application_info(
         bookmark: <span class="kw-2">*mut </span>GBookmarkFile,
@@ -9617,7 +9617,7 @@
         uri: <span class="kw-2">*const </span>c_char,
         error: <span class="kw-2">*mut *mut </span>GError,
     ) -&gt; c_long;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_bookmark_file_get_modified_date_time(
         bookmark: <span class="kw-2">*mut </span>GBookmarkFile,
@@ -9639,7 +9639,7 @@
         uri: <span class="kw-2">*const </span>c_char,
         error: <span class="kw-2">*mut *mut </span>GError,
     ) -&gt; c_long;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_bookmark_file_get_visited_date_time(
         bookmark: <span class="kw-2">*mut </span>GBookmarkFile,
@@ -9704,7 +9704,7 @@
         uri: <span class="kw-2">*const </span>c_char,
         added: c_long,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_bookmark_file_set_added_date_time(
         bookmark: <span class="kw-2">*mut </span>GBookmarkFile,
@@ -9720,7 +9720,7 @@
         stamp: c_long,
         error: <span class="kw-2">*mut *mut </span>GError,
     ) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_bookmark_file_set_application_info(
         bookmark: <span class="kw-2">*mut </span>GBookmarkFile,
@@ -9763,7 +9763,7 @@
         uri: <span class="kw-2">*const </span>c_char,
         modified: c_long,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_bookmark_file_set_modified_date_time(
         bookmark: <span class="kw-2">*mut </span>GBookmarkFile,
@@ -9780,7 +9780,7 @@
         uri: <span class="kw-2">*const </span>c_char,
         visited: c_long,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_bookmark_file_set_visited_date_time(
         bookmark: <span class="kw-2">*mut </span>GBookmarkFile,
@@ -9837,7 +9837,7 @@
         compare_func: GCompareDataFunc,
         user_data: gpointer,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_64&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_byte_array_steal(array: <span class="kw-2">*mut </span>GByteArray, len: <span class="kw-2">*mut </span>size_t) -&gt; <span class="kw-2">*mut </span>u8;
     <span class="kw">pub fn </span>g_byte_array_unref(array: <span class="kw-2">*mut </span>GByteArray);
@@ -9858,7 +9858,7 @@
     <span class="kw">pub fn </span>g_bytes_compare(bytes1: gconstpointer, bytes2: gconstpointer) -&gt; c_int;
     <span class="kw">pub fn </span>g_bytes_equal(bytes1: gconstpointer, bytes2: gconstpointer) -&gt; gboolean;
     <span class="kw">pub fn </span>g_bytes_get_data(bytes: <span class="kw-2">*mut </span>GBytes, size: <span class="kw-2">*mut </span>size_t) -&gt; gconstpointer;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_bytes_get_region(
         bytes: <span class="kw-2">*mut </span>GBytes,
@@ -10025,7 +10025,7 @@
     <span class="kw">pub fn </span>g_date_time_difference(end: <span class="kw-2">*mut </span>GDateTime, begin: <span class="kw-2">*mut </span>GDateTime) -&gt; GTimeSpan;
     <span class="kw">pub fn </span>g_date_time_equal(dt1: gconstpointer, dt2: gconstpointer) -&gt; gboolean;
     <span class="kw">pub fn </span>g_date_time_format(datetime: <span class="kw-2">*mut </span>GDateTime, format: <span class="kw-2">*const </span>c_char) -&gt; <span class="kw-2">*mut </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_62&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_date_time_format_iso8601(datetime: <span class="kw-2">*mut </span>GDateTime) -&gt; <span class="kw-2">*mut </span>c_char;
     <span class="kw">pub fn </span>g_date_time_get_day_of_month(datetime: <span class="kw-2">*mut </span>GDateTime) -&gt; c_int;
@@ -10037,7 +10037,7 @@
     <span class="kw">pub fn </span>g_date_time_get_month(datetime: <span class="kw-2">*mut </span>GDateTime) -&gt; c_int;
     <span class="kw">pub fn </span>g_date_time_get_second(datetime: <span class="kw-2">*mut </span>GDateTime) -&gt; c_int;
     <span class="kw">pub fn </span>g_date_time_get_seconds(datetime: <span class="kw-2">*mut </span>GDateTime) -&gt; c_double;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_date_time_get_timezone(datetime: <span class="kw-2">*mut </span>GDateTime) -&gt; <span class="kw-2">*mut </span>GTimeZone;
     <span class="kw">pub fn </span>g_date_time_get_timezone_abbreviation(datetime: <span class="kw-2">*mut </span>GDateTime) -&gt; <span class="kw-2">*const </span>c_char;
@@ -10080,7 +10080,7 @@
     </span><span class="kw">pub fn </span>g_error_copy(error: <span class="kw-2">*const </span>GError) -&gt; <span class="kw-2">*mut </span>GError;
     <span class="kw">pub fn </span>g_error_free(error: <span class="kw-2">*mut </span>GError);
     <span class="kw">pub fn </span>g_error_matches(error: <span class="kw-2">*const </span>GError, domain: GQuark, code: c_int) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_error_domain_register(
         error_type_name: <span class="kw-2">*const </span>c_char,
@@ -10089,7 +10089,7 @@
         error_type_copy: GErrorCopyFunc,
         error_type_clear: GErrorClearFunc,
     ) -&gt; GQuark;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_error_domain_register_static(
         error_type_name: <span class="kw-2">*const </span>c_char,
@@ -10147,7 +10147,7 @@
         key_destroy_func: GDestroyNotify,
         value_destroy_func: GDestroyNotify,
     ) -&gt; <span class="kw-2">*mut </span>GHashTable;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_hash_table_new_similar(other_hash_table: <span class="kw-2">*mut </span>GHashTable) -&gt; <span class="kw-2">*mut </span>GHashTable;
     <span class="kw">pub fn </span>g_hash_table_ref(hash_table: <span class="kw-2">*mut </span>GHashTable) -&gt; <span class="kw-2">*mut </span>GHashTable;
@@ -10161,7 +10161,7 @@
     <span class="kw">pub fn </span>g_hash_table_size(hash_table: <span class="kw-2">*mut </span>GHashTable) -&gt; c_uint;
     <span class="kw">pub fn </span>g_hash_table_steal(hash_table: <span class="kw-2">*mut </span>GHashTable, key: gconstpointer) -&gt; gboolean;
     <span class="kw">pub fn </span>g_hash_table_steal_all(hash_table: <span class="kw-2">*mut </span>GHashTable);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_hash_table_steal_extended(
         hash_table: <span class="kw-2">*mut </span>GHashTable,
@@ -10686,7 +10686,7 @@
         sibling: <span class="kw-2">*mut </span>GList,
         data: gpointer,
     ) -&gt; <span class="kw-2">*mut </span>GList;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_62&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_list_insert_before_link(
         list: <span class="kw-2">*mut </span>GList,
@@ -10724,7 +10724,7 @@
     //=========================================================================
     </span><span class="kw">pub fn </span>g_main_context_get_type() -&gt; GType;
     <span class="kw">pub fn </span>g_main_context_new() -&gt; <span class="kw-2">*mut </span>GMainContext;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_main_context_new_with_flags(flags: GMainContextFlags) -&gt; <span class="kw-2">*mut </span>GMainContext;
     <span class="kw">pub fn </span>g_main_context_acquire(context: <span class="kw-2">*mut </span>GMainContext) -&gt; gboolean;
@@ -11051,12 +11051,12 @@
     //=========================================================================
     </span><span class="kw">pub fn </span>g_pattern_spec_get_type() -&gt; GType;
     <span class="kw">pub fn </span>g_pattern_spec_new(pattern: <span class="kw-2">*const </span>c_char) -&gt; <span class="kw-2">*mut </span>GPatternSpec;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_pattern_spec_copy(pspec: <span class="kw-2">*mut </span>GPatternSpec) -&gt; <span class="kw-2">*mut </span>GPatternSpec;
     <span class="kw">pub fn </span>g_pattern_spec_equal(pspec1: <span class="kw-2">*mut </span>GPatternSpec, pspec2: <span class="kw-2">*mut </span>GPatternSpec) -&gt; gboolean;
     <span class="kw">pub fn </span>g_pattern_spec_free(pspec: <span class="kw-2">*mut </span>GPatternSpec);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_pattern_spec_match(
         pspec: <span class="kw-2">*mut </span>GPatternSpec,
@@ -11064,7 +11064,7 @@
         string: <span class="kw-2">*const </span>c_char,
         string_reversed: <span class="kw-2">*const </span>c_char,
     ) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_pattern_spec_match_string(pspec: <span class="kw-2">*mut </span>GPatternSpec, string: <span class="kw-2">*const </span>c_char)
         -&gt; gboolean;
@@ -11086,14 +11086,14 @@
     //=========================================================================
     </span><span class="kw">pub fn </span>g_ptr_array_get_type() -&gt; GType;
     <span class="kw">pub fn </span>g_ptr_array_add(array: <span class="kw-2">*mut </span>GPtrArray, data: gpointer);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_62&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_ptr_array_copy(
         array: <span class="kw-2">*mut </span>GPtrArray,
         func: GCopyFunc,
         user_data: gpointer,
     ) -&gt; <span class="kw-2">*mut </span>GPtrArray;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_62&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_ptr_array_extend(
         array_to_extend: <span class="kw-2">*mut </span>GPtrArray,
@@ -11101,7 +11101,7 @@
         func: GCopyFunc,
         user_data: gpointer,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_62&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_ptr_array_extend_and_steal(array_to_extend: <span class="kw-2">*mut </span>GPtrArray, array: <span class="kw-2">*mut </span>GPtrArray);
     <span class="kw">pub fn </span>g_ptr_array_find(
@@ -11118,7 +11118,7 @@
     <span class="kw">pub fn </span>g_ptr_array_foreach(array: <span class="kw-2">*mut </span>GPtrArray, func: GFunc, user_data: gpointer);
     <span class="kw">pub fn </span>g_ptr_array_free(array: <span class="kw-2">*mut </span>GPtrArray, free_seg: gboolean) -&gt; <span class="kw-2">*mut </span>gpointer;
     <span class="kw">pub fn </span>g_ptr_array_insert(array: <span class="kw-2">*mut </span>GPtrArray, index_: c_int, data: gpointer);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_ptr_array_is_null_terminated(array: <span class="kw-2">*mut </span>GPtrArray) -&gt; gboolean;
     <span class="kw">pub fn </span>g_ptr_array_new() -&gt; <span class="kw-2">*mut </span>GPtrArray;
@@ -11126,7 +11126,7 @@
         reserved_size: c_uint,
         element_free_func: GDestroyNotify,
     ) -&gt; <span class="kw-2">*mut </span>GPtrArray;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_ptr_array_new_null_terminated(
         reserved_size: c_uint,
@@ -11153,13 +11153,13 @@
         compare_func: GCompareDataFunc,
         user_data: gpointer,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_64&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_ptr_array_steal(array: <span class="kw-2">*mut </span>GPtrArray, len: <span class="kw-2">*mut </span>size_t) -&gt; <span class="kw-2">*mut </span>gpointer;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_ptr_array_steal_index(array: <span class="kw-2">*mut </span>GPtrArray, index_: c_uint) -&gt; gpointer;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_ptr_array_steal_index_fast(array: <span class="kw-2">*mut </span>GPtrArray, index_: c_uint) -&gt; gpointer;
     <span class="kw">pub fn </span>g_ptr_array_unref(array: <span class="kw-2">*mut </span>GPtrArray);
@@ -11168,7 +11168,7 @@
     // GQueue
     //=========================================================================
     </span><span class="kw">pub fn </span>g_queue_clear(queue: <span class="kw-2">*mut </span>GQueue);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_queue_clear_full(queue: <span class="kw-2">*mut </span>GQueue, free_func: GDestroyNotify);
     <span class="kw">pub fn </span>g_queue_copy(queue: <span class="kw-2">*mut </span>GQueue) -&gt; <span class="kw-2">*mut </span>GQueue;
@@ -11186,11 +11186,11 @@
     <span class="kw">pub fn </span>g_queue_index(queue: <span class="kw-2">*mut </span>GQueue, data: gconstpointer) -&gt; c_int;
     <span class="kw">pub fn </span>g_queue_init(queue: <span class="kw-2">*mut </span>GQueue);
     <span class="kw">pub fn </span>g_queue_insert_after(queue: <span class="kw-2">*mut </span>GQueue, sibling: <span class="kw-2">*mut </span>GList, data: gpointer);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_62&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_queue_insert_after_link(queue: <span class="kw-2">*mut </span>GQueue, sibling: <span class="kw-2">*mut </span>GList, link_: <span class="kw-2">*mut </span>GList);
     <span class="kw">pub fn </span>g_queue_insert_before(queue: <span class="kw-2">*mut </span>GQueue, sibling: <span class="kw-2">*mut </span>GList, data: gpointer);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_62&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_queue_insert_before_link(queue: <span class="kw-2">*mut </span>GQueue, sibling: <span class="kw-2">*mut </span>GList, link_: <span class="kw-2">*mut </span>GList);
     <span class="kw">pub fn </span>g_queue_insert_sorted(
@@ -11622,14 +11622,14 @@
         callback_funcs: <span class="kw-2">*mut </span>GSourceCallbackFuncs,
     );
     <span class="kw">pub fn </span>g_source_set_can_recurse(source: <span class="kw-2">*mut </span>GSource, can_recurse: gboolean);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_64&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_source_set_dispose_function(source: <span class="kw-2">*mut </span>GSource, dispose: GSourceDisposeFunc);
     <span class="kw">pub fn </span>g_source_set_funcs(source: <span class="kw-2">*mut </span>GSource, funcs: <span class="kw-2">*mut </span>GSourceFuncs);
     <span class="kw">pub fn </span>g_source_set_name(source: <span class="kw-2">*mut </span>GSource, name: <span class="kw-2">*const </span>c_char);
     <span class="kw">pub fn </span>g_source_set_priority(source: <span class="kw-2">*mut </span>GSource, priority: c_int);
     <span class="kw">pub fn </span>g_source_set_ready_time(source: <span class="kw-2">*mut </span>GSource, ready_time: i64);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_source_set_static_name(source: <span class="kw-2">*mut </span>GSource, name: <span class="kw-2">*const </span>c_char);
     <span class="kw">pub fn </span>g_source_unref(source: <span class="kw-2">*mut </span>GSource);
@@ -11702,7 +11702,7 @@
     ) -&gt; <span class="kw-2">*mut </span>GString;
     <span class="kw">pub fn </span>g_string_prepend_unichar(string: <span class="kw-2">*mut </span>GString, wc: u32) -&gt; <span class="kw-2">*mut </span>GString;
     <span class="kw">pub fn </span>g_string_printf(string: <span class="kw-2">*mut </span>GString, format: <span class="kw-2">*const </span>c_char, ...);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_string_replace(
         string: <span class="kw-2">*mut </span>GString,
@@ -11735,32 +11735,32 @@
     <span class="comment">//=========================================================================
     // GStrvBuilder
     //=========================================================================
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_strv_builder_add(builder: <span class="kw-2">*mut </span>GStrvBuilder, value: <span class="kw-2">*const </span>c_char);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_strv_builder_add_many(builder: <span class="kw-2">*mut </span>GStrvBuilder, ...);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_strv_builder_addv(builder: <span class="kw-2">*mut </span>GStrvBuilder, value: <span class="kw-2">*mut *const </span>c_char);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_strv_builder_end(builder: <span class="kw-2">*mut </span>GStrvBuilder) -&gt; c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_strv_builder_ref(builder: <span class="kw-2">*mut </span>GStrvBuilder) -&gt; <span class="kw-2">*mut </span>GStrvBuilder;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_strv_builder_unref(builder: <span class="kw-2">*mut </span>GStrvBuilder);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_strv_builder_new() -&gt; <span class="kw-2">*mut </span>GStrvBuilder;
 
     <span class="comment">//=========================================================================
     // GTestCase
     //=========================================================================
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_test_case_free(test_case: <span class="kw-2">*mut </span>GTestCase);
 
@@ -11782,7 +11782,7 @@
     //=========================================================================
     </span><span class="kw">pub fn </span>g_test_suite_add(suite: <span class="kw-2">*mut </span>GTestSuite, test_case: <span class="kw-2">*mut </span>GTestCase);
     <span class="kw">pub fn </span>g_test_suite_add_suite(suite: <span class="kw-2">*mut </span>GTestSuite, nestedsuite: <span class="kw-2">*mut </span>GTestSuite);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_test_suite_free(suite: <span class="kw-2">*mut </span>GTestSuite);
 
@@ -11838,7 +11838,7 @@
         exclusive: gboolean,
         error: <span class="kw-2">*mut *mut </span>GError,
     ) -&gt; <span class="kw-2">*mut </span>GThreadPool;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_thread_pool_new_full(
         func: GFunc,
@@ -11864,18 +11864,18 @@
     //=========================================================================
     </span><span class="kw">pub fn </span>g_time_zone_get_type() -&gt; GType;
     <span class="kw">pub fn </span>g_time_zone_new(identifier: <span class="kw-2">*const </span>c_char) -&gt; <span class="kw-2">*mut </span>GTimeZone;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_time_zone_new_identifier(identifier: <span class="kw-2">*const </span>c_char) -&gt; <span class="kw-2">*mut </span>GTimeZone;
     <span class="kw">pub fn </span>g_time_zone_new_local() -&gt; <span class="kw-2">*mut </span>GTimeZone;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_time_zone_new_offset(seconds: i32) -&gt; <span class="kw-2">*mut </span>GTimeZone;
     <span class="kw">pub fn </span>g_time_zone_new_utc() -&gt; <span class="kw-2">*mut </span>GTimeZone;
     <span class="kw">pub fn </span>g_time_zone_adjust_time(tz: <span class="kw-2">*mut </span>GTimeZone, type_: GTimeType, time_: <span class="kw-2">*mut </span>i64) -&gt; c_int;
     <span class="kw">pub fn </span>g_time_zone_find_interval(tz: <span class="kw-2">*mut </span>GTimeZone, type_: GTimeType, time_: i64) -&gt; c_int;
     <span class="kw">pub fn </span>g_time_zone_get_abbreviation(tz: <span class="kw-2">*mut </span>GTimeZone, interval: c_int) -&gt; <span class="kw-2">*const </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_time_zone_get_identifier(tz: <span class="kw-2">*mut </span>GTimeZone) -&gt; <span class="kw-2">*const </span>c_char;
     <span class="kw">pub fn </span>g_time_zone_get_offset(tz: <span class="kw-2">*mut </span>GTimeZone, interval: c_int) -&gt; i32;
@@ -11889,7 +11889,7 @@
     </span><span class="kw">pub fn </span>g_timer_continue(timer: <span class="kw-2">*mut </span>GTimer);
     <span class="kw">pub fn </span>g_timer_destroy(timer: <span class="kw-2">*mut </span>GTimer);
     <span class="kw">pub fn </span>g_timer_elapsed(timer: <span class="kw-2">*mut </span>GTimer, microseconds: <span class="kw-2">*mut </span>c_ulong) -&gt; c_double;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_62&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_timer_is_active(timer: <span class="kw-2">*mut </span>GTimer) -&gt; gboolean;
     <span class="kw">pub fn </span>g_timer_reset(timer: <span class="kw-2">*mut </span>GTimer);
@@ -11922,12 +11922,12 @@
     ) -&gt; <span class="kw-2">*mut </span>GTree;
     <span class="kw">pub fn </span>g_tree_destroy(tree: <span class="kw-2">*mut </span>GTree);
     <span class="kw">pub fn </span>g_tree_foreach(tree: <span class="kw-2">*mut </span>GTree, func: GTraverseFunc, user_data: gpointer);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_tree_foreach_node(tree: <span class="kw-2">*mut </span>GTree, func: GTraverseNodeFunc, user_data: gpointer);
     <span class="kw">pub fn </span>g_tree_height(tree: <span class="kw-2">*mut </span>GTree) -&gt; c_int;
     <span class="kw">pub fn </span>g_tree_insert(tree: <span class="kw-2">*mut </span>GTree, key: gpointer, value: gpointer);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_tree_insert_node(tree: <span class="kw-2">*mut </span>GTree, key: gpointer, value: gpointer) -&gt; <span class="kw-2">*mut </span>GTreeNode;
     <span class="kw">pub fn </span>g_tree_lookup(tree: <span class="kw-2">*mut </span>GTree, key: gconstpointer) -&gt; gpointer;
@@ -11937,26 +11937,26 @@
         orig_key: <span class="kw-2">*mut </span>gpointer,
         value: <span class="kw-2">*mut </span>gpointer,
     ) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_tree_lookup_node(tree: <span class="kw-2">*mut </span>GTree, key: gconstpointer) -&gt; <span class="kw-2">*mut </span>GTreeNode;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_tree_lower_bound(tree: <span class="kw-2">*mut </span>GTree, key: gconstpointer) -&gt; <span class="kw-2">*mut </span>GTreeNode;
     <span class="kw">pub fn </span>g_tree_nnodes(tree: <span class="kw-2">*mut </span>GTree) -&gt; c_int;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_tree_node_first(tree: <span class="kw-2">*mut </span>GTree) -&gt; <span class="kw-2">*mut </span>GTreeNode;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_tree_node_last(tree: <span class="kw-2">*mut </span>GTree) -&gt; <span class="kw-2">*mut </span>GTreeNode;
     <span class="kw">pub fn </span>g_tree_ref(tree: <span class="kw-2">*mut </span>GTree) -&gt; <span class="kw-2">*mut </span>GTree;
     <span class="kw">pub fn </span>g_tree_remove(tree: <span class="kw-2">*mut </span>GTree, key: gconstpointer) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_tree_remove_all(tree: <span class="kw-2">*mut </span>GTree);
     <span class="kw">pub fn </span>g_tree_replace(tree: <span class="kw-2">*mut </span>GTree, key: gpointer, value: gpointer);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_tree_replace_node(tree: <span class="kw-2">*mut </span>GTree, key: gpointer, value: gpointer) -&gt; <span class="kw-2">*mut </span>GTreeNode;
     <span class="kw">pub fn </span>g_tree_search(
@@ -11964,7 +11964,7 @@
         search_func: GCompareFunc,
         user_data: gconstpointer,
     ) -&gt; gpointer;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_tree_search_node(
         tree: <span class="kw-2">*mut </span>GTree,
@@ -11979,66 +11979,66 @@
         user_data: gpointer,
     );
     <span class="kw">pub fn </span>g_tree_unref(tree: <span class="kw-2">*mut </span>GTree);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_tree_upper_bound(tree: <span class="kw-2">*mut </span>GTree, key: gconstpointer) -&gt; <span class="kw-2">*mut </span>GTreeNode;
 
     <span class="comment">//=========================================================================
     // GTreeNode
     //=========================================================================
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_tree_node_key(node: <span class="kw-2">*mut </span>GTreeNode) -&gt; gpointer;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_tree_node_next(node: <span class="kw-2">*mut </span>GTreeNode) -&gt; <span class="kw-2">*mut </span>GTreeNode;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_tree_node_previous(node: <span class="kw-2">*mut </span>GTreeNode) -&gt; <span class="kw-2">*mut </span>GTreeNode;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_tree_node_value(node: <span class="kw-2">*mut </span>GTreeNode) -&gt; gpointer;
 
     <span class="comment">//=========================================================================
     // GUri
     //=========================================================================
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_get_type() -&gt; GType;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_get_auth_params(uri: <span class="kw-2">*mut </span>GUri) -&gt; <span class="kw-2">*const </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_get_flags(uri: <span class="kw-2">*mut </span>GUri) -&gt; GUriFlags;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_get_fragment(uri: <span class="kw-2">*mut </span>GUri) -&gt; <span class="kw-2">*const </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_get_host(uri: <span class="kw-2">*mut </span>GUri) -&gt; <span class="kw-2">*const </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_get_password(uri: <span class="kw-2">*mut </span>GUri) -&gt; <span class="kw-2">*const </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_get_path(uri: <span class="kw-2">*mut </span>GUri) -&gt; <span class="kw-2">*const </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_get_port(uri: <span class="kw-2">*mut </span>GUri) -&gt; c_int;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_get_query(uri: <span class="kw-2">*mut </span>GUri) -&gt; <span class="kw-2">*const </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_get_scheme(uri: <span class="kw-2">*mut </span>GUri) -&gt; <span class="kw-2">*const </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_get_user(uri: <span class="kw-2">*mut </span>GUri) -&gt; <span class="kw-2">*const </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_get_userinfo(uri: <span class="kw-2">*mut </span>GUri) -&gt; <span class="kw-2">*const </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_parse_relative(
         base_uri: <span class="kw-2">*mut </span>GUri,
@@ -12046,19 +12046,19 @@
         flags: GUriFlags,
         error: <span class="kw-2">*mut *mut </span>GError,
     ) -&gt; <span class="kw-2">*mut </span>GUri;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_ref(uri: <span class="kw-2">*mut </span>GUri) -&gt; <span class="kw-2">*mut </span>GUri;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_to_string(uri: <span class="kw-2">*mut </span>GUri) -&gt; <span class="kw-2">*mut </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_to_string_partial(uri: <span class="kw-2">*mut </span>GUri, flags: GUriHideFlags) -&gt; <span class="kw-2">*mut </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_unref(uri: <span class="kw-2">*mut </span>GUri);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_build(
         flags: GUriFlags,
@@ -12070,7 +12070,7 @@
         query: <span class="kw-2">*const </span>c_char,
         fragment: <span class="kw-2">*const </span>c_char,
     ) -&gt; <span class="kw-2">*mut </span>GUri;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_build_with_user(
         flags: GUriFlags,
@@ -12084,10 +12084,10 @@
         query: <span class="kw-2">*const </span>c_char,
         fragment: <span class="kw-2">*const </span>c_char,
     ) -&gt; <span class="kw-2">*mut </span>GUri;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_error_quark() -&gt; GQuark;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_escape_bytes(
         unescaped: <span class="kw-2">*const </span>u8,
@@ -12099,14 +12099,14 @@
         reserved_chars_allowed: <span class="kw-2">*const </span>c_char,
         allow_utf8: gboolean,
     ) -&gt; <span class="kw-2">*mut </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_is_valid(
         uri_string: <span class="kw-2">*const </span>c_char,
         flags: GUriFlags,
         error: <span class="kw-2">*mut *mut </span>GError,
     ) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_join(
         flags: GUriFlags,
@@ -12118,7 +12118,7 @@
         query: <span class="kw-2">*const </span>c_char,
         fragment: <span class="kw-2">*const </span>c_char,
     ) -&gt; <span class="kw-2">*mut </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_join_with_user(
         flags: GUriFlags,
@@ -12133,14 +12133,14 @@
         fragment: <span class="kw-2">*const </span>c_char,
     ) -&gt; <span class="kw-2">*mut </span>c_char;
     <span class="kw">pub fn </span>g_uri_list_extract_uris(uri_list: <span class="kw-2">*const </span>c_char) -&gt; <span class="kw-2">*mut *mut </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_parse(
         uri_string: <span class="kw-2">*const </span>c_char,
         flags: GUriFlags,
         error: <span class="kw-2">*mut *mut </span>GError,
     ) -&gt; <span class="kw-2">*mut </span>GUri;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_parse_params(
         params: <span class="kw-2">*const </span>c_char,
@@ -12150,10 +12150,10 @@
         error: <span class="kw-2">*mut *mut </span>GError,
     ) -&gt; <span class="kw-2">*mut </span>GHashTable;
     <span class="kw">pub fn </span>g_uri_parse_scheme(uri: <span class="kw-2">*const </span>c_char) -&gt; <span class="kw-2">*mut </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_peek_scheme(uri: <span class="kw-2">*const </span>c_char) -&gt; <span class="kw-2">*const </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_resolve_relative(
         base_uri_string: <span class="kw-2">*const </span>c_char,
@@ -12161,7 +12161,7 @@
         flags: GUriFlags,
         error: <span class="kw-2">*mut *mut </span>GError,
     ) -&gt; <span class="kw-2">*mut </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_split(
         uri_ref: <span class="kw-2">*const </span>c_char,
@@ -12175,7 +12175,7 @@
         fragment: <span class="kw-2">*mut *mut </span>c_char,
         error: <span class="kw-2">*mut *mut </span>GError,
     ) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_split_network(
         uri_string: <span class="kw-2">*const </span>c_char,
@@ -12185,7 +12185,7 @@
         port: <span class="kw-2">*mut </span>c_int,
         error: <span class="kw-2">*mut *mut </span>GError,
     ) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_split_with_user(
         uri_ref: <span class="kw-2">*const </span>c_char,
@@ -12201,7 +12201,7 @@
         fragment: <span class="kw-2">*mut *mut </span>c_char,
         error: <span class="kw-2">*mut *mut </span>GError,
     ) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_unescape_bytes(
         escaped_string: <span class="kw-2">*const </span>c_char,
@@ -12222,7 +12222,7 @@
     <span class="comment">//=========================================================================
     // GUriParamsIter
     //=========================================================================
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_params_iter_init(
         iter: <span class="kw-2">*mut </span>GUriParamsIter,
@@ -12231,7 +12231,7 @@
         separators: <span class="kw-2">*const </span>c_char,
         flags: GUriParamsFlags,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_uri_params_iter_next(
         iter: <span class="kw-2">*mut </span>GUriParamsIter,
@@ -12526,14 +12526,14 @@
     // Other functions
     //=========================================================================
     </span><span class="kw">pub fn </span>g_access(filename: <span class="kw-2">*const </span>c_char, mode: c_int) -&gt; c_int;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_aligned_alloc(n_blocks: size_t, n_block_bytes: size_t, alignment: size_t) -&gt; gpointer;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_aligned_alloc0(n_blocks: size_t, n_block_bytes: size_t, alignment: size_t)
         -&gt; gpointer;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_aligned_free(mem: gpointer);
     <span class="kw">pub fn </span>g_ascii_digit_value(c: c_char) -&gt; c_int;
@@ -12630,7 +12630,7 @@
         oldval: c_int,
         newval: c_int,
     ) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_atomic_int_compare_and_exchange_full(
         atomic: <span class="kw-2">*mut </span>c_int,
@@ -12639,7 +12639,7 @@
         preval: <span class="kw-2">*mut </span>c_int,
     ) -&gt; gboolean;
     <span class="kw">pub fn </span>g_atomic_int_dec_and_test(atomic: <span class="kw-2">*mut </span>c_int) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_atomic_int_exchange(atomic: <span class="kw-2">*mut </span>c_int, newval: c_int) -&gt; c_int;
     <span class="kw">pub fn </span>g_atomic_int_exchange_and_add(atomic: <span class="kw-2">*mut </span>c_int, val: c_int) -&gt; c_int;
@@ -12655,7 +12655,7 @@
         oldval: gpointer,
         newval: gpointer,
     ) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_atomic_pointer_compare_and_exchange_full(
         atomic: <span class="kw-2">*mut </span>c_void,
@@ -12663,44 +12663,44 @@
         newval: gpointer,
         preval: <span class="kw-2">*mut </span>c_void,
     ) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_atomic_pointer_exchange(atomic: <span class="kw-2">*mut </span>c_void, newval: gpointer) -&gt; gpointer;
     <span class="kw">pub fn </span>g_atomic_pointer_get(atomic: <span class="kw-2">*mut </span>c_void) -&gt; gpointer;
     <span class="kw">pub fn </span>g_atomic_pointer_or(atomic: <span class="kw-2">*mut </span>c_void, val: size_t) -&gt; size_t;
     <span class="kw">pub fn </span>g_atomic_pointer_set(atomic: <span class="kw-2">*mut </span>c_void, newval: gpointer);
     <span class="kw">pub fn </span>g_atomic_pointer_xor(atomic: <span class="kw-2">*mut </span>c_void, val: size_t) -&gt; size_t;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_atomic_rc_box_acquire(mem_block: gpointer) -&gt; gpointer;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_atomic_rc_box_alloc(block_size: size_t) -&gt; gpointer;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_atomic_rc_box_alloc0(block_size: size_t) -&gt; gpointer;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_atomic_rc_box_dup(block_size: size_t, mem_block: gconstpointer) -&gt; gpointer;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_atomic_rc_box_get_size(mem_block: gpointer) -&gt; size_t;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_atomic_rc_box_release(mem_block: gpointer);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_atomic_rc_box_release_full(mem_block: gpointer, clear_func: GDestroyNotify);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_atomic_ref_count_compare(arc: <span class="kw-2">*mut </span>c_int, val: c_int) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_atomic_ref_count_dec(arc: <span class="kw-2">*mut </span>c_int) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_atomic_ref_count_inc(arc: <span class="kw-2">*mut </span>c_int);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_atomic_ref_count_init(arc: <span class="kw-2">*mut </span>c_int);
     <span class="kw">pub fn </span>g_base64_decode(text: <span class="kw-2">*const </span>c_char, out_len: <span class="kw-2">*mut </span>size_t) -&gt; <span class="kw-2">*mut </span>u8;
@@ -12740,7 +12740,7 @@
     <span class="kw">pub fn </span>g_build_path(separator: <span class="kw-2">*const </span>c_char, first_element: <span class="kw-2">*const </span>c_char, ...)
         -&gt; <span class="kw-2">*mut </span>c_char;
     <span class="kw">pub fn </span>g_build_pathv(separator: <span class="kw-2">*const </span>c_char, args: <span class="kw-2">*mut *mut </span>c_char) -&gt; <span class="kw-2">*mut </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_canonicalize_filename(
         filename: <span class="kw-2">*const </span>c_char,
@@ -12763,11 +12763,11 @@
     <span class="kw">pub fn </span>g_child_watch_source_new(pid: GPid) -&gt; <span class="kw-2">*mut </span>GSource;
     <span class="kw">pub fn </span>g_clear_error(error: <span class="kw-2">*mut *mut </span>GError);
     <span class="kw">pub fn </span>g_clear_handle_id(tag_ptr: <span class="kw-2">*mut </span>c_uint, clear_func: GClearHandleFunc);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_64&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_clear_list(list_ptr: <span class="kw-2">*mut *mut </span>GList, destroy: GDestroyNotify);
     <span class="kw">pub fn </span>g_clear_pointer(pp: <span class="kw-2">*mut </span>gpointer, destroy: GDestroyNotify);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_64&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_clear_slist(slist_ptr: <span class="kw-2">*mut *mut </span>GSList, destroy: GDestroyNotify);
     <span class="kw">pub fn </span>g_close(fd: c_int, error: <span class="kw-2">*mut *mut </span>GError) -&gt; gboolean;
@@ -12847,7 +12847,7 @@
         user_data: gpointer,
     ) -&gt; gpointer;
     <span class="kw">pub fn </span>g_datalist_id_get_data(datalist: <span class="kw-2">*mut *mut </span>GData, key_id: GQuark) -&gt; gpointer;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_datalist_id_remove_multiple(
         datalist: <span class="kw-2">*mut *mut </span>GData,
@@ -12943,7 +12943,7 @@
         length: ssize_t,
         error: <span class="kw-2">*mut *mut </span>GError,
     ) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_file_set_contents_full(
         filename: <span class="kw-2">*const </span>c_char,
@@ -12989,7 +12989,7 @@
     <span class="kw">pub fn </span>g_get_application_name() -&gt; <span class="kw-2">*const </span>c_char;
     <span class="kw">pub fn </span>g_get_charset(charset: <span class="kw-2">*mut *const </span>c_char) -&gt; gboolean;
     <span class="kw">pub fn </span>g_get_codeset() -&gt; <span class="kw-2">*mut </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_62&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_get_console_charset(charset: <span class="kw-2">*mut *const </span>c_char) -&gt; gboolean;
     <span class="kw">pub fn </span>g_get_current_dir() -&gt; <span class="kw-2">*mut </span>c_char;
@@ -12999,14 +12999,14 @@
     <span class="kw">pub fn </span>g_get_home_dir() -&gt; <span class="kw-2">*const </span>c_char;
     <span class="kw">pub fn </span>g_get_host_name() -&gt; <span class="kw-2">*const </span>c_char;
     <span class="kw">pub fn </span>g_get_language_names() -&gt; <span class="kw-2">*const *const </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_get_language_names_with_category(category_name: <span class="kw-2">*const </span>c_char)
         -&gt; <span class="kw-2">*const *const </span>c_char;
     <span class="kw">pub fn </span>g_get_locale_variants(locale: <span class="kw-2">*const </span>c_char) -&gt; <span class="kw-2">*mut *mut </span>c_char;
     <span class="kw">pub fn </span>g_get_monotonic_time() -&gt; i64;
     <span class="kw">pub fn </span>g_get_num_processors() -&gt; c_uint;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_64&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_get_os_info(key_name: <span class="kw-2">*const </span>c_char) -&gt; <span class="kw-2">*mut </span>c_char;
     <span class="kw">pub fn </span>g_get_prgname() -&gt; <span class="kw-2">*const </span>c_char;
@@ -13021,7 +13021,7 @@
     <span class="kw">pub fn </span>g_get_user_name() -&gt; <span class="kw-2">*const </span>c_char;
     <span class="kw">pub fn </span>g_get_user_runtime_dir() -&gt; <span class="kw-2">*const </span>c_char;
     <span class="kw">pub fn </span>g_get_user_special_dir(directory: GUserDirectory) -&gt; <span class="kw-2">*const </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_get_user_state_dir() -&gt; <span class="kw-2">*const </span>c_char;
     <span class="kw">pub fn </span>g_getenv(variable: <span class="kw-2">*const </span>c_char) -&gt; <span class="kw-2">*const </span>c_char;
@@ -13044,7 +13044,7 @@
         data: gpointer,
         notify: GDestroyNotify,
     ) -&gt; c_uint;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_idle_add_once(function: GSourceOnceFunc, data: gpointer) -&gt; c_uint;
     <span class="kw">pub fn </span>g_idle_remove_by_data(data: gpointer) -&gt; gboolean;
@@ -13092,12 +13092,12 @@
         message: <span class="kw-2">*const </span>c_char,
         unused_data: gpointer,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_log_get_debug_enabled() -&gt; gboolean;
     <span class="kw">pub fn </span>g_log_remove_handler(log_domain: <span class="kw-2">*const </span>c_char, handler_id: c_uint);
     <span class="kw">pub fn </span>g_log_set_always_fatal(fatal_mask: GLogLevelFlags) -&gt; GLogLevelFlags;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_log_set_debug_enabled(enabled: gboolean);
     <span class="kw">pub fn </span>g_log_set_default_handler(log_func: GLogFunc, user_data: gpointer) -&gt; GLogFunc;
@@ -13149,10 +13149,10 @@
         n_fields: size_t,
         user_data: gpointer,
     ) -&gt; GLogWriterOutput;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_log_writer_default_set_use_stderr(use_stderr: gboolean);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_log_writer_default_would_drop(
         log_level: GLogLevelFlags,
@@ -13202,7 +13202,7 @@
     <span class="kw">pub fn </span>g_mem_profile();
     <span class="kw">pub fn </span>g_mem_set_vtable(vtable: <span class="kw-2">*mut </span>GMemVTable);
     <span class="kw">pub fn </span>g_memdup(mem: gconstpointer, byte_size: c_uint) -&gt; gpointer;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_memdup2(mem: gconstpointer, byte_size: size_t) -&gt; gpointer;
     <span class="kw">pub fn </span>g_mkdir_with_parents(pathname: <span class="kw-2">*const </span>c_char, mode: c_int) -&gt; c_int;
@@ -13237,7 +13237,7 @@
     <span class="kw">pub fn </span>g_pointer_bit_unlock(address: <span class="kw-2">*mut </span>c_void, lock_bit: c_int);
     <span class="kw">pub fn </span>g_poll(fds: <span class="kw-2">*mut </span>GPollFD, nfds: c_uint, timeout: c_int) -&gt; c_int;
     <span class="kw">pub fn </span>g_prefix_error(err: <span class="kw-2">*mut *mut </span>GError, format: <span class="kw-2">*const </span>c_char, ...);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_prefix_error_literal(err: <span class="kw-2">*mut *mut </span>GError, prefix: <span class="kw-2">*const </span>c_char);
     <span class="kw">pub fn </span>g_print(format: <span class="kw-2">*const </span>c_char, ...);
@@ -13267,57 +13267,57 @@
     <span class="kw">pub fn </span>g_random_int() -&gt; u32;
     <span class="kw">pub fn </span>g_random_int_range(begin: i32, end: i32) -&gt; i32;
     <span class="kw">pub fn </span>g_random_set_seed(seed: u32);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_rc_box_acquire(mem_block: gpointer) -&gt; gpointer;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_rc_box_alloc(block_size: size_t) -&gt; gpointer;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_rc_box_alloc0(block_size: size_t) -&gt; gpointer;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_rc_box_dup(block_size: size_t, mem_block: gconstpointer) -&gt; gpointer;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_rc_box_get_size(mem_block: gpointer) -&gt; size_t;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_rc_box_release(mem_block: gpointer);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_rc_box_release_full(mem_block: gpointer, clear_func: GDestroyNotify);
     <span class="kw">pub fn </span>g_realloc(mem: gpointer, n_bytes: size_t) -&gt; gpointer;
     <span class="kw">pub fn </span>g_realloc_n(mem: gpointer, n_blocks: size_t, n_block_bytes: size_t) -&gt; gpointer;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_ref_count_compare(rc: <span class="kw-2">*mut </span>c_int, val: c_int) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_ref_count_dec(rc: <span class="kw-2">*mut </span>c_int) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_ref_count_inc(rc: <span class="kw-2">*mut </span>c_int);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_ref_count_init(rc: <span class="kw-2">*mut </span>c_int);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_ref_string_acquire(str: <span class="kw-2">*mut </span>c_char) -&gt; <span class="kw-2">*mut </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_ref_string_length(str: <span class="kw-2">*mut </span>c_char) -&gt; size_t;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_ref_string_new(str: <span class="kw-2">*const </span>c_char) -&gt; <span class="kw-2">*mut </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_ref_string_new_intern(str: <span class="kw-2">*const </span>c_char) -&gt; <span class="kw-2">*mut </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_ref_string_new_len(str: <span class="kw-2">*const </span>c_char, len: ssize_t) -&gt; <span class="kw-2">*mut </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_ref_string_release(str: <span class="kw-2">*mut </span>c_char);
     <span class="kw">pub fn </span>g_reload_user_special_dirs_cache();
@@ -13383,7 +13383,7 @@
         child_pid: <span class="kw-2">*mut </span>GPid,
         error: <span class="kw-2">*mut *mut </span>GError,
     ) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_spawn_async_with_fds(
         working_directory: <span class="kw-2">*const </span>c_char,
@@ -13411,7 +13411,7 @@
         standard_error: <span class="kw-2">*mut </span>c_int,
         error: <span class="kw-2">*mut *mut </span>GError,
     ) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_spawn_async_with_pipes_and_fds(
         working_directory: <span class="kw-2">*const </span>c_char,
@@ -13433,7 +13433,7 @@
         error: <span class="kw-2">*mut *mut </span>GError,
     ) -&gt; gboolean;
     <span class="kw">pub fn </span>g_spawn_check_exit_status(wait_status: c_int, error: <span class="kw-2">*mut *mut </span>GError) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_spawn_check_wait_status(wait_status: c_int, error: <span class="kw-2">*mut *mut </span>GError) -&gt; gboolean;
     <span class="kw">pub fn </span>g_spawn_close_pid(pid: GPid);
@@ -13538,7 +13538,7 @@
     <span class="kw">pub fn </span>g_strtod(nptr: <span class="kw-2">*const </span>c_char, endptr: <span class="kw-2">*mut *mut </span>c_char) -&gt; c_double;
     <span class="kw">pub fn </span>g_strup(string: <span class="kw-2">*mut </span>c_char) -&gt; <span class="kw-2">*mut </span>c_char;
     <span class="kw">pub fn </span>g_strv_contains(strv: <span class="kw-2">*const *const </span>c_char, str: <span class="kw-2">*const </span>c_char) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_strv_equal(strv1: <span class="kw-2">*const *const </span>c_char, strv2: <span class="kw-2">*const *const </span>c_char) -&gt; gboolean;
     <span class="kw">pub fn </span>g_strv_get_type() -&gt; GType;
@@ -13591,7 +13591,7 @@
         pattern: <span class="kw-2">*const </span>c_char,
     );
     <span class="kw">pub fn </span>g_test_fail();
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_test_fail_printf(format: <span class="kw-2">*const </span>c_char, ...);
     <span class="kw">pub fn </span>g_test_failed() -&gt; gboolean;
@@ -13601,12 +13601,12 @@
         first_path: <span class="kw-2">*const </span>c_char,
         ...
     ) -&gt; <span class="kw-2">*const </span>c_char;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_test_get_path() -&gt; <span class="kw-2">*const </span>c_char;
     <span class="kw">pub fn </span>g_test_get_root() -&gt; <span class="kw-2">*mut </span>GTestSuite;
     <span class="kw">pub fn </span>g_test_incomplete(msg: <span class="kw-2">*const </span>c_char);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_test_incomplete_printf(format: <span class="kw-2">*const </span>c_char, ...);
     <span class="kw">pub fn </span>g_test_init(argc: <span class="kw-2">*mut </span>c_int, argv: <span class="kw-2">*mut *mut *mut </span>c_char, ...);
@@ -13625,11 +13625,11 @@
     <span class="kw">pub fn </span>g_test_run_suite(suite: <span class="kw-2">*mut </span>GTestSuite) -&gt; c_int;
     <span class="kw">pub fn </span>g_test_set_nonfatal_assertions();
     <span class="kw">pub fn </span>g_test_skip(msg: <span class="kw-2">*const </span>c_char);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_test_skip_printf(format: <span class="kw-2">*const </span>c_char, ...);
     <span class="kw">pub fn </span>g_test_subprocess() -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_62&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_test_summary(summary: <span class="kw-2">*const </span>c_char);
     <span class="kw">pub fn </span>g_test_timer_elapsed() -&gt; c_double;
@@ -13659,7 +13659,7 @@
         data: gpointer,
         notify: GDestroyNotify,
     ) -&gt; c_uint;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_timeout_add_once(
         interval: c_uint,
@@ -13754,7 +13754,7 @@
         notify: GDestroyNotify,
     ) -&gt; c_uint;
     <span class="kw">pub fn </span>g_unix_fd_source_new(fd: c_int, condition: GIOCondition) -&gt; <span class="kw-2">*mut </span>GSource;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_64&quot;</span>)))]
     #[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
@@ -13839,7 +13839,7 @@
         error: <span class="kw-2">*mut *mut </span>GError,
     ) -&gt; <span class="kw-2">*mut </span>u16;
     <span class="kw">pub fn </span>g_utf8_validate(str: <span class="kw-2">*const </span>u8, max_len: ssize_t, end: <span class="kw-2">*mut *const </span>c_char) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_utf8_validate_len(
         str: <span class="kw-2">*const </span>u8,
@@ -13864,4 +13864,4 @@
 
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib_sys" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib_sys" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

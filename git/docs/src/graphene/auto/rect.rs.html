@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../graphene/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../graphene/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -648,7 +648,7 @@
     /// # Returns
     ///
     /// `true` if the rectangle contains the point
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_contains_point&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_contains_point&quot;</span>)]
     </span><span class="kw">pub fn </span>contains_point(<span class="kw-2">&amp;</span><span class="self">self</span>, p: <span class="kw-2">&amp;</span>Point) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_rect_contains_point(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, p.to_glib_none().<span class="number">0</span>) }
     }
@@ -661,12 +661,12 @@
     /// # Returns
     ///
     /// `true` if the rectangle `self` fully contains `b`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_contains_rect&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_contains_rect&quot;</span>)]
     </span><span class="kw">pub fn </span>contains_rect(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Rect) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_rect_contains_rect(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, b.to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_equal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_equal&quot;</span>)]
     </span><span class="kw">fn </span>equal(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Rect) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_rect_equal(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, b.to_glib_none().<span class="number">0</span>) }
     }
@@ -680,7 +680,7 @@
     ///
     /// ## `res`
     /// return location for the expanded rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_expand&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_expand&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>expand(<span class="kw-2">&amp;</span><span class="self">self</span>, p: <span class="kw-2">&amp;</span>Point) -&gt; Rect {
         <span class="kw">unsafe </span>{
@@ -699,7 +699,7 @@
     /// # Returns
     ///
     /// the area of the normalized rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_get_area&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_get_area&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_area&quot;</span>)]
     </span><span class="kw">pub fn </span>area(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_rect_get_area(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -712,7 +712,7 @@
     ///
     /// ## `p`
     /// return location for a [`Point`][crate::Point]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_get_bottom_left&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_get_bottom_left&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_bottom_left&quot;</span>)]
     </span><span class="kw">pub fn </span>bottom_left(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Point {
         <span class="kw">unsafe </span>{
@@ -729,7 +729,7 @@
     ///
     /// ## `p`
     /// return location for a [`Point`][crate::Point]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_get_bottom_right&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_get_bottom_right&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_bottom_right&quot;</span>)]
     </span><span class="kw">pub fn </span>bottom_right(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Point {
         <span class="kw">unsafe </span>{
@@ -746,7 +746,7 @@
     ///
     /// ## `p`
     /// return location for a [`Point`][crate::Point]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_get_center&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_get_center&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_center&quot;</span>)]
     </span><span class="kw">pub fn </span>center(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Point {
         <span class="kw">unsafe </span>{
@@ -761,7 +761,7 @@
     /// # Returns
     ///
     /// the normalized height of the rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_get_height&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_get_height&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_height&quot;</span>)]
     </span><span class="kw">pub fn </span>height(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_rect_get_height(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -774,7 +774,7 @@
     ///
     /// ## `p`
     /// return location for a [`Point`][crate::Point]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_get_top_left&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_get_top_left&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_top_left&quot;</span>)]
     </span><span class="kw">pub fn </span>top_left(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Point {
         <span class="kw">unsafe </span>{
@@ -791,7 +791,7 @@
     ///
     /// ## `p`
     /// return location for a [`Point`][crate::Point]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_get_top_right&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_get_top_right&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_top_right&quot;</span>)]
     </span><span class="kw">pub fn </span>top_right(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Point {
         <span class="kw">unsafe </span>{
@@ -806,7 +806,7 @@
     /// # Returns
     ///
     /// the normalized width of the rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_get_width&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_get_width&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_width&quot;</span>)]
     </span><span class="kw">pub fn </span>width(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_rect_get_width(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -818,7 +818,7 @@
     /// # Returns
     ///
     /// the normalized X coordinate of the rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_get_x&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_get_x&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_x&quot;</span>)]
     </span><span class="kw">pub fn </span>x(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_rect_get_x(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -830,7 +830,7 @@
     /// # Returns
     ///
     /// the normalized Y coordinate of the rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_get_y&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_get_y&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_y&quot;</span>)]
     </span><span class="kw">pub fn </span>y(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_rect_get_y(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -858,7 +858,7 @@
     /// # Returns
     ///
     /// the inset rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_inset&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_inset&quot;</span>)]
     </span><span class="kw">pub fn </span>inset(<span class="kw-2">&amp;mut </span><span class="self">self</span>, d_x: f32, d_y: f32) {
         <span class="kw">unsafe </span>{
             ffi::graphene_rect_inset(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>, d_x, d_y);
@@ -889,7 +889,7 @@
     ///
     /// ## `res`
     /// return location for the inset rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_inset_r&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_inset_r&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>inset_r(<span class="kw-2">&amp;</span><span class="self">self</span>, d_x: f32, d_y: f32) -&gt; Rect {
         <span class="kw">unsafe </span>{
@@ -912,7 +912,7 @@
     /// ## `res`
     /// return location for the
     ///  interpolated rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_interpolate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_interpolate&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>interpolate(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Rect, factor: f64) -&gt; Rect {
         <span class="kw">unsafe </span>{
@@ -945,7 +945,7 @@
     /// ## `res`
     /// return location for
     ///  a [`Rect`][crate::Rect]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_intersection&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_intersection&quot;</span>)]
     </span><span class="kw">pub fn </span>intersection(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Rect) -&gt; <span class="prelude-ty">Option</span>&lt;Rect&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>res = Rect::uninitialized();
@@ -971,7 +971,7 @@
     /// # Returns
     ///
     /// the normalized rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_normalize&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_normalize&quot;</span>)]
     </span><span class="kw">pub fn </span>normalize(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::graphene_rect_normalize(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>);
@@ -990,7 +990,7 @@
     /// ## `res`
     /// the return location for the
     ///  normalized rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_normalize_r&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_normalize_r&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>normalize_r(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Rect {
         <span class="kw">unsafe </span>{
@@ -1011,7 +1011,7 @@
     /// # Returns
     ///
     /// the offset rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_offset&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_offset&quot;</span>)]
     </span><span class="kw">pub fn </span>offset(<span class="kw-2">&amp;mut </span><span class="self">self</span>, d_x: f32, d_y: f32) {
         <span class="kw">unsafe </span>{
             ffi::graphene_rect_offset(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>, d_x, d_y);
@@ -1032,7 +1032,7 @@
     /// ## `res`
     /// return location for the offset
     ///  rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_offset_r&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_offset_r&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>offset_r(<span class="kw-2">&amp;</span><span class="self">self</span>, d_x: f32, d_y: f32) -&gt; Rect {
         <span class="kw">unsafe </span>{
@@ -1070,7 +1070,7 @@
     /// ## `res`
     /// return location for the
     ///  rectangle with rounded extents
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_round_extents&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_round_extents&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>round_extents(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Rect {
         <span class="kw">unsafe </span>{
@@ -1093,7 +1093,7 @@
     /// ## `res`
     /// return location for the
     ///  scaled rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_scale&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_scale&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>scale(<span class="kw-2">&amp;</span><span class="self">self</span>, s_h: f32, s_v: f32) -&gt; Rect {
         <span class="kw">unsafe </span>{
@@ -1116,7 +1116,7 @@
     ///
     /// ## `res`
     /// return location for a [`Rect`][crate::Rect]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_union&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_union&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>union(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Rect) -&gt; Rect {
         <span class="kw">unsafe </span>{
@@ -1136,7 +1136,7 @@
     /// # Returns
     ///
     /// a fixed rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_rect_zero&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_rect_zero&quot;</span>)]
     </span><span class="kw">pub fn </span>zero() -&gt; Rect {
         <span class="macro">assert_initialized_main_thread!</span>();
         <span class="kw">unsafe </span>{ from_glib_none(ffi::graphene_rect_zero()) }
@@ -1144,7 +1144,7 @@
 }
 
 <span class="kw">impl </span>PartialEq <span class="kw">for </span>Rect {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool {
         <span class="self">self</span>.equal(other)
     }
@@ -1152,4 +1152,4 @@
 
 <span class="kw">impl </span>Eq <span class="kw">for </span>Rect {}
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>

@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -601,7 +601,7 @@
     /// # Implements
     ///
     /// [`DataOutputStreamExt`][trait@crate::prelude::DataOutputStreamExt], [`FilterOutputStreamExt`][trait@crate::prelude::FilterOutputStreamExt], [`OutputStreamExt`][trait@crate::prelude::OutputStreamExt], [`trait@glib::ObjectExt`], [`SeekableExt`][trait@crate::prelude::SeekableExt], [`OutputStreamExtManual`][trait@crate::prelude::OutputStreamExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GDataOutputStream&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GDataOutputStream&quot;</span>)]
     </span><span class="kw">pub struct </span>DataOutputStream(Object&lt;ffi::GDataOutputStream, ffi::GDataOutputStreamClass&gt;) @extends FilterOutputStream, OutputStream, @implements Seekable;
 
     <span class="kw">match fn </span>{
@@ -619,7 +619,7 @@
     /// # Returns
     ///
     /// [`DataOutputStream`][crate::DataOutputStream].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_output_stream_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_output_stream_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(base_stream: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;OutputStream&gt;) -&gt; DataOutputStream {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::g_data_output_stream_new(
@@ -643,12 +643,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`DataOutputStream`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>DataOutputStreamBuilder {
     byte_order: <span class="prelude-ty">Option</span>&lt;DataStreamByteOrder&gt;,
     base_stream: <span class="prelude-ty">Option</span>&lt;OutputStream&gt;,
@@ -664,7 +664,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`DataOutputStream`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; DataOutputStream {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>byte_order) = <span class="self">self</span>.byte_order {
@@ -708,7 +708,7 @@
     /// # Returns
     ///
     /// the [`DataStreamByteOrder`][crate::DataStreamByteOrder] for the `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_output_stream_get_byte_order&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_output_stream_get_byte_order&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_byte_order&quot;</span>)]
     </span><span class="kw">fn </span>byte_order(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; DataStreamByteOrder;
 
@@ -721,7 +721,7 @@
     /// # Returns
     ///
     /// [`true`] if `data` was successfully added to the `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_output_stream_put_byte&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_output_stream_put_byte&quot;</span>)]
     </span><span class="kw">fn </span>put_byte(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         data: u8,
@@ -737,7 +737,7 @@
     /// # Returns
     ///
     /// [`true`] if `data` was successfully added to the `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_output_stream_put_int16&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_output_stream_put_int16&quot;</span>)]
     </span><span class="kw">fn </span>put_int16(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         data: i16,
@@ -753,7 +753,7 @@
     /// # Returns
     ///
     /// [`true`] if `data` was successfully added to the `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_output_stream_put_int32&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_output_stream_put_int32&quot;</span>)]
     </span><span class="kw">fn </span>put_int32(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         data: i32,
@@ -769,7 +769,7 @@
     /// # Returns
     ///
     /// [`true`] if `data` was successfully added to the `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_output_stream_put_int64&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_output_stream_put_int64&quot;</span>)]
     </span><span class="kw">fn </span>put_int64(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         data: i64,
@@ -785,7 +785,7 @@
     /// # Returns
     ///
     /// [`true`] if `string` was successfully added to the `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_output_stream_put_string&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_output_stream_put_string&quot;</span>)]
     </span><span class="kw">fn </span>put_string(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         str: <span class="kw-2">&amp;</span>str,
@@ -801,7 +801,7 @@
     /// # Returns
     ///
     /// [`true`] if `data` was successfully added to the `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_output_stream_put_uint16&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_output_stream_put_uint16&quot;</span>)]
     </span><span class="kw">fn </span>put_uint16(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         data: u16,
@@ -817,7 +817,7 @@
     /// # Returns
     ///
     /// [`true`] if `data` was successfully added to the `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_output_stream_put_uint32&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_output_stream_put_uint32&quot;</span>)]
     </span><span class="kw">fn </span>put_uint32(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         data: u32,
@@ -833,7 +833,7 @@
     /// # Returns
     ///
     /// [`true`] if `data` was successfully added to the `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_output_stream_put_uint64&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_output_stream_put_uint64&quot;</span>)]
     </span><span class="kw">fn </span>put_uint64(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         data: u64,
@@ -843,10 +843,10 @@
     <span class="doccomment">/// Sets the byte order of the data output stream to `order`.
     /// ## `order`
     /// a `GDataStreamByteOrder`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_data_output_stream_set_byte_order&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_data_output_stream_set_byte_order&quot;</span>)]
     </span><span class="kw">fn </span>set_byte_order(<span class="kw-2">&amp;</span><span class="self">self</span>, order: DataStreamByteOrder);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;byte-order&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;byte-order&quot;</span>)]
     </span><span class="kw">fn </span>connect_byte_order_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -1076,4 +1076,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (1898c34e9 2022-10-26)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>
