@@ -326,6 +326,90 @@
 <span id="253">253</span>
 <span id="254">254</span>
 <span id="255">255</span>
+<span id="256">256</span>
+<span id="257">257</span>
+<span id="258">258</span>
+<span id="259">259</span>
+<span id="260">260</span>
+<span id="261">261</span>
+<span id="262">262</span>
+<span id="263">263</span>
+<span id="264">264</span>
+<span id="265">265</span>
+<span id="266">266</span>
+<span id="267">267</span>
+<span id="268">268</span>
+<span id="269">269</span>
+<span id="270">270</span>
+<span id="271">271</span>
+<span id="272">272</span>
+<span id="273">273</span>
+<span id="274">274</span>
+<span id="275">275</span>
+<span id="276">276</span>
+<span id="277">277</span>
+<span id="278">278</span>
+<span id="279">279</span>
+<span id="280">280</span>
+<span id="281">281</span>
+<span id="282">282</span>
+<span id="283">283</span>
+<span id="284">284</span>
+<span id="285">285</span>
+<span id="286">286</span>
+<span id="287">287</span>
+<span id="288">288</span>
+<span id="289">289</span>
+<span id="290">290</span>
+<span id="291">291</span>
+<span id="292">292</span>
+<span id="293">293</span>
+<span id="294">294</span>
+<span id="295">295</span>
+<span id="296">296</span>
+<span id="297">297</span>
+<span id="298">298</span>
+<span id="299">299</span>
+<span id="300">300</span>
+<span id="301">301</span>
+<span id="302">302</span>
+<span id="303">303</span>
+<span id="304">304</span>
+<span id="305">305</span>
+<span id="306">306</span>
+<span id="307">307</span>
+<span id="308">308</span>
+<span id="309">309</span>
+<span id="310">310</span>
+<span id="311">311</span>
+<span id="312">312</span>
+<span id="313">313</span>
+<span id="314">314</span>
+<span id="315">315</span>
+<span id="316">316</span>
+<span id="317">317</span>
+<span id="318">318</span>
+<span id="319">319</span>
+<span id="320">320</span>
+<span id="321">321</span>
+<span id="322">322</span>
+<span id="323">323</span>
+<span id="324">324</span>
+<span id="325">325</span>
+<span id="326">326</span>
+<span id="327">327</span>
+<span id="328">328</span>
+<span id="329">329</span>
+<span id="330">330</span>
+<span id="331">331</span>
+<span id="332">332</span>
+<span id="333">333</span>
+<span id="334">334</span>
+<span id="335">335</span>
+<span id="336">336</span>
+<span id="337">337</span>
+<span id="338">338</span>
+<span id="339">339</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::error::Error;
@@ -339,7 +423,20 @@
 <span class="kw">use </span><span class="kw">crate</span>::KeyFile;
 
 <span class="kw">impl </span>KeyFile {
-    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_save_to_file&quot;</span>)]
+    <span class="doccomment">/// Writes the contents of `self` to `filename` using
+    /// [`file_set_contents()`][crate::file_set_contents()]. If you need stricter guarantees about durability of
+    /// the written file than are provided by [`file_set_contents()`][crate::file_set_contents()], use
+    /// [`file_set_contents_full()`][crate::file_set_contents_full()] with the return value of [`to_data()`][Self::to_data()].
+    ///
+    /// This function can fail for any of the reasons that
+    /// [`file_set_contents()`][crate::file_set_contents()] may fail.
+    /// ## `filename`
+    /// the name of the file to write to
+    ///
+    /// # Returns
+    ///
+    /// [`true`] if successful, else [`false`] with `error` set
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_save_to_file&quot;</span>)]
     </span><span class="kw">pub fn </span>save_to_file&lt;T: AsRef&lt;std::path::Path&gt;&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, filename: T) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
@@ -356,7 +453,24 @@
         }
     }
 
-    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_load_from_data_dirs&quot;</span>)]
+    <span class="doccomment">/// This function looks for a key file named `file` in the paths
+    /// returned from [`user_data_dir()`][crate::user_data_dir()] and [`system_data_dirs()`][crate::system_data_dirs()],
+    /// loads the file into `self` and returns the file&#39;s full path in
+    /// `full_path`. If the file could not be loaded then an `error` is
+    /// set to either a [`FileError`][crate::FileError] or [`KeyFileError`][crate::KeyFileError].
+    /// ## `file`
+    /// a relative path to a filename to open and parse
+    /// ## `flags`
+    /// flags from [`KeyFileFlags`][crate::KeyFileFlags]
+    ///
+    /// # Returns
+    ///
+    /// [`true`] if a key file could be loaded, [`false`] otherwise
+    ///
+    /// ## `full_path`
+    /// return location for a string containing the full path
+    ///  of the file, or [`None`]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_load_from_data_dirs&quot;</span>)]
     </span><span class="kw">pub fn </span>load_from_data_dirs&lt;T: AsRef&lt;std::path::Path&gt;&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         file: T,
@@ -381,7 +495,30 @@
         }
     }
 
-    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_load_from_dirs&quot;</span>)]
+    <span class="doccomment">/// This function looks for a key file named `file` in the paths
+    /// specified in `search_dirs`, loads the file into `self` and
+    /// returns the file&#39;s full path in `full_path`.
+    ///
+    /// If the file could not be found in any of the `search_dirs`,
+    /// [`KeyFileError::NotFound`][crate::KeyFileError::NotFound] is returned. If
+    /// the file is found but the OS returns an error when opening or reading the
+    /// file, a `G_FILE_ERROR` is returned. If there is a problem parsing the file, a
+    /// `G_KEY_FILE_ERROR` is returned.
+    /// ## `file`
+    /// a relative path to a filename to open and parse
+    /// ## `search_dirs`
+    /// [`None`]-terminated array of directories to search
+    /// ## `flags`
+    /// flags from [`KeyFileFlags`][crate::KeyFileFlags]
+    ///
+    /// # Returns
+    ///
+    /// [`true`] if a key file could be loaded, [`false`] otherwise
+    ///
+    /// ## `full_path`
+    /// return location for a string containing the full path
+    ///  of the file, or [`None`]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_load_from_dirs&quot;</span>)]
     </span><span class="kw">pub fn </span>load_from_dirs&lt;T: AsRef&lt;std::path::Path&gt;, U: AsRef&lt;std::path::Path&gt;&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         file: T,
@@ -410,7 +547,20 @@
         }
     }
 
-    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_to_data&quot;</span>)]
+    <span class="doccomment">/// This function outputs `self` as a string.
+    ///
+    /// Note that this function never reports an error,
+    /// so it is safe to pass [`None`] as `error`.
+    ///
+    /// # Returns
+    ///
+    /// a newly allocated string holding
+    ///  the contents of the [`KeyFile`][crate::KeyFile]
+    ///
+    /// ## `length`
+    /// return location for the length of the
+    ///  returned string, or [`None`]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_to_data&quot;</span>)]
     </span><span class="kw">pub fn </span>to_data(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; GString {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>ret =
@@ -438,7 +588,25 @@
         }
     }
 
-    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_has_key&quot;</span>)]
+    <span class="doccomment">/// Looks whether the key file has the key `key` in the group
+    /// `group_name`.
+    ///
+    /// Note that this function does not follow the rules for [`Error`][crate::Error] strictly;
+    /// the return value both carries meaning and signals an error. To use
+    /// this function, you must pass a [`Error`][crate::Error] pointer in `error`, and check
+    /// whether it is not [`None`] to see if an error occurred.
+    ///
+    /// Language bindings should use [`value()`][Self::value()] to test whether
+    /// or not a key exists.
+    /// ## `group_name`
+    /// a group name
+    /// ## `key`
+    /// a key name
+    ///
+    /// # Returns
+    ///
+    /// [`true`] if `key` is a part of `group_name`, [`false`] otherwise
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_has_key&quot;</span>)]
     </span><span class="kw">pub fn </span>has_key(<span class="kw-2">&amp;</span><span class="self">self</span>, group_name: <span class="kw-2">&amp;</span>str, key: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;bool, Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
