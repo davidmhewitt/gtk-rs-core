@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/auto/markup_parse_context.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>markup_parse_context.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../../normalize.css"><link rel="stylesheet" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../../ayu.css" disabled><link rel="stylesheet" href="../../../dark.css" disabled><link rel="stylesheet" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/auto/markup_parse_context.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>markup_parse_context.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-ef244fc9943488f7.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-c11f492748536797.css"><link rel="stylesheet" disabled href="../../../static.files/dark-a78f946771c40031.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-70b683d68cb31790.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-74087aa2e88f4475.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-0dede64717b247ca.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-201a7e04dc4c6fce.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../glib/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../glib/index.html"><img class="rust-logo" src="../../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -172,60 +172,6 @@
 <span id="99">99</span>
 <span id="100">100</span>
 <span id="101">101</span>
-<span id="102">102</span>
-<span id="103">103</span>
-<span id="104">104</span>
-<span id="105">105</span>
-<span id="106">106</span>
-<span id="107">107</span>
-<span id="108">108</span>
-<span id="109">109</span>
-<span id="110">110</span>
-<span id="111">111</span>
-<span id="112">112</span>
-<span id="113">113</span>
-<span id="114">114</span>
-<span id="115">115</span>
-<span id="116">116</span>
-<span id="117">117</span>
-<span id="118">118</span>
-<span id="119">119</span>
-<span id="120">120</span>
-<span id="121">121</span>
-<span id="122">122</span>
-<span id="123">123</span>
-<span id="124">124</span>
-<span id="125">125</span>
-<span id="126">126</span>
-<span id="127">127</span>
-<span id="128">128</span>
-<span id="129">129</span>
-<span id="130">130</span>
-<span id="131">131</span>
-<span id="132">132</span>
-<span id="133">133</span>
-<span id="134">134</span>
-<span id="135">135</span>
-<span id="136">136</span>
-<span id="137">137</span>
-<span id="138">138</span>
-<span id="139">139</span>
-<span id="140">140</span>
-<span id="141">141</span>
-<span id="142">142</span>
-<span id="143">143</span>
-<span id="144">144</span>
-<span id="145">145</span>
-<span id="146">146</span>
-<span id="147">147</span>
-<span id="148">148</span>
-<span id="149">149</span>
-<span id="150">150</span>
-<span id="151">151</span>
-<span id="152">152</span>
-<span id="153">153</span>
-<span id="154">154</span>
-<span id="155">155</span>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
@@ -236,12 +182,7 @@
 <span class="kw">use </span>std::ptr;
 
 <span class="macro">crate::wrapper! </span>{
-    <span class="doccomment">/// A parse context is used to parse a stream of bytes that
-    /// you expect to contain marked-up text.
-    ///
-    /// See `g_markup_parse_context_new()`, `GMarkupParser`, and so
-    /// on for more details.
-    </span><span class="attr">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    <span class="attr">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
     </span><span class="kw">pub struct </span>MarkupParseContext(Shared&lt;ffi::GMarkupParseContext&gt;);
 
     <span class="kw">match fn </span>{
@@ -257,15 +198,6 @@
     //    unsafe { TODO: call ffi:g_markup_parse_context_new() }
     //}
 
-    </span><span class="doccomment">/// Signals to the [`MarkupParseContext`][crate::MarkupParseContext] that all data has been
-    /// fed into the parse context with [`parse()`][Self::parse()].
-    ///
-    /// This function reports an error if the document isn&#39;t complete,
-    /// for example if elements are still open.
-    ///
-    /// # Returns
-    ///
-    /// [`true`] on success, [`false`] if an error was set
     </span><span class="attr">#[doc(alias = <span class="string">&quot;g_markup_parse_context_end_parse&quot;</span>)]
     </span><span class="kw">pub fn </span>end_parse(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(), <span class="kw">crate</span>::Error&gt; {
         <span class="kw">unsafe </span>{
@@ -280,16 +212,7 @@
         }
     }
 
-    <span class="doccomment">/// Retrieves the name of the currently open element.
-    ///
-    /// If called from the start_element or end_element handlers this will
-    /// give the element_name as passed to those functions. For the parent
-    /// elements, see `g_markup_parse_context_get_element_stack()`.
-    ///
-    /// # Returns
-    ///
-    /// the name of the currently open element, or [`None`]
-    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_markup_parse_context_get_element&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_markup_parse_context_get_element&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_element&quot;</span>)]
     </span><span class="kw">pub fn </span>element(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::GString {
         <span class="kw">unsafe </span>{
@@ -305,19 +228,6 @@
     //    unsafe { TODO: call ffi:g_markup_parse_context_get_element_stack() }
     //}
 
-    </span><span class="doccomment">/// Retrieves the current line number and the number of the character on
-    /// that line. Intended for use in error messages; there are no strict
-    /// semantics for what constitutes the &quot;current&quot; line number other than
-    /// &quot;the best number we could come up with for error messages.&quot;
-    ///
-    /// # Returns
-    ///
-    ///
-    /// ## `line_number`
-    /// return location for a line number, or [`None`]
-    ///
-    /// ## `char_number`
-    /// return location for a char-on-line number, or [`None`]
     </span><span class="attr">#[doc(alias = <span class="string">&quot;g_markup_parse_context_get_position&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_position&quot;</span>)]
     </span><span class="kw">pub fn </span>position(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (i32, i32) {
@@ -333,25 +243,7 @@
         }
     }
 
-    <span class="doccomment">/// Feed some data to the [`MarkupParseContext`][crate::MarkupParseContext].
-    ///
-    /// The data need not be valid UTF-8; an error will be signaled if
-    /// it&#39;s invalid. The data need not be an entire document; you can
-    /// feed a document into the parser incrementally, via multiple calls
-    /// to this function. Typically, as you receive data from a network
-    /// connection or file, you feed each received chunk of data into this
-    /// function, aborting the process if an error occurs. Once an error
-    /// is reported, no further data may be fed to the [`MarkupParseContext`][crate::MarkupParseContext];
-    /// all errors are fatal.
-    /// ## `text`
-    /// chunk of text to parse
-    /// ## `text_len`
-    /// length of `text` in bytes
-    ///
-    /// # Returns
-    ///
-    /// [`false`] if an error occurred, [`true`] on success
-    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_markup_parse_context_parse&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_markup_parse_context_parse&quot;</span>)]
     </span><span class="kw">pub fn </span>parse(<span class="kw-2">&amp;</span><span class="self">self</span>, text: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;(), <span class="kw">crate</span>::Error&gt; {
         <span class="kw">let </span>text_len = text.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
@@ -382,4 +274,4 @@
     //}
 </span>}
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (215e3cd21 2022-11-03)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (85f4f41de 2022-11-08)" data-search-js="search-39ee4160c7dc16c9.js" data-settings-js="settings-3a0b9947ba1bd99a.js" data-settings-css="settings-a66f7524084a489a.css" ></div></body></html>
