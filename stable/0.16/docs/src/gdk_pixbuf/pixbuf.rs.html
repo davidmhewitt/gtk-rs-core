@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gdk-pixbuf/src/pixbuf.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>pixbuf.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../normalize.css"><link rel="stylesheet" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../ayu.css" disabled><link rel="stylesheet" href="../../dark.css" disabled><link rel="stylesheet" href="../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../storage.js"></script><script defer src="../../source-script.js"></script><script defer src="../../source-files.js"></script><script defer src="../../main.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gdk-pixbuf/src/pixbuf.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>pixbuf.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-83be770da8fbb54b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-860cb8b69b437763.css"><link rel="stylesheet" disabled href="../../static.files/dark-ca7398001115f6db.css"><link rel="stylesheet" disabled href="../../static.files/ayu-2916eb07452214a6.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-74087aa2e88f4475.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-c2d2a5dbaed13e6b.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../gdk_pixbuf/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gdk_pixbuf/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gdk_pixbuf/index.html"><img class="rust-logo" src="../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -764,7 +764,7 @@
 <span class="kw">use crate</span>::{Colorspace, Pixbuf, PixbufFormat};
 
 <span class="kw">impl </span>Pixbuf {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_new_from_data&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_new_from_data&quot;</span>)]
     </span><span class="kw">pub fn </span>from_mut_slice&lt;T: AsMut&lt;[u8]&gt;&gt;(
         data: T,
         colorspace: Colorspace,
@@ -798,7 +798,7 @@
         <span class="kw">let </span>ptr = {
             <span class="kw">let </span>data: <span class="kw-2">&amp;mut </span>[u8] = (<span class="kw-2">*</span>data).as_mut();
             <span class="macro">assert!</span>(
-                data.len() &gt;= ((height - <span class="number">1</span>) * row_stride + last_row_len) <span class="kw">as </span>usize,
+                data.len() &gt;= ((height - <span class="number">1</span>) * row_stride + last_row_len),
                 <span class="string">&quot;data.len() must fit the width, height, and row_stride&quot;
             </span>);
             data.as_mut_ptr()
@@ -833,7 +833,7 @@
         Pixbuf::from_stream(<span class="kw-2">&amp;</span>gio::ReadInputStream::new(r), <span class="prelude-val">None</span>::&lt;<span class="kw-2">&amp;</span>gio::Cancellable&gt;)
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_new_from_stream_async&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_new_from_stream_async&quot;</span>)]
     </span><span class="kw">pub fn </span>from_stream_async&lt;
         P: IsA&lt;gio::InputStream&gt;,
         Q: IsA&lt;gio::Cancellable&gt;,
@@ -897,7 +897,7 @@
         }))
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_new_from_stream_at_scale_async&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_new_from_stream_at_scale_async&quot;</span>)]
     </span><span class="kw">pub fn </span>from_stream_at_scale_async&lt;
         P: IsA&lt;gio::InputStream&gt;,
         Q: IsA&lt;gio::Cancellable&gt;,
@@ -990,7 +990,7 @@
     ///
     /// Until you drop the returned reference, you must not call any methods on the pixbuf which may read
     /// or write to the data.
-    </span><span class="attribute">#[allow(clippy::mut_from_ref)]
+    </span><span class="attr">#[allow(clippy::mut_from_ref)]
     #[allow(clippy::missing_safety_doc)]
     #[doc(alias = <span class="string">&quot;gdk_pixbuf_get_pixels_with_length&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_pixels&quot;</span>)]
@@ -1045,7 +1045,7 @@
     ///
     /// ## `height`
     /// Return location for the height of the image
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_get_file_info&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_get_file_info&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_file_info&quot;</span>)]
     </span><span class="kw">pub fn </span>file_info&lt;T: AsRef&lt;Path&gt;&gt;(filename: T) -&gt; <span class="prelude-ty">Option</span>&lt;(PixbufFormat, i32, i32)&gt; {
         <span class="kw">unsafe </span>{
@@ -1083,7 +1083,7 @@
     /// optional `GCancellable` object, `NULL` to ignore
     /// ## `callback`
     /// a `GAsyncReadyCallback` to call when the file info is available
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_get_file_info_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_get_file_info_async&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_file_info_async&quot;</span>)]
     </span><span class="kw">pub fn </span>file_info_async&lt;
         P: IsA&lt;gio::Cancellable&gt;,
@@ -1150,7 +1150,7 @@
         }
     }
 
-    <span class="attribute">#[allow(clippy::type_complexity)]
+    <span class="attr">#[allow(clippy::type_complexity)]
     #[doc(alias = <span class="string">&quot;get_file_info_async&quot;</span>)]
     </span><span class="kw">pub fn </span>file_info_future&lt;T: AsRef&lt;Path&gt; + Clone + <span class="lifetime">&#39;static</span>&gt;(
         filename: T,
@@ -1183,7 +1183,7 @@
     /// ## `buffer`
     ///
     ///   location to receive a pointer to the new buffer.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_save_to_bufferv&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_save_to_bufferv&quot;</span>)]
     </span><span class="kw">pub fn </span>save_to_bufferv(<span class="kw-2">&amp;</span><span class="self">self</span>, type_: <span class="kw-2">&amp;</span>str, options: <span class="kw-2">&amp;</span>[(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span>str)]) -&gt; <span class="prelude-ty">Result</span>&lt;Vec&lt;u8&gt;, Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>buffer = ptr::null_mut();
@@ -1203,7 +1203,7 @@
             <span class="kw">if </span>error.is_null() {
                 <span class="prelude-val">Ok</span>(FromGlibContainer::from_glib_full_num(
                     buffer,
-                    buffer_size.assume_init() <span class="kw">as </span>usize,
+                    buffer_size.assume_init() <span class="kw">as _</span>,
                 ))
             } <span class="kw">else </span>{
                 <span class="prelude-val">Err</span>(from_glib_full(error))
@@ -1232,7 +1232,7 @@
     ///
     /// `TRUE` if the pixbuf was saved successfully, `FALSE` if an
     ///   error was set.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_save_to_streamv&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_save_to_streamv&quot;</span>)]
     </span><span class="kw">pub fn </span>save_to_streamv&lt;P: IsA&lt;gio::OutputStream&gt;, Q: IsA&lt;gio::Cancellable&gt;&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         stream: <span class="kw-2">&amp;</span>P,
@@ -1283,7 +1283,7 @@
     /// optional `GCancellable` object, `NULL` to ignore
     /// ## `callback`
     /// a `GAsyncReadyCallback` to call when the pixbuf is saved
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_save_to_streamv_async&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_save_to_streamv_async&quot;</span>)]
     </span><span class="kw">pub fn </span>save_to_streamv_async&lt;
         P: IsA&lt;gio::OutputStream&gt;,
         Q: IsA&lt;gio::Cancellable&gt;,
@@ -1394,7 +1394,7 @@
     /// # Returns
     ///
     /// whether an error was set
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;gdk_pixbuf_savev&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_savev&quot;</span>)]
     </span><span class="kw">pub fn </span>savev&lt;T: AsRef&lt;Path&gt;&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         filename: T,
@@ -1422,4 +1422,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gdk_pixbuf" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gdk_pixbuf" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (6284998a2 2022-11-12)" data-search-js="search-39ee4160c7dc16c9.js" data-settings-js="settings-7873449fa8c00e11.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

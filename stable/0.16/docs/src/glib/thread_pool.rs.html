@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/thread_pool.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>thread_pool.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../normalize.css"><link rel="stylesheet" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../ayu.css" disabled><link rel="stylesheet" href="../../dark.css" disabled><link rel="stylesheet" href="../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../storage.js"></script><script defer src="../../source-script.js"></script><script defer src="../../source-files.js"></script><script defer src="../../main.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/thread_pool.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>thread_pool.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-83be770da8fbb54b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-860cb8b69b437763.css"><link rel="stylesheet" disabled href="../../static.files/dark-ca7398001115f6db.css"><link rel="stylesheet" disabled href="../../static.files/ayu-2916eb07452214a6.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-74087aa2e88f4475.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-c2d2a5dbaed13e6b.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -408,7 +408,7 @@
 <span class="doccomment">/// The [`ThreadPool`][crate::ThreadPool] struct represents a thread pool. It has three
 /// public read-only members, but the underlying struct is bigger,
 /// so you must not copy this struct.
-</span><span class="attribute">#[derive(Debug)]
+</span><span class="attr">#[derive(Debug)]
 #[doc(alias = <span class="string">&quot;GThreadPool&quot;</span>)]
 </span><span class="kw">pub struct </span>ThreadPool(ptr::NonNull&lt;ffi::GThreadPool&gt;);
 
@@ -416,7 +416,7 @@
 <span class="kw">unsafe impl </span>Sync <span class="kw">for </span>ThreadPool {}
 
 <span class="kw">impl </span>ThreadPool {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_new&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_thread_pool_new&quot;</span>)]
     </span><span class="kw">pub fn </span>shared(max_threads: <span class="prelude-ty">Option</span>&lt;u32&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="self">Self</span>, <span class="kw">crate</span>::Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>err = ptr::null_mut();
@@ -435,7 +435,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_new&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_thread_pool_new&quot;</span>)]
     </span><span class="kw">pub fn </span>exclusive(max_threads: u32) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="self">Self</span>, <span class="kw">crate</span>::Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>err = ptr::null_mut();
@@ -472,7 +472,7 @@
     /// # Returns
     ///
     /// [`true`] on success, [`false`] if an error occurred
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_push&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_thread_pool_push&quot;</span>)]
     </span><span class="kw">pub fn </span>push&lt;F: FnOnce() + Send + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, func: F) -&gt; <span class="prelude-ty">Result</span>&lt;(), <span class="kw">crate</span>::Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>func: Box&lt;<span class="kw">dyn </span>FnOnce() + Send + <span class="lifetime">&#39;static</span>&gt; = Box::new(func);
@@ -534,7 +534,7 @@
     /// # Returns
     ///
     /// [`true`] on success, [`false`] if an error occurred
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_set_max_threads&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_thread_pool_set_max_threads&quot;</span>)]
     </span><span class="kw">pub fn </span>set_max_threads(<span class="kw-2">&amp;</span><span class="self">self</span>, max_threads: <span class="prelude-ty">Option</span>&lt;u32&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), <span class="kw">crate</span>::Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>err = ptr::null_mut();
@@ -556,7 +556,7 @@
     /// # Returns
     ///
     /// the maximal number of threads
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_get_max_threads&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_thread_pool_get_max_threads&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_max_threads&quot;</span>)]
     </span><span class="kw">pub fn </span>max_threads(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;u32&gt; {
         <span class="kw">unsafe </span>{
@@ -574,7 +574,7 @@
     /// # Returns
     ///
     /// the number of threads currently running
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_get_num_threads&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_thread_pool_get_num_threads&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_num_threads&quot;</span>)]
     </span><span class="kw">pub fn </span>num_threads(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::g_thread_pool_get_num_threads(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
@@ -585,7 +585,7 @@
     /// # Returns
     ///
     /// the number of unprocessed tasks
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_unprocessed&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_thread_pool_unprocessed&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_unprocessed&quot;</span>)]
     </span><span class="kw">pub fn </span>unprocessed(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::g_thread_pool_unprocessed(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
@@ -598,7 +598,7 @@
     /// The default value is 2.
     /// ## `max_threads`
     /// maximal number of unused threads
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_set_max_unused_threads&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_thread_pool_set_max_unused_threads&quot;</span>)]
     </span><span class="kw">pub fn </span>set_max_unused_threads(max_threads: <span class="prelude-ty">Option</span>&lt;u32&gt;) {
         <span class="kw">unsafe </span>{
             ffi::g_thread_pool_set_max_unused_threads(max_threads.map(|v| v <span class="kw">as </span>i32).unwrap_or(-<span class="number">1</span>))
@@ -610,7 +610,7 @@
     /// # Returns
     ///
     /// the maximal number of unused threads
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_get_max_unused_threads&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_thread_pool_get_max_unused_threads&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_max_unused_threads&quot;</span>)]
     </span><span class="kw">pub fn </span>max_unused_threads() -&gt; <span class="prelude-ty">Option</span>&lt;u32&gt; {
         <span class="kw">unsafe </span>{
@@ -628,7 +628,7 @@
     /// # Returns
     ///
     /// the number of currently unused threads
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_get_num_unused_threads&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_thread_pool_get_num_unused_threads&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_num_unused_threads&quot;</span>)]
     </span><span class="kw">pub fn </span>num_unused_threads() -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::g_thread_pool_get_num_unused_threads() }
@@ -637,7 +637,7 @@
     <span class="doccomment">/// Stops all currently unused threads. This does not change the
     /// maximal number of unused threads. This function can be used to
     /// regularly stop all unused threads e.g. from `g_timeout_add()`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_stop_unused_threads&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_thread_pool_stop_unused_threads&quot;</span>)]
     </span><span class="kw">pub fn </span>stop_unused_threads() {
         <span class="kw">unsafe </span>{
             ffi::g_thread_pool_stop_unused_threads();
@@ -656,7 +656,7 @@
     /// ## `interval`
     /// the maximum `interval` (in milliseconds)
     ///  a thread can be idle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_set_max_idle_time&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_thread_pool_set_max_idle_time&quot;</span>)]
     </span><span class="kw">pub fn </span>set_max_idle_time(max_idle_time: u32) {
         <span class="kw">unsafe </span>{ ffi::g_thread_pool_set_max_idle_time(max_idle_time) }
     }
@@ -673,7 +673,7 @@
     /// the maximum `interval` (milliseconds) to wait
     ///  for new tasks in the thread pool before stopping the
     ///  thread
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_thread_pool_get_max_idle_time&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_thread_pool_get_max_idle_time&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_max_idle_time&quot;</span>)]
     </span><span class="kw">pub fn </span>max_idle_time() -&gt; u32 {
         <span class="kw">unsafe </span>{ ffi::g_thread_pool_get_max_idle_time() }
@@ -693,11 +693,11 @@
     func()
 }
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_push() {
         <span class="kw">use </span>std::sync::mpsc;
 
@@ -712,7 +712,7 @@
         <span class="macro">assert_eq!</span>(receiver.recv(), <span class="prelude-val">Ok</span>(<span class="bool-val">true</span>));
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_push_future() {
         <span class="kw">let </span>c = <span class="kw">crate</span>::MainContext::new();
         <span class="kw">let </span>p = ThreadPool::shared(<span class="prelude-val">None</span>).unwrap();
@@ -724,4 +724,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (6284998a2 2022-11-12)" data-search-js="search-39ee4160c7dc16c9.js" data-settings-js="settings-7873449fa8c00e11.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

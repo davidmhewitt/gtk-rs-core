@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/variant.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>variant.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../normalize.css"><link rel="stylesheet" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../ayu.css" disabled><link rel="stylesheet" href="../../dark.css" disabled><link rel="stylesheet" href="../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../storage.js"></script><script defer src="../../source-script.js"></script><script defer src="../../source-files.js"></script><script defer src="../../main.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/variant.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>variant.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-83be770da8fbb54b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-860cb8b69b437763.css"><link rel="stylesheet" disabled href="../../static.files/dark-ca7398001115f6db.css"><link rel="stylesheet" disabled href="../../static.files/ayu-2916eb07452214a6.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-74087aa2e88f4475.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-c2d2a5dbaed13e6b.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -3302,7 +3302,7 @@
     /// would use more memory for the serialized data and buffer
     /// management for those dictionaries, but the type information would
     /// be shared.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GVariant&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GVariant&quot;</span>)]
     </span><span class="kw">pub struct </span>Variant(Shared&lt;ffi::GVariant&gt;);
 
     <span class="kw">match fn </span>{
@@ -3317,15 +3317,15 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span><span class="kw">crate</span>::value::ValueType <span class="kw">for </span>Variant {
     <span class="kw">type </span>Type = Variant;
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span><span class="kw">crate</span>::value::ValueTypeOptional <span class="kw">for </span>Variant {}
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">crate</span>::value::FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span>Variant {
     <span class="kw">type </span>Checker = <span class="kw">crate</span>::value::GenericValueTypeOrNoneChecker&lt;<span class="self">Self</span>&gt;;
 
@@ -3336,7 +3336,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span><span class="kw">crate</span>::value::ToValue <span class="kw">for </span>Variant {
     <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Value {
         <span class="kw">unsafe </span>{
@@ -3351,7 +3351,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span><span class="kw">crate</span>::value::ToValueOptional <span class="kw">for </span>Variant {
     <span class="kw">fn </span>to_value_optional(s: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="self">Self</span>&gt;) -&gt; <span class="kw">crate</span>::Value {
         <span class="kw">let </span><span class="kw-2">mut </span>value = <span class="kw">crate</span>::Value::for_value_type::&lt;<span class="self">Self</span>&gt;();
@@ -3366,7 +3366,7 @@
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// An error returned from the [`try_get`](struct.Variant.html#method.try_get) function
 /// on a [`Variant`](struct.Variant.html) when the expected type does not match the actual type.
-</span><span class="attribute">#[derive(Clone, PartialEq, Eq, Debug)]
+</span><span class="attr">#[derive(Clone, PartialEq, Eq, Debug)]
 </span><span class="kw">pub struct </span>VariantTypeMismatchError {
     <span class="kw">pub </span>actual: VariantType,
     <span class="kw">pub </span>expected: VariantType,
@@ -3402,14 +3402,14 @@
     /// # Returns
     ///
     /// a [`VariantType`][crate::VariantType]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_get_type&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_get_type&quot;</span>)]
     </span><span class="kw">pub fn </span>type_(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>VariantTy {
         <span class="kw">unsafe </span>{ VariantTy::from_ptr(ffi::g_variant_get_type(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Returns `true` if the type of the value corresponds to `T`.
-    </span><span class="attribute">#[inline]
+    </span><span class="attr">#[inline]
     #[doc(alias = <span class="string">&quot;g_variant_is_of_type&quot;</span>)]
     </span><span class="kw">pub fn </span>is&lt;T: StaticVariantType&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="self">self</span>.is_type(<span class="kw-2">&amp;</span>T::static_variant_type())
@@ -3419,7 +3419,7 @@
     </span><span class="doccomment">/// Returns `true` if the type of the value corresponds to `type_`.
     ///
     /// This is equivalent to [`self.type_().is_subtype_of(type_)`](VariantTy::is_subtype_of).
-    </span><span class="attribute">#[inline]
+    </span><span class="attr">#[inline]
     #[doc(alias = <span class="string">&quot;g_variant_is_of_type&quot;</span>)]
     </span><span class="kw">pub fn </span>is_type(<span class="kw-2">&amp;</span><span class="self">self</span>, type_: <span class="kw-2">&amp;</span>VariantTy) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -3438,7 +3438,7 @@
     /// # Returns
     ///
     /// the [`VariantClass`][crate::VariantClass] of `self`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_classify&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_classify&quot;</span>)]
     </span><span class="kw">pub fn </span>classify(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::VariantClass {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_variant_classify(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
@@ -3466,7 +3466,7 @@
     /// [GVariant format strings][gvariant-format-strings-pointers].
     /// ## `format_string`
     /// a [`Variant`][struct@crate::Variant] format string
-    </span><span class="attribute">#[inline]
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>get&lt;T: FromVariant&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;T&gt; {
         T::from_variant(<span class="self">self</span>)
     }
@@ -3484,7 +3484,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Boxes value.
-    </span><span class="attribute">#[inline]
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>from_variant(value: <span class="kw-2">&amp;</span>Variant) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_variant_new_variant(value.to_glib_none().<span class="number">0</span>)) }
     }
@@ -3493,7 +3493,7 @@
     </span><span class="doccomment">/// Unboxes self.
     ///
     /// Returns `Some` if self contains a `Variant`.
-    </span><span class="attribute">#[inline]
+    </span><span class="attr">#[inline]
     #[doc(alias = <span class="string">&quot;get_variant&quot;</span>)]
     </span><span class="kw">pub fn </span>as_variant(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Variant&gt; {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_variant_get_variant(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -3536,7 +3536,7 @@
     /// # Returns
     ///
     /// the child at the specified index
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;get_child_value&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;get_child_value&quot;</span>)]
     #[doc(alias = <span class="string">&quot;g_variant_get_child_value&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>child_value(<span class="kw-2">&amp;</span><span class="self">self</span>, index: usize) -&gt; Variant {
@@ -3595,7 +3595,7 @@
     ///
     /// Returns `Some` if the variant has a string type (`s`, `o` or `g` type
     /// strings).
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;get_str&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;get_str&quot;</span>)]
     #[doc(alias = <span class="string">&quot;g_variant_get_string&quot;</span>)]
     </span><span class="kw">pub fn </span>str(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt; {
         <span class="kw">unsafe </span>{
@@ -3608,7 +3608,7 @@
                     } <span class="kw">else </span>{
                         <span class="kw">let </span>ret = str::from_utf8_unchecked(slice::from_raw_parts(
                             ptr <span class="kw">as </span><span class="kw-2">*const </span>u8,
-                            len <span class="kw">as </span>usize,
+                            len <span class="kw">as _</span>,
                         ));
                         <span class="prelude-val">Some</span>(ret)
                     }
@@ -3656,7 +3656,7 @@
     ///
     /// a pointer to
     ///  the fixed array
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_get_fixed_array&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_get_fixed_array&quot;</span>)]
     </span><span class="kw">pub fn </span>fixed_array&lt;T: FixedSizeVariantType&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw-2">&amp;</span>[T], VariantTypeMismatchError&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>expected_ty = T::static_variant_type().as_array();
@@ -3690,7 +3690,7 @@
     /// # Panics
     ///
     /// This function panics if not all variants are of type `T`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_new_array&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_new_array&quot;</span>)]
     </span><span class="kw">pub fn </span>array_from_iter&lt;T: StaticVariantType&gt;(
         children: <span class="kw">impl </span>IntoIterator&lt;Item = Variant&gt;,
     ) -&gt; <span class="self">Self </span>{
@@ -3703,7 +3703,7 @@
     /// # Panics
     ///
     /// This function panics if not all variants are of type `type_`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_new_array&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_new_array&quot;</span>)]
     </span><span class="kw">pub fn </span>array_from_iter_with_type(
         type_: <span class="kw-2">&amp;</span>VariantTy,
         children: <span class="kw">impl </span>IntoIterator&lt;Item = <span class="kw">impl </span>AsRef&lt;Variant&gt;&gt;,
@@ -3729,7 +3729,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Creates a new Variant array from a fixed array.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_new_fixed_array&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_new_fixed_array&quot;</span>)]
     </span><span class="kw">pub fn </span>array_from_fixed_array&lt;T: FixedSizeVariantType&gt;(array: <span class="kw-2">&amp;</span>[T]) -&gt; <span class="self">Self </span>{
         <span class="kw">let </span>type_ = T::static_variant_type();
 
@@ -3745,7 +3745,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Creates a new Variant tuple from children.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_new_tuple&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_new_tuple&quot;</span>)]
     </span><span class="kw">pub fn </span>tuple_from_iter(children: <span class="kw">impl </span>IntoIterator&lt;Item = <span class="kw">impl </span>AsRef&lt;Variant&gt;&gt;) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>builder = mem::MaybeUninit::uninit();
@@ -3762,7 +3762,7 @@
     </span><span class="doccomment">/// Creates a new dictionary entry Variant.
     ///
     /// [DictEntry] should be preferred over this when the types are known statically.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_new_dict_entry&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_new_dict_entry&quot;</span>)]
     </span><span class="kw">pub fn </span>from_dict_entry(key: <span class="kw-2">&amp;</span>Variant, value: <span class="kw-2">&amp;</span>Variant) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{
             from_glib_none(ffi::g_variant_new_dict_entry(
@@ -3774,7 +3774,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Creates a new maybe Variant.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_new_maybe&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_new_maybe&quot;</span>)]
     </span><span class="kw">pub fn </span>from_maybe&lt;T: StaticVariantType&gt;(child: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>Variant&gt;) -&gt; <span class="self">Self </span>{
         <span class="kw">let </span>type_ = T::static_variant_type();
         <span class="kw">match </span>child {
@@ -3789,7 +3789,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Creates a new maybe Variant from a child.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_new_maybe&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_new_maybe&quot;</span>)]
     </span><span class="kw">pub fn </span>from_some(child: <span class="kw-2">&amp;</span>Variant) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{
             from_glib_none(ffi::g_variant_new_maybe(
@@ -3801,7 +3801,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Creates a new maybe Variant with Nothing.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_new_maybe&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_new_maybe&quot;</span>)]
     </span><span class="kw">pub fn </span>from_none(type_: <span class="kw-2">&amp;</span>VariantTy) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{
             from_glib_none(ffi::g_variant_new_maybe(
@@ -3819,7 +3819,7 @@
     /// # Panics
     ///
     /// Panics if compiled with `debug_assertions` and the variant is not maybe-typed.
-    </span><span class="attribute">#[inline]
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>as_maybe(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Variant&gt; {
         <span class="macro">debug_assert!</span>(<span class="self">self</span>.type_().is_maybe());
 
@@ -3844,7 +3844,7 @@
     /// # Returns
     ///
     /// a newly-allocated string holding the result.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_print&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_print&quot;</span>)]
     </span><span class="kw">pub fn </span>print(<span class="kw-2">&amp;</span><span class="self">self</span>, type_annotate: bool) -&gt; <span class="kw">crate</span>::GString {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::g_variant_print(
@@ -3856,7 +3856,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Parses a GVariant from the text representation produced by [`print()`](Self::print).
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_parse&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_parse&quot;</span>)]
     </span><span class="kw">pub fn </span>parse(type_: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>VariantTy&gt;, text: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="self">Self</span>, <span class="kw">crate</span>::Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
@@ -3899,7 +3899,7 @@
     /// # Returns
     ///
     /// a new [`Variant`][struct@crate::Variant] with a floating reference
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_new_from_bytes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_new_from_bytes&quot;</span>)]
     </span><span class="kw">pub fn </span>from_bytes&lt;T: StaticVariantType&gt;(bytes: <span class="kw-2">&amp;</span>Bytes) -&gt; <span class="self">Self </span>{
         Variant::from_bytes_with_type(bytes, <span class="kw-2">&amp;</span>T::static_variant_type())
     }
@@ -3965,7 +3965,7 @@
     /// # Returns
     ///
     /// a new floating [`Variant`][struct@crate::Variant] of type `type_`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_new_from_data&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_new_from_data&quot;</span>)]
     </span><span class="kw">pub fn </span>from_data&lt;T: StaticVariantType, A: AsRef&lt;[u8]&gt;&gt;(data: A) -&gt; <span class="self">Self </span>{
         Variant::from_data_with_type(data, <span class="kw-2">&amp;</span>T::static_variant_type())
     }
@@ -3989,7 +3989,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Constructs a new serialized-mode GVariant instance with a given type.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_new_from_bytes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_new_from_bytes&quot;</span>)]
     </span><span class="kw">pub fn </span>from_bytes_with_type(bytes: <span class="kw-2">&amp;</span>Bytes, type_: <span class="kw-2">&amp;</span>VariantTy) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{
             from_glib_none(ffi::g_variant_new_from_bytes(
@@ -4023,7 +4023,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Constructs a new serialized-mode GVariant instance with a given type.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_new_from_data&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_new_from_data&quot;</span>)]
     </span><span class="kw">pub fn </span>from_data_with_type&lt;A: AsRef&lt;[u8]&gt;&gt;(data: A, type_: <span class="kw-2">&amp;</span>VariantTy) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>data = Box::new(data);
@@ -4092,7 +4092,7 @@
     /// # Returns
     ///
     /// A new [`Bytes`][crate::Bytes] representing the variant data
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;get_data_as_bytes&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;get_data_as_bytes&quot;</span>)]
     #[doc(alias = <span class="string">&quot;g_variant_get_data_as_bytes&quot;</span>)]
     </span><span class="kw">pub fn </span>data_as_bytes(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Bytes {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_variant_get_data_as_bytes(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -4130,7 +4130,7 @@
     /// # Returns
     ///
     /// the serialized form of `self`, or [`None`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_get_data&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_get_data&quot;</span>)]
     </span><span class="kw">pub fn </span>data(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>[u8] {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>selfv = <span class="self">self</span>.to_glib_none();
@@ -4139,7 +4139,7 @@
                 <span class="kw">return </span><span class="kw-2">&amp;</span>[];
             }
             <span class="kw">let </span>ptr = ffi::g_variant_get_data(selfv.<span class="number">0</span>);
-            slice::from_raw_parts(ptr <span class="kw">as </span><span class="kw-2">*const </span>u8, len <span class="kw">as </span>usize)
+            slice::from_raw_parts(ptr <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>, len <span class="kw">as _</span>)
         }
     }
 
@@ -4161,7 +4161,7 @@
     /// # Returns
     ///
     /// the serialized size of `self`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_get_size&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_get_size&quot;</span>)]
     </span><span class="kw">pub fn </span>size(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; usize {
         <span class="kw">unsafe </span>{ ffi::g_variant_get_size(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
@@ -4183,7 +4183,7 @@
     /// machine might be different) its endianness must also be available.
     ///
     /// This function is approximately O(n) in the size of `data`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_store&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_store&quot;</span>)]
     </span><span class="kw">pub fn </span>store(<span class="kw-2">&amp;</span><span class="self">self</span>, data: <span class="kw-2">&amp;mut </span>[u8]) -&gt; <span class="prelude-ty">Result</span>&lt;usize, <span class="kw">crate</span>::BoolError&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>size = ffi::g_variant_get_size(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
@@ -4227,7 +4227,7 @@
     /// # Returns
     ///
     /// a trusted [`Variant`][struct@crate::Variant]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_get_normal_form&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_get_normal_form&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>normal_form(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_variant_get_normal_form(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -4251,7 +4251,7 @@
     /// # Returns
     ///
     /// the byteswapped form of `self`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_byteswap&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_byteswap&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>byteswap(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{ from_glib_full(ffi::g_variant_byteswap(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -4275,7 +4275,7 @@
     /// # Returns
     ///
     /// the number of children in the container
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_n_children&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_n_children&quot;</span>)]
     </span><span class="kw">pub fn </span>n_children(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; usize {
         <span class="macro">assert!</span>(<span class="self">self</span>.is_container());
 
@@ -4333,7 +4333,7 @@
     /// # Returns
     ///
     /// [`true`] if `self` is a container
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_is_container&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_is_container&quot;</span>)]
     </span><span class="kw">pub fn </span>is_container(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_variant_is_container(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
@@ -4358,7 +4358,7 @@
     /// # Returns
     ///
     /// [`true`] if `self` is in normal form
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_is_normal_form&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_is_normal_form&quot;</span>)]
     </span><span class="kw">pub fn </span>is_normal_form(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_variant_is_normal_form(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
@@ -4380,7 +4380,7 @@
     /// # Returns
     ///
     /// [`true`] if `string` is a D-Bus object path
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_is_object_path&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_is_object_path&quot;</span>)]
     </span><span class="kw">pub fn </span>is_object_path(string: <span class="kw-2">&amp;</span>str) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_variant_is_object_path(string.to_glib_none().<span class="number">0</span>)) }
     }
@@ -4400,7 +4400,7 @@
     /// # Returns
     ///
     /// [`true`] if `string` is a D-Bus type signature
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_is_signature&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_variant_is_signature&quot;</span>)]
     </span><span class="kw">pub fn </span>is_signature(string: <span class="kw-2">&amp;</span>str) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_variant_is_signature(string.to_glib_none().<span class="number">0</span>)) }
     }
@@ -4434,7 +4434,7 @@
 }
 
 <span class="kw">impl </span>PartialEq <span class="kw">for </span>Variant {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_equal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_variant_equal&quot;</span>)]
     </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::g_variant_equal(
@@ -4471,7 +4471,7 @@
 }
 
 <span class="kw">impl </span>Hash <span class="kw">for </span>Variant {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_variant_hash&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_variant_hash&quot;</span>)]
     </span><span class="kw">fn </span>hash&lt;H: Hasher&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, state: <span class="kw-2">&amp;mut </span>H) {
         <span class="kw">unsafe </span>{
             state.write_u32(ffi::g_variant_hash(
@@ -4840,7 +4840,7 @@
     }
 }
 
-<span class="attribute">#[test]
+<span class="attr">#[test]
 </span><span class="kw">fn </span>test_regression_from_variant_panics() {
     <span class="kw">let </span>variant = <span class="string">&quot;text&quot;</span>.to_variant();
     <span class="kw">let </span>hashmap: <span class="prelude-ty">Option</span>&lt;HashMap&lt;u64, u64&gt;&gt; = FromVariant::from_variant(<span class="kw-2">&amp;</span>variant);
@@ -5206,7 +5206,7 @@
 /// types.
 ///
 /// This wrapper type can hold for example `Vec&lt;u8&gt;`, `Box&lt;[u8]&gt;` and similar types.
-</span><span class="attribute">#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+</span><span class="attr">#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
 </span><span class="kw">pub struct </span>FixedSizeVariantArray&lt;A, T&gt;(A, std::marker::PhantomData&lt;T&gt;)
 <span class="kw">where
     </span>A: AsRef&lt;[T]&gt;,
@@ -5288,7 +5288,7 @@
 }
 
 <span class="doccomment">/// A wrapper type around `Variant` handles.
-</span><span class="attribute">#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
+</span><span class="attr">#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 </span><span class="kw">pub struct </span>Handle(<span class="kw">pub </span>i32);
 
 <span class="kw">impl </span>From&lt;i32&gt; <span class="kw">for </span>Handle {
@@ -5330,7 +5330,7 @@
 <span class="doccomment">/// A wrapper type around `Variant` object paths.
 ///
 /// Values of these type are guaranteed to be valid object paths.
-</span><span class="attribute">#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
+</span><span class="attr">#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 </span><span class="kw">pub struct </span>ObjectPath(String);
 
 <span class="kw">impl </span>ObjectPath {
@@ -5386,7 +5386,7 @@
 }
 
 <span class="kw">impl </span>FromVariant <span class="kw">for </span>ObjectPath {
-    <span class="attribute">#[allow(unused_unsafe)]
+    <span class="attr">#[allow(unused_unsafe)]
     </span><span class="kw">fn </span>from_variant(variant: <span class="kw-2">&amp;</span>Variant) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="self">Self</span>&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">if </span>variant.is::&lt;<span class="self">Self</span>&gt;() {
@@ -5401,7 +5401,7 @@
 <span class="doccomment">/// A wrapper type around `Variant` signatures.
 ///
 /// Values of these type are guaranteed to be valid signatures.
-</span><span class="attribute">#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
+</span><span class="attr">#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 </span><span class="kw">pub struct </span>Signature(String);
 
 <span class="kw">impl </span>Signature {
@@ -5457,7 +5457,7 @@
 }
 
 <span class="kw">impl </span>FromVariant <span class="kw">for </span>Signature {
-    <span class="attribute">#[allow(unused_unsafe)]
+    <span class="attr">#[allow(unused_unsafe)]
     </span><span class="kw">fn </span>from_variant(variant: <span class="kw-2">&amp;</span>Variant) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="self">Self</span>&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">if </span>variant.is::&lt;<span class="self">Self</span>&gt;() {
@@ -5469,14 +5469,14 @@
     }
 }
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use </span>std::collections::{HashMap, HashSet};
 
     <span class="macro">macro_rules! </span>unsigned {
         (<span class="macro-nonterminal">$name</span>:ident, <span class="macro-nonterminal">$ty</span>:ident) =&gt; {
-            <span class="attribute">#[test]
+            <span class="attr">#[test]
             </span><span class="kw">fn </span><span class="macro-nonterminal">$name</span>() {
                 <span class="kw">let </span><span class="kw-2">mut </span>n = <span class="macro-nonterminal">$ty::max_value</span>();
                 <span class="kw">while </span>n &gt; <span class="number">0 </span>{
@@ -5490,7 +5490,7 @@
 
     <span class="macro">macro_rules! </span>signed {
         (<span class="macro-nonterminal">$name</span>:ident, <span class="macro-nonterminal">$ty</span>:ident) =&gt; {
-            <span class="attribute">#[test]
+            <span class="attr">#[test]
             </span><span class="kw">fn </span><span class="macro-nonterminal">$name</span>() {
                 <span class="kw">let </span><span class="kw-2">mut </span>n = <span class="macro-nonterminal">$ty::max_value</span>();
                 <span class="kw">while </span>n &gt; <span class="number">0 </span>{
@@ -5512,7 +5512,7 @@
     <span class="macro">signed!</span>(test_i32, i32);
     <span class="macro">signed!</span>(test_i64, i64);
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_str() {
         <span class="kw">let </span>s = <span class="string">&quot;this is a test&quot;</span>;
         <span class="kw">let </span>v = s.to_variant();
@@ -5520,7 +5520,7 @@
         <span class="macro">assert_eq!</span>(<span class="number">42u32</span>.to_variant().str(), <span class="prelude-val">None</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_fixed_array() {
         <span class="kw">let </span>b = <span class="string">b&quot;this is a test&quot;</span>;
         <span class="kw">let </span>v = Variant::array_from_fixed_array(<span class="kw-2">&amp;</span>b[..]);
@@ -5543,14 +5543,14 @@
         <span class="kw">let </span>b = [<span class="number">1.0f64</span>, <span class="number">2.0f64</span>, <span class="number">3.0f64</span>];
         <span class="kw">let </span>v = Variant::array_from_fixed_array(<span class="kw-2">&amp;</span>b);
         <span class="macro">assert_eq!</span>(v.type_().as_str(), <span class="string">&quot;ad&quot;</span>);
-        <span class="attribute">#[allow(clippy::float_cmp)]
+        <span class="attr">#[allow(clippy::float_cmp)]
         </span>{
             <span class="macro">assert_eq!</span>(v.fixed_array::&lt;f64&gt;().unwrap(), b);
         }
         <span class="macro">assert!</span>(v.fixed_array::&lt;u64&gt;().is_err());
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_fixed_variant_array() {
         <span class="kw">let </span>b = FixedSizeVariantArray::from(<span class="kw-2">&amp;</span><span class="string">b&quot;this is a test&quot;</span>[..]);
         <span class="kw">let </span>v = b.to_variant();
@@ -5566,7 +5566,7 @@
         <span class="macro">assert_eq!</span>(v.get::&lt;FixedSizeVariantArray&lt;Vec&lt;i32&gt;, i32&gt;&gt;().unwrap(), b);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_string() {
         <span class="kw">let </span>s = String::from(<span class="string">&quot;this is a test&quot;</span>);
         <span class="kw">let </span>v = s.to_variant();
@@ -5574,7 +5574,7 @@
         <span class="macro">assert_eq!</span>(v.normal_form(), v);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_eq() {
         <span class="kw">let </span>v1 = <span class="string">&quot;this is a test&quot;</span>.to_variant();
         <span class="kw">let </span>v2 = <span class="string">&quot;this is a test&quot;</span>.to_variant();
@@ -5583,7 +5583,7 @@
         <span class="macro">assert_ne!</span>(v1, v3);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_hash() {
         <span class="kw">let </span>v1 = <span class="string">&quot;this is a test&quot;</span>.to_variant();
         <span class="kw">let </span>v2 = <span class="string">&quot;this is a test&quot;</span>.to_variant();
@@ -5599,7 +5599,7 @@
         </span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_array() {
         <span class="macro">assert_eq!</span>(&lt;Vec&lt;<span class="kw-2">&amp;</span>str&gt;&gt;::static_variant_type().as_str(), <span class="string">&quot;as&quot;</span>);
         <span class="macro">assert_eq!</span>(
@@ -5613,7 +5613,7 @@
         <span class="macro">assert!</span>(o.array_iter_str().is_err());
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_array_from_iter() {
         <span class="kw">let </span>a = Variant::array_from_iter::&lt;String&gt;(
             [<span class="string">&quot;foo&quot;</span>, <span class="string">&quot;bar&quot;</span>, <span class="string">&quot;baz&quot;</span>].into_iter().map(|s| s.to_variant()),
@@ -5626,7 +5626,7 @@
         <span class="macro">assert_eq!</span>(a.try_child_get::&lt;String&gt;(<span class="number">2</span>), <span class="prelude-val">Ok</span>(<span class="prelude-val">Some</span>(String::from(<span class="string">&quot;baz&quot;</span>))));
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_array_collect() {
         <span class="kw">let </span>a = [<span class="string">&quot;foo&quot;</span>, <span class="string">&quot;bar&quot;</span>, <span class="string">&quot;baz&quot;</span>].into_iter().collect::&lt;Variant&gt;();
         <span class="macro">assert_eq!</span>(a.type_().as_str(), <span class="string">&quot;as&quot;</span>);
@@ -5637,7 +5637,7 @@
         <span class="macro">assert_eq!</span>(a.try_child_get::&lt;String&gt;(<span class="number">2</span>), <span class="prelude-val">Ok</span>(<span class="prelude-val">Some</span>(String::from(<span class="string">&quot;baz&quot;</span>))));
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_tuple() {
         <span class="macro">assert_eq!</span>(&lt;(<span class="kw-2">&amp;</span>str, u32)&gt;::static_variant_type().as_str(), <span class="string">&quot;(su)&quot;</span>);
         <span class="macro">assert_eq!</span>(&lt;(<span class="kw-2">&amp;</span>str, u8, u32)&gt;::static_variant_type().as_str(), <span class="string">&quot;(syu)&quot;</span>);
@@ -5652,7 +5652,7 @@
         );
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_tuple_from_iter() {
         <span class="kw">let </span>a = Variant::tuple_from_iter([<span class="string">&quot;foo&quot;</span>.to_variant(), <span class="number">1u8</span>.to_variant(), <span class="number">2i32</span>.to_variant()]);
         <span class="macro">assert_eq!</span>(a.type_().as_str(), <span class="string">&quot;(syi)&quot;</span>);
@@ -5663,7 +5663,7 @@
         <span class="macro">assert_eq!</span>(a.try_child_get::&lt;i32&gt;(<span class="number">2</span>), <span class="prelude-val">Ok</span>(<span class="prelude-val">Some</span>(<span class="number">2i32</span>)));
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_empty() {
         <span class="macro">assert_eq!</span>(&lt;()&gt;::static_variant_type().as_str(), <span class="string">&quot;()&quot;</span>);
         <span class="kw">let </span>a = ().to_variant();
@@ -5671,7 +5671,7 @@
         <span class="macro">assert_eq!</span>(a.get::&lt;()&gt;(), <span class="prelude-val">Some</span>(()));
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_maybe() {
         <span class="macro">assert!</span>(&lt;<span class="prelude-ty">Option</span>&lt;()&gt;&gt;::static_variant_type().is_maybe());
         <span class="kw">let </span>m1 = <span class="prelude-val">Some</span>(()).to_variant();
@@ -5684,7 +5684,7 @@
         <span class="macro">assert!</span>(m2.as_maybe().is_none());
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_btreemap() {
         <span class="macro">assert_eq!</span>(
             &lt;BTreeMap&lt;String, u32&gt;&gt;::static_variant_type().as_str(),
@@ -5694,7 +5694,7 @@
         </span><span class="kw">let </span><span class="kw-2">mut </span>m = BTreeMap::new();
         <span class="kw">let </span>total = <span class="number">20</span>;
         <span class="kw">for </span>n <span class="kw">in </span><span class="number">0</span>..total {
-            <span class="kw">let </span>k = <span class="macro">format!</span>(<span class="string">&quot;v{:04}&quot;</span>, n);
+            <span class="kw">let </span>k = <span class="macro">format!</span>(<span class="string">&quot;v{n:04}&quot;</span>);
             m.insert(k, n <span class="kw">as </span>u32);
         }
         <span class="kw">let </span>v = m.to_variant();
@@ -5711,7 +5711,7 @@
         <span class="macro">assert_eq!</span>(BTreeMap::from_variant(<span class="kw-2">&amp;</span>v).unwrap(), m);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_get() -&gt; <span class="prelude-ty">Result</span>&lt;(), Box&lt;<span class="kw">dyn </span>std::error::Error&gt;&gt; {
         <span class="kw">let </span>u = <span class="number">42u32</span>.to_variant();
         <span class="macro">assert!</span>(u.get::&lt;i32&gt;().is_none());
@@ -5722,14 +5722,14 @@
         <span class="prelude-val">Ok</span>(())
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_byteswap() {
         <span class="kw">let </span>u = <span class="number">42u32</span>.to_variant();
         <span class="macro">assert_eq!</span>(u.byteswap().get::&lt;u32&gt;().unwrap(), <span class="number">704643072u32</span>);
         <span class="macro">assert_eq!</span>(u.byteswap().byteswap().get::&lt;u32&gt;().unwrap(), <span class="number">42u32</span>);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_try_child() {
         <span class="kw">let </span>a = [<span class="string">&quot;foo&quot;</span>].to_variant();
         <span class="macro">assert!</span>(a.try_child_value(<span class="number">0</span>).is_some());
@@ -5743,7 +5743,7 @@
         <span class="macro">assert!</span>(u.try_child_get::&lt;String&gt;(<span class="number">0</span>).unwrap().is_none());
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_serialize() {
         <span class="kw">let </span>a = (<span class="string">&quot;test&quot;</span>, <span class="number">1u8</span>, <span class="number">2u32</span>).to_variant();
 
@@ -5766,7 +5766,7 @@
         <span class="macro">assert_eq!</span>(a, c);
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_print_parse() {
         <span class="kw">let </span>a = (<span class="string">&quot;test&quot;</span>, <span class="number">1u8</span>, <span class="number">2u32</span>).to_variant();
 
@@ -5777,7 +5777,7 @@
         <span class="macro">assert_eq!</span>(a, a3);
     }
 
-    <span class="attribute">#[cfg(any(unix, windows))]
+    <span class="attr">#[cfg(any(unix, windows))]
     #[test]
     </span><span class="kw">fn </span>test_paths() {
         <span class="kw">use </span>std::path::PathBuf;
@@ -5788,4 +5788,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (6284998a2 2022-11-12)" data-search-js="search-39ee4160c7dc16c9.js" data-settings-js="settings-7873449fa8c00e11.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `graphene/src/auto/matrix.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>matrix.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../../normalize.css"><link rel="stylesheet" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../../ayu.css" disabled><link rel="stylesheet" href="../../../dark.css" disabled><link rel="stylesheet" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `graphene/src/auto/matrix.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>matrix.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-83be770da8fbb54b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-860cb8b69b437763.css"><link rel="stylesheet" disabled href="../../../static.files/dark-ca7398001115f6db.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-2916eb07452214a6.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-74087aa2e88f4475.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-c2d2a5dbaed13e6b.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../../graphene/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../graphene/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../graphene/index.html"><img class="rust-logo" src="../../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1199,7 +1199,7 @@
     ///
     /// ## `perspective`
     /// the perspective vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_decompose&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_decompose&quot;</span>)]
     </span><span class="kw">pub fn </span>decompose(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;(Vec3, Vec3, Quaternion, Vec3, Vec4)&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>translate = Vec3::uninitialized();
@@ -1228,12 +1228,12 @@
     /// # Returns
     ///
     /// the value of the determinant
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_determinant&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_determinant&quot;</span>)]
     </span><span class="kw">pub fn </span>determinant(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_matrix_determinant(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_equal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_equal&quot;</span>)]
     </span><span class="kw">fn </span>equal(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Matrix) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_matrix_equal(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, b.to_glib_none().<span class="number">0</span>) }
     }
@@ -1271,7 +1271,7 @@
     /// # Returns
     ///
     /// `true` if the matrices are equal. and `false` otherwise
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_equal_fast&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_equal_fast&quot;</span>)]
     </span><span class="kw">pub fn </span>equal_fast(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Matrix) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_matrix_equal_fast(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, b.to_glib_none().<span class="number">0</span>) }
     }
@@ -1286,7 +1286,7 @@
     /// ## `res`
     /// return location for the [`Vec4`][crate::Vec4]
     ///  that is used to store the row vector
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_get_row&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_get_row&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_row&quot;</span>)]
     </span><span class="kw">pub fn </span>row(<span class="kw-2">&amp;</span><span class="self">self</span>, index_: u32) -&gt; Vec4 {
         <span class="kw">unsafe </span>{
@@ -1305,7 +1305,7 @@
     /// # Returns
     ///
     /// the value at the given indices
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_get_value&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_get_value&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_value&quot;</span>)]
     </span><span class="kw">pub fn </span>value(<span class="kw-2">&amp;</span><span class="self">self</span>, row: u32, col: u32) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_matrix_get_value(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, row, col) }
@@ -1316,7 +1316,7 @@
     /// # Returns
     ///
     /// the value of the scaling factor
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_get_x_scale&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_get_x_scale&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_x_scale&quot;</span>)]
     </span><span class="kw">pub fn </span>x_scale(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_matrix_get_x_scale(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -1327,7 +1327,7 @@
     /// # Returns
     ///
     /// the translation component
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_get_x_translation&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_get_x_translation&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_x_translation&quot;</span>)]
     </span><span class="kw">pub fn </span>x_translation(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_matrix_get_x_translation(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -1338,7 +1338,7 @@
     /// # Returns
     ///
     /// the value of the scaling factor
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_get_y_scale&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_get_y_scale&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_y_scale&quot;</span>)]
     </span><span class="kw">pub fn </span>y_scale(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_matrix_get_y_scale(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -1349,7 +1349,7 @@
     /// # Returns
     ///
     /// the translation component
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_get_y_translation&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_get_y_translation&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_y_translation&quot;</span>)]
     </span><span class="kw">pub fn </span>y_translation(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_matrix_get_y_translation(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -1360,7 +1360,7 @@
     /// # Returns
     ///
     /// the value of the scaling factor
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_get_z_scale&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_get_z_scale&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_z_scale&quot;</span>)]
     </span><span class="kw">pub fn </span>z_scale(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_matrix_get_z_scale(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -1371,7 +1371,7 @@
     /// # Returns
     ///
     /// the translation component
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_get_z_translation&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_get_z_translation&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_z_translation&quot;</span>)]
     </span><span class="kw">pub fn </span>z_translation(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f32 {
         <span class="kw">unsafe </span>{ ffi::graphene_matrix_get_z_translation(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
@@ -1394,7 +1394,7 @@
     /// ## `res`
     /// return location for the
     ///  interpolated matrix
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_interpolate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_interpolate&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>interpolate(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Matrix, factor: f64) -&gt; Matrix {
         <span class="kw">unsafe </span>{
@@ -1418,7 +1418,7 @@
     /// ## `res`
     /// return location for the
     ///  inverse matrix
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_inverse&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_inverse&quot;</span>)]
     </span><span class="kw">pub fn </span>inverse(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Matrix&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>res = Matrix::uninitialized();
@@ -1438,7 +1438,7 @@
     ///
     /// `true` if the matrix is compatible with an affine
     ///  transformation matrix
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_is_2d&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_is_2d&quot;</span>)]
     </span><span class="kw">pub fn </span>is_2d(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_matrix_is_2d(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
@@ -1448,7 +1448,7 @@
     /// # Returns
     ///
     /// `true` if the back face of the matrix is visible
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_is_backface_visible&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_is_backface_visible&quot;</span>)]
     </span><span class="kw">pub fn </span>is_backface_visible(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_matrix_is_backface_visible(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
@@ -1458,7 +1458,7 @@
     /// # Returns
     ///
     /// `true` if the matrix is the identity matrix
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_is_identity&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_is_identity&quot;</span>)]
     </span><span class="kw">pub fn </span>is_identity(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_matrix_is_identity(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
@@ -1468,7 +1468,7 @@
     /// # Returns
     ///
     /// `true` if the matrix is singular
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_is_singular&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_is_singular&quot;</span>)]
     </span><span class="kw">pub fn </span>is_singular(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_matrix_is_singular(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
@@ -1486,7 +1486,7 @@
     /// ## `res`
     /// return location for the matrix
     ///  result
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_multiply&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_multiply&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>multiply(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Matrix) -&gt; Matrix {
         <span class="kw">unsafe </span>{
@@ -1512,7 +1512,7 @@
     ///
     /// `true` if the two matrices are near each other, and
     ///  `false` otherwise
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_near&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_near&quot;</span>)]
     </span><span class="kw">pub fn </span>near(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Matrix, epsilon: f32) -&gt; bool {
         <span class="kw">unsafe </span>{ ffi::graphene_matrix_near(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, b.to_glib_none().<span class="number">0</span>, epsilon) }
     }
@@ -1524,7 +1524,7 @@
     ///
     /// ## `res`
     /// return location for the normalized matrix
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_normalize&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_normalize&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>normalize(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Matrix {
         <span class="kw">unsafe </span>{
@@ -1544,7 +1544,7 @@
     /// ## `res`
     /// return location for the
     ///  perspective matrix
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_perspective&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_perspective&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>perspective(<span class="kw-2">&amp;</span><span class="self">self</span>, depth: f32) -&gt; Matrix {
         <span class="kw">unsafe </span>{
@@ -1562,7 +1562,7 @@
     ///
     /// This function is only useful for debugging; there are no guarantees
     /// made on the format of the output.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_print&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_print&quot;</span>)]
     </span><span class="kw">pub fn </span>print(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::graphene_matrix_print(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
@@ -1579,7 +1579,7 @@
     /// ## `res`
     /// return location for the projected
     ///  point
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_project_point&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_project_point&quot;</span>)]
     </span><span class="kw">pub fn </span>project_point(<span class="kw-2">&amp;</span><span class="self">self</span>, p: <span class="kw-2">&amp;</span>Point) -&gt; Point {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>res = Point::uninitialized();
@@ -1604,7 +1604,7 @@
     /// ## `res`
     /// return location for the projected
     ///  rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_project_rect&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_project_rect&quot;</span>)]
     </span><span class="kw">pub fn </span>project_rect(<span class="kw-2">&amp;</span><span class="self">self</span>, r: <span class="kw-2">&amp;</span>Rect) -&gt; Quad {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>res = Quad::uninitialized();
@@ -1630,7 +1630,7 @@
     /// ## `res`
     /// return location for the projected
     ///  rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_project_rect_bounds&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_project_rect_bounds&quot;</span>)]
     </span><span class="kw">pub fn </span>project_rect_bounds(<span class="kw-2">&amp;</span><span class="self">self</span>, r: <span class="kw-2">&amp;</span>Rect) -&gt; Rect {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>res = Rect::uninitialized();
@@ -1652,7 +1652,7 @@
     /// the rotation angle, in degrees
     /// ## `axis`
     /// the rotation axis, as a [`Vec3`][crate::Vec3]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_rotate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_rotate&quot;</span>)]
     </span><span class="kw">pub fn </span>rotate(<span class="kw-2">&amp;mut </span><span class="self">self</span>, angle: f32, axis: <span class="kw-2">&amp;</span>Vec3) {
         <span class="kw">unsafe </span>{
             ffi::graphene_matrix_rotate(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>, angle, axis.to_glib_none().<span class="number">0</span>);
@@ -1663,7 +1663,7 @@
     /// [`Euler`][crate::Euler].
     /// ## `e`
     /// a rotation described by a [`Euler`][crate::Euler]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_rotate_euler&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_rotate_euler&quot;</span>)]
     </span><span class="kw">pub fn </span>rotate_euler(<span class="kw-2">&amp;mut </span><span class="self">self</span>, e: <span class="kw-2">&amp;</span>Euler) {
         <span class="kw">unsafe </span>{
             ffi::graphene_matrix_rotate_euler(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>, e.to_glib_none().<span class="number">0</span>);
@@ -1677,7 +1677,7 @@
     /// then multiplying `self` with the rotation matrix.
     /// ## `q`
     /// a rotation described by a [`Quaternion`][crate::Quaternion]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_rotate_quaternion&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_rotate_quaternion&quot;</span>)]
     </span><span class="kw">pub fn </span>rotate_quaternion(<span class="kw-2">&amp;mut </span><span class="self">self</span>, q: <span class="kw-2">&amp;</span>Quaternion) {
         <span class="kw">unsafe </span>{
             ffi::graphene_matrix_rotate_quaternion(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>, q.to_glib_none().<span class="number">0</span>);
@@ -1690,7 +1690,7 @@
     /// See also: [`rotate()`][Self::rotate()]
     /// ## `angle`
     /// the rotation angle, in degrees
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_rotate_x&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_rotate_x&quot;</span>)]
     </span><span class="kw">pub fn </span>rotate_x(<span class="kw-2">&amp;mut </span><span class="self">self</span>, angle: f32) {
         <span class="kw">unsafe </span>{
             ffi::graphene_matrix_rotate_x(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>, angle);
@@ -1703,7 +1703,7 @@
     /// See also: [`rotate()`][Self::rotate()]
     /// ## `angle`
     /// the rotation angle, in degrees
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_rotate_y&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_rotate_y&quot;</span>)]
     </span><span class="kw">pub fn </span>rotate_y(<span class="kw-2">&amp;mut </span><span class="self">self</span>, angle: f32) {
         <span class="kw">unsafe </span>{
             ffi::graphene_matrix_rotate_y(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>, angle);
@@ -1716,7 +1716,7 @@
     /// See also: [`rotate()`][Self::rotate()]
     /// ## `angle`
     /// the rotation angle, in degrees
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_rotate_z&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_rotate_z&quot;</span>)]
     </span><span class="kw">pub fn </span>rotate_z(<span class="kw-2">&amp;mut </span><span class="self">self</span>, angle: f32) {
         <span class="kw">unsafe </span>{
             ffi::graphene_matrix_rotate_z(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>, angle);
@@ -1734,7 +1734,7 @@
     /// scaling factor on the Y axis
     /// ## `factor_z`
     /// scaling factor on the Z axis
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_scale&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_scale&quot;</span>)]
     </span><span class="kw">pub fn </span>scale(<span class="kw-2">&amp;mut </span><span class="self">self</span>, factor_x: f32, factor_y: f32, factor_z: f32) {
         <span class="kw">unsafe </span>{
             ffi::graphene_matrix_scale(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>, factor_x, factor_y, factor_z);
@@ -1744,7 +1744,7 @@
     <span class="doccomment">/// Adds a skew of `factor` on the X and Y axis to the given matrix.
     /// ## `factor`
     /// skew factor
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_skew_xy&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_skew_xy&quot;</span>)]
     </span><span class="kw">pub fn </span>skew_xy(<span class="kw-2">&amp;mut </span><span class="self">self</span>, factor: f32) {
         <span class="kw">unsafe </span>{
             ffi::graphene_matrix_skew_xy(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>, factor);
@@ -1754,7 +1754,7 @@
     <span class="doccomment">/// Adds a skew of `factor` on the X and Z axis to the given matrix.
     /// ## `factor`
     /// skew factor
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_skew_xz&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_skew_xz&quot;</span>)]
     </span><span class="kw">pub fn </span>skew_xz(<span class="kw-2">&amp;mut </span><span class="self">self</span>, factor: f32) {
         <span class="kw">unsafe </span>{
             ffi::graphene_matrix_skew_xz(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>, factor);
@@ -1764,7 +1764,7 @@
     <span class="doccomment">/// Adds a skew of `factor` on the Y and Z axis to the given matrix.
     /// ## `factor`
     /// skew factor
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_skew_yz&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_skew_yz&quot;</span>)]
     </span><span class="kw">pub fn </span>skew_yz(<span class="kw-2">&amp;mut </span><span class="self">self</span>, factor: f32) {
         <span class="kw">unsafe </span>{
             ffi::graphene_matrix_skew_yz(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>, factor);
@@ -1811,7 +1811,7 @@
     ///
     /// ## `y_0`
     /// return location for the y0 member
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_to_2d&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_to_2d&quot;</span>)]
     </span><span class="kw">pub fn </span>to_2d(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;(f64, f64, f64, f64, f64, f64)&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>xx = mem::MaybeUninit::uninit();
@@ -1859,7 +1859,7 @@
     /// ## `res`
     /// return location for the bounds
     ///  of the transformed rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_transform_bounds&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_transform_bounds&quot;</span>)]
     </span><span class="kw">pub fn </span>transform_bounds(<span class="kw-2">&amp;</span><span class="self">self</span>, r: <span class="kw-2">&amp;</span>Rect) -&gt; Rect {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>res = Rect::uninitialized();
@@ -1885,7 +1885,7 @@
     /// ## `res`
     /// return location for the bounds
     ///  of the transformed box
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_transform_box&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_transform_box&quot;</span>)]
     </span><span class="kw">pub fn </span>transform_box(<span class="kw-2">&amp;</span><span class="self">self</span>, b: <span class="kw-2">&amp;</span>Box) -&gt; Box {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>res = Box::uninitialized();
@@ -1914,7 +1914,7 @@
     /// ## `res`
     /// return location for the
     ///  transformed [`Point`][crate::Point]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_transform_point&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_transform_point&quot;</span>)]
     </span><span class="kw">pub fn </span>transform_point(<span class="kw-2">&amp;</span><span class="self">self</span>, p: <span class="kw-2">&amp;</span>Point) -&gt; Point {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>res = Point::uninitialized();
@@ -1942,7 +1942,7 @@
     ///
     /// ## `res`
     /// return location for the result
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_transform_point3d&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_transform_point3d&quot;</span>)]
     </span><span class="kw">pub fn </span>transform_point3d(<span class="kw-2">&amp;</span><span class="self">self</span>, p: <span class="kw-2">&amp;</span>Point3D) -&gt; Point3D {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>res = Point3D::uninitialized();
@@ -1965,7 +1965,7 @@
     /// ## `res`
     /// return location for the
     ///  transformed ray
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_transform_ray&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_transform_ray&quot;</span>)]
     </span><span class="kw">pub fn </span>transform_ray(<span class="kw-2">&amp;</span><span class="self">self</span>, r: <span class="kw-2">&amp;</span>Ray) -&gt; Ray {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>res = Ray::uninitialized();
@@ -1992,7 +1992,7 @@
     /// ## `res`
     /// return location for the
     ///  transformed quad
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_transform_rect&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_transform_rect&quot;</span>)]
     </span><span class="kw">pub fn </span>transform_rect(<span class="kw-2">&amp;</span><span class="self">self</span>, r: <span class="kw-2">&amp;</span>Rect) -&gt; Quad {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>res = Quad::uninitialized();
@@ -2016,7 +2016,7 @@
     /// ## `res`
     /// return location for the bounds
     ///  of the transformed sphere
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_transform_sphere&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_transform_sphere&quot;</span>)]
     </span><span class="kw">pub fn </span>transform_sphere(<span class="kw-2">&amp;</span><span class="self">self</span>, s: <span class="kw-2">&amp;</span>Sphere) -&gt; Sphere {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>res = Sphere::uninitialized();
@@ -2044,7 +2044,7 @@
     ///
     /// ## `res`
     /// return location for a [`Vec3`][crate::Vec3]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_transform_vec3&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_transform_vec3&quot;</span>)]
     </span><span class="kw">pub fn </span>transform_vec3(<span class="kw-2">&amp;</span><span class="self">self</span>, v: <span class="kw-2">&amp;</span>Vec3) -&gt; Vec3 {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>res = Vec3::uninitialized();
@@ -2068,7 +2068,7 @@
     ///
     /// ## `res`
     /// return location for a [`Vec4`][crate::Vec4]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_transform_vec4&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_transform_vec4&quot;</span>)]
     </span><span class="kw">pub fn </span>transform_vec4(<span class="kw-2">&amp;</span><span class="self">self</span>, v: <span class="kw-2">&amp;</span>Vec4) -&gt; Vec4 {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>res = Vec4::uninitialized();
@@ -2088,7 +2088,7 @@
     /// then multiplying `self` with the translation matrix.
     /// ## `pos`
     /// a [`Point3D`][crate::Point3D]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_translate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_translate&quot;</span>)]
     </span><span class="kw">pub fn </span>translate(<span class="kw-2">&amp;mut </span><span class="self">self</span>, pos: <span class="kw-2">&amp;</span>Point3D) {
         <span class="kw">unsafe </span>{
             ffi::graphene_matrix_translate(<span class="self">self</span>.to_glib_none_mut().<span class="number">0</span>, pos.to_glib_none().<span class="number">0</span>);
@@ -2103,7 +2103,7 @@
     /// ## `res`
     /// return location for the
     ///  transposed matrix
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_transpose&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_transpose&quot;</span>)]
     #[must_use]
     </span><span class="kw">pub fn </span>transpose(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Matrix {
         <span class="kw">unsafe </span>{
@@ -2127,7 +2127,7 @@
     /// ## `res`
     /// return location for the unprojected
     ///  point
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_unproject_point3d&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_unproject_point3d&quot;</span>)]
     </span><span class="kw">pub fn </span>unproject_point3d(<span class="kw-2">&amp;</span><span class="self">self</span>, modelview: <span class="kw-2">&amp;</span>Matrix, point: <span class="kw-2">&amp;</span>Point3D) -&gt; Point3D {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>res = Point3D::uninitialized();
@@ -2154,7 +2154,7 @@
     /// ## `res`
     /// return location for the
     ///  untransformed rectangle
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_untransform_bounds&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_untransform_bounds&quot;</span>)]
     </span><span class="kw">pub fn </span>untransform_bounds(<span class="kw-2">&amp;</span><span class="self">self</span>, r: <span class="kw-2">&amp;</span>Rect, bounds: <span class="kw-2">&amp;</span>Rect) -&gt; Rect {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>res = Rect::uninitialized();
@@ -2182,7 +2182,7 @@
     /// ## `res`
     /// return location for the
     ///  untransformed point
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;graphene_matrix_untransform_point&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;graphene_matrix_untransform_point&quot;</span>)]
     </span><span class="kw">pub fn </span>untransform_point(<span class="kw-2">&amp;</span><span class="self">self</span>, p: <span class="kw-2">&amp;</span>Point, bounds: <span class="kw-2">&amp;</span>Rect) -&gt; <span class="prelude-ty">Option</span>&lt;Point&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>res = Point::uninitialized();
@@ -2202,7 +2202,7 @@
 }
 
 <span class="kw">impl </span>PartialEq <span class="kw">for </span>Matrix {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool {
         <span class="self">self</span>.equal(other)
     }
@@ -2210,4 +2210,4 @@
 
 <span class="kw">impl </span>Eq <span class="kw">for </span>Matrix {}
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="graphene" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="graphene" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (6284998a2 2022-11-12)" data-search-js="search-39ee4160c7dc16c9.js" data-settings-js="settings-7873449fa8c00e11.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

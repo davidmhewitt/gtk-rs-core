@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/convert.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>convert.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../normalize.css"><link rel="stylesheet" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../ayu.css" disabled><link rel="stylesheet" href="../../dark.css" disabled><link rel="stylesheet" href="../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../storage.js"></script><script defer src="../../source-script.js"></script><script defer src="../../source-files.js"></script><script defer src="../../main.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/convert.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>convert.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-83be770da8fbb54b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-860cb8b69b437763.css"><link rel="stylesheet" disabled href="../../static.files/dark-ca7398001115f6db.css"><link rel="stylesheet" disabled href="../../static.files/ayu-2916eb07452214a6.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-74087aa2e88f4475.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-c2d2a5dbaed13e6b.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -546,23 +546,6 @@
 <span id="473">473</span>
 <span id="474">474</span>
 <span id="475">475</span>
-<span id="476">476</span>
-<span id="477">477</span>
-<span id="478">478</span>
-<span id="479">479</span>
-<span id="480">480</span>
-<span id="481">481</span>
-<span id="482">482</span>
-<span id="483">483</span>
-<span id="484">484</span>
-<span id="485">485</span>
-<span id="486">486</span>
-<span id="487">487</span>
-<span id="488">488</span>
-<span id="489">489</span>
-<span id="490">490</span>
-<span id="491">491</span>
-<span id="492">492</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use crate</span>::{translate::<span class="kw-2">*</span>, ConvertError, Error, GStr, GString, Slice};
@@ -571,20 +554,20 @@
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A wrapper for [`ConvertError`](crate::ConvertError) that can hold an offset into the input
 /// string.
-</span><span class="attribute">#[derive(thiserror::Error, Debug)]
+</span><span class="attr">#[derive(thiserror::Error, Debug)]
 </span><span class="kw">pub enum </span>CvtError {
-    <span class="attribute">#[error(transparent)]
-    </span>Convert(<span class="attribute">#[from] </span>Error),
-    <span class="attribute">#[error(<span class="string">&quot;{source} at offset {offset}&quot;</span>)]
+    <span class="attr">#[error(transparent)]
+    </span>Convert(<span class="attr">#[from] </span>Error),
+    <span class="attr">#[error(<span class="string">&quot;{source} at offset {offset}&quot;</span>)]
     </span>IllegalSequence {
-        <span class="attribute">#[source]
+        <span class="attr">#[source]
         </span>source: Error,
         offset: usize,
     },
 }
 
 <span class="kw">impl </span>CvtError {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>new(err: Error, bytes_read: usize) -&gt; <span class="self">Self </span>{
         <span class="kw">if </span>err.kind::&lt;ConvertError&gt;() == <span class="prelude-val">Some</span>(ConvertError::IllegalSequence) {
             <span class="self">Self</span>::IllegalSequence {
@@ -635,7 +618,7 @@
 ///  [`ConvertError::IllegalSequence`][crate::ConvertError::IllegalSequence] occurs, the value
 ///  stored will be the byte offset after the last valid
 ///  input sequence.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;g_convert&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_convert&quot;</span>)]
 </span><span class="kw">pub fn </span>convert(
     str_: <span class="kw-2">&amp;</span>[u8],
     to_codeset: <span class="kw-2">&amp;</span>str,
@@ -659,7 +642,7 @@
     <span class="kw">if </span>result.is_null() {
         <span class="prelude-val">Err</span>(CvtError::new(<span class="kw">unsafe </span>{ from_glib_full(error) }, bytes_read))
     } <span class="kw">else </span>{
-        <span class="kw">let </span>slice = <span class="kw">unsafe </span>{ Slice::from_glib_full_num(result, bytes_written <span class="kw">as </span>usize) };
+        <span class="kw">let </span>slice = <span class="kw">unsafe </span>{ Slice::from_glib_full_num(result, bytes_written <span class="kw">as _</span>) };
         <span class="prelude-val">Ok</span>((slice, bytes_read))
     }
 }
@@ -708,7 +691,7 @@
 ///  Even if the conversion was successful, this may be
 ///  less than `len` if there were partial characters
 ///  at the end of the input.
-</span><span class="attribute">#[doc(alias = <span class="string">&quot;g_convert_with_fallback&quot;</span>)]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_convert_with_fallback&quot;</span>)]
 </span><span class="kw">pub fn </span>convert_with_fallback(
     str_: <span class="kw-2">&amp;</span>[u8],
     to_codeset: <span class="kw-2">&amp;</span>str,
@@ -734,28 +717,26 @@
     <span class="kw">if </span>result.is_null() {
         <span class="prelude-val">Err</span>(CvtError::new(<span class="kw">unsafe </span>{ from_glib_full(error) }, bytes_read))
     } <span class="kw">else </span>{
-        <span class="kw">let </span>slice = <span class="kw">unsafe </span>{ Slice::from_glib_full_num(result, bytes_written <span class="kw">as </span>usize) };
+        <span class="kw">let </span>slice = <span class="kw">unsafe </span>{ Slice::from_glib_full_num(result, bytes_written <span class="kw">as _</span>) };
         <span class="prelude-val">Ok</span>((slice, bytes_read))
     }
 }
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A wrapper for [`std::io::Error`] that can hold an offset into an input string.
-</span><span class="attribute">#[derive(thiserror::Error, Debug)]
+</span><span class="attr">#[derive(thiserror::Error, Debug)]
 </span><span class="kw">pub enum </span>IConvError {
-    <span class="attribute">#[error(transparent)]
-    </span>Error(<span class="attribute">#[from] </span>io::Error),
-    <span class="attribute">#[error(<span class="string">&quot;{source} at offset {offset}&quot;</span>)]
+    <span class="attr">#[error(transparent)]
+    </span>Error(<span class="attr">#[from] </span>io::Error),
+    <span class="attr">#[error(<span class="string">&quot;{source} at offset {offset}&quot;</span>)]
     </span>WithOffset {
-        <span class="attribute">#[source]
+        <span class="attr">#[source]
         </span>source: io::Error,
         offset: usize,
     },
 }
 
-<span class="doccomment">/// The GIConv struct wraps an `iconv()` conversion descriptor. It contains
-/// private data and should only be accessed using the following functions.
-</span><span class="attribute">#[derive(Debug)]
+<span class="attr">#[derive(Debug)]
 #[repr(transparent)]
 #[doc(alias = <span class="string">&quot;GIConv&quot;</span>)]
 </span><span class="kw">pub struct </span>IConv(ffi::GIConv);
@@ -763,22 +744,7 @@
 <span class="kw">unsafe impl </span>Send <span class="kw">for </span>IConv {}
 
 <span class="kw">impl </span>IConv {
-    <span class="doccomment">/// Same as the standard UNIX routine `iconv_open()`, but
-    /// may be implemented via libiconv on UNIX flavors that lack
-    /// a native implementation.
-    ///
-    /// GLib provides [`convert()`][crate::convert()] and [`locale_to_utf8()`][crate::locale_to_utf8()] which are likely
-    /// more convenient than the raw iconv wrappers.
-    /// ## `to_codeset`
-    /// destination codeset
-    /// ## `from_codeset`
-    /// source codeset
-    ///
-    /// # Returns
-    ///
-    /// a &quot;conversion descriptor&quot;, or (GIConv)-1 if
-    ///  opening the converter failed.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_iconv_open&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_iconv_open&quot;</span>)]
     #[allow(clippy::unnecessary_lazy_evaluations)]
     </span><span class="kw">pub fn </span>new(to_codeset: <span class="kw-2">&amp;</span>str, from_codeset: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="self">Self</span>&gt; {
         <span class="kw">let </span>iconv = <span class="kw">unsafe </span>{
@@ -827,7 +793,7 @@
     ///  [`ConvertError::IllegalSequence`][crate::ConvertError::IllegalSequence] occurs, the value
     ///  stored will be the byte offset after the last valid
     ///  input sequence.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_convert_with_iconv&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_convert_with_iconv&quot;</span>)]
     </span><span class="kw">pub fn </span>convert(<span class="kw-2">&amp;mut </span><span class="self">self</span>, str_: <span class="kw-2">&amp;</span>[u8]) -&gt; <span class="prelude-ty">Result</span>&lt;(Slice&lt;u8&gt;, usize), CvtError&gt; {
         <span class="macro">assert!</span>(str_.len() &lt;= isize::MAX <span class="kw">as </span>usize);
         <span class="kw">let </span><span class="kw-2">mut </span>bytes_read = <span class="number">0</span>;
@@ -846,11 +812,11 @@
         <span class="kw">if </span>result.is_null() {
             <span class="prelude-val">Err</span>(CvtError::new(<span class="kw">unsafe </span>{ from_glib_full(error) }, bytes_read))
         } <span class="kw">else </span>{
-            <span class="kw">let </span>slice = <span class="kw">unsafe </span>{ Slice::from_glib_full_num(result, bytes_written <span class="kw">as </span>usize) };
+            <span class="kw">let </span>slice = <span class="kw">unsafe </span>{ Slice::from_glib_full_num(result, bytes_written <span class="kw">as _</span>) };
             <span class="prelude-val">Ok</span>((slice, bytes_read))
         }
     }
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_iconv&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_iconv&quot;</span>)]
     </span><span class="kw">pub fn </span>iconv(
         <span class="kw-2">&amp;mut </span><span class="self">self</span>,
         inbuf: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>[u8]&gt;,
@@ -899,7 +865,7 @@
     }
 }
 
-<span class="attribute">#[doc(alias = <span class="string">&quot;g_get_filename_charsets&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_get_filename_charsets&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_filename_charsets&quot;</span>)]
 </span><span class="kw">pub fn </span>filename_charsets() -&gt; (bool, Vec&lt;GString&gt;) {
     <span class="kw">let </span><span class="kw-2">mut </span>filename_charsets = ptr::null_mut();
@@ -912,7 +878,7 @@
     }
 }
 
-<span class="attribute">#[doc(alias = <span class="string">&quot;g_filename_from_utf8&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_filename_from_utf8&quot;</span>)]
 </span><span class="kw">pub fn </span>filename_from_utf8(utf8string: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;(PathBuf, usize), CvtError&gt; {
     <span class="kw">let </span>len = utf8string.len() <span class="kw">as </span>isize;
     <span class="kw">let </span><span class="kw-2">mut </span>bytes_read = <span class="number">0</span>;
@@ -939,7 +905,7 @@
     }
 }
 
-<span class="attribute">#[doc(alias = <span class="string">&quot;g_filename_to_utf8&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_filename_to_utf8&quot;</span>)]
 </span><span class="kw">pub fn </span>filename_to_utf8(
     opsysstring: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;,
 ) -&gt; <span class="prelude-ty">Result</span>&lt;(<span class="kw">crate</span>::GString, usize), CvtError&gt; {
@@ -968,7 +934,7 @@
     }
 }
 
-<span class="attribute">#[doc(alias = <span class="string">&quot;g_locale_from_utf8&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_locale_from_utf8&quot;</span>)]
 </span><span class="kw">pub fn </span>locale_from_utf8(utf8string: <span class="kw-2">&amp;</span>GStr) -&gt; <span class="prelude-ty">Result</span>&lt;(Slice&lt;u8&gt;, usize), CvtError&gt; {
     <span class="macro">assert!</span>(utf8string.len() &lt;= isize::MAX <span class="kw">as </span>usize);
     <span class="kw">let </span><span class="kw-2">mut </span>bytes_read = <span class="number">0</span>;
@@ -995,7 +961,7 @@
     }
 }
 
-<span class="attribute">#[doc(alias = <span class="string">&quot;g_locale_to_utf8&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_locale_to_utf8&quot;</span>)]
 </span><span class="kw">pub fn </span>locale_to_utf8(opsysstring: <span class="kw-2">&amp;</span>[u8]) -&gt; <span class="prelude-ty">Result</span>&lt;(<span class="kw">crate</span>::GString, usize), CvtError&gt; {
     <span class="kw">let </span>len = opsysstring.len() <span class="kw">as </span>isize;
     <span class="kw">let </span><span class="kw-2">mut </span>bytes_read = <span class="number">0</span>;
@@ -1022,9 +988,9 @@
     }
 }
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>convert_ascii() {
         <span class="macro">assert!</span>(<span class="kw">super</span>::convert(<span class="string">b&quot;Hello&quot;</span>, <span class="string">&quot;utf-8&quot;</span>, <span class="string">&quot;ascii&quot;</span>).is_ok());
         <span class="macro">assert!</span>(<span class="kw">super</span>::convert(<span class="string">b&quot;He\xaallo&quot;</span>, <span class="string">&quot;utf-8&quot;</span>, <span class="string">&quot;ascii&quot;</span>).is_err());
@@ -1043,17 +1009,17 @@
             <span class="string">b&quot;H_llo&quot;
         </span>);
     }
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>iconv() {
         <span class="kw">let </span><span class="kw-2">mut </span>conv = <span class="kw">super</span>::IConv::new(<span class="string">&quot;utf-8&quot;</span>, <span class="string">&quot;ascii&quot;</span>).unwrap();
         <span class="macro">assert!</span>(conv.convert(<span class="string">b&quot;Hello&quot;</span>).is_ok());
         <span class="macro">assert!</span>(conv.convert(<span class="string">b&quot;He\xaallo&quot;</span>).is_err());
         <span class="macro">assert!</span>(<span class="kw">super</span>::IConv::new(<span class="string">&quot;utf-8&quot;</span>, <span class="string">&quot;badcharset123456789&quot;</span>).is_none());
     }
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>filename_charsets() {
         <span class="kw">let _ </span>= <span class="kw">super</span>::filename_charsets();
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (6284998a2 2022-11-12)" data-search-js="search-39ee4160c7dc16c9.js" data-settings-js="settings-7873449fa8c00e11.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

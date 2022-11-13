@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/gobject-sys/src/lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../normalize.css"><link rel="stylesheet" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../ayu.css" disabled><link rel="stylesheet" href="../../dark.css" disabled><link rel="stylesheet" href="../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../storage.js"></script><script defer src="../../source-script.js"></script><script defer src="../../source-files.js"></script><script defer src="../../main.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/gobject-sys/src/lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-83be770da8fbb54b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-860cb8b69b437763.css"><link rel="stylesheet" disabled href="../../static.files/dark-ca7398001115f6db.css"><link rel="stylesheet" disabled href="../../static.files/ayu-2916eb07452214a6.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-74087aa2e88f4475.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-c2d2a5dbaed13e6b.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../gobject_sys/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gobject_sys/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../gobject_sys/index.html"><img class="rust-logo" src="../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -2864,13 +2864,11 @@
 <span id="2791">2791</span>
 <span id="2792">2792</span>
 <span id="2793">2793</span>
-<span id="2794">2794</span>
-<span id="2795">2795</span>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
 
-</span><span class="attribute">#![allow(non_camel_case_types, non_upper_case_globals, non_snake_case)]
+</span><span class="attr">#![allow(non_camel_case_types, non_upper_case_globals, non_snake_case)]
 #![allow(
     clippy::approx_constant,
     clippy::type_complexity,
@@ -2885,7 +2883,7 @@
     intptr_t, size_t, ssize_t, uintptr_t, FILE,
 };
 
-<span class="attribute">#[allow(unused_imports)]
+<span class="attr">#[allow(unused_imports)]
 </span><span class="kw">use </span>glib::{gboolean, gconstpointer, gpointer, GType};
 
 <span class="kw">pub const </span>G_TYPE_INVALID: GType = <span class="number">0 </span>&lt;&lt; G_TYPE_FUNDAMENTAL_SHIFT;
@@ -2997,7 +2995,7 @@
 <span class="kw">pub const </span>G_TYPE_FLAG_DEEP_DERIVABLE: GTypeFundamentalFlags = <span class="number">8</span>;
 
 <span class="comment">// Unions
-</span><span class="attribute">#[repr(C)]
+</span><span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GTypeCValue {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -3005,12 +3003,11 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GTypeCValue {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GTypeCValue @ {:p}&quot;</span>, <span class="self">self</span>))
-            .finish()
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GTypeCValue @ {self:p}&quot;</span>)).finish()
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub union </span>GValue_data {
     <span class="kw">pub </span>v_int: c_int,
@@ -3026,7 +3023,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GValue_data {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GValue_data @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GValue_data @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;v_int&quot;</span>, <span class="kw">unsafe </span>{ <span class="kw-2">&amp;</span><span class="self">self</span>.v_int })
             .field(<span class="string">&quot;v_uint&quot;</span>, <span class="kw">unsafe </span>{ <span class="kw-2">&amp;</span><span class="self">self</span>.v_uint })
             .field(<span class="string">&quot;v_long&quot;</span>, <span class="kw">unsafe </span>{ <span class="kw-2">&amp;</span><span class="self">self</span>.v_long })
@@ -3040,7 +3037,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub union </span>GWeakRef_priv {
     <span class="kw">pub </span>p: gpointer,
@@ -3048,7 +3045,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GWeakRef_priv {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GWeakRef_priv @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GWeakRef_priv @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;p&quot;</span>, <span class="kw">unsafe </span>{ <span class="kw-2">&amp;</span><span class="self">self</span>.p })
             .finish()
     }
@@ -3101,7 +3098,7 @@
 <span class="kw">pub type </span>GWeakNotify = <span class="prelude-ty">Option</span>&lt;<span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn</span>(gpointer, <span class="kw-2">*mut </span>GObject)&gt;;
 
 <span class="comment">// Records
-</span><span class="attribute">#[repr(C)]
+</span><span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GCClosure {
     _truncated_record_marker: c_void,
     <span class="comment">// /*Ignored*/field closure has incomplete type
@@ -3109,11 +3106,11 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GCClosure {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GCClosure @ {:p}&quot;</span>, <span class="self">self</span>)).finish()
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GCClosure @ {self:p}&quot;</span>)).finish()
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GClosure {
     <span class="kw">pub </span>ref_count: c_uint,
     _truncated_record_marker: c_void,
@@ -3122,11 +3119,11 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GClosure {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GClosure @ {:p}&quot;</span>, <span class="self">self</span>)).finish()
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GClosure @ {self:p}&quot;</span>)).finish()
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GClosureNotifyData {
     <span class="kw">pub </span>data: gpointer,
@@ -3135,14 +3132,14 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GClosureNotifyData {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GClosureNotifyData @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GClosureNotifyData @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;data&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.data)
             .field(<span class="string">&quot;notify&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.notify)
             .finish()
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GEnumClass {
     <span class="kw">pub </span>g_type_class: GTypeClass,
@@ -3154,7 +3151,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GEnumClass {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GEnumClass @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GEnumClass @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;g_type_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.g_type_class)
             .field(<span class="string">&quot;minimum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.minimum)
             .field(<span class="string">&quot;maximum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.maximum)
@@ -3164,7 +3161,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GEnumValue {
     <span class="kw">pub </span>value: c_int,
@@ -3174,7 +3171,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GEnumValue {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GEnumValue @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GEnumValue @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;value&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.value)
             .field(<span class="string">&quot;value_name&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.value_name)
             .field(<span class="string">&quot;value_nick&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.value_nick)
@@ -3182,7 +3179,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GFlagsClass {
     <span class="kw">pub </span>g_type_class: GTypeClass,
@@ -3193,7 +3190,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GFlagsClass {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GFlagsClass @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GFlagsClass @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;g_type_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.g_type_class)
             .field(<span class="string">&quot;mask&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.mask)
             .field(<span class="string">&quot;n_values&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.n_values)
@@ -3202,7 +3199,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GFlagsValue {
     <span class="kw">pub </span>value: c_uint,
@@ -3212,7 +3209,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GFlagsValue {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GFlagsValue @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GFlagsValue @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;value&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.value)
             .field(<span class="string">&quot;value_name&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.value_name)
             .field(<span class="string">&quot;value_nick&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.value_nick)
@@ -3220,7 +3217,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GInitiallyUnownedClass {
     <span class="kw">pub </span>g_type_class: GTypeClass,
@@ -3246,7 +3243,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GInitiallyUnownedClass {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GInitiallyUnownedClass @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GInitiallyUnownedClass @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;g_type_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.g_type_class)
             .field(<span class="string">&quot;constructor&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.constructor)
             .field(<span class="string">&quot;set_property&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.set_property)
@@ -3263,7 +3260,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GInterfaceInfo {
     <span class="kw">pub </span>interface_init: GInterfaceInitFunc,
@@ -3273,7 +3270,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GInterfaceInfo {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GInterfaceInfo @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GInterfaceInfo @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;interface_init&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.interface_init)
             .field(<span class="string">&quot;interface_finalize&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.interface_finalize)
             .field(<span class="string">&quot;interface_data&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.interface_data)
@@ -3281,7 +3278,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GObjectClass {
     <span class="kw">pub </span>g_type_class: GTypeClass,
@@ -3307,7 +3304,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GObjectClass {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GObjectClass @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GObjectClass @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;g_type_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.g_type_class)
             .field(<span class="string">&quot;constructor&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.constructor)
             .field(<span class="string">&quot;set_property&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.set_property)
@@ -3324,7 +3321,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GObjectConstructParam {
     <span class="kw">pub </span>pspec: <span class="kw-2">*mut </span>GParamSpec,
@@ -3333,14 +3330,14 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GObjectConstructParam {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GObjectConstructParam @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GObjectConstructParam @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;pspec&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.pspec)
             .field(<span class="string">&quot;value&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.value)
             .finish()
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecClass {
     <span class="kw">pub </span>g_type_class: GTypeClass,
@@ -3356,7 +3353,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecClass {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecClass @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecClass @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;g_type_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.g_type_class)
             .field(<span class="string">&quot;value_type&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.value_type)
             .field(<span class="string">&quot;finalize&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.finalize)
@@ -3368,7 +3365,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>_GParamSpecPool {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -3376,7 +3373,7 @@
 
 <span class="kw">pub type </span>GParamSpecPool = <span class="kw-2">*mut </span>_GParamSpecPool;
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecTypeInfo {
     <span class="kw">pub </span>instance_size: u16,
@@ -3392,7 +3389,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecTypeInfo {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecTypeInfo @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecTypeInfo @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;instance_size&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.instance_size)
             .field(<span class="string">&quot;n_preallocs&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.n_preallocs)
             .field(<span class="string">&quot;instance_init&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.instance_init)
@@ -3405,7 +3402,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParameter {
     <span class="kw">pub </span>name: <span class="kw-2">*const </span>c_char,
@@ -3414,14 +3411,14 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParameter {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParameter @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParameter @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.name)
             .field(<span class="string">&quot;value&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.value)
             .finish()
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GSignalInvocationHint {
     <span class="kw">pub </span>signal_id: c_uint,
@@ -3431,7 +3428,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GSignalInvocationHint {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GSignalInvocationHint @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GSignalInvocationHint @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;signal_id&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.signal_id)
             .field(<span class="string">&quot;detail&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.detail)
             .field(<span class="string">&quot;run_type&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.run_type)
@@ -3439,7 +3436,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GSignalQuery {
     <span class="kw">pub </span>signal_id: c_uint,
@@ -3453,7 +3450,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GSignalQuery {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GSignalQuery @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GSignalQuery @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;signal_id&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.signal_id)
             .field(<span class="string">&quot;signal_name&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.signal_name)
             .field(<span class="string">&quot;itype&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.itype)
@@ -3465,7 +3462,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GTypeClass {
     <span class="kw">pub </span>g_type: GType,
@@ -3473,11 +3470,11 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GTypeClass {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GTypeClass @ {:p}&quot;</span>, <span class="self">self</span>)).finish()
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GTypeClass @ {self:p}&quot;</span>)).finish()
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GTypeFundamentalInfo {
     <span class="kw">pub </span>type_flags: GTypeFundamentalFlags,
@@ -3485,13 +3482,13 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GTypeFundamentalInfo {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GTypeFundamentalInfo @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GTypeFundamentalInfo @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;type_flags&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.type_flags)
             .finish()
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GTypeInfo {
     <span class="kw">pub </span>class_size: u16,
@@ -3508,7 +3505,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GTypeInfo {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GTypeInfo @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GTypeInfo @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;class_size&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.class_size)
             .field(<span class="string">&quot;base_init&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.base_init)
             .field(<span class="string">&quot;base_finalize&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.base_finalize)
@@ -3523,7 +3520,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GTypeInstance {
     <span class="kw">pub </span>g_class: <span class="kw-2">*mut </span>GTypeClass,
@@ -3531,12 +3528,12 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GTypeInstance {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GTypeInstance @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GTypeInstance @ {self:p}&quot;</span>))
             .finish()
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GTypeInterface {
     <span class="kw">pub </span>g_type: GType,
@@ -3545,12 +3542,12 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GTypeInterface {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GTypeInterface @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GTypeInterface @ {self:p}&quot;</span>))
             .finish()
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GTypeModuleClass {
     <span class="kw">pub </span>parent_class: GObjectClass,
@@ -3564,7 +3561,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GTypeModuleClass {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GTypeModuleClass @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GTypeModuleClass @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;parent_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.parent_class)
             .field(<span class="string">&quot;load&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.load)
             .field(<span class="string">&quot;unload&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.unload)
@@ -3576,7 +3573,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GTypePluginClass {
     <span class="kw">pub </span>base_iface: GTypeInterface,
@@ -3588,7 +3585,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GTypePluginClass {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GTypePluginClass @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GTypePluginClass @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;use_plugin&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.use_plugin)
             .field(<span class="string">&quot;unuse_plugin&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.unuse_plugin)
             .field(<span class="string">&quot;complete_type_info&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.complete_type_info)
@@ -3597,7 +3594,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GTypeQuery {
     <span class="kw">pub </span>type_: GType,
@@ -3608,7 +3605,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GTypeQuery {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GTypeQuery @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GTypeQuery @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;type_&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.type_)
             .field(<span class="string">&quot;type_name&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.type_name)
             .field(<span class="string">&quot;class_size&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.class_size)
@@ -3617,7 +3614,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GTypeValueTable {
     <span class="kw">pub </span>value_init: <span class="prelude-ty">Option</span>&lt;<span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn</span>(<span class="kw-2">*mut </span>GValue)&gt;,
@@ -3636,7 +3633,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GTypeValueTable {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GTypeValueTable @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GTypeValueTable @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;value_init&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.value_init)
             .field(<span class="string">&quot;value_free&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.value_free)
             .field(<span class="string">&quot;value_copy&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.value_copy)
@@ -3649,7 +3646,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GValue {
     <span class="kw">pub </span>g_type: GType,
@@ -3658,13 +3655,13 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GValue {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GValue @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GValue @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;data&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.data)
             .finish()
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GValueArray {
     <span class="kw">pub </span>n_values: c_uint,
@@ -3674,14 +3671,14 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GValueArray {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GValueArray @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GValueArray @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;n_values&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.n_values)
             .field(<span class="string">&quot;values&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.values)
             .finish()
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GWeakRef {
     <span class="kw">pub </span>priv_: GWeakRef_priv,
@@ -3689,14 +3686,14 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GWeakRef {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GWeakRef @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GWeakRef @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;priv_&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.priv_)
             .finish()
     }
 }
 
 <span class="comment">// Classes
-</span><span class="attribute">#[repr(C)]
+</span><span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GBinding {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -3704,11 +3701,11 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GBinding {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GBinding @ {:p}&quot;</span>, <span class="self">self</span>)).finish()
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GBinding @ {self:p}&quot;</span>)).finish()
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GBindingGroup {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -3716,12 +3713,12 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GBindingGroup {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GBindingGroup @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GBindingGroup @ {self:p}&quot;</span>))
             .finish()
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GInitiallyUnowned {
     <span class="kw">pub </span>g_type_instance: GTypeInstance,
@@ -3731,13 +3728,13 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GInitiallyUnowned {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GInitiallyUnowned @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GInitiallyUnowned @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;g_type_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.g_type_instance)
             .finish()
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GObject {
     <span class="kw">pub </span>g_type_instance: GTypeInstance,
@@ -3747,13 +3744,13 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GObject {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GObject @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GObject @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;g_type_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.g_type_instance)
             .finish()
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpec {
     <span class="kw">pub </span>g_type_instance: GTypeInstance,
@@ -3770,7 +3767,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpec {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpec @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpec @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;g_type_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.g_type_instance)
             .field(<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.name)
             .field(<span class="string">&quot;flags&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.flags)
@@ -3780,7 +3777,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecBoolean {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -3789,14 +3786,14 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecBoolean {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecBoolean @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecBoolean @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.parent_instance)
             .field(<span class="string">&quot;default_value&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.default_value)
             .finish()
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecBoxed {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -3804,13 +3801,13 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecBoxed {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecBoxed @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecBoxed @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.parent_instance)
             .finish()
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecChar {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -3821,7 +3818,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecChar {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecChar @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecChar @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.parent_instance)
             .field(<span class="string">&quot;minimum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.minimum)
             .field(<span class="string">&quot;maximum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.maximum)
@@ -3830,7 +3827,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecDouble {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -3842,7 +3839,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecDouble {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecDouble @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecDouble @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.parent_instance)
             .field(<span class="string">&quot;minimum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.minimum)
             .field(<span class="string">&quot;maximum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.maximum)
@@ -3852,7 +3849,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecEnum {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -3862,7 +3859,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecEnum {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecEnum @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecEnum @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.parent_instance)
             .field(<span class="string">&quot;enum_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.enum_class)
             .field(<span class="string">&quot;default_value&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.default_value)
@@ -3870,7 +3867,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecFlags {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -3880,7 +3877,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecFlags {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecFlags @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecFlags @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.parent_instance)
             .field(<span class="string">&quot;flags_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.flags_class)
             .field(<span class="string">&quot;default_value&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.default_value)
@@ -3888,7 +3885,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecFloat {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -3900,7 +3897,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecFloat {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecFloat @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecFloat @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.parent_instance)
             .field(<span class="string">&quot;minimum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.minimum)
             .field(<span class="string">&quot;maximum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.maximum)
@@ -3910,7 +3907,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecGType {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -3919,14 +3916,14 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecGType {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecGType @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecGType @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.parent_instance)
             .field(<span class="string">&quot;is_a_type&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.is_a_type)
             .finish()
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecInt {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -3937,7 +3934,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecInt {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecInt @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecInt @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.parent_instance)
             .field(<span class="string">&quot;minimum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.minimum)
             .field(<span class="string">&quot;maximum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.maximum)
@@ -3946,7 +3943,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecInt64 {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -3957,7 +3954,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecInt64 {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecInt64 @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecInt64 @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.parent_instance)
             .field(<span class="string">&quot;minimum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.minimum)
             .field(<span class="string">&quot;maximum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.maximum)
@@ -3966,7 +3963,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecLong {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -3977,7 +3974,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecLong {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecLong @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecLong @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.parent_instance)
             .field(<span class="string">&quot;minimum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.minimum)
             .field(<span class="string">&quot;maximum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.maximum)
@@ -3986,7 +3983,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecObject {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -3994,13 +3991,13 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecObject {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecObject @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecObject @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.parent_instance)
             .finish()
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecOverride {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -4009,12 +4006,12 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecOverride {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecOverride @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecOverride @ {self:p}&quot;</span>))
             .finish()
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecParam {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -4022,13 +4019,13 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecParam {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecParam @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecParam @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.parent_instance)
             .finish()
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecPointer {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -4036,13 +4033,13 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecPointer {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecPointer @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecPointer @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.parent_instance)
             .finish()
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecString {
     <span class="kw">pub </span>parent_instance: GParamSpec,
     <span class="kw">pub </span>default_value: <span class="kw-2">*mut </span>c_char,
@@ -4056,7 +4053,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecString {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecString @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecString @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.parent_instance)
             .field(<span class="string">&quot;default_value&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.default_value)
             .field(<span class="string">&quot;cset_first&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.cset_first)
@@ -4067,7 +4064,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecUChar {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -4078,7 +4075,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecUChar {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecUChar @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecUChar @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.parent_instance)
             .field(<span class="string">&quot;minimum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.minimum)
             .field(<span class="string">&quot;maximum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.maximum)
@@ -4087,7 +4084,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecUInt {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -4098,7 +4095,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecUInt {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecUInt @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecUInt @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.parent_instance)
             .field(<span class="string">&quot;minimum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.minimum)
             .field(<span class="string">&quot;maximum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.maximum)
@@ -4107,7 +4104,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecUInt64 {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -4118,7 +4115,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecUInt64 {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecUInt64 @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecUInt64 @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.parent_instance)
             .field(<span class="string">&quot;minimum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.minimum)
             .field(<span class="string">&quot;maximum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.maximum)
@@ -4127,7 +4124,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecULong {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -4138,7 +4135,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecULong {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecULong @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecULong @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.parent_instance)
             .field(<span class="string">&quot;minimum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.minimum)
             .field(<span class="string">&quot;maximum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.maximum)
@@ -4147,7 +4144,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecUnichar {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -4156,14 +4153,14 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecUnichar {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecUnichar @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecUnichar @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.parent_instance)
             .field(<span class="string">&quot;default_value&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.default_value)
             .finish()
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecValueArray {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -4173,7 +4170,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecValueArray {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecValueArray @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecValueArray @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.parent_instance)
             .field(<span class="string">&quot;element_spec&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.element_spec)
             .field(<span class="string">&quot;fixed_n_elements&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.fixed_n_elements)
@@ -4181,7 +4178,7 @@
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GParamSpecVariant {
     <span class="kw">pub </span>parent_instance: GParamSpec,
@@ -4192,7 +4189,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GParamSpecVariant {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecVariant @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GParamSpecVariant @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.parent_instance)
             .field(<span class="string">&quot;type_&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.type_)
             .field(<span class="string">&quot;default_value&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.default_value)
@@ -4200,7 +4197,7 @@
     }
 }
 
-<span class="attribute">#[repr(C)]
+<span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GSignalGroup {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -4208,12 +4205,11 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GSignalGroup {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GSignalGroup @ {:p}&quot;</span>, <span class="self">self</span>))
-            .finish()
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GSignalGroup @ {self:p}&quot;</span>)).finish()
     }
 }
 
-<span class="attribute">#[derive(Copy, Clone)]
+<span class="attr">#[derive(Copy, Clone)]
 #[repr(C)]
 </span><span class="kw">pub struct </span>GTypeModule {
     <span class="kw">pub </span>parent_instance: GObject,
@@ -4225,7 +4221,7 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GTypeModule {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GTypeModule @ {:p}&quot;</span>, <span class="self">self</span>))
+        f.debug_struct(<span class="kw-2">&amp;</span><span class="macro">format!</span>(<span class="string">&quot;GTypeModule @ {self:p}&quot;</span>))
             .field(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.parent_instance)
             .field(<span class="string">&quot;use_count&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.use_count)
             .field(<span class="string">&quot;type_infos&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.type_infos)
@@ -4236,7 +4232,7 @@
 }
 
 <span class="comment">// Interfaces
-</span><span class="attribute">#[repr(C)]
+</span><span class="attr">#[repr(C)]
 </span><span class="kw">pub struct </span>GTypePlugin {
     _data: [u8; <span class="number">0</span>],
     _marker: core::marker::PhantomData&lt;(<span class="kw-2">*mut </span>u8, core::marker::PhantomPinned)&gt;,
@@ -4244,11 +4240,11 @@
 
 <span class="kw">impl </span>::std::fmt::Debug <span class="kw">for </span>GTypePlugin {
     <span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>::std::fmt::Formatter) -&gt; ::std::fmt::Result {
-        <span class="macro">write!</span>(f, <span class="string">&quot;GTypePlugin @ {:p}&quot;</span>, <span class="self">self</span>)
+        <span class="macro">write!</span>(f, <span class="string">&quot;GTypePlugin @ {self:p}&quot;</span>)
     }
 }
 
-<span class="attribute">#[link(name = <span class="string">&quot;gobject-2.0&quot;</span>)]
+<span class="attr">#[link(name = <span class="string">&quot;gobject-2.0&quot;</span>)]
 </span><span class="kw">extern </span><span class="string">&quot;C&quot; </span>{
 
     <span class="comment">//=========================================================================
@@ -4620,7 +4616,7 @@
         instance_type: GType,
         interface_type: GType,
     ) -&gt; <span class="kw-2">*mut </span>GTypePlugin;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_type_interface_instantiatable_prerequisite(interface_type: GType) -&gt; GType;
     <span class="kw">pub fn </span>g_type_interface_peek(instance_class: gpointer, iface_type: GType) -&gt; gpointer;
@@ -4682,7 +4678,7 @@
     <span class="kw">pub fn </span>g_value_set_instance(value: <span class="kw-2">*mut </span>GValue, instance: gpointer);
     <span class="kw">pub fn </span>g_value_set_int(value: <span class="kw-2">*mut </span>GValue, v_int: c_int);
     <span class="kw">pub fn </span>g_value_set_int64(value: <span class="kw-2">*mut </span>GValue, v_int64: i64);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_value_set_interned_string(value: <span class="kw-2">*mut </span>GValue, v_string: <span class="kw-2">*const </span>c_char);
     <span class="kw">pub fn </span>g_value_set_long(value: <span class="kw-2">*mut </span>GValue, v_long: c_long);
@@ -4760,10 +4756,10 @@
     // GBinding
     //=========================================================================
     </span><span class="kw">pub fn </span>g_binding_get_type() -&gt; GType;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_binding_dup_source(binding: <span class="kw-2">*mut </span>GBinding) -&gt; <span class="kw-2">*mut </span>GObject;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_68&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_binding_dup_target(binding: <span class="kw-2">*mut </span>GBinding) -&gt; <span class="kw-2">*mut </span>GObject;
     <span class="kw">pub fn </span>g_binding_get_flags(binding: <span class="kw-2">*mut </span>GBinding) -&gt; GBindingFlags;
@@ -4776,13 +4772,13 @@
     <span class="comment">//=========================================================================
     // GBindingGroup
     //=========================================================================
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_binding_group_get_type() -&gt; GType;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_binding_group_new() -&gt; <span class="kw-2">*mut </span>GBindingGroup;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_binding_group_bind(
         self_: <span class="kw-2">*mut </span>GBindingGroup,
@@ -4791,7 +4787,7 @@
         target_property: <span class="kw-2">*const </span>c_char,
         flags: GBindingFlags,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_binding_group_bind_full(
         self_: <span class="kw-2">*mut </span>GBindingGroup,
@@ -4804,7 +4800,7 @@
         user_data: gpointer,
         user_data_destroy: glib::GDestroyNotify,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_binding_group_bind_with_closures(
         self_: <span class="kw-2">*mut </span>GBindingGroup,
@@ -4815,10 +4811,10 @@
         transform_to: <span class="kw-2">*mut </span>GClosure,
         transform_from: <span class="kw-2">*mut </span>GClosure,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_binding_group_dup_source(self_: <span class="kw-2">*mut </span>GBindingGroup) -&gt; <span class="kw-2">*mut </span>GObject;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_binding_group_set_source(self_: <span class="kw-2">*mut </span>GBindingGroup, source: <span class="kw-2">*mut </span>GObject);
 
@@ -4971,7 +4967,7 @@
     );
     <span class="kw">pub fn </span>g_object_steal_data(object: <span class="kw-2">*mut </span>GObject, key: <span class="kw-2">*const </span>c_char) -&gt; gpointer;
     <span class="kw">pub fn </span>g_object_steal_qdata(object: <span class="kw-2">*mut </span>GObject, quark: glib::GQuark) -&gt; gpointer;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_object_take_ref(object: <span class="kw-2">*mut </span>GObject) -&gt; <span class="kw-2">*mut </span>GObject;
     <span class="kw">pub fn </span>g_object_thaw_notify(object: <span class="kw-2">*mut </span>GObject);
@@ -4990,7 +4986,7 @@
         blurb: <span class="kw-2">*const </span>c_char,
         flags: GParamFlags,
     ) -&gt; <span class="kw-2">*mut </span>GParamSpec;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_param_spec_is_valid_name(name: <span class="kw-2">*const </span>c_char) -&gt; gboolean;
     <span class="kw">pub fn </span>g_param_spec_get_blurb(pspec: <span class="kw-2">*mut </span>GParamSpec) -&gt; <span class="kw-2">*const </span>c_char;
@@ -5016,16 +5012,16 @@
     <span class="comment">//=========================================================================
     // GSignalGroup
     //=========================================================================
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_group_get_type() -&gt; GType;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_group_new(target_type: GType) -&gt; <span class="kw-2">*mut </span>GSignalGroup;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_group_block(self_: <span class="kw-2">*mut </span>GSignalGroup);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_group_connect(
         self_: <span class="kw-2">*mut </span>GSignalGroup,
@@ -5033,7 +5029,7 @@
         c_handler: GCallback,
         data: gpointer,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_group_connect_after(
         self_: <span class="kw-2">*mut </span>GSignalGroup,
@@ -5041,7 +5037,7 @@
         c_handler: GCallback,
         data: gpointer,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_group_connect_closure(
         self_: <span class="kw-2">*mut </span>GSignalGroup,
@@ -5049,7 +5045,7 @@
         closure: <span class="kw-2">*mut </span>GClosure,
         after: gboolean,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_group_connect_data(
         self_: <span class="kw-2">*mut </span>GSignalGroup,
@@ -5059,7 +5055,7 @@
         notify: GClosureNotify,
         flags: GConnectFlags,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_group_connect_object(
         self_: <span class="kw-2">*mut </span>GSignalGroup,
@@ -5068,7 +5064,7 @@
         object: gpointer,
         flags: GConnectFlags,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_group_connect_swapped(
         self_: <span class="kw-2">*mut </span>GSignalGroup,
@@ -5076,13 +5072,13 @@
         c_handler: GCallback,
         data: gpointer,
     );
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_group_dup_target(self_: <span class="kw-2">*mut </span>GSignalGroup) -&gt; <span class="kw-2">*mut </span>GObject;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_group_set_target(self_: <span class="kw-2">*mut </span>GSignalGroup, target: <span class="kw-2">*mut </span>GObject);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_group_unblock(self_: <span class="kw-2">*mut </span>GSignalGroup);
 
@@ -5147,7 +5143,7 @@
         boxed_free: GBoxedFreeFunc,
     ) -&gt; GType;
     <span class="kw">pub fn </span>g_clear_object(object_ptr: <span class="kw-2">*mut *mut </span>GObject);
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_62&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_clear_signal_handler(handler_id_ptr: <span class="kw-2">*mut </span>c_ulong, instance: <span class="kw-2">*mut </span>GObject);
     <span class="kw">pub fn </span>g_enum_complete_type_info(
@@ -5383,7 +5379,7 @@
         strict_validation: gboolean,
     ) -&gt; gboolean;
     <span class="kw">pub fn </span>g_param_value_defaults(pspec: <span class="kw-2">*mut </span>GParamSpec, value: <span class="kw-2">*const </span>GValue) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_param_value_is_valid(pspec: <span class="kw-2">*mut </span>GParamSpec, value: <span class="kw-2">*const </span>GValue) -&gt; gboolean;
     <span class="kw">pub fn </span>g_param_value_set_default(pspec: <span class="kw-2">*mut </span>GParamSpec, value: <span class="kw-2">*mut </span>GValue);
@@ -5503,7 +5499,7 @@
         detail: glib::GQuark,
         may_be_blocked: gboolean,
     ) -&gt; gboolean;
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     </span><span class="kw">pub fn </span>g_signal_is_valid_name(name: <span class="kw-2">*const </span>c_char) -&gt; gboolean;
     <span class="kw">pub fn </span>g_signal_list_ids(itype: GType, n_ids: <span class="kw-2">*mut </span>c_uint) -&gt; <span class="kw-2">*mut </span>c_uint;
@@ -5662,4 +5658,4 @@
 
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="gobject_sys" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gobject_sys" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (6284998a2 2022-11-12)" data-search-js="search-39ee4160c7dc16c9.js" data-settings-js="settings-7873449fa8c00e11.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

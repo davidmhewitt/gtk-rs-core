@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib-macros/src/clone.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>clone.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../normalize.css"><link rel="stylesheet" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../ayu.css" disabled><link rel="stylesheet" href="../../dark.css" disabled><link rel="stylesheet" href="../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../storage.js"></script><script defer src="../../source-script.js"></script><script defer src="../../source-files.js"></script><script defer src="../../main.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib-macros/src/clone.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>clone.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-83be770da8fbb54b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-860cb8b69b437763.css"><link rel="stylesheet" disabled href="../../static.files/dark-ca7398001115f6db.css"><link rel="stylesheet" disabled href="../../static.files/ayu-2916eb07452214a6.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-74087aa2e88f4475.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-c2d2a5dbaed13e6b.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../glib_macros/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib_macros/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib_macros/index.html"><img class="rust-logo" src="../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -827,14 +827,6 @@
 <span id="754">754</span>
 <span id="755">755</span>
 <span id="756">756</span>
-<span id="757">757</span>
-<span id="758">758</span>
-<span id="759">759</span>
-<span id="760">760</span>
-<span id="761">761</span>
-<span id="762">762</span>
-<span id="763">763</span>
-<span id="764">764</span>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::utils::crate_ident_new;
@@ -842,7 +834,7 @@
 <span class="kw">use </span>proc_macro::{Delimiter, Group, Ident, Punct, Spacing, Span, TokenStream, TokenTree};
 <span class="kw">use </span>std::iter::Peekable;
 
-<span class="attribute">#[derive(Clone, Copy, Debug)]
+<span class="attr">#[derive(Clone, Copy, Debug)]
 </span><span class="kw">enum </span>BorrowKind {
     Weak,
     WeakAllowNone,
@@ -870,7 +862,7 @@
     <span class="kw">fn </span>to_str(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; String {
         <span class="kw">match </span><span class="kw-2">*</span><span class="self">self </span>{
             <span class="self">Self</span>::DefaultPanic =&gt; <span class="string">&quot;@default-panic&quot;</span>.to_owned(),
-            <span class="self">Self</span>::DefaultReturn(<span class="kw-2">ref </span>r) =&gt; <span class="macro">format!</span>(<span class="string">&quot;@default-return {}&quot;</span>, r),
+            <span class="self">Self</span>::DefaultReturn(<span class="kw-2">ref </span>r) =&gt; <span class="macro">format!</span>(<span class="string">&quot;@default-return {r}&quot;</span>),
         }
     }
 
@@ -882,7 +874,7 @@
     }
 }
 
-<span class="attribute">#[derive(Debug)]
+<span class="attr">#[derive(Debug)]
 </span><span class="kw">struct </span>ElemToClone {
     name: String,
     alias: <span class="prelude-ty">Option</span>&lt;String&gt;,
@@ -1047,7 +1039,7 @@ let {0} = match {1}::clone::Upgrade::upgrade(&amp;{0}) {{
     <span class="prelude-val">Ok</span>(())
 }
 
-<span class="attribute">#[doc(alias = <span class="string">&quot;get_full_ident&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;get_full_ident&quot;</span>)]
 </span><span class="kw">fn </span>full_ident(parts: <span class="kw-2">&amp;mut </span>Peekable&lt;ProcIter&gt;, borrow_kind: BorrowKind) -&gt; String {
     <span class="kw">let </span><span class="kw-2">mut </span>name = String::new();
     <span class="kw">let </span><span class="kw-2">mut </span>prev_is_ident = <span class="bool-val">false</span>;
@@ -1068,9 +1060,9 @@ let {0} = match {1}::clone::Upgrade::upgrade(&amp;{0}) {{
                     name.push(<span class="string">&#39;.&#39;</span>);
                     parts.next();
                 } <span class="kw">else if </span>name.is_empty() {
-                    <span class="macro">panic!</span>(<span class="string">&quot;Expected ident, found `{}`&quot;</span>, p_s);
+                    <span class="macro">panic!</span>(<span class="string">&quot;Expected ident, found `{p_s}`&quot;</span>);
                 } <span class="kw">else </span>{
-                    <span class="macro">panic!</span>(<span class="string">&quot;Expected ident, found `{}` after `{}`&quot;</span>, p_s, name);
+                    <span class="macro">panic!</span>(<span class="string">&quot;Expected ident, found `{p_s}` after `{name}`&quot;</span>);
                 }
             }
             <span class="prelude-val">Some</span>(TokenTree::Ident(i)) =&gt; {
@@ -1081,9 +1073,9 @@ let {0} = match {1}::clone::Upgrade::upgrade(&amp;{0}) {{
                 name.push_str(<span class="kw-2">&amp;</span>i.to_string());
                 parts.next();
             }
-            <span class="prelude-val">Some</span>(x) <span class="kw">if </span>name.is_empty() =&gt; <span class="macro">panic!</span>(<span class="string">&quot;Expected ident, found `{}`&quot;</span>, x),
-            <span class="prelude-val">Some</span>(x) =&gt; <span class="macro">panic!</span>(<span class="string">&quot;Expected ident, found `{}` after `{}`&quot;</span>, x, name),
-            <span class="prelude-val">None </span>=&gt; <span class="macro">panic!</span>(<span class="string">&quot;Unexpected end after ident `{}`&quot;</span>, name),
+            <span class="prelude-val">Some</span>(x) <span class="kw">if </span>name.is_empty() =&gt; <span class="macro">panic!</span>(<span class="string">&quot;Expected ident, found `{x}`&quot;</span>),
+            <span class="prelude-val">Some</span>(x) =&gt; <span class="macro">panic!</span>(<span class="string">&quot;Expected ident, found `{x}` after `{name}`&quot;</span>),
+            <span class="prelude-val">None </span>=&gt; <span class="macro">panic!</span>(<span class="string">&quot;Unexpected end after ident `{name}`&quot;</span>),
         }
     }
     <span class="macro">assert!</span>(
@@ -1094,7 +1086,7 @@ let {0} = match {1}::clone::Upgrade::upgrade(&amp;{0}) {{
     name
 }
 
-<span class="attribute">#[doc(alias = <span class="string">&quot;get_keyword&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;get_keyword&quot;</span>)]
 </span><span class="kw">fn </span>keyword(parts: <span class="kw-2">&amp;mut </span>Peekable&lt;ProcIter&gt;) -&gt; String {
     <span class="kw">let </span><span class="kw-2">mut </span>ret = String::new();
     <span class="kw">let </span><span class="kw-2">mut </span>prev_is_ident = <span class="bool-val">false</span>;
@@ -1137,8 +1129,7 @@ let {0} = match {1}::clone::Upgrade::upgrade(&amp;{0}) {{
         <span class="string">&quot;default-return&quot; </span>=&gt; <span class="macro">panic!</span>(<span class="string">&quot;`@default-return` should be after `=&gt;`&quot;</span>),
         <span class="string">&quot;default-panic&quot; </span>=&gt; <span class="macro">panic!</span>(<span class="string">&quot;`@default-panic` should be after `=&gt;`&quot;</span>),
         k =&gt; <span class="macro">panic!</span>(
-            <span class="string">&quot;Unknown keyword `{}`, only `weak`, `weak-allow-none`, `to-owned` and `strong` are allowed&quot;</span>,
-            k,
+            <span class="string">&quot;Unknown keyword `{k}`, only `weak`, `weak-allow-none`, `to-owned` and `strong` are allowed&quot;</span>,
         ),
     };
     <span class="kw">let </span>name = full_ident(parts, borrow_kind);
@@ -1147,11 +1138,11 @@ let {0} = match {1}::clone::Upgrade::upgrade(&amp;{0}) {{
             parts.next();
             <span class="kw">match </span>parts.next() {
                 <span class="prelude-val">Some</span>(TokenTree::Ident(i)) =&gt; <span class="prelude-val">Some</span>(i.to_string()),
-                <span class="prelude-val">Some</span>(x) =&gt; <span class="macro">panic!</span>(<span class="string">&quot;Expected ident after `as` keyword, found `{}`&quot;</span>, x),
+                <span class="prelude-val">Some</span>(x) =&gt; <span class="macro">panic!</span>(<span class="string">&quot;Expected ident after `as` keyword, found `{x}`&quot;</span>),
                 <span class="prelude-val">None </span>=&gt; <span class="macro">panic!</span>(<span class="string">&quot;Unexpected end after `as` keyword&quot;</span>),
             }
         }
-        <span class="prelude-val">Some</span>(TokenTree::Ident(p)) =&gt; <span class="macro">panic!</span>(<span class="string">&quot;Unexpected `{}`&quot;</span>, p),
+        <span class="prelude-val">Some</span>(TokenTree::Ident(p)) =&gt; <span class="macro">panic!</span>(<span class="string">&quot;Unexpected `{p}`&quot;</span>),
         <span class="kw">_ </span>=&gt; <span class="prelude-val">None</span>,
     };
     <span class="kw">if </span>name == <span class="string">&quot;self&quot; </span>&amp;&amp; alias.is_none() {
@@ -1160,11 +1151,10 @@ let {0} = match {1}::clone::Upgrade::upgrade(&amp;{0}) {{
                 rename it using `as`.&quot;
         </span>);
     } <span class="kw">else </span>{
-        <span class="macro">assert!</span>(!name.ends_with(<span class="string">&#39;.&#39;</span>), <span class="string">&quot;Invalid variable name: `{}`&quot;</span>, name);
+        <span class="macro">assert!</span>(!name.ends_with(<span class="string">&#39;.&#39;</span>), <span class="string">&quot;Invalid variable name: `{name}`&quot;</span>);
         <span class="macro">assert!</span>(
             !name.contains(<span class="string">&#39;.&#39;</span>) || alias.is_some(),
-            <span class="string">&quot;`{}`: Field accesses are not allowed as is, you must rename it!&quot;</span>,
-            name
+            <span class="string">&quot;`{name}`: Field accesses are not allowed as is, you must rename it!&quot;</span>,
         );
     }
     elements.push(ElemToClone {
@@ -1210,7 +1200,7 @@ let {0} = match {1}::clone::Upgrade::upgrade(&amp;{0}) {{
     )
 }
 
-<span class="attribute">#[doc(alias = <span class="string">&quot;get_expr&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;get_expr&quot;</span>)]
 </span><span class="kw">fn </span>expr(parts: <span class="kw-2">&amp;mut </span>Peekable&lt;ProcIter&gt;) -&gt; String {
     <span class="kw">let </span><span class="kw-2">mut </span>ret = String::new();
     <span class="kw">let </span><span class="kw-2">mut </span>total = <span class="number">0</span>;
@@ -1221,7 +1211,7 @@ let {0} = match {1}::clone::Upgrade::upgrade(&amp;{0}) {{
             <span class="string">&quot;[&quot; </span>| <span class="string">&quot;{&quot; </span>| <span class="string">&quot;(&quot; </span>=&gt; {
                 total += <span class="number">1</span>;
             }
-            x =&gt; <span class="macro">panic!</span>(<span class="string">&quot;Unexpected token `{}` after `@default-return`&quot;</span>, x),
+            x =&gt; <span class="macro">panic!</span>(<span class="string">&quot;Unexpected token `{x}` after `@default-return`&quot;</span>),
         },
         <span class="prelude-val">Some</span>(TokenTree::Group(g)) =&gt; <span class="kw">return </span>group_to_string(<span class="kw-2">&amp;</span>g),
         <span class="prelude-val">None </span>=&gt; <span class="macro">panic!</span>(<span class="string">&quot;Unexpected end after `@default-return`&quot;</span>),
@@ -1249,25 +1239,24 @@ let {0} = match {1}::clone::Upgrade::upgrade(&amp;{0}) {{
                 ret.push_str(<span class="kw-2">&amp;</span>x.to_string())
             }
             <span class="prelude-val">None </span>=&gt; <span class="macro">panic!</span>(
-                <span class="string">&quot;Unexpected end after `{}`. Did you forget a `,` after the @default-return value?&quot;</span>,
-                ret
+                <span class="string">&quot;Unexpected end after `{ret}`. Did you forget a `,` after the @default-return value?&quot;</span>,
             ),
         }
         parts.next();
     }
 }
 
-<span class="attribute">#[doc(alias = <span class="string">&quot;get_return_kind&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;get_return_kind&quot;</span>)]
 </span><span class="kw">fn </span>return_kind(parts: <span class="kw-2">&amp;mut </span>Peekable&lt;ProcIter&gt;) -&gt; WrapperKind {
     <span class="kw">match </span>check_tokens(
         <span class="kw-2">&amp;</span>[SimpleToken::Ident(<span class="string">&quot;default&quot;</span>), SimpleToken::Punct(<span class="string">&quot;-&quot;</span>)],
         parts,
     ) {
         <span class="prelude-val">Err</span>(TokenCheck::UnexpectedToken(tokens, unexpected_token)) =&gt; {
-            <span class="macro">panic!</span>(<span class="string">&quot;Unknown keyword `{}{}`&quot;</span>, tokens, unexpected_token);
+            <span class="macro">panic!</span>(<span class="string">&quot;Unknown keyword `{tokens}{unexpected_token}`&quot;</span>);
         }
         <span class="prelude-val">Err</span>(TokenCheck::UnexpectedEnd(tokens)) =&gt; {
-            <span class="macro">panic!</span>(<span class="string">&quot;Unexpected end after tokens `{}`&quot;</span>, tokens);
+            <span class="macro">panic!</span>(<span class="string">&quot;Unexpected end after tokens `{tokens}`&quot;</span>);
         }
         <span class="prelude-val">Ok</span>(()) =&gt; {}
     }
@@ -1277,9 +1266,9 @@ let {0} = match {1}::clone::Upgrade::upgrade(&amp;{0}) {{
             <span class="kw">if </span>i_s == <span class="string">&quot;panic&quot; </span>{
                 <span class="kw">return </span>WrapperKind::DefaultPanic;
             }
-            <span class="macro">assert!</span>(i_s == <span class="string">&quot;return&quot;</span>, <span class="string">&quot;Unknown keyword `@default-{}`&quot;</span>, i_s);
+            <span class="macro">assert!</span>(i_s == <span class="string">&quot;return&quot;</span>, <span class="string">&quot;Unknown keyword `@default-{i_s}`&quot;</span>);
         }
-        <span class="prelude-val">Some</span>(x) =&gt; <span class="macro">panic!</span>(<span class="string">&quot;Unknown token `{}` after `@default-`&quot;</span>, x),
+        <span class="prelude-val">Some</span>(x) =&gt; <span class="macro">panic!</span>(<span class="string">&quot;Unknown token `{x}` after `@default-`&quot;</span>,),
         <span class="prelude-val">None </span>=&gt; <span class="macro">panic!</span>(<span class="string">&quot;Unexpected end after `@default-`&quot;</span>),
     }
     WrapperKind::DefaultReturn(expr(parts))
@@ -1296,13 +1285,12 @@ let {0} = match {1}::clone::Upgrade::upgrade(&amp;{0}) {{
     <span class="kw">match </span>check_tokens(<span class="kw-2">&amp;</span>[SimpleToken::Punct(<span class="string">&quot;,&quot;</span>)], parts) {
         <span class="prelude-val">Err</span>(TokenCheck::UnexpectedToken(<span class="kw">_</span>, unexpected_token)) =&gt; {
             <span class="macro">panic!</span>(
-                <span class="string">&quot;Expected `,` after `{}`, found `{}`&quot;</span>,
+                <span class="string">&quot;Expected `,` after `{}`, found `{unexpected_token}`&quot;</span>,
                 ret.to_str(),
-                unexpected_token
             );
         }
         <span class="prelude-val">Err</span>(TokenCheck::UnexpectedEnd(tokens)) =&gt; {
-            <span class="macro">panic!</span>(<span class="string">&quot;Expected `,` after `{}{}`&quot;</span>, ret.to_str(), tokens);
+            <span class="macro">panic!</span>(<span class="string">&quot;Expected `,` after `{}{tokens}`&quot;</span>, ret.to_str());
         }
         <span class="prelude-val">Ok</span>(()) =&gt; {}
     }
@@ -1317,7 +1305,7 @@ let {0} = match {1}::clone::Upgrade::upgrade(&amp;{0}) {{
 }
 
 <span class="kw">impl </span>BlockKind {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_closure&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_closure&quot;</span>)]
     </span><span class="kw">fn </span>closure(<span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Vec&lt;TokenTree&gt;&gt; {
         <span class="kw">match </span><span class="self">self </span>{
             <span class="self">Self</span>::AsyncBlock =&gt; <span class="prelude-val">None</span>,
@@ -1331,10 +1319,10 @@ let {0} = match {1}::clone::Upgrade::upgrade(&amp;{0}) {{
         <span class="prelude-val">Some</span>(TokenTree::Ident(i)) <span class="kw">if </span>i.to_string() == <span class="string">&quot;move&quot; </span>=&gt; {}
         <span class="comment">// The next checks are just for better error messages.
         </span><span class="prelude-val">Some</span>(TokenTree::Ident(i)) =&gt; {
-            <span class="macro">panic!</span>(<span class="string">&quot;Expected `move` after `async`, found `{}`&quot;</span>, i);
+            <span class="macro">panic!</span>(<span class="string">&quot;Expected `move` after `async`, found `{i}`&quot;</span>);
         }
         <span class="prelude-val">Some</span>(TokenTree::Punct(p)) =&gt; {
-            <span class="macro">panic!</span>(<span class="string">&quot;Expected `move` after `async`, found `{}`&quot;</span>, p);
+            <span class="macro">panic!</span>(<span class="string">&quot;Expected `move` after `async`, found `{p}`&quot;</span>);
         }
         <span class="prelude-val">Some</span>(TokenTree::Group(g)) =&gt; {
             <span class="macro">panic!</span>(
@@ -1354,10 +1342,7 @@ let {0} = match {1}::clone::Upgrade::upgrade(&amp;{0}) {{
             BlockKind::AsyncClosure(closure(parts))
         }
         <span class="prelude-val">Some</span>(TokenTree::Punct(p)) =&gt; {
-            <span class="macro">panic!</span>(
-                <span class="string">&quot;Expected closure or block after `async move`, found `{}`&quot;</span>,
-                p
-            );
+            <span class="macro">panic!</span>(<span class="string">&quot;Expected closure or block after `async move`, found `{p}`&quot;</span>,);
         }
         <span class="prelude-val">Some</span>(TokenTree::Group(g)) <span class="kw">if </span>g.delimiter() == Delimiter::Brace =&gt; BlockKind::AsyncBlock,
         <span class="prelude-val">Some</span>(TokenTree::Group(g)) =&gt; {
@@ -1390,7 +1375,7 @@ let {0} = match {1}::clone::Upgrade::upgrade(&amp;{0}) {{
     }
     <span class="kw">match </span>parts.next() {
         <span class="prelude-val">Some</span>(TokenTree::Punct(p)) <span class="kw">if </span>p.to_string() == <span class="string">&quot;|&quot; </span>=&gt; {}
-        <span class="prelude-val">Some</span>(x) =&gt; <span class="macro">panic!</span>(<span class="string">&quot;Expected closure, found `{}`&quot;</span>, x),
+        <span class="prelude-val">Some</span>(x) =&gt; <span class="macro">panic!</span>(<span class="string">&quot;Expected closure, found `{x}`&quot;</span>),
         <span class="prelude-val">None </span>=&gt; <span class="macro">panic!</span>(<span class="string">&quot;Expected closure&quot;</span>),
     }
     <span class="kw">let </span>closure = closure(parts);
@@ -1404,7 +1389,7 @@ let {0} = match {1}::clone::Upgrade::upgrade(&amp;{0}) {{
                 }
                 <span class="comment">// The next matchings are for better error messages.
                 </span><span class="prelude-val">Some</span>(TokenTree::Punct(p)) =&gt; {
-                    <span class="macro">panic!</span>(<span class="string">&quot;Expected block after `| async move`, found `{}`&quot;</span>, p);
+                    <span class="macro">panic!</span>(<span class="string">&quot;Expected block after `| async move`, found `{p}`&quot;</span>);
                 }
                 <span class="prelude-val">Some</span>(TokenTree::Group(g)) =&gt; {
                     <span class="macro">panic!</span>(
@@ -1419,7 +1404,7 @@ let {0} = match {1}::clone::Upgrade::upgrade(&amp;{0}) {{
     }
 }
 
-<span class="attribute">#[doc(alias = <span class="string">&quot;get_closure&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;get_closure&quot;</span>)]
 </span><span class="kw">fn </span>closure(parts: <span class="kw-2">&amp;mut </span>Peekable&lt;ProcIter&gt;) -&gt; Vec&lt;TokenTree&gt; {
     <span class="kw">let </span><span class="kw-2">mut </span>ret = Vec::new();
 
@@ -1582,12 +1567,11 @@ let {0} = match {1}::clone::Upgrade::upgrade(&amp;{0}) {{
             }
             <span class="prelude-val">Some</span>(TokenTree::Ident(i)) =&gt; {
                 <span class="macro">panic!</span>(
-                    <span class="string">&quot;Unexpected ident `{}`: you need to specify if this is a weak or a strong \
+                    <span class="string">&quot;Unexpected ident `{i}`: you need to specify if this is a weak or a strong \
                      clone.&quot;</span>,
-                    i,
                 );
             }
-            <span class="prelude-val">Some</span>(t) =&gt; <span class="macro">panic!</span>(<span class="string">&quot;Unexpected token `{}`&quot;</span>, t),
+            <span class="prelude-val">Some</span>(t) =&gt; <span class="macro">panic!</span>(<span class="string">&quot;Unexpected token `{t}`&quot;</span>),
             <span class="prelude-val">None </span>=&gt; <span class="macro">panic!</span>(<span class="string">&quot;Unexpected end 4&quot;</span>),
         }
     }
@@ -1600,4 +1584,4 @@ let {0} = match {1}::clone::Upgrade::upgrade(&amp;{0}) {{
     build_closure(parts, elements, return_kind, kind)
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib_macros" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib_macros" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (6284998a2 2022-11-12)" data-search-js="search-39ee4160c7dc16c9.js" data-settings-js="settings-7873449fa8c00e11.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

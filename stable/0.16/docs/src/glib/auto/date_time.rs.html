@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/auto/date_time.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>date_time.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../../normalize.css"><link rel="stylesheet" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../../ayu.css" disabled><link rel="stylesheet" href="../../../dark.css" disabled><link rel="stylesheet" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/auto/date_time.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>date_time.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-83be770da8fbb54b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-860cb8b69b437763.css"><link rel="stylesheet" disabled href="../../../static.files/dark-ca7398001115f6db.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-2916eb07452214a6.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-74087aa2e88f4475.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-c2d2a5dbaed13e6b.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../glib/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../glib/index.html"><img class="rust-logo" src="../../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -588,7 +588,7 @@
 <span class="kw">use </span>std::mem;
 
 <span class="macro">crate::wrapper! </span>{
-    <span class="attribute">#[derive(Debug)]
+    <span class="attr">#[derive(Debug)]
     </span><span class="kw">pub struct </span>DateTime(Shared&lt;ffi::GDateTime&gt;);
 
     <span class="kw">match fn </span>{
@@ -599,7 +599,7 @@
 }
 
 <span class="kw">impl </span>DateTime {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_new&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(
         tz: <span class="kw-2">&amp;</span>TimeZone,
         year: i32,
@@ -623,7 +623,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_new_from_iso8601&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_new_from_iso8601&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_iso8601&quot;</span>)]
     </span><span class="kw">pub fn </span>from_iso8601(text: <span class="kw-2">&amp;</span>str, default_tz: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>TimeZone&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;DateTime, BoolError&gt; {
         <span class="kw">unsafe </span>{
@@ -649,7 +649,7 @@
     //    unsafe { TODO: call ffi:g_date_time_new_from_timeval_utc() }
     //}
 
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_new_from_unix_local&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_new_from_unix_local&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_unix_local&quot;</span>)]
     </span><span class="kw">pub fn </span>from_unix_local(t: i64) -&gt; <span class="prelude-ty">Result</span>&lt;DateTime, BoolError&gt; {
         <span class="kw">unsafe </span>{
@@ -658,7 +658,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_new_from_unix_utc&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_new_from_unix_utc&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_from_unix_utc&quot;</span>)]
     </span><span class="kw">pub fn </span>from_unix_utc(t: i64) -&gt; <span class="prelude-ty">Result</span>&lt;DateTime, BoolError&gt; {
         <span class="kw">unsafe </span>{
@@ -667,7 +667,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_new_local&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_new_local&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_local&quot;</span>)]
     </span><span class="kw">pub fn </span>from_local(
         year: i32,
@@ -685,7 +685,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_new_now&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_new_now&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_now&quot;</span>)]
     </span><span class="kw">pub fn </span>now(tz: <span class="kw-2">&amp;</span>TimeZone) -&gt; <span class="prelude-ty">Result</span>&lt;DateTime, BoolError&gt; {
         <span class="kw">unsafe </span>{
@@ -694,7 +694,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_new_now_local&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_new_now_local&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_now_local&quot;</span>)]
     </span><span class="kw">pub fn </span>now_local() -&gt; <span class="prelude-ty">Result</span>&lt;DateTime, BoolError&gt; {
         <span class="kw">unsafe </span>{
@@ -703,7 +703,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_new_now_utc&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_new_now_utc&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_now_utc&quot;</span>)]
     </span><span class="kw">pub fn </span>now_utc() -&gt; <span class="prelude-ty">Result</span>&lt;DateTime, BoolError&gt; {
         <span class="kw">unsafe </span>{
@@ -712,7 +712,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_new_utc&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_new_utc&quot;</span>)]
     #[doc(alias = <span class="string">&quot;new_utc&quot;</span>)]
     </span><span class="kw">pub fn </span>from_utc(
         year: i32,
@@ -730,7 +730,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_add&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_add&quot;</span>)]
     </span><span class="kw">pub fn </span>add(<span class="kw-2">&amp;</span><span class="self">self</span>, timespan: TimeSpan) -&gt; <span class="prelude-ty">Result</span>&lt;DateTime, BoolError&gt; {
         <span class="kw">unsafe </span>{
             <span class="prelude-ty">Option</span>::&lt;<span class="kw">_</span>&gt;::from_glib_full(ffi::g_date_time_add(
@@ -741,7 +741,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_add_days&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_add_days&quot;</span>)]
     </span><span class="kw">pub fn </span>add_days(<span class="kw-2">&amp;</span><span class="self">self</span>, days: i32) -&gt; <span class="prelude-ty">Result</span>&lt;DateTime, BoolError&gt; {
         <span class="kw">unsafe </span>{
             <span class="prelude-ty">Option</span>::&lt;<span class="kw">_</span>&gt;::from_glib_full(ffi::g_date_time_add_days(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, days))
@@ -749,7 +749,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_add_full&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_add_full&quot;</span>)]
     </span><span class="kw">pub fn </span>add_full(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         years: i32,
@@ -773,7 +773,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_add_hours&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_add_hours&quot;</span>)]
     </span><span class="kw">pub fn </span>add_hours(<span class="kw-2">&amp;</span><span class="self">self</span>, hours: i32) -&gt; <span class="prelude-ty">Result</span>&lt;DateTime, BoolError&gt; {
         <span class="kw">unsafe </span>{
             <span class="prelude-ty">Option</span>::&lt;<span class="kw">_</span>&gt;::from_glib_full(ffi::g_date_time_add_hours(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, hours))
@@ -781,7 +781,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_add_minutes&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_add_minutes&quot;</span>)]
     </span><span class="kw">pub fn </span>add_minutes(<span class="kw-2">&amp;</span><span class="self">self</span>, minutes: i32) -&gt; <span class="prelude-ty">Result</span>&lt;DateTime, BoolError&gt; {
         <span class="kw">unsafe </span>{
             <span class="prelude-ty">Option</span>::&lt;<span class="kw">_</span>&gt;::from_glib_full(ffi::g_date_time_add_minutes(
@@ -792,7 +792,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_add_months&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_add_months&quot;</span>)]
     </span><span class="kw">pub fn </span>add_months(<span class="kw-2">&amp;</span><span class="self">self</span>, months: i32) -&gt; <span class="prelude-ty">Result</span>&lt;DateTime, BoolError&gt; {
         <span class="kw">unsafe </span>{
             <span class="prelude-ty">Option</span>::&lt;<span class="kw">_</span>&gt;::from_glib_full(ffi::g_date_time_add_months(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, months))
@@ -800,7 +800,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_add_seconds&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_add_seconds&quot;</span>)]
     </span><span class="kw">pub fn </span>add_seconds(<span class="kw-2">&amp;</span><span class="self">self</span>, seconds: f64) -&gt; <span class="prelude-ty">Result</span>&lt;DateTime, BoolError&gt; {
         <span class="kw">unsafe </span>{
             <span class="prelude-ty">Option</span>::&lt;<span class="kw">_</span>&gt;::from_glib_full(ffi::g_date_time_add_seconds(
@@ -811,7 +811,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_add_weeks&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_add_weeks&quot;</span>)]
     </span><span class="kw">pub fn </span>add_weeks(<span class="kw-2">&amp;</span><span class="self">self</span>, weeks: i32) -&gt; <span class="prelude-ty">Result</span>&lt;DateTime, BoolError&gt; {
         <span class="kw">unsafe </span>{
             <span class="prelude-ty">Option</span>::&lt;<span class="kw">_</span>&gt;::from_glib_full(ffi::g_date_time_add_weeks(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, weeks))
@@ -819,7 +819,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_add_years&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_add_years&quot;</span>)]
     </span><span class="kw">pub fn </span>add_years(<span class="kw-2">&amp;</span><span class="self">self</span>, years: i32) -&gt; <span class="prelude-ty">Result</span>&lt;DateTime, BoolError&gt; {
         <span class="kw">unsafe </span>{
             <span class="prelude-ty">Option</span>::&lt;<span class="kw">_</span>&gt;::from_glib_full(ffi::g_date_time_add_years(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, years))
@@ -827,7 +827,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_compare&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_compare&quot;</span>)]
     </span><span class="kw">fn </span>compare(<span class="kw-2">&amp;</span><span class="self">self</span>, dt2: <span class="kw-2">&amp;</span>DateTime) -&gt; i32 {
         <span class="kw">unsafe </span>{
             ffi::g_date_time_compare(
@@ -837,7 +837,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_difference&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_difference&quot;</span>)]
     </span><span class="kw">pub fn </span>difference(<span class="kw-2">&amp;</span><span class="self">self</span>, begin: <span class="kw-2">&amp;</span>DateTime) -&gt; TimeSpan {
         <span class="kw">unsafe </span>{
             from_glib(ffi::g_date_time_difference(
@@ -847,7 +847,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_equal&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_equal&quot;</span>)]
     </span><span class="kw">fn </span>equal(<span class="kw-2">&amp;</span><span class="self">self</span>, dt2: <span class="kw-2">&amp;</span>DateTime) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::g_date_time_equal(
@@ -857,7 +857,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_format&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_format&quot;</span>)]
     </span><span class="kw">pub fn </span>format(<span class="kw-2">&amp;</span><span class="self">self</span>, format: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::GString, BoolError&gt; {
         <span class="kw">unsafe </span>{
             <span class="prelude-ty">Option</span>::&lt;<span class="kw">_</span>&gt;::from_glib_full(ffi::g_date_time_format(
@@ -868,7 +868,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_62&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_date_time_format_iso8601&quot;</span>)]
     </span><span class="kw">pub fn </span>format_iso8601(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="kw">crate</span>::GString, BoolError&gt; {
@@ -878,61 +878,61 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_get_day_of_month&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_get_day_of_month&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_day_of_month&quot;</span>)]
     </span><span class="kw">pub fn </span>day_of_month(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::g_date_time_get_day_of_month(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_get_day_of_week&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_get_day_of_week&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_day_of_week&quot;</span>)]
     </span><span class="kw">pub fn </span>day_of_week(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::g_date_time_get_day_of_week(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_get_day_of_year&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_get_day_of_year&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_day_of_year&quot;</span>)]
     </span><span class="kw">pub fn </span>day_of_year(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::g_date_time_get_day_of_year(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_get_hour&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_get_hour&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_hour&quot;</span>)]
     </span><span class="kw">pub fn </span>hour(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::g_date_time_get_hour(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_get_microsecond&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_get_microsecond&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_microsecond&quot;</span>)]
     </span><span class="kw">pub fn </span>microsecond(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::g_date_time_get_microsecond(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_get_minute&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_get_minute&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_minute&quot;</span>)]
     </span><span class="kw">pub fn </span>minute(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::g_date_time_get_minute(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_get_month&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_get_month&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_month&quot;</span>)]
     </span><span class="kw">pub fn </span>month(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::g_date_time_get_month(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_get_second&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_get_second&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_second&quot;</span>)]
     </span><span class="kw">pub fn </span>second(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::g_date_time_get_second(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_get_seconds&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_get_seconds&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_seconds&quot;</span>)]
     </span><span class="kw">pub fn </span>seconds(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; f64 {
         <span class="kw">unsafe </span>{ ffi::g_date_time_get_seconds(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_date_time_get_timezone&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_timezone&quot;</span>)]
@@ -940,7 +940,7 @@
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_date_time_get_timezone(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_get_timezone_abbreviation&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_get_timezone_abbreviation&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_timezone_abbreviation&quot;</span>)]
     </span><span class="kw">pub fn </span>timezone_abbreviation(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::GString {
         <span class="kw">unsafe </span>{
@@ -950,31 +950,31 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_get_utc_offset&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_get_utc_offset&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_utc_offset&quot;</span>)]
     </span><span class="kw">pub fn </span>utc_offset(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; TimeSpan {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_date_time_get_utc_offset(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_get_week_numbering_year&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_get_week_numbering_year&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_week_numbering_year&quot;</span>)]
     </span><span class="kw">pub fn </span>week_numbering_year(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::g_date_time_get_week_numbering_year(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_get_week_of_year&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_get_week_of_year&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_week_of_year&quot;</span>)]
     </span><span class="kw">pub fn </span>week_of_year(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::g_date_time_get_week_of_year(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_get_year&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_get_year&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_year&quot;</span>)]
     </span><span class="kw">pub fn </span>year(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::g_date_time_get_year(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_get_ymd&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_get_ymd&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_ymd&quot;</span>)]
     </span><span class="kw">pub fn </span>ymd(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (i32, i32, i32) {
         <span class="kw">unsafe </span>{
@@ -991,7 +991,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_hash&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_hash&quot;</span>)]
     </span><span class="kw">fn </span>hash(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{
             ffi::g_date_time_hash(
@@ -1000,12 +1000,12 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_is_daylight_savings&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_is_daylight_savings&quot;</span>)]
     </span><span class="kw">pub fn </span>is_daylight_savings(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_date_time_is_daylight_savings(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_to_local&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_to_local&quot;</span>)]
     </span><span class="kw">pub fn </span>to_local(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;DateTime, BoolError&gt; {
         <span class="kw">unsafe </span>{
             <span class="prelude-ty">Option</span>::&lt;<span class="kw">_</span>&gt;::from_glib_full(ffi::g_date_time_to_local(<span class="self">self</span>.to_glib_none().<span class="number">0</span>))
@@ -1019,7 +1019,7 @@
     //    unsafe { TODO: call ffi:g_date_time_to_timeval() }
     //}
 
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_to_timezone&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_to_timezone&quot;</span>)]
     </span><span class="kw">pub fn </span>to_timezone(<span class="kw-2">&amp;</span><span class="self">self</span>, tz: <span class="kw-2">&amp;</span>TimeZone) -&gt; <span class="prelude-ty">Result</span>&lt;DateTime, BoolError&gt; {
         <span class="kw">unsafe </span>{
             <span class="prelude-ty">Option</span>::&lt;<span class="kw">_</span>&gt;::from_glib_full(ffi::g_date_time_to_timezone(
@@ -1030,12 +1030,12 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_to_unix&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_to_unix&quot;</span>)]
     </span><span class="kw">pub fn </span>to_unix(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i64 {
         <span class="kw">unsafe </span>{ ffi::g_date_time_to_unix(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;g_date_time_to_utc&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_date_time_to_utc&quot;</span>)]
     </span><span class="kw">pub fn </span>to_utc(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;DateTime, BoolError&gt; {
         <span class="kw">unsafe </span>{
             <span class="prelude-ty">Option</span>::&lt;<span class="kw">_</span>&gt;::from_glib_full(ffi::g_date_time_to_utc(<span class="self">self</span>.to_glib_none().<span class="number">0</span>))
@@ -1045,21 +1045,21 @@
 }
 
 <span class="kw">impl </span>PartialOrd <span class="kw">for </span>DateTime {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>partial_cmp(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;cmp::Ordering&gt; {
         <span class="self">self</span>.compare(other).partial_cmp(<span class="kw-2">&amp;</span><span class="number">0</span>)
     }
 }
 
 <span class="kw">impl </span>Ord <span class="kw">for </span>DateTime {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>cmp(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; cmp::Ordering {
         <span class="self">self</span>.compare(other).cmp(<span class="kw-2">&amp;</span><span class="number">0</span>)
     }
 }
 
 <span class="kw">impl </span>PartialEq <span class="kw">for </span>DateTime {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool {
         <span class="self">self</span>.equal(other)
     }
@@ -1068,7 +1068,7 @@
 <span class="kw">impl </span>Eq <span class="kw">for </span>DateTime {}
 
 <span class="kw">impl </span>hash::Hash <span class="kw">for </span>DateTime {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>hash&lt;H&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, state: <span class="kw-2">&amp;mut </span>H)
     <span class="kw">where
         </span>H: hash::Hasher,
@@ -1080,4 +1080,4 @@
 <span class="kw">unsafe impl </span>Send <span class="kw">for </span>DateTime {}
 <span class="kw">unsafe impl </span>Sync <span class="kw">for </span>DateTime {}
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (6284998a2 2022-11-12)" data-search-js="search-39ee4160c7dc16c9.js" data-settings-js="settings-7873449fa8c00e11.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gio/src/auto/application.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>application.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../../normalize.css"><link rel="stylesheet" href="../../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../../ayu.css" disabled><link rel="stylesheet" href="../../../dark.css" disabled><link rel="stylesheet" href="../../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../../storage.js"></script><script defer src="../../../source-script.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../main.js"></script><noscript><link rel="stylesheet" href="../../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gio/src/auto/application.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>application.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-83be770da8fbb54b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-860cb8b69b437763.css"><link rel="stylesheet" disabled href="../../../static.files/dark-ca7398001115f6db.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-2916eb07452214a6.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-74087aa2e88f4475.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-c2d2a5dbaed13e6b.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../../gio/index.html"><div class="logo-container"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../../gio/index.html"><img class="rust-logo" src="../../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -1585,6 +1585,7 @@
 <span id="1512">1512</span>
 <span id="1513">1513</span>
 <span id="1514">1514</span>
+<span id="1515">1515</span>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
@@ -1728,7 +1729,7 @@
     /// # Implements
     ///
     /// [`ApplicationExt`][trait@crate::prelude::ApplicationExt], [`trait@glib::ObjectExt`], [`ActionGroupExt`][trait@crate::prelude::ActionGroupExt], [`ActionMapExt`][trait@crate::prelude::ActionMapExt], [`ApplicationExtManual`][trait@crate::prelude::ApplicationExtManual], [`ActionMapExtManual`][trait@crate::prelude::ActionMapExtManual]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;GApplication&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;GApplication&quot;</span>)]
     </span><span class="kw">pub struct </span>Application(Object&lt;ffi::GApplication, ffi::GApplicationClass&gt;) @implements ActionGroup, ActionMap;
 
     <span class="kw">match fn </span>{
@@ -1754,7 +1755,7 @@
     /// # Returns
     ///
     /// a new [`Application`][crate::Application] instance
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_new&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_new&quot;</span>)]
     </span><span class="kw">pub fn </span>new(application_id: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, flags: ApplicationFlags) -&gt; Application {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::g_application_new(
@@ -1783,8 +1784,9 @@
     /// # Returns
     ///
     /// the default application for this process, or [`None`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_get_default&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_get_default&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_default&quot;</span>)]
+    #[allow(clippy::should_implement_trait)]
     </span><span class="kw">pub fn </span>default() -&gt; <span class="prelude-ty">Option</span>&lt;Application&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_application_get_default()) }
     }
@@ -1840,7 +1842,7 @@
     /// # Returns
     ///
     /// [`true`] if `application_id` is valid
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_id_is_valid&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_id_is_valid&quot;</span>)]
     </span><span class="kw">pub fn </span>id_is_valid(application_id: <span class="kw-2">&amp;</span>str) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(ffi::g_application_id_is_valid(
@@ -1856,12 +1858,12 @@
     }
 }
 
-<span class="attribute">#[derive(Clone, Default)]
+<span class="attr">#[derive(Clone, Default)]
 </span><span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A [builder-pattern] type to construct [`Application`] objects.
 ///
 /// [builder-pattern]: https://doc.rust-lang.org/1.0.0/style/ownership/builders.html
-</span><span class="attribute">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
+</span><span class="attr">#[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
 </span><span class="kw">pub struct </span>ApplicationBuilder {
     action_group: <span class="prelude-ty">Option</span>&lt;ActionGroup&gt;,
     application_id: <span class="prelude-ty">Option</span>&lt;String&gt;,
@@ -1879,7 +1881,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Build the [`Application`].
-    </span><span class="attribute">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
+    </span><span class="attr">#[must_use = <span class="string">&quot;Building the object from the builder is usually expensive and is not expected to have side effects&quot;</span>]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; Application {
         <span class="kw">let </span><span class="kw-2">mut </span>properties: Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span><span class="kw">dyn </span>ToValue)&gt; = <span class="macro">vec!</span>[];
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref </span>action_group) = <span class="self">self</span>.action_group {
@@ -1938,7 +1940,7 @@
     /// emitted in the primary instance.
     ///
     /// The application must be registered before calling this function.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_activate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_activate&quot;</span>)]
     </span><span class="kw">fn </span>activate(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
     <span class="doccomment">/// Add an option to be handled by `self`.
@@ -1967,7 +1969,7 @@
     /// ## `arg_description`
     /// the placeholder to use for the extra argument
     ///  parsed by the option in `--help` output
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_add_main_option&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_add_main_option&quot;</span>)]
     </span><span class="kw">fn </span>add_main_option(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         long_name: <span class="kw-2">&amp;</span>str,
@@ -1994,7 +1996,7 @@
     /// a [`glib::Object`][crate::glib::Object]
     /// ## `property`
     /// the name of a boolean property of `object`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_bind_busy_property&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_bind_busy_property&quot;</span>)]
     </span><span class="kw">fn </span>bind_busy_property(<span class="kw-2">&amp;</span><span class="self">self</span>, object: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;glib::Object&gt;, property: <span class="kw-2">&amp;</span>str);
 
     <span class="doccomment">/// Gets the unique identifier for `self`.
@@ -2002,7 +2004,7 @@
     /// # Returns
     ///
     /// the identifier for `self`, owned by `self`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_get_application_id&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_get_application_id&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_application_id&quot;</span>)]
     </span><span class="kw">fn </span>application_id(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
@@ -2023,7 +2025,7 @@
     /// # Returns
     ///
     /// a [`DBusConnection`][crate::DBusConnection], or [`None`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_get_dbus_connection&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_get_dbus_connection&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_dbus_connection&quot;</span>)]
     </span><span class="kw">fn </span>dbus_connection(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;DBusConnection&gt;;
 
@@ -2045,7 +2047,7 @@
     /// # Returns
     ///
     /// the object path, or [`None`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_get_dbus_object_path&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_get_dbus_object_path&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_dbus_object_path&quot;</span>)]
     </span><span class="kw">fn </span>dbus_object_path(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
@@ -2056,7 +2058,7 @@
     /// # Returns
     ///
     /// the flags for `self`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_get_flags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_get_flags&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_flags&quot;</span>)]
     </span><span class="kw">fn </span>flags(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; ApplicationFlags;
 
@@ -2068,7 +2070,7 @@
     /// # Returns
     ///
     /// the timeout, in milliseconds
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_get_inactivity_timeout&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_get_inactivity_timeout&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_inactivity_timeout&quot;</span>)]
     </span><span class="kw">fn </span>inactivity_timeout(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32;
 
@@ -2078,7 +2080,7 @@
     /// # Returns
     ///
     /// [`true`] if `self` is currently marked as busy
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_get_is_busy&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_get_is_busy&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_is_busy&quot;</span>)]
     </span><span class="kw">fn </span>is_busy(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -2090,7 +2092,7 @@
     /// # Returns
     ///
     /// [`true`] if `self` is registered
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_get_is_registered&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_get_is_registered&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_is_registered&quot;</span>)]
     </span><span class="kw">fn </span>is_registered(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -2108,7 +2110,7 @@
     /// # Returns
     ///
     /// [`true`] if `self` is remote
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_get_is_remote&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_get_is_remote&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_is_remote&quot;</span>)]
     </span><span class="kw">fn </span>is_remote(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
 
@@ -2119,7 +2121,7 @@
     /// # Returns
     ///
     /// the base resource path, if one is set
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_get_resource_base_path&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_get_resource_base_path&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_resource_base_path&quot;</span>)]
     </span><span class="kw">fn </span>resource_base_path(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::GString&gt;;
 
@@ -2141,7 +2143,7 @@
     /// an array of `GFiles` to open
     /// ## `hint`
     /// a hint (or &quot;&quot;), but never [`None`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_open&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_open&quot;</span>)]
     </span><span class="kw">fn </span>open(<span class="kw-2">&amp;</span><span class="self">self</span>, files: <span class="kw-2">&amp;</span>[File], hint: <span class="kw-2">&amp;</span>str);
 
     <span class="doccomment">/// Immediately quits the application.
@@ -2157,7 +2159,7 @@
     ///
     /// The result of calling [`ApplicationExtManual::run()`][crate::prelude::ApplicationExtManual::run()] again after it returns is
     /// unspecified.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_quit&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_quit&quot;</span>)]
     </span><span class="kw">fn </span>quit(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
     <span class="doccomment">/// Attempts registration of the application.
@@ -2196,7 +2198,7 @@
     /// # Returns
     ///
     /// [`true`] if registration succeeded
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_register&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_register&quot;</span>)]
     </span><span class="kw">fn </span>register(<span class="kw-2">&amp;</span><span class="self">self</span>, cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;Cancellable&gt;&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::Error&gt;;
 
     <span class="doccomment">/// Sends a notification on behalf of `self` to the desktop shell.
@@ -2229,7 +2231,7 @@
     /// id of the notification, or [`None`]
     /// ## `notification`
     /// the [`Notification`][crate::Notification] to send
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_send_notification&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_send_notification&quot;</span>)]
     </span><span class="kw">fn </span>send_notification(<span class="kw-2">&amp;</span><span class="self">self</span>, id: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, notification: <span class="kw-2">&amp;</span>Notification);
 
     <span class="doccomment">/// Sets the unique identifier for `self`.
@@ -2241,7 +2243,7 @@
     /// [`Application::id_is_valid()`][crate::Application::id_is_valid()].
     /// ## `application_id`
     /// the identifier for `self`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_set_application_id&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_set_application_id&quot;</span>)]
     </span><span class="kw">fn </span>set_application_id(<span class="kw-2">&amp;</span><span class="self">self</span>, application_id: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;);
 
     <span class="doccomment">/// Sets or unsets the default application for the process, as returned
@@ -2250,7 +2252,7 @@
     /// This function does not take its own reference on `self`. If
     /// `self` is destroyed then the default application will revert
     /// back to [`None`].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_set_default&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_set_default&quot;</span>)]
     </span><span class="kw">fn </span>set_default(<span class="kw-2">&amp;</span><span class="self">self</span>);
 
     <span class="doccomment">/// Sets the flags for `self`.
@@ -2261,7 +2263,7 @@
     /// See [`ApplicationFlags`][crate::ApplicationFlags].
     /// ## `flags`
     /// the flags for `self`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_set_flags&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_set_flags&quot;</span>)]
     </span><span class="kw">fn </span>set_flags(<span class="kw-2">&amp;</span><span class="self">self</span>, flags: ApplicationFlags);
 
     <span class="doccomment">/// Sets the current inactivity timeout for the application.
@@ -2274,7 +2276,7 @@
     /// zero. Any timeouts currently in progress are not impacted.
     /// ## `inactivity_timeout`
     /// the timeout, in milliseconds
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_set_inactivity_timeout&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_set_inactivity_timeout&quot;</span>)]
     </span><span class="kw">fn </span>set_inactivity_timeout(<span class="kw-2">&amp;</span><span class="self">self</span>, inactivity_timeout: u32);
 
     <span class="doccomment">/// Adds a description to the `self` option context.
@@ -2283,7 +2285,7 @@
     /// ## `description`
     /// a string to be shown in `--help` output
     ///  after the list of options, or [`None`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_set_option_context_description&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_set_option_context_description&quot;</span>)]
     </span><span class="kw">fn </span>set_option_context_description(<span class="kw-2">&amp;</span><span class="self">self</span>, description: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;);
 
     <span class="doccomment">/// Sets the parameter string to be used by the commandline handling of `self`.
@@ -2295,7 +2297,7 @@
     /// ## `parameter_string`
     /// a string which is displayed
     ///  in the first line of `--help` output, after the usage summary `programname [OPTION...]`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_set_option_context_parameter_string&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_set_option_context_parameter_string&quot;</span>)]
     </span><span class="kw">fn </span>set_option_context_parameter_string(<span class="kw-2">&amp;</span><span class="self">self</span>, parameter_string: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;);
 
     <span class="doccomment">/// Adds a summary to the `self` option context.
@@ -2304,7 +2306,7 @@
     /// ## `summary`
     /// a string to be shown in `--help` output
     ///  before the list of options, or [`None`]
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_set_option_context_summary&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_set_option_context_summary&quot;</span>)]
     </span><span class="kw">fn </span>set_option_context_summary(<span class="kw-2">&amp;</span><span class="self">self</span>, summary: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;);
 
     <span class="doccomment">/// Sets (or unsets) the base resource path of `self`.
@@ -2342,7 +2344,7 @@
     /// before chaining up to the parent implementation.
     /// ## `resource_path`
     /// the resource path to use
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_set_resource_base_path&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_set_resource_base_path&quot;</span>)]
     </span><span class="kw">fn </span>set_resource_base_path(<span class="kw-2">&amp;</span><span class="self">self</span>, resource_path: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;);
 
     <span class="doccomment">/// Destroys a binding between `property` and the busy state of
@@ -2352,7 +2354,7 @@
     /// a [`glib::Object`][crate::glib::Object]
     /// ## `property`
     /// the name of a boolean property of `object`
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_unbind_busy_property&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_unbind_busy_property&quot;</span>)]
     </span><span class="kw">fn </span>unbind_busy_property(<span class="kw-2">&amp;</span><span class="self">self</span>, object: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;glib::Object&gt;, property: <span class="kw-2">&amp;</span>str);
 
     <span class="doccomment">/// Withdraws a notification that was sent with
@@ -2370,15 +2372,15 @@
     /// there is no need to explicitly withdraw the notification in that case.
     /// ## `id`
     /// id of a previously sent notification
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_application_withdraw_notification&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_withdraw_notification&quot;</span>)]
     </span><span class="kw">fn </span>withdraw_notification(<span class="kw-2">&amp;</span><span class="self">self</span>, id: <span class="kw-2">&amp;</span>str);
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;action-group&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;action-group&quot;</span>)]
     </span><span class="kw">fn </span>set_action_group&lt;P: IsA&lt;ActionGroup&gt;&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, action_group: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>P&gt;);
 
     <span class="doccomment">/// The ::activate signal is emitted on the primary instance when an
     /// activation occurs. See [`activate()`][Self::activate()].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;activate&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;activate&quot;</span>)]
     </span><span class="kw">fn </span>connect_activate&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// The ::command-line signal is emitted on the primary instance when
@@ -2392,7 +2394,7 @@
     ///
     /// An integer that is set as the exit status for the calling
     ///  process. See [`ApplicationCommandLineExt::set_exit_status()`][crate::prelude::ApplicationCommandLineExt::set_exit_status()].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;command-line&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;command-line&quot;</span>)]
     </span><span class="kw">fn </span>connect_command_line&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>ApplicationCommandLine) -&gt; i32 + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -2448,7 +2450,7 @@
     /// to exit the process, return a non-negative option, 0 for success,
     /// and a positive value for failure. To continue, return -1 to let
     /// the default option processing continue.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;handle-local-options&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;handle-local-options&quot;</span>)]
     </span><span class="kw">fn </span>connect_handle_local_options&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>glib::VariantDict) -&gt; i32 + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -2463,43 +2465,43 @@
     /// # Returns
     ///
     /// [`true`] if the signal has been handled
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;name-lost&quot;</span>)]
     </span><span class="kw">fn </span>connect_name_lost&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// The ::shutdown signal is emitted only on the registered primary instance
     /// immediately after the main loop terminates.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;shutdown&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;shutdown&quot;</span>)]
     </span><span class="kw">fn </span>connect_shutdown&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
     <span class="doccomment">/// The ::startup signal is emitted on the primary instance immediately
     /// after registration. See [`register()`][Self::register()].
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;startup&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;startup&quot;</span>)]
     </span><span class="kw">fn </span>connect_startup&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;action-group&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;action-group&quot;</span>)]
     </span><span class="kw">fn </span>connect_action_group_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;application-id&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;application-id&quot;</span>)]
     </span><span class="kw">fn </span>connect_application_id_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;flags&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;flags&quot;</span>)]
     </span><span class="kw">fn </span>connect_flags_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;inactivity-timeout&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;inactivity-timeout&quot;</span>)]
     </span><span class="kw">fn </span>connect_inactivity_timeout_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;is-busy&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;is-busy&quot;</span>)]
     </span><span class="kw">fn </span>connect_is_busy_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;is-registered&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;is-registered&quot;</span>)]
     </span><span class="kw">fn </span>connect_is_registered_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;is-remote&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;is-remote&quot;</span>)]
     </span><span class="kw">fn </span>connect_is_remote_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;resource-base-path&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;resource-base-path&quot;</span>)]
     </span><span class="kw">fn </span>connect_resource_base_path_notify&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId;
 }
 
@@ -2615,7 +2617,7 @@
     }
 
     <span class="kw">fn </span>open(<span class="kw-2">&amp;</span><span class="self">self</span>, files: <span class="kw-2">&amp;</span>[File], hint: <span class="kw-2">&amp;</span>str) {
-        <span class="kw">let </span>n_files = files.len() <span class="kw">as </span>i32;
+        <span class="kw">let </span>n_files = files.len() <span class="kw">as _</span>;
         <span class="kw">unsafe </span>{
             ffi::g_application_open(
                 <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
@@ -2831,7 +2833,7 @@
         }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_60&quot;</span>)))]
     </span><span class="kw">fn </span>connect_name_lost&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>name_lost_trampoline&lt;
@@ -3100,4 +3102,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="gio" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gio" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (6284998a2 2022-11-12)" data-search-js="search-39ee4160c7dc16c9.js" data-settings-js="settings-7873449fa8c00e11.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

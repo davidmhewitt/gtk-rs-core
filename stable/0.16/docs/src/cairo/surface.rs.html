@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `cairo/src/surface.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>surface.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../normalize.css"><link rel="stylesheet" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../ayu.css" disabled><link rel="stylesheet" href="../../dark.css" disabled><link rel="stylesheet" href="../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../storage.js"></script><script defer src="../../source-script.js"></script><script defer src="../../source-files.js"></script><script defer src="../../main.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `cairo/src/surface.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>surface.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-83be770da8fbb54b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-860cb8b69b437763.css"><link rel="stylesheet" disabled href="../../static.files/dark-ca7398001115f6db.css"><link rel="stylesheet" disabled href="../../static.files/ayu-2916eb07452214a6.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-74087aa2e88f4475.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-c2d2a5dbaed13e6b.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../cairo/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../cairo/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../cairo/index.html"><img class="rust-logo" src="../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -523,7 +523,7 @@
 <span class="kw">use </span><span class="kw">crate</span>::enums::{Content, Format, SurfaceType};
 <span class="kw">use </span><span class="kw">crate</span>::error::Error;
 <span class="kw">use </span><span class="kw">crate</span>::utils::status_to_result;
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 
 <span class="kw">use </span><span class="kw">crate</span>::device::Device;
@@ -531,7 +531,7 @@
 <span class="kw">use </span><span class="kw">crate</span>::rectangle::Rectangle;
 <span class="kw">use </span><span class="kw">crate</span>::rectangle_int::RectangleInt;
 
-<span class="attribute">#[derive(Debug)]
+<span class="attr">#[derive(Debug)]
 #[doc(alias = <span class="string">&quot;cairo_surface_t&quot;</span>)]
 #[repr(transparent)]
 </span><span class="kw">pub struct </span>Surface(ptr::NonNull&lt;ffi::cairo_surface_t&gt;);
@@ -559,7 +559,7 @@
         <span class="self">self</span>.<span class="number">0</span>.as_ptr()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_surface_create_similar&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_surface_create_similar&quot;</span>)]
     </span><span class="kw">pub fn </span>create_similar(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         content: Content,
@@ -576,7 +576,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_surface_create_for_rectangle&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_surface_create_for_rectangle&quot;</span>)]
     </span><span class="kw">pub fn </span>create_for_rectangle(<span class="kw-2">&amp;</span><span class="self">self</span>, bounds: Rectangle) -&gt; <span class="prelude-ty">Result</span>&lt;Surface, Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="self">Self</span>::from_raw_full(ffi::cairo_surface_create_for_rectangle(
@@ -589,7 +589,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_surface_get_mime_data&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_surface_get_mime_data&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_mime_data&quot;</span>)]
     </span><span class="kw">pub fn </span>mime_data(<span class="kw-2">&amp;</span><span class="self">self</span>, mime_type: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;Vec&lt;u8&gt;&gt; {
         <span class="kw">let </span>data_ptr: <span class="kw-2">*mut </span>u8 = ptr::null_mut();
@@ -610,7 +610,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_surface_get_mime_data&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_surface_get_mime_data&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_mime_data_raw&quot;</span>)]
     </span><span class="kw">pub unsafe fn </span>mime_data_raw(<span class="kw-2">&amp;</span><span class="self">self</span>, mime_type: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>[u8]&gt; {
         <span class="kw">let </span>data_ptr: <span class="kw-2">*mut </span>u8 = ptr::null_mut();
@@ -632,7 +632,7 @@
         </span>}
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_surface_set_mime_data&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_surface_set_mime_data&quot;</span>)]
     </span><span class="kw">pub fn </span>set_mime_data&lt;T: AsRef&lt;[u8]&gt; + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         mime_type: <span class="kw-2">&amp;</span>str,
@@ -665,7 +665,7 @@
         status_to_result(status)
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_surface_supports_mime_type&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_surface_supports_mime_type&quot;</span>)]
     </span><span class="kw">pub fn </span>supports_mime_type(<span class="kw-2">&amp;</span><span class="self">self</span>, mime_type: <span class="kw-2">&amp;</span>str) -&gt; bool {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>mime_type = CString::new(mime_type).unwrap();
@@ -673,7 +673,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_surface_get_device&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_surface_get_device&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_device&quot;</span>)]
     </span><span class="kw">pub fn </span>device(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Device&gt; {
         <span class="kw">unsafe </span>{
@@ -686,17 +686,17 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_surface_get_content&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_surface_get_content&quot;</span>)]
     </span><span class="kw">pub fn </span>content(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Content {
         <span class="kw">unsafe </span>{ ffi::cairo_surface_get_content(<span class="self">self</span>.to_raw_none()) }.into()
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_surface_set_device_offset&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_surface_set_device_offset&quot;</span>)]
     </span><span class="kw">pub fn </span>set_device_offset(<span class="kw-2">&amp;</span><span class="self">self</span>, x_offset: f64, y_offset: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_surface_set_device_offset(<span class="self">self</span>.to_raw_none(), x_offset, y_offset) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_surface_get_device_offset&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_surface_get_device_offset&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_device_offset&quot;</span>)]
     </span><span class="kw">pub fn </span>device_offset(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (f64, f64) {
         <span class="kw">let </span><span class="kw-2">mut </span>x_offset = <span class="number">0.0f64</span>;
@@ -707,12 +707,12 @@
         (x_offset, y_offset)
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_surface_set_device_scale&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_surface_set_device_scale&quot;</span>)]
     </span><span class="kw">pub fn </span>set_device_scale(<span class="kw-2">&amp;</span><span class="self">self</span>, x_scale: f64, y_scale: f64) {
         <span class="kw">unsafe </span>{ ffi::cairo_surface_set_device_scale(<span class="self">self</span>.to_raw_none(), x_scale, y_scale) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_surface_get_device_scale&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_surface_get_device_scale&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_device_scale&quot;</span>)]
     </span><span class="kw">pub fn </span>device_scale(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (f64, f64) {
         <span class="kw">let </span><span class="kw-2">mut </span>x_scale = <span class="number">0.0f64</span>;
@@ -723,7 +723,7 @@
         (x_scale, y_scale)
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_surface_set_fallback_resolution&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_surface_set_fallback_resolution&quot;</span>)]
     </span><span class="kw">pub fn </span>set_fallback_resolution(<span class="kw-2">&amp;</span><span class="self">self</span>, x_pixels_per_inch: f64, y_pixels_per_inch: f64) {
         <span class="kw">unsafe </span>{
             ffi::cairo_surface_set_fallback_resolution(
@@ -734,7 +734,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_surface_get_fallback_resolution&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_surface_get_fallback_resolution&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_fallback_resolution&quot;</span>)]
     </span><span class="kw">pub fn </span>fallback_resolution(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (f64, f64) {
         <span class="kw">let </span><span class="kw-2">mut </span>x_pixels_per_inch = <span class="number">0.0f64</span>;
@@ -749,7 +749,7 @@
         (x_pixels_per_inch, y_pixels_per_inch)
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_surface_create_similar_image&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_surface_create_similar_image&quot;</span>)]
     </span><span class="kw">pub fn </span>create_similar_image(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         format: Format,
@@ -766,7 +766,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_surface_map_to_image&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_surface_map_to_image&quot;</span>)]
     </span><span class="kw">pub fn </span>map_to_image(<span class="kw-2">&amp;</span><span class="self">self</span>, extents: <span class="prelude-ty">Option</span>&lt;RectangleInt&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;MappedImageSurface, Error&gt; {
         <span class="kw">unsafe </span>{
             ImageSurface::from_raw_none(<span class="kw">match </span>extents {
@@ -780,17 +780,17 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_surface_mark_dirty&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_surface_mark_dirty&quot;</span>)]
     </span><span class="kw">pub fn </span>mark_dirty(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{ ffi::cairo_surface_mark_dirty(<span class="self">self</span>.to_raw_none()) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_surface_mark_dirty_rectangle&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_surface_mark_dirty_rectangle&quot;</span>)]
     </span><span class="kw">pub fn </span>mark_dirty_rectangle(<span class="kw-2">&amp;</span><span class="self">self</span>, x: i32, y: i32, width: i32, height: i32) {
         <span class="kw">unsafe </span>{ ffi::cairo_surface_mark_dirty_rectangle(<span class="self">self</span>.to_raw_none(), x, y, width, height) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_surface_status&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_surface_status&quot;</span>)]
     </span><span class="kw">pub fn </span>status(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
         <span class="kw">let </span>status = <span class="kw">unsafe </span>{ ffi::cairo_surface_status(<span class="self">self</span>.to_raw_none()) };
         status_to_result(status)
@@ -802,46 +802,46 @@
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::cairo_surface_t&gt; <span class="kw">for </span>Surface {
     <span class="kw">type </span>Storage = <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Surface;
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::cairo_surface_t, <span class="self">Self</span>&gt; {
         Stash(<span class="self">self</span>.to_raw_none(), <span class="self">self</span>)
     }
 
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*mut </span>ffi::cairo_surface_t {
         <span class="kw">unsafe </span>{ ffi::cairo_surface_reference(<span class="self">self</span>.to_raw_none()) }
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">impl </span>FromGlibPtrNone&lt;<span class="kw-2">*mut </span>ffi::cairo_surface_t&gt; <span class="kw">for </span>Surface {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_none(ptr: <span class="kw-2">*mut </span>ffi::cairo_surface_t) -&gt; Surface {
         <span class="self">Self</span>::from_raw_none(ptr)
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">impl </span>FromGlibPtrBorrow&lt;<span class="kw-2">*mut </span>ffi::cairo_surface_t&gt; <span class="kw">for </span>Surface {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_borrow(ptr: <span class="kw-2">*mut </span>ffi::cairo_surface_t) -&gt; <span class="kw">crate</span>::Borrowed&lt;Surface&gt; {
         <span class="self">Self</span>::from_raw_borrow(ptr)
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">impl </span>FromGlibPtrFull&lt;<span class="kw-2">*mut </span>ffi::cairo_surface_t&gt; <span class="kw">for </span>Surface {
-    <span class="attribute">#[inline]
+    <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*mut </span>ffi::cairo_surface_t) -&gt; Surface {
         <span class="self">Self</span>::from_raw_full(ptr).unwrap()
     }
 }
 
-<span class="attribute">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="macro">gvalue_impl!</span>(
     Surface,
     ffi::cairo_surface_t,
@@ -875,28 +875,28 @@
 }
 
 <span class="kw">impl </span>Surface {
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_surface_flush&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_surface_flush&quot;</span>)]
     </span><span class="kw">pub fn </span>flush(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::cairo_surface_flush(<span class="self">self</span>.<span class="number">0</span>.as_ptr());
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_surface_finish&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_surface_finish&quot;</span>)]
     </span><span class="kw">pub fn </span>finish(<span class="kw-2">&amp;</span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::cairo_surface_finish(<span class="self">self</span>.<span class="number">0</span>.as_ptr());
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;cairo_surface_get_type&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;cairo_surface_get_type&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_type&quot;</span>)]
     </span><span class="kw">pub fn </span>type_(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; SurfaceType {
         <span class="kw">unsafe </span>{ SurfaceType::from(ffi::cairo_surface_get_type(<span class="self">self</span>.<span class="number">0</span>.as_ptr())) }
     }
 }
 
-<span class="attribute">#[derive(Debug)]
+<span class="attr">#[derive(Debug)]
 </span><span class="kw">pub struct </span>MappedImageSurface {
     original_surface: Surface,
     image_surface: ImageSurface,
@@ -933,13 +933,13 @@
     }
 }
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use </span><span class="kw">crate</span>::constants::MIME_TYPE_PNG;
     <span class="kw">use </span><span class="kw">crate</span>::Format;
     <span class="kw">use </span><span class="kw">crate</span>::ImageSurface;
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>mime_data() {
         <span class="kw">let </span>surface = ImageSurface::create(Format::ARgb32, <span class="number">500</span>, <span class="number">500</span>).unwrap();
         <span class="kw">let </span>data = surface.mime_data(MIME_TYPE_PNG);
@@ -952,4 +952,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="cairo" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="cairo" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (6284998a2 2022-11-12)" data-search-js="search-39ee4160c7dc16c9.js" data-settings-js="settings-7873449fa8c00e11.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

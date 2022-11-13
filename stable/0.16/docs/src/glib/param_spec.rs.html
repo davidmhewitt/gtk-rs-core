@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/param_spec.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>param_spec.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Regular.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../FiraSans-Medium.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Regular.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceSerif4-Bold.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../SourceCodePro-Semibold.ttf.woff2"><link rel="stylesheet" href="../../normalize.css"><link rel="stylesheet" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" href="../../ayu.css" disabled><link rel="stylesheet" href="../../dark.css" disabled><link rel="stylesheet" href="../../light.css" id="themeStyle"><script id="default-settings" ></script><script src="../../storage.js"></script><script defer src="../../source-script.js"></script><script defer src="../../source-files.js"></script><script defer src="../../main.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/param_spec.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>param_spec.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-83be770da8fbb54b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-860cb8b69b437763.css"><link rel="stylesheet" disabled href="../../static.files/dark-ca7398001115f6db.css"><link rel="stylesheet" disabled href="../../static.files/ayu-2916eb07452214a6.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-74087aa2e88f4475.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-c2d2a5dbaed13e6b.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><a class="sidebar-logo" href="../../glib/index.html"><div class="logo-container"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></div></a></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../rust-logo.svg" alt="logo"></a><form class="search-form"><div class="search-container"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../wheel.svg"></a></div></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><span id="1">1</span>
 <span id="2">2</span>
 <span id="3">3</span>
 <span id="4">4</span>
@@ -2058,7 +2058,7 @@
     /// efficient, and is the ‘canonical form’. Using `_` is discouraged.
     ///
     /// This is an Abstract Base Class, you cannot instantiate it.
-    </span><span class="attribute">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    </span><span class="attr">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
     #[doc(alias = <span class="string">&quot;GParamSpec&quot;</span>)]
     </span><span class="kw">pub struct </span>ParamSpec(Shared&lt;gobject_ffi::GParamSpec&gt;);
 
@@ -2074,15 +2074,15 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span><span class="kw">crate</span>::value::ValueType <span class="kw">for </span>ParamSpec {
     <span class="kw">type </span>Type = ParamSpec;
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span><span class="kw">crate</span>::value::ValueTypeOptional <span class="kw">for </span>ParamSpec {}
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">crate</span>::value::FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span>ParamSpec {
     <span class="kw">type </span>Checker = <span class="kw">crate</span>::value::GenericValueTypeOrNoneChecker&lt;<span class="self">Self</span>&gt;;
 
@@ -2093,7 +2093,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">crate</span>::value::FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>ParamSpec {
     <span class="kw">type </span>Checker = <span class="kw">crate</span>::value::GenericValueTypeOrNoneChecker&lt;<span class="self">Self</span>&gt;;
 
@@ -2110,7 +2110,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span><span class="kw">crate</span>::value::ToValue <span class="kw">for </span>ParamSpec {
     <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Value {
         <span class="kw">unsafe </span>{
@@ -2125,7 +2125,7 @@
     }
 }
 
-<span class="attribute">#[doc(hidden)]
+<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span><span class="kw">crate</span>::value::ToValueOptional <span class="kw">for </span>ParamSpec {
     <span class="kw">fn </span>to_value_optional(s: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="self">Self</span>&gt;) -&gt; <span class="kw">crate</span>::Value {
         <span class="kw">let </span><span class="kw-2">mut </span>value = <span class="kw">crate</span>::Value::for_value_type::&lt;<span class="self">Self</span>&gt;();
@@ -2167,7 +2167,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_type&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_type&quot;</span>)]
     </span><span class="kw">pub fn </span>type_(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
         <span class="kw">unsafe </span>{
             from_glib(
@@ -2179,12 +2179,12 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_value_type&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_value_type&quot;</span>)]
     </span><span class="kw">pub fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Type {
         <span class="kw">unsafe </span>{ from_glib((<span class="kw-2">*</span>(&lt;<span class="self">Self </span><span class="kw">as </span>ToGlibPtr&lt;<span class="kw-2">*const </span><span class="kw">_</span>&gt;&gt;::to_glib_none(<span class="self">self</span>).<span class="number">0</span>)).value_type) }
     }
 
-    <span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_74&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_param_value_is_valid&quot;</span>)]
     </span><span class="kw">pub fn </span>value_is_valid(<span class="kw-2">&amp;</span><span class="self">self</span>, value: <span class="kw-2">&amp;</span>Value) -&gt; bool {
@@ -2196,12 +2196,12 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_owner_type&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_owner_type&quot;</span>)]
     </span><span class="kw">pub fn </span>owner_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Type {
         <span class="kw">unsafe </span>{ from_glib((<span class="kw-2">*</span>(&lt;<span class="self">Self </span><span class="kw">as </span>ToGlibPtr&lt;<span class="kw-2">*const </span><span class="kw">_</span>&gt;&gt;::to_glib_none(<span class="self">self</span>).<span class="number">0</span>)).owner_type) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_flags&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_flags&quot;</span>)]
     </span><span class="kw">pub fn </span>flags(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; ParamFlags {
         <span class="kw">unsafe </span>{ from_glib((<span class="kw-2">*</span>(&lt;<span class="self">Self </span><span class="kw">as </span>ToGlibPtr&lt;<span class="kw-2">*const </span><span class="kw">_</span>&gt;&gt;::to_glib_none(<span class="self">self</span>).<span class="number">0</span>)).flags) }
     }
@@ -2211,7 +2211,7 @@
     /// # Returns
     ///
     /// the short description of `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_param_spec_get_blurb&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_param_spec_get_blurb&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_blurb&quot;</span>)]
     </span><span class="kw">pub fn </span>blurb(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt; {
         <span class="kw">unsafe </span>{
@@ -2231,7 +2231,7 @@
     /// # Returns
     ///
     /// a pointer to a [`Value`][crate::Value] which must not be modified
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_param_spec_get_default_value&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_param_spec_get_default_value&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_default_value&quot;</span>)]
     </span><span class="kw">pub fn </span>default_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>Value {
         <span class="kw">unsafe </span>{
@@ -2248,7 +2248,7 @@
     /// # Returns
     ///
     /// the name of `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_param_spec_get_name&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_param_spec_get_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_name&quot;</span>)]
     </span><span class="kw">pub fn </span>name&lt;<span class="lifetime">&#39;a</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str {
         <span class="kw">unsafe </span>{
@@ -2263,7 +2263,7 @@
     /// # Returns
     ///
     /// the GQuark for `self`-&gt;name.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_param_spec_get_name_quark&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_param_spec_get_name_quark&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_name_quark&quot;</span>)]
     </span><span class="kw">pub fn </span>name_quark(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Quark {
         <span class="kw">unsafe </span>{
@@ -2284,7 +2284,7 @@
     /// # Returns
     ///
     /// the nickname of `self`.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_param_spec_get_nick&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_param_spec_get_nick&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_nick&quot;</span>)]
     </span><span class="kw">pub fn </span>nick(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>str {
         <span class="kw">unsafe </span>{
@@ -2310,7 +2310,7 @@
     ///
     /// paramspec to which requests on this
     ///  paramspec should be redirected, or [`None`] if none.
-    </span><span class="attribute">#[doc(alias = <span class="string">&quot;g_param_spec_get_redirect_target&quot;</span>)]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_param_spec_get_redirect_target&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_redirect_target&quot;</span>)]
     </span><span class="kw">pub fn </span>redirect_target(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;ParamSpec&gt; {
         <span class="kw">unsafe </span>{
@@ -2344,7 +2344,7 @@
     /// # Returns
     ///
     /// [`true`] if `name` is a valid property name, [`false`] otherwise.
-    </span><span class="attribute">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_param_spec_is_valid_name&quot;</span>)]
     </span><span class="kw">pub fn </span>is_valid_name(name: <span class="kw-2">&amp;</span>str) -&gt; bool {
@@ -2361,7 +2361,7 @@
 </span>{
 }
 
-<span class="attribute">#[link(name = <span class="string">&quot;gobject-2.0&quot;</span>)]
+<span class="attr">#[link(name = <span class="string">&quot;gobject-2.0&quot;</span>)]
 </span><span class="kw">extern </span><span class="string">&quot;C&quot; </span>{
     <span class="kw">pub static </span>g_param_spec_types: <span class="kw-2">*const </span>ffi::GType;
 }
@@ -2370,7 +2370,7 @@
     (<span class="macro-nonterminal">$rust_type</span>:ident, <span class="macro-nonterminal">$ffi_type</span>:path, <span class="macro-nonterminal">$rust_type_offset</span>:expr) =&gt; {
         <span class="comment">// Can&#39;t use get_type here as this is not a boxed type but another fundamental type
         </span><span class="macro">wrapper! </span>{
-            <span class="attribute">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+            <span class="attr">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
             </span><span class="kw">pub struct </span><span class="macro-nonterminal">$rust_type</span>(Shared&lt;<span class="macro-nonterminal">$ffi_type</span>&gt;);
 
             <span class="kw">match fn </span>{
@@ -2387,15 +2387,15 @@
             }
         }
 
-        <span class="attribute">#[doc(hidden)]
+        <span class="attr">#[doc(hidden)]
         </span><span class="kw">impl </span><span class="kw">crate</span>::value::ValueType <span class="kw">for </span><span class="macro-nonterminal">$rust_type </span>{
             <span class="kw">type </span>Type = <span class="macro-nonterminal">$rust_type</span>;
         }
 
-        <span class="attribute">#[doc(hidden)]
+        <span class="attr">#[doc(hidden)]
         </span><span class="kw">impl </span><span class="kw">crate</span>::value::ValueTypeOptional <span class="kw">for </span><span class="macro-nonterminal">$rust_type </span>{}
 
-        <span class="attribute">#[doc(hidden)]
+        <span class="attr">#[doc(hidden)]
         </span><span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">crate</span>::value::FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span><span class="macro-nonterminal">$rust_type </span>{
             <span class="kw">type </span>Checker = <span class="macro-nonterminal">$crate::value::GenericValueTypeOrNoneChecker</span>&lt;<span class="self">Self</span>&gt;;
 
@@ -2406,7 +2406,7 @@
             }
         }
 
-        <span class="attribute">#[doc(hidden)]
+        <span class="attr">#[doc(hidden)]
         </span><span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">crate</span>::value::FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="macro-nonterminal">$rust_type </span>{
             <span class="kw">type </span>Checker = <span class="kw">crate</span>::value::GenericValueTypeOrNoneChecker&lt;<span class="self">Self</span>&gt;;
 
@@ -2419,7 +2419,7 @@
             }
         }
 
-        <span class="attribute">#[doc(hidden)]
+        <span class="attr">#[doc(hidden)]
         </span><span class="kw">impl </span><span class="kw">crate</span>::value::ToValue <span class="kw">for </span><span class="macro-nonterminal">$rust_type </span>{
             <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Value {
                 <span class="kw">unsafe </span>{
@@ -2434,7 +2434,7 @@
             }
         }
 
-        <span class="attribute">#[doc(hidden)]
+        <span class="attr">#[doc(hidden)]
         </span><span class="kw">impl </span><span class="kw">crate</span>::value::ToValueOptional <span class="kw">for </span><span class="macro-nonterminal">$rust_type </span>{
             <span class="kw">fn </span>to_value_optional(s: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="self">Self</span>&gt;) -&gt; <span class="kw">crate</span>::Value {
                 <span class="kw">let </span><span class="kw-2">mut </span>value = <span class="kw">crate</span>::Value::for_value_type::&lt;<span class="self">Self</span>&gt;();
@@ -2461,85 +2461,85 @@
 
         <span class="kw">unsafe impl </span>ParamSpecType <span class="kw">for </span><span class="macro-nonterminal">$rust_type </span>{}
 
-        <span class="attribute">#[doc(hidden)]
+        <span class="attr">#[doc(hidden)]
         </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>gobject_ffi::GParamSpec&gt; <span class="kw">for </span><span class="macro-nonterminal">$rust_type </span>{
             <span class="kw">type </span>Storage = <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="macro-nonterminal">$crate::shared::Shared</span>&lt;<span class="macro-nonterminal">$ffi_type</span>, <span class="macro-nonterminal">$rust_type</span>&gt;;
 
-            <span class="attribute">#[inline]
+            <span class="attr">#[inline]
             </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; <span class="macro-nonterminal">$crate::translate::Stash</span>&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>gobject_ffi::GParamSpec, <span class="self">Self</span>&gt; {
                 <span class="kw">let </span>stash = <span class="macro-nonterminal">$crate::translate::ToGlibPtr</span>::&lt;<span class="kw-2">*const </span><span class="macro-nonterminal">$ffi_type</span>&gt;::to_glib_none(<span class="self">self</span>);
                 <span class="macro-nonterminal">$crate::translate::Stash</span>(stash.<span class="number">0 </span><span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>, stash.<span class="number">1</span>)
             }
 
-            <span class="attribute">#[inline]
+            <span class="attr">#[inline]
             </span><span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*const </span>gobject_ffi::GParamSpec {
                 <span class="macro-nonterminal">$crate::translate::ToGlibPtr</span>::&lt;<span class="kw-2">*const </span><span class="macro-nonterminal">$ffi_type</span>&gt;::to_glib_full(<span class="self">self</span>) <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_
             </span>}
         }
 
-        <span class="attribute">#[doc(hidden)]
+        <span class="attr">#[doc(hidden)]
         </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>gobject_ffi::GParamSpec&gt; <span class="kw">for </span><span class="macro-nonterminal">$rust_type </span>{
             <span class="kw">type </span>Storage = <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="macro-nonterminal">$crate::shared::Shared</span>&lt;<span class="macro-nonterminal">$ffi_type</span>, <span class="macro-nonterminal">$rust_type</span>&gt;;
 
-            <span class="attribute">#[inline]
+            <span class="attr">#[inline]
             </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; <span class="macro-nonterminal">$crate::translate::Stash</span>&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>gobject_ffi::GParamSpec, <span class="self">Self</span>&gt; {
                 <span class="kw">let </span>stash = <span class="macro-nonterminal">$crate::translate::ToGlibPtr</span>::&lt;<span class="kw-2">*mut </span><span class="macro-nonterminal">$ffi_type</span>&gt;::to_glib_none(<span class="self">self</span>);
                 <span class="macro-nonterminal">$crate::translate::Stash</span>(stash.<span class="number">0 </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>, stash.<span class="number">1</span>)
             }
 
-            <span class="attribute">#[inline]
+            <span class="attr">#[inline]
             </span><span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*mut </span>gobject_ffi::GParamSpec {
                 <span class="macro-nonterminal">$crate::translate::ToGlibPtr</span>::&lt;<span class="kw-2">*mut </span><span class="macro-nonterminal">$ffi_type</span>&gt;::to_glib_full(<span class="self">self</span>) <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_
             </span>}
         }
 
-        <span class="attribute">#[doc(hidden)]
+        <span class="attr">#[doc(hidden)]
         </span><span class="kw">impl </span>IntoGlibPtr&lt;<span class="kw-2">*mut </span>gobject_ffi::GParamSpec&gt; <span class="kw">for </span><span class="macro-nonterminal">$rust_type </span>{
-            <span class="attribute">#[inline]
+            <span class="attr">#[inline]
             </span><span class="kw">unsafe fn </span>into_glib_ptr(<span class="self">self</span>) -&gt; <span class="kw-2">*mut </span>gobject_ffi::GParamSpec {
                 <span class="kw">let </span>s = std::mem::ManuallyDrop::new(<span class="self">self</span>);
                 s.to_glib_none().<span class="number">0
             </span>}
         }
 
-        <span class="attribute">#[doc(hidden)]
+        <span class="attr">#[doc(hidden)]
         </span><span class="kw">impl </span>IntoGlibPtr&lt;<span class="kw-2">*const </span>gobject_ffi::GParamSpec&gt; <span class="kw">for </span><span class="macro-nonterminal">$rust_type </span>{
-            <span class="attribute">#[inline]
+            <span class="attr">#[inline]
             </span><span class="kw">unsafe fn </span>into_glib_ptr(<span class="self">self</span>) -&gt; <span class="kw-2">*const </span>gobject_ffi::GParamSpec {
                 <span class="kw">let </span>s = std::mem::ManuallyDrop::new(<span class="self">self</span>);
                 s.to_glib_none().<span class="number">0
             </span>}
         }
 
-        <span class="attribute">#[doc(hidden)]
+        <span class="attr">#[doc(hidden)]
         </span><span class="kw">impl </span>FromGlibPtrNone&lt;<span class="kw-2">*const </span>gobject_ffi::GParamSpec&gt; <span class="kw">for </span><span class="macro-nonterminal">$rust_type </span>{
             <span class="kw">unsafe fn </span>from_glib_none(ptr: <span class="kw-2">*const </span>gobject_ffi::GParamSpec) -&gt; <span class="self">Self </span>{
                 from_glib_none(ptr <span class="kw">as </span><span class="kw-2">*const </span><span class="macro-nonterminal">$ffi_type</span>)
             }
         }
 
-        <span class="attribute">#[doc(hidden)]
+        <span class="attr">#[doc(hidden)]
         </span><span class="kw">impl </span>FromGlibPtrNone&lt;<span class="kw-2">*mut </span>gobject_ffi::GParamSpec&gt; <span class="kw">for </span><span class="macro-nonterminal">$rust_type </span>{
             <span class="kw">unsafe fn </span>from_glib_none(ptr: <span class="kw-2">*mut </span>gobject_ffi::GParamSpec) -&gt; <span class="self">Self </span>{
                 from_glib_none(ptr <span class="kw">as </span><span class="kw-2">*mut </span><span class="macro-nonterminal">$ffi_type</span>)
             }
         }
 
-        <span class="attribute">#[doc(hidden)]
+        <span class="attr">#[doc(hidden)]
         </span><span class="kw">impl </span>FromGlibPtrBorrow&lt;<span class="kw-2">*const </span>gobject_ffi::GParamSpec&gt; <span class="kw">for </span><span class="macro-nonterminal">$rust_type </span>{
             <span class="kw">unsafe fn </span>from_glib_borrow(ptr: <span class="kw-2">*const </span>gobject_ffi::GParamSpec) -&gt; Borrowed&lt;<span class="self">Self</span>&gt; {
                 from_glib_borrow(ptr <span class="kw">as </span><span class="kw-2">*const </span><span class="macro-nonterminal">$ffi_type</span>)
             }
         }
 
-        <span class="attribute">#[doc(hidden)]
+        <span class="attr">#[doc(hidden)]
         </span><span class="kw">impl </span>FromGlibPtrBorrow&lt;<span class="kw-2">*mut </span>gobject_ffi::GParamSpec&gt; <span class="kw">for </span><span class="macro-nonterminal">$rust_type </span>{
             <span class="kw">unsafe fn </span>from_glib_borrow(ptr: <span class="kw-2">*mut </span>gobject_ffi::GParamSpec) -&gt; Borrowed&lt;<span class="self">Self</span>&gt; {
                 from_glib_borrow(ptr <span class="kw">as </span><span class="kw-2">*mut </span><span class="macro-nonterminal">$ffi_type</span>)
             }
         }
 
-        <span class="attribute">#[doc(hidden)]
+        <span class="attr">#[doc(hidden)]
         </span><span class="kw">impl </span>FromGlibPtrFull&lt;<span class="kw-2">*mut </span>gobject_ffi::GParamSpec&gt; <span class="kw">for </span><span class="macro-nonterminal">$rust_type </span>{
             <span class="kw">unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*mut </span>gobject_ffi::GParamSpec) -&gt; <span class="self">Self </span>{
                 from_glib_full(ptr <span class="kw">as </span><span class="kw-2">*mut </span><span class="macro-nonterminal">$ffi_type</span>)
@@ -2609,7 +2609,7 @@
         <span class="macro">define_param_spec_min_max!</span>(<span class="macro-nonterminal">$rust_type</span>, <span class="macro-nonterminal">$ffi_type</span>, <span class="macro-nonterminal">$value_type</span>);
 
         <span class="kw">impl </span><span class="macro-nonterminal">$rust_type </span>{
-            <span class="attribute">#[allow(clippy::new_ret_no_self)]
+            <span class="attr">#[allow(clippy::new_ret_no_self)]
             #[doc(alias = <span class="macro-nonterminal">$alias</span>)]
             </span><span class="kw">pub fn </span>new&lt;<span class="lifetime">&#39;a</span>&gt;(
                 name: <span class="kw-2">&amp;</span>str,
@@ -2760,7 +2760,7 @@
         }
         $(requires <span class="macro-nonterminal">$required_tt</span>:tt)<span class="question-mark">?
     </span>) =&gt; {
-        <span class="attribute">#[derive(Default)]
+        <span class="attr">#[derive(Default)]
         #[must_use]
         </span><span class="kw">pub struct </span><span class="macro-nonterminal">$builder_type</span>&lt;<span class="lifetime">&#39;a</span>&gt; {
             name: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str,
@@ -2773,14 +2773,14 @@
 
 
             $(
-            $(<span class="attribute">#[doc = <span class="macro">concat!</span>(<span class="string">&quot;Default: `&quot;</span>, <span class="macro">stringify!</span>(<span class="macro-nonterminal">$field_expr</span>), <span class="string">&quot;`&quot;</span>)]</span>)<span class="question-mark">?
+            $(<span class="attr">#[doc = <span class="macro">concat!</span>(<span class="string">&quot;Default: `&quot;</span>, <span class="macro">stringify!</span>(<span class="macro-nonterminal">$field_expr</span>), <span class="string">&quot;`&quot;</span>)]</span>)<span class="question-mark">?
             </span><span class="kw">pub fn </span><span class="macro-nonterminal">$field_id</span>(<span class="kw-2">mut </span><span class="self">self</span>, value: <span class="macro-nonterminal">$field_ty</span>) -&gt; <span class="self">Self </span>{
                 <span class="self">self</span>.<span class="macro-nonterminal">$field_id </span>= <span class="prelude-val">Some</span>(value);
                 <span class="self">self
             </span>}
             )*
 
-            <span class="attribute">#[must_use]
+            <span class="attr">#[must_use]
             </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; ParamSpec {
                 <span class="macro-nonterminal">$rust_type::new</span>(
                     <span class="self">self</span>.name,
@@ -2811,7 +2811,7 @@
     };
 }
 
-<span class="attribute">#[track_caller]
+<span class="attr">#[track_caller]
 </span><span class="comment">// the default panic formatter will use its caller as the location in its error message
 </span><span class="kw">fn </span>assert_param_name(name: <span class="kw-2">&amp;</span>str) {
     <span class="macro">assert!</span>(
@@ -2852,7 +2852,7 @@
 );
 
 <span class="kw">impl </span>ParamSpecBoolean {
-    <span class="attribute">#[allow(clippy::new_ret_no_self)]
+    <span class="attr">#[allow(clippy::new_ret_no_self)]
     #[doc(alias = <span class="string">&quot;g_param_spec_boolean&quot;</span>)]
     </span><span class="kw">pub fn </span>new&lt;<span class="lifetime">&#39;a</span>&gt;(
         name: <span class="kw-2">&amp;</span>str,
@@ -2951,7 +2951,7 @@
 <span class="macro">define_param_spec_default!</span>(ParamSpecUnichar, gobject_ffi::GParamSpecUnichar, <span class="prelude-ty">Result</span>&lt;char, CharTryFromError&gt;, TryFrom::try_from);
 
 <span class="kw">impl </span>ParamSpecUnichar {
-    <span class="attribute">#[allow(clippy::new_ret_no_self)]
+    <span class="attr">#[allow(clippy::new_ret_no_self)]
     #[doc(alias = <span class="string">&quot;g_param_spec_unichar&quot;</span>)]
     </span><span class="kw">pub fn </span>new&lt;<span class="lifetime">&#39;a</span>&gt;(
         name: <span class="kw-2">&amp;</span>str,
@@ -2984,7 +2984,7 @@
 <span class="macro">define_param_spec!</span>(ParamSpecEnum, gobject_ffi::GParamSpecEnum, <span class="number">10</span>);
 
 <span class="kw">impl </span>ParamSpecEnum {
-    <span class="attribute">#[allow(clippy::new_ret_no_self)]
+    <span class="attr">#[allow(clippy::new_ret_no_self)]
     #[doc(alias = <span class="string">&quot;g_param_spec_enum&quot;</span>)]
     </span><span class="kw">pub fn </span>new&lt;<span class="lifetime">&#39;a</span>&gt;(
         name: <span class="kw-2">&amp;</span>str,
@@ -3008,7 +3008,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_enum_class&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_enum_class&quot;</span>)]
     </span><span class="kw">pub fn </span>enum_class(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::EnumClass {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>ptr = ToGlibPtr::&lt;<span class="kw-2">*const </span>gobject_ffi::GParamSpecEnum&gt;::to_glib_none(<span class="self">self</span>).<span class="number">0</span>;
@@ -3048,7 +3048,7 @@
     }
 }
 
-<span class="attribute">#[must_use]
+<span class="attr">#[must_use]
 </span><span class="kw">pub struct </span>ParamSpecEnumBuilder&lt;<span class="lifetime">&#39;a</span>, T: StaticType + FromGlib&lt;i32&gt; + IntoGlib&lt;GlibType = i32&gt;&gt; {
     name: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str,
     nick: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str&gt;,
@@ -3068,7 +3068,7 @@
         }
     }
 
-    <span class="attribute">#[must_use]
+    <span class="attr">#[must_use]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; ParamSpec {
         ParamSpecEnum::new(
             <span class="self">self</span>.name,
@@ -3101,7 +3101,7 @@
 <span class="macro">define_param_spec!</span>(ParamSpecFlags, gobject_ffi::GParamSpecFlags, <span class="number">11</span>);
 
 <span class="kw">impl </span>ParamSpecFlags {
-    <span class="attribute">#[allow(clippy::new_ret_no_self)]
+    <span class="attr">#[allow(clippy::new_ret_no_self)]
     #[doc(alias = <span class="string">&quot;g_param_spec_flags&quot;</span>)]
     </span><span class="kw">pub fn </span>new&lt;<span class="lifetime">&#39;a</span>&gt;(
         name: <span class="kw-2">&amp;</span>str,
@@ -3125,7 +3125,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_flags_class&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_flags_class&quot;</span>)]
     </span><span class="kw">pub fn </span>flags_class(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::FlagsClass {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>ptr = ToGlibPtr::&lt;<span class="kw-2">*const </span>gobject_ffi::GParamSpecFlags&gt;::to_glib_none(<span class="self">self</span>).<span class="number">0</span>;
@@ -3164,7 +3164,7 @@
     }
 }
 
-<span class="attribute">#[must_use]
+<span class="attr">#[must_use]
 </span><span class="kw">pub struct </span>ParamSpecFlagsBuilder&lt;<span class="lifetime">&#39;a</span>, T: StaticType + FromGlib&lt;u32&gt; + IntoGlib&lt;GlibType = u32&gt;&gt; {
     name: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str,
     nick: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str&gt;,
@@ -3186,13 +3186,13 @@
         }
     }
 
-    <span class="attribute">#[doc = <span class="string">&quot;Default: 0`&quot;</span>]
+    <span class="attr">#[doc = <span class="string">&quot;Default: 0`&quot;</span>]
     </span><span class="kw">pub fn </span>default_value(<span class="kw-2">mut </span><span class="self">self</span>, value: T) -&gt; <span class="self">Self </span>{
         <span class="self">self</span>.default_value = value;
         <span class="self">self
     </span>}
 
-    <span class="attribute">#[must_use]
+    <span class="attr">#[must_use]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; ParamSpec {
         ParamSpecFlags::new(
             <span class="self">self</span>.name,
@@ -3262,7 +3262,7 @@
 );
 
 <span class="kw">impl </span>ParamSpecString {
-    <span class="attribute">#[allow(clippy::new_ret_no_self)]
+    <span class="attr">#[allow(clippy::new_ret_no_self)]
     #[doc(alias = <span class="string">&quot;g_param_spec_string&quot;</span>)]
     </span><span class="kw">pub fn </span>new&lt;<span class="lifetime">&#39;a</span>&gt;(
         name: <span class="kw-2">&amp;</span>str,
@@ -3289,7 +3289,7 @@
     }
 }
 
-<span class="attribute">#[must_use]
+<span class="attr">#[must_use]
 </span><span class="kw">pub struct </span>ParamSpecStringBuilder&lt;<span class="lifetime">&#39;a</span>&gt; {
     name: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str,
     nick: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str&gt;,
@@ -3309,13 +3309,13 @@
         }
     }
 
-    <span class="attribute">#[doc = <span class="string">&quot;Default: None`&quot;</span>]
+    <span class="attr">#[doc = <span class="string">&quot;Default: None`&quot;</span>]
     </span><span class="kw">pub fn </span>default_value(<span class="kw-2">mut </span><span class="self">self</span>, value: <span class="kw">impl </span>Into&lt;<span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str&gt;&gt;) -&gt; <span class="self">Self </span>{
         <span class="self">self</span>.default_value = value.into();
         <span class="self">self
     </span>}
 
-    <span class="attribute">#[must_use]
+    <span class="attr">#[must_use]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; ParamSpec {
         ParamSpecString::new(
             <span class="self">self</span>.name,
@@ -3345,7 +3345,7 @@
 <span class="macro">define_param_spec!</span>(ParamSpecParam, gobject_ffi::GParamSpecParam, <span class="number">15</span>);
 
 <span class="kw">impl </span>ParamSpecParam {
-    <span class="attribute">#[allow(clippy::new_ret_no_self)]
+    <span class="attr">#[allow(clippy::new_ret_no_self)]
     #[doc(alias = <span class="string">&quot;g_param_spec_param&quot;</span>)]
     </span><span class="kw">pub fn </span>new&lt;<span class="lifetime">&#39;a</span>&gt;(
         name: <span class="kw-2">&amp;</span>str,
@@ -3379,7 +3379,7 @@
 <span class="macro">define_param_spec!</span>(ParamSpecBoxed, gobject_ffi::GParamSpecBoxed, <span class="number">16</span>);
 
 <span class="kw">impl </span>ParamSpecBoxed {
-    <span class="attribute">#[allow(clippy::new_ret_no_self)]
+    <span class="attr">#[allow(clippy::new_ret_no_self)]
     #[doc(alias = <span class="string">&quot;g_param_spec_boxed&quot;</span>)]
     </span><span class="kw">pub fn </span>new&lt;<span class="lifetime">&#39;a</span>&gt;(
         name: <span class="kw-2">&amp;</span>str,
@@ -3406,7 +3406,7 @@
     }
 }
 
-<span class="attribute">#[must_use]
+<span class="attr">#[must_use]
 </span><span class="kw">pub struct </span>ParamSpecBoxedBuilder&lt;<span class="lifetime">&#39;a</span>, T: StaticType&gt; {
     name: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str,
     nick: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str&gt;,
@@ -3426,7 +3426,7 @@
         }
     }
 
-    <span class="attribute">#[must_use]
+    <span class="attr">#[must_use]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; ParamSpec {
         ParamSpecBoxed::new(
             <span class="self">self</span>.name,
@@ -3456,7 +3456,7 @@
 <span class="macro">define_param_spec!</span>(ParamSpecPointer, gobject_ffi::GParamSpecPointer, <span class="number">17</span>);
 
 <span class="kw">impl </span>ParamSpecPointer {
-    <span class="attribute">#[allow(clippy::new_ret_no_self)]
+    <span class="attr">#[allow(clippy::new_ret_no_self)]
     #[doc(alias = <span class="string">&quot;g_param_spec_pointer&quot;</span>)]
     </span><span class="kw">pub fn </span>new&lt;<span class="lifetime">&#39;a</span>&gt;(
         name: <span class="kw-2">&amp;</span>str,
@@ -3481,7 +3481,7 @@
 <span class="macro">define_param_spec!</span>(ParamSpecValueArray, gobject_ffi::GParamSpecValueArray, <span class="number">18</span>);
 
 <span class="kw">impl </span>ParamSpecValueArray {
-    <span class="attribute">#[allow(clippy::new_ret_no_self)]
+    <span class="attr">#[allow(clippy::new_ret_no_self)]
     #[doc(alias = <span class="string">&quot;g_param_spec_value_array&quot;</span>)]
     </span><span class="kw">pub fn </span>new&lt;<span class="lifetime">&#39;a</span>&gt;(
         name: <span class="kw-2">&amp;</span>str,
@@ -3502,7 +3502,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_element_spec&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_element_spec&quot;</span>)]
     </span><span class="kw">pub fn </span>element_spec(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;ParamSpec&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>ptr = ToGlibPtr::&lt;<span class="kw-2">*const </span>gobject_ffi::GParamSpecValueArray&gt;::to_glib_none(<span class="self">self</span>).<span class="number">0</span>;
@@ -3511,7 +3511,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_fixed_n_elements&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_fixed_n_elements&quot;</span>)]
     </span><span class="kw">pub fn </span>fixed_n_elements(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>ptr = ToGlibPtr::&lt;<span class="kw-2">*const </span>gobject_ffi::GParamSpecValueArray&gt;::to_glib_none(<span class="self">self</span>).<span class="number">0</span>;
@@ -3525,7 +3525,7 @@
     }
 }
 
-<span class="attribute">#[must_use]
+<span class="attr">#[must_use]
 </span><span class="kw">pub struct </span>ParamSpecValueArrayBuilder&lt;<span class="lifetime">&#39;a</span>&gt; {
     name: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str,
     nick: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str&gt;,
@@ -3545,13 +3545,13 @@
         }
     }
 
-    <span class="attribute">#[doc = <span class="string">&quot;Default: None`&quot;</span>]
+    <span class="attr">#[doc = <span class="string">&quot;Default: None`&quot;</span>]
     </span><span class="kw">pub fn </span>element_spec(<span class="kw-2">mut </span><span class="self">self</span>, value: <span class="kw">impl </span>Into&lt;<span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>ParamSpec&gt;&gt;) -&gt; <span class="self">Self </span>{
         <span class="self">self</span>.element_spec = value.into();
         <span class="self">self
     </span>}
 
-    <span class="attribute">#[must_use]
+    <span class="attr">#[must_use]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; ParamSpec {
         ParamSpecValueArray::new(
             <span class="self">self</span>.name,
@@ -3581,7 +3581,7 @@
 <span class="macro">define_param_spec!</span>(ParamSpecObject, gobject_ffi::GParamSpecObject, <span class="number">19</span>);
 
 <span class="kw">impl </span>ParamSpecObject {
-    <span class="attribute">#[allow(clippy::new_ret_no_self)]
+    <span class="attr">#[allow(clippy::new_ret_no_self)]
     #[doc(alias = <span class="string">&quot;g_param_spec_object&quot;</span>)]
     </span><span class="kw">pub fn </span>new&lt;<span class="lifetime">&#39;a</span>&gt;(
         name: <span class="kw-2">&amp;</span>str,
@@ -3608,7 +3608,7 @@
     }
 }
 
-<span class="attribute">#[must_use]
+<span class="attr">#[must_use]
 </span><span class="kw">pub struct </span>ParamSpecObjectBuilder&lt;<span class="lifetime">&#39;a</span>, T: StaticType&gt; {
     name: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str,
     nick: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str&gt;,
@@ -3628,7 +3628,7 @@
         }
     }
 
-    <span class="attribute">#[must_use]
+    <span class="attr">#[must_use]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; ParamSpec {
         ParamSpecObject::new(
             <span class="self">self</span>.name,
@@ -3658,7 +3658,7 @@
 <span class="macro">define_param_spec!</span>(ParamSpecOverride, gobject_ffi::GParamSpecOverride, <span class="number">20</span>);
 
 <span class="kw">impl </span>ParamSpecOverride {
-    <span class="attribute">#[allow(clippy::new_ret_no_self)]
+    <span class="attr">#[allow(clippy::new_ret_no_self)]
     #[doc(alias = <span class="string">&quot;g_param_spec_override&quot;</span>)]
     </span><span class="kw">pub fn </span>new(name: <span class="kw-2">&amp;</span>str, overridden: <span class="kw">impl </span>AsRef&lt;ParamSpec&gt;) -&gt; ParamSpec {
         assert_param_name(name);
@@ -3684,7 +3684,7 @@
     /// # Panics
     ///
     /// If the property `name` doesn&#39;t exist in the interface.
-    </span><span class="attribute">#[allow(clippy::new_ret_no_self)]
+    </span><span class="attr">#[allow(clippy::new_ret_no_self)]
     #[doc(alias = <span class="string">&quot;g_param_spec_override&quot;</span>)]
     </span><span class="kw">pub fn </span>for_interface&lt;T: IsA&lt;Object&gt; + IsInterface&gt;(name: <span class="kw-2">&amp;</span>str) -&gt; ParamSpec {
         assert_param_name(name);
@@ -3692,7 +3692,7 @@
         </span><span class="kw">let </span>interface_ref: InterfaceRef&lt;T&gt; = Interface::from_type(T::static_type()).unwrap();
         <span class="kw">let </span>pspec = interface_ref
             .find_property(name)
-            .unwrap_or_else(|| <span class="macro">panic!</span>(<span class="string">&quot;Couldn&#39;t find a property named `{}` to override&quot;</span>, name));
+            .unwrap_or_else(|| <span class="macro">panic!</span>(<span class="string">&quot;Couldn&#39;t find a property named `{name}` to override&quot;</span>));
 
         <span class="kw">unsafe </span>{ <span class="self">Self</span>::new_unchecked(name, <span class="kw-2">&amp;</span>pspec) }
     }
@@ -3709,19 +3709,19 @@
     /// # Panics
     ///
     /// If the property `name` doesn&#39;t exist in the class.
-    </span><span class="attribute">#[allow(clippy::new_ret_no_self)]
+    </span><span class="attr">#[allow(clippy::new_ret_no_self)]
     #[doc(alias = <span class="string">&quot;g_param_spec_override&quot;</span>)]
     </span><span class="kw">pub fn </span>for_class&lt;T: IsA&lt;Object&gt; + IsClass&gt;(name: <span class="kw-2">&amp;</span>str) -&gt; ParamSpec {
         assert_param_name(name);
         <span class="kw">let </span>pspec = ObjectClass::from_type(T::static_type())
             .unwrap()
             .find_property(name)
-            .unwrap_or_else(|| <span class="macro">panic!</span>(<span class="string">&quot;Couldn&#39;t find a property named `{}` to override&quot;</span>, name));
+            .unwrap_or_else(|| <span class="macro">panic!</span>(<span class="string">&quot;Couldn&#39;t find a property named `{name}` to override&quot;</span>));
 
         <span class="kw">unsafe </span>{ <span class="self">Self</span>::new_unchecked(name, <span class="kw-2">&amp;</span>pspec) }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_overridden&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_overridden&quot;</span>)]
     </span><span class="kw">pub fn </span>overridden(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; ParamSpec {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>ptr = ToGlibPtr::&lt;<span class="kw-2">*const </span>gobject_ffi::GParamSpecOverride&gt;::to_glib_none(<span class="self">self</span>).<span class="number">0</span>;
@@ -3737,7 +3737,7 @@
 
 <span class="comment">// This builder is not autogenerated because it&#39;s the only one that doesn&#39;t take
 // `nick`, `blurb` and `flags` as parameters.
-</span><span class="attribute">#[must_use]
+</span><span class="attr">#[must_use]
 </span><span class="kw">pub struct </span>ParamSpecOverrideBuilder&lt;<span class="lifetime">&#39;a</span>&gt; {
     name: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str,
     overridden: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>ParamSpec,
@@ -3751,7 +3751,7 @@
         <span class="self">self</span>.overridden = spec;
         <span class="self">self
     </span>}
-    <span class="attribute">#[must_use]
+    <span class="attr">#[must_use]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; ParamSpec {
         ParamSpecOverride::new(<span class="self">self</span>.name, <span class="self">self</span>.overridden)
     }
@@ -3760,7 +3760,7 @@
 <span class="macro">define_param_spec!</span>(ParamSpecGType, gobject_ffi::GParamSpecGType, <span class="number">21</span>);
 
 <span class="kw">impl </span>ParamSpecGType {
-    <span class="attribute">#[allow(clippy::new_ret_no_self)]
+    <span class="attr">#[allow(clippy::new_ret_no_self)]
     #[doc(alias = <span class="string">&quot;g_param_spec_gtype&quot;</span>)]
     </span><span class="kw">pub fn </span>new&lt;<span class="lifetime">&#39;a</span>&gt;(
         name: <span class="kw-2">&amp;</span>str,
@@ -3799,7 +3799,7 @@
 );
 
 <span class="kw">impl </span>ParamSpecVariant {
-    <span class="attribute">#[allow(clippy::new_ret_no_self)]
+    <span class="attr">#[allow(clippy::new_ret_no_self)]
     #[doc(alias = <span class="string">&quot;g_param_spec_variant&quot;</span>)]
     </span><span class="kw">pub fn </span>new&lt;<span class="lifetime">&#39;a</span>&gt;(
         name: <span class="kw-2">&amp;</span>str,
@@ -3822,7 +3822,7 @@
         }
     }
 
-    <span class="attribute">#[doc(alias = <span class="string">&quot;get_type&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;get_type&quot;</span>)]
     </span><span class="kw">pub fn </span>type_(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">crate</span>::VariantTy&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>ptr = ToGlibPtr::&lt;<span class="kw-2">*const </span>gobject_ffi::GParamSpecVariant&gt;::to_glib_none(<span class="self">self</span>).<span class="number">0</span>;
@@ -3840,7 +3840,7 @@
     }
 }
 
-<span class="attribute">#[must_use]
+<span class="attr">#[must_use]
 </span><span class="kw">pub struct </span>ParamSpecVariantBuilder&lt;<span class="lifetime">&#39;a</span>&gt; {
     name: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str,
     nick: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str&gt;,
@@ -3862,13 +3862,13 @@
         }
     }
 
-    <span class="attribute">#[doc = <span class="string">&quot;Default: None`&quot;</span>]
+    <span class="attr">#[doc = <span class="string">&quot;Default: None`&quot;</span>]
     </span><span class="kw">pub fn </span>default_value(<span class="kw-2">mut </span><span class="self">self</span>, value: <span class="kw">impl </span>Into&lt;<span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="kw">crate</span>::Variant&gt;&gt;) -&gt; <span class="self">Self </span>{
         <span class="self">self</span>.default_value = value.into();
         <span class="self">self
     </span>}
 
-    <span class="attribute">#[must_use]
+    <span class="attr">#[must_use]
     </span><span class="kw">pub fn </span>build(<span class="self">self</span>) -&gt; ParamSpec {
         ParamSpecVariant::new(
             <span class="self">self</span>.name,
@@ -3896,11 +3896,11 @@
     }
 }
 
-<span class="attribute">#[cfg(test)]
+<span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_param_spec_string() {
         <span class="kw">let </span>pspec =
             ParamSpecString::new(<span class="string">&quot;name&quot;</span>, <span class="prelude-val">None</span>, <span class="prelude-val">None</span>, <span class="prelude-val">Some</span>(<span class="string">&quot;default&quot;</span>), ParamFlags::READWRITE);
@@ -3925,7 +3925,7 @@
         <span class="macro">assert_eq!</span>(pspec.default_value(), <span class="prelude-val">Some</span>(<span class="string">&quot;default&quot;</span>));
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_param_spec_int_builder() {
         <span class="kw">let </span>pspec = ParamSpecInt::builder(<span class="string">&quot;name&quot;</span>)
             .blurb(<span class="string">&quot;Simple int parameter&quot;</span>)
@@ -3942,7 +3942,7 @@
         );
     }
 
-    <span class="attribute">#[test]
+    <span class="attr">#[test]
     </span><span class="kw">fn </span>test_param_spec_builder_flags() {
         <span class="kw">let </span>pspec = ParamSpecInt::builder(<span class="string">&quot;name&quot;</span>)
             .minimum(-<span class="number">2</span>)
@@ -3976,4 +3976,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="glib" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.66.0-nightly (6e95b6da8 2022-10-22)" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (6284998a2 2022-11-12)" data-search-js="search-39ee4160c7dc16c9.js" data-settings-js="settings-7873449fa8c00e11.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
