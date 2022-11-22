@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/param_spec.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>param_spec.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-ea97c800646ec4c5.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-1469fca9efc07bcb.css"><link rel="stylesheet" disabled href="../../static.files/dark-e9b7e5d8ba0dc980.css"><link rel="stylesheet" disabled href="../../static.files/ayu-0c1cf144240c9f40.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-2da75ee0e1909b3a.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/param_spec.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>param_spec.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-1d803bfaeffdc91e.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-1a026a992ced2f86.css"><link rel="stylesheet" disabled href="../../static.files/dark-c1fb1a2e91ddd376.css"><link rel="stylesheet" disabled href="../../static.files/ayu-0d555a04945d1455.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-458bffc4c06ccf37.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -1953,76 +1953,6 @@
 <a href="#1880" id="1880">1880</a>
 <a href="#1881" id="1881">1881</a>
 <a href="#1882" id="1882">1882</a>
-<a href="#1883" id="1883">1883</a>
-<a href="#1884" id="1884">1884</a>
-<a href="#1885" id="1885">1885</a>
-<a href="#1886" id="1886">1886</a>
-<a href="#1887" id="1887">1887</a>
-<a href="#1888" id="1888">1888</a>
-<a href="#1889" id="1889">1889</a>
-<a href="#1890" id="1890">1890</a>
-<a href="#1891" id="1891">1891</a>
-<a href="#1892" id="1892">1892</a>
-<a href="#1893" id="1893">1893</a>
-<a href="#1894" id="1894">1894</a>
-<a href="#1895" id="1895">1895</a>
-<a href="#1896" id="1896">1896</a>
-<a href="#1897" id="1897">1897</a>
-<a href="#1898" id="1898">1898</a>
-<a href="#1899" id="1899">1899</a>
-<a href="#1900" id="1900">1900</a>
-<a href="#1901" id="1901">1901</a>
-<a href="#1902" id="1902">1902</a>
-<a href="#1903" id="1903">1903</a>
-<a href="#1904" id="1904">1904</a>
-<a href="#1905" id="1905">1905</a>
-<a href="#1906" id="1906">1906</a>
-<a href="#1907" id="1907">1907</a>
-<a href="#1908" id="1908">1908</a>
-<a href="#1909" id="1909">1909</a>
-<a href="#1910" id="1910">1910</a>
-<a href="#1911" id="1911">1911</a>
-<a href="#1912" id="1912">1912</a>
-<a href="#1913" id="1913">1913</a>
-<a href="#1914" id="1914">1914</a>
-<a href="#1915" id="1915">1915</a>
-<a href="#1916" id="1916">1916</a>
-<a href="#1917" id="1917">1917</a>
-<a href="#1918" id="1918">1918</a>
-<a href="#1919" id="1919">1919</a>
-<a href="#1920" id="1920">1920</a>
-<a href="#1921" id="1921">1921</a>
-<a href="#1922" id="1922">1922</a>
-<a href="#1923" id="1923">1923</a>
-<a href="#1924" id="1924">1924</a>
-<a href="#1925" id="1925">1925</a>
-<a href="#1926" id="1926">1926</a>
-<a href="#1927" id="1927">1927</a>
-<a href="#1928" id="1928">1928</a>
-<a href="#1929" id="1929">1929</a>
-<a href="#1930" id="1930">1930</a>
-<a href="#1931" id="1931">1931</a>
-<a href="#1932" id="1932">1932</a>
-<a href="#1933" id="1933">1933</a>
-<a href="#1934" id="1934">1934</a>
-<a href="#1935" id="1935">1935</a>
-<a href="#1936" id="1936">1936</a>
-<a href="#1937" id="1937">1937</a>
-<a href="#1938" id="1938">1938</a>
-<a href="#1939" id="1939">1939</a>
-<a href="#1940" id="1940">1940</a>
-<a href="#1941" id="1941">1941</a>
-<a href="#1942" id="1942">1942</a>
-<a href="#1943" id="1943">1943</a>
-<a href="#1944" id="1944">1944</a>
-<a href="#1945" id="1945">1945</a>
-<a href="#1946" id="1946">1946</a>
-<a href="#1947" id="1947">1947</a>
-<a href="#1948" id="1948">1948</a>
-<a href="#1949" id="1949">1949</a>
-<a href="#1950" id="1950">1950</a>
-<a href="#1951" id="1951">1951</a>
-<a href="#1952" id="1952">1952</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
@@ -2043,22 +1973,7 @@
 
 <span class="comment">// Can&#39;t use get_type here as this is not a boxed type but another fundamental type
 </span><span class="macro">wrapper! </span>{
-    <span class="doccomment">/// [`ParamSpec`][crate::ParamSpec] is an object structure that encapsulates the metadata
-    /// required to specify parameters, such as e.g. [`Object`][crate::Object] properties.
-    ///
-    /// ## Parameter names # {`canonical`-parameter-names}
-    ///
-    /// A property name consists of one or more segments consisting of ASCII letters
-    /// and digits, separated by either the `-` or `_` character. The first
-    /// character of a property name must be a letter. These are the same rules as
-    /// for signal naming (see `g_signal_new()`).
-    ///
-    /// When creating and looking up a [`ParamSpec`][crate::ParamSpec], either separator can be
-    /// used, but they cannot be mixed. Using `-` is considerably more
-    /// efficient, and is the ‘canonical form’. Using `_` is discouraged.
-    ///
-    /// This is an Abstract Base Class, you cannot instantiate it.
-    </span><span class="attr">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    <span class="attr">#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
     #[doc(alias = <span class="string">&quot;GParamSpec&quot;</span>)]
     </span><span class="kw">pub struct </span>ParamSpec(Shared&lt;gobject_ffi::GParamSpec&gt;);
 
@@ -2206,12 +2121,7 @@
         <span class="kw">unsafe </span>{ from_glib((<span class="kw-2">*</span>(&lt;<span class="self">Self </span><span class="kw">as </span>ToGlibPtr&lt;<span class="kw-2">*const </span><span class="kw">_</span>&gt;&gt;::to_glib_none(<span class="self">self</span>).<span class="number">0</span>)).flags) }
     }
 
-    <span class="doccomment">/// Get the short description of a [`ParamSpec`][crate::ParamSpec].
-    ///
-    /// # Returns
-    ///
-    /// the short description of `self`.
-    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_param_spec_get_blurb&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_param_spec_get_blurb&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_blurb&quot;</span>)]
     </span><span class="kw">pub fn </span>blurb(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt; {
         <span class="kw">unsafe </span>{
@@ -2224,14 +2134,7 @@
         }
     }
 
-    <span class="doccomment">/// Gets the default value of `self` as a pointer to a [`Value`][crate::Value].
-    ///
-    /// The [`Value`][crate::Value] will remain valid for the life of `self`.
-    ///
-    /// # Returns
-    ///
-    /// a pointer to a [`Value`][crate::Value] which must not be modified
-    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_param_spec_get_default_value&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_param_spec_get_default_value&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_default_value&quot;</span>)]
     </span><span class="kw">pub fn </span>default_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>Value {
         <span class="kw">unsafe </span>{
@@ -2240,15 +2143,7 @@
         }
     }
 
-    <span class="doccomment">/// Get the name of a [`ParamSpec`][crate::ParamSpec].
-    ///
-    /// The name is always an &quot;interned&quot; string (as per `g_intern_string()`).
-    /// This allows for pointer-value comparisons.
-    ///
-    /// # Returns
-    ///
-    /// the name of `self`.
-    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_param_spec_get_name&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_param_spec_get_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_name&quot;</span>)]
     </span><span class="kw">pub fn </span>name&lt;<span class="lifetime">&#39;a</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str {
         <span class="kw">unsafe </span>{
@@ -2258,12 +2153,7 @@
         }
     }
 
-    <span class="doccomment">/// Gets the GQuark for the name.
-    ///
-    /// # Returns
-    ///
-    /// the GQuark for `self`-&gt;name.
-    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_param_spec_get_name_quark&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_param_spec_get_name_quark&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_name_quark&quot;</span>)]
     </span><span class="kw">pub fn </span>name_quark(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Quark {
         <span class="kw">unsafe </span>{
@@ -2278,12 +2168,6 @@
     ///
     /// If this `ParamSpec` does not have a nickname, the nickname of its redirect target is returned if it has one.
     /// Otherwise, `self.name()` is returned.
-    </span><span class="comment">// rustdoc-stripper-ignore-next-stop
-    </span><span class="doccomment">/// Get the nickname of a [`ParamSpec`][crate::ParamSpec].
-    ///
-    /// # Returns
-    ///
-    /// the nickname of `self`.
     </span><span class="attr">#[doc(alias = <span class="string">&quot;g_param_spec_get_nick&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_nick&quot;</span>)]
     </span><span class="kw">pub fn </span>nick(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>str {
@@ -2298,18 +2182,6 @@
     //    unsafe { TODO: call gobject_ffi::g_param_spec_get_qdata() }
     //}
 
-    </span><span class="doccomment">/// If the paramspec redirects operations to another paramspec,
-    /// returns that paramspec. Redirect is used typically for
-    /// providing a new implementation of a property in a derived
-    /// type while preserving all the properties from the parent
-    /// type. Redirection is established by creating a property
-    /// of type [`ParamSpecOverride`][crate::ParamSpecOverride]. See `g_object_class_override_property()`
-    /// for an example of the use of this capability.
-    ///
-    /// # Returns
-    ///
-    /// paramspec to which requests on this
-    ///  paramspec should be redirected, or [`None`] if none.
     </span><span class="attr">#[doc(alias = <span class="string">&quot;g_param_spec_get_redirect_target&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_redirect_target&quot;</span>)]
     </span><span class="kw">pub fn </span>redirect_target(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;ParamSpec&gt; {
@@ -2332,18 +2204,6 @@
     //    unsafe { TODO: call gobject_ffi::g_param_spec_steal_qdata() }
     //}
 
-    </span><span class="doccomment">/// Validate a property name for a [`ParamSpec`][crate::ParamSpec]. This can be useful for
-    /// dynamically-generated properties which need to be validated at run-time
-    /// before actually trying to create them.
-    ///
-    /// See [canonical parameter names][canonical-parameter-names] for details of
-    /// the rules for valid names.
-    /// ## `name`
-    /// the canonical name of the property
-    ///
-    /// # Returns
-    ///
-    /// [`true`] if `name` is a valid property name, [`false`] otherwise.
     </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_66&quot;</span>)))]
     #[doc(alias = <span class="string">&quot;g_param_spec_is_valid_name&quot;</span>)]
@@ -3976,4 +3836,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (83356b78c 2022-11-17)" data-search-js="search-df80cc3cb87b6482.js" data-settings-js="settings-7873449fa8c00e11.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (b7bc90fea 2022-11-21)" data-search-js="search-df80cc3cb87b6482.js" data-settings-js="settings-7e1cf5cc683233f7.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
