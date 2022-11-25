@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib-macros/src/variant_derive.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>variant_derive.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-cd23e1e4557aa9dd.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-a21928845c7a186a.css"><link rel="stylesheet" disabled href="../../static.files/dark-90fc67ff25a42f29.css"><link rel="stylesheet" disabled href="../../static.files/ayu-d75a8bbde915b8ed.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-458bffc4c06ccf37.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib-macros/src/variant_derive.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>variant_derive.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-bf4c5e264196f176.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-a21928845c7a186a.css"><link rel="stylesheet" disabled href="../../static.files/dark-90fc67ff25a42f29.css"><link rel="stylesheet" disabled href="../../static.files/ayu-d75a8bbde915b8ed.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-458bffc4c06ccf37.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib_macros/index.html"><img class="rust-logo" src="../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><a href="#1" id="1">1</a>
+<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib_macros/index.html"><img class="rust-logo" src="../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><a href="#1" id="1">1</a>
 <a href="#2" id="2">2</a>
 <a href="#3" id="3">3</a>
 <a href="#4" id="4">4</a>
@@ -669,6 +669,101 @@
 <a href="#596" id="596">596</a>
 <a href="#597" id="597">597</a>
 <a href="#598" id="598">598</a>
+<a href="#599" id="599">599</a>
+<a href="#600" id="600">600</a>
+<a href="#601" id="601">601</a>
+<a href="#602" id="602">602</a>
+<a href="#603" id="603">603</a>
+<a href="#604" id="604">604</a>
+<a href="#605" id="605">605</a>
+<a href="#606" id="606">606</a>
+<a href="#607" id="607">607</a>
+<a href="#608" id="608">608</a>
+<a href="#609" id="609">609</a>
+<a href="#610" id="610">610</a>
+<a href="#611" id="611">611</a>
+<a href="#612" id="612">612</a>
+<a href="#613" id="613">613</a>
+<a href="#614" id="614">614</a>
+<a href="#615" id="615">615</a>
+<a href="#616" id="616">616</a>
+<a href="#617" id="617">617</a>
+<a href="#618" id="618">618</a>
+<a href="#619" id="619">619</a>
+<a href="#620" id="620">620</a>
+<a href="#621" id="621">621</a>
+<a href="#622" id="622">622</a>
+<a href="#623" id="623">623</a>
+<a href="#624" id="624">624</a>
+<a href="#625" id="625">625</a>
+<a href="#626" id="626">626</a>
+<a href="#627" id="627">627</a>
+<a href="#628" id="628">628</a>
+<a href="#629" id="629">629</a>
+<a href="#630" id="630">630</a>
+<a href="#631" id="631">631</a>
+<a href="#632" id="632">632</a>
+<a href="#633" id="633">633</a>
+<a href="#634" id="634">634</a>
+<a href="#635" id="635">635</a>
+<a href="#636" id="636">636</a>
+<a href="#637" id="637">637</a>
+<a href="#638" id="638">638</a>
+<a href="#639" id="639">639</a>
+<a href="#640" id="640">640</a>
+<a href="#641" id="641">641</a>
+<a href="#642" id="642">642</a>
+<a href="#643" id="643">643</a>
+<a href="#644" id="644">644</a>
+<a href="#645" id="645">645</a>
+<a href="#646" id="646">646</a>
+<a href="#647" id="647">647</a>
+<a href="#648" id="648">648</a>
+<a href="#649" id="649">649</a>
+<a href="#650" id="650">650</a>
+<a href="#651" id="651">651</a>
+<a href="#652" id="652">652</a>
+<a href="#653" id="653">653</a>
+<a href="#654" id="654">654</a>
+<a href="#655" id="655">655</a>
+<a href="#656" id="656">656</a>
+<a href="#657" id="657">657</a>
+<a href="#658" id="658">658</a>
+<a href="#659" id="659">659</a>
+<a href="#660" id="660">660</a>
+<a href="#661" id="661">661</a>
+<a href="#662" id="662">662</a>
+<a href="#663" id="663">663</a>
+<a href="#664" id="664">664</a>
+<a href="#665" id="665">665</a>
+<a href="#666" id="666">666</a>
+<a href="#667" id="667">667</a>
+<a href="#668" id="668">668</a>
+<a href="#669" id="669">669</a>
+<a href="#670" id="670">670</a>
+<a href="#671" id="671">671</a>
+<a href="#672" id="672">672</a>
+<a href="#673" id="673">673</a>
+<a href="#674" id="674">674</a>
+<a href="#675" id="675">675</a>
+<a href="#676" id="676">676</a>
+<a href="#677" id="677">677</a>
+<a href="#678" id="678">678</a>
+<a href="#679" id="679">679</a>
+<a href="#680" id="680">680</a>
+<a href="#681" id="681">681</a>
+<a href="#682" id="682">682</a>
+<a href="#683" id="683">683</a>
+<a href="#684" id="684">684</a>
+<a href="#685" id="685">685</a>
+<a href="#686" id="686">686</a>
+<a href="#687" id="687">687</a>
+<a href="#688" id="688">688</a>
+<a href="#689" id="689">689</a>
+<a href="#690" id="690">690</a>
+<a href="#691" id="691">691</a>
+<a href="#692" id="692">692</a>
+<a href="#693" id="693">693</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::utils::{crate_ident_new, find_attribute_meta};
@@ -708,6 +803,7 @@
     data_struct: syn::DataStruct,
 ) -&gt; TokenStream {
     <span class="kw">let </span>glib = crate_ident_new();
+    <span class="kw">let </span>(impl_generics, type_generics, where_clause) = generics.split_for_impl();
     <span class="kw">let </span>(static_variant_type, to_variant, from_variant) = <span class="kw">match </span>data_struct.fields {
         Fields::Unnamed(FieldsUnnamed { unnamed, .. }) =&gt; {
             <span class="kw">let </span>types = unnamed
@@ -720,7 +816,7 @@
             <span class="kw">let </span>idents_len = idents.len();
 
             <span class="kw">let </span>static_variant_type = <span class="macro">quote! </span>{
-                <span class="kw">impl </span>#generics #glib::StaticVariantType <span class="kw">for </span>#ident #generics {
+                <span class="kw">impl </span>#impl_generics #glib::StaticVariantType <span class="kw">for </span>#ident #type_generics #where_clause {
                     <span class="kw">fn </span>static_variant_type() -&gt; ::std::borrow::Cow&lt;<span class="lifetime">&#39;static</span>, #glib::VariantTy&gt; {
                         <span class="kw">static </span>TYP: #glib::once_cell::sync::Lazy&lt;#glib::VariantType&gt; = #glib::once_cell::sync::Lazy::new(|| {
 
@@ -743,7 +839,7 @@
             };
 
             <span class="kw">let </span>to_variant = <span class="macro">quote! </span>{
-                <span class="kw">impl </span>#generics #glib::ToVariant <span class="kw">for </span>#ident #generics {
+                <span class="kw">impl </span>#impl_generics #glib::ToVariant <span class="kw">for </span>#ident #type_generics #where_clause {
                     <span class="kw">fn </span>to_variant(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; #glib::Variant {
                         #glib::Variant::tuple_from_iter(::std::array::IntoIter::&lt;#glib::Variant, #idents_len&gt;::new([
                             #(
@@ -752,10 +848,20 @@
                         ]))
                     }
                 }
+
+                <span class="kw">impl </span>#impl_generics ::std::convert::From&lt;#ident #type_generics&gt; <span class="kw">for </span>#glib::Variant #where_clause {
+                    <span class="kw">fn </span>from(v: #ident #type_generics) -&gt; #glib::Variant {
+                        #glib::Variant::tuple_from_iter(::std::array::IntoIter::&lt;#glib::Variant, #idents_len&gt;::new([
+                            #(
+                                &lt;#glib::Variant <span class="kw">as </span>::std::convert::From&lt;<span class="kw">_</span>&gt;&gt;::from(v.#idents)
+                            ),*
+                        ]))
+                    }
+                }
             };
 
             <span class="kw">let </span>from_variant = <span class="macro">quote! </span>{
-                <span class="kw">impl </span>#generics #glib::FromVariant <span class="kw">for </span>#ident #generics {
+                <span class="kw">impl </span>#impl_generics #glib::FromVariant <span class="kw">for </span>#ident #type_generics #where_clause {
                     <span class="kw">fn </span>from_variant(variant: <span class="kw-2">&amp;</span>#glib::Variant) -&gt; ::core::option::Option&lt;<span class="self">Self</span>&gt; {
                         <span class="kw">if </span>!variant.is_container() {
                             <span class="kw">return </span><span class="prelude-val">None</span>;
@@ -786,7 +892,7 @@
             <span class="kw">let </span>counts = (<span class="number">0</span>..types.len()).map(syn::Index::from).collect::&lt;Vec&lt;<span class="kw">_</span>&gt;&gt;();
 
             <span class="kw">let </span>static_variant_type = <span class="macro">quote! </span>{
-                <span class="kw">impl </span>#generics #glib::StaticVariantType <span class="kw">for </span>#ident #generics {
+                <span class="kw">impl </span>#impl_generics #glib::StaticVariantType <span class="kw">for </span>#ident #type_generics #where_clause {
                     <span class="kw">fn </span>static_variant_type() -&gt; ::std::borrow::Cow&lt;<span class="lifetime">&#39;static</span>, #glib::VariantTy&gt; {
                         <span class="kw">static </span>TYP: #glib::once_cell::sync::Lazy&lt;#glib::VariantType&gt; = #glib::once_cell::sync::Lazy::new(|| <span class="kw">unsafe </span>{
                             <span class="kw">let </span>ptr = #glib::ffi::g_string_sized_new(<span class="number">16</span>);
@@ -815,7 +921,7 @@
             };
 
             <span class="kw">let </span>to_variant = <span class="macro">quote! </span>{
-                <span class="kw">impl </span>#generics #glib::ToVariant <span class="kw">for </span>#ident #generics {
+                <span class="kw">impl </span>#impl_generics #glib::ToVariant <span class="kw">for </span>#ident #type_generics #where_clause {
                     <span class="kw">fn </span>to_variant(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; #glib::Variant {
                         #glib::Variant::tuple_from_iter(::std::iter::IntoIterator::into_iter([
                             #(
@@ -824,10 +930,20 @@
                         ]))
                     }
                 }
+
+                <span class="kw">impl </span>#impl_generics ::std::convert::From&lt;#ident #type_generics&gt; <span class="kw">for </span>#glib::Variant #where_clause {
+                    <span class="kw">fn </span>from(v: #ident #type_generics) -&gt; #glib::Variant {
+                        #glib::Variant::tuple_from_iter(::std::iter::IntoIterator::into_iter([
+                            #(
+                                &lt;#glib::Variant <span class="kw">as </span>::std::convert::From&lt;<span class="kw">_</span>&gt;&gt;::from(v.#idents)
+                            ),*
+                        ]))
+                    }
+                }
             };
 
             <span class="kw">let </span>from_variant = <span class="macro">quote! </span>{
-                <span class="kw">impl </span>#generics #glib::FromVariant <span class="kw">for </span>#ident #generics {
+                <span class="kw">impl </span>#impl_generics #glib::FromVariant <span class="kw">for </span>#ident #type_generics #where_clause {
                     <span class="kw">fn </span>from_variant(variant: <span class="kw-2">&amp;</span>#glib::Variant) -&gt; ::core::option::Option&lt;<span class="self">Self</span>&gt; {
                         <span class="kw">if </span>!variant.is_container() {
                             <span class="kw">return </span><span class="prelude-val">None</span>;
@@ -848,23 +964,32 @@
         }
         Fields::Unit =&gt; {
             <span class="kw">let </span>static_variant_type = <span class="macro">quote! </span>{
-                <span class="kw">impl </span>#generics #glib::StaticVariantType <span class="kw">for </span>#ident #generics {
-                    <span class="kw">fn </span>static_variant_type() -&gt; ::std::borrow::Cow&lt;<span class="lifetime">&#39;static</span>, #glib::VariantTy&gt; {
+                <span class="kw">impl </span>#impl_generics #glib::StaticVariantType <span class="kw">for </span>#ident #type_generics #where_clause {
+                    <span class="attr">#[inline]
+                    </span><span class="kw">fn </span>static_variant_type() -&gt; ::std::borrow::Cow&lt;<span class="lifetime">&#39;static</span>, #glib::VariantTy&gt; {
                         ::std::borrow::Cow::Borrowed(#glib::VariantTy::UNIT)
                     }
                 }
             };
 
             <span class="kw">let </span>to_variant = <span class="macro">quote! </span>{
-                <span class="kw">impl </span>#generics #glib::ToVariant <span class="kw">for </span>#ident #generics {
-                    <span class="kw">fn </span>to_variant(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; #glib::Variant {
+                <span class="kw">impl </span>#impl_generics #glib::ToVariant <span class="kw">for </span>#ident #type_generics #where_clause {
+                    <span class="attr">#[inline]
+                    </span><span class="kw">fn </span>to_variant(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; #glib::Variant {
+                        #glib::ToVariant::to_variant(<span class="kw-2">&amp;</span>())
+                    }
+                }
+
+                <span class="kw">impl </span>#impl_generics ::std::convert::From&lt;#ident #type_generics&gt; <span class="kw">for </span>#glib::Variant #where_clause {
+                    <span class="attr">#[inline]
+                    </span><span class="kw">fn </span>from(v: #ident #type_generics) -&gt; #glib::Variant {
                         #glib::ToVariant::to_variant(<span class="kw-2">&amp;</span>())
                     }
                 }
             };
 
             <span class="kw">let </span>from_variant = <span class="macro">quote! </span>{
-                <span class="kw">impl </span>#generics #glib::FromVariant <span class="kw">for </span>#ident #generics {
+                <span class="kw">impl </span>#impl_generics #glib::FromVariant <span class="kw">for </span>#ident #type_generics #where_clause {
                     <span class="kw">fn </span>from_variant(variant: <span class="kw-2">&amp;</span>#glib::Variant) -&gt; ::core::option::Option&lt;<span class="self">Self</span>&gt; {
                         <span class="prelude-val">Some</span>(<span class="self">Self</span>)
                     }
@@ -933,6 +1058,7 @@
 ) -&gt; TokenStream {
     <span class="kw">let </span>glib = crate_ident_new();
     <span class="kw">let </span>static_variant_type = <span class="macro">format!</span>(<span class="string">&quot;({}v)&quot;</span>, mode.tag_type());
+    <span class="kw">let </span>(impl_generics, type_generics, where_clause) = generics.split_for_impl();
 
     <span class="kw">let </span>to = data_enum.variants.iter().enumerate().map(|(index, v)| {
         <span class="kw">let </span>ident = <span class="kw-2">&amp;</span>v.ident;
@@ -990,6 +1116,54 @@
             },
         }
     });
+    <span class="kw">let </span>into = data_enum.variants.iter().enumerate().map(|(index, v)| {
+        <span class="kw">let </span>field_ident = <span class="kw-2">&amp;</span>v.ident;
+        <span class="kw">let </span>tag = <span class="kw">match </span><span class="kw-2">&amp;</span>mode {
+            EnumMode::String =&gt; {
+                <span class="kw">let </span>nick = ToKebabCase::to_kebab_case(field_ident.to_string().as_str());
+                <span class="macro">quote! </span>{ #nick }
+            }
+            EnumMode::Repr(repr) =&gt; <span class="macro">quote! </span>{ #index <span class="kw">as </span>#repr },
+            <span class="kw">_ </span>=&gt; <span class="macro">unimplemented!</span>(),
+        };
+        <span class="kw">match </span><span class="kw-2">&amp;</span>v.fields {
+            syn::Fields::Named(FieldsNamed { named, .. }) =&gt; {
+                <span class="kw">let </span>field_names = named.iter().map(|f| f.ident.as_ref().unwrap());
+                <span class="kw">let </span>field_names2 = field_names.clone();
+                <span class="macro">quote! </span>{
+                    #ident::#field_ident { #(#field_names),* } =&gt; #glib::ToVariant::to_variant(<span class="kw-2">&amp;</span>(
+                        #tag,
+                        #glib::Variant::tuple_from_iter(::std::iter::IntoIterator::into_iter([
+                            #(&lt;#glib::Variant <span class="kw">as </span>::std::convert::From&lt;<span class="kw">_</span>&gt;&gt;::from(#field_names2)),*
+                        ]))
+                    ))
+                }
+            }
+            syn::Fields::Unnamed(FieldsUnnamed { unnamed, .. }) =&gt; {
+                <span class="kw">let </span>field_names = unnamed
+                    .iter()
+                    .enumerate()
+                    .map(|(i, <span class="kw">_</span>)| <span class="macro">format_ident!</span>(<span class="string">&quot;field{}&quot;</span>, i));
+                <span class="kw">let </span>field_names2 = field_names.clone();
+                <span class="macro">quote! </span>{
+                    #ident::#field_ident(#(#field_names),<span class="kw-2">*</span>) =&gt; #glib::ToVariant::to_variant(<span class="kw-2">&amp;</span>(
+                        #tag,
+                        #glib::Variant::tuple_from_iter(::std::iter::IntoIterator::into_iter([
+                            #(&lt;#glib::Variant <span class="kw">as </span>::std::convert::From&lt;<span class="kw">_</span>&gt;&gt;::from(#field_names2)),*
+                        ]))
+                    ))
+                }
+            }
+            syn::Fields::Unit =&gt; {
+                <span class="macro">quote! </span>{
+                    #ident::#field_ident =&gt; #glib::ToVariant::to_variant(<span class="kw-2">&amp;</span>(
+                        #tag,
+                        #glib::ToVariant::to_variant(<span class="kw-2">&amp;</span>())
+                    ))
+                }
+            }
+        }
+    });
     <span class="kw">let </span>from = data_enum.variants.iter().enumerate().map(|(index, v)| {
         <span class="kw">let </span>ident = <span class="kw-2">&amp;</span>v.ident;
         <span class="kw">let </span>tag = <span class="kw">match </span><span class="kw-2">&amp;</span>mode {
@@ -1039,7 +1213,7 @@
     };
 
     <span class="kw">let </span>derived = <span class="macro">quote! </span>{
-        <span class="kw">impl </span>#generics #glib::StaticVariantType <span class="kw">for </span>#ident #generics {
+        <span class="kw">impl </span>#impl_generics #glib::StaticVariantType <span class="kw">for </span>#ident #type_generics #where_clause {
             <span class="kw">fn </span>static_variant_type() -&gt; ::std::borrow::Cow&lt;<span class="lifetime">&#39;static</span>, #glib::VariantTy&gt; {
                 ::std::borrow::Cow::Borrowed(
                     <span class="kw">unsafe </span>{
@@ -1049,7 +1223,7 @@
             }
         }
 
-        <span class="kw">impl </span>#generics #glib::ToVariant <span class="kw">for </span>#ident #generics {
+        <span class="kw">impl </span>#impl_generics #glib::ToVariant <span class="kw">for </span>#ident #type_generics #where_clause {
             <span class="kw">fn </span>to_variant(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; #glib::Variant {
                 <span class="kw">match </span><span class="self">self </span>{
                     #(#to),*
@@ -1057,7 +1231,15 @@
             }
         }
 
-        <span class="kw">impl </span>#generics #glib::FromVariant <span class="kw">for </span>#ident #generics {
+        <span class="kw">impl </span>#impl_generics ::std::convert::From&lt;#ident #type_generics&gt; <span class="kw">for </span>#glib::Variant #where_clause {
+            <span class="kw">fn </span>from(v: #ident #type_generics) -&gt; #glib::Variant {
+                <span class="kw">match </span>v {
+                    #(#into),*
+                }
+            }
+        }
+
+        <span class="kw">impl </span>#impl_generics #glib::FromVariant <span class="kw">for </span>#ident #type_generics #where_clause {
             <span class="kw">fn </span>from_variant(variant: <span class="kw-2">&amp;</span>#glib::Variant) -&gt; ::std::option::Option&lt;<span class="self">Self</span>&gt; {
                 <span class="kw">let </span>(tag, value) = &lt;(#repr, #glib::Variant) <span class="kw">as </span>#glib::FromVariant&gt;::from_variant(<span class="kw-2">&amp;</span>variant)<span class="question-mark">?</span>;
                 <span class="kw">if </span>!#glib::VariantTy::is_tuple(#glib::Variant::type_(<span class="kw-2">&amp;</span>value)) {
@@ -1081,6 +1263,7 @@
 ) -&gt; TokenStream {
     <span class="kw">let </span>glib = crate_ident_new();
     <span class="kw">let </span>static_variant_type = mode.tag_type().to_string();
+    <span class="kw">let </span>(impl_generics, type_generics, where_clause) = generics.split_for_impl();
 
     <span class="kw">let </span>(to_variant, from_variant) = <span class="kw">match </span>mode {
         EnumMode::String =&gt; {
@@ -1179,7 +1362,7 @@
     };
 
     <span class="kw">let </span>derived = <span class="macro">quote! </span>{
-        <span class="kw">impl </span>#generics #glib::StaticVariantType <span class="kw">for </span>#ident #generics {
+        <span class="kw">impl </span>#impl_generics #glib::StaticVariantType <span class="kw">for </span>#ident #type_generics #where_clause {
             <span class="kw">fn </span>static_variant_type() -&gt; ::std::borrow::Cow&lt;<span class="lifetime">&#39;static</span>, #glib::VariantTy&gt; {
                 ::std::borrow::Cow::Borrowed(
                     <span class="kw">unsafe </span>{
@@ -1189,13 +1372,20 @@
             }
         }
 
-        <span class="kw">impl </span>#generics #glib::ToVariant <span class="kw">for </span>#ident #generics {
+        <span class="kw">impl </span>#impl_generics #glib::ToVariant <span class="kw">for </span>#ident #type_generics #where_clause {
             <span class="kw">fn </span>to_variant(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; #glib::Variant {
                 #to_variant
             }
         }
 
-        <span class="kw">impl </span>#generics #glib::FromVariant <span class="kw">for </span>#ident #generics {
+        <span class="kw">impl </span>#impl_generics ::std::convert::From&lt;#ident #type_generics&gt; <span class="kw">for </span>#glib::Variant #where_clause {
+            <span class="attr">#[inline]
+            </span><span class="kw">fn </span>from(v: #ident #type_generics) -&gt; #glib::Variant {
+                &lt;#ident #type_generics <span class="kw">as </span>#glib::ToVariant&gt;::to_variant(<span class="kw-2">&amp;</span>v)
+            }
+        }
+
+        <span class="kw">impl </span>#impl_generics #glib::FromVariant <span class="kw">for </span>#ident #type_generics #where_clause {
             <span class="kw">fn </span>from_variant(variant: <span class="kw-2">&amp;</span>#glib::Variant) -&gt; ::std::option::Option&lt;<span class="self">Self</span>&gt; {
                 #from_variant
             }
@@ -1268,4 +1458,4 @@
     <span class="prelude-val">None
 </span>}
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib_macros" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (70f8737b2 2022-11-23)" data-search-js="search-df80cc3cb87b6482.js" data-settings-js="settings-7e1cf5cc683233f7.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib_macros" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (b3bc6bf31 2022-11-24)" data-search-js="search-df80cc3cb87b6482.js" data-settings-js="settings-7e1cf5cc683233f7.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
