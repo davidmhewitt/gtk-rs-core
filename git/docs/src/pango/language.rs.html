@@ -143,33 +143,6 @@
 <a href="#70" id="70">70</a>
 <a href="#71" id="71">71</a>
 <a href="#72" id="72">72</a>
-<a href="#73" id="73">73</a>
-<a href="#74" id="74">74</a>
-<a href="#75" id="75">75</a>
-<a href="#76" id="76">76</a>
-<a href="#77" id="77">77</a>
-<a href="#78" id="78">78</a>
-<a href="#79" id="79">79</a>
-<a href="#80" id="80">80</a>
-<a href="#81" id="81">81</a>
-<a href="#82" id="82">82</a>
-<a href="#83" id="83">83</a>
-<a href="#84" id="84">84</a>
-<a href="#85" id="85">85</a>
-<a href="#86" id="86">86</a>
-<a href="#87" id="87">87</a>
-<a href="#88" id="88">88</a>
-<a href="#89" id="89">89</a>
-<a href="#90" id="90">90</a>
-<a href="#91" id="91">91</a>
-<a href="#92" id="92">92</a>
-<a href="#93" id="93">93</a>
-<a href="#94" id="94">94</a>
-<a href="#95" id="95">95</a>
-<a href="#96" id="96">96</a>
-<a href="#97" id="97">97</a>
-<a href="#98" id="98">98</a>
-<a href="#99" id="99">99</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>std::str::FromStr;
@@ -231,33 +204,6 @@
                 }
             }
             ret
-        }
-    }
-
-    <span class="doccomment">/// Returns the list of languages that the user prefers.
-    ///
-    /// The list is specified by the `PANGO_LANGUAGE` or `LANGUAGE`
-    /// environment variables, in order of preference. Note that this
-    /// list does not necessarily include the language returned by
-    /// [`default()`][Self::default()].
-    ///
-    /// When choosing language-specific resources, such as the sample
-    /// text returned by [`sample_string()`][Self::sample_string()],
-    /// you should first try the default language, followed by the
-    /// languages returned by this function.
-    ///
-    /// # Returns
-    ///
-    /// a [`None`]-terminated array
-    ///   of [`Language`][crate::Language]*
-    </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_48&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-    #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_48&quot;</span>)))]
-    #[doc(alias = <span class="string">&quot;get_preferred&quot;</span>)]
-    #[doc(alias = <span class="string">&quot;pango_language_get_preferred&quot;</span>)]
-    </span><span class="kw">pub fn </span>preferred() -&gt; Vec&lt;<span class="self">Self</span>&gt; {
-        <span class="kw">unsafe </span>{
-            <span class="kw">let </span>ptr = ffi::pango_language_get_preferred();
-            <span class="self">Self</span>::from_glib_full_as_vec(ptr)
         }
     }
 }
