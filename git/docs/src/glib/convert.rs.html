@@ -423,109 +423,6 @@
 <a href="#350" id="350">350</a>
 <a href="#351" id="351">351</a>
 <a href="#352" id="352">352</a>
-<a href="#353" id="353">353</a>
-<a href="#354" id="354">354</a>
-<a href="#355" id="355">355</a>
-<a href="#356" id="356">356</a>
-<a href="#357" id="357">357</a>
-<a href="#358" id="358">358</a>
-<a href="#359" id="359">359</a>
-<a href="#360" id="360">360</a>
-<a href="#361" id="361">361</a>
-<a href="#362" id="362">362</a>
-<a href="#363" id="363">363</a>
-<a href="#364" id="364">364</a>
-<a href="#365" id="365">365</a>
-<a href="#366" id="366">366</a>
-<a href="#367" id="367">367</a>
-<a href="#368" id="368">368</a>
-<a href="#369" id="369">369</a>
-<a href="#370" id="370">370</a>
-<a href="#371" id="371">371</a>
-<a href="#372" id="372">372</a>
-<a href="#373" id="373">373</a>
-<a href="#374" id="374">374</a>
-<a href="#375" id="375">375</a>
-<a href="#376" id="376">376</a>
-<a href="#377" id="377">377</a>
-<a href="#378" id="378">378</a>
-<a href="#379" id="379">379</a>
-<a href="#380" id="380">380</a>
-<a href="#381" id="381">381</a>
-<a href="#382" id="382">382</a>
-<a href="#383" id="383">383</a>
-<a href="#384" id="384">384</a>
-<a href="#385" id="385">385</a>
-<a href="#386" id="386">386</a>
-<a href="#387" id="387">387</a>
-<a href="#388" id="388">388</a>
-<a href="#389" id="389">389</a>
-<a href="#390" id="390">390</a>
-<a href="#391" id="391">391</a>
-<a href="#392" id="392">392</a>
-<a href="#393" id="393">393</a>
-<a href="#394" id="394">394</a>
-<a href="#395" id="395">395</a>
-<a href="#396" id="396">396</a>
-<a href="#397" id="397">397</a>
-<a href="#398" id="398">398</a>
-<a href="#399" id="399">399</a>
-<a href="#400" id="400">400</a>
-<a href="#401" id="401">401</a>
-<a href="#402" id="402">402</a>
-<a href="#403" id="403">403</a>
-<a href="#404" id="404">404</a>
-<a href="#405" id="405">405</a>
-<a href="#406" id="406">406</a>
-<a href="#407" id="407">407</a>
-<a href="#408" id="408">408</a>
-<a href="#409" id="409">409</a>
-<a href="#410" id="410">410</a>
-<a href="#411" id="411">411</a>
-<a href="#412" id="412">412</a>
-<a href="#413" id="413">413</a>
-<a href="#414" id="414">414</a>
-<a href="#415" id="415">415</a>
-<a href="#416" id="416">416</a>
-<a href="#417" id="417">417</a>
-<a href="#418" id="418">418</a>
-<a href="#419" id="419">419</a>
-<a href="#420" id="420">420</a>
-<a href="#421" id="421">421</a>
-<a href="#422" id="422">422</a>
-<a href="#423" id="423">423</a>
-<a href="#424" id="424">424</a>
-<a href="#425" id="425">425</a>
-<a href="#426" id="426">426</a>
-<a href="#427" id="427">427</a>
-<a href="#428" id="428">428</a>
-<a href="#429" id="429">429</a>
-<a href="#430" id="430">430</a>
-<a href="#431" id="431">431</a>
-<a href="#432" id="432">432</a>
-<a href="#433" id="433">433</a>
-<a href="#434" id="434">434</a>
-<a href="#435" id="435">435</a>
-<a href="#436" id="436">436</a>
-<a href="#437" id="437">437</a>
-<a href="#438" id="438">438</a>
-<a href="#439" id="439">439</a>
-<a href="#440" id="440">440</a>
-<a href="#441" id="441">441</a>
-<a href="#442" id="442">442</a>
-<a href="#443" id="443">443</a>
-<a href="#444" id="444">444</a>
-<a href="#445" id="445">445</a>
-<a href="#446" id="446">446</a>
-<a href="#447" id="447">447</a>
-<a href="#448" id="448">448</a>
-<a href="#449" id="449">449</a>
-<a href="#450" id="450">450</a>
-<a href="#451" id="451">451</a>
-<a href="#452" id="452">452</a>
-<a href="#453" id="453">453</a>
-<a href="#454" id="454">454</a>
-<a href="#455" id="455">455</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use crate</span>::{translate::<span class="kw-2">*</span>, ConvertError, Error, GStr, GString, Slice};
@@ -722,39 +619,7 @@
     }
 }
 
-<span class="doccomment">/// Determines the preferred character sets used for filenames.
-/// The first character set from the `charsets` is the filename encoding, the
-/// subsequent character sets are used when trying to generate a displayable
-/// representation of a filename, see [`filename_display_name()`][crate::filename_display_name()].
-///
-/// On Unix, the character sets are determined by consulting the
-/// environment variables `G_FILENAME_ENCODING` and `G_BROKEN_FILENAMES`.
-/// On Windows, the character set used in the GLib API is always UTF-8
-/// and said environment variables have no effect.
-///
-/// `G_FILENAME_ENCODING` may be set to a comma-separated list of
-/// character set names. The special token &quot;\`locale`&quot; is taken
-/// to mean the character set for the [current locale][setlocale].
-/// If `G_FILENAME_ENCODING` is not set, but `G_BROKEN_FILENAMES` is,
-/// the character set of the current locale is taken as the filename
-/// encoding. If neither environment variable is set, UTF-8 is taken
-/// as the filename encoding, but the character set of the current locale
-/// is also put in the list of encodings.
-///
-/// The returned `charsets` belong to GLib and must not be freed.
-///
-/// Note that on Unix, regardless of the locale character set or
-/// `G_FILENAME_ENCODING` value, the actual file names present
-/// on a system might be in any random encoding or just gibberish.
-///
-/// # Returns
-///
-/// [`true`] if the filename encoding is UTF-8.
-///
-/// ## `filename_charsets`
-///
-///  return location for the [`None`]-terminated list of encoding names
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_filename_charsets&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_get_filename_charsets&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_filename_charsets&quot;</span>)]
 </span><span class="kw">pub fn </span>filename_charsets() -&gt; (bool, Vec&lt;GString&gt;) {
     <span class="kw">let </span><span class="kw-2">mut </span>filename_charsets = ptr::null_mut();
@@ -767,41 +632,7 @@
     }
 }
 
-<span class="doccomment">/// Converts a string from UTF-8 to the encoding GLib uses for
-/// filenames. Note that on Windows GLib uses UTF-8 for filenames;
-/// on other platforms, this function indirectly depends on the
-/// [current locale][setlocale].
-///
-/// The input string shall not contain nul characters even if the `len`
-/// argument is positive. A nul character found inside the string will result
-/// in error [`ConvertError::IllegalSequence`][crate::ConvertError::IllegalSequence]. If the filename encoding is
-/// not UTF-8 and the conversion output contains a nul character, the error
-/// [`ConvertError::EmbeddedNul`][crate::ConvertError::EmbeddedNul] is set and the function returns [`None`].
-/// ## `utf8string`
-/// a UTF-8 encoded string.
-/// ## `len`
-/// the length of the string, or -1 if the string is
-///  nul-terminated.
-///
-/// # Returns
-///
-///
-///  The converted string, or [`None`] on an error.
-///
-/// ## `bytes_read`
-/// location to store the number of bytes in
-///  the input string that were successfully converted, or [`None`].
-///  Even if the conversion was successful, this may be
-///  less than `len` if there were partial characters
-///  at the end of the input. If the error
-///  [`ConvertError::IllegalSequence`][crate::ConvertError::IllegalSequence] occurs, the value
-///  stored will be the byte offset after the last valid
-///  input sequence.
-///
-/// ## `bytes_written`
-/// the number of bytes stored in
-///  the output buffer (not including the terminating nul).
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_filename_from_utf8&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_filename_from_utf8&quot;</span>)]
 </span><span class="kw">pub fn </span>filename_from_utf8(utf8string: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;(PathBuf, usize), CvtError&gt; {
     <span class="kw">let </span>len = utf8string.len() <span class="kw">as </span>isize;
     <span class="kw">let </span><span class="kw-2">mut </span>bytes_read = <span class="number">0</span>;
@@ -828,44 +659,7 @@
     }
 }
 
-<span class="doccomment">/// Converts a string which is in the encoding used by GLib for
-/// filenames into a UTF-8 string. Note that on Windows GLib uses UTF-8
-/// for filenames; on other platforms, this function indirectly depends on
-/// the [current locale][setlocale].
-///
-/// The input string shall not contain nul characters even if the `len`
-/// argument is positive. A nul character found inside the string will result
-/// in error [`ConvertError::IllegalSequence`][crate::ConvertError::IllegalSequence].
-/// If the source encoding is not UTF-8 and the conversion output contains a
-/// nul character, the error [`ConvertError::EmbeddedNul`][crate::ConvertError::EmbeddedNul] is set and the
-/// function returns [`None`]. Use [`convert()`][crate::convert()] to produce output that
-/// may contain embedded nul characters.
-/// ## `opsysstring`
-/// a string in the encoding for filenames
-/// ## `len`
-/// the length of the string, or -1 if the string is
-///  nul-terminated (Note that some encodings may allow nul
-///  bytes to occur inside strings. In that case, using -1
-///  for the `len` parameter is unsafe)
-///
-/// # Returns
-///
-/// The converted string, or [`None`] on an error.
-///
-/// ## `bytes_read`
-/// location to store the number of bytes in the
-///  input string that were successfully converted, or [`None`].
-///  Even if the conversion was successful, this may be
-///  less than `len` if there were partial characters
-///  at the end of the input. If the error
-///  [`ConvertError::IllegalSequence`][crate::ConvertError::IllegalSequence] occurs, the value
-///  stored will be the byte offset after the last valid
-///  input sequence.
-///
-/// ## `bytes_written`
-/// the number of bytes stored in the output
-///  buffer (not including the terminating nul).
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_filename_to_utf8&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_filename_to_utf8&quot;</span>)]
 </span><span class="kw">pub fn </span>filename_to_utf8(
     opsysstring: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;,
 ) -&gt; <span class="prelude-ty">Result</span>&lt;(<span class="kw">crate</span>::GString, usize), CvtError&gt; {

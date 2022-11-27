@@ -268,18 +268,18 @@
     </span><span class="attr">#[doc(alias = <span class="string">&quot;GBindingFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>BindingFlags: u32 {
         <span class="doccomment">/// The default binding; if the source property
-        ///  changes, the target Converts a string from one character set to another.
-        ///
-        /// Note that you should use [`iconv()`][crate::iconv()] for streaming conversions.
-        /// Despite the fact that `bytes_read` can return information about partial
-        /// characters, the g_convert_... functions are not genSynchronize the values of the source and
-        ///  target properties when creating the binding; the direction of
-        ///  the synchronization is always from the source to the target.
+        ///  changes, the target property is updated with its value.
         </span><span class="attr">#[doc(alias = <span class="string">&quot;G_BINDING_DEFAULT&quot;</span>)]
         </span><span class="kw">const </span>DEFAULT = gobject_ffi::G_BINDING_DEFAULT <span class="kw">as _</span>;
-        <span class="attr">#[doc(alias = <span class="string">&quot;G_BINDING_BIDIRECTIONAL&quot;</span>)]
+        <span class="doccomment">/// Bidirectional binding; if either the
+        ///  property of the source or the property of the target changes,
+        ///  the other is updated.
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_BINDING_BIDIRECTIONAL&quot;</span>)]
         </span><span class="kw">const </span>BIDIRECTIONAL = gobject_ffi::G_BINDING_BIDIRECTIONAL <span class="kw">as _</span>;
-        <span class="attr">#[doc(alias = <span class="string">&quot;G_BINDING_SYNC_CREATE&quot;</span>)]
+        <span class="doccomment">/// Synchronize the values of the source and
+        ///  target properties when creating the binding; the direction of
+        ///  the synchronization is always from the source to the target.
+        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_BINDING_SYNC_CREATE&quot;</span>)]
         </span><span class="kw">const </span>SYNC_CREATE = gobject_ffi::G_BINDING_SYNC_CREATE <span class="kw">as _</span>;
         <span class="doccomment">/// If the two properties being bound are
         ///  booleans, setting one to [`true`] will result in the other being
