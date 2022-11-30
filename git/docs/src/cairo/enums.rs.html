@@ -4236,7 +4236,7 @@
 }
 
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;freetype&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-#[derive(Clone, PartialEq, PartialOrd, Debug, Copy)]
+#[derive(Clone, PartialEq, Eq, PartialOrd, Ord, Debug, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;cairo_ft_synthesize_t&quot;</span>)]
 </span><span class="kw">pub enum </span>FtSynthesize {
@@ -4288,7 +4288,7 @@
 }
 
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;script&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-#[derive(Clone, PartialEq, PartialOrd, Debug, Copy)]
+#[derive(Clone, PartialEq, Eq, PartialOrd, Ord, Debug, Copy)]
 #[non_exhaustive]
 #[doc(alias = <span class="string">&quot;cairo_script_mode_t&quot;</span>)]
 </span><span class="kw">pub enum </span>ScriptMode {

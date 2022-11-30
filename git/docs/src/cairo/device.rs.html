@@ -451,12 +451,6 @@
 <a href="#378" id="378">378</a>
 <a href="#379" id="379">379</a>
 <a href="#380" id="380">380</a>
-<a href="#381" id="381">381</a>
-<a href="#382" id="382">382</a>
-<a href="#383" id="383">383</a>
-<a href="#384" id="384">384</a>
-<a href="#385" id="385">385</a>
-<a href="#386" id="386">386</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::enums::DeviceType;
@@ -660,39 +654,37 @@
     <span class="attr">#[cfg(any(feature = <span class="string">&quot;xlib&quot;</span>, feature = <span class="string">&quot;xcb&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[doc(alias = <span class="string">&quot;cairo_xlib_device_debug_cap_xrender_version&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_xcb_device_debug_cap_xrender_version&quot;</span>)]
-    </span><span class="kw">pub fn </span>debug_cap_xrender_version(<span class="kw-2">&amp;</span><span class="self">self</span>, major_version: i32, minor_version: i32) {
-        <span class="kw">unsafe </span>{
-            <span class="kw">match </span><span class="self">self</span>.type_() {
-                DeviceType::Xlib =&gt; {
-                    <span class="attr">#[cfg(feature = <span class="string">&quot;xlib&quot;</span>)]
-                    </span>{
-                        ffi::cairo_xlib_device_debug_cap_xrender_version(
-                            <span class="self">self</span>.to_raw_none(),
-                            major_version,
-                            minor_version,
-                        )
-                    }
-                    <span class="attr">#[cfg(not(feature = <span class="string">&quot;xlib&quot;</span>))]
-                    </span>{
-                        <span class="macro">panic!</span>(<span class="string">&quot;you need to enable \&quot;xlib\&quot; feature&quot;</span>)
-                    }
+    </span><span class="kw">pub fn </span>debug_cap_xrender_version(<span class="kw-2">&amp;</span><span class="self">self</span>, _major_version: i32, _minor_version: i32) {
+        <span class="kw">match </span><span class="self">self</span>.type_() {
+            DeviceType::Xlib =&gt; {
+                <span class="attr">#[cfg(feature = <span class="string">&quot;xlib&quot;</span>)]
+                </span><span class="kw">unsafe </span>{
+                    ffi::cairo_xlib_device_debug_cap_xrender_version(
+                        <span class="self">self</span>.to_raw_none(),
+                        _major_version,
+                        _minor_version,
+                    )
                 }
-                DeviceType::Xcb =&gt; {
-                    <span class="attr">#[cfg(feature = <span class="string">&quot;xcb&quot;</span>)]
-                    </span>{
-                        ffi::cairo_xcb_device_debug_cap_xrender_version(
-                            <span class="self">self</span>.to_raw_none(),
-                            major_version,
-                            minor_version,
-                        )
-                    }
-                    <span class="attr">#[cfg(not(feature = <span class="string">&quot;xcb&quot;</span>))]
-                    </span>{
-                        <span class="macro">panic!</span>(<span class="string">&quot;you need to enable \&quot;xcb\&quot; feature&quot;</span>)
-                    }
+                <span class="attr">#[cfg(not(feature = <span class="string">&quot;xlib&quot;</span>))]
+                </span>{
+                    <span class="macro">panic!</span>(<span class="string">&quot;you need to enable \&quot;xlib\&quot; feature&quot;</span>)
                 }
-                d =&gt; <span class="macro">panic!</span>(<span class="string">&quot;invalid device type: {}&quot;</span>, d),
             }
+            DeviceType::Xcb =&gt; {
+                <span class="attr">#[cfg(feature = <span class="string">&quot;xcb&quot;</span>)]
+                </span><span class="kw">unsafe </span>{
+                    ffi::cairo_xcb_device_debug_cap_xrender_version(
+                        <span class="self">self</span>.to_raw_none(),
+                        _major_version,
+                        _minor_version,
+                    )
+                }
+                <span class="attr">#[cfg(not(feature = <span class="string">&quot;xcb&quot;</span>))]
+                </span>{
+                    <span class="macro">panic!</span>(<span class="string">&quot;you need to enable \&quot;xcb\&quot; feature&quot;</span>)
+                }
+            }
+            d =&gt; <span class="macro">panic!</span>(<span class="string">&quot;invalid device type: {}&quot;</span>, d),
         }
     }
 
@@ -700,61 +692,57 @@
     #[doc(alias = <span class="string">&quot;cairo_xlib_device_debug_get_precision&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_xcb_device_debug_get_precision&quot;</span>)]
     </span><span class="kw">pub fn </span>debug_get_precision(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
-        <span class="kw">unsafe </span>{
-            <span class="kw">match </span><span class="self">self</span>.type_() {
-                DeviceType::Xlib =&gt; {
-                    <span class="attr">#[cfg(feature = <span class="string">&quot;xlib&quot;</span>)]
-                    </span>{
-                        ffi::cairo_xlib_device_debug_get_precision(<span class="self">self</span>.to_raw_none())
-                    }
-                    <span class="attr">#[cfg(not(feature = <span class="string">&quot;xlib&quot;</span>))]
-                    </span>{
-                        <span class="macro">panic!</span>(<span class="string">&quot;you need to enable \&quot;xlib\&quot; feature&quot;</span>)
-                    }
+        <span class="kw">match </span><span class="self">self</span>.type_() {
+            DeviceType::Xlib =&gt; {
+                <span class="attr">#[cfg(feature = <span class="string">&quot;xlib&quot;</span>)]
+                </span><span class="kw">unsafe </span>{
+                    ffi::cairo_xlib_device_debug_get_precision(<span class="self">self</span>.to_raw_none())
                 }
-                DeviceType::Xcb =&gt; {
-                    <span class="attr">#[cfg(feature = <span class="string">&quot;xcb&quot;</span>)]
-                    </span>{
-                        ffi::cairo_xcb_device_debug_get_precision(<span class="self">self</span>.to_raw_none())
-                    }
-                    <span class="attr">#[cfg(not(feature = <span class="string">&quot;xcb&quot;</span>))]
-                    </span>{
-                        <span class="macro">panic!</span>(<span class="string">&quot;you need to enable \&quot;xcb\&quot; feature&quot;</span>)
-                    }
+                <span class="attr">#[cfg(not(feature = <span class="string">&quot;xlib&quot;</span>))]
+                </span>{
+                    <span class="macro">panic!</span>(<span class="string">&quot;you need to enable \&quot;xlib\&quot; feature&quot;</span>)
                 }
-                d =&gt; <span class="macro">panic!</span>(<span class="string">&quot;invalid device type: {}&quot;</span>, d),
             }
+            DeviceType::Xcb =&gt; {
+                <span class="attr">#[cfg(feature = <span class="string">&quot;xcb&quot;</span>)]
+                </span><span class="kw">unsafe </span>{
+                    ffi::cairo_xcb_device_debug_get_precision(<span class="self">self</span>.to_raw_none())
+                }
+                <span class="attr">#[cfg(not(feature = <span class="string">&quot;xcb&quot;</span>))]
+                </span>{
+                    <span class="macro">panic!</span>(<span class="string">&quot;you need to enable \&quot;xcb\&quot; feature&quot;</span>)
+                }
+            }
+            d =&gt; <span class="macro">panic!</span>(<span class="string">&quot;invalid device type: {}&quot;</span>, d),
         }
     }
 
     <span class="attr">#[cfg(any(feature = <span class="string">&quot;xlib&quot;</span>, feature = <span class="string">&quot;xcb&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
     #[doc(alias = <span class="string">&quot;cairo_xlib_device_debug_set_precision&quot;</span>)]
     #[doc(alias = <span class="string">&quot;cairo_xcb_device_debug_set_precision&quot;</span>)]
-    </span><span class="kw">pub fn </span>debug_set_precision(<span class="kw-2">&amp;</span><span class="self">self</span>, precision: i32) {
-        <span class="kw">unsafe </span>{
-            <span class="kw">match </span><span class="self">self</span>.type_() {
-                DeviceType::Xlib =&gt; {
-                    <span class="attr">#[cfg(feature = <span class="string">&quot;xlib&quot;</span>)]
-                    </span>{
-                        ffi::cairo_xlib_device_debug_set_precision(<span class="self">self</span>.to_raw_none(), precision)
-                    }
-                    <span class="attr">#[cfg(not(feature = <span class="string">&quot;xlib&quot;</span>))]
-                    </span>{
-                        <span class="macro">panic!</span>(<span class="string">&quot;you need to enable \&quot;xlib\&quot; feature&quot;</span>)
-                    }
+    </span><span class="kw">pub fn </span>debug_set_precision(<span class="kw-2">&amp;</span><span class="self">self</span>, _precision: i32) {
+        <span class="kw">match </span><span class="self">self</span>.type_() {
+            DeviceType::Xlib =&gt; {
+                <span class="attr">#[cfg(feature = <span class="string">&quot;xlib&quot;</span>)]
+                </span><span class="kw">unsafe </span>{
+                    ffi::cairo_xlib_device_debug_set_precision(<span class="self">self</span>.to_raw_none(), _precision)
                 }
-                DeviceType::Xcb =&gt; {
-                    <span class="attr">#[cfg(feature = <span class="string">&quot;xcb&quot;</span>)]
-                    </span>{
-                        ffi::cairo_xcb_device_debug_set_precision(<span class="self">self</span>.to_raw_none(), precision)
-                    }
-                    <span class="attr">#[cfg(not(feature = <span class="string">&quot;xcb&quot;</span>))]
-                    </span>{
-                        <span class="macro">panic!</span>(<span class="string">&quot;you need to enable \&quot;xcb\&quot; feature&quot;</span>)
-                    }
+                <span class="attr">#[cfg(not(feature = <span class="string">&quot;xlib&quot;</span>))]
+                </span>{
+                    <span class="macro">panic!</span>(<span class="string">&quot;you need to enable \&quot;xlib\&quot; feature&quot;</span>)
                 }
-                d =&gt; <span class="macro">panic!</span>(<span class="string">&quot;invalid device type: {}&quot;</span>, d),
             }
+            DeviceType::Xcb =&gt; {
+                <span class="attr">#[cfg(feature = <span class="string">&quot;xcb&quot;</span>)]
+                </span><span class="kw">unsafe </span>{
+                    ffi::cairo_xcb_device_debug_set_precision(<span class="self">self</span>.to_raw_none(), _precision)
+                }
+                <span class="attr">#[cfg(not(feature = <span class="string">&quot;xcb&quot;</span>))]
+                </span>{
+                    <span class="macro">panic!</span>(<span class="string">&quot;you need to enable \&quot;xcb\&quot; feature&quot;</span>)
+                }
+            }
+            d =&gt; <span class="macro">panic!</span>(<span class="string">&quot;invalid device type: {}&quot;</span>, d),
         }
     }
 

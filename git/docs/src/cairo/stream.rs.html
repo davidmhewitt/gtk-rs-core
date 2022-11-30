@@ -569,7 +569,7 @@
         {
             <span class="comment">// Safety: `write_callback&lt;W&gt;` was instantiated in `Surface::_for_stream`
             // with a W parameter consistent with the box that was unsized to `Box&lt;dyn Any&gt;`.
-            </span><span class="kw">let </span>stream = <span class="kw">unsafe </span>{ stream.downcast_mut_unchecked::&lt;W&gt;() };
+            </span><span class="kw">let </span>stream = <span class="kw">unsafe </span>{ AnyExt::downcast_mut_unchecked::&lt;W&gt;(<span class="kw-2">&amp;mut **</span>stream) };
             <span class="comment">// Safety: this is the callback contract from cairo’s API
             </span><span class="kw">let </span>data = <span class="kw">unsafe </span>{
                 <span class="kw">if </span>data.is_null() || length == <span class="number">0 </span>{
