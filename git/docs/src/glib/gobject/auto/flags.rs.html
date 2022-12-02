@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/gobject/auto/flags.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>flags.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../../static.files/rustdoc-59deea3733ac6c09.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../../static.files/light-3bcdcab5f4113412.css"><link rel="stylesheet" disabled href="../../../../static.files/dark-091ecdca18d5df85.css"><link rel="stylesheet" disabled href="../../../../static.files/ayu-45445754dcd01ab2.css"><script id="default-settings" ></script><script src="../../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../../../source-files.js"></script><script defer src="../../../../static.files/main-287cecec4dbb45b0.js"></script><noscript><link rel="stylesheet" href="../../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/gobject/auto/flags.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>flags.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../../static.files/rustdoc-e3630034d0b07e68.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../../static.files/light-3bcdcab5f4113412.css"><link rel="stylesheet" disabled href="../../../../static.files/dark-091ecdca18d5df85.css"><link rel="stylesheet" disabled href="../../../../static.files/ayu-45445754dcd01ab2.css"><script id="default-settings" ></script><script src="../../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../../../source-files.js"></script><script defer src="../../../../static.files/main-287cecec4dbb45b0.js"></script><noscript><link rel="stylesheet" href="../../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -248,6 +248,17 @@
 <a href="#175" id="175">175</a>
 <a href="#176" id="176">176</a>
 <a href="#177" id="177">177</a>
+<a href="#178" id="178">178</a>
+<a href="#179" id="179">179</a>
+<a href="#180" id="180">180</a>
+<a href="#181" id="181">181</a>
+<a href="#182" id="182">182</a>
+<a href="#183" id="183">183</a>
+<a href="#184" id="184">184</a>
+<a href="#185" id="185">185</a>
+<a href="#186" id="186">186</a>
+<a href="#187" id="187">187</a>
+<a href="#188" id="188">188</a>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
@@ -268,25 +279,51 @@
     </span><span class="attr">#[doc(alias = <span class="string">&quot;GBindingFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>BindingFlags: u32 {
         <span class="doccomment">/// The default binding; if the source property
-        ///  changes, the target property is updated with its value.
+        ///  changes, the target Converts a string from one character set to another.
+        ///
+        /// Note that you should use [`iconv()`][crate::iconv()] for streaming conversions.
+        /// Despite the fact that `bytes_read` can return information about partial
+        /// characters, the g_convert_... functions are not generally suitable
+        /// for streaming. If the underlying converter maintains internal state,
+        /// then this won&#39;t be preserved across successive calls to [`convert()`][crate::convert()],
+        /// [`convert()`][crate::convert()] or [`convert_with_fallback()`][crate::convert_with_fallback()]. (An example of
+        /// this is the GNU C converter for CP1255 which does not emit a base
+        /// character until it knows that the next character is not a mark that
+        /// could combine with the base character.)
+        ///
+        /// Using extensions such as &quot;//TRANSLIT&quot; may not work (or may not work
+        /// well) on many platforms. Consider using `g_str_to_ascii()` instead.
+        /// ## `str`
+        ///
+        ///  the string to convert.
+        /// ## `to_codeset`
+        /// name of character set into which to convert `str`
+        /// ## `from_codeset`
+        /// character set of `str`.
+        ///
+        /// # Returns
+        ///
+        ///
+        ///  If the conversion was successful, a newly allocated buffer
+        ///  containing the converted string, which must be freed with `g_free()`.
+        ///  Otherwise [`None`] and `error` will be set.
+        ///
+        /// ## `bytes_read`
+        /// location to store the number of bytes in
+        ///  the input string that were successfully converted, or [`None`].
+        ///  Even if the conversion was successful, this may be
+        ///  less than `len` if there were partial characters
+        ///  at the end of the input. If the error
+        ///  [`ConvertError::IllegalSequence`][crate::ConvertError::IllegalSequence] occurs, the value
+        ///  stored will be the byte offset after the last valid
+        ///  input sequence.
         </span><span class="attr">#[doc(alias = <span class="string">&quot;G_BINDING_DEFAULT&quot;</span>)]
         </span><span class="kw">const </span>DEFAULT = gobject_ffi::G_BINDING_DEFAULT <span class="kw">as _</span>;
-        <span class="doccomment">/// Bidirectional binding; if either the
-        ///  property of the source or the property of the target changes,
-        ///  the other is updated.
-        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_BINDING_BIDIRECTIONAL&quot;</span>)]
+        <span class="attr">#[doc(alias = <span class="string">&quot;G_BINDING_BIDIRECTIONAL&quot;</span>)]
         </span><span class="kw">const </span>BIDIRECTIONAL = gobject_ffi::G_BINDING_BIDIRECTIONAL <span class="kw">as _</span>;
-        <span class="doccomment">/// Synchronize the values of the source and
-        ///  target properties when creating the binding; the direction of
-        ///  the synchronization is always from the source to the target.
-        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_BINDING_SYNC_CREATE&quot;</span>)]
+        <span class="attr">#[doc(alias = <span class="string">&quot;G_BINDING_SYNC_CREATE&quot;</span>)]
         </span><span class="kw">const </span>SYNC_CREATE = gobject_ffi::G_BINDING_SYNC_CREATE <span class="kw">as _</span>;
-        <span class="doccomment">/// If the two properties being bound are
-        ///  booleans, setting one to [`true`] will result in the other being
-        ///  set to [`false`] and vice versa. This flag will only work for
-        ///  boolean properties, and cannot be used when passing custom
-        ///  transformation functions to [`ObjectExt::bind_property_full()`][crate::prelude::ObjectExt::bind_property_full()].
-        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_BINDING_INVERT_BOOLEAN&quot;</span>)]
+        <span class="attr">#[doc(alias = <span class="string">&quot;G_BINDING_INVERT_BOOLEAN&quot;</span>)]
         </span><span class="kw">const </span>INVERT_BOOLEAN = gobject_ffi::G_BINDING_INVERT_BOOLEAN <span class="kw">as _</span>;
     }
 }
@@ -355,34 +392,19 @@
 }
 
 <span class="macro">bitflags! </span>{
-    <span class="doccomment">/// The signal flags are used to specify a signal&#39;s behaviour.
-    </span><span class="attr">#[doc(alias = <span class="string">&quot;GSignalFlags&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;GSignalFlags&quot;</span>)]
     </span><span class="kw">pub struct </span>SignalFlags: u32 {
-        <span class="doccomment">/// Invoke the object method handler in the first emission stage.
-        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SIGNAL_RUN_FIRST&quot;</span>)]
+        <span class="attr">#[doc(alias = <span class="string">&quot;G_SIGNAL_RUN_FIRST&quot;</span>)]
         </span><span class="kw">const </span>RUN_FIRST = gobject_ffi::G_SIGNAL_RUN_FIRST <span class="kw">as _</span>;
-        <span class="doccomment">/// Invoke the object method handler in the third emission stage.
-        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SIGNAL_RUN_LAST&quot;</span>)]
+        <span class="attr">#[doc(alias = <span class="string">&quot;G_SIGNAL_RUN_LAST&quot;</span>)]
         </span><span class="kw">const </span>RUN_LAST = gobject_ffi::G_SIGNAL_RUN_LAST <span class="kw">as _</span>;
-        <span class="doccomment">/// Invoke the object method handler in the last emission stage.
-        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SIGNAL_RUN_CLEANUP&quot;</span>)]
+        <span class="attr">#[doc(alias = <span class="string">&quot;G_SIGNAL_RUN_CLEANUP&quot;</span>)]
         </span><span class="kw">const </span>RUN_CLEANUP = gobject_ffi::G_SIGNAL_RUN_CLEANUP <span class="kw">as _</span>;
-        <span class="doccomment">/// Signals being emitted for an object while currently being in
-        ///  emission for this very object will not be emitted recursively,
-        ///  but instead cause the first emission to be restarted.
-        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SIGNAL_NO_RECURSE&quot;</span>)]
+        <span class="attr">#[doc(alias = <span class="string">&quot;G_SIGNAL_NO_RECURSE&quot;</span>)]
         </span><span class="kw">const </span>NO_RECURSE = gobject_ffi::G_SIGNAL_NO_RECURSE <span class="kw">as _</span>;
-        <span class="doccomment">/// This signal supports &quot;::detail&quot; appendices to the signal name
-        ///  upon handler connections and emissions.
-        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SIGNAL_DETAILED&quot;</span>)]
+        <span class="attr">#[doc(alias = <span class="string">&quot;G_SIGNAL_DETAILED&quot;</span>)]
         </span><span class="kw">const </span>DETAILED = gobject_ffi::G_SIGNAL_DETAILED <span class="kw">as _</span>;
-        <span class="doccomment">/// Action signals are signals that may freely be emitted on alive
-        ///  objects from user code via `g_signal_emit()` and friends, without
-        ///  the need of being embedded into extra code that performs pre or
-        ///  post emission adjustments on the object. They can also be thought
-        ///  of as object methods which can be called generically by
-        ///  third-party code.
-        </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SIGNAL_ACTION&quot;</span>)]
+        <span class="attr">#[doc(alias = <span class="string">&quot;G_SIGNAL_ACTION&quot;</span>)]
         </span><span class="kw">const </span>ACTION = gobject_ffi::G_SIGNAL_ACTION <span class="kw">as _</span>;
         <span class="doccomment">/// No emissions hooks are supported for this signal.
         </span><span class="attr">#[doc(alias = <span class="string">&quot;G_SIGNAL_NO_HOOKS&quot;</span>)]
@@ -426,4 +448,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../../" data-static-root-path="../../../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (c97b539e4 2022-11-30)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../../" data-static-root-path="../../../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (c090c6880 2022-12-01)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
