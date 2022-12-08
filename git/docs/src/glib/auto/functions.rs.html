@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/auto/functions.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>functions.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-e963ab4a0d0c903e.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-046227e470cd3629.css"><link rel="stylesheet" disabled href="../../../static.files/dark-800f2ee593c8e6f7.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-9edae3c387f5a5b3.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-287cecec4dbb45b0.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/auto/functions.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>functions.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-92ec330caa5a75cd.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-046227e470cd3629.css"><link rel="stylesheet" disabled href="../../../static.files/dark-800f2ee593c8e6f7.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-9edae3c387f5a5b3.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-287cecec4dbb45b0.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -1218,6 +1218,40 @@
 <a href="#1145" id="1145">1145</a>
 <a href="#1146" id="1146">1146</a>
 <a href="#1147" id="1147">1147</a>
+<a href="#1148" id="1148">1148</a>
+<a href="#1149" id="1149">1149</a>
+<a href="#1150" id="1150">1150</a>
+<a href="#1151" id="1151">1151</a>
+<a href="#1152" id="1152">1152</a>
+<a href="#1153" id="1153">1153</a>
+<a href="#1154" id="1154">1154</a>
+<a href="#1155" id="1155">1155</a>
+<a href="#1156" id="1156">1156</a>
+<a href="#1157" id="1157">1157</a>
+<a href="#1158" id="1158">1158</a>
+<a href="#1159" id="1159">1159</a>
+<a href="#1160" id="1160">1160</a>
+<a href="#1161" id="1161">1161</a>
+<a href="#1162" id="1162">1162</a>
+<a href="#1163" id="1163">1163</a>
+<a href="#1164" id="1164">1164</a>
+<a href="#1165" id="1165">1165</a>
+<a href="#1166" id="1166">1166</a>
+<a href="#1167" id="1167">1167</a>
+<a href="#1168" id="1168">1168</a>
+<a href="#1169" id="1169">1169</a>
+<a href="#1170" id="1170">1170</a>
+<a href="#1171" id="1171">1171</a>
+<a href="#1172" id="1172">1172</a>
+<a href="#1173" id="1173">1173</a>
+<a href="#1174" id="1174">1174</a>
+<a href="#1175" id="1175">1175</a>
+<a href="#1176" id="1176">1176</a>
+<a href="#1177" id="1177">1177</a>
+<a href="#1178" id="1178">1178</a>
+<a href="#1179" id="1179">1179</a>
+<a href="#1180" id="1180">1180</a>
+<a href="#1181" id="1181">1181</a>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
@@ -1830,98 +1864,33 @@
     <span class="kw">unsafe </span>{ ffi::g_random_int() }
 }
 
-<span class="doccomment">/// Returns a random `gint32` equally distributed over the range
-/// [`begin`..`end`-1].
-/// ## `begin`
-/// lower closed bound of the interval
-/// ## `end`
-/// upper open bound of the interval
-///
-/// # Returns
-///
-/// a random number
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_random_int_range&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_random_int_range&quot;</span>)]
 </span><span class="kw">pub fn </span>random_int_range(begin: i32, end: i32) -&gt; i32 {
     <span class="kw">unsafe </span>{ ffi::g_random_int_range(begin, end) }
 }
 
-<span class="doccomment">/// Sets the seed for the global random number generator, which is used
-/// by the g_random_* functions, to `seed`.
-/// ## `seed`
-/// a value to reinitialize the global random number generator
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_random_set_seed&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_random_set_seed&quot;</span>)]
 </span><span class="kw">pub fn </span>random_set_seed(seed: u32) {
     <span class="kw">unsafe </span>{
         ffi::g_random_set_seed(seed);
     }
 }
 
-<span class="doccomment">/// Resets the cache used for [`user_special_dir()`][crate::user_special_dir()], so
-/// that the latest on-disk version is used. Call this only
-/// if you just changed the data on disk yourself.
-///
-/// Due to thread safety issues this may cause leaking of strings
-/// that were previously returned from [`user_special_dir()`][crate::user_special_dir()]
-/// that can&#39;t be freed. We ensure to only leak the data for
-/// the directories that actually changed value though.
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_reload_user_special_dirs_cache&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_reload_user_special_dirs_cache&quot;</span>)]
 </span><span class="kw">pub fn </span>reload_user_special_dirs_cache() {
     <span class="kw">unsafe </span>{
         ffi::g_reload_user_special_dirs_cache();
     }
 }
 
-<span class="doccomment">/// Sets a human-readable name for the application. This name should be
-/// localized if possible, and is intended for display to the user.
-/// Contrast with `g_set_prgname()`, which sets a non-localized name.
-/// `g_set_prgname()` will be called automatically by `gtk_init()`,
-/// but [`set_application_name()`][crate::set_application_name()] will not.
-///
-/// Note that for thread safety reasons, this function can only
-/// be called once.
-///
-/// The application name will be used in contexts such as error messages,
-/// or when displaying an application&#39;s name in the task list.
-/// ## `application_name`
-/// localized name of the application
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_set_application_name&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_set_application_name&quot;</span>)]
 </span><span class="kw">pub fn </span>set_application_name(application_name: <span class="kw-2">&amp;</span>str) {
     <span class="kw">unsafe </span>{
         ffi::g_set_application_name(application_name.to_glib_none().<span class="number">0</span>);
     }
 }
 
-<span class="doccomment">/// Sets an environment variable. On UNIX, both the variable&#39;s name and
-/// value can be arbitrary byte strings, except that the variable&#39;s name
-/// cannot contain &#39;=&#39;. On Windows, they should be in UTF-8.
-///
-/// Note that on some systems, when variables are overwritten, the memory
-/// used for the previous variables and its value isn&#39;t reclaimed.
-///
-/// You should be mindful of the fact that environment variable handling
-/// in UNIX is not thread-safe, and your program may crash if one thread
-/// calls [`setenv()`][crate::setenv()] while another thread is calling `getenv()`. (And note
-/// that many functions, such as `gettext()`, call `getenv()` internally.)
-/// This function is only safe to use at the very start of your program,
-/// before creating any other threads (or creating objects that create
-/// worker threads of their own).
-///
-/// If you need to set up the environment for a child process, you can
-/// use [`environ()`][crate::environ()] to get an environment array, modify that with
-/// `g_environ_setenv()` and `g_environ_unsetenv()`, and then pass that
-/// array directly to `execvpe()`, [`spawn_async()`][crate::spawn_async()], or the like.
-/// ## `variable`
-/// the environment variable to set, must not
-///  contain &#39;=&#39;.
-/// ## `value`
-/// the value for to set the variable to.
-/// ## `overwrite`
-/// whether to change the variable if it already exists.
-///
-/// # Returns
-///
-/// [`false`] if the environment variable couldn&#39;t be set.
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_setenv&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_setenv&quot;</span>)]
 </span><span class="kw">pub fn </span>setenv(
     variable: <span class="kw">impl </span>AsRef&lt;std::ffi::OsStr&gt;,
     value: <span class="kw">impl </span>AsRef&lt;std::ffi::OsStr&gt;,
@@ -2318,12 +2287,46 @@
 //    unsafe { TODO: call ffi:g_spawn_sync() }
 //}
 
+</span><span class="doccomment">/// Looks up the Unicode script for `iso15924`. ISO 15924 assigns four-letter
+/// codes to scripts. For example, the code for Arabic is &#39;Arab&#39;.
+/// This function accepts four letter codes encoded as a `guint32` in a
+/// big-endian fashion. That is, the code expected for Arabic is
+/// 0x41726162 (0x41 is ASCII code for &#39;A&#39;, 0x72 is ASCII code for &#39;r&#39;, etc).
+///
+/// See
+/// [Codes for the representation of names of scripts](http://unicode.org/iso15924/codelists.html)
+/// for details.
+/// ## `iso15924`
+/// a Unicode script
+///
+/// # Returns
+///
+/// the Unicode script for `iso15924`, or
+///  of [`UnicodeScript::InvalidCode`][crate::UnicodeScript::InvalidCode] if `iso15924` is zero and
+///  [`UnicodeScript::Unknown`][crate::UnicodeScript::Unknown] if `iso15924` is unknown.
 </span><span class="attr">#[doc(alias = <span class="string">&quot;g_unicode_script_from_iso15924&quot;</span>)]
 </span><span class="kw">pub fn </span>unicode_script_from_iso15924(iso15924: u32) -&gt; UnicodeScript {
     <span class="kw">unsafe </span>{ from_glib(ffi::g_unicode_script_from_iso15924(iso15924)) }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_unicode_script_to_iso15924&quot;</span>)]
+<span class="doccomment">/// Looks up the ISO 15924 code for `script`. ISO 15924 assigns four-letter
+/// codes to scripts. For example, the code for Arabic is &#39;Arab&#39;. The
+/// four letter codes are encoded as a `guint32` by this function in a
+/// big-endian fashion. That is, the code returned for Arabic is
+/// 0x41726162 (0x41 is ASCII code for &#39;A&#39;, 0x72 is ASCII code for &#39;r&#39;, etc).
+///
+/// See
+/// [Codes for the representation of names of scripts](http://unicode.org/iso15924/codelists.html)
+/// for details.
+/// ## `script`
+/// a Unicode script
+///
+/// # Returns
+///
+/// the ISO 15924 code for `script`, encoded as an integer,
+///  of zero if `script` is [`UnicodeScript::InvalidCode`][crate::UnicodeScript::InvalidCode] or
+///  ISO 15924 code &#39;Zzzz&#39; (script code for UNKNOWN) if `script` is not understood.
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_unicode_script_to_iso15924&quot;</span>)]
 </span><span class="kw">pub fn </span>unicode_script_to_iso15924(script: UnicodeScript) -&gt; u32 {
     <span class="kw">unsafe </span>{ ffi::g_unicode_script_to_iso15924(script.into_glib()) }
 }
@@ -2337,33 +2340,98 @@
 //    unsafe { TODO: call ffi:g_unix_get_passwd_entry() }
 //}
 
+</span><span class="doccomment">/// A wrapper for the POSIX `unlink()` function. The `unlink()` function
+/// deletes a name from the filesystem. If this was the last link to the
+/// file and no processes have it opened, the diskspace occupied by the
+/// file is freed.
+///
+/// See your C library manual for more details about `unlink()`. Note
+/// that on Windows, it is in general not possible to delete files that
+/// are open to some process, or mapped into memory.
+/// ## `filename`
+/// a pathname in the GLib file name encoding
+///  (UTF-8 on Windows)
+///
+/// # Returns
+///
+/// 0 if the name was successfully deleted, -1 if an error
+///  occurred
 </span><span class="attr">#[doc(alias = <span class="string">&quot;g_unlink&quot;</span>)]
 </span><span class="kw">pub fn </span>unlink(filename: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;) -&gt; i32 {
     <span class="kw">unsafe </span>{ ffi::g_unlink(filename.as_ref().to_glib_none().<span class="number">0</span>) }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_unsetenv&quot;</span>)]
+<span class="doccomment">/// Removes an environment variable from the environment.
+///
+/// Note that on some systems, when variables are overwritten, the
+/// memory used for the previous variables and its value isn&#39;t reclaimed.
+///
+/// You should be mindful of the fact that environment variable handling
+/// in UNIX is not thread-safe, and your program may crash if one thread
+/// calls [`unsetenv()`][crate::unsetenv()] while another thread is calling `getenv()`. (And note
+/// that many functions, such as `gettext()`, call `getenv()` internally.) This
+/// function is only safe to use at the very start of your program, before
+/// creating any other threads (or creating objects that create worker
+/// threads of their own).
+///
+/// If you need to set up the environment for a child process, you can
+/// use [`environ()`][crate::environ()] to get an environment array, modify that with
+/// `g_environ_setenv()` and `g_environ_unsetenv()`, and then pass that
+/// array directly to `execvpe()`, [`spawn_async()`][crate::spawn_async()], or the like.
+/// ## `variable`
+/// the environment variable to remove, must
+///  not contain &#39;=&#39;
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_unsetenv&quot;</span>)]
 </span><span class="kw">pub fn </span>unsetenv(variable: <span class="kw">impl </span>AsRef&lt;std::ffi::OsStr&gt;) {
     <span class="kw">unsafe </span>{
         ffi::g_unsetenv(variable.as_ref().to_glib_none().<span class="number">0</span>);
     }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_usleep&quot;</span>)]
+<span class="doccomment">/// Pauses the current thread for the given number of microseconds.
+///
+/// There are 1 million microseconds per second (represented by the
+/// `G_USEC_PER_SEC` macro). [`usleep()`][crate::usleep()] may have limited precision,
+/// depending on hardware and operating system; don&#39;t rely on the exact
+/// length of the sleep.
+/// ## `microseconds`
+/// number of microseconds to pause
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_usleep&quot;</span>)]
 </span><span class="kw">pub fn </span>usleep(microseconds: libc::c_ulong) {
     <span class="kw">unsafe </span>{
         ffi::g_usleep(microseconds);
     }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_uuid_string_is_valid&quot;</span>)]
+<span class="doccomment">/// Parses the string `str` and verify if it is a UUID.
+///
+/// The function accepts the following syntax:
+///
+/// - simple forms (e.g. `f81d4fae-7dec-11d0-a765-00a0c91e6bf6`)
+///
+/// Note that hyphens are required within the UUID string itself,
+/// as per the aforementioned RFC.
+/// ## `str`
+/// a string representing a UUID
+///
+/// # Returns
+///
+/// [`true`] if `str` is a valid UUID, [`false`] otherwise.
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_uuid_string_is_valid&quot;</span>)]
 </span><span class="kw">pub fn </span>uuid_string_is_valid(str: <span class="kw-2">&amp;</span>str) -&gt; bool {
     <span class="kw">unsafe </span>{ from_glib(ffi::g_uuid_string_is_valid(str.to_glib_none().<span class="number">0</span>)) }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_uuid_string_random&quot;</span>)]
+<span class="doccomment">/// Generates a random UUID (RFC 4122 version 4) as a string. It has the same
+/// randomness guarantees as `GRand`, so must not be used for cryptographic
+/// purposes such as key generation, nonces, salts or one-time pads.
+///
+/// # Returns
+///
+/// A string that should be freed with `g_free()`.
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_uuid_string_random&quot;</span>)]
 </span><span class="kw">pub fn </span>uuid_string_random() -&gt; <span class="kw">crate</span>::GString {
     <span class="kw">unsafe </span>{ from_glib_full(ffi::g_uuid_string_random()) }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (234151769 2022-12-03)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (01fbc5ae7 2022-12-07)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
