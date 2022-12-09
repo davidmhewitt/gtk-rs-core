@@ -2847,6 +2847,15 @@
 <a href="#2774" id="2774">2774</a>
 <a href="#2775" id="2775">2775</a>
 <a href="#2776" id="2776">2776</a>
+<a href="#2777" id="2777">2777</a>
+<a href="#2778" id="2778">2778</a>
+<a href="#2779" id="2779">2779</a>
+<a href="#2780" id="2780">2780</a>
+<a href="#2781" id="2781">2781</a>
+<a href="#2782" id="2782">2782</a>
+<a href="#2783" id="2783">2783</a>
+<a href="#2784" id="2784">2784</a>
+<a href="#2785" id="2785">2785</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -3426,6 +3435,15 @@
     </span><span class="doccomment">/// Transfer: full.
     </span><span class="attr">#[allow(clippy::wrong_self_convention)]
     </span><span class="kw">unsafe fn </span>into_glib_ptr(<span class="self">self</span>) -&gt; P;
+}
+
+<span class="kw">impl</span>&lt;P: Ptr, T: IntoGlibPtr&lt;P&gt;&gt; IntoGlibPtr&lt;P&gt; <span class="kw">for </span><span class="prelude-ty">Option</span>&lt;T&gt; {
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>into_glib_ptr(<span class="self">self</span>) -&gt; P {
+        <span class="self">self</span>.map_or(Ptr::from::&lt;()&gt;(ptr::null_mut()), |s| {
+            IntoGlibPtr::into_glib_ptr(s)
+        })
+    }
 }
 
 <span class="kw">impl </span>GlibPtrDefault <span class="kw">for </span>str {

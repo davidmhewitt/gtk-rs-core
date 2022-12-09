@@ -351,20 +351,6 @@
 <a href="#278" id="278">278</a>
 <a href="#279" id="279">279</a>
 <a href="#280" id="280">280</a>
-<a href="#281" id="281">281</a>
-<a href="#282" id="282">282</a>
-<a href="#283" id="283">283</a>
-<a href="#284" id="284">284</a>
-<a href="#285" id="285">285</a>
-<a href="#286" id="286">286</a>
-<a href="#287" id="287">287</a>
-<a href="#288" id="288">288</a>
-<a href="#289" id="289">289</a>
-<a href="#290" id="290">290</a>
-<a href="#291" id="291">291</a>
-<a href="#292" id="292">292</a>
-<a href="#293" id="293">293</a>
-<a href="#294" id="294">294</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::source::Priority;
@@ -376,21 +362,7 @@
 <span class="kw">use </span>std::mem;
 
 <span class="kw">impl </span>MainContext {
-    <span class="doccomment">/// Prepares to poll sources within a main loop. The resulting information
-    /// for polling is determined by calling g_main_context_query ().
-    ///
-    /// You must have successfully acquired the context with
-    /// [`acquire()`][Self::acquire()] before you may call this function.
-    ///
-    /// # Returns
-    ///
-    /// [`true`] if some source is ready to be dispatched
-    ///  prior to polling.
-    ///
-    /// ## `priority`
-    /// location to store priority of highest priority
-    ///  source already ready.
-    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_main_context_prepare&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_main_context_prepare&quot;</span>)]
     </span><span class="kw">pub fn </span>prepare(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (bool, i32) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>priority = mem::MaybeUninit::uninit();
