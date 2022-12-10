@@ -1298,13 +1298,78 @@
 <a href="#1225" id="1225">1225</a>
 <a href="#1226" id="1226">1226</a>
 <a href="#1227" id="1227">1227</a>
+<a href="#1228" id="1228">1228</a>
+<a href="#1229" id="1229">1229</a>
+<a href="#1230" id="1230">1230</a>
+<a href="#1231" id="1231">1231</a>
+<a href="#1232" id="1232">1232</a>
+<a href="#1233" id="1233">1233</a>
+<a href="#1234" id="1234">1234</a>
+<a href="#1235" id="1235">1235</a>
+<a href="#1236" id="1236">1236</a>
+<a href="#1237" id="1237">1237</a>
+<a href="#1238" id="1238">1238</a>
+<a href="#1239" id="1239">1239</a>
+<a href="#1240" id="1240">1240</a>
+<a href="#1241" id="1241">1241</a>
+<a href="#1242" id="1242">1242</a>
+<a href="#1243" id="1243">1243</a>
+<a href="#1244" id="1244">1244</a>
+<a href="#1245" id="1245">1245</a>
+<a href="#1246" id="1246">1246</a>
+<a href="#1247" id="1247">1247</a>
+<a href="#1248" id="1248">1248</a>
+<a href="#1249" id="1249">1249</a>
+<a href="#1250" id="1250">1250</a>
+<a href="#1251" id="1251">1251</a>
+<a href="#1252" id="1252">1252</a>
+<a href="#1253" id="1253">1253</a>
+<a href="#1254" id="1254">1254</a>
+<a href="#1255" id="1255">1255</a>
+<a href="#1256" id="1256">1256</a>
+<a href="#1257" id="1257">1257</a>
+<a href="#1258" id="1258">1258</a>
+<a href="#1259" id="1259">1259</a>
+<a href="#1260" id="1260">1260</a>
+<a href="#1261" id="1261">1261</a>
+<a href="#1262" id="1262">1262</a>
+<a href="#1263" id="1263">1263</a>
+<a href="#1264" id="1264">1264</a>
+<a href="#1265" id="1265">1265</a>
+<a href="#1266" id="1266">1266</a>
+<a href="#1267" id="1267">1267</a>
+<a href="#1268" id="1268">1268</a>
+<a href="#1269" id="1269">1269</a>
+<a href="#1270" id="1270">1270</a>
+<a href="#1271" id="1271">1271</a>
+<a href="#1272" id="1272">1272</a>
+<a href="#1273" id="1273">1273</a>
+<a href="#1274" id="1274">1274</a>
+<a href="#1275" id="1275">1275</a>
+<a href="#1276" id="1276">1276</a>
+<a href="#1277" id="1277">1277</a>
+<a href="#1278" id="1278">1278</a>
+<a href="#1279" id="1279">1279</a>
+<a href="#1280" id="1280">1280</a>
+<a href="#1281" id="1281">1281</a>
+<a href="#1282" id="1282">1282</a>
+<a href="#1283" id="1283">1283</a>
+<a href="#1284" id="1284">1284</a>
+<a href="#1285" id="1285">1285</a>
+<a href="#1286" id="1286">1286</a>
+<a href="#1287" id="1287">1287</a>
+<a href="#1288" id="1288">1288</a>
+<a href="#1289" id="1289">1289</a>
+<a href="#1290" id="1290">1290</a>
+<a href="#1291" id="1291">1291</a>
+<a href="#1292" id="1292">1292</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
 <span class="kw">use </span><span class="kw">crate</span>::types::{StaticType, Type};
 <span class="kw">use </span><span class="kw">crate</span>::value::{FromValue, ToValue};
 <span class="kw">use </span><span class="kw">crate</span>::Value;
-<span class="kw">use </span>std::borrow::Borrow;
+<span class="kw">use </span>std::borrow::{Borrow, Cow};
 <span class="kw">use </span>std::cmp::Ordering;
 <span class="kw">use </span>std::ffi::{CStr, CString, OsStr};
 <span class="kw">use </span>std::fmt;
@@ -1318,7 +1383,7 @@
 <span class="kw">use </span>std::string::String;
 
 <span class="comment">// rustdoc-stripper-ignore-next
-</span><span class="doccomment">/// Representaion of a borrowed [`GString`].
+</span><span class="doccomment">/// Representation of a borrowed [`GString`].
 ///
 /// This type is very similar to [`std::ffi::CStr`], but with one added constraint: the string
 /// must also be valid UTF-8.
@@ -1357,6 +1422,27 @@
     </span><span class="kw">pub unsafe fn </span>from_ptr&lt;<span class="lifetime">&#39;a</span>&gt;(ptr: <span class="kw-2">*const </span>c_char) -&gt; <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">Self </span>{
         <span class="kw">let </span>cstr = CStr::from_ptr(ptr);
         <span class="self">Self</span>::from_bytes_with_nul_unchecked(cstr.to_bytes_with_nul())
+    }
+    <span class="comment">// rustdoc-stripper-ignore-next
+    </span><span class="doccomment">/// Wraps a raw C string with a safe GLib string wrapper. The provided C string **must** be
+    /// nul-terminated. All constraints from [`std::ffi::CStr::from_ptr`] also apply here.
+    ///
+    /// If the string is valid UTF-8 then it is directly returned otherwise a copy is created with
+    /// every invalid character replaced by the Unicode replacement character (U+FFFD).
+    </span><span class="attr">#[inline]
+    </span><span class="kw">pub unsafe fn </span>from_ptr_lossy&lt;<span class="lifetime">&#39;a</span>&gt;(ptr: <span class="kw-2">*const </span>c_char) -&gt; Cow&lt;<span class="lifetime">&#39;a</span>, <span class="self">Self</span>&gt; {
+        <span class="kw">let </span><span class="kw-2">mut </span>end_ptr = ptr::null();
+        <span class="kw">if </span>ffi::g_utf8_validate(ptr <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>, -<span class="number">1</span>, <span class="kw-2">&amp;mut </span>end_ptr) != ffi::GFALSE {
+            Cow::Borrowed(<span class="self">Self</span>::from_bytes_with_nul_unchecked(slice::from_raw_parts(
+                ptr <span class="kw">as </span><span class="kw-2">*const </span>u8,
+                end_ptr.offset_from(ptr) <span class="kw">as </span>usize + <span class="number">1</span>,
+            )))
+        } <span class="kw">else </span>{
+            Cow::Owned(GString::from_glib_full(ffi::g_utf8_make_valid(
+                ptr <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>,
+                -<span class="number">1</span>,
+            )))
+        }
     }
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Converts this GLib string to a byte slice containing the trailing 0 byte.
@@ -1708,6 +1794,17 @@
             Inner::Foreign { ptr, .. } =&gt; ptr.as_ptr(),
         }
     }
+
+    <span class="comment">// rustdoc-stripper-ignore-next
+    </span><span class="doccomment">/// Wraps a raw C string with a safe GLib string wrapper. The provided C string **must** be
+    /// nul-terminated. All constraints from [`std::ffi::CStr::from_ptr`] also apply here.
+    ///
+    /// If the string is valid UTF-8 then it is directly returned otherwise a copy is created with
+    /// every invalid character replaced by the Unicode replacement character (U+FFFD).
+    </span><span class="attr">#[inline]
+    </span><span class="kw">pub unsafe fn </span>from_ptr_lossy&lt;<span class="lifetime">&#39;a</span>&gt;(ptr: <span class="kw-2">*const </span>c_char) -&gt; Cow&lt;<span class="lifetime">&#39;a</span>, GStr&gt; {
+        GStr::from_ptr_lossy(ptr)
+    }
 }
 
 <span class="kw">impl </span>IntoGlibPtr&lt;<span class="kw-2">*mut </span>c_char&gt; <span class="kw">for </span>GString {
@@ -2039,6 +2136,18 @@
         <span class="comment">// Creates a copy with the GLib allocator
         // Also check if it&#39;s valid UTF-8
         </span>c.to_str().unwrap().into()
+    }
+}
+
+<span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; From&lt;GString&gt; <span class="kw">for </span>Cow&lt;<span class="lifetime">&#39;a</span>, GStr&gt; {
+    <span class="kw">fn </span>from(v: GString) -&gt; <span class="self">Self </span>{
+        Cow::Owned(v)
+    }
+}
+
+<span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; From&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>GStr&gt; <span class="kw">for </span>Cow&lt;<span class="lifetime">&#39;a</span>, GStr&gt; {
+    <span class="kw">fn </span>from(v: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>GStr) -&gt; <span class="self">Self </span>{
+        Cow::Borrowed(v)
     }
 }
 
@@ -2523,6 +2632,27 @@
         h.insert(gstring, <span class="number">42</span>);
         <span class="kw">let </span>gstring: GString = <span class="string">&quot;foo&quot;</span>.into();
         <span class="macro">assert!</span>(h.contains_key(<span class="kw-2">&amp;</span>gstring));
+    }
+
+    <span class="attr">#[test]
+    </span><span class="kw">fn </span>test_gstring_from_ptr_lossy() {
+        <span class="kw">let </span>data = CString::new(<span class="string">&quot;foo&quot;</span>).unwrap();
+        <span class="kw">let </span>ptr = data.as_ptr();
+
+        <span class="kw">unsafe </span>{
+            <span class="kw">let </span>gstring = GString::from_ptr_lossy(ptr);
+            <span class="macro">assert_eq!</span>(gstring.as_str(), <span class="string">&quot;foo&quot;</span>);
+            <span class="macro">assert_eq!</span>(ptr, gstring.as_ptr());
+        }
+
+        <span class="kw">let </span>data = <span class="string">b&quot;foo\xF0\x90\x80bar\0&quot;</span>;
+        <span class="kw">let </span>ptr = data.as_ptr();
+
+        <span class="kw">unsafe </span>{
+            <span class="kw">let </span>gstring = GString::from_ptr_lossy(ptr <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>);
+            <span class="macro">assert_eq!</span>(gstring.as_str(), <span class="string">&quot;foo���bar&quot;</span>);
+            <span class="macro">assert_ne!</span>(ptr, gstring.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>);
+        }
     }
 }
 </code></pre></div>

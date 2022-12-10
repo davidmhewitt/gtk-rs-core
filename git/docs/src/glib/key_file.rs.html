@@ -326,6 +326,19 @@
 <a href="#253" id="253">253</a>
 <a href="#254" id="254">254</a>
 <a href="#255" id="255">255</a>
+<a href="#256" id="256">256</a>
+<a href="#257" id="257">257</a>
+<a href="#258" id="258">258</a>
+<a href="#259" id="259">259</a>
+<a href="#260" id="260">260</a>
+<a href="#261" id="261">261</a>
+<a href="#262" id="262">262</a>
+<a href="#263" id="263">263</a>
+<a href="#264" id="264">264</a>
+<a href="#265" id="265">265</a>
+<a href="#266" id="266">266</a>
+<a href="#267" id="267">267</a>
+<a href="#268" id="268">268</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::error::Error;
@@ -410,7 +423,20 @@
         }
     }
 
-    <span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_to_data&quot;</span>)]
+    <span class="doccomment">/// This function outputs `self` as a string.
+    ///
+    /// Note that this function never reports an error,
+    /// so it is safe to pass [`None`] as `error`.
+    ///
+    /// # Returns
+    ///
+    /// a newly allocated string holding
+    ///  the contents of the [`KeyFile`][crate::KeyFile]
+    ///
+    /// ## `length`
+    /// return location for the length of the
+    ///  returned string, or [`None`]
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_key_file_to_data&quot;</span>)]
     </span><span class="kw">pub fn </span>to_data(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; GString {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>ret =
