@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/log.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>log.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-d32a9866c4c3e823.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-046227e470cd3629.css"><link rel="stylesheet" disabled href="../../static.files/dark-800f2ee593c8e6f7.css"><link rel="stylesheet" disabled href="../../static.files/ayu-9edae3c387f5a5b3.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-287cecec4dbb45b0.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/log.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>log.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-6827029ac823cab7.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-ebce58d0a40c3431.css"><link rel="stylesheet" disabled href="../../static.files/dark-f23faae4a2daf9a6.css"><link rel="stylesheet" disabled href="../../static.files/ayu-8af5e100b21cd173.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-c55e1eb52e1886b4.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -1109,6 +1109,27 @@
 <a href="#1036" id="1036">1036</a>
 <a href="#1037" id="1037">1037</a>
 <a href="#1038" id="1038">1038</a>
+<a href="#1039" id="1039">1039</a>
+<a href="#1040" id="1040">1040</a>
+<a href="#1041" id="1041">1041</a>
+<a href="#1042" id="1042">1042</a>
+<a href="#1043" id="1043">1043</a>
+<a href="#1044" id="1044">1044</a>
+<a href="#1045" id="1045">1045</a>
+<a href="#1046" id="1046">1046</a>
+<a href="#1047" id="1047">1047</a>
+<a href="#1048" id="1048">1048</a>
+<a href="#1049" id="1049">1049</a>
+<a href="#1050" id="1050">1050</a>
+<a href="#1051" id="1051">1051</a>
+<a href="#1052" id="1052">1052</a>
+<a href="#1053" id="1053">1053</a>
+<a href="#1054" id="1054">1054</a>
+<a href="#1055" id="1055">1055</a>
+<a href="#1056" id="1056">1056</a>
+<a href="#1057" id="1057">1057</a>
+<a href="#1058" id="1058">1058</a>
+<a href="#1059" id="1059">1059</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
@@ -1970,36 +1991,57 @@
 /// ```
 </span><span class="attr">#[macro_export]
 </span><span class="macro">macro_rules! </span>log_structured {
-    (<span class="macro-nonterminal">$log_domain</span>:expr, <span class="macro-nonterminal">$log_level</span>:expr, {$(<span class="macro-nonterminal">$key</span>:expr =&gt; <span class="macro-nonterminal">$format</span>:expr $(,<span class="macro-nonterminal">$arg</span>:expr)* $(,)<span class="question-mark">?</span>);+ $(;)<span class="question-mark">?</span>} $(,)<span class="question-mark">?</span>) =&gt; {
-        (|| {
-            <span class="kw">let </span>log_domain = &lt;<span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt; <span class="kw">as </span>std::convert::From&lt;<span class="kw">_</span>&gt;&gt;::from(<span class="macro-nonterminal">$log_domain</span>);
-            <span class="kw">let </span>log_domain_str = log_domain.unwrap_or_default();
-            <span class="kw">let </span>level: <span class="macro-nonterminal">$crate::LogLevel </span>= <span class="macro-nonterminal">$log_level</span>;
-            <span class="kw">let </span>field_count =
-                &lt;[()]&gt;::len(<span class="kw-2">&amp;</span>[$(<span class="macro-nonterminal">$</span><span class="macro">crate::log_structured_inner!</span>(@<span class="macro-nonterminal">clear $key</span>)),+])
-                + log_domain.map(|<span class="kw">_</span>| <span class="number">2usize</span>).unwrap_or(<span class="number">1usize</span>);
+    (<span class="macro-nonterminal">$log_domain</span>:expr, <span class="macro-nonterminal">$log_level</span>:expr, {$(<span class="macro-nonterminal">$key</span>:expr =&gt; <span class="macro-nonterminal">$format</span>:expr $(,<span class="macro-nonterminal">$arg</span>:expr)* $(,)<span class="question-mark">?</span>);+ $(;)<span class="question-mark">?</span>} $(,)<span class="question-mark">?</span>) =&gt; {{
+        <span class="kw">let </span>log_domain = &lt;<span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt; <span class="kw">as </span>std::convert::From&lt;<span class="kw">_</span>&gt;&gt;::from(<span class="macro-nonterminal">$log_domain</span>);
+        <span class="kw">let </span>log_domain_str = log_domain.unwrap_or_default();
+        <span class="kw">let </span>level: <span class="macro-nonterminal">$crate::LogLevel </span>= <span class="macro-nonterminal">$log_level</span>;
+        <span class="kw">let </span>field_count =
+            &lt;[()]&gt;::len(<span class="kw-2">&amp;</span>[$(<span class="macro-nonterminal">$</span><span class="macro">crate::log_structured_inner!</span>(@<span class="macro-nonterminal">clear $key</span>)),+])
+            + log_domain.map(|<span class="kw">_</span>| <span class="number">2usize</span>).unwrap_or(<span class="number">1usize</span>)
+            + <span class="number">3</span>;
 
-            <span class="macro-nonterminal">$crate::log_structured_array</span>(
-                level,
-                <span class="kw-2">&amp;</span>[
+        <span class="kw">let </span><span class="kw-2">mut </span>line = [<span class="number">0u8</span>; <span class="number">32</span>]; <span class="comment">// 32 decimal digits of line numbers should be enough!
+        </span><span class="kw">let </span>line = {
+            <span class="kw">use </span>std::io::Write;
+
+            <span class="kw">let </span><span class="kw-2">mut </span>cursor = std::io::Cursor::new(<span class="kw-2">&amp;mut </span>line[..]);
+            <span class="macro">std::write!</span>(<span class="kw-2">&amp;mut </span>cursor, <span class="string">&quot;{}&quot;</span>, <span class="macro">line!</span>()).unwrap();
+            <span class="kw">let </span>pos = cursor.position() <span class="kw">as </span>usize;
+            <span class="kw-2">&amp;</span>line[..pos]
+        };
+
+        <span class="macro-nonterminal">$crate::log_structured_array</span>(
+            level,
+            <span class="kw-2">&amp;</span>[
+                <span class="macro-nonterminal">$crate::LogField::new</span>(
+                    <span class="macro-nonterminal">$</span><span class="macro">crate::gstr!</span>(<span class="string">&quot;PRIORITY&quot;</span>),
+                    <span class="macro-nonterminal">level</span>.priority().as_bytes(),
+                ),
+                <span class="macro-nonterminal">$crate::LogField::new</span>(
+                    <span class="macro-nonterminal">$</span><span class="macro">crate::gstr!</span>(<span class="string">&quot;CODE_FILE&quot;</span>),
+                    <span class="macro">file!</span>().<span class="macro-nonterminal">as_bytes</span>(),
+                ),
+                <span class="macro-nonterminal">$crate::LogField::new</span>(
+                    <span class="macro-nonterminal">$</span><span class="macro">crate::gstr!</span>(<span class="string">&quot;CODE_LINE&quot;</span>),
+                    <span class="macro-nonterminal">line</span>,
+                ),
+                <span class="macro-nonterminal">$crate::LogField::new</span>(
+                    <span class="macro-nonterminal">$</span><span class="macro">crate::gstr!</span>(<span class="string">&quot;CODE_FUNC&quot;</span>),
+                    <span class="macro-nonterminal">$</span><span class="macro">crate::function_name!</span>().<span class="macro-nonterminal">as_bytes</span>(),
+                ),
+                $(
                     <span class="macro-nonterminal">$crate::LogField::new</span>(
-                        <span class="macro-nonterminal">$</span><span class="macro">crate::gstr!</span>(<span class="string">&quot;PRIORITY&quot;</span>),
-                        <span class="macro-nonterminal">level</span>.priority().as_bytes(),
+                        <span class="macro-nonterminal">$</span><span class="macro">crate::log_structured_inner!</span>(@<span class="macro-nonterminal">key $key</span>),
+                        <span class="macro-nonterminal">$</span><span class="macro">crate::log_structured_inner!</span>(@<span class="macro-nonterminal">value $format </span>$(,<span class="macro-nonterminal">$arg</span>)<span class="kw-2">*</span>),
                     ),
-                    $(
-                        <span class="macro-nonterminal">$crate::LogField::new</span>(
-                            <span class="macro-nonterminal">$</span><span class="macro">crate::log_structured_inner!</span>(@<span class="macro-nonterminal">key $key</span>),
-                            <span class="macro-nonterminal">$</span><span class="macro">crate::log_structured_inner!</span>(@<span class="macro-nonterminal">value $format </span>$(,<span class="macro-nonterminal">$arg</span>)<span class="kw-2">*</span>),
-                        ),
-                    )+
-                    <span class="macro-nonterminal">$crate::LogField::new</span>(
-                        <span class="macro-nonterminal">$</span><span class="macro">crate::gstr!</span>(<span class="string">&quot;GLIB_DOMAIN&quot;</span>),
-                        <span class="macro-nonterminal">log_domain_str</span>.as_bytes(),
-                    ),
-                ][<span class="number">0</span>..field_count],
-            )
-        })()
-    };
+                )+
+                <span class="macro-nonterminal">$crate::LogField::new</span>(
+                    <span class="macro-nonterminal">$</span><span class="macro">crate::gstr!</span>(<span class="string">&quot;GLIB_DOMAIN&quot;</span>),
+                    <span class="macro-nonterminal">log_domain_str</span>.as_bytes(),
+                ),
+            ][<span class="number">0</span>..field_count],
+        )
+    }};
 }
 
 <span class="attr">#[doc(hidden)]
@@ -2148,4 +2190,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.67.0-nightly (7632db0e8 2022-12-08)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (dfe3fe710 2022-12-09)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
