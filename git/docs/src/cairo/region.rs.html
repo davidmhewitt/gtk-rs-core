@@ -353,22 +353,14 @@
 <a href="#280" id="280">280</a>
 <a href="#281" id="281">281</a>
 <a href="#282" id="282">282</a>
-<a href="#283" id="283">283</a>
-<a href="#284" id="284">284</a>
-<a href="#285" id="285">285</a>
-<a href="#286" id="286">286</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::enums::RegionOverlap;
-<span class="kw">use </span><span class="kw">crate</span>::error::Error;
-<span class="kw">use </span><span class="kw">crate</span>::utils::status_to_result;
-<span class="kw">use </span><span class="kw">crate</span>::RectangleInt;
+</span><span class="kw">use </span>std::{fmt, ptr};
+
 <span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::fmt;
-<span class="kw">use </span>std::ptr;
 
-<span class="kw">use </span><span class="kw">crate</span>::ffi::cairo_region_t;
+<span class="kw">use crate</span>::{ffi::cairo_region_t, utils::status_to_result, Error, RectangleInt, RegionOverlap};
 
 <span class="attr">#[derive(Debug)]
 #[repr(transparent)]

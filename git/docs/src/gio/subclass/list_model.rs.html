@@ -217,14 +217,12 @@
 <a href="#144" id="144">144</a>
 <a href="#145" id="145">145</a>
 <a href="#146" id="146">146</a>
-<a href="#147" id="147">147</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::ListModel;
-<span class="kw">use </span>glib::subclass::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::{Cast, IsA, ObjectExt};
+</span><span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, subclass::prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>};
 <span class="kw">use </span>once_cell::sync::Lazy;
+
+<span class="kw">use </span><span class="kw">crate</span>::ListModel;
 
 <span class="kw">pub trait </span>ListModelImpl: ObjectImpl {
     <span class="attr">#[doc(alias = <span class="string">&quot;get_item_type&quot;</span>)]

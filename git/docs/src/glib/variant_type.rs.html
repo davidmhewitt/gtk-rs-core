@@ -1344,23 +1344,20 @@
 <a href="#1271" id="1271">1271</a>
 <a href="#1272" id="1272">1272</a>
 <a href="#1273" id="1273">1273</a>
-<a href="#1274" id="1274">1274</a>
-<a href="#1275" id="1275">1275</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::types::StaticType;
-<span class="kw">use </span><span class="kw">crate</span>::types::Type;
-<span class="kw">use </span><span class="kw">crate</span>::BoolError;
-<span class="kw">use </span>std::borrow::{Borrow, Cow, ToOwned};
-<span class="kw">use </span>std::cmp::{Eq, PartialEq};
-<span class="kw">use </span>std::fmt;
-<span class="kw">use </span>std::hash::{Hash, Hasher};
-<span class="kw">use </span>std::iter;
-<span class="kw">use </span>std::ops::Deref;
-<span class="kw">use </span>std::ptr;
-<span class="kw">use </span>std::slice;
-<span class="kw">use </span>std::str::FromStr;
+</span><span class="kw">use </span>std::{
+    borrow::{Borrow, Cow, ToOwned},
+    cmp::{Eq, PartialEq},
+    fmt,
+    hash::{Hash, Hasher},
+    iter,
+    ops::Deref,
+    ptr, slice,
+    str::FromStr,
+};
+
+<span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>, BoolError, Type};
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Describes `Variant` types.
@@ -2512,7 +2509,6 @@
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
-    <span class="kw">use </span><span class="kw">crate</span>::ToValue;
 
     <span class="kw">unsafe fn </span>equal&lt;T, U&gt;(ptr1: <span class="kw-2">*const </span>T, ptr2: <span class="kw-2">*const </span>U) -&gt; bool {
         from_glib(ffi::g_variant_type_equal(

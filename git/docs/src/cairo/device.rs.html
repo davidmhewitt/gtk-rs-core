@@ -441,40 +441,20 @@
 <a href="#368" id="368">368</a>
 <a href="#369" id="369">369</a>
 <a href="#370" id="370">370</a>
-<a href="#371" id="371">371</a>
-<a href="#372" id="372">372</a>
-<a href="#373" id="373">373</a>
-<a href="#374" id="374">374</a>
-<a href="#375" id="375">375</a>
-<a href="#376" id="376">376</a>
-<a href="#377" id="377">377</a>
-<a href="#378" id="378">378</a>
-<a href="#379" id="379">379</a>
-<a href="#380" id="380">380</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::enums::DeviceType;
-<span class="kw">use </span><span class="kw">crate</span>::error::Error;
-<span class="kw">use </span><span class="kw">crate</span>::utils::status_to_result;
-
-<span class="kw">use </span>std::fmt;
-<span class="kw">use </span>std::ptr;
+</span><span class="attr">#[cfg(any(feature = <span class="string">&quot;script&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="kw">use </span>std::ffi::CString;
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;script&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="kw">use </span>std::path::Path;
+<span class="kw">use </span>std::{fmt, ptr};
 
 <span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 
+<span class="kw">use crate</span>::{utils::status_to_result, DeviceType, Error};
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;script&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-</span><span class="kw">use </span><span class="kw">crate</span>::enums::Content;
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;script&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-</span><span class="kw">use </span><span class="kw">crate</span>::enums::ScriptMode;
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;script&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-</span><span class="kw">use </span><span class="kw">crate</span>::recording_surface::RecordingSurface;
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;script&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-</span><span class="kw">use </span><span class="kw">crate</span>::surface::Surface;
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;script&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-</span><span class="kw">use </span>std::ffi::CString;
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;script&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-</span><span class="kw">use </span>std::path::Path;
+</span><span class="kw">use crate</span>::{Content, RecordingSurface, ScriptMode, Surface};
 
 <span class="attr">#[derive(Debug)]
 #[must_use = <span class="string">&quot;if unused the Device will immediately be released&quot;</span>]

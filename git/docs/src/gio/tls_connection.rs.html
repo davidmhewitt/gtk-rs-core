@@ -140,16 +140,20 @@
 <a href="#67" id="67">67</a>
 <a href="#68" id="68">68</a>
 <a href="#69" id="69">69</a>
+<a href="#70" id="70">70</a>
+<a href="#71" id="71">71</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-</span><span class="kw">use </span><span class="kw">crate</span>::TlsChannelBindingType;
-<span class="kw">use </span><span class="kw">crate</span>::TlsConnection;
+</span><span class="kw">use </span>std::ptr;
+
+<span class="kw">use </span>glib::prelude::<span class="kw-2">*</span>;
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::IsA;
+
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_66&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-</span><span class="kw">use </span>std::ptr;
+</span><span class="kw">use </span><span class="kw">crate</span>::TlsChannelBindingType;
+<span class="kw">use </span><span class="kw">crate</span>::TlsConnection;
 
 <span class="kw">pub trait </span>TlsConnectionExtManual {
     <span class="doccomment">/// Query the TLS backend for TLS channel binding data of `type_` for `self`.

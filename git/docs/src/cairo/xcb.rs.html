@@ -511,22 +511,14 @@
 <a href="#438" id="438">438</a>
 <a href="#439" id="439">439</a>
 <a href="#440" id="440">440</a>
-<a href="#441" id="441">441</a>
-<a href="#442" id="442">442</a>
-<a href="#443" id="443">443</a>
-<a href="#444" id="444">444</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::enums::SurfaceType;
+</span><span class="kw">use </span>std::{convert::TryFrom, fmt, ops::Deref, ptr};
+
 <span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::convert::TryFrom;
-<span class="kw">use </span>std::fmt;
-<span class="kw">use </span>std::ops::Deref;
-<span class="kw">use </span>std::ptr;
 
-<span class="kw">use </span><span class="kw">crate</span>::error::Error;
-<span class="kw">use </span><span class="kw">crate</span>::surface::Surface;
+<span class="kw">use crate</span>::{Error, Surface, SurfaceType};
 
 <span class="attr">#[derive(Debug)]
 </span><span class="kw">pub struct </span>XCBDrawable(<span class="kw">pub </span>u32);

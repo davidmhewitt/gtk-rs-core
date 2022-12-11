@@ -314,12 +314,11 @@
 <a href="#241" id="241">241</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::Type;
-<span class="kw">use </span>std::fmt;
-<span class="kw">use </span>std::ptr;
+</span><span class="kw">use </span>std::{fmt, ptr};
 
-<span class="kw">use </span><span class="kw">crate</span>::io_extension::IOExtension;
+<span class="kw">use </span>glib::{translate::<span class="kw-2">*</span>, Type};
+
+<span class="kw">use </span><span class="kw">crate</span>::IOExtension;
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Builder for extension points.
@@ -508,8 +507,9 @@
 
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
+    <span class="kw">use </span>glib::prelude::<span class="kw-2">*</span>;
+
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
-    <span class="kw">use </span>glib::StaticType;
 
     <span class="attr">#[test]
     </span><span class="kw">fn </span>extension_point() {

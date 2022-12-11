@@ -181,17 +181,13 @@
 <a href="#108" id="108">108</a>
 <a href="#109" id="109">109</a>
 <a href="#110" id="110">110</a>
-<a href="#111" id="111">111</a>
-<a href="#112" id="112">112</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::InetAddress;
-<span class="kw">use </span><span class="kw">crate</span>::SocketFamily;
-<span class="kw">use </span>glib::object::IsA;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
+</span><span class="kw">use </span>std::net::{IpAddr, Ipv4Addr, Ipv6Addr};
 
-<span class="kw">use </span>std::net::{IpAddr, Ipv4Addr, Ipv6Addr};
+<span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>};
+
+<span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, InetAddress, SocketFamily};
 
 <span class="attr">#[derive(Debug)]
 </span><span class="kw">pub enum </span>InetAddressBytes&lt;<span class="lifetime">&#39;a</span>&gt; {

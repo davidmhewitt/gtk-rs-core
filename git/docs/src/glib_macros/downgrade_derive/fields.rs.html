@@ -267,12 +267,14 @@
 <a href="#194" id="194">194</a>
 <a href="#195" id="195">195</a>
 <a href="#196" id="196">196</a>
+<a href="#197" id="197">197</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::utils::crate_ident_new;
-<span class="kw">use </span>proc_macro2::TokenStream;
+</span><span class="kw">use </span>proc_macro2::TokenStream;
 <span class="kw">use </span>quote::{format_ident, quote};
 <span class="kw">use </span>syn::{Fields, FieldsNamed, FieldsUnnamed, Ident, Type};
+
+<span class="kw">use </span><span class="kw">crate</span>::utils::crate_ident_new;
 
 <span class="doccomment">/// Parts needed to derive Downgrade and Upgrade implementation.
 </span><span class="kw">pub struct </span>DowngradeStructParts {

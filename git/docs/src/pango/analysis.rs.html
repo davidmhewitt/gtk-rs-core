@@ -126,11 +126,15 @@
 <a href="#53" id="53">53</a>
 <a href="#54" id="54">54</a>
 <a href="#55" id="55">55</a>
+<a href="#56" id="56">56</a>
+<a href="#57" id="57">57</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use crate</span>::{Attribute, Font, Gravity, Language, Script};
+</span><span class="kw">use </span>std::fmt;
+
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::fmt;
+
+<span class="kw">use crate</span>::{Attribute, Font, Gravity, Language, Script};
 
 <span class="macro">glib::wrapper! </span>{
     <span class="doccomment">/// The [`Analysis`][crate::Analysis] structure stores information about

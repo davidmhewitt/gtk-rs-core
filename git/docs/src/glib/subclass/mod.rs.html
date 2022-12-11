@@ -335,6 +335,10 @@
 <a href="#262" id="262">262</a>
 <a href="#263" id="263">263</a>
 <a href="#264" id="264">264</a>
+<a href="#265" id="265">265</a>
+<a href="#266" id="266">266</a>
+<a href="#267" id="267">267</a>
+<a href="#268" id="268">268</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="attr">#![allow(clippy::needless_doctest_main)]
@@ -582,22 +586,26 @@
 <span class="kw">pub mod </span>prelude {
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">//! Prelude that re-exports all important traits from this crate.
-    </span><span class="kw">pub use </span><span class="kw">super</span>::boxed::BoxedType;
-    <span class="kw">pub use </span><span class="kw">super</span>::interface::{ObjectInterface, ObjectInterfaceExt, ObjectInterfaceType};
-    <span class="kw">pub use </span><span class="kw">super</span>::object::{ObjectClassSubclassExt, ObjectImpl, ObjectImplExt};
-    <span class="kw">pub use </span><span class="kw">super</span>::shared::{RefCounted, SharedType};
-    <span class="kw">pub use </span><span class="kw">super</span>::types::{
-        ClassStruct, InstanceStruct, InstanceStructExt, IsImplementable, IsSubclassable,
-        IsSubclassableExt, ObjectSubclass, ObjectSubclassExt, ObjectSubclassIsExt,
-        ObjectSubclassType,
+    </span><span class="kw">pub use super</span>::{
+        boxed::BoxedType,
+        interface::{ObjectInterface, ObjectInterfaceExt, ObjectInterfaceType},
+        object::{ObjectClassSubclassExt, ObjectImpl, ObjectImplExt},
+        shared::{RefCounted, SharedType},
+        types::{
+            ClassStruct, InstanceStruct, InstanceStructExt, IsImplementable, IsSubclassable,
+            IsSubclassableExt, ObjectSubclass, ObjectSubclassExt, ObjectSubclassIsExt,
+            ObjectSubclassType,
+        },
     };
 }
 
-<span class="kw">pub use </span><span class="self">self</span>::boxed::register_boxed_type;
-<span class="kw">pub use </span><span class="self">self</span>::interface::register_interface;
-<span class="kw">pub use </span><span class="self">self</span>::signal::{
-    Signal, SignalClassHandlerToken, SignalId, SignalInvocationHint, SignalQuery, SignalType,
+<span class="kw">pub use </span><span class="self">self</span>::{
+    boxed::register_boxed_type,
+    interface::register_interface,
+    signal::{
+        Signal, SignalClassHandlerToken, SignalId, SignalInvocationHint, SignalQuery, SignalType,
+    },
+    types::{register_type, InitializingObject, InitializingType, TypeData},
 };
-<span class="kw">pub use </span><span class="self">self</span>::types::{register_type, InitializingObject, InitializingType, TypeData};
 </code></pre></div>
 </section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (c6fcdb690 2022-12-10)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

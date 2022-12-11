@@ -263,23 +263,18 @@
 <a href="#190" id="190">190</a>
 <a href="#191" id="191">191</a>
 <a href="#192" id="192">192</a>
-<a href="#193" id="193">193</a>
-<a href="#194" id="194">194</a>
-<a href="#195" id="195">195</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::cancellable::CancellableExtManual;
-<span class="kw">use </span><span class="kw">crate</span>::cancellable::CancelledHandlerId;
-<span class="kw">use </span><span class="kw">crate</span>::prelude::CancellableExt;
-<span class="kw">use </span><span class="kw">crate</span>::Cancellable;
-<span class="kw">use </span><span class="kw">crate</span>::IOErrorEnum;
+</span><span class="kw">use </span>std::{
+    fmt::{Debug, Display},
+    future::Future,
+    pin::Pin,
+    task::{Context, Poll},
+};
+
 <span class="kw">use </span>pin_project_lite::pin_project;
-<span class="kw">use </span>std::fmt::Debug;
-<span class="kw">use </span>std::fmt::Display;
-<span class="kw">use </span>std::future::Future;
-<span class="kw">use </span>std::pin::Pin;
-<span class="kw">use </span>std::task::Context;
-<span class="kw">use </span>std::task::Poll;
+
+<span class="kw">use crate</span>::{cancellable::CancelledHandlerId, prelude::<span class="kw-2">*</span>, Cancellable, IOErrorEnum};
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Indicator that the [`CancellableFuture`] was cancelled.
@@ -411,11 +406,10 @@
 
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
-    <span class="kw">use </span><span class="kw">super</span>::Cancellable;
-    <span class="kw">use </span><span class="kw">super</span>::CancellableExt;
-    <span class="kw">use </span><span class="kw">super</span>::CancellableFuture;
-    <span class="kw">use </span><span class="kw">super</span>::Cancelled;
     <span class="kw">use </span>futures_channel::oneshot;
+
+    <span class="kw">use super</span>::{Cancellable, CancellableFuture, Cancelled};
+    <span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
 
     <span class="attr">#[test]
     </span><span class="kw">fn </span>cancellable_future_ok() {

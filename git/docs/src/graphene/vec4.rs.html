@@ -199,11 +199,11 @@
 <a href="#126" id="126">126</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::Vec2;
-<span class="kw">use </span><span class="kw">crate</span>::Vec3;
-<span class="kw">use </span><span class="kw">crate</span>::Vec4;
+</span><span class="kw">use </span>std::fmt;
+
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::fmt;
+
+<span class="kw">use crate</span>::{Vec2, Vec3, Vec4};
 
 <span class="kw">impl </span>Vec4 {
     <span class="doccomment">/// Initializes a [`Vec4`][crate::Vec4] using the given values.

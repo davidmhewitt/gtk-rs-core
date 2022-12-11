@@ -183,11 +183,11 @@
 <a href="#110" id="110">110</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::Point;
-<span class="kw">use </span><span class="kw">crate</span>::Quad;
-<span class="kw">use </span><span class="kw">crate</span>::Rect;
+</span><span class="kw">use </span>std::fmt;
+
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::fmt;
+
+<span class="kw">use crate</span>::{Point, Quad, Rect};
 
 <span class="kw">impl </span>Quad {
     <span class="doccomment">/// Initializes a [`Quad`][crate::Quad] with the given points.

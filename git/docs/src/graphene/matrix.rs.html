@@ -488,15 +488,13 @@
 <a href="#415" id="415">415</a>
 <a href="#416" id="416">416</a>
 <a href="#417" id="417">417</a>
-<a href="#418" id="418">418</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::Matrix;
-<span class="kw">use </span><span class="kw">crate</span>::Point3D;
-<span class="kw">use </span><span class="kw">crate</span>::Vec3;
-<span class="kw">use </span><span class="kw">crate</span>::Vec4;
+</span><span class="kw">use </span>std::fmt;
+
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::fmt;
+
+<span class="kw">use crate</span>::{Matrix, Point3D, Vec3, Vec4};
 
 <span class="kw">impl </span>Matrix {
     <span class="doccomment">/// Initializes a [`Matrix`][crate::Matrix] from the values of an affine

@@ -634,21 +634,17 @@
 <a href="#561" id="561">561</a>
 <a href="#562" id="562">562</a>
 <a href="#563" id="563">563</a>
-<a href="#564" id="564">564</a>
-<a href="#565" id="565">565</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::enums::MeshCorner;
-<span class="kw">use </span><span class="kw">crate</span>::enums::{Extend, Filter, PatternType};
-<span class="kw">use </span><span class="kw">crate</span>::error::Error;
-<span class="kw">use </span><span class="kw">crate</span>::ffi::{cairo_pattern_t, cairo_surface_t};
-<span class="kw">use </span><span class="kw">crate</span>::utils::status_to_result;
-<span class="kw">use crate</span>::{Matrix, Path, Surface};
+</span><span class="kw">use </span>std::{convert::TryFrom, fmt, ops::Deref, ptr};
+
 <span class="kw">use </span>libc::{c_double, c_int, c_uint};
-<span class="kw">use </span>std::convert::TryFrom;
-<span class="kw">use </span>std::fmt;
-<span class="kw">use </span>std::ops::Deref;
-<span class="kw">use </span>std::ptr;
+
+<span class="kw">use crate</span>::{
+    ffi::{cairo_pattern_t, cairo_surface_t},
+    utils::status_to_result,
+    Error, Extend, Filter, Matrix, MeshCorner, Path, PatternType, Surface,
+};
 
 <span class="comment">// See https://cairographics.org/manual/bindings-patterns.html for more info
 </span><span class="attr">#[derive(Debug)]

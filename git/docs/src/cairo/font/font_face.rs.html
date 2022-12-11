@@ -291,30 +291,20 @@
 <a href="#218" id="218">218</a>
 <a href="#219" id="219">219</a>
 <a href="#220" id="220">220</a>
-<a href="#221" id="221">221</a>
-<a href="#222" id="222">222</a>
-<a href="#223" id="223">223</a>
-<a href="#224" id="224">224</a>
-<a href="#225" id="225">225</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
-</span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::ffi::{CStr, CString};
+</span><span class="kw">use </span>std::ffi::{CStr, CString};
 <span class="attr">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
 </span><span class="kw">use </span>std::ptr;
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;freetype&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span>std::rc::Rc;
 
-<span class="kw">use crate</span>::{
-    enums::{FontSlant, FontType, FontWeight},
-    Error,
-};
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+</span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;freetype&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-</span><span class="kw">use </span><span class="kw">crate</span>::enums::FtSynthesize;
-
-<span class="kw">use </span><span class="kw">crate</span>::utils::status_to_result;
+</span><span class="kw">use </span><span class="kw">crate</span>::FtSynthesize;
+<span class="kw">use crate</span>::{utils::status_to_result, Error, FontSlant, FontType, FontWeight};
 
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;freetype&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">static </span>FT_FACE_KEY: <span class="kw">crate</span>::UserDataKey&lt;freetype::face::Face&gt; = <span class="kw">crate</span>::UserDataKey::new();

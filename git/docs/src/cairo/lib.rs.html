@@ -399,21 +399,6 @@
 <a href="#326" id="326">326</a>
 <a href="#327" id="327">327</a>
 <a href="#328" id="328">328</a>
-<a href="#329" id="329">329</a>
-<a href="#330" id="330">330</a>
-<a href="#331" id="331">331</a>
-<a href="#332" id="332">332</a>
-<a href="#333" id="333">333</a>
-<a href="#334" id="334">334</a>
-<a href="#335" id="335">335</a>
-<a href="#336" id="336">336</a>
-<a href="#337" id="337">337</a>
-<a href="#338" id="338">338</a>
-<a href="#339" id="339">339</a>
-<a href="#340" id="340">340</a>
-<a href="#341" id="341">341</a>
-<a href="#342" id="342">342</a>
-<a href="#343" id="343">343</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="attr">#![cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, feature(doc_cfg))]
@@ -609,55 +594,41 @@
     };
 }
 
-<span class="kw">pub use </span><span class="kw">crate</span>::user_data::UserDataKey;
-
-<span class="kw">pub use </span><span class="kw">crate</span>::context::{Context, RectangleList};
-
-<span class="kw">pub use </span><span class="kw">crate</span>::paths::{Path, PathSegment, PathSegments};
-
-<span class="kw">pub use </span><span class="kw">crate</span>::device::Device;
-
-<span class="kw">pub use </span><span class="kw">crate</span>::enums::<span class="kw-2">*</span>;
-
-<span class="kw">pub use </span><span class="kw">crate</span>::error::{BorrowError, Error, IoError, <span class="prelude-ty">Result</span>};
-
-<span class="kw">pub use </span><span class="kw">crate</span>::patterns::{
-    Gradient, LinearGradient, Mesh, Pattern, RadialGradient, SolidPattern, SurfacePattern,
-};
-
-<span class="kw">pub use </span><span class="kw">crate</span>::font::{
-    FontExtents, FontFace, FontOptions, FontSlant, FontType, FontWeight, Glyph, ScaledFont,
-    TextCluster, TextExtents, UserFontFace,
-};
-
-<span class="kw">pub use </span><span class="kw">crate</span>::matrices::Matrix;
-
-<span class="kw">pub use </span><span class="kw">crate</span>::recording_surface::RecordingSurface;
-<span class="kw">pub use </span><span class="kw">crate</span>::rectangle::Rectangle;
-<span class="kw">pub use </span><span class="kw">crate</span>::rectangle_int::RectangleInt;
-
-<span class="kw">pub use </span><span class="kw">crate</span>::region::Region;
-
-<span class="kw">pub use </span><span class="kw">crate</span>::surface::{MappedImageSurface, Surface};
-
-<span class="kw">pub use </span><span class="kw">crate</span>::image_surface::{ImageSurface, ImageSurfaceData, ImageSurfaceDataOwned};
-
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;pdf&quot;</span>, feature = <span class="string">&quot;svg&quot;</span>, feature = <span class="string">&quot;ps&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-</span><span class="kw">pub use </span>stream::StreamWithError;
-
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;pdf&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">pub use </span>pdf::PdfSurface;
-
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;ps&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">pub use </span>ps::PsSurface;
-
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;pdf&quot;</span>, feature = <span class="string">&quot;svg&quot;</span>, feature = <span class="string">&quot;ps&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="kw">pub use </span>stream::StreamWithError;
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;svg&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">pub use </span>svg::SvgSurface;
-
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;xcb&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">pub use </span>xcb::{
     XCBConnection, XCBDrawable, XCBPixmap, XCBRenderPictFormInfo, XCBScreen, XCBSurface,
     XCBVisualType,
+};
+
+<span class="kw">pub use crate</span>::{
+    context::{Context, RectangleList},
+    device::Device,
+    enums::<span class="kw-2">*</span>,
+    error::{BorrowError, Error, IoError, <span class="prelude-ty">Result</span>},
+    font::{
+        FontExtents, FontFace, FontOptions, FontSlant, FontType, FontWeight, Glyph, ScaledFont,
+        TextCluster, TextExtents, UserFontFace,
+    },
+    image_surface::{ImageSurface, ImageSurfaceData, ImageSurfaceDataOwned},
+    matrices::Matrix,
+    paths::{Path, PathSegment, PathSegments},
+    patterns::{
+        Gradient, LinearGradient, Mesh, Pattern, RadialGradient, SolidPattern, SurfacePattern,
+    },
+    recording_surface::RecordingSurface,
+    rectangle::Rectangle,
+    rectangle_int::RectangleInt,
+    region::Region,
+    surface::{MappedImageSurface, Surface},
+    user_data::UserDataKey,
 };
 
 <span class="attr">#[macro_use]
@@ -754,7 +725,6 @@
 
 <span class="attr">#[cfg(not(feature = <span class="string">&quot;use_glib&quot;</span>))]
 </span><span class="kw">pub use </span>borrowed::Borrowed;
-
 <span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">use </span>glib::translate::Borrowed;
 </code></pre></div>

@@ -104,9 +104,9 @@
 <a href="#31" id="31">31</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::GString;
-<span class="kw">use </span>std::iter::{FusedIterator, IntoIterator};
+</span><span class="kw">use </span>std::iter::{FusedIterator, IntoIterator};
+
+<span class="kw">use </span>glib::{translate::<span class="kw-2">*</span>, GString};
 
 <span class="kw">pub struct </span>FileAttributematcherIter(<span class="kw">crate</span>::FileAttributeMatcher);
 

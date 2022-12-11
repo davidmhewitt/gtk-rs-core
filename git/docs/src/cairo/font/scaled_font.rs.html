@@ -346,21 +346,17 @@
 <a href="#273" id="273">273</a>
 <a href="#274" id="274">274</a>
 <a href="#275" id="275">275</a>
-<a href="#276" id="276">276</a>
-<a href="#277" id="277">277</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+</span><span class="kw">use </span>std::{ffi::CString, mem::MaybeUninit, ptr};
+
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::ffi::CString;
-<span class="kw">use </span>std::mem::MaybeUninit;
-<span class="kw">use </span>std::ptr;
 
-<span class="kw">use </span><span class="kw">crate</span>::matrices::Matrix;
-<span class="kw">use </span><span class="kw">crate</span>::utils::status_to_result;
-<span class="kw">use crate</span>::{enums::FontType, Error, FontExtents, Glyph, TextCluster, TextExtents};
-
-<span class="kw">use super</span>::{FontFace, FontOptions};
+<span class="kw">use crate</span>::{
+    utils::status_to_result, Error, FontExtents, FontFace, FontOptions, FontType, Glyph, Matrix,
+    TextCluster, TextExtents,
+};
 
 <span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="macro">glib::wrapper! </span>{

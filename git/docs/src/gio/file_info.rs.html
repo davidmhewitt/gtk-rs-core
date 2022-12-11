@@ -142,12 +142,20 @@
 <a href="#69" id="69">69</a>
 <a href="#70" id="70">70</a>
 <a href="#71" id="71">71</a>
+<a href="#72" id="72">72</a>
+<a href="#73" id="73">73</a>
+<a href="#74" id="74">74</a>
+<a href="#75" id="75">75</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::FileInfo;
+</span><span class="kw">use </span>std::{
+    mem,
+    time::{Duration, SystemTime},
+};
+
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::mem;
-<span class="kw">use </span>std::time::{Duration, SystemTime};
+
+<span class="kw">use </span><span class="kw">crate</span>::FileInfo;
 
 <span class="kw">impl </span>FileInfo {
     <span class="doccomment">/// Gets the modification time of the current `self` and sets it

@@ -292,11 +292,11 @@
 <a href="#219" id="219">219</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
+</span><span class="kw">use </span>std::{future::Future, ptr};
 
 <span class="kw">use </span>futures_channel::oneshot;
-<span class="kw">use </span>std::future::Future;
-<span class="kw">use </span>std::ptr;
+
+<span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
 
 <span class="attr">#[derive(Debug)]
 #[doc(alias = <span class="string">&quot;GThreadPool&quot;</span>)]

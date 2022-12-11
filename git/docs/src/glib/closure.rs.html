@@ -513,27 +513,15 @@
 <a href="#440" id="440">440</a>
 <a href="#441" id="441">441</a>
 <a href="#442" id="442">442</a>
-<a href="#443" id="443">443</a>
-<a href="#444" id="444">444</a>
-<a href="#445" id="445">445</a>
-<a href="#446" id="446">446</a>
-<a href="#447" id="447">447</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // TODO: support marshaller.
 
-</span><span class="kw">use </span>std::mem;
-<span class="kw">use </span>std::ptr;
-<span class="kw">use </span>std::slice;
+</span><span class="kw">use </span>std::{mem, ptr, slice};
 
 <span class="kw">use </span>libc::{c_uint, c_void};
 
-<span class="kw">use </span><span class="kw">crate</span>::translate::{from_glib_none, mut_override, ToGlibPtr, ToGlibPtrMut, Uninitialized};
-<span class="kw">use </span><span class="kw">crate</span>::value::FromValue;
-<span class="kw">use </span><span class="kw">crate</span>::StaticType;
-<span class="kw">use </span><span class="kw">crate</span>::ToValue;
-<span class="kw">use </span><span class="kw">crate</span>::Type;
-<span class="kw">use </span><span class="kw">crate</span>::Value;
+<span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>, value::FromValue, Type, Value};
 
 <span class="macro">wrapper! </span>{
     <span class="attr">#[derive(PartialEq, Eq, PartialOrd, Ord, Debug, Hash)]
@@ -918,8 +906,10 @@
 
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
-    <span class="kw">use </span>std::sync::atomic::{AtomicUsize, Ordering};
-    <span class="kw">use </span>std::sync::Arc;
+    <span class="kw">use </span>std::sync::{
+        atomic::{AtomicUsize, Ordering},
+        Arc,
+    };
 
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
 

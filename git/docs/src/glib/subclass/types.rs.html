@@ -1132,22 +1132,20 @@
 <a href="#1059" id="1059">1059</a>
 <a href="#1060" id="1060">1060</a>
 <a href="#1061" id="1061">1061</a>
-<a href="#1062" id="1062">1062</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
 </span><span class="doccomment">//! Module that contains the basic infrastructure for subclassing `GObject`.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::object::{Cast, IsClass, IsInterface, ObjectSubclassIs, ObjectType, ParentClassIs};
-<span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
-<span class="kw">use crate</span>::{Closure, Object, StaticType, Type, Value};
-<span class="kw">use </span>std::any::Any;
-<span class="kw">use </span>std::collections::BTreeMap;
-<span class="kw">use </span>std::marker;
-<span class="kw">use </span>std::mem;
-<span class="kw">use </span>std::ptr;
+</span><span class="kw">use </span>std::{any::Any, collections::BTreeMap, marker, mem, ptr};
 
 <span class="kw">use </span><span class="kw">super</span>::SignalId;
+<span class="kw">use crate</span>::{
+    object::{IsClass, IsInterface, ObjectSubclassIs, ParentClassIs},
+    prelude::<span class="kw-2">*</span>,
+    translate::<span class="kw-2">*</span>,
+    Closure, Object, Type, Value,
+};
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A newly registered `glib::Type` that is currently still being initialized.

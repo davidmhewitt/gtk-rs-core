@@ -172,18 +172,14 @@
 <a href="#99" id="99">99</a>
 <a href="#100" id="100">100</a>
 <a href="#101" id="101">101</a>
-<a href="#102" id="102">102</a>
-<a href="#103" id="103">103</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::Cancellable;
-<span class="kw">use </span><span class="kw">crate</span>::Subprocess;
-<span class="kw">use </span>glib::object::IsA;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::GString;
+</span><span class="kw">use </span>std::{pin::Pin, ptr};
+
+<span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>, GString};
 <span class="kw">use </span>libc::c_char;
-<span class="kw">use </span>std::pin::Pin;
-<span class="kw">use </span>std::ptr;
+
+<span class="kw">use crate</span>::{Cancellable, Subprocess};
 
 <span class="kw">impl </span>Subprocess {
     <span class="doccomment">/// Asynchronous version of [`communicate_utf8()`][Self::communicate_utf8()]. Complete

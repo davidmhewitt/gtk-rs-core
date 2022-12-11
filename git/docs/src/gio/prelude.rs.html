@@ -107,18 +107,6 @@
 <a href="#34" id="34">34</a>
 <a href="#35" id="35">35</a>
 <a href="#36" id="36">36</a>
-<a href="#37" id="37">37</a>
-<a href="#38" id="38">38</a>
-<a href="#39" id="39">39</a>
-<a href="#40" id="40">40</a>
-<a href="#41" id="41">41</a>
-<a href="#42" id="42">42</a>
-<a href="#43" id="43">43</a>
-<a href="#44" id="44">44</a>
-<a href="#45" id="45">45</a>
-<a href="#46" id="46">46</a>
-<a href="#47" id="47">47</a>
-<a href="#48" id="48">48</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -127,36 +115,14 @@
 </span><span class="attr">#[doc(hidden)]
 </span><span class="kw">pub use </span>glib::prelude::<span class="kw-2">*</span>;
 
-<span class="kw">pub use </span><span class="kw">crate</span>::auto::traits::<span class="kw-2">*</span>;
-
-<span class="kw">pub use </span><span class="kw">crate</span>::action_map::ActionMapExtManual;
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">pub use </span><span class="kw">crate</span>::app_info::AppInfoExtManual;
-<span class="kw">pub use </span><span class="kw">crate</span>::application::<span class="kw-2">*</span>;
-<span class="kw">pub use </span><span class="kw">crate</span>::cancellable::<span class="kw-2">*</span>;
-<span class="kw">pub use </span><span class="kw">crate</span>::converter::<span class="kw-2">*</span>;
-<span class="kw">pub use </span><span class="kw">crate</span>::data_input_stream::DataInputStreamExtManual;
-<span class="kw">pub use </span><span class="kw">crate</span>::datagram_based::<span class="kw-2">*</span>;
-<span class="kw">pub use </span><span class="kw">crate</span>::dbus_proxy::DBusProxyExtManual;
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_72&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_72&quot;</span>)))]
 </span><span class="kw">pub use </span><span class="kw">crate</span>::debug_controller_dbus::DebugControllerDBusExtManual;
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg(any(all(not(windows), not(target_os = <span class="string">&quot;macos&quot;</span>)), feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">pub use </span><span class="kw">crate</span>::desktop_app_info::DesktopAppInfoExtManual;
-<span class="kw">pub use </span><span class="kw">crate</span>::file::FileExtManual;
-<span class="kw">pub use </span><span class="kw">crate</span>::inet_address::InetAddressExtManual;
-<span class="kw">pub use </span><span class="kw">crate</span>::input_stream::InputStreamExtManual;
-<span class="kw">pub use </span><span class="kw">crate</span>::io_stream::IOStreamExtManual;
-<span class="kw">pub use </span><span class="kw">crate</span>::list_model::ListModelExtManual;
-<span class="kw">pub use </span><span class="kw">crate</span>::output_stream::OutputStreamExtManual;
-<span class="kw">pub use </span><span class="kw">crate</span>::pollable_input_stream::PollableInputStreamExtManual;
-<span class="kw">pub use </span><span class="kw">crate</span>::pollable_output_stream::PollableOutputStreamExtManual;
-<span class="kw">pub use </span><span class="kw">crate</span>::settings::SettingsExtManual;
-<span class="kw">pub use </span><span class="kw">crate</span>::simple_proxy_resolver::SimpleProxyResolverExtManual;
-<span class="kw">pub use </span><span class="kw">crate</span>::socket::SocketExtManual;
-<span class="kw">pub use </span><span class="kw">crate</span>::socket_control_message::<span class="kw-2">*</span>;
-<span class="kw">pub use </span><span class="kw">crate</span>::tls_connection::TlsConnectionExtManual;
 <span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">pub use </span><span class="kw">crate</span>::unix_fd_list::UnixFDListExtManual;
 <span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
@@ -167,5 +133,15 @@
 </span><span class="kw">pub use </span><span class="kw">crate</span>::unix_output_stream::UnixOutputStreamExtManual;
 <span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">pub use </span><span class="kw">crate</span>::unix_socket_address::{UnixSocketAddressExtManual, UnixSocketAddressPath};
+<span class="kw">pub use crate</span>::{
+    action_map::ActionMapExtManual, application::<span class="kw-2">*</span>, auto::traits::<span class="kw-2">*</span>, cancellable::<span class="kw-2">*</span>, converter::<span class="kw-2">*</span>,
+    data_input_stream::DataInputStreamExtManual, datagram_based::<span class="kw-2">*</span>, dbus_proxy::DBusProxyExtManual,
+    file::FileExtManual, inet_address::InetAddressExtManual, input_stream::InputStreamExtManual,
+    io_stream::IOStreamExtManual, list_model::ListModelExtManual,
+    output_stream::OutputStreamExtManual, pollable_input_stream::PollableInputStreamExtManual,
+    pollable_output_stream::PollableOutputStreamExtManual, settings::SettingsExtManual,
+    simple_proxy_resolver::SimpleProxyResolverExtManual, socket::SocketExtManual,
+    socket_control_message::<span class="kw-2">*</span>, tls_connection::TlsConnectionExtManual,
+};
 </code></pre></div>
 </section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gio" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (c6fcdb690 2022-12-10)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

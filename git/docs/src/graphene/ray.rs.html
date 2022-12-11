@@ -139,11 +139,11 @@
 <a href="#66" id="66">66</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::Point3D;
-<span class="kw">use </span><span class="kw">crate</span>::Ray;
-<span class="kw">use </span><span class="kw">crate</span>::Vec3;
+</span><span class="kw">use </span>std::fmt;
+
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::fmt;
+
+<span class="kw">use crate</span>::{Point3D, Ray, Vec3};
 
 <span class="kw">impl </span>Ray {
     <span class="doccomment">/// Initializes the given [`Ray`][crate::Ray] using the given `origin`

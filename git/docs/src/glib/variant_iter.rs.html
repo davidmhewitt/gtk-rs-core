@@ -440,6 +440,8 @@
 <a href="#367" id="367">367</a>
 <a href="#368" id="368">368</a>
 <a href="#369" id="369">369</a>
+<a href="#370" id="370">370</a>
+<a href="#371" id="371">371</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // This is similar to the GVariantIter provided by glib, but that would
@@ -448,8 +450,7 @@
 
 </span><span class="kw">use </span>std::iter::{DoubleEndedIterator, ExactSizeIterator, FusedIterator};
 
-<span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::variant::Variant;
+<span class="kw">use crate</span>::{translate::<span class="kw-2">*</span>, Variant};
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Iterator over items in a variant.
@@ -645,9 +646,12 @@
 
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
-    <span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-    <span class="kw">use </span><span class="kw">crate</span>::variant::{DictEntry, Variant};
     <span class="kw">use </span>std::collections::HashMap;
+
+    <span class="kw">use crate</span>::{
+        prelude::<span class="kw-2">*</span>,
+        variant::{DictEntry, Variant},
+    };
 
     <span class="attr">#[test]
     </span><span class="kw">fn </span>test_variant_iter_variant() {

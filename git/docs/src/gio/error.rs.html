@@ -115,14 +115,16 @@
 <a href="#42" id="42">42</a>
 <a href="#43" id="43">43</a>
 <a href="#44" id="44">44</a>
+<a href="#45" id="45">45</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="kw">use </span>std::io;
+
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span><span class="kw">crate</span>::glib::translate::<span class="kw-2">*</span>;
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span><span class="kw">crate</span>::glib::FileError;
 <span class="kw">use </span><span class="kw">crate</span>::IOErrorEnum;
-<span class="kw">use </span>std::io;
 
 <span class="kw">impl </span>From&lt;IOErrorEnum&gt; <span class="kw">for </span>io::ErrorKind {
     <span class="kw">fn </span>from(kind: IOErrorEnum) -&gt; <span class="self">Self </span>{

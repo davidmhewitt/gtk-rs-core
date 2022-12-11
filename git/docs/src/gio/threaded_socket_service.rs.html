@@ -96,15 +96,11 @@
 <a href="#23" id="23">23</a>
 <a href="#24" id="24">24</a>
 <a href="#25" id="25">25</a>
-<a href="#26" id="26">26</a>
-<a href="#27" id="27">27</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span>glib::translate::FromGlibPtrFull;
-<span class="kw">use </span>glib::Cast;
+</span><span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>};
 
-<span class="kw">use </span><span class="kw">crate</span>::SocketService;
-<span class="kw">use </span><span class="kw">crate</span>::ThreadedSocketService;
+<span class="kw">use crate</span>::{SocketService, ThreadedSocketService};
 
 <span class="kw">impl </span>ThreadedSocketService {
     <span class="doccomment">/// Creates a new [`ThreadedSocketService`][crate::ThreadedSocketService] with no listeners. Listeners

@@ -1134,30 +1134,15 @@
 <a href="#1061" id="1061">1061</a>
 <a href="#1062" id="1062">1062</a>
 <a href="#1063" id="1063">1063</a>
-<a href="#1064" id="1064">1064</a>
-<a href="#1065" id="1065">1065</a>
-<a href="#1066" id="1066">1066</a>
-<a href="#1067" id="1067">1067</a>
-<a href="#1068" id="1068">1068</a>
-<a href="#1069" id="1069">1069</a>
-<a href="#1070" id="1070">1070</a>
-<a href="#1071" id="1071">1071</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::error::to_std_io_result;
-<span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::Cancellable;
-<span class="kw">use </span><span class="kw">crate</span>::OutputStream;
+</span><span class="kw">use </span>std::{io, mem, pin::Pin, ptr};
+
+<span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>, Priority};
+
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span><span class="kw">crate</span>::OutputVector;
-<span class="kw">use </span><span class="kw">crate</span>::Seekable;
-<span class="kw">use </span>glib::object::IsA;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::Priority;
-<span class="kw">use </span>std::io;
-<span class="kw">use </span>std::mem;
-<span class="kw">use </span>std::pin::Pin;
-<span class="kw">use </span>std::ptr;
+<span class="kw">use crate</span>::{error::to_std_io_result, prelude::<span class="kw-2">*</span>, Cancellable, OutputStream, Seekable};
 
 <span class="kw">pub trait </span>OutputStreamExtManual: Sized + OutputStreamExt {
     <span class="doccomment">/// Request an asynchronous write of `count` bytes from `buffer` into
@@ -2029,14 +2014,13 @@
 
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
-    <span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-    <span class="kw">use </span><span class="kw">crate</span>::test_util::run_async;
-    <span class="kw">use </span><span class="kw">crate</span>::MemoryInputStream;
-    <span class="kw">use </span><span class="kw">crate</span>::MemoryOutputStream;
+    <span class="kw">use </span>std::io::Write;
+
+    <span class="kw">use </span>glib::Bytes;
+
     <span class="attr">#[cfg(feature = <span class="string">&quot;v2_60&quot;</span>)]
     </span><span class="kw">use </span><span class="kw">crate</span>::OutputVector;
-    <span class="kw">use </span>glib::Bytes;
-    <span class="kw">use </span>std::io::Write;
+    <span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, test_util::run_async, MemoryInputStream, MemoryOutputStream};
 
     <span class="attr">#[test]
     </span><span class="kw">fn </span>splice_async() {

@@ -162,9 +162,9 @@
 <a href="#89" id="89">89</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::error::Error;
-<span class="kw">use </span>std::ffi::CStr;
-<span class="kw">use </span>std::fmt;
+</span><span class="kw">use </span>std::{ffi::CStr, fmt};
+
+<span class="kw">use </span><span class="kw">crate</span>::Error;
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Resets all static data within cairo to its original state (i.e. identical to the state at program

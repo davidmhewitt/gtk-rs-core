@@ -156,19 +156,17 @@
 <a href="#83" id="83">83</a>
 <a href="#84" id="84">84</a>
 <a href="#85" id="85">85</a>
-<a href="#86" id="86">86</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::UnixFDMessage;
-<span class="kw">use </span>glib::object::IsA;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
+</span><span class="attr">#[cfg(unix)]
+</span><span class="kw">use </span>std::os::unix::io::{AsRawFd, RawFd};
 <span class="kw">use </span>std::{mem, ptr};
 
-<span class="attr">#[cfg(unix)]
-</span><span class="kw">use </span>std::os::unix::io::{AsRawFd, RawFd};
-
+<span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>};
 <span class="attr">#[cfg(all(not(unix), feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span>socket::{AsRawFd, RawFd};
+
+<span class="kw">use </span><span class="kw">crate</span>::UnixFDMessage;
 
 <span class="kw">pub trait </span>UnixFDMessageExtManual: Sized {
     <span class="doccomment">/// Adds a file descriptor to `self`.

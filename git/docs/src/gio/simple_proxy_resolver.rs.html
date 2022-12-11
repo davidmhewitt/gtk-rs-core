@@ -126,13 +126,11 @@
 <a href="#53" id="53">53</a>
 <a href="#54" id="54">54</a>
 <a href="#55" id="55">55</a>
-<a href="#56" id="56">56</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::ProxyResolver;
-<span class="kw">use </span><span class="kw">crate</span>::SimpleProxyResolver;
-<span class="kw">use </span>glib::object::IsA;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
+</span><span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>};
+
+<span class="kw">use crate</span>::{ProxyResolver, SimpleProxyResolver};
 
 <span class="kw">impl </span>SimpleProxyResolver {
     <span class="doccomment">/// Creates a new [`SimpleProxyResolver`][crate::SimpleProxyResolver]. See

@@ -177,11 +177,15 @@
 <a href="#104" id="104">104</a>
 <a href="#105" id="105">105</a>
 <a href="#106" id="106">106</a>
+<a href="#107" id="107">107</a>
+<a href="#108" id="108">108</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use crate</span>::{Matrix, Rectangle};
+</span><span class="kw">use </span>std::fmt;
+
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::fmt;
+
+<span class="kw">use crate</span>::{Matrix, Rectangle};
 
 <span class="kw">impl </span>Matrix {
     <span class="kw">pub fn </span>new(xx: f64, xy: f64, yx: f64, yy: f64, x0: f64, y0: f64) -&gt; <span class="self">Self </span>{

@@ -234,17 +234,13 @@
 <a href="#161" id="161">161</a>
 <a href="#162" id="162">162</a>
 <a href="#163" id="163">163</a>
-<a href="#164" id="164">164</a>
-<a href="#165" id="165">165</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::Converter;
-<span class="kw">use </span><span class="kw">crate</span>::ConverterFlags;
-<span class="kw">use </span><span class="kw">crate</span>::ConverterResult;
-<span class="kw">use </span>glib::object::IsA;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::mem;
-<span class="kw">use </span>std::ptr;
+</span><span class="kw">use </span>std::{mem, ptr};
+
+<span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>};
+
+<span class="kw">use crate</span>::{Converter, ConverterFlags, ConverterResult};
 
 <span class="kw">pub trait </span>ConverterExtManual {
     <span class="doccomment">/// This is the main operation used when converting data. It is to be called

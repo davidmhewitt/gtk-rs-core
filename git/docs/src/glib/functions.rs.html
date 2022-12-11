@@ -333,9 +333,6 @@
 <a href="#260" id="260">260</a>
 <a href="#261" id="261">261</a>
 <a href="#262" id="262">262</a>
-<a href="#263" id="263">263</a>
-<a href="#264" id="264">264</a>
-<a href="#265" id="265">265</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="attr">#[cfg(not(windows))]
@@ -347,18 +344,15 @@
 </span><span class="kw">use </span>std::os::unix::io::AsRawFd;
 <span class="attr">#[cfg(not(windows))]
 </span><span class="kw">use </span>std::os::unix::io::{FromRawFd, IntoRawFd, RawFd};
+<span class="kw">use </span>std::ptr;
+
 <span class="comment">// #[cfg(windows)]
 // #[cfg(any(feature = &quot;v2_58&quot;, feature = &quot;dox&quot;))]
 // use std::os::windows::io::AsRawHandle;
 </span><span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
-<span class="attr">#[cfg(not(windows))]
-</span><span class="kw">use </span><span class="kw">crate</span>::Error;
 <span class="kw">use </span><span class="kw">crate</span>::GString;
 <span class="attr">#[cfg(not(windows))]
-</span><span class="kw">use </span><span class="kw">crate</span>::Pid;
-<span class="attr">#[cfg(not(windows))]
-</span><span class="kw">use </span><span class="kw">crate</span>::SpawnFlags;
-<span class="kw">use </span>std::ptr;
+</span><span class="kw">use crate</span>::{Error, Pid, SpawnFlags};
 
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg(not(windows))]

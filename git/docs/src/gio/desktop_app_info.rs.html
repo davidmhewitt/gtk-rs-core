@@ -244,24 +244,22 @@
 <a href="#171" id="171">171</a>
 <a href="#172" id="172">172</a>
 <a href="#173" id="173">173</a>
-<a href="#174" id="174">174</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="attr">#[cfg(any(all(feature = <span class="string">&quot;v2_58&quot;</span>, unix), all(unix, feature = <span class="string">&quot;dox&quot;</span>)))]
-</span><span class="kw">use </span><span class="kw">crate</span>::AppLaunchContext;
-<span class="kw">use </span><span class="kw">crate</span>::DesktopAppInfo;
-<span class="kw">use </span>glib::object::IsA;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="attr">#[cfg(any(all(feature = <span class="string">&quot;v2_58&quot;</span>, unix), all(unix, feature = <span class="string">&quot;dox&quot;</span>)))]
-</span><span class="kw">use </span>glib::Error;
-<span class="kw">use </span>glib::GString;
-<span class="attr">#[cfg(any(all(feature = <span class="string">&quot;v2_58&quot;</span>, unix), all(unix, feature = <span class="string">&quot;dox&quot;</span>)))]
 </span><span class="kw">use </span>std::boxed::Box <span class="kw">as </span>Box_;
+<span class="attr">#[cfg(any(all(feature = <span class="string">&quot;v2_58&quot;</span>, unix), all(unix, feature = <span class="string">&quot;dox&quot;</span>)))]
+</span><span class="kw">use </span>std::os::unix::io::AsRawFd;
 <span class="attr">#[cfg(any(all(feature = <span class="string">&quot;v2_58&quot;</span>, unix), all(unix, feature = <span class="string">&quot;dox&quot;</span>)))]
 </span><span class="kw">use </span>std::ptr;
 
 <span class="attr">#[cfg(any(all(feature = <span class="string">&quot;v2_58&quot;</span>, unix), all(unix, feature = <span class="string">&quot;dox&quot;</span>)))]
-</span><span class="kw">use </span>std::os::unix::io::AsRawFd;
+</span><span class="kw">use </span>glib::Error;
+<span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>, GString};
+
+<span class="attr">#[cfg(any(all(feature = <span class="string">&quot;v2_58&quot;</span>, unix), all(unix, feature = <span class="string">&quot;dox&quot;</span>)))]
+</span><span class="kw">use </span><span class="kw">crate</span>::AppLaunchContext;
+<span class="kw">use </span><span class="kw">crate</span>::DesktopAppInfo;
 
 <span class="kw">impl </span>DesktopAppInfo {
     <span class="doccomment">/// Searches desktop files for ones that match `search_string`.

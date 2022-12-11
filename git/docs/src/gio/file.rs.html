@@ -1414,31 +1414,17 @@
 <a href="#1341" id="1341">1341</a>
 <a href="#1342" id="1342">1342</a>
 <a href="#1343" id="1343">1343</a>
-<a href="#1344" id="1344">1344</a>
-<a href="#1345" id="1345">1345</a>
-<a href="#1346" id="1346">1346</a>
-<a href="#1347" id="1347">1347</a>
-<a href="#1348" id="1348">1348</a>
-<a href="#1349" id="1349">1349</a>
-<a href="#1350" id="1350">1350</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::Cancellable;
-<span class="kw">use </span><span class="kw">crate</span>::File;
-<span class="kw">use </span><span class="kw">crate</span>::FileCreateFlags;
-<span class="kw">use </span><span class="kw">crate</span>::FileEnumerator;
-<span class="kw">use </span><span class="kw">crate</span>::FileQueryInfoFlags;
-<span class="kw">use </span>glib::object::IsA;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::cell::RefCell;
-<span class="kw">use </span>std::mem;
-<span class="kw">use </span>std::pin::Pin;
-<span class="kw">use </span>std::ptr;
+</span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="kw">use </span>std::boxed::Box <span class="kw">as </span>Box_;
+<span class="kw">use </span>std::{cell::RefCell, mem, pin::Pin, ptr};
+
+<span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>};
 
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span><span class="kw">crate</span>::FileIOStream;
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-</span><span class="kw">use </span>std::boxed::Box <span class="kw">as </span>Box_;
+<span class="kw">use crate</span>::{Cancellable, File, FileCreateFlags, FileEnumerator, FileQueryInfoFlags};
 
 <span class="kw">impl </span>File {
     <span class="doccomment">/// Asynchronously opens a file in the preferred directory for temporary files

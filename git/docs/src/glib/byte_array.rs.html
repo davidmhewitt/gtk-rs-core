@@ -225,6 +225,10 @@
 <a href="#152" id="152">152</a>
 <a href="#153" id="153">153</a>
 <a href="#154" id="154">154</a>
+<a href="#155" id="155">155</a>
+<a href="#156" id="156">156</a>
+<a href="#157" id="157">157</a>
+<a href="#158" id="158">158</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -238,13 +242,16 @@
 //! assert_eq!(ba, &quot;abc&quot;.as_bytes());
 //! ```
 
-</span><span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::borrow::Borrow;
-<span class="kw">use </span>std::cmp::Ordering;
-<span class="kw">use </span>std::fmt;
-<span class="kw">use </span>std::hash::{Hash, Hasher};
-<span class="kw">use </span>std::ops::Deref;
-<span class="kw">use </span>std::slice;
+</span><span class="kw">use </span>std::{
+    borrow::Borrow,
+    cmp::Ordering,
+    fmt,
+    hash::{Hash, Hasher},
+    ops::Deref,
+    slice,
+};
+
+<span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
 
 <span class="macro">wrapper! </span>{
     <span class="attr">#[doc(alias = <span class="string">&quot;GByteArray&quot;</span>)]
@@ -359,8 +366,9 @@
 }
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
-    <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use </span>std::collections::HashSet;
+
+    <span class="kw">use super</span>::<span class="kw-2">*</span>;
 
     <span class="attr">#[test]
     </span><span class="kw">fn </span>various() {

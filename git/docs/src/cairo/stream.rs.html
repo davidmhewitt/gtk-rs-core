@@ -345,19 +345,23 @@
 <a href="#272" id="272">272</a>
 <a href="#273" id="273">273</a>
 <a href="#274" id="274">274</a>
+<a href="#275" id="275">275</a>
+<a href="#276" id="276">276</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::error::Error;
-<span class="kw">use crate</span>::{Surface, UserDataKey};
-<span class="kw">use </span>ffi::cairo_status_t;
+</span><span class="kw">use </span>std::{
+    any::Any,
+    cell::{Cell, RefCell},
+    io,
+    panic::AssertUnwindSafe,
+    ptr,
+    rc::Rc,
+};
 
+<span class="kw">use </span>ffi::cairo_status_t;
 <span class="kw">use </span>libc::{c_double, c_uchar, c_uint, c_void};
-<span class="kw">use </span>std::any::Any;
-<span class="kw">use </span>std::cell::{Cell, RefCell};
-<span class="kw">use </span>std::io;
-<span class="kw">use </span>std::panic::AssertUnwindSafe;
-<span class="kw">use </span>std::ptr;
-<span class="kw">use </span>std::rc::Rc;
+
+<span class="kw">use crate</span>::{Error, Surface, UserDataKey};
 
 <span class="macro">macro_rules! </span>for_stream_constructors {
     (<span class="macro-nonterminal">$constructor_ffi</span>: ident) =&gt; {

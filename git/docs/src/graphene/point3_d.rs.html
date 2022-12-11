@@ -153,12 +153,14 @@
 <a href="#80" id="80">80</a>
 <a href="#81" id="81">81</a>
 <a href="#82" id="82">82</a>
+<a href="#83" id="83">83</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::Point3D;
-<span class="kw">use </span><span class="kw">crate</span>::Vec3;
+</span><span class="kw">use </span>std::fmt;
+
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::fmt;
+
+<span class="kw">use crate</span>::{Point3D, Vec3};
 
 <span class="kw">impl </span>Point3D {
     <span class="doccomment">/// Initializes a [`Point3D`][crate::Point3D] with the given coordinates.

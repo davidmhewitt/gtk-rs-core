@@ -114,23 +114,15 @@
 <a href="#41" id="41">41</a>
 <a href="#42" id="42">42</a>
 <a href="#43" id="43">43</a>
-<a href="#44" id="44">44</a>
-<a href="#45" id="45">45</a>
-<a href="#46" id="46">46</a>
-<a href="#47" id="47">47</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span>std::convert::TryFrom;
-<span class="kw">use </span>std::fmt;
-<span class="kw">use </span>std::ops::Deref;
+</span><span class="kw">use </span>std::{convert::TryFrom, fmt, ops::Deref};
 
-<span class="kw">use </span><span class="kw">crate</span>::enums::{Format, SurfaceType};
-<span class="kw">use </span><span class="kw">crate</span>::error::Error;
-<span class="kw">use </span><span class="kw">crate</span>::surface::Surface;
+<span class="kw">use </span>ffi::CGContextRef;
 <span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 
-<span class="kw">use </span>ffi::CGContextRef;
+<span class="kw">use crate</span>::{Error, Format, Surface, SurfaceType};
 
 <span class="macro">declare_surface!</span>(QuartzSurface, SurfaceType::Quartz);
 

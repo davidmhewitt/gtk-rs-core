@@ -1125,23 +1125,18 @@
 <a href="#1052" id="1052">1052</a>
 <a href="#1053" id="1053">1053</a>
 <a href="#1054" id="1054">1054</a>
-<a href="#1055" id="1055">1055</a>
-<a href="#1056" id="1056">1056</a>
-<a href="#1057" id="1057">1057</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::AsyncResult;
-<span class="kw">use </span><span class="kw">crate</span>::Cancellable;
-<span class="kw">use </span>glib::object::IsA;
-<span class="kw">use </span>glib::object::ObjectType <span class="kw">as </span>ObjectType_;
-<span class="kw">use </span>glib::signal::connect_raw;
-<span class="kw">use </span>glib::signal::SignalHandlerId;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::value::ValueType;
-<span class="kw">use </span>glib::Cast;
-<span class="kw">use </span>std::boxed::Box <span class="kw">as </span>Box_;
-<span class="kw">use </span>std::mem::transmute;
-<span class="kw">use </span>std::ptr;
+</span><span class="kw">use </span>std::{boxed::Box <span class="kw">as </span>Box_, mem::transmute, ptr};
+
+<span class="kw">use </span>glib::{
+    prelude::<span class="kw-2">*</span>,
+    signal::{connect_raw, SignalHandlerId},
+    translate::<span class="kw-2">*</span>,
+    value::ValueType,
+};
+
+<span class="kw">use crate</span>::{AsyncResult, Cancellable};
 
 <span class="macro">glib::wrapper! </span>{
     <span class="comment">// rustdoc-stripper-ignore-next
@@ -2039,8 +2034,7 @@
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>test {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
-    <span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-    <span class="kw">use </span><span class="kw">crate</span>::test_util::run_async_local;
+    <span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, test_util::run_async_local};
 
     <span class="attr">#[test]
     </span><span class="kw">fn </span>test_int_async_result() {

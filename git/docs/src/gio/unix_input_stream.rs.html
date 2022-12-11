@@ -149,20 +149,16 @@
 <a href="#76" id="76">76</a>
 <a href="#77" id="77">77</a>
 <a href="#78" id="78">78</a>
-<a href="#79" id="79">79</a>
-<a href="#80" id="80">80</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::InputStream;
-<span class="kw">use </span><span class="kw">crate</span>::UnixInputStream;
-<span class="kw">use </span>glib::object::{Cast, IsA};
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-
-<span class="attr">#[cfg(unix)]
+</span><span class="attr">#[cfg(unix)]
 </span><span class="kw">use </span>std::os::unix::io::{AsRawFd, FromRawFd, IntoRawFd, RawFd};
 
+<span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>};
 <span class="attr">#[cfg(all(not(unix), feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span>socket::{AsRawFd, FromRawFd, IntoRawFd, RawFd};
+
+<span class="kw">use crate</span>::{InputStream, UnixInputStream};
 
 <span class="kw">impl </span>UnixInputStream {
     <span class="comment">// rustdoc-stripper-ignore-next

@@ -300,21 +300,15 @@
 <a href="#227" id="227">227</a>
 <a href="#228" id="228">228</a>
 <a href="#229" id="229">229</a>
-<a href="#230" id="230">230</a>
-<a href="#231" id="231">231</a>
-<a href="#232" id="232">232</a>
-<a href="#233" id="233">233</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::signal::connect_raw;
-<span class="kw">use </span><span class="kw">crate</span>::signal::SignalHandlerId;
-<span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::Object;
-<span class="kw">use </span><span class="kw">crate</span>::ObjectType;
-<span class="kw">use </span><span class="kw">crate</span>::RustClosure;
-<span class="kw">use </span><span class="kw">crate</span>::SignalGroup;
-<span class="kw">use </span><span class="kw">crate</span>::Value;
-<span class="kw">use </span>std::mem::transmute;
+</span><span class="kw">use </span>std::mem::transmute;
+
+<span class="kw">use crate</span>::{
+    signal::{connect_raw, SignalHandlerId},
+    translate::<span class="kw-2">*</span>,
+    Object, ObjectType, RustClosure, SignalGroup, Value,
+};
 
 <span class="kw">impl </span>SignalGroup {
     <span class="doccomment">/// Connects `closure` to the signal `detailed_signal` on `property::SignalGroup::target`.
@@ -462,17 +456,15 @@
 
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
+    <span class="kw">use </span>std::{cell::RefCell, rc::Rc};
+
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use crate as </span>glib;
-    <span class="kw">use </span><span class="kw">crate</span>::ObjectExt;
-    <span class="kw">use </span><span class="kw">crate</span>::StaticType;
-    <span class="kw">use </span>std::cell::RefCell;
-    <span class="kw">use </span>std::rc::Rc;
+    <span class="kw">use crate</span>::{ObjectExt, StaticType};
 
     <span class="kw">mod </span>imp {
         <span class="kw">use super</span>::<span class="kw-2">*</span>;
-        <span class="kw">use </span><span class="kw">crate</span>::subclass::prelude::<span class="kw-2">*</span>;
-        <span class="kw">use </span><span class="kw">crate</span>::subclass::Signal;
+        <span class="kw">use </span><span class="kw">crate</span>::subclass::{prelude::<span class="kw-2">*</span>, Signal};
 
         <span class="attr">#[derive(Default)]
         </span><span class="kw">pub struct </span>SignalObject {}

@@ -390,21 +390,13 @@
 <a href="#317" id="317">317</a>
 <a href="#318" id="318">318</a>
 <a href="#319" id="319">319</a>
-<a href="#320" id="320">320</a>
-<a href="#321" id="321">321</a>
-<a href="#322" id="322">322</a>
-<a href="#323" id="323">323</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span>std::cell::Cell;
-<span class="kw">use </span>std::iter::FusedIterator;
-<span class="kw">use </span>std::marker::PhantomData;
-<span class="kw">use </span>std::rc::Rc;
+</span><span class="kw">use </span>std::{cell::Cell, iter::FusedIterator, marker::PhantomData, rc::Rc};
 
 <span class="kw">use </span>glib::SignalHandlerId;
 
-<span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::ListModel;
+<span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, ListModel};
 
 <span class="attr">#[derive(thiserror::Error, Debug, PartialEq, Eq)]
 #[error(<span class="string">&quot;can&#39;t downcast ListModel&#39;s items (`{actual}`) to the requested type `{requested}`&quot;</span>)]

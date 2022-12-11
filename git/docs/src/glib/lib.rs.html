@@ -292,11 +292,6 @@
 <a href="#219" id="219">219</a>
 <a href="#220" id="220">220</a>
 <a href="#221" id="221">221</a>
-<a href="#222" id="222">222</a>
-<a href="#223" id="223">223</a>
-<a href="#224" id="224">224</a>
-<a href="#225" id="225">225</a>
-<a href="#226" id="226">226</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="attr">#![cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, feature(doc_cfg))]
@@ -306,46 +301,44 @@
 #![allow(clippy::non_send_fields_in_send_ty)]
 #![doc = <span class="macro">include_str!</span>(<span class="string">&quot;../README.md&quot;</span>)]
 
-</span><span class="kw">pub use </span>ffi;
-<span class="kw">pub use </span>gobject_ffi;
-
-<span class="attr">#[doc(hidden)]
+#[doc(hidden)]
 </span><span class="kw">pub use </span>bitflags;
-
+<span class="kw">pub use </span>ffi;
 <span class="attr">#[doc(hidden)]
-</span><span class="kw">pub use </span>once_cell;
-
+</span><span class="kw">pub use </span>glib_macros::cstr_bytes;
 <span class="kw">pub use </span>glib_macros::{
     clone, closure, closure_local, flags, object_interface, object_subclass, Boxed, Downgrade,
     Enum, ErrorDomain, SharedBoxed, Variant,
 };
-
+<span class="kw">pub use </span>gobject_ffi;
 <span class="attr">#[doc(hidden)]
-</span><span class="kw">pub use </span>glib_macros::cstr_bytes;
+</span><span class="kw">pub use </span>once_cell;
 
-<span class="kw">pub use </span><span class="self">self</span>::byte_array::ByteArray;
-<span class="kw">pub use </span><span class="self">self</span>::bytes::Bytes;
-<span class="kw">pub use </span><span class="self">self</span>::closure::{Closure, RustClosure};
-<span class="kw">pub use </span><span class="self">self</span>::error::{BoolError, Error};
-<span class="kw">pub use </span><span class="self">self</span>::object::{
-    BorrowedObject, Cast, CastNone, Class, InitiallyUnowned, Interface, IsA, Object, ObjectExt,
-    ObjectType, SendWeakRef, WeakRef,
+<span class="kw">pub use </span><span class="self">self</span>::{
+    byte_array::ByteArray,
+    bytes::Bytes,
+    closure::{Closure, RustClosure},
+    enums::{EnumClass, EnumValue, FlagsBuilder, FlagsClass, FlagsValue, UserDirectory},
+    error::{BoolError, Error},
+    object::{
+        BorrowedObject, Cast, CastNone, Class, InitiallyUnowned, Interface, IsA, Object, ObjectExt,
+        ObjectType, SendWeakRef, WeakRef,
+    },
+    signal::{
+        signal_handler_block, signal_handler_disconnect, signal_handler_unblock,
+        signal_stop_emission_by_name, SignalHandlerId,
+    },
+    types::{ILong, Pointer, StaticType, StaticTypeExt, Type, ULong},
+    value::{BoxedValue, SendValue, ToSendValue, ToValue, Value},
+    variant::{
+        FixedSizeVariantArray, FixedSizeVariantType, FromVariant, StaticVariantType, ToVariant,
+        Variant,
+    },
+    variant_dict::VariantDict,
+    variant_iter::{VariantIter, VariantStrIter},
+    variant_type::{VariantTy, VariantTyIterator, VariantType},
+    FileError,
 };
-<span class="kw">pub use </span><span class="self">self</span>::signal::{
-    signal_handler_block, signal_handler_disconnect, signal_handler_unblock,
-    signal_stop_emission_by_name, SignalHandlerId,
-};
-<span class="kw">pub use </span><span class="self">self</span>::FileError;
-
-<span class="kw">pub use </span><span class="self">self</span>::enums::{EnumClass, EnumValue, FlagsBuilder, FlagsClass, FlagsValue, UserDirectory};
-<span class="kw">pub use </span><span class="self">self</span>::types::{ILong, Pointer, StaticType, StaticTypeExt, Type, ULong};
-<span class="kw">pub use </span><span class="self">self</span>::value::{BoxedValue, SendValue, ToSendValue, ToValue, Value};
-<span class="kw">pub use </span><span class="self">self</span>::variant::{
-    FixedSizeVariantArray, FixedSizeVariantType, FromVariant, StaticVariantType, ToVariant, Variant,
-};
-<span class="kw">pub use </span><span class="self">self</span>::variant_dict::VariantDict;
-<span class="kw">pub use </span><span class="self">self</span>::variant_iter::{VariantIter, VariantStrIter};
-<span class="kw">pub use </span><span class="self">self</span>::variant_type::{VariantTy, VariantTyIterator, VariantType};
 
 <span class="comment">// Hack for the time being to retrieve the current function&#39;s name as a string.
 // Based on the stdext cratelicensed under the MIT license.
@@ -410,8 +403,7 @@
 <span class="kw">pub mod </span>collections;
 <span class="kw">pub use </span>collections::{List, PtrSlice, SList, Slice};
 
-<span class="kw">pub use </span><span class="self">self</span>::auto::functions::<span class="kw-2">*</span>;
-<span class="kw">pub use </span><span class="self">self</span>::auto::<span class="kw-2">*</span>;
+<span class="kw">pub use </span><span class="self">self</span>::auto::{functions::<span class="kw-2">*</span>, <span class="kw-2">*</span>};
 <span class="attr">#[allow(non_upper_case_globals)]
 #[allow(clippy::too_many_arguments)]
 #[allow(clippy::type_complexity)]
@@ -450,8 +442,10 @@
 <span class="kw">pub use </span><span class="self">self</span>::utils::<span class="kw-2">*</span>;
 <span class="kw">mod </span>main_context;
 <span class="kw">mod </span>main_context_channel;
-<span class="kw">pub use </span><span class="self">self</span>::main_context::MainContextAcquireGuard;
-<span class="kw">pub use </span><span class="self">self</span>::main_context_channel::{Receiver, Sender, SyncSender};
+<span class="kw">pub use </span><span class="self">self</span>::{
+    main_context::MainContextAcquireGuard,
+    main_context_channel::{Receiver, Sender, SyncSender},
+};
 <span class="kw">mod </span>date;
 <span class="kw">mod </span>date_time;
 <span class="kw">mod </span>time_span;
@@ -470,26 +464,22 @@
 <span class="kw">pub use </span><span class="self">self</span>::quark::Quark;
 <span class="attr">#[macro_use]
 </span><span class="kw">mod </span>log;
-<span class="kw">pub use </span><span class="self">self</span>::log::log_set_handler;
-
-<span class="kw">pub use </span><span class="self">self</span>::log::{
-    log_default_handler, log_remove_handler, log_set_always_fatal, log_set_default_handler,
-    log_set_fatal_mask, log_set_writer_func, log_structured_array, log_unset_default_handler,
-    log_variant, log_writer_default, log_writer_format_fields, log_writer_journald,
-    log_writer_standard_streams, set_print_handler, set_printerr_handler, unset_print_handler,
-    unset_printerr_handler, LogField, LogHandlerId, LogLevel, LogLevels,
-};
-
-<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
-</span><span class="kw">pub use </span><span class="self">self</span>::log::{log_writer_is_journald, log_writer_supports_color};
-
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-</span><span class="kw">pub use </span><span class="self">self</span>::log::{log_writer_default_set_use_stderr, log_writer_default_would_drop};
-
 <span class="attr">#[doc(hidden)]
 #[cfg(any(feature = <span class="string">&quot;dox&quot;</span>, feature = <span class="string">&quot;log_macros&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;log_macros&quot;</span>)))]
 </span><span class="kw">pub use </span>rs_log;
+
+<span class="kw">pub use </span><span class="self">self</span>::log::{
+    log_default_handler, log_remove_handler, log_set_always_fatal, log_set_default_handler,
+    log_set_fatal_mask, log_set_handler, log_set_writer_func, log_structured_array,
+    log_unset_default_handler, log_variant, log_writer_default, log_writer_format_fields,
+    log_writer_journald, log_writer_standard_streams, set_print_handler, set_printerr_handler,
+    unset_print_handler, unset_printerr_handler, LogField, LogHandlerId, LogLevel, LogLevels,
+};
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_68&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="kw">pub use </span><span class="self">self</span>::log::{log_writer_default_set_use_stderr, log_writer_default_would_drop};
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="kw">pub use </span><span class="self">self</span>::log::{log_writer_is_journald, log_writer_supports_color};
 
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;log&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[macro_use]

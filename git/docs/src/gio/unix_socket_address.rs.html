@@ -226,24 +226,18 @@
 <a href="#153" id="153">153</a>
 <a href="#154" id="154">154</a>
 <a href="#155" id="155">155</a>
-<a href="#156" id="156">156</a>
-<a href="#157" id="157">157</a>
-<a href="#158" id="158">158</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::SocketAddress;
-<span class="kw">use </span><span class="kw">crate</span>::UnixSocketAddress;
-<span class="kw">use </span><span class="kw">crate</span>::UnixSocketAddressType;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="attr">#[cfg(not(feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="attr">#[cfg(not(feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span>std::ffi::OsStr;
 <span class="attr">#[cfg(unix)]
 #[cfg(not(feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span>std::os::unix::ffi::OsStrExt;
-<span class="kw">use </span>std::path;
-<span class="kw">use </span>std::ptr;
-<span class="kw">use </span>std::slice;
+<span class="kw">use </span>std::{path, ptr, slice};
+
+<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
+
+<span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, SocketAddress, UnixSocketAddress, UnixSocketAddressType};
 
 <span class="attr">#[derive(Debug)]
 </span><span class="kw">pub enum </span>UnixSocketAddressPath&lt;<span class="lifetime">&#39;a</span>&gt; {

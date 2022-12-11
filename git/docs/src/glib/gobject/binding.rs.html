@@ -380,14 +380,9 @@
 <a href="#307" id="307">307</a>
 <a href="#308" id="308">308</a>
 <a href="#309" id="309">309</a>
-<a href="#310" id="310">310</a>
-<a href="#311" id="311">311</a>
-<a href="#312" id="312">312</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::Binding;
-<span class="kw">use </span><span class="kw">crate</span>::Object;
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, Binding, Object};
 
 <span class="kw">impl </span>Binding {
     <span class="doccomment">/// The [`Object`][crate::Object] that should be used as the source of the binding
@@ -405,8 +400,7 @@
 
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>test {
-    <span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-    <span class="kw">use </span><span class="kw">crate</span>::subclass::prelude::<span class="kw-2">*</span>;
+    <span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, subclass::prelude::<span class="kw-2">*</span>};
 
     <span class="attr">#[test]
     </span><span class="kw">fn </span>binding() {
@@ -609,11 +603,11 @@
     }
 
     <span class="kw">mod </span>imp {
-        <span class="kw">use super</span>::<span class="kw-2">*</span>;
-
-        <span class="kw">use </span>once_cell::sync::Lazy;
         <span class="kw">use </span>std::cell::RefCell;
 
+        <span class="kw">use </span>once_cell::sync::Lazy;
+
+        <span class="kw">use super</span>::<span class="kw-2">*</span>;
         <span class="kw">use crate as </span>glib;
 
         <span class="attr">#[derive(Debug, Default)]

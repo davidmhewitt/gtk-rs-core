@@ -1030,13 +1030,16 @@
 <a href="#957" id="957">957</a>
 <a href="#958" id="958">958</a>
 <a href="#959" id="959">959</a>
+<a href="#960" id="960">960</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::value::{FromValue, Value, ValueTypeChecker};
-<span class="kw">use </span><span class="kw">crate</span>::Type;
-<span class="kw">use </span>std::ffi::CStr;
-<span class="kw">use </span>std::{cmp, fmt, ptr};
+</span><span class="kw">use </span>std::{cmp, ffi::CStr, fmt, ptr};
+
+<span class="kw">use crate</span>::{
+    translate::<span class="kw-2">*</span>,
+    value::{FromValue, ValueTypeChecker},
+    Type, Value,
+};
 
 <span class="doccomment">/// These are logical ids for special directories which are defined
 /// depending on the platform used. You should use [`user_special_dir()`][crate::user_special_dir()]
@@ -1968,7 +1971,6 @@
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
-
     <span class="kw">use </span><span class="kw">crate</span>::StaticType;
 
     <span class="attr">#[test]

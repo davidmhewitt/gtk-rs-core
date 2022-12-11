@@ -200,18 +200,22 @@
 <a href="#127" id="127">127</a>
 <a href="#128" id="128">128</a>
 <a href="#129" id="129">129</a>
+<a href="#130" id="130">130</a>
+<a href="#131" id="131">131</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span>futures_channel::oneshot;
+</span><span class="kw">use </span>std::{
+    future::Future,
+    pin::{<span class="self">self</span>, Pin},
+};
+
+<span class="kw">use </span>futures_channel::oneshot;
 <span class="kw">use </span>futures_core::{
     task::{Context, Poll},
     FusedFuture,
 };
-<span class="kw">use </span>std::future::Future;
-<span class="kw">use </span>std::pin::{<span class="self">self</span>, Pin};
 
-<span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::Cancellable;
+<span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, Cancellable};
 
 <span class="kw">pub struct </span>GioFuture&lt;F, O, T&gt; {
     obj: O,

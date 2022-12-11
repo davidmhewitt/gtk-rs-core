@@ -258,13 +258,13 @@
 // rustdoc-stripper-ignore-next
 </span><span class="doccomment">//! `IMPL` Low level signal support.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::object::ObjectType;
-<span class="kw">use </span><span class="kw">crate</span>::translate::{from_glib, FromGlib, IntoGlib, ToGlibPtr};
+</span><span class="kw">use </span>std::{mem, num::NonZeroU64};
+
 <span class="kw">use </span>ffi::{gboolean, gpointer};
 <span class="kw">use </span>gobject_ffi::{<span class="self">self</span>, GCallback};
 <span class="kw">use </span>libc::{c_char, c_ulong, c_void};
-<span class="kw">use </span>std::mem;
-<span class="kw">use </span>std::num::NonZeroU64;
+
+<span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>};
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// The id of a signal that is returned by `connect`.

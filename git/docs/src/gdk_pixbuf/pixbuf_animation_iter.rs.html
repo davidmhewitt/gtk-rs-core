@@ -201,12 +201,14 @@
 <a href="#128" id="128">128</a>
 <a href="#129" id="129">129</a>
 <a href="#130" id="130">130</a>
+<a href="#131" id="131">131</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">super</span>::Pixbuf;
+</span><span class="kw">use </span>std::time::SystemTime;
+
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 
-<span class="kw">use </span>std::time::SystemTime;
+<span class="kw">use </span><span class="kw">super</span>::Pixbuf;
 
 <span class="macro">glib::wrapper! </span>{
     <span class="doccomment">/// An opaque object representing an iterator which points to a

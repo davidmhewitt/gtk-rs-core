@@ -982,23 +982,17 @@
 <a href="#909" id="909">909</a>
 <a href="#910" id="910">910</a>
 <a href="#911" id="911">911</a>
-<a href="#912" id="912">912</a>
-<a href="#913" id="913">913</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::thread_guard::ThreadGuard;
-<span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::Continue;
-<span class="kw">use </span><span class="kw">crate</span>::MainContext;
-<span class="kw">use </span><span class="kw">crate</span>::Priority;
-<span class="kw">use </span><span class="kw">crate</span>::Source;
-<span class="kw">use </span><span class="kw">crate</span>::SourceId;
-<span class="kw">use </span>std::collections::VecDeque;
-<span class="kw">use </span>std::fmt;
-<span class="kw">use </span>std::mem;
-<span class="kw">use </span>std::ptr;
-<span class="kw">use </span>std::sync::mpsc;
-<span class="kw">use </span>std::sync::{Arc, Condvar, Mutex};
+</span><span class="kw">use </span>std::{
+    collections::VecDeque,
+    fmt, mem, ptr,
+    sync::{mpsc, Arc, Condvar, Mutex},
+};
+
+<span class="kw">use crate</span>::{
+    thread_guard::ThreadGuard, translate::<span class="kw-2">*</span>, Continue, MainContext, Priority, Source, SourceId,
+};
 
 <span class="kw">enum </span>ChannelSourceState {
     NotAttached,
@@ -1581,13 +1575,15 @@
 
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
+    <span class="kw">use </span>std::{
+        cell::RefCell,
+        rc::Rc,
+        sync::atomic::{AtomicBool, Ordering},
+        thread, time,
+    };
+
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use </span><span class="kw">crate</span>::MainLoop;
-    <span class="kw">use </span>std::cell::RefCell;
-    <span class="kw">use </span>std::rc::Rc;
-    <span class="kw">use </span>std::sync::atomic::{AtomicBool, Ordering};
-    <span class="kw">use </span>std::thread;
-    <span class="kw">use </span>std::time;
 
     <span class="attr">#[test]
     </span><span class="kw">fn </span>test_channel() {

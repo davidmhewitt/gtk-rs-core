@@ -543,21 +543,13 @@
 <a href="#470" id="470">470</a>
 <a href="#471" id="471">471</a>
 <a href="#472" id="472">472</a>
-<a href="#473" id="473">473</a>
-<a href="#474" id="474">474</a>
-<a href="#475" id="475">475</a>
-<a href="#476" id="476">476</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::Cancellable;
-<span class="kw">use </span><span class="kw">crate</span>::DataInputStream;
-<span class="kw">use </span>glib::object::IsA;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::GString;
-<span class="kw">use </span>std::boxed::Box <span class="kw">as </span>Box_;
-<span class="kw">use </span>std::mem;
-<span class="kw">use </span>std::pin::Pin;
-<span class="kw">use </span>std::ptr;
+</span><span class="kw">use </span>std::{boxed::Box <span class="kw">as </span>Box_, mem, pin::Pin, ptr};
+
+<span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>, GString};
+
+<span class="kw">use crate</span>::{Cancellable, DataInputStream};
 
 <span class="kw">pub trait </span>DataInputStreamExtManual: <span class="lifetime">&#39;static </span>{
     <span class="doccomment">/// Reads a line from the data input stream. Note that no encoding

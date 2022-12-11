@@ -4666,40 +4666,23 @@
 <a href="#4593" id="4593">4593</a>
 <a href="#4594" id="4594">4594</a>
 <a href="#4595" id="4595">4595</a>
-<a href="#4596" id="4596">4596</a>
-<a href="#4597" id="4597">4597</a>
-<a href="#4598" id="4598">4598</a>
-<a href="#4599" id="4599">4599</a>
-<a href="#4600" id="4600">4600</a>
-<a href="#4601" id="4601">4601</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
 </span><span class="doccomment">//! `IMPL` Object wrapper implementation and `Object` binding.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::types::StaticType;
-<span class="kw">use </span><span class="kw">crate</span>::PtrSlice;
-<span class="kw">use crate</span>::{quark::Quark, subclass::signal::SignalQuery};
-<span class="kw">use crate</span>::{translate::<span class="kw-2">*</span>, value::FromValue};
-<span class="kw">use </span>std::cmp;
-<span class="kw">use </span>std::fmt;
-<span class="kw">use </span>std::hash;
-<span class="kw">use </span>std::marker::PhantomData;
-<span class="kw">use </span>std::mem;
-<span class="kw">use </span>std::mem::ManuallyDrop;
-<span class="kw">use </span>std::ops;
-<span class="kw">use </span>std::pin::Pin;
-<span class="kw">use </span>std::ptr;
+</span><span class="kw">use </span>std::{cmp, fmt, hash, marker::PhantomData, mem, mem::ManuallyDrop, ops, pin::Pin, ptr};
 
-<span class="kw">use </span><span class="kw">crate</span>::closure::TryFromClosureReturnValue;
-<span class="kw">use </span><span class="kw">crate</span>::subclass::{prelude::ObjectSubclass, SignalId};
-<span class="kw">use </span><span class="kw">crate</span>::value::ToValue;
-<span class="kw">use </span><span class="kw">crate</span>::SignalHandlerId;
-<span class="kw">use </span><span class="kw">crate</span>::Type;
-<span class="kw">use </span><span class="kw">crate</span>::Value;
-<span class="kw">use crate</span>::{Closure, RustClosure};
-
-<span class="kw">use </span><span class="kw">crate</span>::thread_guard::thread_id;
+<span class="kw">use crate</span>::{
+    closure::TryFromClosureReturnValue,
+    prelude::<span class="kw-2">*</span>,
+    quark::Quark,
+    subclass::{prelude::<span class="kw-2">*</span>, signal::SignalQuery, SignalId},
+    thread_guard::thread_id,
+    translate::<span class="kw-2">*</span>,
+    value::FromValue,
+    Closure, PtrSlice, RustClosure, SignalHandlerId, Type, Value,
+};
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Implemented by types representing `glib::Object` and subclasses of it.
@@ -9168,11 +9151,16 @@
 
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
+    <span class="kw">use </span>std::{
+        cell::Cell,
+        rc::Rc,
+        sync::{
+            atomic::{AtomicBool, Ordering},
+            Arc,
+        },
+    };
+
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
-    <span class="kw">use </span>std::cell::Cell;
-    <span class="kw">use </span>std::rc::Rc;
-    <span class="kw">use </span>std::sync::atomic::{AtomicBool, Ordering};
-    <span class="kw">use </span>std::sync::Arc;
 
     <span class="attr">#[test]
     </span><span class="kw">fn </span>new() {

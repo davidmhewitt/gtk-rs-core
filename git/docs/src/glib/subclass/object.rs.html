@@ -693,20 +693,16 @@
 <a href="#620" id="620">620</a>
 <a href="#621" id="621">621</a>
 <a href="#622" id="622">622</a>
-<a href="#623" id="623">623</a>
-<a href="#624" id="624">624</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
 </span><span class="doccomment">//! Module that contains all types needed for creating a direct subclass of `GObject`
 //! or implementing virtual methods of it.
 
-</span><span class="kw">use </span><span class="kw">super</span>::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">super</span>::Signal;
-<span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
-<span class="kw">use crate</span>::{Cast, Object, ObjectType, ParamSpec, Value};
-<span class="kw">use </span>std::mem;
-<span class="kw">use </span>std::ptr;
+</span><span class="kw">use </span>std::{mem, ptr};
+
+<span class="kw">use super</span>::{prelude::<span class="kw-2">*</span>, Signal};
+<span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>, Cast, Object, ParamSpec, Value};
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Trait for implementors of `glib::Object` subclasses.
@@ -926,17 +922,13 @@
 
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>test {
-    <span class="kw">use </span><span class="kw">super</span>::<span class="kw">super</span>::<span class="kw">super</span>::object::ObjectExt;
-    <span class="kw">use </span><span class="kw">super</span>::<span class="kw">super</span>::<span class="kw">super</span>::value::{ToValue, Value};
+    <span class="kw">use </span>std::cell::RefCell;
+
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="comment">// We rename the current crate as glib, since the macros in glib-macros
     // generate the glib namespace through the crate_ident_new utility,
     // and that returns `glib` (and not `crate`) when called inside the glib crate
     </span><span class="kw">use crate as </span>glib;
-    <span class="kw">use </span><span class="kw">crate</span>::ParamSpecBuilderExt;
-    <span class="kw">use </span><span class="kw">crate</span>::StaticType;
-
-    <span class="kw">use </span>std::cell::RefCell;
 
     <span class="kw">mod </span>imp {
         <span class="kw">use super</span>::<span class="kw-2">*</span>;
@@ -1245,8 +1237,10 @@
 
     <span class="attr">#[test]
     </span><span class="kw">fn </span>test_signals() {
-        <span class="kw">use </span>std::sync::atomic::{AtomicBool, Ordering};
-        <span class="kw">use </span>std::sync::Arc;
+        <span class="kw">use </span>std::sync::{
+            atomic::{AtomicBool, Ordering},
+            Arc,
+        };
 
         <span class="kw">let </span>type_ = SimpleObject::static_type();
         <span class="kw">let </span>obj = Object::with_type(type_, <span class="kw-2">&amp;</span>[(<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span><span class="string">&quot;old-name&quot;</span>)]);
@@ -1289,8 +1283,10 @@
 
     <span class="attr">#[test]
     </span><span class="kw">fn </span>test_callback_validity() {
-        <span class="kw">use </span>std::sync::atomic::{AtomicBool, Ordering};
-        <span class="kw">use </span>std::sync::Arc;
+        <span class="kw">use </span>std::sync::{
+            atomic::{AtomicBool, Ordering},
+            Arc,
+        };
 
         <span class="kw">let </span>type_ = SimpleObject::static_type();
         <span class="kw">let </span>obj = Object::with_type(type_, <span class="kw-2">&amp;</span>[(<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span><span class="string">&quot;old-name&quot;</span>)]);

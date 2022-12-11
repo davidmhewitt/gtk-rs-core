@@ -172,13 +172,16 @@
 <a href="#99" id="99">99</a>
 <a href="#100" id="100">100</a>
 <a href="#101" id="101">101</a>
+<a href="#102" id="102">102</a>
+<a href="#103" id="103">103</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span>futures_util::{
+</span><span class="kw">use </span>std::{error, fmt};
+
+<span class="kw">use </span>futures_util::{
     future::{<span class="self">self</span>, Either, Future},
     pin_mut,
 };
-<span class="kw">use </span>std::{error, fmt};
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// The error returned when a future times out.
@@ -224,11 +227,12 @@
 
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
-    <span class="kw">use super</span>::<span class="kw-2">*</span>;
-    <span class="kw">use </span><span class="kw">crate</span>::MainContext;
-    <span class="kw">use </span><span class="kw">crate</span>::MainLoop;
-    <span class="kw">use </span>futures_util::FutureExt;
     <span class="kw">use </span>std::time::Duration;
+
+    <span class="kw">use </span>futures_util::FutureExt;
+
+    <span class="kw">use super</span>::<span class="kw-2">*</span>;
+    <span class="kw">use crate</span>::{MainContext, MainLoop};
 
     <span class="attr">#[test]
     </span><span class="kw">fn </span>test_future_with_timeout() {

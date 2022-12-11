@@ -1073,45 +1073,20 @@
 <a href="#1000" id="1000">1000</a>
 <a href="#1001" id="1001">1001</a>
 <a href="#1002" id="1002">1002</a>
-<a href="#1003" id="1003">1003</a>
-<a href="#1004" id="1004">1004</a>
-<a href="#1005" id="1005">1005</a>
-<a href="#1006" id="1006">1006</a>
-<a href="#1007" id="1007">1007</a>
-<a href="#1008" id="1008">1008</a>
-<a href="#1009" id="1009">1009</a>
-<a href="#1010" id="1010">1010</a>
-<a href="#1011" id="1011">1011</a>
-<a href="#1012" id="1012">1012</a>
-<a href="#1013" id="1013">1013</a>
-<a href="#1014" id="1014">1014</a>
-<a href="#1015" id="1015">1015</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::font::{
-    FontExtents, FontFace, FontOptions, Glyph, ScaledFont, TextCluster, TextExtents,
-};
-<span class="kw">use </span><span class="kw">crate</span>::matrices::Matrix;
-<span class="kw">use </span><span class="kw">crate</span>::paths::Path;
-<span class="kw">use </span><span class="kw">crate</span>::Rectangle;
-<span class="kw">use crate</span>::{
-    Antialias, Content, FillRule, FontSlant, FontWeight, LineCap, LineJoin, Operator,
-    TextClusterFlags,
-};
+</span><span class="kw">use </span>std::{ffi::CString, fmt, mem::MaybeUninit, ops, ptr, slice};
+
 <span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::ffi::CString;
-<span class="kw">use </span>std::fmt;
-<span class="kw">use </span>std::mem::MaybeUninit;
-<span class="kw">use </span>std::ops;
-<span class="kw">use </span>std::ptr;
-<span class="kw">use </span>std::slice;
 
-<span class="kw">use </span><span class="kw">crate</span>::error::Error;
-<span class="kw">use </span><span class="kw">crate</span>::ffi::{cairo_rectangle_list_t, cairo_t};
-<span class="kw">use </span><span class="kw">crate</span>::patterns::Pattern;
-<span class="kw">use </span><span class="kw">crate</span>::surface::Surface;
-<span class="kw">use </span><span class="kw">crate</span>::utils::status_to_result;
+<span class="kw">use crate</span>::{
+    ffi::{cairo_rectangle_list_t, cairo_t},
+    utils::status_to_result,
+    Antialias, Content, Error, FillRule, FontExtents, FontFace, FontOptions, FontSlant, FontWeight,
+    Glyph, LineCap, LineJoin, Matrix, Operator, Path, Pattern, Rectangle, ScaledFont, Surface,
+    TextCluster, TextClusterFlags, TextExtents,
+};
 
 <span class="kw">pub struct </span>RectangleList {
     ptr: <span class="kw-2">*mut </span>cairo_rectangle_list_t,
@@ -2046,11 +2021,10 @@
 
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
-    <span class="kw">use super</span>::<span class="kw-2">*</span>;
-    <span class="kw">use </span><span class="kw">crate</span>::enums::Format;
-    <span class="kw">use </span><span class="kw">crate</span>::image_surface::ImageSurface;
-    <span class="kw">use </span><span class="kw">crate</span>::patterns::LinearGradient;
     <span class="kw">use </span>float_eq::float_eq;
+
+    <span class="kw">use super</span>::<span class="kw-2">*</span>;
+    <span class="kw">use crate</span>::{enums::Format, image_surface::ImageSurface, patterns::LinearGradient};
 
     <span class="kw">fn </span>create_ctx() -&gt; Context {
         <span class="kw">let </span>surface = ImageSurface::create(Format::ARgb32, <span class="number">10</span>, <span class="number">10</span>).unwrap();

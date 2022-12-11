@@ -423,10 +423,12 @@
 <a href="#350" id="350">350</a>
 <a href="#351" id="351">351</a>
 <a href="#352" id="352">352</a>
+<a href="#353" id="353">353</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use crate</span>::{translate::<span class="kw-2">*</span>, ConvertError, Error, GStr, GString, Slice};
-<span class="kw">use </span>std::{io, os::raw::c_char, path::PathBuf, ptr};
+</span><span class="kw">use </span>std::{io, os::raw::c_char, path::PathBuf, ptr};
+
+<span class="kw">use crate</span>::{translate::<span class="kw-2">*</span>, ConvertError, Error, GStr, GString, Slice};
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A wrapper for [`ConvertError`](crate::ConvertError) that can hold an offset into the input

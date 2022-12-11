@@ -165,20 +165,18 @@
 <a href="#92" id="92">92</a>
 <a href="#93" id="93">93</a>
 <a href="#94" id="94">94</a>
-<a href="#95" id="95">95</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::IOStream;
-<span class="kw">use </span><span class="kw">crate</span>::InputStreamAsyncRead;
-<span class="kw">use </span><span class="kw">crate</span>::OutputStreamAsyncWrite;
-<span class="kw">use </span><span class="kw">crate</span>::PollableInputStream;
-<span class="kw">use </span><span class="kw">crate</span>::PollableOutputStream;
+</span><span class="kw">use </span>std::{io, pin::Pin};
+
 <span class="kw">use </span>futures_core::task::{Context, Poll};
 <span class="kw">use </span>futures_io::{AsyncRead, AsyncWrite};
-<span class="kw">use </span>glib::object::{Cast, IsA};
-<span class="kw">use </span>std::io;
-<span class="kw">use </span>std::pin::Pin;
+<span class="kw">use </span>glib::prelude::<span class="kw-2">*</span>;
+
+<span class="kw">use crate</span>::{
+    prelude::<span class="kw-2">*</span>, IOStream, InputStreamAsyncRead, OutputStreamAsyncWrite, PollableInputStream,
+    PollableOutputStream,
+};
 
 <span class="kw">pub trait </span>IOStreamExtManual: Sized + IsA&lt;IOStream&gt; {
     <span class="kw">fn </span>into_async_read_write(<span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;IOStreamAsyncReadWrite&lt;<span class="self">Self</span>&gt;, <span class="self">Self</span>&gt; {

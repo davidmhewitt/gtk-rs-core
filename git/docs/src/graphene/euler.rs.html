@@ -257,17 +257,13 @@
 <a href="#184" id="184">184</a>
 <a href="#185" id="185">185</a>
 <a href="#186" id="186">186</a>
-<a href="#187" id="187">187</a>
-<a href="#188" id="188">188</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::Euler;
-<span class="kw">use </span><span class="kw">crate</span>::EulerOrder;
-<span class="kw">use </span><span class="kw">crate</span>::Matrix;
-<span class="kw">use </span><span class="kw">crate</span>::Quaternion;
-<span class="kw">use </span><span class="kw">crate</span>::Vec3;
+</span><span class="kw">use </span>std::fmt;
+
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::fmt;
+
+<span class="kw">use crate</span>::{Euler, EulerOrder, Matrix, Quaternion, Vec3};
 
 <span class="kw">impl </span>Euler {
     <span class="doccomment">/// Initializes a [`Euler`][crate::Euler] using the given angles.

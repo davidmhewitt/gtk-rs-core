@@ -322,24 +322,21 @@
 <a href="#249" id="249">249</a>
 <a href="#250" id="250">250</a>
 <a href="#251" id="251">251</a>
-<a href="#252" id="252">252</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span>std::convert::TryFrom;
-<span class="kw">use </span>std::ffi::{CStr, CString};
-<span class="kw">use </span>std::fmt;
-<span class="kw">use </span>std::io;
-<span class="kw">use </span>std::mem;
-<span class="kw">use </span>std::ops::Deref;
-<span class="kw">use </span>std::path::Path;
-<span class="kw">use </span>std::ptr;
-
-<span class="kw">use </span><span class="kw">crate</span>::enums::{PsLevel, SurfaceType};
-<span class="kw">use </span><span class="kw">crate</span>::error::Error;
-<span class="kw">use </span><span class="kw">crate</span>::surface::Surface;
+</span><span class="kw">use </span>std::{
+    convert::TryFrom,
+    ffi::{CStr, CString},
+    fmt, io, mem,
+    ops::Deref,
+    path::Path,
+    ptr,
+};
 
 <span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
+
+<span class="kw">use crate</span>::{Error, PsLevel, Surface, SurfaceType};
 
 <span class="kw">impl </span>PsLevel {
     <span class="kw">pub fn </span>as_str(<span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; {
@@ -435,9 +432,10 @@
 
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>test {
+    <span class="kw">use </span>tempfile::tempfile;
+
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use </span><span class="kw">crate</span>::context::<span class="kw-2">*</span>;
-    <span class="kw">use </span>tempfile::tempfile;
 
     <span class="kw">fn </span>draw(surface: <span class="kw-2">&amp;</span>Surface) {
         <span class="kw">let </span>cr = Context::new(surface).expect(<span class="string">&quot;Can&#39;t create a Cairo context&quot;</span>);

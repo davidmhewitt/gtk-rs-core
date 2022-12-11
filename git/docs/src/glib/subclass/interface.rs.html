@@ -277,14 +277,12 @@
 <a href="#204" id="204">204</a>
 <a href="#205" id="205">205</a>
 <a href="#206" id="206">206</a>
-<a href="#207" id="207">207</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use super</span>::{InitializingType, Signal};
-<span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
-<span class="kw">use crate</span>::{IsA, Object, ObjectExt, ParamSpec, Type};
-<span class="kw">use </span>std::marker;
-<span class="kw">use </span>std::mem;
+</span><span class="kw">use </span>std::{marker, mem};
+
+<span class="kw">use super</span>::{InitializingType, Signal};
+<span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>, Object, ParamSpec, Type};
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Trait for a type list of prerequisite object types.

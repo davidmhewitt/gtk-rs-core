@@ -294,26 +294,13 @@
 <a href="#221" id="221">221</a>
 <a href="#222" id="222">222</a>
 <a href="#223" id="223">223</a>
-<a href="#224" id="224">224</a>
-<a href="#225" id="225">225</a>
-<a href="#226" id="226">226</a>
-<a href="#227" id="227">227</a>
-<a href="#228" id="228">228</a>
-<a href="#229" id="229">229</a>
-<a href="#230" id="230">230</a>
-<a href="#231" id="231">231</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span>glib::object::Cast;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::Error;
+</span><span class="kw">use </span>std::ptr;
 
-<span class="kw">use </span>glib::subclass::prelude::<span class="kw-2">*</span>;
+<span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, subclass::prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>, Error};
 
-<span class="kw">use </span>std::ptr;
-
-<span class="kw">use </span><span class="kw">crate</span>::Cancellable;
-<span class="kw">use </span><span class="kw">crate</span>::Initable;
+<span class="kw">use crate</span>::{Cancellable, Initable};
 
 <span class="kw">pub trait </span>InitableImpl: ObjectImpl {
     <span class="kw">fn </span>init(<span class="kw-2">&amp;</span><span class="self">self</span>, cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>Cancellable&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), Error&gt; {
@@ -385,15 +372,12 @@
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
-    <span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-    <span class="kw">use </span><span class="kw">crate</span>::traits::InitableExt;
-    <span class="kw">use crate</span>::{Cancellable, Initable};
+    <span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, Cancellable, Initable};
 
     <span class="kw">pub mod </span>imp {
-        <span class="kw">use super</span>::<span class="kw-2">*</span>;
-        <span class="kw">use </span><span class="kw">crate</span>::Cancellable;
-        <span class="kw">use </span><span class="kw">crate</span>::Initable;
         <span class="kw">use </span>std::cell::Cell;
+
+        <span class="kw">use super</span>::<span class="kw-2">*</span>;
 
         <span class="kw">pub struct </span>InitableTestType(<span class="kw">pub </span>Cell&lt;u64&gt;);
 

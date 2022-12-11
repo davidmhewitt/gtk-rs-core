@@ -1450,13 +1450,11 @@
 <a href="#1377" id="1377">1377</a>
 <a href="#1378" id="1378">1378</a>
 <a href="#1379" id="1379">1379</a>
-<a href="#1380" id="1380">1380</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::iter::FusedIterator;
-<span class="kw">use </span>std::marker::PhantomData;
-<span class="kw">use </span>std::{fmt, mem, ptr};
+</span><span class="kw">use </span>std::{fmt, iter::FusedIterator, marker::PhantomData, mem, ptr};
+
+<span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
 
 <span class="attr">#[derive(Debug, PartialEq, Eq)]
 </span><span class="kw">enum </span>ContainerTransfer {

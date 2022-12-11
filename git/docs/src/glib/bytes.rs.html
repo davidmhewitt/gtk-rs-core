@@ -341,15 +341,22 @@
 <a href="#268" id="268">268</a>
 <a href="#269" id="269">269</a>
 <a href="#270" id="270">270</a>
+<a href="#271" id="271">271</a>
+<a href="#272" id="272">272</a>
+<a href="#273" id="273">273</a>
+<a href="#274" id="274">274</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::borrow::Borrow;
-<span class="kw">use </span>std::cmp::{Eq, Ord, Ordering, PartialEq, PartialOrd};
-<span class="kw">use </span>std::fmt;
-<span class="kw">use </span>std::hash::{Hash, Hasher};
-<span class="kw">use </span>std::ops::Deref;
-<span class="kw">use </span>std::slice;
+</span><span class="kw">use </span>std::{
+    borrow::Borrow,
+    cmp::{Eq, Ord, Ordering, PartialEq, PartialOrd},
+    fmt,
+    hash::{Hash, Hasher},
+    ops::Deref,
+    slice,
+};
+
+<span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
 
 <span class="macro">wrapper! </span>{
     <span class="comment">// rustdoc-stripper-ignore-next
@@ -557,8 +564,9 @@
 
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
-    <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use </span>std::collections::HashSet;
+
+    <span class="kw">use super</span>::<span class="kw-2">*</span>;
 
     <span class="attr">#[test]
     </span><span class="kw">fn </span>eq() {

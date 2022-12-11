@@ -235,13 +235,16 @@
 <a href="#162" id="162">162</a>
 <a href="#163" id="163">163</a>
 <a href="#164" id="164">164</a>
+<a href="#165" id="165">165</a>
+<a href="#166" id="166">166</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
-</span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::fmt;
+</span><span class="kw">use </span>std::fmt;
 <span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">use </span>std::mem;
+
+<span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
+</span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 
 <span class="attr">#[derive(Clone, Copy, PartialEq)]
 #[repr(transparent)]
@@ -378,7 +381,8 @@
     <span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
     #[test]
     </span><span class="kw">fn </span>rectangle_gvalues() {
-        <span class="kw">use </span>glib::ToValue;
+        <span class="kw">use </span>glib::prelude::<span class="kw-2">*</span>;
+
         <span class="kw">let </span>rect = Rectangle::new(<span class="number">1.</span>, <span class="number">2.</span>, <span class="number">3.</span>, <span class="number">4.</span>);
         <span class="kw">let </span>value = rect.to_value();
         <span class="macro">assert_eq!</span>(value.get::&lt;Rectangle&gt;().unwrap().width(), <span class="number">3.</span>);

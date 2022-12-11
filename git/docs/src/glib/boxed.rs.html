@@ -613,18 +613,22 @@
 <a href="#540" id="540">540</a>
 <a href="#541" id="541">541</a>
 <a href="#542" id="542">542</a>
+<a href="#543" id="543">543</a>
+<a href="#544" id="544">544</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
 </span><span class="doccomment">//! `IMPL` Boxed wrapper implementation.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::cmp;
-<span class="kw">use </span>std::fmt;
-<span class="kw">use </span>std::hash::{Hash, Hasher};
-<span class="kw">use </span>std::marker::PhantomData;
-<span class="kw">use </span>std::ops::{Deref, DerefMut};
-<span class="kw">use </span>std::ptr;
+</span><span class="kw">use </span>std::{
+    cmp, fmt,
+    hash::{Hash, Hasher},
+    marker::PhantomData,
+    ops::{Deref, DerefMut},
+    ptr,
+};
+
+<span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Wrapper implementations for Boxed types. See `wrapper!`.

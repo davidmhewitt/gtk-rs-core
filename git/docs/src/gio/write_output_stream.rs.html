@@ -413,20 +413,23 @@
 <a href="#340" id="340">340</a>
 <a href="#341" id="341">341</a>
 <a href="#342" id="342">342</a>
+<a href="#343" id="343">343</a>
+<a href="#344" id="344">344</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::subclass::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::OutputStream;
+</span><span class="kw">use </span>std::{
+    any::Any,
+    io::{Seek, Write},
+};
 
-<span class="kw">use </span>std::any::Any;
-<span class="kw">use </span>std::io::{Seek, Write};
-
-<span class="kw">use </span><span class="kw">crate</span>::read_input_stream::std_error_to_gio_error;
+<span class="kw">use crate</span>::{
+    prelude::<span class="kw-2">*</span>, read_input_stream::std_error_to_gio_error, subclass::prelude::<span class="kw-2">*</span>, OutputStream,
+};
 
 <span class="kw">mod </span>imp {
-    <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use </span>std::cell::RefCell;
+
+    <span class="kw">use super</span>::<span class="kw-2">*</span>;
 
     <span class="kw">pub</span>(<span class="kw">super</span>) <span class="kw">enum </span>Writer {
         Write(AnyWriter),
@@ -706,8 +709,9 @@
 
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
-    <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use </span>std::io::Cursor;
+
+    <span class="kw">use super</span>::<span class="kw-2">*</span>;
 
     <span class="attr">#[test]
     </span><span class="kw">fn </span>test_write() {

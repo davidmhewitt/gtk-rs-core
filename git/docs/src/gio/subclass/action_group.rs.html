@@ -769,16 +769,14 @@
 <a href="#696" id="696">696</a>
 <a href="#697" id="697">697</a>
 <a href="#698" id="698">698</a>
-<a href="#699" id="699">699</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::ActionGroup;
-<span class="kw">use </span>glib::subclass::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::{Cast, GString, ObjectExt, Quark, Variant, VariantType};
+</span><span class="kw">use </span>std::{mem, ptr};
+
+<span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, subclass::prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>, GString, Quark, Variant, VariantType};
 <span class="kw">use </span>once_cell::sync::Lazy;
-<span class="kw">use </span>std::mem;
-<span class="kw">use </span>std::ptr;
+
+<span class="kw">use </span><span class="kw">crate</span>::ActionGroup;
 
 <span class="kw">pub trait </span>ActionGroupImpl: ObjectImpl {
     <span class="kw">fn </span>action_added(<span class="kw-2">&amp;</span><span class="self">self</span>, action_name: <span class="kw-2">&amp;</span>str) {

@@ -1159,29 +1159,19 @@
 <a href="#1086" id="1086">1086</a>
 <a href="#1087" id="1087">1087</a>
 <a href="#1088" id="1088">1088</a>
-<a href="#1089" id="1089">1089</a>
-<a href="#1090" id="1090">1090</a>
-<a href="#1091" id="1091">1091</a>
-<a href="#1092" id="1092">1092</a>
-<a href="#1093" id="1093">1093</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::translate::{from_glib, from_glib_full, FromGlib, IntoGlib, ToGlibPtr};
-<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
-</span><span class="kw">use </span><span class="kw">crate</span>::IOCondition;
+</span><span class="attr">#[cfg(unix)]
+</span><span class="kw">use </span>std::os::unix::io::RawFd;
+<span class="kw">use </span>std::{cell::RefCell, mem::transmute, num::NonZeroU32, time::Duration};
+
 <span class="kw">use </span>ffi::{<span class="self">self</span>, gboolean, gpointer};
 <span class="attr">#[cfg(all(not(unix), feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span>libc::c_int <span class="kw">as </span>RawFd;
-<span class="kw">use </span>std::cell::RefCell;
-<span class="kw">use </span>std::mem::transmute;
-<span class="kw">use </span>std::num::NonZeroU32;
-<span class="attr">#[cfg(unix)]
-</span><span class="kw">use </span>std::os::unix::io::RawFd;
-<span class="kw">use </span>std::time::Duration;
 
-<span class="kw">use </span><span class="kw">crate</span>::thread_guard::ThreadGuard;
-<span class="kw">use </span><span class="kw">crate</span>::MainContext;
-<span class="kw">use </span><span class="kw">crate</span>::Source;
+<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="kw">use </span><span class="kw">crate</span>::IOCondition;
+<span class="kw">use crate</span>::{thread_guard::ThreadGuard, translate::<span class="kw-2">*</span>, MainContext, Source};
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// The id of a source that is returned by `idle_add` and `timeout_add`.

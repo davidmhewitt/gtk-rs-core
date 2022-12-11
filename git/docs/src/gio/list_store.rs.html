@@ -297,18 +297,13 @@
 <a href="#224" id="224">224</a>
 <a href="#225" id="225">225</a>
 <a href="#226" id="226">226</a>
-<a href="#227" id="227">227</a>
-<a href="#228" id="228">228</a>
-<a href="#229" id="229">229</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::auto::traits::ListModelExt;
-<span class="kw">use </span><span class="kw">crate</span>::ListModel;
-<span class="kw">use </span><span class="kw">crate</span>::ListStore;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::Cast;
-<span class="kw">use </span>glib::{IsA, Object};
-<span class="kw">use </span>std::cmp::Ordering;
+</span><span class="kw">use </span>std::cmp::Ordering;
+
+<span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>, Object};
+
+<span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, ListModel, ListStore};
 
 <span class="kw">impl </span>ListStore {
     <span class="doccomment">/// Inserts `item` into `self` at a position to be determined by the
@@ -499,8 +494,7 @@
 
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
-    <span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-    <span class="kw">use </span><span class="kw">crate</span>::ListStore;
+    <span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, ListStore};
 
     <span class="attr">#[test]
     </span><span class="kw">fn </span>splice() {

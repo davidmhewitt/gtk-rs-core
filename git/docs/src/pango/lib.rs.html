@@ -221,6 +221,7 @@
 <a href="#148" id="148">148</a>
 <a href="#149" id="149">149</a>
 <a href="#150" id="150">150</a>
+<a href="#151" id="151">151</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="attr">#![cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, feature(doc_cfg))]
@@ -234,9 +235,10 @@
 #[allow(clippy::derive_hash_xor_eq)]
 #[allow(unused_imports)]
 </span><span class="kw">mod </span>auto;
-<span class="kw">pub use </span><span class="kw">crate</span>::auto::functions::<span class="kw-2">*</span>;
-<span class="kw">pub use </span><span class="kw">crate</span>::auto::<span class="kw-2">*</span>;
-<span class="kw">pub use </span><span class="kw">crate</span>::functions::<span class="kw-2">*</span>;
+<span class="kw">pub use crate</span>::{
+    auto::{functions::<span class="kw-2">*</span>, <span class="kw-2">*</span>},
+    functions::<span class="kw-2">*</span>,
+};
 
 <span class="doccomment">/// The scale between dimensions used for Pango distances and device units.
 ///

@@ -2262,10 +2262,10 @@
 
 </span><span class="kw">use </span>std::fmt::{<span class="self">self</span>, Debug};
 
-<span class="kw">use </span><span class="kw">crate</span>::error::Error;
-
 <span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
+
+<span class="kw">use </span><span class="kw">crate</span>::Error;
 
 <span class="comment">// Helper macro for our GValue related trait impls
 </span><span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]

@@ -173,11 +173,11 @@
 <a href="#100" id="100">100</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::Point3D;
-<span class="kw">use </span><span class="kw">crate</span>::Triangle;
-<span class="kw">use </span><span class="kw">crate</span>::Vec3;
+</span><span class="kw">use </span>std::fmt;
+
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::fmt;
+
+<span class="kw">use crate</span>::{Point3D, Triangle, Vec3};
 
 <span class="kw">impl </span>Triangle {
     <span class="doccomment">/// Initializes a [`Triangle`][crate::Triangle] using the three given arrays

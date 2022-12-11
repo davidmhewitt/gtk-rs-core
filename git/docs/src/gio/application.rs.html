@@ -289,16 +289,20 @@
 <a href="#216" id="216">216</a>
 <a href="#217" id="217">217</a>
 <a href="#218" id="218">218</a>
+<a href="#219" id="219">219</a>
+<a href="#220" id="220">220</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::Application;
-<span class="kw">use </span><span class="kw">crate</span>::File;
-<span class="kw">use </span>glib::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::signal::{connect_raw, SignalHandlerId};
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::GString;
-<span class="kw">use </span>std::boxed::Box <span class="kw">as </span>Box_;
-<span class="kw">use </span>std::mem::transmute;
+</span><span class="kw">use </span>std::{boxed::Box <span class="kw">as </span>Box_, mem::transmute};
+
+<span class="kw">use </span>glib::{
+    prelude::<span class="kw-2">*</span>,
+    signal::{connect_raw, SignalHandlerId},
+    translate::<span class="kw-2">*</span>,
+    GString,
+};
+
+<span class="kw">use crate</span>::{Application, File};
 
 <span class="kw">pub trait </span>ApplicationExtManual {
     <span class="doccomment">/// Runs the application.

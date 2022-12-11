@@ -348,13 +348,15 @@
 <a href="#275" id="275">275</a>
 <a href="#276" id="276">276</a>
 <a href="#277" id="277">277</a>
+<a href="#278" id="278">278</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::utils::crate_ident_new;
-<span class="kw">use </span>proc_macro2::{Ident, Span, TokenStream};
+</span><span class="kw">use </span>proc_macro2::{Ident, Span, TokenStream};
 <span class="kw">use </span>proc_macro_error::abort;
 <span class="kw">use </span>quote::{quote, ToTokens, TokenStreamExt};
 <span class="kw">use </span>syn::{ext::IdentExt, spanned::Spanned, Token};
+
+<span class="kw">use </span><span class="kw">crate</span>::utils::crate_ident_new;
 
 <span class="attr">#[derive(Clone, Copy, Debug, Eq, PartialEq)]
 </span><span class="kw">enum </span>CaptureKind {

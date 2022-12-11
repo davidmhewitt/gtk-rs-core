@@ -315,15 +315,12 @@
 <a href="#242" id="242">242</a>
 <a href="#243" id="243">243</a>
 <a href="#244" id="244">244</a>
-<a href="#245" id="245">245</a>
-<a href="#246" id="246">246</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
 </span><span class="doccomment">//! Module for registering shared types for Rust types.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::StaticType;
+</span><span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>};
 
 <span class="kw">pub unsafe trait </span>RefCounted: Clone + Sized + <span class="lifetime">&#39;static </span>{
     <span class="comment">// rustdoc-stripper-ignore-next
@@ -470,7 +467,6 @@
     // generate the glib namespace through the crate_ident_new utility,
     // and that returns `glib` (and not `crate`) when called inside the glib crate
     </span><span class="kw">use crate as </span>glib;
-    <span class="kw">use </span><span class="kw">crate</span>::value::ToValue;
 
     <span class="attr">#[derive(Clone, Debug, PartialEq, Eq)]
     </span><span class="kw">struct </span>MySharedInner {

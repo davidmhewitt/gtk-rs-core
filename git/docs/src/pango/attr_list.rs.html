@@ -166,11 +166,15 @@
 <a href="#93" id="93">93</a>
 <a href="#94" id="94">94</a>
 <a href="#95" id="95">95</a>
+<a href="#96" id="96">96</a>
+<a href="#97" id="97">97</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use crate</span>::{AttrList, Attribute};
+</span><span class="kw">use </span>std::mem;
+
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::mem;
+
+<span class="kw">use crate</span>::{AttrList, Attribute};
 
 <span class="kw">impl </span>AttrList {
     <span class="doccomment">/// Insert the given attribute into the [`AttrList`][crate::AttrList].

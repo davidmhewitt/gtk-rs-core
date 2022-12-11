@@ -1375,27 +1375,20 @@
 <a href="#1302" id="1302">1302</a>
 <a href="#1303" id="1303">1303</a>
 <a href="#1304" id="1304">1304</a>
-<a href="#1305" id="1305">1305</a>
-<a href="#1306" id="1306">1306</a>
-<a href="#1307" id="1307">1307</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::types::{StaticType, Type};
-<span class="kw">use </span><span class="kw">crate</span>::value::{FromValue, ToValue};
-<span class="kw">use </span><span class="kw">crate</span>::Value;
-<span class="kw">use </span>std::borrow::{Borrow, Cow};
-<span class="kw">use </span>std::cmp::Ordering;
-<span class="kw">use </span>std::ffi::{CStr, CString, OsStr};
-<span class="kw">use </span>std::fmt;
-<span class="kw">use </span>std::hash;
-<span class="kw">use </span>std::mem;
-<span class="kw">use </span>std::ops::Deref;
-<span class="kw">use </span>std::os::raw::{c_char, c_void};
-<span class="kw">use </span>std::path::Path;
-<span class="kw">use </span>std::ptr;
-<span class="kw">use </span>std::slice;
-<span class="kw">use </span>std::string::String;
+</span><span class="kw">use </span>std::{
+    borrow::{Borrow, Cow},
+    cmp::Ordering,
+    ffi::{CStr, CString, OsStr},
+    fmt, hash, mem,
+    ops::Deref,
+    os::raw::{c_char, c_void},
+    path::Path,
+    ptr, slice,
+};
+
+<span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>, value::FromValue, Type, Value};
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Representation of a borrowed [`GString`].
@@ -2549,8 +2542,9 @@
 <span class="attr">#[cfg(test)]
 #[allow(clippy::disallowed_names)]
 </span><span class="kw">mod </span>tests {
-    <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use </span>std::ffi::CString;
+
+    <span class="kw">use super</span>::<span class="kw-2">*</span>;
 
     <span class="attr">#[test]
     </span><span class="kw">fn </span>test_gstring() {

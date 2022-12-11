@@ -827,12 +827,20 @@
 <a href="#754" id="754">754</a>
 <a href="#755" id="755">755</a>
 <a href="#756" id="756">756</a>
+<a href="#757" id="757">757</a>
+<a href="#758" id="758">758</a>
+<a href="#759" id="759">759</a>
+<a href="#760" id="760">760</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::utils::crate_ident_new;
-<span class="kw">use </span>proc_macro::token_stream::IntoIter <span class="kw">as </span>ProcIter;
-<span class="kw">use </span>proc_macro::{Delimiter, Group, Ident, Punct, Spacing, Span, TokenStream, TokenTree};
-<span class="kw">use </span>std::iter::Peekable;
+</span><span class="kw">use </span>std::iter::Peekable;
+
+<span class="kw">use </span>proc_macro::{
+    token_stream::IntoIter <span class="kw">as </span>ProcIter, Delimiter, Group, Ident, Punct, Spacing, Span, TokenStream,
+    TokenTree,
+};
+
+<span class="kw">use </span><span class="kw">crate</span>::utils::crate_ident_new;
 
 <span class="attr">#[derive(Clone, Copy, Debug)]
 </span><span class="kw">enum </span>BorrowKind {

@@ -165,11 +165,11 @@
 <a href="#92" id="92">92</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::Frustum;
-<span class="kw">use </span><span class="kw">crate</span>::Matrix;
-<span class="kw">use </span><span class="kw">crate</span>::Plane;
+</span><span class="kw">use </span>std::fmt;
+
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::fmt;
+
+<span class="kw">use crate</span>::{Frustum, Matrix, Plane};
 
 <span class="kw">impl </span>Frustum {
     <span class="doccomment">/// Retrieves the planes that define the given [`Frustum`][crate::Frustum].

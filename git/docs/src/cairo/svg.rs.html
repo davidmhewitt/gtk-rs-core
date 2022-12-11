@@ -339,28 +339,25 @@
 <a href="#266" id="266">266</a>
 <a href="#267" id="267">267</a>
 <a href="#268" id="268">268</a>
-<a href="#269" id="269">269</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="attr">#[cfg(any(all(feature = <span class="string">&quot;svg&quot;</span>, feature = <span class="string">&quot;v1_16&quot;</span>), feature = <span class="string">&quot;dox&quot;</span>))]
-</span><span class="kw">use </span><span class="kw">crate</span>::enums::SvgUnit;
-<span class="kw">use </span><span class="kw">crate</span>::enums::{SurfaceType, SvgVersion};
-<span class="kw">use </span><span class="kw">crate</span>::error::Error;
-<span class="kw">use </span>std::convert::TryFrom;
-<span class="kw">use </span>std::ffi::{CStr, CString};
-<span class="kw">use </span>std::fmt;
-<span class="kw">use </span>std::io;
-<span class="kw">use </span>std::mem;
-<span class="kw">use </span>std::ops::Deref;
-<span class="attr">#[cfg(not(windows))]
+</span><span class="attr">#[cfg(not(windows))]
 </span><span class="kw">use </span>std::os::unix::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::path::Path;
-<span class="kw">use </span>std::ptr;
-
-<span class="kw">use </span><span class="kw">crate</span>::surface::Surface;
+<span class="kw">use </span>std::{
+    convert::TryFrom,
+    ffi::{CStr, CString},
+    fmt, io, mem,
+    ops::Deref,
+    path::Path,
+    ptr,
+};
 
 <span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
+
+<span class="attr">#[cfg(any(all(feature = <span class="string">&quot;svg&quot;</span>, feature = <span class="string">&quot;v1_16&quot;</span>), feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="kw">use </span><span class="kw">crate</span>::SvgUnit;
+<span class="kw">use crate</span>::{Error, Surface, SurfaceType, SvgVersion};
 
 <span class="kw">impl </span>SvgVersion {
     <span class="kw">pub fn </span>as_str(<span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str&gt; {
@@ -461,9 +458,10 @@
 
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>test {
+    <span class="kw">use </span>tempfile::{tempfile, NamedTempFile};
+
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use </span><span class="kw">crate</span>::context::<span class="kw-2">*</span>;
-    <span class="kw">use </span>tempfile::{tempfile, NamedTempFile};
 
     <span class="kw">fn </span>draw(surface: <span class="kw-2">&amp;</span>Surface) {
         <span class="kw">let </span>cr = Context::new(surface).expect(<span class="string">&quot;Can&#39;t create a Cairo context&quot;</span>);

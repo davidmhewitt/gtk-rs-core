@@ -97,11 +97,15 @@
 <a href="#24" id="24">24</a>
 <a href="#25" id="25">25</a>
 <a href="#26" id="26">26</a>
+<a href="#27" id="27">27</a>
+<a href="#28" id="28">28</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::UnixMountPoint;
+</span><span class="kw">use </span>std::mem;
+
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::mem;
+
+<span class="kw">use </span><span class="kw">crate</span>::UnixMountPoint;
 
 <span class="kw">impl </span>UnixMountPoint {
     <span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]

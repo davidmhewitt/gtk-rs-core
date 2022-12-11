@@ -180,13 +180,13 @@
 <a href="#107" id="107">107</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::Analysis;
-<span class="kw">use </span><span class="kw">crate</span>::GlyphString;
-<span class="kw">use </span><span class="kw">crate</span>::Item;
+</span><span class="kw">use </span>std::ptr;
+
+<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
+
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span><span class="kw">crate</span>::ShapeFlags;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::ptr;
+<span class="kw">use crate</span>::{Analysis, GlyphString, Item};
 
 <span class="attr">#[doc(alias = <span class="string">&quot;pango_reorder_items&quot;</span>)]
 </span><span class="kw">pub fn </span>reorder_items(logical_items: <span class="kw-2">&amp;</span>[<span class="kw-2">&amp;</span>Item]) -&gt; Vec&lt;Item&gt; {

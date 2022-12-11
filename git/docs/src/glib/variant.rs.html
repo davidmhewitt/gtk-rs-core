@@ -3182,10 +3182,6 @@
 <a href="#3109" id="3109">3109</a>
 <a href="#3110" id="3110">3110</a>
 <a href="#3111" id="3111">3111</a>
-<a href="#3112" id="3112">3112</a>
-<a href="#3113" id="3113">3113</a>
-<a href="#3114" id="3114">3114</a>
-<a href="#3115" id="3115">3115</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -3289,23 +3285,18 @@
 //! assert_eq!(PathBuf::from_variant(&amp;path_variant).as_deref(), Some(path));
 //! ```
 
-</span><span class="kw">use </span><span class="kw">crate</span>::bytes::Bytes;
-<span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::StaticType;
-<span class="kw">use </span><span class="kw">crate</span>::Type;
-<span class="kw">use </span><span class="kw">crate</span>::VariantTy;
-<span class="kw">use </span><span class="kw">crate</span>::VariantType;
-<span class="kw">use crate</span>::{VariantIter, VariantStrIter};
-<span class="kw">use </span>std::borrow::Cow;
-<span class="kw">use </span>std::cmp::{Eq, Ordering, PartialEq, PartialOrd};
-<span class="kw">use </span>std::collections::BTreeMap;
-<span class="kw">use </span>std::collections::HashMap;
-<span class="kw">use </span>std::fmt;
-<span class="kw">use </span>std::hash::{BuildHasher, Hash, Hasher};
-<span class="kw">use </span>std::mem;
-<span class="kw">use </span>std::ptr;
-<span class="kw">use </span>std::slice;
-<span class="kw">use </span>std::str;
+</span><span class="kw">use </span>std::{
+    borrow::Cow,
+    cmp::{Eq, Ordering, PartialEq, PartialOrd},
+    collections::{BTreeMap, HashMap},
+    fmt,
+    hash::{BuildHasher, Hash, Hasher},
+    mem, ptr, slice, str,
+};
+
+<span class="kw">use crate</span>::{
+    prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>, Bytes, Type, VariantIter, VariantStrIter, VariantTy, VariantType,
+};
 
 <span class="macro">wrapper! </span>{
     <span class="comment">// rustdoc-stripper-ignore-next
@@ -5974,8 +5965,9 @@
 
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
-    <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use </span>std::collections::{HashMap, HashSet};
+
+    <span class="kw">use super</span>::<span class="kw-2">*</span>;
 
     <span class="macro">macro_rules! </span>unsigned {
         (<span class="macro-nonterminal">$name</span>:ident, <span class="macro-nonterminal">$ty</span>:ident) =&gt; {

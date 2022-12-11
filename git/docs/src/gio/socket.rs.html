@@ -1579,51 +1579,26 @@
 <a href="#1506" id="1506">1506</a>
 <a href="#1507" id="1507">1507</a>
 <a href="#1508" id="1508">1508</a>
-<a href="#1509" id="1509">1509</a>
-<a href="#1510" id="1510">1510</a>
-<a href="#1511" id="1511">1511</a>
-<a href="#1512" id="1512">1512</a>
-<a href="#1513" id="1513">1513</a>
-<a href="#1514" id="1514">1514</a>
-<a href="#1515" id="1515">1515</a>
-<a href="#1516" id="1516">1516</a>
-<a href="#1517" id="1517">1517</a>
-<a href="#1518" id="1518">1518</a>
-<a href="#1519" id="1519">1519</a>
-<a href="#1520" id="1520">1520</a>
-<a href="#1521" id="1521">1521</a>
-<a href="#1522" id="1522">1522</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::Cancellable;
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-</span><span class="kw">use </span><span class="kw">crate</span>::PollableReturn;
-<span class="kw">use </span><span class="kw">crate</span>::Socket;
-<span class="kw">use </span><span class="kw">crate</span>::SocketAddress;
-<span class="kw">use </span><span class="kw">crate</span>::SocketControlMessage;
-<span class="kw">use </span>glib::object::{Cast, IsA};
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::ObjectType;
-<span class="kw">use </span>glib::Slice;
-<span class="kw">use </span>std::cell::RefCell;
-<span class="kw">use </span>std::marker::PhantomData;
-<span class="kw">use </span>std::mem::transmute;
-<span class="attr">#[cfg(all(not(unix), feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="attr">#[cfg(all(not(unix), feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span>std::os::raw::c_int;
 <span class="attr">#[cfg(all(not(windows), feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span>std::os::raw::c_void;
-<span class="kw">use </span>std::pin::Pin;
-<span class="kw">use </span>std::ptr;
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
-</span><span class="kw">use </span>std::time::Duration;
-
-<span class="kw">use </span>futures_core::stream::Stream;
-
 <span class="attr">#[cfg(unix)]
 </span><span class="kw">use </span>std::os::unix::io::{AsRawFd, FromRawFd, IntoRawFd, RawFd};
-
 <span class="attr">#[cfg(windows)]
 </span><span class="kw">use </span>std::os::windows::io::{AsRawSocket, FromRawSocket, IntoRawSocket, RawSocket};
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="kw">use </span>std::time::Duration;
+<span class="kw">use </span>std::{cell::RefCell, marker::PhantomData, mem::transmute, pin::Pin, ptr};
+
+<span class="kw">use </span>futures_core::stream::Stream;
+<span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>, Slice};
+
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+</span><span class="kw">use </span><span class="kw">crate</span>::PollableReturn;
+<span class="kw">use crate</span>::{Cancellable, Socket, SocketAddress, SocketControlMessage};
 
 <span class="kw">impl </span>Socket {
     <span class="doccomment">/// Creates a new [`Socket`][crate::Socket] from a native file descriptor
@@ -2980,12 +2955,10 @@
     <span class="attr">#[test]
     #[cfg(unix)]
     </span><span class="kw">fn </span>socket_messages() {
+        <span class="kw">use </span>std::{io, os::unix::io::AsRawFd};
+
         <span class="kw">use </span><span class="kw">super</span>::Socket;
-        <span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-        <span class="kw">use </span><span class="kw">crate</span>::Cancellable;
-        <span class="kw">use </span><span class="kw">crate</span>::UnixFDMessage;
-        <span class="kw">use </span>std::io;
-        <span class="kw">use </span>std::os::unix::io::AsRawFd;
+        <span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, Cancellable, UnixFDMessage};
 
         <span class="kw">let </span><span class="kw-2">mut </span>fds = [<span class="number">0 </span><span class="kw">as </span>libc::c_int; <span class="number">2</span>];
         <span class="kw">let </span>(out_sock, in_sock) = <span class="kw">unsafe </span>{
@@ -3052,8 +3025,7 @@
     #[cfg(unix)]
     </span><span class="kw">fn </span>dgram_socket_messages() {
         <span class="kw">use </span><span class="kw">super</span>::Socket;
-        <span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-        <span class="kw">use </span><span class="kw">crate</span>::Cancellable;
+        <span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, Cancellable};
 
         <span class="kw">let </span>addr = <span class="kw">crate</span>::InetSocketAddress::from_string(<span class="string">&quot;127.0.0.1&quot;</span>, <span class="number">28351</span>).unwrap();
 

@@ -459,30 +459,22 @@
 <a href="#386" id="386">386</a>
 <a href="#387" id="387">387</a>
 <a href="#388" id="388">388</a>
-<a href="#389" id="389">389</a>
-<a href="#390" id="390">390</a>
-<a href="#391" id="391">391</a>
-<a href="#392" id="392">392</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::error::to_std_io_result;
-<span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::Cancellable;
-<span class="kw">use </span><span class="kw">crate</span>::PollableOutputStream;
+</span><span class="kw">use </span>std::{cell::RefCell, io, mem::transmute, pin::Pin};
+
+<span class="kw">use </span>futures_channel::oneshot;
+<span class="kw">use </span>futures_core::{
+    stream::Stream,
+    task::{Context, Poll},
+    Future,
+};
+<span class="kw">use </span>futures_io::AsyncWrite;
+<span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>};
+
+<span class="kw">use crate</span>::{error::to_std_io_result, prelude::<span class="kw-2">*</span>, Cancellable, PollableOutputStream};
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_60&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use crate</span>::{OutputVector, PollableReturn};
-<span class="kw">use </span>futures_channel::oneshot;
-<span class="kw">use </span>futures_core::task::{Context, Poll};
-<span class="kw">use </span>futures_core::Future;
-<span class="kw">use </span>futures_io::AsyncWrite;
-<span class="kw">use </span>glib::object::{Cast, IsA};
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::cell::RefCell;
-<span class="kw">use </span>std::io;
-<span class="kw">use </span>std::mem::transmute;
-<span class="kw">use </span>std::pin::Pin;
-
-<span class="kw">use </span>futures_core::stream::Stream;
 
 <span class="kw">pub trait </span>PollableOutputStreamExtManual {
     <span class="doccomment">/// Creates a [`glib::Source`][crate::glib::Source] that triggers when `self` can be written, or

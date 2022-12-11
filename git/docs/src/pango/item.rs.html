@@ -94,13 +94,11 @@
 <a href="#21" id="21">21</a>
 <a href="#22" id="22">22</a>
 <a href="#23" id="23">23</a>
-<a href="#24" id="24">24</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span>glib::translate::ToGlibPtr;
+</span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 
-<span class="kw">use </span><span class="kw">crate</span>::Analysis;
-<span class="kw">use </span><span class="kw">crate</span>::Item;
+<span class="kw">use crate</span>::{Analysis, Item};
 
 <span class="kw">impl </span>Item {
     <span class="kw">pub fn </span>offset(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {

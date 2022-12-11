@@ -253,19 +253,17 @@
 <a href="#180" id="180">180</a>
 <a href="#181" id="181">181</a>
 <a href="#182" id="182">182</a>
-<a href="#183" id="183">183</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::UnixFDList;
-<span class="kw">use </span>glib::object::IsA;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
+</span><span class="attr">#[cfg(unix)]
+</span><span class="kw">use </span>std::os::unix::io::{AsRawFd, IntoRawFd, RawFd};
 <span class="kw">use </span>std::{mem, ptr};
 
-<span class="attr">#[cfg(unix)]
-</span><span class="kw">use </span>std::os::unix::io::{AsRawFd, IntoRawFd, RawFd};
-
+<span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>};
 <span class="attr">#[cfg(all(not(unix), feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span>socket::{AsRawFd, IntoRawFd, RawFd};
+
+<span class="kw">use </span><span class="kw">crate</span>::UnixFDList;
 
 <span class="kw">impl </span>UnixFDList {
     <span class="doccomment">/// Creates a new [`UnixFDList`][crate::UnixFDList] containing the file descriptors given in

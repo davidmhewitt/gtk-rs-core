@@ -221,23 +221,15 @@
 <a href="#148" id="148">148</a>
 <a href="#149" id="149">149</a>
 <a href="#150" id="150">150</a>
-<a href="#151" id="151">151</a>
-<a href="#152" id="152">152</a>
-<a href="#153" id="153">153</a>
-<a href="#154" id="154">154</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
-</span><span class="kw">use </span>glib::{
-    error::ErrorDomain,
-    translate::<span class="kw-2">*</span>,
-    value::{FromValue, ToValue},
-    Quark, StaticType,
-};
+</span><span class="kw">use </span>std::fmt;
+
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v1_50&quot;</span>)))]
-</span><span class="kw">use </span>std::fmt;
+</span><span class="kw">use </span>glib::{error::ErrorDomain, prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>, value::FromValue, Quark};
 
 <span class="doccomment">/// Errors that can be returned by `Pango::Layout::deserialize()`.
 </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_50&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]

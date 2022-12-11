@@ -333,26 +333,18 @@
 <a href="#260" id="260">260</a>
 <a href="#261" id="261">261</a>
 <a href="#262" id="262">262</a>
-<a href="#263" id="263">263</a>
-<a href="#264" id="264">264</a>
-<a href="#265" id="265">265</a>
-<a href="#266" id="266">266</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::Cancellable;
-<span class="kw">use </span><span class="kw">crate</span>::PollableInputStream;
-<span class="kw">use </span>futures_core::task::{Context, Poll};
-<span class="kw">use </span>futures_io::AsyncRead;
-<span class="kw">use </span>glib::object::{Cast, IsA};
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::cell::RefCell;
-<span class="kw">use </span>std::io;
-<span class="kw">use </span>std::mem::transmute;
-<span class="kw">use </span>std::ptr;
+</span><span class="kw">use </span>std::{cell::RefCell, io, mem::transmute, pin::Pin, ptr};
 
-<span class="kw">use </span>futures_core::stream::Stream;
-<span class="kw">use </span>std::pin::Pin;
+<span class="kw">use </span>futures_core::{
+    stream::Stream,
+    task::{Context, Poll},
+};
+<span class="kw">use </span>futures_io::AsyncRead;
+<span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>};
+
+<span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, Cancellable, PollableInputStream};
 
 <span class="kw">pub trait </span>PollableInputStreamExtManual: Sized {
     <span class="doccomment">/// Creates a [`glib::Source`][crate::glib::Source] that triggers when `self` can be read, or

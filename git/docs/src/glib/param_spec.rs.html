@@ -2044,29 +2044,17 @@
 <a href="#1971" id="1971">1971</a>
 <a href="#1972" id="1972">1972</a>
 <a href="#1973" id="1973">1973</a>
-<a href="#1974" id="1974">1974</a>
-<a href="#1975" id="1975">1975</a>
-<a href="#1976" id="1976">1976</a>
-<a href="#1977" id="1977">1977</a>
-<a href="#1978" id="1978">1978</a>
-<a href="#1979" id="1979">1979</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::utils::is_canonical_pspec_name;
-<span class="kw">use </span><span class="kw">crate</span>::IsA;
-<span class="kw">use </span><span class="kw">crate</span>::ParamFlags;
-<span class="kw">use </span><span class="kw">crate</span>::StaticType;
-<span class="kw">use </span><span class="kw">crate</span>::Type;
-<span class="kw">use </span><span class="kw">crate</span>::Value;
+</span><span class="kw">use </span>std::{char::CharTryFromError, convert::TryFrom, ffi::CStr};
+
 <span class="kw">use crate</span>::{
     object::{Interface, InterfaceRef, IsClass, IsInterface, ObjectClass},
-    Object,
+    prelude::<span class="kw-2">*</span>,
+    translate::<span class="kw-2">*</span>,
+    utils::is_canonical_pspec_name,
+    Object, ParamFlags, Type, Value,
 };
-
-<span class="kw">use </span>std::char::CharTryFromError;
-<span class="kw">use </span>std::convert::TryFrom;
-<span class="kw">use </span>std::ffi::CStr;
 
 <span class="comment">// Can&#39;t use get_type here as this is not a boxed type but another fundamental type
 </span><span class="macro">wrapper! </span>{

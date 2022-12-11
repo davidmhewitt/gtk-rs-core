@@ -309,17 +309,11 @@
 <a href="#236" id="236">236</a>
 <a href="#237" id="237">237</a>
 <a href="#238" id="238">238</a>
-<a href="#239" id="239">239</a>
-<a href="#240" id="240">240</a>
-<a href="#241" id="241">241</a>
-<a href="#242" id="242">242</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::enums::PathDataType;
-<span class="kw">use </span><span class="kw">crate</span>::ffi::cairo_path_t;
-<span class="kw">use </span>std::fmt;
-<span class="kw">use </span>std::iter::FusedIterator;
-<span class="kw">use </span>std::ptr;
+</span><span class="kw">use </span>std::{fmt, iter::FusedIterator, ptr};
+
+<span class="kw">use crate</span>::{ffi::cairo_path_t, PathDataType};
 
 <span class="attr">#[derive(Debug)]
 </span><span class="kw">pub struct </span>Path(ptr::NonNull&lt;cairo_path_t&gt;);
@@ -442,9 +436,7 @@
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
-    <span class="kw">use </span><span class="kw">crate</span>::context::<span class="kw-2">*</span>;
-    <span class="kw">use </span><span class="kw">crate</span>::enums::Format;
-    <span class="kw">use </span><span class="kw">crate</span>::image_surface::<span class="kw-2">*</span>;
+    <span class="kw">use crate</span>::{context::<span class="kw-2">*</span>, enums::Format, image_surface::<span class="kw-2">*</span>};
 
     <span class="kw">fn </span>make_cr() -&gt; Context {
         <span class="kw">let </span>surface = ImageSurface::create(Format::Rgb24, <span class="number">1</span>, <span class="number">1</span>).unwrap();

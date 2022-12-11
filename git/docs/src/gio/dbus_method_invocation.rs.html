@@ -136,9 +136,9 @@
 <a href="#63" id="63">63</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::DBusMethodInvocation;
-<span class="kw">use </span>glib::error::ErrorDomain;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
+</span><span class="kw">use </span>glib::{error::ErrorDomain, translate::<span class="kw-2">*</span>};
+
+<span class="kw">use </span><span class="kw">crate</span>::DBusMethodInvocation;
 
 <span class="kw">impl </span>DBusMethodInvocation {
     <span class="doccomment">/// Finishes handling a D-Bus method call by returning an error.

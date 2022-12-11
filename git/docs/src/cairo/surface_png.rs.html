@@ -295,19 +295,20 @@
 <a href="#222" id="222">222</a>
 <a href="#223" id="223">223</a>
 <a href="#224" id="224">224</a>
+<a href="#225" id="225">225</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::utils::status_to_result;
-<span class="kw">use </span>std::any::Any;
-<span class="kw">use </span>std::io::{<span class="self">self</span>, Read, Write};
-<span class="kw">use </span>std::panic::AssertUnwindSafe;
-<span class="kw">use </span>std::slice;
+</span><span class="kw">use </span>std::{
+    any::Any,
+    io::{<span class="self">self</span>, Read, Write},
+    panic::AssertUnwindSafe,
+    slice,
+};
 
+<span class="kw">use </span>ffi::cairo_status_t;
 <span class="kw">use </span>libc::{c_uint, c_void};
 
-<span class="kw">use </span><span class="kw">crate</span>::error::{Error, IoError};
-<span class="kw">use crate</span>::{ImageSurface, Surface};
-<span class="kw">use </span>ffi::cairo_status_t;
+<span class="kw">use crate</span>::{utils::status_to_result, Error, ImageSurface, IoError, Surface};
 
 <span class="kw">struct </span>ReadEnv&lt;<span class="lifetime">&#39;a</span>, R: <span class="lifetime">&#39;a </span>+ Read&gt; {
     reader: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="kw-2">mut </span>R,
@@ -449,9 +450,10 @@
 
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
+    <span class="kw">use </span>std::io::ErrorKind;
+
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
     <span class="kw">use </span><span class="kw">crate</span>::enums::Format;
-    <span class="kw">use </span>std::io::ErrorKind;
 
     <span class="kw">struct </span>IoErrorReader;
 

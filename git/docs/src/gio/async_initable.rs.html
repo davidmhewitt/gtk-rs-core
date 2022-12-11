@@ -260,26 +260,14 @@
 <a href="#187" id="187">187</a>
 <a href="#188" id="188">188</a>
 <a href="#189" id="189">189</a>
-<a href="#190" id="190">190</a>
-<a href="#191" id="191">191</a>
-<a href="#192" id="192">192</a>
-<a href="#193" id="193">193</a>
-<a href="#194" id="194">194</a>
-<a href="#195" id="195">195</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::traits::AsyncInitableExt;
-<span class="kw">use </span><span class="kw">crate</span>::AsyncInitable;
-<span class="kw">use </span><span class="kw">crate</span>::Cancellable;
-
-<span class="kw">use </span>glib::object::IsA;
-<span class="kw">use </span>glib::object::IsClass;
-<span class="kw">use </span>glib::value::ToValue;
-<span class="kw">use </span>glib::{Cast, Object, StaticType, Type};
+</span><span class="kw">use </span>std::{boxed::Box <span class="kw">as </span>Box_, pin::Pin};
 
 <span class="kw">use </span>futures_util::TryFutureExt;
-<span class="kw">use </span>std::boxed::Box <span class="kw">as </span>Box_;
-<span class="kw">use </span>std::pin::Pin;
+<span class="kw">use </span>glib::{object::IsClass, prelude::<span class="kw-2">*</span>, Object, Type};
+
+<span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, AsyncInitable, Cancellable};
 
 <span class="kw">impl </span>AsyncInitable {
     <span class="doccomment">/// Helper function for constructing [`AsyncInitable`][crate::AsyncInitable] object. This is

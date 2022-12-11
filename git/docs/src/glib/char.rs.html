@@ -287,14 +287,13 @@
 <a href="#214" id="214">214</a>
 <a href="#215" id="215">215</a>
 <a href="#216" id="216">216</a>
-<a href="#217" id="217">217</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::translate::FromGlib;
-<span class="kw">use </span><span class="kw">crate</span>::translate::IntoGlib;
+</span><span class="kw">use </span>std::{convert::TryFrom, num::TryFromIntError};
+
 <span class="kw">use </span>libc::{c_char, c_uchar};
-<span class="kw">use </span>std::convert::TryFrom;
-<span class="kw">use </span>std::num::TryFromIntError;
+
+<span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Wrapper for values where C functions expect a plain C `char`
@@ -462,7 +461,6 @@
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
-    <span class="kw">use </span><span class="kw">crate</span>::translate::from_glib;
 
     <span class="attr">#[test]
     #[allow(clippy::unnecessary_cast)]

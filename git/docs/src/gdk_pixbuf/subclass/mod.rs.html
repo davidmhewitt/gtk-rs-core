@@ -88,6 +88,8 @@
 <a href="#15" id="15">15</a>
 <a href="#16" id="16">16</a>
 <a href="#17" id="17">17</a>
+<a href="#18" id="18">18</a>
+<a href="#19" id="19">19</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -101,9 +103,11 @@
     <span class="kw">pub use </span>gio::subclass::prelude::<span class="kw-2">*</span>;
     <span class="kw">pub use </span>glib::subclass::prelude::<span class="kw-2">*</span>;
 
-    <span class="kw">pub use </span><span class="kw">super</span>::pixbuf_animation::{PixbufAnimationImpl, PixbufAnimationImplExt};
-    <span class="kw">pub use </span><span class="kw">super</span>::pixbuf_animation_iter::{PixbufAnimationIterImpl, PixbufAnimationIterImplExt};
-    <span class="kw">pub use </span><span class="kw">super</span>::pixbuf_loader::{PixbufLoaderImpl, PixbufLoaderImplExt};
+    <span class="kw">pub use super</span>::{
+        pixbuf_animation::{PixbufAnimationImpl, PixbufAnimationImplExt},
+        pixbuf_animation_iter::{PixbufAnimationIterImpl, PixbufAnimationIterImplExt},
+        pixbuf_loader::{PixbufLoaderImpl, PixbufLoaderImplExt},
+    };
 }
 </code></pre></div>
 </section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gdk_pixbuf" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (c6fcdb690 2022-12-10)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

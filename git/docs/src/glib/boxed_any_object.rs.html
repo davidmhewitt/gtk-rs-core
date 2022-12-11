@@ -256,13 +256,21 @@
 <a href="#183" id="183">183</a>
 <a href="#184" id="184">184</a>
 <a href="#185" id="185">185</a>
+<a href="#186" id="186">186</a>
+<a href="#187" id="187">187</a>
+<a href="#188" id="188">188</a>
+<a href="#189" id="189">189</a>
+<a href="#190" id="190">190</a>
+<a href="#191" id="191">191</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use crate as </span>glib;
-<span class="kw">use </span><span class="kw">crate</span>::subclass::prelude::<span class="kw-2">*</span>;
-<span class="kw">use crate</span>::{object_subclass, wrapper, Object};
-<span class="kw">use </span>std::any::Any;
-<span class="kw">use </span>std::cell::{Ref, RefCell, RefMut};
+</span><span class="kw">use </span>std::{
+    any::Any,
+    cell::{Ref, RefMut},
+};
+
+<span class="kw">use crate as </span>glib;
+<span class="kw">use crate</span>::{subclass::prelude::<span class="kw-2">*</span>, Object};
 
 <span class="attr">#[derive(thiserror::Error, Debug)]
 </span><span class="kw">pub enum </span>BorrowError {
@@ -280,13 +288,17 @@
 }
 
 <span class="kw">mod </span>imp {
-    <span class="kw">use super</span>::<span class="kw-2">*</span>;
+    <span class="kw">use </span>std::{any::Any, cell::RefCell};
+
+    <span class="kw">use crate as </span>glib;
+    <span class="kw">use </span><span class="kw">crate</span>::subclass::prelude::<span class="kw-2">*</span>;
 
     <span class="attr">#[derive(Debug)]
     </span><span class="kw">pub struct </span>BoxedAnyObject {
         <span class="kw">pub </span>value: RefCell&lt;Box&lt;<span class="kw">dyn </span>Any&gt;&gt;,
     }
-    <span class="attr">#[object_subclass]
+
+    <span class="attr">#[glib::object_subclass]
     </span><span class="kw">impl </span>ObjectSubclass <span class="kw">for </span>BoxedAnyObject {
         <span class="kw">const </span>NAME: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str = <span class="string">&quot;BoxedAnyObject&quot;</span>;
         <span class="kw">type </span>Type = <span class="kw">super</span>::BoxedAnyObject;
@@ -301,7 +313,7 @@
     <span class="kw">impl </span>ObjectImpl <span class="kw">for </span>BoxedAnyObject {}
 }
 
-<span class="macro">wrapper! </span>{
+<span class="macro">glib::wrapper! </span>{
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// This is a subclass of `glib::object::Object` capable of storing any Rust type.
     /// It let&#39;s you insert a Rust type anywhere a `glib::object::Object` is needed.

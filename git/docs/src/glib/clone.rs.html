@@ -170,11 +170,15 @@
 <a href="#97" id="97">97</a>
 <a href="#98" id="98">98</a>
 <a href="#99" id="99">99</a>
+<a href="#100" id="100">100</a>
+<a href="#101" id="101">101</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span>std::marker::PhantomData;
-<span class="kw">use </span>std::rc::{<span class="self">self</span>, Rc};
-<span class="kw">use </span>std::sync::{<span class="self">self</span>, Arc};
+</span><span class="kw">use </span>std::{
+    marker::PhantomData,
+    rc::{<span class="self">self</span>, Rc},
+    sync::{<span class="self">self</span>, Arc},
+};
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Trait for generalizing downgrading a strong reference to a weak reference.

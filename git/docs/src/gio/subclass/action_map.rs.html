@@ -207,12 +207,12 @@
 <a href="#134" id="134">134</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use crate</span>::{Action, ActionMap};
-<span class="kw">use </span>glib::subclass::prelude::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::{Cast, GString, IsA, ObjectExt, Quark};
+</span><span class="kw">use </span>std::collections::HashMap;
+
+<span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, subclass::prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>, GString, Quark};
 <span class="kw">use </span>once_cell::sync::Lazy;
-<span class="kw">use </span>std::collections::HashMap;
+
+<span class="kw">use crate</span>::{Action, ActionMap};
 
 <span class="kw">pub trait </span>ActionMapImpl: ObjectImpl {
     <span class="kw">fn </span>lookup_action(<span class="kw-2">&amp;</span><span class="self">self</span>, action_name: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;Action&gt;;

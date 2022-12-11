@@ -145,12 +145,14 @@
 <a href="#72" id="72">72</a>
 <a href="#73" id="73">73</a>
 <a href="#74" id="74">74</a>
+<a href="#75" id="75">75</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use crate</span>::{resources_register, Resource};
+</span><span class="kw">use </span>std::{mem, ptr};
+
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::mem;
-<span class="kw">use </span>std::ptr;
+
+<span class="kw">use crate</span>::{resources_register, Resource};
 
 <span class="kw">impl </span>Resource {
     <span class="doccomment">/// Creates a GResource from a reference to the binary resource bundle.

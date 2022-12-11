@@ -306,23 +306,13 @@
 <a href="#233" id="233">233</a>
 <a href="#234" id="234">234</a>
 <a href="#235" id="235">235</a>
-<a href="#236" id="236">236</a>
-<a href="#237" id="237">237</a>
-<a href="#238" id="238">238</a>
-<a href="#239" id="239">239</a>
-<a href="#240" id="240">240</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::AttrType;
-<span class="kw">use </span><span class="kw">crate</span>::Attribute;
-<span class="kw">use </span><span class="kw">crate</span>::FontDescription;
-<span class="kw">use </span><span class="kw">crate</span>::Language;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>glib::SList;
+</span><span class="kw">use </span>std::{marker::PhantomData, mem, ptr};
 
-<span class="kw">use </span>std::marker::PhantomData;
-<span class="kw">use </span>std::mem;
-<span class="kw">use </span>std::ptr;
+<span class="kw">use </span>glib::{translate::<span class="kw-2">*</span>, SList};
+
+<span class="kw">use crate</span>::{AttrType, Attribute, FontDescription, Language};
 
 <span class="doccomment">/// A [`AttrIterator`][crate::AttrIterator] is used to iterate through a [`AttrList`][crate::AttrList].
 ///

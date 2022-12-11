@@ -510,34 +510,18 @@
 <a href="#437" id="437">437</a>
 <a href="#438" id="438">438</a>
 <a href="#439" id="439">439</a>
-<a href="#440" id="440">440</a>
-<a href="#441" id="441">441</a>
-<a href="#442" id="442">442</a>
-<a href="#443" id="443">443</a>
-<a href="#444" id="444">444</a>
-<a href="#445" id="445">445</a>
-<a href="#446" id="446">446</a>
-<a href="#447" id="447">447</a>
-<a href="#448" id="448">448</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span>libc::{c_ulong, c_void};
-<span class="kw">use </span>std::ffi::CString;
-<span class="kw">use </span>std::fmt;
-<span class="kw">use </span>std::ops::Deref;
-<span class="kw">use </span>std::ptr;
-<span class="kw">use </span>std::slice;
+</span><span class="kw">use </span>std::{ffi::CString, fmt, ops::Deref, ptr, slice};
 
-<span class="kw">use </span><span class="kw">crate</span>::enums::{Content, Format, SurfaceType};
-<span class="kw">use </span><span class="kw">crate</span>::error::Error;
-<span class="kw">use </span><span class="kw">crate</span>::utils::status_to_result;
 <span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
+<span class="kw">use </span>libc::{c_ulong, c_void};
 
-<span class="kw">use </span><span class="kw">crate</span>::device::Device;
-<span class="kw">use </span><span class="kw">crate</span>::image_surface::ImageSurface;
-<span class="kw">use </span><span class="kw">crate</span>::rectangle::Rectangle;
-<span class="kw">use </span><span class="kw">crate</span>::rectangle_int::RectangleInt;
+<span class="kw">use crate</span>::{
+    utils::status_to_result, Content, Device, Error, Format, ImageSurface, Rectangle, RectangleInt,
+    SurfaceType,
+};
 
 <span class="attr">#[derive(Debug)]
 #[doc(alias = <span class="string">&quot;cairo_surface_t&quot;</span>)]
@@ -951,9 +935,7 @@
 
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
-    <span class="kw">use </span><span class="kw">crate</span>::constants::MIME_TYPE_PNG;
-    <span class="kw">use </span><span class="kw">crate</span>::Format;
-    <span class="kw">use </span><span class="kw">crate</span>::ImageSurface;
+    <span class="kw">use crate</span>::{constants::MIME_TYPE_PNG, Format, ImageSurface};
 
     <span class="attr">#[test]
     </span><span class="kw">fn </span>mime_data() {

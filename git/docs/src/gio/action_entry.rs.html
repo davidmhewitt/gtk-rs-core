@@ -203,8 +203,9 @@
 <a href="#130" id="130">130</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use crate</span>::{ActionMap, SimpleAction};
-<span class="kw">use </span>glib::{IsA, Variant};
+</span><span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, Variant};
+
+<span class="kw">use crate</span>::{ActionMap, SimpleAction};
 
 <span class="doccomment">/// This struct defines a single action. It is for use with
 /// [`ActionMapExtManual::add_action_entries()`][crate::prelude::ActionMapExtManual::add_action_entries()].
@@ -314,9 +315,8 @@
 
 <span class="attr">#[cfg(test)]
 </span><span class="kw">mod </span>tests {
-    <span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
-
     <span class="kw">use super</span>::<span class="kw-2">*</span>;
+    <span class="kw">use </span><span class="kw">crate</span>::prelude::<span class="kw-2">*</span>;
 
     <span class="attr">#[test]
     </span><span class="kw">fn </span>action_entry() {

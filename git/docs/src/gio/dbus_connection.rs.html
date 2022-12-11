@@ -642,23 +642,16 @@
 <a href="#569" id="569">569</a>
 <a href="#570" id="570">570</a>
 <a href="#571" id="571">571</a>
-<a href="#572" id="572">572</a>
-<a href="#573" id="573">573</a>
-<a href="#574" id="574">574</a>
-<a href="#575" id="575">575</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::ActionGroup;
-<span class="kw">use </span><span class="kw">crate</span>::DBusConnection;
-<span class="kw">use </span><span class="kw">crate</span>::DBusInterfaceInfo;
-<span class="kw">use </span><span class="kw">crate</span>::DBusMessage;
-<span class="kw">use </span><span class="kw">crate</span>::DBusMethodInvocation;
-<span class="kw">use </span><span class="kw">crate</span>::DBusSignalFlags;
-<span class="kw">use </span><span class="kw">crate</span>::MenuModel;
-<span class="kw">use </span>glib::object::IsA;
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::boxed::Box <span class="kw">as </span>Box_;
-<span class="kw">use </span>std::num::NonZeroU32;
+</span><span class="kw">use </span>std::{boxed::Box <span class="kw">as </span>Box_, num::NonZeroU32};
+
+<span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>};
+
+<span class="kw">use crate</span>::{
+    ActionGroup, DBusConnection, DBusInterfaceInfo, DBusMessage, DBusMethodInvocation,
+    DBusSignalFlags, MenuModel,
+};
 
 <span class="attr">#[derive(Debug, Eq, PartialEq)]
 </span><span class="kw">pub struct </span>RegistrationId(NonZeroU32);
@@ -744,7 +737,6 @@
             + Sync
             + <span class="lifetime">&#39;static</span>,
     {
-        <span class="kw">use </span>glib::ToValue;
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>error = std::ptr::null_mut();
             <span class="kw">let </span>id = ffi::g_dbus_connection_register_object_with_closures(

@@ -776,25 +776,13 @@
 <a href="#703" id="703">703</a>
 <a href="#704" id="704">704</a>
 <a href="#705" id="705">705</a>
-<a href="#706" id="706">706</a>
-<a href="#707" id="707">707</a>
-<a href="#708" id="708">708</a>
-<a href="#709" id="709">709</a>
-<a href="#710" id="710">710</a>
-<a href="#711" id="711">711</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span><span class="kw">crate</span>::utils::is_canonical_pspec_name;
-<span class="kw">use </span><span class="kw">crate</span>::Closure;
-<span class="kw">use </span><span class="kw">crate</span>::SignalFlags;
-<span class="kw">use </span><span class="kw">crate</span>::StaticType;
-<span class="kw">use </span><span class="kw">crate</span>::Type;
-<span class="kw">use </span><span class="kw">crate</span>::Value;
+</span><span class="kw">use </span>std::{fmt, num::NonZeroU32, ptr, sync::Mutex};
 
-<span class="kw">use </span>std::ptr;
-<span class="kw">use </span>std::sync::Mutex;
-<span class="kw">use </span>std::{fmt, num::NonZeroU32};
+<span class="kw">use crate</span>::{
+    prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>, utils::is_canonical_pspec_name, Closure, SignalFlags, Type, Value,
+};
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Builder for signals.

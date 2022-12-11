@@ -160,11 +160,10 @@
 <a href="#87" id="87">87</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="attr">#[allow(unused_imports)]
-</span><span class="kw">use </span>libc::{c_char, c_int, c_ushort, c_void};
-
-<span class="attr">#[cfg(unix)]
+</span><span class="attr">#[cfg(unix)]
 </span><span class="kw">pub use </span>libc::passwd;
+<span class="attr">#[allow(unused_imports)]
+</span><span class="kw">use </span>libc::{c_char, c_int, c_ushort, c_void};
 
 <span class="attr">#[cfg(all(not(unix), feature = <span class="string">&quot;dox&quot;</span>))]
 #[repr(C)]
@@ -207,8 +206,9 @@
 
 <span class="attr">#[cfg(target_family = <span class="string">&quot;windows&quot;</span>)]
 </span><span class="kw">mod </span>win32 {
-    <span class="kw">use </span><span class="kw">crate</span>::gpointer;
     <span class="kw">use </span>libc::c_char;
+
+    <span class="kw">use </span><span class="kw">crate</span>::gpointer;
 
     <span class="kw">extern </span><span class="string">&quot;C&quot; </span>{
         <span class="kw">pub fn </span>g_win32_get_package_installation_directory_of_module(

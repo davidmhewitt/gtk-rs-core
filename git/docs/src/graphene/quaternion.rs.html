@@ -295,17 +295,13 @@
 <a href="#222" id="222">222</a>
 <a href="#223" id="223">223</a>
 <a href="#224" id="224">224</a>
-<a href="#225" id="225">225</a>
-<a href="#226" id="226">226</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span><span class="kw">crate</span>::Euler;
-<span class="kw">use </span><span class="kw">crate</span>::Matrix;
-<span class="kw">use </span><span class="kw">crate</span>::Quaternion;
-<span class="kw">use </span><span class="kw">crate</span>::Vec3;
-<span class="kw">use </span><span class="kw">crate</span>::Vec4;
+</span><span class="kw">use </span>std::fmt;
+
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-<span class="kw">use </span>std::fmt;
+
+<span class="kw">use crate</span>::{Euler, Matrix, Quaternion, Vec3, Vec4};
 
 <span class="kw">impl </span>Quaternion {
     <span class="doccomment">/// Initializes a [`Quaternion`][crate::Quaternion] using the given four values.
