@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/gstring_builder.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>gstring_builder.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-6827029ac823cab7.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-ebce58d0a40c3431.css"><link rel="stylesheet" disabled href="../../static.files/dark-f23faae4a2daf9a6.css"><link rel="stylesheet" disabled href="../../static.files/ayu-8af5e100b21cd173.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-c55e1eb52e1886b4.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/gstring_builder.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>gstring_builder.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-9def1262ebc682c9.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-ebce58d0a40c3431.css"><link rel="stylesheet" disabled href="../../static.files/dark-f23faae4a2daf9a6.css"><link rel="stylesheet" disabled href="../../static.files/ayu-94f39d4346842c1e.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-c55e1eb52e1886b4.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -371,10 +371,6 @@
 <a href="#298" id="298">298</a>
 <a href="#299" id="299">299</a>
 <a href="#300" id="300">300</a>
-<a href="#301" id="301">301</a>
-<a href="#302" id="302">302</a>
-<a href="#303" id="303">303</a>
-<a href="#304" id="304">304</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
@@ -398,20 +394,25 @@
         copy =&gt; |ptr| ffi::g_string_new((<span class="kw-2">*</span>ptr).str),
         free =&gt; |ptr| ffi::g_string_free(ptr, ffi::GTRUE),
         init =&gt; |ptr| <span class="kw">unsafe </span>{
-            <span class="kw-2">*</span>ptr = ffi::GString {
-                str: ffi::g_malloc0(<span class="number">64</span>) <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
+            <span class="kw">let </span>inner = ffi::GString {
+                str: ffi::g_malloc(<span class="number">64</span>) <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
                 len: <span class="number">0</span>,
                 allocated_len: <span class="number">64</span>,
             };
+            ptr::write(inner.str, <span class="number">0</span>);
+
+            <span class="kw-2">*</span>ptr = inner;
         },
         copy_into =&gt; |dest, src| {
+            <span class="macro">assert!</span>((<span class="kw-2">*</span>src).allocated_len &gt; (<span class="kw-2">*</span>src).len);
             <span class="kw">let </span>allocated_len = (<span class="kw-2">*</span>src).allocated_len;
-            <span class="kw">let </span><span class="kw-2">mut </span>inner = ffi::GString {
-                str: ffi::g_malloc0(allocated_len) <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
+            <span class="kw">let </span>inner = ffi::GString {
+                str: ffi::g_malloc(allocated_len) <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
                 len: <span class="number">0</span>,
                 allocated_len,
             };
-            ffi::g_string_append_len(<span class="kw-2">&amp;mut </span>inner, (<span class="kw-2">*</span>src).str, (<span class="kw-2">*</span>src).len <span class="kw">as </span>isize);
+            <span class="comment">// +1 to also copy the NUL-terminator
+            </span>ptr::copy_nonoverlapping((<span class="kw-2">*</span>src).str, inner.str, (<span class="kw-2">*</span>src).len + <span class="number">1</span>);
             <span class="kw-2">*</span>dest = inner;
         },
         clear =&gt; |ptr| {
@@ -433,19 +434,16 @@
             <span class="kw">let </span>allocated_len = usize::next_power_of_two(std::cmp::max(data.len(), <span class="number">64</span>) + <span class="number">1</span>);
             <span class="macro">assert_ne!</span>(allocated_len, <span class="number">0</span>);
 
-            <span class="kw">let </span><span class="kw-2">mut </span>inner = ffi::GString {
+            <span class="kw">let </span>inner = ffi::GString {
                 str: ffi::g_malloc(allocated_len) <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
-                len: <span class="number">0</span>,
+                len: data.len(),
                 allocated_len,
             };
             <span class="kw">if </span>data.is_empty() {
                 ptr::write(inner.str, <span class="number">0</span>);
             } <span class="kw">else </span>{
-                ffi::g_string_append_len(
-                    <span class="kw-2">&amp;mut </span>inner,
-                    data.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>,
-                    data.len() <span class="kw">as </span>isize,
-                );
+                ptr::copy_nonoverlapping(data.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>, inner.str, data.len());
+                ptr::write(inner.str.add(data.len()), <span class="number">0</span>);
             }
             <span class="self">Self </span>{ inner }
         }
@@ -493,10 +491,6 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Returns `&amp;str` slice.
-    ///
-    /// # Panics
-    ///
-    /// If the string builder contains invalid UTF-8 this function panics.
     </span><span class="kw">pub fn </span>as_str(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>str {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>ptr: <span class="kw-2">*const </span>u8 = <span class="self">self</span>.inner.str <span class="kw">as _</span>;
@@ -505,21 +499,17 @@
                 <span class="kw">return </span><span class="string">&quot;&quot;</span>;
             }
             <span class="kw">let </span>slice = slice::from_raw_parts(ptr, len);
-            std::str::from_utf8(slice).unwrap()
+            std::str::from_utf8_unchecked(slice)
         }
     }
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Returns `&amp;str` slice.
-    ///
-    /// # Panics
-    ///
-    /// If the string builder contains invalid UTF-8 this function panics.
     </span><span class="attr">#[must_use = <span class="string">&quot;String returned from the builder should probably be used&quot;</span>]
     </span><span class="kw">pub fn </span>into_string(<span class="self">self</span>) -&gt; <span class="kw">crate</span>::GString {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>s = mem::ManuallyDrop::new(<span class="self">self</span>);
-            <span class="kw">crate</span>::GString::from_glib_full_num(s.inner.str, s.inner.len)
+            <span class="kw">crate</span>::GString::from_ptr_and_len_unchecked(s.inner.str, s.inner.len)
         }
     }
 }
@@ -634,6 +624,7 @@
     <span class="attr">#[test]
     </span><span class="kw">fn </span>append() {
         <span class="kw">let </span><span class="kw-2">mut </span>s = <span class="kw">crate</span>::GStringBuilder::new(<span class="string">&quot;&quot;</span>);
+        <span class="macro">assert_eq!</span>(<span class="kw-2">&amp;*</span>s, <span class="string">&quot;&quot;</span>);
         s.append(<span class="string">&quot;Hello&quot;</span>);
         s.append(<span class="string">&quot; &quot;</span>);
         s.append(<span class="string">&quot;there!&quot;</span>);
@@ -644,6 +635,7 @@
     <span class="attr">#[test]
     </span><span class="kw">fn </span>prepend() {
         <span class="kw">let </span><span class="kw-2">mut </span>s = <span class="kw">crate</span>::GStringBuilder::new(<span class="string">&quot;456&quot;</span>);
+        <span class="macro">assert_eq!</span>(<span class="kw-2">&amp;*</span>s, <span class="string">&quot;456&quot;</span>);
         s.prepend(<span class="string">&quot;123&quot;</span>);
         <span class="macro">assert_eq!</span>(<span class="kw-2">&amp;*</span>s, <span class="string">&quot;123456&quot;</span>);
     }
@@ -680,4 +672,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (dfe3fe710 2022-12-09)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (c6fcdb690 2022-12-10)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
