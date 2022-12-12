@@ -88,11 +88,14 @@
 as <a href="https://gtk-rs.org/#using">demonstrated here</a>.</p>
 <p>If you want to track the bleeding edge, use the git dependency instead:</p>
 <div class="example-wrap"><pre class="language-toml"><code>[dependencies]
-gio = { git = &quot;https://github.com/gtk-rs/gtk-rs-core.git&quot;, package = &quot;gio&quot; }</code></pre></div>
+gio = { git = &quot;https://github.com/gtk-rs/gtk-rs-core.git&quot;, package = &quot;gio&quot; }
+</code></pre></div>
 <p>Avoid mixing versioned and git crates like this:</p>
-<div class="example-wrap"><pre class="language-toml"><code>[dependencies]
+<div class="example-wrap"><pre class="language-toml"><code># This will not compile
+[dependencies]
 gio = &quot;0.13&quot;
-gio = { git = &quot;https://github.com/gtk-rs/gtk-rs-core.git&quot;, package = &quot;gio&quot; }</code></pre></div><h4 id="see-also"><a href="#see-also">See Also</a></h4>
+gio = { git = &quot;https://github.com/gtk-rs/gtk-rs-core.git&quot;, package = &quot;gio&quot; }
+</code></pre></div><h4 id="see-also"><a href="#see-also">See Also</a></h4>
 <ul>
 <li><a href="https://crates.io/crates/glib">glib</a></li>
 </ul>
@@ -608,4 +611,4 @@ appear in a GUI. For example, the Linux <code>/proc</code> filesystem.</div></di
 used in implementation of the OS. This is primarily used for hiding
 mounted volumes that are intended as APIs for programs to read, and system
 administrators at a shell; rather than something that should, for example,
-appear in a GUI. For example, the Linux <code>/proc</code> filesystem.</div></div></div></section></div></main><div id="rustdoc-vars" data-root-path="../" data-static-root-path="../static.files/" data-current-crate="gio" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (c6fcdb690 2022-12-10)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
+appear in a GUI. For example, the Linux <code>/proc</code> filesystem.</div></div></div></section></div></main><div id="rustdoc-vars" data-root-path="../" data-static-root-path="../static.files/" data-current-crate="gio" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (bdb07a8ec 2022-12-11)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

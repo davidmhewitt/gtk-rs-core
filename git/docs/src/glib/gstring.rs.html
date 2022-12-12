@@ -1375,6 +1375,12 @@
 <a href="#1302" id="1302">1302</a>
 <a href="#1303" id="1303">1303</a>
 <a href="#1304" id="1304">1304</a>
+<a href="#1305" id="1305">1305</a>
+<a href="#1306" id="1306">1306</a>
+<a href="#1307" id="1307">1307</a>
+<a href="#1308" id="1308">1308</a>
+<a href="#1309" id="1309">1309</a>
+<a href="#1310" id="1310">1310</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>std::{
@@ -1497,6 +1503,12 @@
     </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>as_c_str(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>CStr {
         <span class="kw">unsafe </span>{ CStr::from_bytes_with_nul_unchecked(<span class="self">self</span>.to_bytes_with_nul()) }
+    }
+
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_utf8_collate&quot;</span>)]
+    #[doc(alias = <span class="string">&quot;utf8_collate&quot;</span>)]
+    </span><span class="kw">pub fn </span>collate(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw">impl </span>AsRef&lt;GStr&gt;) -&gt; Ordering {
+        <span class="kw">unsafe </span>{ ffi::g_utf8_collate(<span class="self">self</span>.as_ptr(), other.as_ref().as_ptr()) }.cmp(<span class="kw-2">&amp;</span><span class="number">0</span>)
     }
 }
 
@@ -2680,4 +2692,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (c6fcdb690 2022-12-10)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (bdb07a8ec 2022-12-11)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>

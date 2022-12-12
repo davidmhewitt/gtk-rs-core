@@ -82,7 +82,8 @@ example, if <code>root_path</code> is “/apps/example/” and <code>root_group<
 “toplevel”, then settings the key “/apps/example/enabled” to a value
 of <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html" title="true"><code>true</code></a> will cause the following to appear in the keyfile:</p>
 <div class="example-wrap"><pre class="language-text"><code>  [toplevel]
-  enabled=true</code></pre></div>
+  enabled=true
+</code></pre></div>
 <p>If <code>root_group</code> is <a href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html#variant.None" title="None"><code>None</code></a> then it is not permitted to store keys
 directly below the <code>root_path</code>.</p>
 <p>For keys not stored directly below <code>root_path</code> (ie: in a sub-path),
@@ -91,7 +92,8 @@ the name of the keyfile group. To continue the example, if
 “/apps/example/profiles/default/font-size” were set to
 12 then the following would appear in the keyfile:</p>
 <div class="example-wrap"><pre class="language-text"><code>  [profiles/default]
-  font-size=12</code></pre></div>
+  font-size=12
+</code></pre></div>
 <p>The backend will refuse writes (and return writability as being
 <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html" title="false"><code>false</code></a>) for keys outside of <code>root_path</code> and, in the event that
 <code>root_group</code> is <a href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html#variant.None" title="None"><code>None</code></a>, also for keys directly under <code>root_path</code>.
@@ -115,4 +117,4 @@ the same location.</p>
 <code>root_path</code>, or <a href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html#variant.None" title="None"><code>None</code></a></p>
 <h2 id="returns"><a href="#returns">Returns</a></h2>
 <p>a keyfile-backed <a href="struct.SettingsBackend.html" title="crate::SettingsBackend"><code>SettingsBackend</code></a></p>
-</div></details></section></div></main><div id="rustdoc-vars" data-root-path="../" data-static-root-path="../static.files/" data-current-crate="gio" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (c6fcdb690 2022-12-10)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
+</div></details></section></div></main><div id="rustdoc-vars" data-root-path="../" data-static-root-path="../static.files/" data-current-crate="gio" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (bdb07a8ec 2022-12-11)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
