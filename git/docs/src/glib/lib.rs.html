@@ -292,6 +292,7 @@
 <a href="#219" id="219">219</a>
 <a href="#220" id="220">220</a>
 <a href="#221" id="221">221</a>
+<a href="#222" id="222">222</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="attr">#![cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, feature(doc_cfg))]
@@ -491,6 +492,7 @@
 </span><span class="kw">pub mod </span>subclass;
 
 <span class="kw">mod </span>main_context_futures;
+<span class="kw">pub use </span>main_context_futures::{JoinError, JoinHandle};
 <span class="kw">mod </span>source_futures;
 <span class="kw">pub use </span><span class="self">self</span>::source_futures::<span class="kw-2">*</span>;
 
@@ -498,7 +500,7 @@
 <span class="kw">pub use </span><span class="self">self</span>::future_with_timeout::<span class="kw-2">*</span>;
 
 <span class="kw">mod </span>thread_pool;
-<span class="kw">pub use </span><span class="self">self</span>::thread_pool::ThreadPool;
+<span class="kw">pub use </span><span class="self">self</span>::thread_pool::{ThreadHandle, ThreadPool};
 
 <span class="kw">pub mod </span>thread_guard;
 
