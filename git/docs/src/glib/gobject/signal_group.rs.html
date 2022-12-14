@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/gobject/signal_group.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>signal_group.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-9def1262ebc682c9.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-ebce58d0a40c3431.css"><link rel="stylesheet" disabled href="../../../static.files/dark-f23faae4a2daf9a6.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-94f39d4346842c1e.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-c55e1eb52e1886b4.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/gobject/signal_group.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>signal_group.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-64f7dca12162a801.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-ebce58d0a40c3431.css"><link rel="stylesheet" disabled href="../../../static.files/dark-f23faae4a2daf9a6.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-94f39d4346842c1e.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-5cf2e01a42cc9858.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-a211dbb005fb8161.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -271,35 +271,6 @@
 <a href="#198" id="198">198</a>
 <a href="#199" id="199">199</a>
 <a href="#200" id="200">200</a>
-<a href="#201" id="201">201</a>
-<a href="#202" id="202">202</a>
-<a href="#203" id="203">203</a>
-<a href="#204" id="204">204</a>
-<a href="#205" id="205">205</a>
-<a href="#206" id="206">206</a>
-<a href="#207" id="207">207</a>
-<a href="#208" id="208">208</a>
-<a href="#209" id="209">209</a>
-<a href="#210" id="210">210</a>
-<a href="#211" id="211">211</a>
-<a href="#212" id="212">212</a>
-<a href="#213" id="213">213</a>
-<a href="#214" id="214">214</a>
-<a href="#215" id="215">215</a>
-<a href="#216" id="216">216</a>
-<a href="#217" id="217">217</a>
-<a href="#218" id="218">218</a>
-<a href="#219" id="219">219</a>
-<a href="#220" id="220">220</a>
-<a href="#221" id="221">221</a>
-<a href="#222" id="222">222</a>
-<a href="#223" id="223">223</a>
-<a href="#224" id="224">224</a>
-<a href="#225" id="225">225</a>
-<a href="#226" id="226">226</a>
-<a href="#227" id="227">227</a>
-<a href="#228" id="228">228</a>
-<a href="#229" id="229">229</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>std::mem::transmute;
@@ -311,17 +282,7 @@
 };
 
 <span class="kw">impl </span>SignalGroup {
-    <span class="doccomment">/// Connects `closure` to the signal `detailed_signal` on `property::SignalGroup::target`.
-    ///
-    /// You cannot connect a signal handler after `property::SignalGroup::target` has been set.
-    /// ## `detailed_signal`
-    /// a string of the form `signal-name` with optional `::signal-detail`
-    /// ## `closure`
-    /// the closure to connect.
-    /// ## `after`
-    /// whether the handler should be called before or after the
-    ///  default handler of the signal.
-    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_signal_group_connect_closure&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_signal_group_connect_closure&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_closure(<span class="kw-2">&amp;</span><span class="self">self</span>, signal_name: <span class="kw-2">&amp;</span>str, after: bool, closure: RustClosure) {
         <span class="kw">unsafe </span>{
             gobject_ffi::g_signal_group_connect_closure(
@@ -333,15 +294,7 @@
         }
     }
 
-    <span class="doccomment">/// Connects `c_handler` to the signal `detailed_signal`
-    /// on the target instance of `self`.
-    ///
-    /// You cannot connect a signal handler after `property::SignalGroup::target` has been set.
-    /// ## `detailed_signal`
-    /// a string of the form &quot;signal-name::detail&quot;
-    /// ## `c_handler`
-    /// the `GCallback` to connect
-    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_signal_group_connect&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_signal_group_connect&quot;</span>)]
     #[inline]
     </span><span class="kw">pub fn </span>connect&lt;F&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, signal_name: <span class="kw-2">&amp;</span>str, after: bool, callback: F)
     <span class="kw">where
@@ -401,13 +354,7 @@
         )
     }
 
-    <span class="doccomment">/// This signal is emitted when `property::SignalGroup::target` is set to a new value
-    /// other than [`None`]. It is similar to `signal::Object::notify` on `target` except it
-    /// will not emit when `property::SignalGroup::target` is [`None`] and also allows for
-    /// receiving the [`Object`][crate::Object] without a data-race.
-    /// ## `instance`
-    /// a [`Object`][crate::Object] containing the new value for `property::SignalGroup::target`
-    </span><span class="attr">#[doc(alias = <span class="string">&quot;bind&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;bind&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_bind&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>Object) + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
@@ -429,12 +376,7 @@
         }
     }
 
-    <span class="doccomment">/// This signal is emitted when the target instance of `self_` is set to a
-    /// new [`Object`][crate::Object].
-    ///
-    /// This signal will only be emitted if the previous target of `self_` is
-    /// non-[`None`].
-    </span><span class="attr">#[doc(alias = <span class="string">&quot;unbind&quot;</span>)]
+    <span class="attr">#[doc(alias = <span class="string">&quot;unbind&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_unbind&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>) + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {
         <span class="kw">unsafe </span>{ <span class="self">self</span>.connect_unbind_unsafe(f) }
     }
@@ -530,4 +472,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (bdb07a8ec 2022-12-11)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (0f529f0f4 2022-12-13)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-af96d9e2fc13e081.css" ></div></body></html>
