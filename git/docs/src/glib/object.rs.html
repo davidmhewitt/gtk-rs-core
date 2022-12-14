@@ -4660,12 +4660,6 @@
 <a href="#4587" id="4587">4587</a>
 <a href="#4588" id="4588">4588</a>
 <a href="#4589" id="4589">4589</a>
-<a href="#4590" id="4590">4590</a>
-<a href="#4591" id="4591">4591</a>
-<a href="#4592" id="4592">4592</a>
-<a href="#4593" id="4593">4593</a>
-<a href="#4594" id="4594">4594</a>
-<a href="#4595" id="4595">4595</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -7412,10 +7406,7 @@
 
         <span class="macro">assert!</span>(
             type_.is_a(signal_query_type),
-            <span class="string">&quot;Signal &#39;{}&#39; of type &#39;{}&#39; but got type &#39;{}&#39;&quot;</span>,
-            signal_name,
-            type_,
-            signal_query_type
+            <span class="string">&quot;Signal &#39;{signal_name}&#39; of type &#39;{type_}&#39; but got type &#39;{signal_query_type}&#39;&quot;</span>,
         );
 
         <span class="kw">let </span>handler = gobject_ffi::g_signal_connect_closure_by_id(
@@ -7461,10 +7452,7 @@
         <span class="kw">let </span>signal_query_type = signal_query.type_();
         <span class="macro">assert!</span>(
             type_.is_a(signal_query_type),
-            <span class="string">&quot;Signal &#39;{}&#39; of type &#39;{}&#39; but got type &#39;{}&#39;&quot;</span>,
-            signal_name,
-            type_,
-            signal_query_type
+            <span class="string">&quot;Signal &#39;{signal_name}&#39; of type &#39;{type_}&#39; but got type &#39;{signal_query_type}&#39;&quot;</span>,
         );
 
         <span class="kw">unsafe </span>{

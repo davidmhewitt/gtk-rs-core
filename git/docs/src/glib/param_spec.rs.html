@@ -2043,7 +2043,6 @@
 <a href="#1970" id="1970">1970</a>
 <a href="#1971" id="1971">1971</a>
 <a href="#1972" id="1972">1972</a>
-<a href="#1973" id="1973">1973</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>std::{char::CharTryFromError, convert::TryFrom, ffi::CStr};
@@ -2858,8 +2857,7 @@
 </span><span class="kw">fn </span>assert_param_name(name: <span class="kw-2">&amp;</span>str) {
     <span class="macro">assert!</span>(
         is_canonical_pspec_name(name),
-        <span class="string">&quot;{} is not a valid canonical parameter name&quot;</span>,
-        name
+        <span class="string">&quot;{name} is not a valid canonical parameter name&quot;</span>,
     );
 }
 <span class="macro">define_param_spec_numeric!</span>(

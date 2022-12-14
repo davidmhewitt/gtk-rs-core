@@ -1344,7 +1344,7 @@
         Box::pin(gio::GioFuture::new(<span class="self">self</span>, <span class="kw">move </span>|obj, cancellable, send| {
             <span class="kw">let </span>options = options
                 .iter()
-                .map(|<span class="kw-2">&amp;</span>(<span class="kw-2">ref </span>k, <span class="kw-2">ref </span>v)| (k.as_str(), v.as_str()))
+                .map(|(k, v)| (k.as_str(), v.as_str()))
                 .collect::&lt;Vec&lt;(<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span>str)&gt;&gt;();
 
             obj.save_to_streamv_async(

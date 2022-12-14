@@ -1130,8 +1130,6 @@
 <a href="#1057" id="1057">1057</a>
 <a href="#1058" id="1058">1058</a>
 <a href="#1059" id="1059">1059</a>
-<a href="#1060" id="1060">1060</a>
-<a href="#1061" id="1061">1061</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -1601,8 +1599,7 @@
         <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref mut </span>class_data) = <span class="self">self</span>.class_data {
             <span class="macro">assert!</span>(
                 class_data.get(<span class="kw-2">&amp;</span>type_).is_none(),
-                <span class="string">&quot;The class_data already contains a key for {}&quot;</span>,
-                type_
+                <span class="string">&quot;The class_data already contains a key for {type_}&quot;</span>,
             );
 
             class_data.insert(type_, Box::new(data));
@@ -1934,8 +1931,7 @@
             <span class="kw">if let </span><span class="prelude-val">Some</span>(<span class="kw-2">ref mut </span>instance_data) = priv_.instance_data {
                 <span class="macro">assert!</span>(
                     instance_data.get(<span class="kw-2">&amp;</span>type_).is_none(),
-                    <span class="string">&quot;The class_data already contains a key for {}&quot;</span>,
-                    type_
+                    <span class="string">&quot;The class_data already contains a key for {type_}&quot;</span>,
                 );
 
                 instance_data.insert(type_, Box::new(data));

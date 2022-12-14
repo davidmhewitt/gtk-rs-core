@@ -931,9 +931,6 @@
 <a href="#858" id="858">858</a>
 <a href="#859" id="859">859</a>
 <a href="#860" id="860">860</a>
-<a href="#861" id="861">861</a>
-<a href="#862" id="862">862</a>
-<a href="#863" id="863">863</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>std::{future::Future, io, mem, pin::Pin, ptr};
@@ -1582,10 +1579,7 @@
             {
                 <span class="kw">let </span>available = j - i;
                 <span class="kw">if </span>amt &gt; available {
-                    <span class="macro">panic!</span>(
-                        <span class="string">&quot;Cannot consume {} bytes as only {} are available&quot;</span>,
-                        amt, available
-                    )
+                    <span class="macro">panic!</span>(<span class="string">&quot;Cannot consume {amt} bytes as only {available} are available&quot;</span>,)
                 }
                 <span class="kw">let </span>remaining = available - amt;
                 <span class="kw">if </span>remaining == <span class="number">0 </span>{

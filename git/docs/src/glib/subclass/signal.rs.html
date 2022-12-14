@@ -775,7 +775,6 @@
 <a href="#702" id="702">702</a>
 <a href="#703" id="703">703</a>
 <a href="#704" id="704">704</a>
-<a href="#705" id="705">705</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>std::{fmt, num::NonZeroU32, ptr, sync::Mutex};
@@ -1315,8 +1314,7 @@
     </span><span class="kw">pub fn </span>builder(name: <span class="kw-2">&amp;</span>str) -&gt; SignalBuilder {
         <span class="macro">assert!</span>(
             is_canonical_pspec_name(name),
-            <span class="string">&quot;{} is not a valid canonical signal name&quot;</span>,
-            name
+            <span class="string">&quot;{name} is not a valid canonical signal name&quot;</span>,
         );
         SignalBuilder {
             name: name.to_owned(),
