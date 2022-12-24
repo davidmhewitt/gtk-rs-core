@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/convert.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>convert.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-54cf78c3b80fc28d.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-8fe2cf7ee64a76fb.css"><link rel="stylesheet" disabled href="../../static.files/dark-7aacebe982779e9a.css"><link rel="stylesheet" disabled href="../../static.files/ayu-29dcc614f7a7b461.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-a211dbb005fb8161.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/convert.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>convert.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-ed67f58bef457aa5.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-a19f8302ea709214.css"><link rel="stylesheet" disabled href="../../static.files/dark-f1e56666dd272622.css"><link rel="stylesheet" disabled href="../../static.files/ayu-7291d283d92e041c.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><a href="#1" id="1">1</a>
+<nav class="sidebar"></nav><main><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><a href="#1" id="1">1</a>
 <a href="#2" id="2">2</a>
 <a href="#3" id="3">3</a>
 <a href="#4" id="4">4</a>
@@ -503,11 +503,28 @@
 <a href="#430" id="430">430</a>
 <a href="#431" id="431">431</a>
 <a href="#432" id="432">432</a>
+<a href="#433" id="433">433</a>
+<a href="#434" id="434">434</a>
+<a href="#435" id="435">435</a>
+<a href="#436" id="436">436</a>
+<a href="#437" id="437">437</a>
+<a href="#438" id="438">438</a>
+<a href="#439" id="439">439</a>
+<a href="#440" id="440">440</a>
+<a href="#441" id="441">441</a>
+<a href="#442" id="442">442</a>
+<a href="#443" id="443">443</a>
+<a href="#444" id="444">444</a>
+<a href="#445" id="445">445</a>
+<a href="#446" id="446">446</a>
+<a href="#447" id="447">447</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>std::{io, os::raw::c_char, path::PathBuf, ptr};
 
-<span class="kw">use crate</span>::{translate::<span class="kw-2">*</span>, ConvertError, Error, GStr, GString, NormalizeMode, Slice};
+<span class="kw">use crate</span>::{
+    translate::<span class="kw-2">*</span>, ConvertError, Error, GString, IntoGStr, IntoOptionalGStr, NormalizeMode, Slice,
+};
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A wrapper for [`ConvertError`](crate::ConvertError) that can hold an offset into the input
@@ -541,24 +558,26 @@
 <span class="attr">#[doc(alias = <span class="string">&quot;g_convert&quot;</span>)]
 </span><span class="kw">pub fn </span>convert(
     str_: <span class="kw-2">&amp;</span>[u8],
-    to_codeset: <span class="kw-2">&amp;</span>str,
-    from_codeset: <span class="kw-2">&amp;</span>str,
+    to_codeset: <span class="kw">impl </span>IntoGStr,
+    from_codeset: <span class="kw">impl </span>IntoGStr,
 ) -&gt; <span class="prelude-ty">Result</span>&lt;(Slice&lt;u8&gt;, usize), CvtError&gt; {
     <span class="macro">assert!</span>(str_.len() &lt;= isize::MAX <span class="kw">as </span>usize);
     <span class="kw">let </span><span class="kw-2">mut </span>bytes_read = <span class="number">0</span>;
     <span class="kw">let </span><span class="kw-2">mut </span>bytes_written = <span class="number">0</span>;
     <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
-    <span class="kw">let </span>result = <span class="kw">unsafe </span>{
-        ffi::g_convert(
-            str_.as_ptr(),
-            str_.len() <span class="kw">as </span>isize,
-            to_codeset.to_glib_none().<span class="number">0</span>,
-            from_codeset.to_glib_none().<span class="number">0</span>,
-            <span class="kw-2">&amp;mut </span>bytes_read,
-            <span class="kw-2">&amp;mut </span>bytes_written,
-            <span class="kw-2">&amp;mut </span>error,
-        )
-    };
+    <span class="kw">let </span>result = to_codeset.run_with_gstr(|to_codeset| {
+        from_codeset.run_with_gstr(|from_codeset| <span class="kw">unsafe </span>{
+            ffi::g_convert(
+                str_.as_ptr(),
+                str_.len() <span class="kw">as </span>isize,
+                to_codeset.to_glib_none().<span class="number">0</span>,
+                from_codeset.to_glib_none().<span class="number">0</span>,
+                <span class="kw-2">&amp;mut </span>bytes_read,
+                <span class="kw-2">&amp;mut </span>bytes_written,
+                <span class="kw-2">&amp;mut </span>error,
+            )
+        })
+    });
     <span class="kw">if </span>result.is_null() {
         <span class="prelude-val">Err</span>(CvtError::new(<span class="kw">unsafe </span>{ from_glib_full(error) }, bytes_read))
     } <span class="kw">else </span>{
@@ -570,26 +589,30 @@
 <span class="attr">#[doc(alias = <span class="string">&quot;g_convert_with_fallback&quot;</span>)]
 </span><span class="kw">pub fn </span>convert_with_fallback(
     str_: <span class="kw-2">&amp;</span>[u8],
-    to_codeset: <span class="kw-2">&amp;</span>str,
-    from_codeset: <span class="kw-2">&amp;</span>str,
-    fallback: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;,
+    to_codeset: <span class="kw">impl </span>IntoGStr,
+    from_codeset: <span class="kw">impl </span>IntoGStr,
+    fallback: <span class="prelude-ty">Option</span>&lt;<span class="kw">impl </span>IntoGStr&gt;,
 ) -&gt; <span class="prelude-ty">Result</span>&lt;(Slice&lt;u8&gt;, usize), CvtError&gt; {
     <span class="macro">assert!</span>(str_.len() &lt;= isize::MAX <span class="kw">as </span>usize);
     <span class="kw">let </span><span class="kw-2">mut </span>bytes_read = <span class="number">0</span>;
     <span class="kw">let </span><span class="kw-2">mut </span>bytes_written = <span class="number">0</span>;
     <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
-    <span class="kw">let </span>result = <span class="kw">unsafe </span>{
-        ffi::g_convert_with_fallback(
-            str_.as_ptr(),
-            str_.len() <span class="kw">as </span>isize,
-            to_codeset.to_glib_none().<span class="number">0</span>,
-            from_codeset.to_glib_none().<span class="number">0</span>,
-            fallback.to_glib_none().<span class="number">0</span>,
-            <span class="kw-2">&amp;mut </span>bytes_read,
-            <span class="kw-2">&amp;mut </span>bytes_written,
-            <span class="kw-2">&amp;mut </span>error,
-        )
-    };
+    <span class="kw">let </span>result = to_codeset.run_with_gstr(|to_codeset| {
+        from_codeset.run_with_gstr(|from_codeset| {
+            fallback.run_with_gstr(|fallback| <span class="kw">unsafe </span>{
+                ffi::g_convert_with_fallback(
+                    str_.as_ptr(),
+                    str_.len() <span class="kw">as </span>isize,
+                    to_codeset.to_glib_none().<span class="number">0</span>,
+                    from_codeset.to_glib_none().<span class="number">0</span>,
+                    fallback.to_glib_none().<span class="number">0</span>,
+                    <span class="kw-2">&amp;mut </span>bytes_read,
+                    <span class="kw-2">&amp;mut </span>bytes_written,
+                    <span class="kw-2">&amp;mut </span>error,
+                )
+            })
+        })
+    });
     <span class="kw">if </span>result.is_null() {
         <span class="prelude-val">Err</span>(CvtError::new(<span class="kw">unsafe </span>{ from_glib_full(error) }, bytes_read))
     } <span class="kw">else </span>{
@@ -622,10 +645,12 @@
 <span class="kw">impl </span>IConv {
     <span class="attr">#[doc(alias = <span class="string">&quot;g_iconv_open&quot;</span>)]
     #[allow(clippy::unnecessary_lazy_evaluations)]
-    </span><span class="kw">pub fn </span>new(to_codeset: <span class="kw-2">&amp;</span>str, from_codeset: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="self">Self</span>&gt; {
-        <span class="kw">let </span>iconv = <span class="kw">unsafe </span>{
-            ffi::g_iconv_open(to_codeset.to_glib_none().<span class="number">0</span>, from_codeset.to_glib_none().<span class="number">0</span>)
-        };
+    </span><span class="kw">pub fn </span>new(to_codeset: <span class="kw">impl </span>IntoGStr, from_codeset: <span class="kw">impl </span>IntoGStr) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="self">Self</span>&gt; {
+        <span class="kw">let </span>iconv = to_codeset.run_with_gstr(|to_codeset| {
+            from_codeset.run_with_gstr(|from_codeset| <span class="kw">unsafe </span>{
+                ffi::g_iconv_open(to_codeset.to_glib_none().<span class="number">0</span>, from_codeset.to_glib_none().<span class="number">0</span>)
+            })
+        });
         (iconv <span class="kw">as </span>isize != -<span class="number">1</span>).then(|| <span class="self">Self</span>(iconv))
     }
     <span class="attr">#[doc(alias = <span class="string">&quot;g_convert_with_iconv&quot;</span>)]
@@ -714,20 +739,23 @@
 }
 
 <span class="attr">#[doc(alias = <span class="string">&quot;g_filename_from_utf8&quot;</span>)]
-</span><span class="kw">pub fn </span>filename_from_utf8(utf8string: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Result</span>&lt;(PathBuf, usize), CvtError&gt; {
-    <span class="kw">let </span>len = utf8string.len() <span class="kw">as </span>isize;
+</span><span class="kw">pub fn </span>filename_from_utf8(utf8string: <span class="kw">impl </span>IntoGStr) -&gt; <span class="prelude-ty">Result</span>&lt;(PathBuf, usize), CvtError&gt; {
     <span class="kw">let </span><span class="kw-2">mut </span>bytes_read = <span class="number">0</span>;
     <span class="kw">let </span><span class="kw-2">mut </span>bytes_written = std::mem::MaybeUninit::uninit();
     <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
-    <span class="kw">let </span>ret = <span class="kw">unsafe </span>{
-        ffi::g_filename_from_utf8(
-            utf8string.to_glib_none().<span class="number">0</span>,
-            len,
-            <span class="kw-2">&amp;mut </span>bytes_read,
-            bytes_written.as_mut_ptr(),
-            <span class="kw-2">&amp;mut </span>error,
-        )
-    };
+    <span class="kw">let </span>ret = utf8string.run_with_gstr(|utf8string| {
+        <span class="macro">assert!</span>(utf8string.len() &lt;= isize::MAX <span class="kw">as </span>usize);
+        <span class="kw">let </span>len = utf8string.len() <span class="kw">as </span>isize;
+        <span class="kw">unsafe </span>{
+            ffi::g_filename_from_utf8(
+                utf8string.to_glib_none().<span class="number">0</span>,
+                len,
+                <span class="kw-2">&amp;mut </span>bytes_read,
+                bytes_written.as_mut_ptr(),
+                <span class="kw-2">&amp;mut </span>error,
+            )
+        }
+    });
     <span class="kw">if </span>error.is_null() {
         <span class="prelude-val">Ok</span>(<span class="kw">unsafe </span>{
             (
@@ -770,20 +798,22 @@
 }
 
 <span class="attr">#[doc(alias = <span class="string">&quot;g_locale_from_utf8&quot;</span>)]
-</span><span class="kw">pub fn </span>locale_from_utf8(utf8string: <span class="kw-2">&amp;</span>GStr) -&gt; <span class="prelude-ty">Result</span>&lt;(Slice&lt;u8&gt;, usize), CvtError&gt; {
-    <span class="macro">assert!</span>(utf8string.len() &lt;= isize::MAX <span class="kw">as </span>usize);
+</span><span class="kw">pub fn </span>locale_from_utf8(utf8string: <span class="kw">impl </span>IntoGStr) -&gt; <span class="prelude-ty">Result</span>&lt;(Slice&lt;u8&gt;, usize), CvtError&gt; {
     <span class="kw">let </span><span class="kw-2">mut </span>bytes_read = <span class="number">0</span>;
     <span class="kw">let </span><span class="kw-2">mut </span>bytes_written = std::mem::MaybeUninit::uninit();
     <span class="kw">let </span><span class="kw-2">mut </span>error = ptr::null_mut();
-    <span class="kw">let </span>ret = <span class="kw">unsafe </span>{
-        ffi::g_locale_from_utf8(
-            utf8string.as_ptr(),
-            utf8string.len() <span class="kw">as </span>isize,
-            <span class="kw-2">&amp;mut </span>bytes_read,
-            bytes_written.as_mut_ptr(),
-            <span class="kw-2">&amp;mut </span>error,
-        )
-    };
+    <span class="kw">let </span>ret = utf8string.run_with_gstr(|utf8string| {
+        <span class="macro">assert!</span>(utf8string.len() &lt;= isize::MAX <span class="kw">as </span>usize);
+        <span class="kw">unsafe </span>{
+            ffi::g_locale_from_utf8(
+                utf8string.as_ptr(),
+                utf8string.len() <span class="kw">as </span>isize,
+                <span class="kw-2">&amp;mut </span>bytes_read,
+                bytes_written.as_mut_ptr(),
+                <span class="kw-2">&amp;mut </span>error,
+            )
+        }
+    });
     <span class="kw">if </span>error.is_null() {
         <span class="prelude-val">Ok</span>(<span class="kw">unsafe </span>{
             (
@@ -898,7 +928,7 @@
         <span class="macro">assert!</span>(<span class="kw">super</span>::convert(<span class="string">b&quot;Hello&quot;</span>, <span class="string">&quot;utf-8&quot;</span>, <span class="string">&quot;ascii&quot;</span>).is_ok());
         <span class="macro">assert!</span>(<span class="kw">super</span>::convert(<span class="string">b&quot;He\xaallo&quot;</span>, <span class="string">&quot;utf-8&quot;</span>, <span class="string">&quot;ascii&quot;</span>).is_err());
         <span class="macro">assert_eq!</span>(
-            <span class="kw">super</span>::convert_with_fallback(<span class="string">b&quot;H\xc3\xa9llo&quot;</span>, <span class="string">&quot;ascii&quot;</span>, <span class="string">&quot;utf-8&quot;</span>, <span class="prelude-val">None</span>)
+            <span class="kw">super</span>::convert_with_fallback(<span class="string">b&quot;H\xc3\xa9llo&quot;</span>, <span class="string">&quot;ascii&quot;</span>, <span class="string">&quot;utf-8&quot;</span>, <span class="kw">crate</span>::NONE_STR)
                 .unwrap()
                 .<span class="number">0
                 </span>.as_slice(),
@@ -936,4 +966,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (935dc0721 2022-12-19)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
+</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (af3e06f1b 2022-12-23)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>

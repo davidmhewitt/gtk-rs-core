@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/translate.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>translate.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-54cf78c3b80fc28d.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-8fe2cf7ee64a76fb.css"><link rel="stylesheet" disabled href="../../static.files/dark-7aacebe982779e9a.css"><link rel="stylesheet" disabled href="../../static.files/ayu-29dcc614f7a7b461.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-a211dbb005fb8161.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/translate.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>translate.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-ed67f58bef457aa5.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-a19f8302ea709214.css"><link rel="stylesheet" disabled href="../../static.files/dark-f1e56666dd272622.css"><link rel="stylesheet" disabled href="../../static.files/ayu-7291d283d92e041c.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><a href="#1" id="1">1</a>
+<nav class="sidebar"></nav><main><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><a href="#1" id="1">1</a>
 <a href="#2" id="2">2</a>
 <a href="#3" id="3">3</a>
 <a href="#4" id="4">4</a>
@@ -2857,6 +2857,131 @@
 <a href="#2784" id="2784">2784</a>
 <a href="#2785" id="2785">2785</a>
 <a href="#2786" id="2786">2786</a>
+<a href="#2787" id="2787">2787</a>
+<a href="#2788" id="2788">2788</a>
+<a href="#2789" id="2789">2789</a>
+<a href="#2790" id="2790">2790</a>
+<a href="#2791" id="2791">2791</a>
+<a href="#2792" id="2792">2792</a>
+<a href="#2793" id="2793">2793</a>
+<a href="#2794" id="2794">2794</a>
+<a href="#2795" id="2795">2795</a>
+<a href="#2796" id="2796">2796</a>
+<a href="#2797" id="2797">2797</a>
+<a href="#2798" id="2798">2798</a>
+<a href="#2799" id="2799">2799</a>
+<a href="#2800" id="2800">2800</a>
+<a href="#2801" id="2801">2801</a>
+<a href="#2802" id="2802">2802</a>
+<a href="#2803" id="2803">2803</a>
+<a href="#2804" id="2804">2804</a>
+<a href="#2805" id="2805">2805</a>
+<a href="#2806" id="2806">2806</a>
+<a href="#2807" id="2807">2807</a>
+<a href="#2808" id="2808">2808</a>
+<a href="#2809" id="2809">2809</a>
+<a href="#2810" id="2810">2810</a>
+<a href="#2811" id="2811">2811</a>
+<a href="#2812" id="2812">2812</a>
+<a href="#2813" id="2813">2813</a>
+<a href="#2814" id="2814">2814</a>
+<a href="#2815" id="2815">2815</a>
+<a href="#2816" id="2816">2816</a>
+<a href="#2817" id="2817">2817</a>
+<a href="#2818" id="2818">2818</a>
+<a href="#2819" id="2819">2819</a>
+<a href="#2820" id="2820">2820</a>
+<a href="#2821" id="2821">2821</a>
+<a href="#2822" id="2822">2822</a>
+<a href="#2823" id="2823">2823</a>
+<a href="#2824" id="2824">2824</a>
+<a href="#2825" id="2825">2825</a>
+<a href="#2826" id="2826">2826</a>
+<a href="#2827" id="2827">2827</a>
+<a href="#2828" id="2828">2828</a>
+<a href="#2829" id="2829">2829</a>
+<a href="#2830" id="2830">2830</a>
+<a href="#2831" id="2831">2831</a>
+<a href="#2832" id="2832">2832</a>
+<a href="#2833" id="2833">2833</a>
+<a href="#2834" id="2834">2834</a>
+<a href="#2835" id="2835">2835</a>
+<a href="#2836" id="2836">2836</a>
+<a href="#2837" id="2837">2837</a>
+<a href="#2838" id="2838">2838</a>
+<a href="#2839" id="2839">2839</a>
+<a href="#2840" id="2840">2840</a>
+<a href="#2841" id="2841">2841</a>
+<a href="#2842" id="2842">2842</a>
+<a href="#2843" id="2843">2843</a>
+<a href="#2844" id="2844">2844</a>
+<a href="#2845" id="2845">2845</a>
+<a href="#2846" id="2846">2846</a>
+<a href="#2847" id="2847">2847</a>
+<a href="#2848" id="2848">2848</a>
+<a href="#2849" id="2849">2849</a>
+<a href="#2850" id="2850">2850</a>
+<a href="#2851" id="2851">2851</a>
+<a href="#2852" id="2852">2852</a>
+<a href="#2853" id="2853">2853</a>
+<a href="#2854" id="2854">2854</a>
+<a href="#2855" id="2855">2855</a>
+<a href="#2856" id="2856">2856</a>
+<a href="#2857" id="2857">2857</a>
+<a href="#2858" id="2858">2858</a>
+<a href="#2859" id="2859">2859</a>
+<a href="#2860" id="2860">2860</a>
+<a href="#2861" id="2861">2861</a>
+<a href="#2862" id="2862">2862</a>
+<a href="#2863" id="2863">2863</a>
+<a href="#2864" id="2864">2864</a>
+<a href="#2865" id="2865">2865</a>
+<a href="#2866" id="2866">2866</a>
+<a href="#2867" id="2867">2867</a>
+<a href="#2868" id="2868">2868</a>
+<a href="#2869" id="2869">2869</a>
+<a href="#2870" id="2870">2870</a>
+<a href="#2871" id="2871">2871</a>
+<a href="#2872" id="2872">2872</a>
+<a href="#2873" id="2873">2873</a>
+<a href="#2874" id="2874">2874</a>
+<a href="#2875" id="2875">2875</a>
+<a href="#2876" id="2876">2876</a>
+<a href="#2877" id="2877">2877</a>
+<a href="#2878" id="2878">2878</a>
+<a href="#2879" id="2879">2879</a>
+<a href="#2880" id="2880">2880</a>
+<a href="#2881" id="2881">2881</a>
+<a href="#2882" id="2882">2882</a>
+<a href="#2883" id="2883">2883</a>
+<a href="#2884" id="2884">2884</a>
+<a href="#2885" id="2885">2885</a>
+<a href="#2886" id="2886">2886</a>
+<a href="#2887" id="2887">2887</a>
+<a href="#2888" id="2888">2888</a>
+<a href="#2889" id="2889">2889</a>
+<a href="#2890" id="2890">2890</a>
+<a href="#2891" id="2891">2891</a>
+<a href="#2892" id="2892">2892</a>
+<a href="#2893" id="2893">2893</a>
+<a href="#2894" id="2894">2894</a>
+<a href="#2895" id="2895">2895</a>
+<a href="#2896" id="2896">2896</a>
+<a href="#2897" id="2897">2897</a>
+<a href="#2898" id="2898">2898</a>
+<a href="#2899" id="2899">2899</a>
+<a href="#2900" id="2900">2900</a>
+<a href="#2901" id="2901">2901</a>
+<a href="#2902" id="2902">2902</a>
+<a href="#2903" id="2903">2903</a>
+<a href="#2904" id="2904">2904</a>
+<a href="#2905" id="2905">2905</a>
+<a href="#2906" id="2906">2906</a>
+<a href="#2907" id="2907">2907</a>
+<a href="#2908" id="2908">2908</a>
+<a href="#2909" id="2909">2909</a>
+<a href="#2910" id="2910">2910</a>
+<a href="#2911" id="2911">2911</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -2992,12 +3117,15 @@
 </span><span class="attr">#[cfg(not(windows))]
 </span><span class="kw">use </span>std::os::unix::prelude::<span class="kw-2">*</span>;
 <span class="kw">use </span>std::{
+    borrow::Cow,
     char,
     cmp::{Eq, Ordering, PartialEq},
     collections::HashMap,
     error::Error,
     ffi::{CStr, CString, OsStr, OsString},
-    fmt, mem,
+    fmt,
+    marker::PhantomData,
+    mem,
     path::{Path, PathBuf},
     ptr,
 };
@@ -3360,18 +3488,71 @@
     }
 }
 
-<span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>c_char&gt; <span class="kw">for </span>str {
-    <span class="kw">type </span>Storage = CString;
+<span class="attr">#[doc(hidden)]
+#[derive(Debug)]
+</span><span class="kw">pub enum </span>CowStash&lt;B, O&gt; {
+    Borrowed(B),
+    Owned(O),
+}
+
+<span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>, P: Ptr, T&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, P&gt; <span class="kw">for </span>Cow&lt;<span class="lifetime">&#39;a</span>, T&gt;
+<span class="kw">where
+    </span>T: ToOwned + <span class="question-mark">?</span>Sized + ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, P&gt;,
+    T::Owned: ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, P&gt;,
+{
+    <span class="kw">type </span>Storage = CowStash&lt;T::Storage, &lt;T::Owned <span class="kw">as </span>ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, P&gt;&gt;::Storage&gt;;
 
     <span class="attr">#[inline]
-    </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>c_char, <span class="self">Self</span>&gt; {
-        <span class="kw">let </span>tmp =
-            CString::new(<span class="self">self</span>).expect(<span class="string">&quot;str::ToGlibPtr&lt;*const c_char&gt;: unexpected &#39;\0&#39; character&quot;</span>);
-        Stash(tmp.as_ptr(), tmp)
+    </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, P, <span class="self">Self</span>&gt; {
+        <span class="kw">match </span><span class="self">self </span>{
+            Cow::Borrowed(v) =&gt; {
+                <span class="kw">let </span>s = v.to_glib_none();
+                Stash(s.<span class="number">0</span>, CowStash::Borrowed(s.<span class="number">1</span>))
+            }
+            Cow::Owned(v) =&gt; {
+                <span class="kw">let </span>s = v.to_glib_none();
+                Stash(s.<span class="number">0</span>, CowStash::Owned(s.<span class="number">1</span>))
+            }
+        }
+    }
+
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; P {
+        <span class="kw">match </span><span class="self">self </span>{
+            Cow::Borrowed(v) =&gt; v.to_glib_full(),
+            Cow::Owned(v) =&gt; v.to_glib_full(),
+        }
+    }
+}
+
+<span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>c_char&gt; <span class="kw">for </span>str {
+    <span class="kw">type </span>Storage = Cow&lt;<span class="lifetime">&#39;static</span>, [u8]&gt;;
+
+    <span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>c_char, <span class="self">Self</span>&gt; {
+        <span class="kw">static </span>EMPTY_STRING: <span class="kw-2">&amp;</span>[u8] = <span class="kw-2">&amp;</span>[<span class="number">0</span>];
+
+        <span class="kw">let </span>bytes = <span class="kw">if </span><span class="self">self</span>.is_empty() {
+            Cow::Borrowed(EMPTY_STRING)
+        } <span class="kw">else </span>{
+            <span class="kw">if </span><span class="macro">cfg!</span>(debug_assertions) {
+                <span class="kw">crate</span>::GStr::check_interior_nuls(<span class="self">self</span>).unwrap();
+            }
+            <span class="kw">let </span><span class="kw-2">mut </span>bytes = Vec::with_capacity(<span class="self">self</span>.len() + <span class="number">1</span>);
+            <span class="kw">unsafe </span>{
+                ptr::copy_nonoverlapping(<span class="self">self</span>.as_ptr(), bytes.as_mut_ptr(), <span class="self">self</span>.len());
+                bytes.as_mut_ptr().add(<span class="self">self</span>.len()).write(<span class="number">0</span>);
+                bytes.set_len(<span class="self">self</span>.len() + <span class="number">1</span>);
+            }
+            Cow::Owned(bytes)
+        };
+        Stash(bytes.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span>c_char, bytes)
     }
 
     <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*const </span>c_char {
+        <span class="kw">if </span><span class="macro">cfg!</span>(debug_assertions) {
+            <span class="kw">crate</span>::GStr::check_interior_nuls(<span class="self">self</span>).unwrap();
+        }
         <span class="kw">unsafe </span>{
             ffi::g_strndup(<span class="self">self</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span>c_char, <span class="self">self</span>.len() <span class="kw">as </span>size_t) <span class="kw">as </span><span class="kw-2">*const </span>c_char
         }
@@ -3379,53 +3560,122 @@
 }
 
 <span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>c_char&gt; <span class="kw">for </span>str {
-    <span class="kw">type </span>Storage = CString;
+    <span class="kw">type </span>Storage = Cow&lt;<span class="lifetime">&#39;static</span>, [u8]&gt;;
 
     <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>c_char, <span class="self">Self</span>&gt; {
-        <span class="kw">let </span>tmp =
-            CString::new(<span class="self">self</span>).expect(<span class="string">&quot;str::ToGlibPtr&lt;*mut c_char&gt;: unexpected &#39;\0&#39; character&quot;</span>);
-        Stash(tmp.as_ptr() <span class="kw">as </span><span class="kw-2">*mut </span>c_char, tmp)
+        <span class="kw">let </span>s = ToGlibPtr::&lt;<span class="kw-2">*const </span>c_char&gt;::to_glib_none(<span class="self">self</span>);
+        Stash(s.<span class="number">0 </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>, s.<span class="number">1</span>)
     }
 
     <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*mut </span>c_char {
-        <span class="kw">unsafe </span>{ ffi::g_strndup(<span class="self">self</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*mut </span>c_char, <span class="self">self</span>.len() <span class="kw">as </span>size_t) }
-    }
+        ToGlibPtr::&lt;<span class="kw-2">*const </span>c_char&gt;::to_glib_full(<span class="self">self</span>) <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_
+    </span>}
 }
 
 <span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>c_char&gt; <span class="kw">for </span>String {
-    <span class="kw">type </span>Storage = CString;
+    <span class="kw">type </span>Storage = Cow&lt;<span class="lifetime">&#39;static</span>, [u8]&gt;;
 
     <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>c_char, String&gt; {
-        <span class="kw">let </span>tmp = CString::new(<span class="kw-2">&amp;</span><span class="self">self</span>[..])
-            .expect(<span class="string">&quot;String::ToGlibPtr&lt;*const c_char&gt;: unexpected &#39;\0&#39; character&quot;</span>);
-        Stash(tmp.as_ptr(), tmp)
+        <span class="kw">let </span>s = ToGlibPtr::to_glib_none(<span class="self">self</span>.as_str());
+        Stash(s.<span class="number">0</span>, s.<span class="number">1</span>)
+    }
+
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*const </span>c_char {
+        ToGlibPtr::to_glib_full(<span class="self">self</span>.as_str())
+    }
+}
+
+<span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>c_char&gt; <span class="kw">for </span>String {
+    <span class="kw">type </span>Storage = Cow&lt;<span class="lifetime">&#39;static</span>, [u8]&gt;;
+
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>c_char, String&gt; {
+        <span class="kw">let </span>s = ToGlibPtr::to_glib_none(<span class="self">self</span>.as_str());
+        Stash(s.<span class="number">0</span>, s.<span class="number">1</span>)
+    }
+
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*mut </span>c_char {
+        ToGlibPtr::to_glib_full(<span class="self">self</span>.as_str())
+    }
+}
+
+<span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>c_char&gt; <span class="kw">for </span>CStr {
+    <span class="kw">type </span>Storage = PhantomData&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">Self</span>&gt;;
+
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>c_char, <span class="self">Self</span>&gt; {
+        Stash(<span class="self">self</span>.as_ptr(), PhantomData)
     }
 
     <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*const </span>c_char {
         <span class="kw">unsafe </span>{
-            ffi::g_strndup(<span class="self">self</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span>c_char, <span class="self">self</span>.len() <span class="kw">as </span>size_t) <span class="kw">as </span><span class="kw-2">*const </span>c_char
+            ffi::g_strndup(
+                <span class="self">self</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span>c_char,
+                <span class="self">self</span>.to_bytes().len() <span class="kw">as </span>size_t,
+            ) <span class="kw">as </span><span class="kw-2">*const </span>c_char
         }
     }
 }
 
-<span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>c_char&gt; <span class="kw">for </span>String {
-    <span class="kw">type </span>Storage = CString;
+<span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>c_char&gt; <span class="kw">for </span>CStr {
+    <span class="kw">type </span>Storage = PhantomData&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">Self</span>&gt;;
 
     <span class="attr">#[inline]
-    </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>c_char, String&gt; {
-        <span class="kw">let </span>tmp = CString::new(<span class="kw-2">&amp;</span><span class="self">self</span>[..])
-            .expect(<span class="string">&quot;String::ToGlibPtr&lt;*mut c_char&gt;: unexpected &#39;\0&#39; character&quot;</span>);
-        Stash(tmp.as_ptr() <span class="kw">as </span><span class="kw-2">*mut </span>c_char, tmp)
+    </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>c_char, <span class="self">Self</span>&gt; {
+        Stash(<span class="self">self</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*mut </span>c_char, PhantomData)
     }
 
     <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*mut </span>c_char {
         <span class="kw">unsafe </span>{
-            ffi::g_strndup(<span class="self">self</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span>c_char, <span class="self">self</span>.len() <span class="kw">as </span>size_t) <span class="kw">as </span><span class="kw-2">*mut </span>c_char
+            ffi::g_strndup(
+                <span class="self">self</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span>c_char,
+                <span class="self">self</span>.to_bytes().len() <span class="kw">as </span>size_t,
+            ) <span class="kw">as </span><span class="kw-2">*mut </span>c_char
+        }
+    }
+}
+
+<span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>c_char&gt; <span class="kw">for </span>CString {
+    <span class="kw">type </span>Storage = PhantomData&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">Self</span>&gt;;
+
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>c_char, <span class="self">Self</span>&gt; {
+        Stash(<span class="self">self</span>.as_ptr(), PhantomData)
+    }
+
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*const </span>c_char {
+        <span class="kw">unsafe </span>{
+            ffi::g_strndup(
+                <span class="self">self</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span>c_char,
+                <span class="self">self</span>.as_bytes().len() <span class="kw">as </span>size_t,
+            ) <span class="kw">as </span><span class="kw-2">*const </span>c_char
+        }
+    }
+}
+
+<span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>c_char&gt; <span class="kw">for </span>CString {
+    <span class="kw">type </span>Storage = PhantomData&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">Self</span>&gt;;
+
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>c_char, <span class="self">Self</span>&gt; {
+        Stash(<span class="self">self</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*mut </span>c_char, PhantomData)
+    }
+
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*mut </span>c_char {
+        <span class="kw">unsafe </span>{
+            ffi::g_strndup(
+                <span class="self">self</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span>c_char,
+                <span class="self">self</span>.as_bytes().len() <span class="kw">as </span>size_t,
+            ) <span class="kw">as </span><span class="kw-2">*mut </span>c_char
         }
     }
 }
@@ -5644,4 +5894,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (935dc0721 2022-12-19)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
+</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (af3e06f1b 2022-12-23)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>

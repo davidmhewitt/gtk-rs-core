@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/gstring_builder.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>gstring_builder.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-54cf78c3b80fc28d.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-8fe2cf7ee64a76fb.css"><link rel="stylesheet" disabled href="../../static.files/dark-7aacebe982779e9a.css"><link rel="stylesheet" disabled href="../../static.files/ayu-29dcc614f7a7b461.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-a211dbb005fb8161.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/gstring_builder.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>gstring_builder.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-ed67f58bef457aa5.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-a19f8302ea709214.css"><link rel="stylesheet" disabled href="../../static.files/dark-f1e56666dd272622.css"><link rel="stylesheet" disabled href="../../static.files/ayu-7291d283d92e041c.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -71,7 +71,7 @@
 </script>
 
 
-<nav class="sidebar"></nav><main><div class="width-limiter"><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><a href="#1" id="1">1</a>
+<nav class="sidebar"></nav><main><nav class="sub"><a class="sub-logo-container" href="../../glib/index.html"><img class="rust-logo" src="../../static.files/rust-logo-151179464ae7ed46.svg" alt="logo"></a><form class="search-form"><span></span><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-5ec35bf9ca753509.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><pre class="src-line-numbers"><a href="#1" id="1">1</a>
 <a href="#2" id="2">2</a>
 <a href="#3" id="3">3</a>
 <a href="#4" id="4">4</a>
@@ -365,11 +365,55 @@
 <a href="#292" id="292">292</a>
 <a href="#293" id="293">293</a>
 <a href="#294" id="294">294</a>
+<a href="#295" id="295">295</a>
+<a href="#296" id="296">296</a>
+<a href="#297" id="297">297</a>
+<a href="#298" id="298">298</a>
+<a href="#299" id="299">299</a>
+<a href="#300" id="300">300</a>
+<a href="#301" id="301">301</a>
+<a href="#302" id="302">302</a>
+<a href="#303" id="303">303</a>
+<a href="#304" id="304">304</a>
+<a href="#305" id="305">305</a>
+<a href="#306" id="306">306</a>
+<a href="#307" id="307">307</a>
+<a href="#308" id="308">308</a>
+<a href="#309" id="309">309</a>
+<a href="#310" id="310">310</a>
+<a href="#311" id="311">311</a>
+<a href="#312" id="312">312</a>
+<a href="#313" id="313">313</a>
+<a href="#314" id="314">314</a>
+<a href="#315" id="315">315</a>
+<a href="#316" id="316">316</a>
+<a href="#317" id="317">317</a>
+<a href="#318" id="318">318</a>
+<a href="#319" id="319">319</a>
+<a href="#320" id="320">320</a>
+<a href="#321" id="321">321</a>
+<a href="#322" id="322">322</a>
+<a href="#323" id="323">323</a>
+<a href="#324" id="324">324</a>
+<a href="#325" id="325">325</a>
+<a href="#326" id="326">326</a>
+<a href="#327" id="327">327</a>
+<a href="#328" id="328">328</a>
+<a href="#329" id="329">329</a>
+<a href="#330" id="330">330</a>
+<a href="#331" id="331">331</a>
+<a href="#332" id="332">332</a>
+<a href="#333" id="333">333</a>
+<a href="#334" id="334">334</a>
+<a href="#335" id="335">335</a>
+<a href="#336" id="336">336</a>
+<a href="#337" id="337">337</a>
+<a href="#338" id="338">338</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>std::{cmp, fmt, hash, mem, ops, ptr, slice, str};
 
-<span class="kw">use </span><span class="kw">crate</span>::translate::<span class="kw-2">*</span>;
+<span class="kw">use crate</span>::{translate::<span class="kw-2">*</span>, GStr};
 
 <span class="macro">wrapper! </span>{
     <span class="comment">// rustdoc-stripper-ignore-next
@@ -379,7 +423,7 @@
     </span><span class="kw">pub struct </span>GStringBuilder(BoxedInline&lt;ffi::GString&gt;);
 
     <span class="kw">match fn </span>{
-        copy =&gt; |ptr| ffi::g_string_new((<span class="kw-2">*</span>ptr).str),
+        copy =&gt; |ptr| ffi::g_string_new_len((<span class="kw-2">*</span>ptr).str, (<span class="kw-2">*</span>ptr).len.try_into().unwrap()),
         free =&gt; |ptr| ffi::g_string_free(ptr, ffi::GTRUE),
         init =&gt; |ptr| <span class="kw">unsafe </span>{
             <span class="kw">let </span>inner = ffi::GString {
@@ -478,7 +522,7 @@
     }
 
     <span class="comment">// rustdoc-stripper-ignore-next
-    </span><span class="doccomment">/// Returns `&amp;str` slice.
+    </span><span class="doccomment">/// Returns &lt;code&gt;&amp;[str]&lt;/code&gt; slice.
     </span><span class="kw">pub fn </span>as_str(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>str {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>ptr: <span class="kw-2">*const </span>u8 = <span class="self">self</span>.inner.str <span class="kw">as _</span>;
@@ -492,7 +536,21 @@
     }
 
     <span class="comment">// rustdoc-stripper-ignore-next
-    </span><span class="doccomment">/// Returns `&amp;str` slice.
+    </span><span class="doccomment">/// Returns &lt;code&gt;&amp;[GStr]&lt;/code&gt; slice.
+    </span><span class="kw">pub fn </span>as_gstr(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>GStr {
+        <span class="kw">unsafe </span>{
+            <span class="kw">let </span>ptr: <span class="kw-2">*const </span>u8 = <span class="self">self</span>.inner.str <span class="kw">as _</span>;
+            <span class="kw">let </span>len: usize = <span class="self">self</span>.inner.len;
+            <span class="kw">if </span>len == <span class="number">0 </span>{
+                <span class="kw">return </span>Default::default();
+            }
+            <span class="kw">let </span>slice = slice::from_raw_parts(ptr, len + <span class="number">1</span>);
+            GStr::from_utf8_with_nul_unchecked(slice)
+        }
+    }
+
+    <span class="comment">// rustdoc-stripper-ignore-next
+    </span><span class="doccomment">/// Finalizes the builder, converting it to a [`GString`].
     </span><span class="attr">#[must_use = <span class="string">&quot;String returned from the builder should probably be used&quot;</span>]
     </span><span class="kw">pub fn </span>into_string(<span class="self">self</span>) -&gt; <span class="kw">crate</span>::GString {
         <span class="kw">unsafe </span>{
@@ -540,6 +598,18 @@
     }
 }
 
+<span class="kw">impl </span>PartialEq&lt;GStr&gt; <span class="kw">for </span>GStringBuilder {
+    <span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>GStr) -&gt; bool {
+        <span class="self">self</span>.as_gstr() == other
+    }
+}
+
+<span class="kw">impl </span>PartialEq&lt;GStringBuilder&gt; <span class="kw">for </span>GStr {
+    <span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>GStringBuilder) -&gt; bool {
+        <span class="self">self </span>== other.as_gstr()
+    }
+}
+
 <span class="kw">impl </span>Eq <span class="kw">for </span>GStringBuilder {}
 
 <span class="kw">impl </span>cmp::PartialOrd <span class="kw">for </span>GStringBuilder {
@@ -557,6 +627,18 @@
 <span class="kw">impl </span>cmp::PartialOrd&lt;GStringBuilder&gt; <span class="kw">for </span>str {
     <span class="kw">fn </span>partial_cmp(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>GStringBuilder) -&gt; <span class="prelude-ty">Option</span>&lt;cmp::Ordering&gt; {
         <span class="prelude-val">Some</span>(<span class="self">self</span>.cmp(other.as_str()))
+    }
+}
+
+<span class="kw">impl </span>cmp::PartialOrd&lt;GStr&gt; <span class="kw">for </span>GStringBuilder {
+    <span class="kw">fn </span>partial_cmp(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>GStr) -&gt; <span class="prelude-ty">Option</span>&lt;cmp::Ordering&gt; {
+        <span class="prelude-val">Some</span>(<span class="self">self</span>.as_gstr().cmp(other))
+    }
+}
+
+<span class="kw">impl </span>cmp::PartialOrd&lt;GStringBuilder&gt; <span class="kw">for </span>GStr {
+    <span class="kw">fn </span>partial_cmp(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>GStringBuilder) -&gt; <span class="prelude-ty">Option</span>&lt;cmp::Ordering&gt; {
+        <span class="prelude-val">Some</span>(<span class="self">self</span>.cmp(other.as_gstr()))
     }
 }
 
@@ -584,6 +666,12 @@
 <span class="kw">impl </span>AsRef&lt;str&gt; <span class="kw">for </span>GStringBuilder {
     <span class="kw">fn </span>as_ref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>str {
         <span class="self">self</span>.as_str()
+    }
+}
+
+<span class="kw">impl </span>AsRef&lt;GStr&gt; <span class="kw">for </span>GStringBuilder {
+    <span class="kw">fn </span>as_ref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>GStr {
+        <span class="self">self</span>.as_gstr()
     }
 }
 
@@ -660,4 +748,4 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (935dc0721 2022-12-19)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
+</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (af3e06f1b 2022-12-23)" data-search-js="search-444266647c4dba98.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
