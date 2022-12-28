@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/variant_type.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>variant_type.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-b07ed6aaa412307b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-d695502c06d5afea.css"><link rel="stylesheet" disabled href="../../static.files/dark-aa222ca57e08648b.css"><link rel="stylesheet" disabled href="../../static.files/ayu-4eb006a26ee168b0.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/variant_type.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>variant_type.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-b07ed6aaa412307b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-d695502c06d5afea.css"><link rel="stylesheet" disabled href="../../static.files/dark-aa222ca57e08648b.css"><link rel="stylesheet" disabled href="../../static.files/ayu-d5b7bae5e01694db.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -1345,6 +1345,32 @@
 <a href="#1272" id="1272">1272</a>
 <a href="#1273" id="1273">1273</a>
 <a href="#1274" id="1274">1274</a>
+<a href="#1275" id="1275">1275</a>
+<a href="#1276" id="1276">1276</a>
+<a href="#1277" id="1277">1277</a>
+<a href="#1278" id="1278">1278</a>
+<a href="#1279" id="1279">1279</a>
+<a href="#1280" id="1280">1280</a>
+<a href="#1281" id="1281">1281</a>
+<a href="#1282" id="1282">1282</a>
+<a href="#1283" id="1283">1283</a>
+<a href="#1284" id="1284">1284</a>
+<a href="#1285" id="1285">1285</a>
+<a href="#1286" id="1286">1286</a>
+<a href="#1287" id="1287">1287</a>
+<a href="#1288" id="1288">1288</a>
+<a href="#1289" id="1289">1289</a>
+<a href="#1290" id="1290">1290</a>
+<a href="#1291" id="1291">1291</a>
+<a href="#1292" id="1292">1292</a>
+<a href="#1293" id="1293">1293</a>
+<a href="#1294" id="1294">1294</a>
+<a href="#1295" id="1295">1295</a>
+<a href="#1296" id="1296">1296</a>
+<a href="#1297" id="1297">1297</a>
+<a href="#1298" id="1298">1298</a>
+<a href="#1299" id="1299">1299</a>
+<a href="#1300" id="1300">1300</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>std::{
@@ -1669,25 +1695,29 @@
 <span class="kw">unsafe impl </span>Sync <span class="kw">for </span>VariantType {}
 
 <span class="kw">impl </span>Drop <span class="kw">for </span>VariantType {
-    <span class="kw">fn </span>drop(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>drop(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{ ffi::g_variant_type_free(<span class="self">self</span>.ptr.as_ptr()) }
     }
 }
 
 <span class="kw">impl </span>AsRef&lt;VariantTy&gt; <span class="kw">for </span>VariantType {
-    <span class="kw">fn </span>as_ref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>VariantTy {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>as_ref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>VariantTy {
         <span class="self">self
     </span>}
 }
 
 <span class="kw">impl </span>Borrow&lt;VariantTy&gt; <span class="kw">for </span>VariantType {
-    <span class="kw">fn </span>borrow(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>VariantTy {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>borrow(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>VariantTy {
         <span class="self">self
     </span>}
 }
 
 <span class="kw">impl </span>Clone <span class="kw">for </span>VariantType {
-    <span class="kw">fn </span>clone(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; VariantType {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>clone(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; VariantType {
         <span class="kw">unsafe </span>{
             VariantType {
                 ptr: ptr::NonNull::new_unchecked(ffi::g_variant_type_copy(<span class="self">self</span>.ptr.as_ptr())),
@@ -1701,6 +1731,7 @@
     <span class="kw">type </span>Target = VariantTy;
 
     <span class="attr">#[allow(clippy::cast_slice_from_raw_parts)]
+    #[inline]
     </span><span class="kw">fn </span>deref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>VariantTy {
         <span class="kw">unsafe </span>{
             <span class="kw-2">&amp;*</span>(slice::from_raw_parts(<span class="self">self</span>.ptr.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span>u8, <span class="self">self</span>.len) <span class="kw">as </span><span class="kw-2">*const </span>[u8]
@@ -1730,13 +1761,15 @@
 }
 
 <span class="kw">impl </span>Hash <span class="kw">for </span>VariantType {
-    <span class="kw">fn </span>hash&lt;H: Hasher&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, state: <span class="kw-2">&amp;mut </span>H) {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>hash&lt;H: Hasher&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, state: <span class="kw-2">&amp;mut </span>H) {
         &lt;VariantTy <span class="kw">as </span>Hash&gt;::hash(<span class="self">self</span>, state)
     }
 }
 
 <span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; From&lt;VariantType&gt; <span class="kw">for </span>Cow&lt;<span class="lifetime">&#39;a</span>, VariantTy&gt; {
-    <span class="kw">fn </span>from(ty: VariantType) -&gt; Cow&lt;<span class="lifetime">&#39;a</span>, VariantTy&gt; {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>from(ty: VariantType) -&gt; Cow&lt;<span class="lifetime">&#39;a</span>, VariantTy&gt; {
         Cow::Owned(ty)
     }
 }
@@ -1753,11 +1786,13 @@
 </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>ffi::GVariantType&gt; <span class="kw">for </span>VariantType {
     <span class="kw">type </span>Storage = PhantomData&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">Self</span>&gt;;
 
-    <span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>ffi::GVariantType, <span class="self">Self</span>&gt; {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>ffi::GVariantType, <span class="self">Self</span>&gt; {
         Stash(<span class="self">self</span>.ptr.as_ptr(), PhantomData)
     }
 
-    <span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*const </span>ffi::GVariantType {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*const </span>ffi::GVariantType {
         <span class="kw">unsafe </span>{ ffi::g_variant_type_copy(<span class="self">self</span>.ptr.as_ptr()) }
     }
 }
@@ -1766,11 +1801,13 @@
 </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::GVariantType&gt; <span class="kw">for </span>VariantType {
     <span class="kw">type </span>Storage = PhantomData&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">Self</span>&gt;;
 
-    <span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::GVariantType, <span class="self">Self</span>&gt; {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::GVariantType, <span class="self">Self</span>&gt; {
         Stash(<span class="self">self</span>.ptr.as_ptr(), PhantomData)
     }
 
-    <span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*mut </span>ffi::GVariantType {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*mut </span>ffi::GVariantType {
         <span class="kw">unsafe </span>{ ffi::g_variant_type_copy(<span class="self">self</span>.ptr.as_ptr()) }
     }
 }
@@ -1779,21 +1816,24 @@
 </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtrMut&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::GVariantType&gt; <span class="kw">for </span>VariantType {
     <span class="kw">type </span>Storage = PhantomData&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="kw-2">mut </span><span class="self">Self</span>&gt;;
 
-    <span class="kw">fn </span>to_glib_none_mut(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="kw-2">mut </span><span class="self">self</span>) -&gt; StashMut&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::GVariantType, <span class="self">Self</span>&gt; {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_glib_none_mut(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="kw-2">mut </span><span class="self">self</span>) -&gt; StashMut&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::GVariantType, <span class="self">Self</span>&gt; {
         StashMut(<span class="self">self</span>.ptr.as_ptr(), PhantomData)
     }
 }
 
 <span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibPtrNone&lt;<span class="kw-2">*const </span>ffi::GVariantType&gt; <span class="kw">for </span>VariantType {
-    <span class="kw">unsafe fn </span>from_glib_none(ptr: <span class="kw-2">*const </span>ffi::GVariantType) -&gt; VariantType {
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_glib_none(ptr: <span class="kw-2">*const </span>ffi::GVariantType) -&gt; VariantType {
         VariantTy::from_ptr(ptr).to_owned()
     }
 }
 
 <span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibPtrFull&lt;<span class="kw-2">*const </span>ffi::GVariantType&gt; <span class="kw">for </span>VariantType {
-    <span class="kw">unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*const </span>ffi::GVariantType) -&gt; VariantType {
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*const </span>ffi::GVariantType) -&gt; VariantType {
         <span class="comment">// Don&#39;t assume ownership of a const pointer.
         // A transfer: full annotation on a `const GVariantType*` is likely a bug.
         </span>VariantTy::from_ptr(ptr).to_owned()
@@ -1802,8 +1842,9 @@
 
 <span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibPtrFull&lt;<span class="kw-2">*mut </span>ffi::GVariantType&gt; <span class="kw">for </span>VariantType {
-    <span class="kw">unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*mut </span>ffi::GVariantType) -&gt; VariantType {
-        <span class="macro">assert!</span>(!ptr.is_null());
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*mut </span>ffi::GVariantType) -&gt; VariantType {
+        <span class="macro">debug_assert!</span>(!ptr.is_null());
         <span class="kw">let </span>len: usize = ffi::g_variant_type_get_string_length(ptr) <span class="kw">as _</span>;
         VariantType {
             ptr: ptr::NonNull::new_unchecked(ptr),
@@ -2015,6 +2056,7 @@
     /// # Safety
     ///
     /// The caller is responsible for passing in only a valid variant type string.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub const unsafe fn </span>from_str_unchecked(type_string: <span class="kw-2">&amp;</span>str) -&gt; <span class="kw-2">&amp;</span>VariantTy {
         std::mem::transmute::&lt;<span class="kw-2">&amp;</span>str, <span class="kw-2">&amp;</span>VariantTy&gt;(type_string)
     }
@@ -2024,22 +2066,25 @@
     /// pointer.
     </span><span class="attr">#[doc(hidden)]
     #[allow(clippy::cast_slice_from_raw_parts)]
+    #[inline]
     </span><span class="kw">pub unsafe fn </span>from_ptr&lt;<span class="lifetime">&#39;a</span>&gt;(ptr: <span class="kw-2">*const </span>ffi::GVariantType) -&gt; <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>VariantTy {
-        <span class="macro">assert!</span>(!ptr.is_null());
+        <span class="macro">debug_assert!</span>(!ptr.is_null());
         <span class="kw">let </span>len: usize = ffi::g_variant_type_get_string_length(ptr) <span class="kw">as _</span>;
-        <span class="macro">assert!</span>(len &gt; <span class="number">0</span>);
+        <span class="macro">debug_assert!</span>(len &gt; <span class="number">0</span>);
         <span class="kw-2">&amp;*</span>(slice::from_raw_parts(ptr <span class="kw">as </span><span class="kw-2">*const </span>u8, len) <span class="kw">as </span><span class="kw-2">*const </span>[u8] <span class="kw">as </span><span class="kw-2">*const </span>VariantTy)
     }
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Returns a `GVariantType` pointer.
     </span><span class="attr">#[doc(hidden)]
+    #[inline]
     </span><span class="kw">pub fn </span>as_ptr(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*const </span>ffi::GVariantType {
         <span class="self">self</span>.inner.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_
     </span>}
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Converts to a string slice.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>as_str(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>str {
         <span class="kw-2">&amp;</span><span class="self">self</span>.inner
     }
@@ -2236,7 +2281,8 @@
 </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibPtr&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>ffi::GVariantType&gt; <span class="kw">for </span>VariantTy {
     <span class="kw">type </span>Storage = PhantomData&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">Self</span>&gt;;
 
-    <span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>ffi::GVariantType, <span class="self">Self</span>&gt; {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const </span>ffi::GVariantType, <span class="self">Self</span>&gt; {
         Stash(<span class="self">self</span>.as_ptr(), PhantomData)
     }
 }
@@ -2248,13 +2294,15 @@
 }
 
 <span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; From&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>VariantTy&gt; <span class="kw">for </span>Cow&lt;<span class="lifetime">&#39;a</span>, VariantTy&gt; {
-    <span class="kw">fn </span>from(ty: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>VariantTy) -&gt; Cow&lt;<span class="lifetime">&#39;a</span>, VariantTy&gt; {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>from(ty: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>VariantTy) -&gt; Cow&lt;<span class="lifetime">&#39;a</span>, VariantTy&gt; {
         Cow::Borrowed(ty)
     }
 }
 
 <span class="kw">impl </span>AsRef&lt;VariantTy&gt; <span class="kw">for </span>VariantTy {
-    <span class="kw">fn </span>as_ref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span><span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>as_ref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span><span class="self">Self </span>{
         <span class="self">self
     </span>}
 }
@@ -2262,7 +2310,8 @@
 <span class="kw">impl </span>ToOwned <span class="kw">for </span>VariantTy {
     <span class="kw">type </span>Owned = VariantType;
 
-    <span class="kw">fn </span>to_owned(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; VariantType {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_owned(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; VariantType {
         <span class="kw">unsafe </span>{
             VariantType {
                 ptr: ptr::NonNull::new_unchecked(ffi::g_variant_type_copy(<span class="self">self</span>.as_ptr())),
@@ -2273,7 +2322,8 @@
 }
 
 <span class="kw">impl </span>StaticType <span class="kw">for </span>VariantTy {
-    <span class="kw">fn </span>static_type() -&gt; Type {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>static_type() -&gt; Type {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_variant_type_get_gtype()) }
     }
 }
@@ -2284,7 +2334,7 @@
 
     <span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="kw">crate</span>::Value) -&gt; <span class="self">Self </span>{
         <span class="kw">let </span>ptr = gobject_ffi::g_value_get_boxed(value.to_glib_none().<span class="number">0</span>);
-        <span class="macro">assert!</span>(!ptr.is_null());
+        <span class="macro">debug_assert!</span>(!ptr.is_null());
         VariantTy::from_ptr(ptr <span class="kw">as </span><span class="kw-2">*const </span>ffi::GVariantType)
     }
 }
@@ -2313,7 +2363,8 @@
         (<span class="kw-2">*</span><span class="self">self</span>).to_value()
     }
 
-    <span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Type {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Type {
         VariantTy::static_type()
     }
 }
@@ -2334,7 +2385,8 @@
 }
 
 <span class="kw">impl </span>StaticType <span class="kw">for </span>VariantType {
-    <span class="kw">fn </span>static_type() -&gt; Type {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>static_type() -&gt; Type {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_variant_type_get_gtype()) }
     }
 }
@@ -2353,7 +2405,7 @@
 
     <span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="kw">crate</span>::Value) -&gt; <span class="self">Self </span>{
         <span class="kw">let </span>ptr = gobject_ffi::g_value_get_boxed(value.to_glib_none().<span class="number">0</span>);
-        <span class="macro">assert!</span>(!ptr.is_null());
+        <span class="macro">debug_assert!</span>(!ptr.is_null());
         from_glib_none(ptr <span class="kw">as </span><span class="kw-2">*const </span>ffi::GVariantType)
     }
 }
@@ -2620,4 +2672,4 @@
     }
 }
 </code></pre></div>
-</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (88c58e3c2 2022-12-26)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
+</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (92c1937a9 2022-12-27)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>

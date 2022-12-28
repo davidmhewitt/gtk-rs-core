@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/log.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>log.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-b07ed6aaa412307b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-d695502c06d5afea.css"><link rel="stylesheet" disabled href="../../static.files/dark-aa222ca57e08648b.css"><link rel="stylesheet" disabled href="../../static.files/ayu-4eb006a26ee168b0.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/log.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>log.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-b07ed6aaa412307b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-d695502c06d5afea.css"><link rel="stylesheet" disabled href="../../static.files/dark-aa222ca57e08648b.css"><link rel="stylesheet" disabled href="../../static.files/ayu-d5b7bae5e01694db.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -1131,6 +1131,12 @@
 <a href="#1058" id="1058">1058</a>
 <a href="#1059" id="1059">1059</a>
 <a href="#1060" id="1060">1060</a>
+<a href="#1061" id="1061">1061</a>
+<a href="#1062" id="1062">1062</a>
+<a href="#1063" id="1063">1063</a>
+<a href="#1064" id="1064">1064</a>
+<a href="#1065" id="1065">1065</a>
+<a href="#1066" id="1066">1066</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
@@ -1149,7 +1155,8 @@
 
 <span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;u32&gt; <span class="kw">for </span>LogHandlerId {
-    <span class="kw">unsafe fn </span>from_glib(value: u32) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_glib(value: u32) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>(value)
     }
 }
@@ -1158,7 +1165,8 @@
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>LogHandlerId {
     <span class="kw">type </span>GlibType = u32;
 
-    <span class="kw">fn </span>into_glib(<span class="self">self</span>) -&gt; u32 {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>into_glib(<span class="self">self</span>) -&gt; u32 {
         <span class="self">self</span>.<span class="number">0
     </span>}
 }
@@ -1183,7 +1191,8 @@
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>LogLevel {
     <span class="kw">type </span>GlibType = u32;
 
-    <span class="kw">fn </span>into_glib(<span class="self">self</span>) -&gt; u32 {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>into_glib(<span class="self">self</span>) -&gt; u32 {
         <span class="kw">match </span><span class="self">self </span>{
             <span class="self">Self</span>::Error =&gt; ffi::G_LOG_LEVEL_ERROR,
             <span class="self">Self</span>::Critical =&gt; ffi::G_LOG_LEVEL_CRITICAL,
@@ -1197,7 +1206,8 @@
 
 <span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;u32&gt; <span class="kw">for </span>LogLevel {
-    <span class="kw">unsafe fn </span>from_glib(value: u32) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_glib(value: u32) -&gt; <span class="self">Self </span>{
         <span class="kw">if </span>value &amp; ffi::G_LOG_LEVEL_ERROR != <span class="number">0 </span>{
             <span class="self">Self</span>::Error
         } <span class="kw">else if </span>value &amp; ffi::G_LOG_LEVEL_CRITICAL != <span class="number">0 </span>{
@@ -1252,14 +1262,16 @@
 </span><span class="kw">impl </span>IntoGlib <span class="kw">for </span>LogLevels {
     <span class="kw">type </span>GlibType = ffi::GLogLevelFlags;
 
-    <span class="kw">fn </span>into_glib(<span class="self">self</span>) -&gt; ffi::GLogLevelFlags {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>into_glib(<span class="self">self</span>) -&gt; ffi::GLogLevelFlags {
         <span class="self">self</span>.bits()
     }
 }
 
 <span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlib&lt;ffi::GLogLevelFlags&gt; <span class="kw">for </span>LogLevels {
-    <span class="kw">unsafe fn </span>from_glib(value: ffi::GLogLevelFlags) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_glib(value: ffi::GLogLevelFlags) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_bits_truncate(value)
     }
 }
@@ -2192,4 +2204,4 @@
     }
 }
 </code></pre></div>
-</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (88c58e3c2 2022-12-26)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
+</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (92c1937a9 2022-12-27)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>

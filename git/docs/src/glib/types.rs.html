@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/types.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>types.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-b07ed6aaa412307b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-d695502c06d5afea.css"><link rel="stylesheet" disabled href="../../static.files/dark-aa222ca57e08648b.css"><link rel="stylesheet" disabled href="../../static.files/ayu-4eb006a26ee168b0.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/types.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>types.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-b07ed6aaa412307b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-d695502c06d5afea.css"><link rel="stylesheet" disabled href="../../static.files/dark-aa222ca57e08648b.css"><link rel="stylesheet" disabled href="../../static.files/ayu-d5b7bae5e01694db.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -697,6 +697,37 @@
 <a href="#624" id="624">624</a>
 <a href="#625" id="625">625</a>
 <a href="#626" id="626">626</a>
+<a href="#627" id="627">627</a>
+<a href="#628" id="628">628</a>
+<a href="#629" id="629">629</a>
+<a href="#630" id="630">630</a>
+<a href="#631" id="631">631</a>
+<a href="#632" id="632">632</a>
+<a href="#633" id="633">633</a>
+<a href="#634" id="634">634</a>
+<a href="#635" id="635">635</a>
+<a href="#636" id="636">636</a>
+<a href="#637" id="637">637</a>
+<a href="#638" id="638">638</a>
+<a href="#639" id="639">639</a>
+<a href="#640" id="640">640</a>
+<a href="#641" id="641">641</a>
+<a href="#642" id="642">642</a>
+<a href="#643" id="643">643</a>
+<a href="#644" id="644">644</a>
+<a href="#645" id="645">645</a>
+<a href="#646" id="646">646</a>
+<a href="#647" id="647">647</a>
+<a href="#648" id="648">648</a>
+<a href="#649" id="649">649</a>
+<a href="#650" id="650">650</a>
+<a href="#651" id="651">651</a>
+<a href="#652" id="652">652</a>
+<a href="#653" id="653">653</a>
+<a href="#654" id="654">654</a>
+<a href="#655" id="655">655</a>
+<a href="#656" id="656">656</a>
+<a href="#657" id="657">657</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -844,6 +875,7 @@
     }
 
     <span class="attr">#[doc(alias = <span class="string">&quot;g_type_is_a&quot;</span>)]
+    #[inline]
     </span><span class="kw">pub fn </span>is_a(<span class="self">self</span>, other: <span class="self">Self</span>) -&gt; bool {
         <span class="kw">unsafe </span>{
             from_glib(gobject_ffi::g_type_is_a(
@@ -937,6 +969,7 @@
 
 <span class="kw">impl </span>StaticType <span class="kw">for </span>Type {
     <span class="attr">#[doc(alias = <span class="string">&quot;g_gtype_get_type&quot;</span>)]
+    #[inline]
     </span><span class="kw">fn </span>static_type() -&gt; Type {
         <span class="kw">unsafe </span>{ from_glib(gobject_ffi::g_gtype_get_type()) }
     }
@@ -950,7 +983,8 @@
 }
 
 <span class="kw">impl</span>&lt;T: StaticType&gt; StaticTypeExt <span class="kw">for </span>T {
-    <span class="kw">fn </span>ensure_type() {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>ensure_type() {
         T::static_type();
     }
 }
@@ -964,14 +998,16 @@
 </span><span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">crate</span>::value::FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span>Type {
     <span class="kw">type </span>Checker = <span class="kw">crate</span>::value::GenericValueTypeChecker&lt;<span class="self">Self</span>&gt;;
 
-    <span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="kw">crate</span>::Value) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="kw">crate</span>::Value) -&gt; <span class="self">Self </span>{
         from_glib(gobject_ffi::g_value_get_gtype(value.to_glib_none().<span class="number">0</span>))
     }
 }
 
 <span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span><span class="kw">crate</span>::value::ToValue <span class="kw">for </span>Type {
-    <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Value {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Value {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>value = <span class="kw">crate</span>::Value::from_type(Type::static_type());
             gobject_ffi::g_value_set_gtype(value.to_glib_none_mut().<span class="number">0</span>, <span class="self">self</span>.into_glib());
@@ -979,7 +1015,8 @@
         }
     }
 
-    <span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Type {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Type {
         Type::static_type()
     }
 }
@@ -993,13 +1030,15 @@
 }
 
 <span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>, T: <span class="question-mark">?</span>Sized + StaticType&gt; StaticType <span class="kw">for </span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>T {
-    <span class="kw">fn </span>static_type() -&gt; Type {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>static_type() -&gt; Type {
         T::static_type()
     }
 }
 
 <span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>, T: <span class="question-mark">?</span>Sized + StaticType&gt; StaticType <span class="kw">for </span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="kw-2">mut </span>T {
-    <span class="kw">fn </span>static_type() -&gt; Type {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>static_type() -&gt; Type {
         T::static_type()
     }
 }
@@ -1007,7 +1046,8 @@
 <span class="macro">macro_rules! </span>builtin {
     (<span class="macro-nonterminal">$name</span>:ty, <span class="macro-nonterminal">$val</span>:ident) =&gt; {
         <span class="kw">impl </span>StaticType <span class="kw">for </span><span class="macro-nonterminal">$name </span>{
-            <span class="kw">fn </span>static_type() -&gt; Type {
+            <span class="attr">#[inline]
+            </span><span class="kw">fn </span>static_type() -&gt; Type {
                 Type::<span class="macro-nonterminal">$val
             </span>}
         }
@@ -1038,7 +1078,8 @@
 </span><span class="kw">pub type </span>Pointee = libc::c_void;
 
 <span class="kw">impl </span>StaticType <span class="kw">for </span>ptr::NonNull&lt;Pointee&gt; {
-    <span class="kw">fn </span>static_type() -&gt; Type {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>static_type() -&gt; Type {
         Pointer::static_type()
     }
 }
@@ -1049,49 +1090,57 @@
 <span class="kw">impl </span>std::ops::Deref <span class="kw">for </span>ILong {
     <span class="kw">type </span>Target = libc::c_long;
 
-    <span class="kw">fn </span>deref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span><span class="self">Self</span>::Target {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>deref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span><span class="self">Self</span>::Target {
         <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0
     </span>}
 }
 
 <span class="kw">impl </span>std::ops::DerefMut <span class="kw">for </span>ILong {
-    <span class="kw">fn </span>deref_mut(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;mut </span><span class="self">Self</span>::Target {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>deref_mut(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;mut </span><span class="self">Self</span>::Target {
         <span class="kw-2">&amp;mut </span><span class="self">self</span>.<span class="number">0
     </span>}
 }
 
 <span class="kw">impl </span>From&lt;libc::c_long&gt; <span class="kw">for </span>ILong {
-    <span class="kw">fn </span>from(v: libc::c_long) -&gt; ILong {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>from(v: libc::c_long) -&gt; ILong {
         ILong(v)
     }
 }
 
 <span class="kw">impl </span>From&lt;ILong&gt; <span class="kw">for </span>libc::c_long {
-    <span class="kw">fn </span>from(v: ILong) -&gt; libc::c_long {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>from(v: ILong) -&gt; libc::c_long {
         v.<span class="number">0
     </span>}
 }
 
 <span class="kw">impl </span>PartialEq&lt;libc::c_long&gt; <span class="kw">for </span>ILong {
-    <span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>libc::c_long) -&gt; bool {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>libc::c_long) -&gt; bool {
         <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0 </span>== other
     }
 }
 
 <span class="kw">impl </span>PartialEq&lt;ILong&gt; <span class="kw">for </span>libc::c_long {
-    <span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>ILong) -&gt; bool {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>ILong) -&gt; bool {
         <span class="self">self </span>== <span class="kw-2">&amp;</span>other.<span class="number">0
     </span>}
 }
 
 <span class="kw">impl </span>PartialOrd&lt;libc::c_long&gt; <span class="kw">for </span>ILong {
-    <span class="kw">fn </span>partial_cmp(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>libc::c_long) -&gt; <span class="prelude-ty">Option</span>&lt;std::cmp::Ordering&gt; {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>partial_cmp(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>libc::c_long) -&gt; <span class="prelude-ty">Option</span>&lt;std::cmp::Ordering&gt; {
         <span class="self">self</span>.<span class="number">0</span>.partial_cmp(other)
     }
 }
 
 <span class="kw">impl </span>PartialOrd&lt;ILong&gt; <span class="kw">for </span>libc::c_long {
-    <span class="kw">fn </span>partial_cmp(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>ILong) -&gt; <span class="prelude-ty">Option</span>&lt;std::cmp::Ordering&gt; {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>partial_cmp(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>ILong) -&gt; <span class="prelude-ty">Option</span>&lt;std::cmp::Ordering&gt; {
         <span class="self">self</span>.partial_cmp(<span class="kw-2">&amp;</span>other.<span class="number">0</span>)
     }
 }
@@ -1102,49 +1151,57 @@
 <span class="kw">impl </span>std::ops::Deref <span class="kw">for </span>ULong {
     <span class="kw">type </span>Target = libc::c_ulong;
 
-    <span class="kw">fn </span>deref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span><span class="self">Self</span>::Target {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>deref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span><span class="self">Self</span>::Target {
         <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0
     </span>}
 }
 
 <span class="kw">impl </span>std::ops::DerefMut <span class="kw">for </span>ULong {
-    <span class="kw">fn </span>deref_mut(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;mut </span><span class="self">Self</span>::Target {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>deref_mut(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;mut </span><span class="self">Self</span>::Target {
         <span class="kw-2">&amp;mut </span><span class="self">self</span>.<span class="number">0
     </span>}
 }
 
 <span class="kw">impl </span>From&lt;libc::c_ulong&gt; <span class="kw">for </span>ULong {
-    <span class="kw">fn </span>from(v: libc::c_ulong) -&gt; ULong {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>from(v: libc::c_ulong) -&gt; ULong {
         ULong(v)
     }
 }
 
 <span class="kw">impl </span>From&lt;ULong&gt; <span class="kw">for </span>libc::c_ulong {
-    <span class="kw">fn </span>from(v: ULong) -&gt; libc::c_ulong {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>from(v: ULong) -&gt; libc::c_ulong {
         v.<span class="number">0
     </span>}
 }
 
 <span class="kw">impl </span>PartialEq&lt;libc::c_ulong&gt; <span class="kw">for </span>ULong {
-    <span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>libc::c_ulong) -&gt; bool {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>libc::c_ulong) -&gt; bool {
         <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0 </span>== other
     }
 }
 
 <span class="kw">impl </span>PartialEq&lt;ULong&gt; <span class="kw">for </span>libc::c_ulong {
-    <span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>ULong) -&gt; bool {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>ULong) -&gt; bool {
         <span class="self">self </span>== <span class="kw-2">&amp;</span>other.<span class="number">0
     </span>}
 }
 
 <span class="kw">impl </span>PartialOrd&lt;libc::c_ulong&gt; <span class="kw">for </span>ULong {
-    <span class="kw">fn </span>partial_cmp(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>libc::c_ulong) -&gt; <span class="prelude-ty">Option</span>&lt;std::cmp::Ordering&gt; {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>partial_cmp(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>libc::c_ulong) -&gt; <span class="prelude-ty">Option</span>&lt;std::cmp::Ordering&gt; {
         <span class="self">self</span>.<span class="number">0</span>.partial_cmp(other)
     }
 }
 
 <span class="kw">impl </span>PartialOrd&lt;ULong&gt; <span class="kw">for </span>libc::c_ulong {
-    <span class="kw">fn </span>partial_cmp(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>ULong) -&gt; <span class="prelude-ty">Option</span>&lt;std::cmp::Ordering&gt; {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>partial_cmp(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span>ULong) -&gt; <span class="prelude-ty">Option</span>&lt;std::cmp::Ordering&gt; {
         <span class="self">self</span>.partial_cmp(<span class="kw-2">&amp;</span>other.<span class="number">0</span>)
     }
 }
@@ -1165,19 +1222,22 @@
 <span class="macro">builtin!</span>(Pointer, POINTER);
 
 <span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; StaticType <span class="kw">for </span>[<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str] {
-    <span class="kw">fn </span>static_type() -&gt; Type {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>static_type() -&gt; Type {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_strv_get_type()) }
     }
 }
 
 <span class="kw">impl </span>StaticType <span class="kw">for </span>Vec&lt;String&gt; {
-    <span class="kw">fn </span>static_type() -&gt; Type {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>static_type() -&gt; Type {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_strv_get_type()) }
     }
 }
 
 <span class="kw">impl </span>StaticType <span class="kw">for </span>() {
-    <span class="kw">fn </span>static_type() -&gt; Type {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>static_type() -&gt; Type {
         Type::UNIT
     }
 }
@@ -1209,11 +1269,13 @@
 <span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibContainerFromSlice&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>ffi::GType&gt; <span class="kw">for </span>Type {
     <span class="kw">type </span>Storage = PhantomData&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>[Type]&gt;;
 
-    <span class="kw">fn </span>to_glib_none_from_slice(t: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>[Type]) -&gt; (<span class="kw-2">*mut </span>ffi::GType, <span class="self">Self</span>::Storage) {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_glib_none_from_slice(t: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>[Type]) -&gt; (<span class="kw-2">*mut </span>ffi::GType, <span class="self">Self</span>::Storage) {
         (t.as_ptr() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GType, PhantomData)
     }
 
-    <span class="kw">fn </span>to_glib_container_from_slice(t: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>[Type]) -&gt; (<span class="kw-2">*mut </span>ffi::GType, <span class="self">Self</span>::Storage) {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_glib_container_from_slice(t: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>[Type]) -&gt; (<span class="kw-2">*mut </span>ffi::GType, <span class="self">Self</span>::Storage) {
         (<span class="self">Self</span>::to_glib_full_from_slice(t), PhantomData)
     }
 
@@ -1324,4 +1386,4 @@
     }
 }
 </code></pre></div>
-</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (88c58e3c2 2022-12-26)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
+</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (92c1937a9 2022-12-27)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>

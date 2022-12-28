@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/collections.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>collections.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-b07ed6aaa412307b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-d695502c06d5afea.css"><link rel="stylesheet" disabled href="../../static.files/dark-aa222ca57e08648b.css"><link rel="stylesheet" disabled href="../../static.files/ayu-4eb006a26ee168b0.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/collections.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>collections.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-b07ed6aaa412307b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-d695502c06d5afea.css"><link rel="stylesheet" disabled href="../../static.files/dark-aa222ca57e08648b.css"><link rel="stylesheet" disabled href="../../static.files/ayu-d5b7bae5e01694db.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -1450,6 +1450,64 @@
 <a href="#1377" id="1377">1377</a>
 <a href="#1378" id="1378">1378</a>
 <a href="#1379" id="1379">1379</a>
+<a href="#1380" id="1380">1380</a>
+<a href="#1381" id="1381">1381</a>
+<a href="#1382" id="1382">1382</a>
+<a href="#1383" id="1383">1383</a>
+<a href="#1384" id="1384">1384</a>
+<a href="#1385" id="1385">1385</a>
+<a href="#1386" id="1386">1386</a>
+<a href="#1387" id="1387">1387</a>
+<a href="#1388" id="1388">1388</a>
+<a href="#1389" id="1389">1389</a>
+<a href="#1390" id="1390">1390</a>
+<a href="#1391" id="1391">1391</a>
+<a href="#1392" id="1392">1392</a>
+<a href="#1393" id="1393">1393</a>
+<a href="#1394" id="1394">1394</a>
+<a href="#1395" id="1395">1395</a>
+<a href="#1396" id="1396">1396</a>
+<a href="#1397" id="1397">1397</a>
+<a href="#1398" id="1398">1398</a>
+<a href="#1399" id="1399">1399</a>
+<a href="#1400" id="1400">1400</a>
+<a href="#1401" id="1401">1401</a>
+<a href="#1402" id="1402">1402</a>
+<a href="#1403" id="1403">1403</a>
+<a href="#1404" id="1404">1404</a>
+<a href="#1405" id="1405">1405</a>
+<a href="#1406" id="1406">1406</a>
+<a href="#1407" id="1407">1407</a>
+<a href="#1408" id="1408">1408</a>
+<a href="#1409" id="1409">1409</a>
+<a href="#1410" id="1410">1410</a>
+<a href="#1411" id="1411">1411</a>
+<a href="#1412" id="1412">1412</a>
+<a href="#1413" id="1413">1413</a>
+<a href="#1414" id="1414">1414</a>
+<a href="#1415" id="1415">1415</a>
+<a href="#1416" id="1416">1416</a>
+<a href="#1417" id="1417">1417</a>
+<a href="#1418" id="1418">1418</a>
+<a href="#1419" id="1419">1419</a>
+<a href="#1420" id="1420">1420</a>
+<a href="#1421" id="1421">1421</a>
+<a href="#1422" id="1422">1422</a>
+<a href="#1423" id="1423">1423</a>
+<a href="#1424" id="1424">1424</a>
+<a href="#1425" id="1425">1425</a>
+<a href="#1426" id="1426">1426</a>
+<a href="#1427" id="1427">1427</a>
+<a href="#1428" id="1428">1428</a>
+<a href="#1429" id="1429">1429</a>
+<a href="#1430" id="1430">1430</a>
+<a href="#1431" id="1431">1431</a>
+<a href="#1432" id="1432">1432</a>
+<a href="#1433" id="1433">1433</a>
+<a href="#1434" id="1434">1434</a>
+<a href="#1435" id="1435">1435</a>
+<a href="#1436" id="1436">1436</a>
+<a href="#1437" id="1437">1437</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>std::{fmt, iter::FusedIterator, marker::PhantomData, mem, ptr};
@@ -1596,6 +1654,7 @@
 {
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Borrows a static C array.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_borrow&lt;<span class="lifetime">&#39;a</span>&gt;(ptr: <span class="kw-2">*const </span>&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType) -&gt; <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>[T] {
         <span class="kw">let </span><span class="kw-2">mut </span>len = <span class="number">0</span>;
         <span class="kw">if </span>!ptr.is_null() {
@@ -1608,15 +1667,16 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Borrows a static C array.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_borrow_num&lt;<span class="lifetime">&#39;a</span>&gt;(
         ptr: <span class="kw-2">*const </span>&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType,
         len: usize,
     ) -&gt; <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>[T] {
-        <span class="macro">assert_eq!</span>(
+        <span class="macro">debug_assert_eq!</span>(
             mem::size_of::&lt;T&gt;(),
             mem::size_of::&lt;&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType&gt;()
         );
-        <span class="macro">assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
+        <span class="macro">debug_assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
 
         <span class="kw">if </span>len == <span class="number">0 </span>{
             <span class="kw-2">&amp;</span>[]
@@ -1629,15 +1689,16 @@
     </span><span class="doccomment">/// Create a new `PtrSlice` around a static C array.
     ///
     /// Must only be called for static allocations that are never invalidated.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_none_num_static(
         ptr: <span class="kw-2">*const </span>&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType,
         len: usize,
     ) -&gt; <span class="self">Self </span>{
-        <span class="macro">assert_eq!</span>(
+        <span class="macro">debug_assert_eq!</span>(
             mem::size_of::&lt;T&gt;(),
             mem::size_of::&lt;&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType&gt;()
         );
-        <span class="macro">assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
+        <span class="macro">debug_assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
 
         PtrSlice {
             ptr: <span class="kw">if </span>len == <span class="number">0 </span>{
@@ -1654,15 +1715,16 @@
     </span><span class="doccomment">/// Create a new `PtrSlice` around a C array of which the items are static.
     ///
     /// Must only be called for static items that are never invalidated.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_container_num_static(
         ptr: <span class="kw-2">*mut </span>&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType,
         len: usize,
     ) -&gt; <span class="self">Self </span>{
-        <span class="macro">assert_eq!</span>(
+        <span class="macro">debug_assert_eq!</span>(
             mem::size_of::&lt;T&gt;(),
             mem::size_of::&lt;&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType&gt;()
         );
-        <span class="macro">assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
+        <span class="macro">debug_assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
 
         PtrSlice {
             ptr: <span class="kw">if </span>len == <span class="number">0 </span>{
@@ -1678,15 +1740,16 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Create a new `PtrSlice` around a C array where the items are borrowed.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_container_num(
         ptr: <span class="kw-2">*mut </span>&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType,
         len: usize,
     ) -&gt; <span class="self">Self </span>{
-        <span class="macro">assert_eq!</span>(
+        <span class="macro">debug_assert_eq!</span>(
             mem::size_of::&lt;T&gt;(),
             mem::size_of::&lt;&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType&gt;()
         );
-        <span class="macro">assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
+        <span class="macro">debug_assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
 
         <span class="kw">for </span>i <span class="kw">in </span><span class="number">0</span>..len {
             <span class="kw">let </span>p = ptr.add(i);
@@ -1708,15 +1771,16 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Create a new `PtrSlice` around a C array.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_full_num(
         ptr: <span class="kw-2">*mut </span>&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType,
         len: usize,
     ) -&gt; <span class="self">Self </span>{
-        <span class="macro">assert_eq!</span>(
+        <span class="macro">debug_assert_eq!</span>(
             mem::size_of::&lt;T&gt;(),
             mem::size_of::&lt;&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType&gt;()
         );
-        <span class="macro">assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
+        <span class="macro">debug_assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
 
         PtrSlice {
             ptr: <span class="kw">if </span>len == <span class="number">0 </span>{
@@ -1734,6 +1798,7 @@
     </span><span class="doccomment">/// Create a new `PtrSlice` around a static `NULL`-terminated C array.
     ///
     /// Must only be called for static allocations that are never invalidated.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_none_static(ptr: <span class="kw-2">*mut </span>&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType) -&gt; <span class="self">Self </span>{
         <span class="kw">let </span><span class="kw-2">mut </span>len = <span class="number">0</span>;
         <span class="kw">if </span>!ptr.is_null() {
@@ -1749,6 +1814,7 @@
     </span><span class="doccomment">/// Create a new `PtrSlice` around a `NULL`-terminated C array of which the items are static.
     ///
     /// Must only be called for static items that are never invalidated.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_container_static(ptr: <span class="kw-2">*mut </span>&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType) -&gt; <span class="self">Self </span>{
         <span class="kw">let </span><span class="kw-2">mut </span>len = <span class="number">0</span>;
         <span class="kw">if </span>!ptr.is_null() {
@@ -1762,8 +1828,9 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Create a new `PtrSlice` around a `NULL`-terminated C array where the items are borrowed.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_container(ptr: <span class="kw-2">*mut </span>&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType) -&gt; <span class="self">Self </span>{
-        <span class="macro">assert_eq!</span>(
+        <span class="macro">debug_assert_eq!</span>(
             mem::size_of::&lt;T&gt;(),
             mem::size_of::&lt;&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType&gt;()
         );
@@ -1784,6 +1851,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Create a new `PtrSlice` around a `NULL`-terminated C array.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*mut </span>&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType) -&gt; <span class="self">Self </span>{
         <span class="kw">let </span><span class="kw-2">mut </span>len = <span class="number">0</span>;
         <span class="kw">if </span>!ptr.is_null() {
@@ -1797,6 +1865,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Returns the underlying pointer.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>as_ptr(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*const </span>&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType {
         <span class="kw">if </span><span class="self">self</span>.len == <span class="number">0 </span>{
             ptr::null()
@@ -1807,6 +1876,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Borrows this slice as a `&amp;[T]`.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>as_slice(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>[T] {
         <span class="self">self</span>.as_ref()
     }
@@ -1818,7 +1888,8 @@
             + FromGlibPtrNone&lt;&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType&gt;,
     &gt; Drop <span class="kw">for </span>PtrSlice&lt;T&gt;
 {
-    <span class="kw">fn </span>drop(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>drop(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             <span class="kw">if </span><span class="self">self</span>.transfer == ContainerTransfer::Full {
                 <span class="kw">for </span>i <span class="kw">in </span><span class="number">0</span>..<span class="self">self</span>.len {
@@ -1839,7 +1910,8 @@
             + FromGlibPtrNone&lt;&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType&gt;,
     &gt; AsRef&lt;[T]&gt; <span class="kw">for </span>PtrSlice&lt;T&gt;
 {
-    <span class="kw">fn </span>as_ref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>[T] {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>as_ref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>[T] {
         <span class="kw">unsafe </span>{
             <span class="kw">if </span><span class="self">self</span>.len == <span class="number">0 </span>{
                 <span class="kw-2">&amp;</span>[]
@@ -1858,7 +1930,8 @@
 {
     <span class="kw">type </span>Target = [T];
 
-    <span class="kw">fn </span>deref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>[T] {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>deref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>[T] {
         <span class="self">self</span>.as_ref()
     }
 }
@@ -1874,14 +1947,16 @@
         <span class="macro">unimplemented!</span>()
     }
 
-    <span class="kw">unsafe fn </span>from_glib_container_num(
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_glib_container_num(
         ptr: <span class="kw-2">*mut </span>&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType,
         num: usize,
     ) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_glib_container_num(ptr, num)
     }
 
-    <span class="kw">unsafe fn </span>from_glib_full_num(ptr: <span class="kw-2">*mut </span>&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType, num: usize) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_glib_full_num(ptr: <span class="kw-2">*mut </span>&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType, num: usize) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_glib_full_num(ptr, num)
     }
 }
@@ -1897,11 +1972,13 @@
         <span class="macro">unimplemented!</span>()
     }
 
-    <span class="kw">unsafe fn </span>from_glib_container(ptr: <span class="kw-2">*mut </span>&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_glib_container(ptr: <span class="kw-2">*mut </span>&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_glib_container(ptr)
     }
 
-    <span class="kw">unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*mut </span>&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*mut </span>&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_glib_full(ptr)
     }
 }
@@ -1969,7 +2046,7 @@
     </span><span class="doccomment">/// Borrows a static C array.
     </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_borrow_num&lt;<span class="lifetime">&#39;a</span>&gt;(ptr: <span class="kw-2">*const </span>T, len: usize) -&gt; <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>[T] {
-        <span class="macro">assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
+        <span class="macro">debug_assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
 
         <span class="kw">if </span>len == <span class="number">0 </span>{
             <span class="kw-2">&amp;</span>[]
@@ -1982,7 +2059,7 @@
     </span><span class="doccomment">/// Borrows a static mutable C array.
     </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_borrow_num_mut&lt;<span class="lifetime">&#39;a</span>&gt;(ptr: <span class="kw-2">*mut </span>T, len: usize) -&gt; <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="kw-2">mut </span>[T] {
-        <span class="macro">assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
+        <span class="macro">debug_assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
 
         <span class="kw">if </span>len == <span class="number">0 </span>{
             <span class="kw-2">&amp;mut </span>[]
@@ -1995,8 +2072,9 @@
     </span><span class="doccomment">/// Create a new `Slice` around a static C array.
     ///
     /// Must only be called for static allocations that are never invalidated.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_none_num_static(ptr: <span class="kw-2">*const </span>T, len: usize) -&gt; <span class="self">Self </span>{
-        <span class="macro">assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
+        <span class="macro">debug_assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
 
         Slice {
             ptr: <span class="kw">if </span>len == <span class="number">0 </span>{
@@ -2013,8 +2091,9 @@
     </span><span class="doccomment">/// Create a new `Slice` around a C array of which the items are static.
     ///
     /// Must only be called for static items that are never invalidated.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_container_num_static(ptr: <span class="kw-2">*mut </span>T, len: usize) -&gt; <span class="self">Self </span>{
-        <span class="macro">assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
+        <span class="macro">debug_assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
 
         Slice {
             ptr: <span class="kw">if </span>len == <span class="number">0 </span>{
@@ -2030,11 +2109,12 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Create a new `Slice` around a C array where the items are `Copy`.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_container_num_copy(ptr: <span class="kw-2">*mut </span>T, len: usize) -&gt; <span class="self">Self
     </span><span class="kw">where
         </span>T: Copy,
     {
-        <span class="macro">assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
+        <span class="macro">debug_assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
 
         Slice {
             ptr: <span class="kw">if </span>len == <span class="number">0 </span>{
@@ -2050,11 +2130,12 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Create a new `Slice` around a C array where the items are borrowed.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_container_num&lt;P: Ptr&gt;(ptr: <span class="kw-2">*mut </span>T, len: usize) -&gt; <span class="self">Self
     </span><span class="kw">where
         </span>T: FromGlibPtrNone&lt;P&gt;,
     {
-        <span class="macro">assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
+        <span class="macro">debug_assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
 
         <span class="kw">for </span>i <span class="kw">in </span><span class="number">0</span>..len {
             <span class="kw">let </span>p = ptr.add(i);
@@ -2076,11 +2157,12 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Create a new `Slice` around a C array where the items are `Copy`.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_full_num_copy(ptr: <span class="kw-2">*mut </span>T, len: usize) -&gt; <span class="self">Self
     </span><span class="kw">where
         </span>T: Copy,
     {
-        <span class="macro">assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
+        <span class="macro">debug_assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
 
         Slice {
             ptr: <span class="kw">if </span>len == <span class="number">0 </span>{
@@ -2096,8 +2178,9 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Create a new `Slice` around a C array.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_full_num(ptr: <span class="kw-2">*mut </span>T, len: usize) -&gt; <span class="self">Self </span>{
-        <span class="macro">assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
+        <span class="macro">debug_assert!</span>(!ptr.is_null() || len == <span class="number">0</span>);
 
         Slice {
             ptr: <span class="kw">if </span>len == <span class="number">0 </span>{
@@ -2113,13 +2196,15 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Borrows this slice as a `&amp;[T]`.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>as_slice(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>[T] {
         <span class="self">self</span>.as_ref()
     }
 }
 
 <span class="kw">impl</span>&lt;T: <span class="lifetime">&#39;static</span>&gt; Drop <span class="kw">for </span>Slice&lt;T&gt; {
-    <span class="kw">fn </span>drop(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>drop(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             <span class="kw">if </span><span class="self">self</span>.transfer == ContainerTransfer::Full {
                 <span class="kw">for </span>i <span class="kw">in </span><span class="number">0</span>..<span class="self">self</span>.len {
@@ -2135,7 +2220,8 @@
 }
 
 <span class="kw">impl</span>&lt;T: <span class="lifetime">&#39;static</span>&gt; AsRef&lt;[T]&gt; <span class="kw">for </span>Slice&lt;T&gt; {
-    <span class="kw">fn </span>as_ref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>[T] {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>as_ref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>[T] {
         <span class="kw">unsafe </span>{
             <span class="kw">if </span><span class="self">self</span>.len == <span class="number">0 </span>{
                 <span class="kw-2">&amp;</span>[]
@@ -2149,7 +2235,8 @@
 <span class="kw">impl</span>&lt;T: <span class="lifetime">&#39;static</span>&gt; std::ops::Deref <span class="kw">for </span>Slice&lt;T&gt; {
     <span class="kw">type </span>Target = [T];
 
-    <span class="kw">fn </span>deref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>[T] {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>deref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>[T] {
         <span class="self">self</span>.as_ref()
     }
 }
@@ -2160,11 +2247,13 @@
         <span class="macro">unimplemented!</span>()
     }
 
-    <span class="kw">unsafe fn </span>from_glib_container_num(ptr: <span class="kw-2">*mut </span>T, num: usize) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_glib_container_num(ptr: <span class="kw-2">*mut </span>T, num: usize) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_glib_container_num(ptr, num)
     }
 
-    <span class="kw">unsafe fn </span>from_glib_full_num(ptr: <span class="kw-2">*mut </span>T, num: usize) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_glib_full_num(ptr: <span class="kw-2">*mut </span>T, num: usize) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_glib_full_num(ptr, num)
     }
 }
@@ -2211,6 +2300,7 @@
     </span><span class="doccomment">/// Create a new `List` around a static list of static items.
     ///
     /// Must only be called for a static list of static allocations that are never invalidated.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_none_static(list: <span class="kw-2">*mut </span>ffi::GList) -&gt; List&lt;T&gt; {
         List {
             ptr: ptr::NonNull::new(list),
@@ -2221,6 +2311,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Create a new `List` around a list.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_container(list: <span class="kw-2">*mut </span>ffi::GList) -&gt; List&lt;T&gt; {
         <span class="comment">// Need to copy all items as we only own the container
         </span><span class="kw">let </span><span class="kw-2">mut </span>l = list;
@@ -2241,6 +2332,7 @@
     </span><span class="doccomment">/// Create a new `List` around a list of static items.
     ///
     /// Must only be called for static allocations that are never invalidated.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_container_static(list: <span class="kw-2">*mut </span>ffi::GList) -&gt; List&lt;T&gt; {
         List {
             ptr: ptr::NonNull::new(list),
@@ -2251,6 +2343,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Create a new `List` around a list.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_full(list: <span class="kw-2">*mut </span>ffi::GList) -&gt; List&lt;T&gt; {
         List {
             ptr: ptr::NonNull::new(list),
@@ -2261,6 +2354,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Create a non-destructive iterator over the `List`.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>iter(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; ListIter&lt;T&gt; {
         ListIter::new(<span class="self">self</span>)
     }
@@ -2278,7 +2372,8 @@
             + FromGlibPtrNone&lt;&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType&gt;,
     &gt; Drop <span class="kw">for </span>List&lt;T&gt;
 {
-    <span class="kw">fn </span>drop(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>drop(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
         <span class="comment">// Also cleans up the list itself as needed
         </span><span class="kw">for </span>item <span class="kw">in </span><span class="self">self </span>{
             drop(item);
@@ -2294,7 +2389,8 @@
 {
     <span class="kw">type </span>Item = T;
 
-    <span class="kw">fn </span>next(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;T&gt; {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>next(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;T&gt; {
         <span class="kw">match </span><span class="self">self</span>.ptr {
             <span class="prelude-val">None </span>=&gt; <span class="prelude-val">None</span>,
             <span class="prelude-val">Some</span>(cur) =&gt; <span class="kw">unsafe </span>{
@@ -2337,11 +2433,13 @@
         <span class="macro">unimplemented!</span>()
     }
 
-    <span class="kw">unsafe fn </span>from_glib_container_num(ptr: <span class="kw-2">*mut </span>ffi::GList, _num: usize) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_glib_container_num(ptr: <span class="kw-2">*mut </span>ffi::GList, _num: usize) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_glib_container(ptr)
     }
 
-    <span class="kw">unsafe fn </span>from_glib_full_num(ptr: <span class="kw-2">*mut </span>ffi::GList, _num: usize) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_glib_full_num(ptr: <span class="kw-2">*mut </span>ffi::GList, _num: usize) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_glib_full(ptr)
     }
 }
@@ -2356,11 +2454,13 @@
         <span class="macro">unimplemented!</span>()
     }
 
-    <span class="kw">unsafe fn </span>from_glib_container(ptr: <span class="kw-2">*mut </span>ffi::GList) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_glib_container(ptr: <span class="kw-2">*mut </span>ffi::GList) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_glib_container(ptr)
     }
 
-    <span class="kw">unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*mut </span>ffi::GList) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*mut </span>ffi::GList) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_glib_full(ptr)
     }
 }
@@ -2384,8 +2484,9 @@
             + FromGlibPtrNone&lt;&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType&gt;,
     &gt; ListIter&lt;<span class="lifetime">&#39;a</span>, T&gt;
 {
-    <span class="kw">fn </span>new(list: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>List&lt;T&gt;) -&gt; ListIter&lt;<span class="lifetime">&#39;a</span>, T&gt; {
-        <span class="macro">assert_eq!</span>(
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>new(list: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>List&lt;T&gt;) -&gt; ListIter&lt;<span class="lifetime">&#39;a</span>, T&gt; {
+        <span class="macro">debug_assert_eq!</span>(
             mem::size_of::&lt;T&gt;(),
             mem::size_of::&lt;&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType&gt;()
         );
@@ -2406,7 +2507,8 @@
 {
     <span class="kw">type </span>Item = <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>T;
 
-    <span class="kw">fn </span>next(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>T&gt; {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>next(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>T&gt; {
         <span class="kw">match </span><span class="self">self</span>.ptr {
             <span class="prelude-val">None </span>=&gt; <span class="prelude-val">None</span>,
             <span class="prelude-val">Some</span>(cur) =&gt; <span class="kw">unsafe </span>{
@@ -2471,6 +2573,7 @@
     </span><span class="doccomment">/// Create a new `SList` around a static list of static items.
     ///
     /// Must only be called for a static list of static allocations that are never invalidated.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_none_static(list: <span class="kw-2">*mut </span>ffi::GSList) -&gt; SList&lt;T&gt; {
         SList {
             ptr: ptr::NonNull::new(list),
@@ -2481,8 +2584,9 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Create a new `SList` around a list.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_container(list: <span class="kw-2">*mut </span>ffi::GSList) -&gt; SList&lt;T&gt; {
-        <span class="macro">assert_eq!</span>(
+        <span class="macro">debug_assert_eq!</span>(
             mem::size_of::&lt;T&gt;(),
             mem::size_of::&lt;&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType&gt;()
         );
@@ -2506,6 +2610,7 @@
     </span><span class="doccomment">/// Create a new `SList` around a list of static items.
     ///
     /// Must only be called for static allocations that are never invalidated.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_container_static(list: <span class="kw-2">*mut </span>ffi::GSList) -&gt; SList&lt;T&gt; {
         SList {
             ptr: ptr::NonNull::new(list),
@@ -2516,6 +2621,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Create a new `SList` around a list.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_full(list: <span class="kw-2">*mut </span>ffi::GSList) -&gt; SList&lt;T&gt; {
         SList {
             ptr: ptr::NonNull::new(list),
@@ -2526,12 +2632,14 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Create a non-destructive iterator over the `SList`.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>iter(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; SListIter&lt;T&gt; {
         SListIter::new(<span class="self">self</span>)
     }
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Check if the list is empty.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>is_empty(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="self">self</span>.ptr.is_none()
     }
@@ -2543,7 +2651,8 @@
             + FromGlibPtrNone&lt;&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType&gt;,
     &gt; Drop <span class="kw">for </span>SList&lt;T&gt;
 {
-    <span class="kw">fn </span>drop(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>drop(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
         <span class="comment">// Also cleans up the list itself as needed
         </span><span class="kw">for </span>item <span class="kw">in </span><span class="self">self </span>{
             drop(item);
@@ -2559,7 +2668,8 @@
 {
     <span class="kw">type </span>Item = T;
 
-    <span class="kw">fn </span>next(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;T&gt; {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>next(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;T&gt; {
         <span class="kw">match </span><span class="self">self</span>.ptr {
             <span class="prelude-val">None </span>=&gt; <span class="prelude-val">None</span>,
             <span class="prelude-val">Some</span>(cur) =&gt; <span class="kw">unsafe </span>{
@@ -2599,11 +2709,13 @@
         <span class="macro">unimplemented!</span>()
     }
 
-    <span class="kw">unsafe fn </span>from_glib_container_num(ptr: <span class="kw-2">*mut </span>ffi::GSList, _num: usize) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_glib_container_num(ptr: <span class="kw-2">*mut </span>ffi::GSList, _num: usize) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_glib_container(ptr)
     }
 
-    <span class="kw">unsafe fn </span>from_glib_full_num(ptr: <span class="kw-2">*mut </span>ffi::GSList, _num: usize) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_glib_full_num(ptr: <span class="kw-2">*mut </span>ffi::GSList, _num: usize) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_glib_full(ptr)
     }
 }
@@ -2618,11 +2730,13 @@
         <span class="macro">unimplemented!</span>()
     }
 
-    <span class="kw">unsafe fn </span>from_glib_container(ptr: <span class="kw-2">*mut </span>ffi::GSList) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_glib_container(ptr: <span class="kw-2">*mut </span>ffi::GSList) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_glib_container(ptr)
     }
 
-    <span class="kw">unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*mut </span>ffi::GSList) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_glib_full(ptr: <span class="kw-2">*mut </span>ffi::GSList) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::from_glib_full(ptr)
     }
 }
@@ -2646,8 +2760,9 @@
             + FromGlibPtrNone&lt;&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType&gt;,
     &gt; SListIter&lt;<span class="lifetime">&#39;a</span>, T&gt;
 {
-    <span class="kw">fn </span>new(list: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>SList&lt;T&gt;) -&gt; SListIter&lt;<span class="lifetime">&#39;a</span>, T&gt; {
-        <span class="macro">assert_eq!</span>(
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>new(list: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>SList&lt;T&gt;) -&gt; SListIter&lt;<span class="lifetime">&#39;a</span>, T&gt; {
+        <span class="macro">debug_assert_eq!</span>(
             mem::size_of::&lt;T&gt;(),
             mem::size_of::&lt;&lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType&gt;()
         );
@@ -2668,7 +2783,8 @@
 {
     <span class="kw">type </span>Item = <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>T;
 
-    <span class="kw">fn </span>next(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>T&gt; {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>next(<span class="kw-2">&amp;mut </span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>T&gt; {
         <span class="kw">match </span><span class="self">self</span>.ptr {
             <span class="prelude-val">None </span>=&gt; <span class="prelude-val">None</span>,
             <span class="prelude-val">Some</span>(cur) =&gt; <span class="kw">unsafe </span>{
@@ -2830,4 +2946,4 @@
     }
 }
 </code></pre></div>
-</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (88c58e3c2 2022-12-26)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
+</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (92c1937a9 2022-12-27)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>

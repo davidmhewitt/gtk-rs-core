@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/subclass/types.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>types.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-b07ed6aaa412307b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-d695502c06d5afea.css"><link rel="stylesheet" disabled href="../../../static.files/dark-aa222ca57e08648b.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-4eb006a26ee168b0.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/subclass/types.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>types.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-b07ed6aaa412307b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-d695502c06d5afea.css"><link rel="stylesheet" disabled href="../../../static.files/dark-aa222ca57e08648b.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-d5b7bae5e01694db.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -1130,6 +1130,39 @@
 <a href="#1057" id="1057">1057</a>
 <a href="#1058" id="1058">1058</a>
 <a href="#1059" id="1059">1059</a>
+<a href="#1060" id="1060">1060</a>
+<a href="#1061" id="1061">1061</a>
+<a href="#1062" id="1062">1062</a>
+<a href="#1063" id="1063">1063</a>
+<a href="#1064" id="1064">1064</a>
+<a href="#1065" id="1065">1065</a>
+<a href="#1066" id="1066">1066</a>
+<a href="#1067" id="1067">1067</a>
+<a href="#1068" id="1068">1068</a>
+<a href="#1069" id="1069">1069</a>
+<a href="#1070" id="1070">1070</a>
+<a href="#1071" id="1071">1071</a>
+<a href="#1072" id="1072">1072</a>
+<a href="#1073" id="1073">1073</a>
+<a href="#1074" id="1074">1074</a>
+<a href="#1075" id="1075">1075</a>
+<a href="#1076" id="1076">1076</a>
+<a href="#1077" id="1077">1077</a>
+<a href="#1078" id="1078">1078</a>
+<a href="#1079" id="1079">1079</a>
+<a href="#1080" id="1080">1080</a>
+<a href="#1081" id="1081">1081</a>
+<a href="#1082" id="1082">1082</a>
+<a href="#1083" id="1083">1083</a>
+<a href="#1084" id="1084">1084</a>
+<a href="#1085" id="1085">1085</a>
+<a href="#1086" id="1086">1086</a>
+<a href="#1087" id="1087">1087</a>
+<a href="#1088" id="1088">1088</a>
+<a href="#1089" id="1089">1089</a>
+<a href="#1090" id="1090">1090</a>
+<a href="#1091" id="1091">1091</a>
+<a href="#1092" id="1092">1092</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -1155,7 +1188,8 @@
 <span class="kw">impl</span>&lt;T&gt; IntoGlib <span class="kw">for </span>InitializingType&lt;T&gt; {
     <span class="kw">type </span>GlibType = ffi::GType;
 
-    <span class="kw">fn </span>into_glib(<span class="self">self</span>) -&gt; ffi::GType {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>into_glib(<span class="self">self</span>) -&gt; ffi::GType {
         <span class="self">self</span>.<span class="number">0</span>.into_glib()
     }
 }
@@ -1188,6 +1222,7 @@
     ///
     /// This is automatically called during instance initialization and must call `instance_init()`
     /// of the parent class.
+    </span><span class="attr">#[inline]
     </span><span class="kw">fn </span>instance_init(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>obj = from_glib_borrow::&lt;<span class="kw">_</span>, Object&gt;(<span class="self">self </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_ as </span><span class="kw-2">*mut </span>gobject_ffi::GObject);
@@ -1219,7 +1254,8 @@
 }
 
 <span class="kw">unsafe impl</span>&lt;T: InstanceStruct&gt; InstanceStructExt <span class="kw">for </span>T {
-    <span class="kw">fn </span>imp(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span><span class="self">Self</span>::Type {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>imp(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span><span class="self">Self</span>::Type {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>data = <span class="self">Self</span>::Type::type_data();
             <span class="kw">let </span>private_offset = data.as_ref().impl_offset();
@@ -1231,7 +1267,8 @@
         }
     }
 
-    <span class="kw">fn </span>class(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>&lt;<span class="self">Self</span>::Type <span class="kw">as </span>ObjectSubclass&gt;::Class {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>class(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>&lt;<span class="self">Self</span>::Type <span class="kw">as </span>ObjectSubclass&gt;::Class {
         <span class="kw">unsafe </span>{ <span class="kw-2">&amp;**</span>(<span class="self">self </span><span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_ as </span><span class="kw-2">*const *const </span>&lt;<span class="self">Self</span>::Type <span class="kw">as </span>ObjectSubclass&gt;::Class) }
     }
 }
@@ -1245,7 +1282,8 @@
 }
 
 <span class="kw">impl</span>&lt;T: ObjectSubclassIs&lt;Subclass = S&gt;, S: ObjectSubclass&lt;Type = <span class="self">Self</span>&gt;&gt; ObjectSubclassIsExt <span class="kw">for </span>T {
-    <span class="kw">fn </span>imp(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>T::Subclass {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>imp(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>T::Subclass {
         T::Subclass::from_instance(<span class="self">self</span>)
     }
 }
@@ -1270,6 +1308,7 @@
     </span><span class="doccomment">/// Override the vfuncs of all parent types.
     ///
     /// This is automatically called during type initialization.
+    </span><span class="attr">#[inline]
     </span><span class="kw">fn </span>class_init(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>base = <span class="kw-2">&amp;mut *</span>(<span class="self">self </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_
@@ -1290,6 +1329,7 @@
     ///
     /// This is automatically called during type initialization and must call `class_init()` of the
     /// parent class.
+    </span><span class="attr">#[inline]
     </span><span class="kw">fn </span>class_init(class: <span class="kw-2">&amp;mut </span><span class="kw">crate</span>::Class&lt;<span class="self">Self</span>&gt;) {
         <span class="self">Self</span>::default_class_init(class);
     }
@@ -1299,6 +1339,7 @@
     ///
     /// This is automatically called during instance initialization and must call `instance_init()`
     /// of the parent class.
+    </span><span class="attr">#[inline]
     </span><span class="kw">fn </span>instance_init(instance: <span class="kw-2">&amp;mut </span>InitializingObject&lt;T&gt;) {
         <span class="self">Self</span>::default_instance_init(instance);
     }
@@ -1316,19 +1357,23 @@
 <span class="kw">where
     </span>U::Parent: IsSubclassable&lt;T&gt;,
 {
-    <span class="kw">fn </span>default_class_init(class: <span class="kw-2">&amp;mut </span><span class="kw">crate</span>::Class&lt;<span class="self">Self</span>&gt;) {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>default_class_init(class: <span class="kw-2">&amp;mut </span><span class="kw">crate</span>::Class&lt;<span class="self">Self</span>&gt;) {
         U::Parent::class_init(class);
     }
 
-    <span class="kw">fn </span>default_instance_init(instance: <span class="kw-2">&amp;mut </span>InitializingObject&lt;T&gt;) {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>default_instance_init(instance: <span class="kw-2">&amp;mut </span>InitializingObject&lt;T&gt;) {
         U::Parent::instance_init(instance);
     }
 }
 
 <span class="kw">impl</span>&lt;T: ObjectSubclass&gt; IsSubclassableDefault&lt;T&gt; <span class="kw">for </span>Object {
-    <span class="kw">fn </span>default_class_init(_class: <span class="kw-2">&amp;mut </span><span class="kw">crate</span>::Class&lt;<span class="self">Self</span>&gt;) {}
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>default_class_init(_class: <span class="kw-2">&amp;mut </span><span class="kw">crate</span>::Class&lt;<span class="self">Self</span>&gt;) {}
 
-    <span class="kw">fn </span>default_instance_init(_instance: <span class="kw-2">&amp;mut </span>InitializingObject&lt;T&gt;) {}
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>default_instance_init(_instance: <span class="kw-2">&amp;mut </span>InitializingObject&lt;T&gt;) {}
 }
 
 <span class="kw">pub trait </span>IsSubclassableExt: IsClass + ParentClassIs {
@@ -1341,14 +1386,16 @@
 }
 
 <span class="kw">impl</span>&lt;U: IsClass + ParentClassIs&gt; IsSubclassableExt <span class="kw">for </span>U {
-    <span class="kw">fn </span>parent_class_init&lt;T: ObjectSubclass&gt;(class: <span class="kw-2">&amp;mut </span><span class="kw">crate</span>::Class&lt;<span class="self">Self</span>&gt;)
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>parent_class_init&lt;T: ObjectSubclass&gt;(class: <span class="kw-2">&amp;mut </span><span class="kw">crate</span>::Class&lt;<span class="self">Self</span>&gt;)
     <span class="kw">where
         </span>U::Parent: IsSubclassable&lt;T&gt;,
     {
         <span class="self">Self</span>::Parent::class_init(class);
     }
 
-    <span class="kw">fn </span>parent_instance_init&lt;T: ObjectSubclass&gt;(instance: <span class="kw-2">&amp;mut </span>InitializingObject&lt;T&gt;)
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>parent_instance_init&lt;T: ObjectSubclass&gt;(instance: <span class="kw-2">&amp;mut </span>InitializingObject&lt;T&gt;)
     <span class="kw">where
         </span>U::Parent: IsSubclassable&lt;T&gt;,
     {
@@ -1417,7 +1464,8 @@
         <span class="macro">vec!</span>[]
     }
 
-    <span class="kw">fn </span>instance_init(_instance: <span class="kw-2">&amp;mut </span>InitializingObject&lt;T&gt;) {}
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>instance_init(_instance: <span class="kw-2">&amp;mut </span>InitializingObject&lt;T&gt;) {}
 }
 
 <span class="kw">impl</span>&lt;T: ObjectSubclass, A: IsImplementable&lt;T&gt;&gt; InterfaceList&lt;T&gt; <span class="kw">for </span>(A,)
@@ -1435,7 +1483,8 @@
         )]
     }
 
-    <span class="kw">fn </span>instance_init(instance: <span class="kw-2">&amp;mut </span>InitializingObject&lt;T&gt;) {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>instance_init(instance: <span class="kw-2">&amp;mut </span>InitializingObject&lt;T&gt;) {
         A::instance_init(instance);
     }
 }
@@ -1480,7 +1529,8 @@
                 ]
             }
 
-            <span class="kw">fn </span>instance_init(instance: <span class="kw-2">&amp;mut </span>InitializingObject&lt;T&gt;) {
+            <span class="attr">#[inline]
+            </span><span class="kw">fn </span>instance_init(instance: <span class="kw-2">&amp;mut </span>InitializingObject&lt;T&gt;) {
                 $(
                     <span class="macro-nonterminal">$name::instance_init</span>(instance);
                 )+
@@ -1516,7 +1566,8 @@
 <span class="kw">impl </span>TypeData {
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Returns the type ID.
-    </span><span class="attr">#[doc(alias = <span class="string">&quot;get_type&quot;</span>)]
+    </span><span class="attr">#[inline]
+    #[doc(alias = <span class="string">&quot;get_type&quot;</span>)]
     </span><span class="kw">pub fn </span>type_(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
         <span class="self">self</span>.type_
     }
@@ -1527,6 +1578,7 @@
     /// This is used for chaining up to the parent class&#39; implementation
     /// of virtual methods.
     </span><span class="attr">#[doc(alias = <span class="string">&quot;get_parent_class&quot;</span>)]
+    #[inline]
     </span><span class="kw">pub fn </span>parent_class(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; ffi::gpointer {
         <span class="macro">debug_assert!</span>(!<span class="self">self</span>.parent_class.is_null());
         <span class="self">self</span>.parent_class
@@ -1610,6 +1662,7 @@
     </span><span class="doccomment">/// Returns the offset of the private implementation struct in bytes relative to the beginning
     /// of the instance struct.
     </span><span class="attr">#[doc(alias = <span class="string">&quot;get_impl_offset&quot;</span>)]
+    #[inline]
     </span><span class="kw">pub fn </span>impl_offset(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; isize {
         <span class="self">self</span>.private_offset + <span class="self">self</span>.private_imp_offset
     }
@@ -1719,6 +1772,7 @@
     /// for implementing `GObject` interfaces.
     ///
     /// Optional
+    </span><span class="attr">#[inline]
     </span><span class="kw">fn </span>type_init(_type_: <span class="kw-2">&amp;mut </span>InitializingType&lt;<span class="self">Self</span>&gt;) {}
 
     <span class="doccomment">/// Class initialization.
@@ -1730,6 +1784,7 @@
     /// or calling class methods.
     ///
     /// Optional
+    </span><span class="attr">#[inline]
     </span><span class="kw">fn </span>class_init(_klass: <span class="kw-2">&amp;mut </span><span class="self">Self</span>::Class) {}
 
     <span class="comment">// rustdoc-stripper-ignore-next
@@ -1755,6 +1810,7 @@
     /// to itself for providing additional context.
     ///
     /// Optional, either implement this or `new()`.
+    </span><span class="attr">#[inline]
     </span><span class="kw">fn </span>with_class(_klass: <span class="kw-2">&amp;</span><span class="self">Self</span>::Class) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::new()
     }
@@ -1764,6 +1820,7 @@
     ///
     /// Called just after `with_class()`. At this point the initialization has not completed yet, so
     /// only a limited set of operations is safe (see `InitializingObject`).
+    </span><span class="attr">#[inline]
     </span><span class="kw">fn </span>instance_init(_obj: <span class="kw-2">&amp;</span>InitializingObject&lt;<span class="self">Self</span>&gt;) {}
 }
 
@@ -1805,19 +1862,22 @@
 }
 
 <span class="kw">impl</span>&lt;T: ObjectSubclass&gt; ObjectSubclassExt <span class="kw">for </span>T {
-    <span class="kw">fn </span>instance(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::BorrowedObject&lt;<span class="self">Self</span>::Type&gt; {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>instance(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::BorrowedObject&lt;<span class="self">Self</span>::Type&gt; {
         <span class="self">self</span>.obj()
     }
 
-    <span class="kw">fn </span>from_instance(obj: <span class="kw-2">&amp;</span><span class="self">Self</span>::Type) -&gt; <span class="kw-2">&amp;</span><span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>from_instance(obj: <span class="kw-2">&amp;</span><span class="self">Self</span>::Type) -&gt; <span class="kw-2">&amp;</span><span class="self">Self </span>{
         <span class="self">Self</span>::from_obj(obj)
     }
 
-    <span class="kw">fn </span>obj(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::BorrowedObject&lt;<span class="self">Self</span>::Type&gt; {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>obj(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::BorrowedObject&lt;<span class="self">Self</span>::Type&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>data = <span class="self">Self</span>::type_data();
             <span class="kw">let </span>type_ = data.as_ref().type_();
-            <span class="macro">assert!</span>(type_.is_valid());
+            <span class="macro">debug_assert!</span>(type_.is_valid());
 
             <span class="kw">let </span>offset = -data.as_ref().impl_offset();
 
@@ -1828,28 +1888,31 @@
             <span class="comment">// The object might just be finalized, and in that case it&#39;s unsafe to access
             // it and use any API on it. This can only happen from inside the Drop impl
             // of Self.
-            </span><span class="macro">assert_ne!</span>((<span class="kw-2">*</span>(ptr <span class="kw">as </span><span class="kw-2">*mut </span>gobject_ffi::GObject)).ref_count, <span class="number">0</span>);
+            </span><span class="macro">debug_assert_ne!</span>((<span class="kw-2">*</span>(ptr <span class="kw">as </span><span class="kw-2">*mut </span>gobject_ffi::GObject)).ref_count, <span class="number">0</span>);
 
             <span class="kw">crate</span>::BorrowedObject::new(ptr)
         }
     }
 
-    <span class="kw">fn </span>from_obj(obj: <span class="kw-2">&amp;</span><span class="self">Self</span>::Type) -&gt; <span class="kw-2">&amp;</span><span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>from_obj(obj: <span class="kw-2">&amp;</span><span class="self">Self</span>::Type) -&gt; <span class="kw-2">&amp;</span><span class="self">Self </span>{
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>ptr = obj.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span><span class="self">Self</span>::Instance;
             (<span class="kw-2">*</span>ptr).imp()
         }
     }
 
-    <span class="kw">fn </span>ref_counted(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">super</span>::ObjectImplRef&lt;<span class="self">Self</span>&gt; {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>ref_counted(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">super</span>::ObjectImplRef&lt;<span class="self">Self</span>&gt; {
         <span class="kw">super</span>::ObjectImplRef::new(<span class="self">self</span>)
     }
 
-    <span class="kw">fn </span>instance_data&lt;U: Any + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, type_: Type) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>U&gt; {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>instance_data&lt;U: Any + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, type_: Type) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>U&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>type_data = <span class="self">Self</span>::type_data();
             <span class="kw">let </span>self_type_ = type_data.as_ref().type_();
-            <span class="macro">assert!</span>(self_type_.is_valid());
+            <span class="macro">debug_assert!</span>(self_type_.is_valid());
 
             <span class="kw">let </span>offset = -type_data.as_ref().private_imp_offset;
 
@@ -1889,6 +1952,7 @@
     /// The returned object has not been completely initialized at this point. Use of the object
     /// should be restricted to methods that are explicitly documented to be safe to call during
     /// `instance_init()`.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>as_ref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>T::Type {
         <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0
     </span>}
@@ -1901,6 +1965,7 @@
     /// The returned object has not been completely initialized at this point. Use of the object
     /// should be restricted to methods that are explicitly documented to be safe to call during
     /// `instance_init()`.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>as_ptr(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*mut </span>T::Type {
         <span class="self">self</span>.<span class="number">0</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span>T::Type <span class="kw">as </span><span class="kw-2">*mut </span>T::Type
     }
@@ -1915,7 +1980,7 @@
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>type_data = T::type_data();
             <span class="kw">let </span>self_type_ = type_data.as_ref().type_();
-            <span class="macro">assert!</span>(self_type_.is_valid());
+            <span class="macro">debug_assert!</span>(self_type_.is_valid());
 
             <span class="kw">let </span>offset = type_data.as_ref().private_offset;
 
@@ -1966,7 +2031,7 @@
         <span class="kw">let </span>klass = <span class="kw-2">&amp;mut *</span>(klass <span class="kw">as </span><span class="kw-2">*mut </span>T::Class);
         <span class="kw">let </span>parent_class = gobject_ffi::g_type_class_peek_parent(klass <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_ as </span>ffi::gpointer)
             <span class="kw">as </span><span class="kw-2">*mut </span>&lt;T::ParentType <span class="kw">as </span>ObjectType&gt;::GlibClassType;
-        <span class="macro">assert!</span>(!parent_class.is_null());
+        <span class="macro">debug_assert!</span>(!parent_class.is_null());
 
         data.as_mut().parent_class = parent_class <span class="kw">as </span>ffi::gpointer;
 
@@ -2068,7 +2133,7 @@
             type_name.to_str().unwrap()
         );
 
-        <span class="kw">let </span>type_ = from_glib(gobject_ffi::g_type_register_static_simple(
+        <span class="kw">let </span>type_ = Type::from_glib(gobject_ffi::g_type_register_static_simple(
             &lt;T::ParentType <span class="kw">as </span>StaticType&gt;::static_type().into_glib(),
             type_name.as_ptr(),
             mem::size_of::&lt;T::Class&gt;() <span class="kw">as </span>u32,
@@ -2081,6 +2146,7 @@
                 <span class="number">0
             </span>},
         ));
+        <span class="macro">assert!</span>(type_.is_valid());
 
         <span class="kw">let </span><span class="kw-2">mut </span>data = T::type_data();
         data.as_mut().type_ = type_;
@@ -2190,4 +2256,4 @@
     <span class="prelude-val">Some</span>(result).filter(|r| r.type_().is_valid() &amp;&amp; r.type_() != Type::UNIT)
 }
 </code></pre></div>
-</section></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (88c58e3c2 2022-12-26)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
+</section></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (92c1937a9 2022-12-27)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>

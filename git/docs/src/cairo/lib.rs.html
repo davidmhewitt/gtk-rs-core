@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `cairo/src/lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-b07ed6aaa412307b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-d695502c06d5afea.css"><link rel="stylesheet" disabled href="../../static.files/dark-aa222ca57e08648b.css"><link rel="stylesheet" disabled href="../../static.files/ayu-4eb006a26ee168b0.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `cairo/src/lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-b07ed6aaa412307b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-d695502c06d5afea.css"><link rel="stylesheet" disabled href="../../static.files/dark-aa222ca57e08648b.css"><link rel="stylesheet" disabled href="../../static.files/ayu-d5b7bae5e01694db.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -399,6 +399,11 @@
 <a href="#326" id="326">326</a>
 <a href="#327" id="327">327</a>
 <a href="#328" id="328">328</a>
+<a href="#329" id="329">329</a>
+<a href="#330" id="330">330</a>
+<a href="#331" id="331">331</a>
+<a href="#332" id="332">332</a>
+<a href="#333" id="333">333</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="attr">#![cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, feature(doc_cfg))]
@@ -421,7 +426,8 @@
         </span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 
         <span class="kw">impl </span>glib::types::StaticType <span class="kw">for </span><span class="macro-nonterminal">$name </span>{
-            <span class="kw">fn </span>static_type() -&gt; glib::types::Type {
+            <span class="attr">#[inline]
+            </span><span class="kw">fn </span>static_type() -&gt; glib::types::Type {
                 <span class="kw">unsafe </span>{ from_glib(<span class="macro-nonterminal">$get_type</span>()) }
             }
         }
@@ -446,7 +452,7 @@
                 <span class="kw">let </span>ptr = glib::gobject_ffi::g_value_dup_boxed(
                     glib::translate::ToGlibPtr::to_glib_none(value).<span class="number">0</span>,
                 );
-                <span class="macro">assert!</span>(!ptr.is_null());
+                <span class="macro">debug_assert!</span>(!ptr.is_null());
                 &lt;<span class="macro-nonterminal">$name </span><span class="kw">as </span>glib::translate::FromGlibPtrFull&lt;<span class="kw-2">*mut </span><span class="macro-nonterminal">$ffi_name</span>&gt;&gt;::from_glib_full(
                     ptr <span class="kw">as </span><span class="kw-2">*mut </span><span class="macro-nonterminal">$ffi_name</span>,
                 )
@@ -457,14 +463,14 @@
             <span class="kw">type </span>Checker = glib::value::GenericValueTypeOrNoneChecker&lt;<span class="self">Self</span>&gt;;
 
             <span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>glib::Value) -&gt; <span class="self">Self </span>{
-                <span class="macro">assert_eq!</span>(
+                <span class="macro">debug_assert_eq!</span>(
                     std::mem::size_of::&lt;<span class="self">Self</span>&gt;(),
                     std::mem::size_of::&lt;glib::ffi::gpointer&gt;()
                 );
                 <span class="kw">let </span>value = <span class="kw-2">&amp;*</span>(value <span class="kw">as </span><span class="kw-2">*const </span>glib::Value <span class="kw">as </span><span class="kw-2">*const </span>glib::gobject_ffi::GValue);
                 <span class="kw">let </span>ptr = <span class="kw-2">&amp;</span>value.data[<span class="number">0</span>].v_pointer <span class="kw">as </span><span class="kw-2">*const </span>glib::ffi::gpointer
                     <span class="kw">as </span><span class="kw-2">*const *const </span><span class="macro-nonterminal">$ffi_name</span>;
-                <span class="macro">assert!</span>(!(<span class="kw-2">*</span>ptr).is_null());
+                <span class="macro">debug_assert!</span>(!(<span class="kw-2">*</span>ptr).is_null());
                 <span class="kw-2">&amp;*</span>(ptr <span class="kw">as </span><span class="kw-2">*const </span><span class="macro-nonterminal">$name</span>)
             }
         }
@@ -529,7 +535,7 @@
                 <span class="kw">let </span>ptr = glib::gobject_ffi::g_value_get_boxed(
                     glib::translate::ToGlibPtr::to_glib_none(value).<span class="number">0</span>,
                 );
-                <span class="macro">assert!</span>(!ptr.is_null());
+                <span class="macro">debug_assert!</span>(!ptr.is_null());
                 &lt;<span class="macro-nonterminal">$name </span><span class="kw">as </span>glib::translate::FromGlibPtrNone&lt;<span class="kw-2">*mut </span><span class="macro-nonterminal">$ffi_name</span>&gt;&gt;::from_glib_none(
                     ptr <span class="kw">as </span><span class="kw-2">*mut </span><span class="macro-nonterminal">$ffi_name</span>,
                 )
@@ -543,7 +549,7 @@
                 <span class="kw">let </span>ptr = glib::gobject_ffi::g_value_get_boxed(
                     glib::translate::ToGlibPtr::to_glib_none(value).<span class="number">0</span>,
                 );
-                <span class="macro">assert!</span>(!ptr.is_null());
+                <span class="macro">debug_assert!</span>(!ptr.is_null());
                 <span class="kw-2">&amp;*</span>(ptr <span class="kw">as </span><span class="kw-2">*mut </span><span class="macro-nonterminal">$name</span>)
             }
         }
@@ -695,6 +701,7 @@
 
     <span class="kw">impl</span>&lt;T&gt; Borrowed&lt;T&gt; {
         <span class="doccomment">/// Creates a new borrowed value.
+        </span><span class="attr">#[inline]
         </span><span class="kw">pub fn </span>new(val: T) -&gt; <span class="self">Self </span>{
             <span class="self">Self</span>(mem::ManuallyDrop::new(val))
         }
@@ -703,13 +710,15 @@
         ///
         /// The returned value must never be dropped and instead has to be passed to `mem::forget()` or
         /// be directly wrapped in `mem::ManuallyDrop` or another `Borrowed` wrapper.
+        </span><span class="attr">#[inline]
         </span><span class="kw">pub unsafe fn </span>into_inner(<span class="self">self</span>) -&gt; T {
             mem::ManuallyDrop::into_inner(<span class="self">self</span>.<span class="number">0</span>)
         }
     }
 
     <span class="kw">impl</span>&lt;T&gt; AsRef&lt;T&gt; <span class="kw">for </span>Borrowed&lt;T&gt; {
-        <span class="kw">fn </span>as_ref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>T {
+        <span class="attr">#[inline]
+        </span><span class="kw">fn </span>as_ref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>T {
             <span class="kw-2">&amp;*</span><span class="self">self</span>.<span class="number">0
         </span>}
     }
@@ -717,7 +726,8 @@
     <span class="kw">impl</span>&lt;T&gt; std::ops::Deref <span class="kw">for </span>Borrowed&lt;T&gt; {
         <span class="kw">type </span>Target = T;
 
-        <span class="kw">fn </span>deref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>T {
+        <span class="attr">#[inline]
+        </span><span class="kw">fn </span>deref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>T {
             <span class="kw-2">&amp;*</span><span class="self">self</span>.<span class="number">0
         </span>}
     }
@@ -728,4 +738,4 @@
 <span class="attr">#[cfg(feature = <span class="string">&quot;use_glib&quot;</span>)]
 </span><span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">use </span>glib::translate::Borrowed;
 </code></pre></div>
-</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="cairo" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (88c58e3c2 2022-12-26)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
+</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="cairo" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (92c1937a9 2022-12-27)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>

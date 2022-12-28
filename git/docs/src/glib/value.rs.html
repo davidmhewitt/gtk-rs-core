@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/value.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>value.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-b07ed6aaa412307b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-d695502c06d5afea.css"><link rel="stylesheet" disabled href="../../static.files/dark-aa222ca57e08648b.css"><link rel="stylesheet" disabled href="../../static.files/ayu-4eb006a26ee168b0.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/value.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>value.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-b07ed6aaa412307b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-d695502c06d5afea.css"><link rel="stylesheet" disabled href="../../static.files/dark-aa222ca57e08648b.css"><link rel="stylesheet" disabled href="../../static.files/ayu-d5b7bae5e01694db.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -1471,6 +1471,85 @@
 <a href="#1398" id="1398">1398</a>
 <a href="#1399" id="1399">1399</a>
 <a href="#1400" id="1400">1400</a>
+<a href="#1401" id="1401">1401</a>
+<a href="#1402" id="1402">1402</a>
+<a href="#1403" id="1403">1403</a>
+<a href="#1404" id="1404">1404</a>
+<a href="#1405" id="1405">1405</a>
+<a href="#1406" id="1406">1406</a>
+<a href="#1407" id="1407">1407</a>
+<a href="#1408" id="1408">1408</a>
+<a href="#1409" id="1409">1409</a>
+<a href="#1410" id="1410">1410</a>
+<a href="#1411" id="1411">1411</a>
+<a href="#1412" id="1412">1412</a>
+<a href="#1413" id="1413">1413</a>
+<a href="#1414" id="1414">1414</a>
+<a href="#1415" id="1415">1415</a>
+<a href="#1416" id="1416">1416</a>
+<a href="#1417" id="1417">1417</a>
+<a href="#1418" id="1418">1418</a>
+<a href="#1419" id="1419">1419</a>
+<a href="#1420" id="1420">1420</a>
+<a href="#1421" id="1421">1421</a>
+<a href="#1422" id="1422">1422</a>
+<a href="#1423" id="1423">1423</a>
+<a href="#1424" id="1424">1424</a>
+<a href="#1425" id="1425">1425</a>
+<a href="#1426" id="1426">1426</a>
+<a href="#1427" id="1427">1427</a>
+<a href="#1428" id="1428">1428</a>
+<a href="#1429" id="1429">1429</a>
+<a href="#1430" id="1430">1430</a>
+<a href="#1431" id="1431">1431</a>
+<a href="#1432" id="1432">1432</a>
+<a href="#1433" id="1433">1433</a>
+<a href="#1434" id="1434">1434</a>
+<a href="#1435" id="1435">1435</a>
+<a href="#1436" id="1436">1436</a>
+<a href="#1437" id="1437">1437</a>
+<a href="#1438" id="1438">1438</a>
+<a href="#1439" id="1439">1439</a>
+<a href="#1440" id="1440">1440</a>
+<a href="#1441" id="1441">1441</a>
+<a href="#1442" id="1442">1442</a>
+<a href="#1443" id="1443">1443</a>
+<a href="#1444" id="1444">1444</a>
+<a href="#1445" id="1445">1445</a>
+<a href="#1446" id="1446">1446</a>
+<a href="#1447" id="1447">1447</a>
+<a href="#1448" id="1448">1448</a>
+<a href="#1449" id="1449">1449</a>
+<a href="#1450" id="1450">1450</a>
+<a href="#1451" id="1451">1451</a>
+<a href="#1452" id="1452">1452</a>
+<a href="#1453" id="1453">1453</a>
+<a href="#1454" id="1454">1454</a>
+<a href="#1455" id="1455">1455</a>
+<a href="#1456" id="1456">1456</a>
+<a href="#1457" id="1457">1457</a>
+<a href="#1458" id="1458">1458</a>
+<a href="#1459" id="1459">1459</a>
+<a href="#1460" id="1460">1460</a>
+<a href="#1461" id="1461">1461</a>
+<a href="#1462" id="1462">1462</a>
+<a href="#1463" id="1463">1463</a>
+<a href="#1464" id="1464">1464</a>
+<a href="#1465" id="1465">1465</a>
+<a href="#1466" id="1466">1466</a>
+<a href="#1467" id="1467">1467</a>
+<a href="#1468" id="1468">1468</a>
+<a href="#1469" id="1469">1469</a>
+<a href="#1470" id="1470">1470</a>
+<a href="#1471" id="1471">1471</a>
+<a href="#1472" id="1472">1472</a>
+<a href="#1473" id="1473">1473</a>
+<a href="#1474" id="1474">1474</a>
+<a href="#1475" id="1475">1475</a>
+<a href="#1476" id="1476">1476</a>
+<a href="#1477" id="1477">1477</a>
+<a href="#1478" id="1478">1478</a>
+<a href="#1479" id="1479">1479</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -1614,6 +1693,7 @@
     <span class="kw">type </span>Error = ValueTypeMismatchError;
 
     <span class="attr">#[doc(alias = <span class="string">&quot;g_type_check_value_holds&quot;</span>)]
+    #[inline]
     </span><span class="kw">fn </span>check(value: <span class="kw-2">&amp;</span>Value) -&gt; <span class="prelude-ty">Result</span>&lt;(), <span class="self">Self</span>::Error&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">if </span>gobject_ffi::g_type_check_value_holds(<span class="kw-2">&amp;</span>value.inner, T::static_type().into_glib())
@@ -1634,7 +1714,8 @@
 <span class="kw">unsafe impl </span>ValueTypeChecker <span class="kw">for </span>CharTypeChecker {
     <span class="kw">type </span>Error = InvalidCharError;
 
-    <span class="kw">fn </span>check(value: <span class="kw-2">&amp;</span>Value) -&gt; <span class="prelude-ty">Result</span>&lt;(), <span class="self">Self</span>::Error&gt; {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>check(value: <span class="kw-2">&amp;</span>Value) -&gt; <span class="prelude-ty">Result</span>&lt;(), <span class="self">Self</span>::Error&gt; {
         <span class="kw">let </span>v = value.get::&lt;u32&gt;()<span class="question-mark">?</span>;
         <span class="kw">match </span>char::from_u32(v) {
             <span class="prelude-val">Some</span>(<span class="kw">_</span>) =&gt; <span class="prelude-val">Ok</span>(()),
@@ -1708,7 +1789,8 @@
 <span class="kw">unsafe impl</span>&lt;T: StaticType&gt; ValueTypeChecker <span class="kw">for </span>GenericValueTypeOrNoneChecker&lt;T&gt; {
     <span class="kw">type </span>Error = ValueTypeMismatchOrNoneError&lt;ValueTypeMismatchError&gt;;
 
-    <span class="kw">fn </span>check(value: <span class="kw-2">&amp;</span>Value) -&gt; <span class="prelude-ty">Result</span>&lt;(), <span class="self">Self</span>::Error&gt; {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>check(value: <span class="kw-2">&amp;</span>Value) -&gt; <span class="prelude-ty">Result</span>&lt;(), <span class="self">Self</span>::Error&gt; {
         GenericValueTypeChecker::&lt;T&gt;::check(value)<span class="question-mark">?</span>;
 
         <span class="kw">unsafe </span>{
@@ -1779,7 +1861,8 @@
 {
     <span class="kw">type </span>Error = E;
 
-    <span class="kw">fn </span>check(value: <span class="kw-2">&amp;</span>Value) -&gt; <span class="prelude-ty">Result</span>&lt;(), <span class="self">Self</span>::Error&gt; {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>check(value: <span class="kw-2">&amp;</span>Value) -&gt; <span class="prelude-ty">Result</span>&lt;(), <span class="self">Self</span>::Error&gt; {
         <span class="kw">match </span>T::Checker::check(value) {
             <span class="prelude-val">Err</span>(ValueTypeMismatchOrNoneError::UnexpectedNone) =&gt; <span class="prelude-val">Ok</span>(()),
             <span class="prelude-val">Err</span>(ValueTypeMismatchOrNoneError::WrongValueType(err)) =&gt; <span class="prelude-val">Err</span>(err),
@@ -1798,7 +1881,8 @@
 {
     <span class="kw">type </span>Checker = ValueTypeOrNoneChecker&lt;T, C, E&gt;;
 
-    <span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Value) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Value) -&gt; <span class="self">Self </span>{
         <span class="kw">match </span>T::Checker::check(value) {
             <span class="prelude-val">Err</span>(ValueTypeMismatchOrNoneError::UnexpectedNone) =&gt; <span class="prelude-val">None</span>,
             <span class="prelude-val">Err</span>(ValueTypeMismatchOrNoneError::WrongValueType(_err)) =&gt; {
@@ -1840,11 +1924,13 @@
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Blanket implementation for all references.
 </span><span class="kw">impl</span>&lt;T: ToValue + StaticType&gt; ToValue <span class="kw">for </span><span class="kw-2">&amp;</span>T {
-    <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Value {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Value {
         T::to_value(<span class="kw-2">*</span><span class="self">self</span>)
     }
 
-    <span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
         T::static_type()
     }
 }
@@ -1861,11 +1947,13 @@
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// Blanket implementation for all optional types.
 </span><span class="kw">impl</span>&lt;T: ToValueOptional + StaticType&gt; ToValue <span class="kw">for </span><span class="prelude-ty">Option</span>&lt;T&gt; {
-    <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Value {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Value {
         T::to_value_optional(<span class="self">self</span>.as_ref())
     }
 
-    <span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
         T::static_type()
     }
 }
@@ -1881,38 +1969,45 @@
 }
 
 <span class="kw">impl</span>&lt;T: ToValueOptional + StaticType&gt; StaticType <span class="kw">for </span><span class="prelude-ty">Option</span>&lt;T&gt; {
-    <span class="kw">fn </span>static_type() -&gt; Type {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>static_type() -&gt; Type {
         T::static_type()
     }
 }
 
 <span class="kw">impl</span>&lt;T: ToValueOptional + StaticType + <span class="question-mark">?</span>Sized&gt; ToValueOptional <span class="kw">for </span><span class="kw-2">&amp;</span>T {
-    <span class="kw">fn </span>to_value_optional(s: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="self">Self</span>&gt;) -&gt; Value {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_value_optional(s: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="self">Self</span>&gt;) -&gt; Value {
         &lt;T <span class="kw">as </span>ToValueOptional&gt;::to_value_optional(s.as_ref().map(|s| <span class="kw-2">**</span>s))
     }
 }
 
-<span class="kw">unsafe fn </span>copy_value(value: <span class="kw-2">*const </span>gobject_ffi::GValue) -&gt; <span class="kw-2">*mut </span>gobject_ffi::GValue {
+<span class="attr">#[inline]
+</span><span class="kw">unsafe fn </span>copy_value(value: <span class="kw-2">*const </span>gobject_ffi::GValue) -&gt; <span class="kw-2">*mut </span>gobject_ffi::GValue {
     <span class="kw">let </span>copy = ffi::g_malloc0(mem::size_of::&lt;gobject_ffi::GValue&gt;()) <span class="kw">as </span><span class="kw-2">*mut </span>gobject_ffi::GValue;
     copy_into_value(copy, value);
     copy
 }
 
-<span class="kw">unsafe fn </span>free_value(value: <span class="kw-2">*mut </span>gobject_ffi::GValue) {
+<span class="attr">#[inline]
+</span><span class="kw">unsafe fn </span>free_value(value: <span class="kw-2">*mut </span>gobject_ffi::GValue) {
     clear_value(value);
     ffi::g_free(value <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>);
 }
 
-<span class="kw">unsafe fn </span>init_value(value: <span class="kw-2">*mut </span>gobject_ffi::GValue) {
+<span class="attr">#[inline]
+</span><span class="kw">unsafe fn </span>init_value(value: <span class="kw-2">*mut </span>gobject_ffi::GValue) {
     ptr::write(value, mem::zeroed());
 }
 
-<span class="kw">unsafe fn </span>copy_into_value(dest: <span class="kw-2">*mut </span>gobject_ffi::GValue, src: <span class="kw-2">*const </span>gobject_ffi::GValue) {
+<span class="attr">#[inline]
+</span><span class="kw">unsafe fn </span>copy_into_value(dest: <span class="kw-2">*mut </span>gobject_ffi::GValue, src: <span class="kw-2">*const </span>gobject_ffi::GValue) {
     gobject_ffi::g_value_init(dest, (<span class="kw-2">*</span>src).g_type);
     gobject_ffi::g_value_copy(src, dest);
 }
 
-<span class="kw">unsafe fn </span>clear_value(value: <span class="kw-2">*mut </span>gobject_ffi::GValue) {
+<span class="attr">#[inline]
+</span><span class="kw">unsafe fn </span>clear_value(value: <span class="kw-2">*mut </span>gobject_ffi::GValue) {
     <span class="comment">// Before GLib 2.48, unsetting a zeroed GValue would give critical warnings
     // https://bugzilla.gnome.org/show_bug.cgi?id=755766
     </span><span class="kw">if </span>(<span class="kw-2">*</span>value).g_type != gobject_ffi::G_TYPE_INVALID {
@@ -1934,17 +2029,6 @@
     /// used instead.
     ///
     /// See the [module documentation](index.html) for more details.
-    </span><span class="comment">// rustdoc-stripper-ignore-next-stop
-    </span><span class="doccomment">/// An opaque structure used to hold different types of values.
-    ///
-    /// The data within the structure has protected scope: it is accessible only
-    /// to functions within a `GTypeValueTable` structure, or implementations of
-    /// the g_value_*() API. That is, code portions which implement new fundamental
-    /// types.
-    ///
-    /// [`Value`][crate::Value] users cannot make any assumptions about how data is stored
-    /// within the 2 element `data` union, and the `g_type` member should
-    /// only be accessed through the G_VALUE_TYPE() macro.
     </span><span class="attr">#[doc(alias = <span class="string">&quot;GValue&quot;</span>)]
     </span><span class="kw">pub struct </span>Value(BoxedInline&lt;gobject_ffi::GValue&gt;);
 
@@ -1960,6 +2044,7 @@
 <span class="kw">impl </span>Value {
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Creates a new `Value` that is initialized with `type_`
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>from_type(type_: Type) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{
             <span class="macro">assert_eq!</span>(
@@ -1974,6 +2059,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Creates a new `Value` that is initialized for a given `ValueType`.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>for_value_type&lt;T: ValueType&gt;() -&gt; <span class="self">Self </span>{
         Value::from_type(T::Type::static_type())
     }
@@ -1982,6 +2068,7 @@
     </span><span class="doccomment">/// Tries to get a value of type `T`.
     ///
     /// Returns `Ok` if the type is correct.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>get&lt;<span class="lifetime">&#39;a</span>, T&gt;(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;T, &lt;&lt;T <span class="kw">as </span>FromValue&gt;::Checker <span class="kw">as </span>ValueTypeChecker&gt;::Error&gt;
     <span class="kw">where
         </span>T: FromValue&lt;<span class="lifetime">&#39;a</span>&gt;,
@@ -1994,6 +2081,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Tries to get a value of an owned type `T`.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>get_owned&lt;T&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;T, &lt;&lt;T <span class="kw">as </span>FromValue&gt;::Checker <span class="kw">as </span>ValueTypeChecker&gt;::Error&gt;
     <span class="kw">where
         </span>T: <span class="kw">for</span>&lt;<span class="lifetime">&#39;b</span>&gt; FromValue&lt;<span class="lifetime">&#39;b</span>&gt; + <span class="lifetime">&#39;static</span>,
@@ -2022,12 +2110,26 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Returns the type of the value.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>type_(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
         <span class="kw">unsafe </span>{ from_glib(<span class="self">self</span>.inner.g_type) }
     }
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Returns whether `Value`s of type `src` can be transformed to type `dst`.
+    </span><span class="comment">// rustdoc-stripper-ignore-next-stop
+    </span><span class="doccomment">/// Check whether [`transform()`][Self::transform()] is able to transform values
+    /// of type `src_type` into values of type `dest_type`. Note that for
+    /// the types to be transformable, they must be compatible or a
+    /// transformation function must be registered.
+    /// ## `src_type`
+    /// Source type.
+    /// ## `dest_type`
+    /// Target type.
+    ///
+    /// # Returns
+    ///
+    /// [`true`] if the transformation is possible, [`false`] otherwise.
     </span><span class="attr">#[doc(alias = <span class="string">&quot;g_value_type_transformable&quot;</span>)]
     </span><span class="kw">pub fn </span>type_transformable(src: Type, dst: Type) -&gt; bool {
         <span class="kw">unsafe </span>{
@@ -2040,6 +2142,21 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Tries to transform the value into a value of the target type
+    </span><span class="comment">// rustdoc-stripper-ignore-next-stop
+    </span><span class="doccomment">/// Tries to cast the contents of `self` into a type appropriate
+    /// to store in `dest_value`, e.g. to transform a `G_TYPE_INT` value
+    /// into a `G_TYPE_FLOAT` value. Performing transformations between
+    /// value types might incur precision lossage. Especially
+    /// transformations into strings might reveal seemingly arbitrary
+    /// results and shouldn&#39;t be relied upon for production code (such
+    /// as rcfile value or object property serialization).
+    /// ## `dest_value`
+    /// Target value.
+    ///
+    /// # Returns
+    ///
+    /// Whether a transformation rule was found and could be applied.
+    ///  Upon failing transformations, `dest_value` is left untouched.
     </span><span class="attr">#[doc(alias = <span class="string">&quot;g_value_transform&quot;</span>)]
     </span><span class="kw">pub fn </span>transform&lt;T: ValueType&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;Value, <span class="kw">crate</span>::BoolError&gt; {
         <span class="self">self</span>.transform_with_type(T::Type::static_type())
@@ -2068,6 +2185,7 @@
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Consumes `Value` and returns the corresponding `GValue`.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>into_raw(<span class="self">self</span>) -&gt; gobject_ffi::GValue {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>s = mem::ManuallyDrop::new(<span class="self">self</span>);
@@ -2075,7 +2193,8 @@
         }
     }
 
-    <span class="kw">pub fn </span>try_into_send_value&lt;T: Send + StaticType&gt;(<span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;SendValue, <span class="self">Self</span>&gt; {
+    <span class="attr">#[inline]
+    </span><span class="kw">pub fn </span>try_into_send_value&lt;T: Send + StaticType&gt;(<span class="self">self</span>) -&gt; <span class="prelude-ty">Result</span>&lt;SendValue, <span class="self">Self</span>&gt; {
         <span class="kw">if </span><span class="self">self</span>.type_().is_a(T::static_type()) {
             <span class="kw">unsafe </span>{ <span class="prelude-val">Ok</span>(SendValue::unsafe_from(<span class="self">self</span>.into_raw())) }
         } <span class="kw">else </span>{
@@ -2102,27 +2221,32 @@
 }
 
 <span class="kw">impl </span>From&lt;SendValue&gt; <span class="kw">for </span>Value {
-    <span class="kw">fn </span>from(value: SendValue) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>from(value: SendValue) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{ Value::unsafe_from(value.into_raw()) }
     }
 }
 
 <span class="kw">impl </span>ToValue <span class="kw">for </span>Value {
-    <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Value {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Value {
         <span class="self">self</span>.clone()
     }
 
-    <span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
         <span class="self">self</span>.type_()
     }
 }
 
 <span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToValue <span class="kw">for </span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Value {
-    <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Value {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Value {
         (<span class="kw-2">*</span><span class="self">self</span>).clone()
     }
 
-    <span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
         <span class="self">self</span>.type_()
     }
 }
@@ -2131,7 +2255,9 @@
 
 <span class="kw">unsafe impl </span>ValueTypeChecker <span class="kw">for </span>NopChecker {
     <span class="kw">type </span>Error = Infallible;
-    <span class="kw">fn </span>check(_value: <span class="kw-2">&amp;</span>Value) -&gt; <span class="prelude-ty">Result</span>&lt;(), <span class="self">Self</span>::Error&gt; {
+
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>check(_value: <span class="kw-2">&amp;</span>Value) -&gt; <span class="prelude-ty">Result</span>&lt;(), <span class="self">Self</span>::Error&gt; {
         <span class="prelude-val">Ok</span>(())
     }
 }
@@ -2139,7 +2265,8 @@
 <span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span>Value {
     <span class="kw">type </span>Checker = NopChecker;
 
-    <span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Value) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Value) -&gt; <span class="self">Self </span>{
         value.clone()
     }
 }
@@ -2147,33 +2274,39 @@
 <span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Value {
     <span class="kw">type </span>Checker = NopChecker;
 
-    <span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Value) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Value) -&gt; <span class="self">Self </span>{
         value
     }
 }
 
 <span class="kw">impl </span>ToValue <span class="kw">for </span>SendValue {
-    <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Value {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Value {
         <span class="kw">unsafe </span>{ from_glib_none(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
         <span class="self">self</span>.type_()
     }
 }
 
 <span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToValue <span class="kw">for </span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>SendValue {
-    <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Value {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Value {
         <span class="kw">unsafe </span>{ from_glib_none(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
         <span class="self">self</span>.type_()
     }
 }
 
 <span class="kw">impl </span>StaticType <span class="kw">for </span>BoxedValue {
-    <span class="kw">fn </span>static_type() -&gt; Type {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>static_type() -&gt; Type {
         <span class="kw">unsafe </span>{ from_glib(gobject_ffi::g_value_get_type()) }
     }
 }
@@ -2201,6 +2334,7 @@
 <span class="kw">impl </span>SendValue {
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Consumes `SendValue` and returns the corresponding `GValue`.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>into_raw(<span class="self">self</span>) -&gt; gobject_ffi::GValue {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>s = mem::ManuallyDrop::new(<span class="self">self</span>);
@@ -2222,7 +2356,8 @@
 <span class="kw">impl </span>Deref <span class="kw">for </span>SendValue {
     <span class="kw">type </span>Target = Value;
 
-    <span class="kw">fn </span>deref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>Value {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>deref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>Value {
         <span class="kw">unsafe </span>{ <span class="kw-2">&amp;*</span>(<span class="self">self </span><span class="kw">as </span><span class="kw-2">*const </span>SendValue <span class="kw">as </span><span class="kw-2">*const </span>Value) }
     }
 }
@@ -2243,7 +2378,8 @@
 }
 
 <span class="kw">impl</span>&lt;T: Send + ToValue + <span class="question-mark">?</span>Sized&gt; ToSendValue <span class="kw">for </span>T {
-    <span class="kw">fn </span>to_send_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; SendValue {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_send_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; SendValue {
         <span class="kw">unsafe </span>{ SendValue::unsafe_from(<span class="self">self</span>.to_value().into_raw()) }
     }
 }
@@ -2251,7 +2387,8 @@
 <span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str {
     <span class="kw">type </span>Checker = GenericValueTypeOrNoneChecker&lt;<span class="self">Self</span>&gt;;
 
-    <span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Value) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Value) -&gt; <span class="self">Self </span>{
         <span class="kw">let </span>ptr = gobject_ffi::g_value_get_string(value.to_glib_none().<span class="number">0</span>);
         CStr::from_ptr(ptr).to_str().expect(<span class="string">&quot;Invalid UTF-8&quot;</span>)
     }
@@ -2403,13 +2540,15 @@
 <span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span>bool {
     <span class="kw">type </span>Checker = GenericValueTypeChecker&lt;<span class="self">Self</span>&gt;;
 
-    <span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Value) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Value) -&gt; <span class="self">Self </span>{
         from_glib(gobject_ffi::g_value_get_boolean(value.to_glib_none().<span class="number">0</span>))
     }
 }
 
 <span class="kw">impl </span>ToValue <span class="kw">for </span>bool {
-    <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Value {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Value {
         <span class="kw">let </span><span class="kw-2">mut </span>value = Value::for_value_type::&lt;<span class="self">Self</span>&gt;();
         <span class="kw">unsafe </span>{
             gobject_ffi::g_value_set_boolean(<span class="kw-2">&amp;mut </span>value.inner, <span class="self">self</span>.into_glib());
@@ -2417,7 +2556,8 @@
         value
     }
 
-    <span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
         <span class="self">Self</span>::static_type()
     }
 }
@@ -2436,13 +2576,15 @@
 <span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span>Pointer {
     <span class="kw">type </span>Checker = GenericValueTypeChecker&lt;<span class="self">Self</span>&gt;;
 
-    <span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Value) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Value) -&gt; <span class="self">Self </span>{
         gobject_ffi::g_value_get_pointer(value.to_glib_none().<span class="number">0</span>)
     }
 }
 
 <span class="kw">impl </span>ToValue <span class="kw">for </span>Pointer {
-    <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Value {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Value {
         <span class="kw">let </span><span class="kw-2">mut </span>value = Value::for_value_type::&lt;<span class="self">Self</span>&gt;();
         <span class="kw">unsafe </span>{
             gobject_ffi::g_value_set_pointer(<span class="kw-2">&amp;mut </span>value.inner, <span class="kw-2">*</span><span class="self">self</span>);
@@ -2450,7 +2592,8 @@
         value
     }
 
-    <span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
         &lt;&lt;<span class="self">Self </span><span class="kw">as </span>ValueType&gt;::Type <span class="kw">as </span>StaticType&gt;::static_type()
     }
 }
@@ -2469,17 +2612,20 @@
 <span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span>ptr::NonNull&lt;Pointee&gt; {
     <span class="kw">type </span>Checker = GenericValueTypeOrNoneChecker&lt;<span class="self">Self</span>&gt;;
 
-    <span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Value) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Value) -&gt; <span class="self">Self </span>{
         ptr::NonNull::new_unchecked(Pointer::from_value(value))
     }
 }
 
 <span class="kw">impl </span>ToValue <span class="kw">for </span>ptr::NonNull&lt;Pointee&gt; {
-    <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Value {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Value {
         <span class="self">self</span>.as_ptr().to_value()
     }
 
-    <span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
         &lt;&lt;<span class="self">Self </span><span class="kw">as </span>ValueType&gt;::Type <span class="kw">as </span>StaticType&gt;::static_type()
     }
 }
@@ -2492,7 +2638,8 @@
 }
 
 <span class="kw">impl </span>ToValueOptional <span class="kw">for </span>ptr::NonNull&lt;Pointee&gt; {
-    <span class="kw">fn </span>to_value_optional(p: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="self">Self</span>&gt;) -&gt; Value {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_value_optional(p: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="self">Self</span>&gt;) -&gt; Value {
         p.map(|p| p.as_ptr()).unwrap_or(ptr::null_mut()).to_value()
     }
 }
@@ -2506,13 +2653,15 @@
         <span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span><span class="macro-nonterminal">$name </span>{
             <span class="kw">type </span>Checker = GenericValueTypeChecker&lt;<span class="self">Self</span>&gt;;
 
-            <span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Value) -&gt; <span class="self">Self </span>{
+            <span class="attr">#[inline]
+            </span><span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Value) -&gt; <span class="self">Self </span>{
                 <span class="macro-nonterminal">$get</span>(value.to_glib_none().<span class="number">0</span>)
             }
         }
 
         <span class="kw">impl </span>ToValue <span class="kw">for </span><span class="macro-nonterminal">$name </span>{
-            <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Value {
+            <span class="attr">#[inline]
+            </span><span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Value {
                 <span class="kw">let </span><span class="kw-2">mut </span>value = Value::for_value_type::&lt;<span class="self">Self</span>&gt;();
                 <span class="kw">unsafe </span>{
                     <span class="macro-nonterminal">$set</span>(<span class="kw-2">&amp;mut </span>value.inner, <span class="kw-2">*</span><span class="self">self</span>);
@@ -2520,7 +2669,8 @@
                 value
             }
 
-            <span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
+            <span class="attr">#[inline]
+            </span><span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
                 <span class="self">Self</span>::static_type()
             }
         }
@@ -2592,7 +2742,8 @@
 <span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span>char {
     <span class="kw">type </span>Checker = CharTypeChecker;
 
-    <span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Value) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Value) -&gt; <span class="self">Self </span>{
         <span class="kw">let </span>res: u32 = gobject_ffi::g_value_get_uint(value.to_glib_none().<span class="number">0</span>);
         <span class="comment">// safe because the check is done by `Self::Checker`
         </span>char::from_u32_unchecked(res)
@@ -2600,7 +2751,8 @@
 }
 
 <span class="kw">impl </span>ToValue <span class="kw">for </span>char {
-    <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Value {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Value {
         <span class="kw">let </span><span class="kw-2">mut </span>value = Value::for_value_type::&lt;<span class="self">Self</span>&gt;();
         <span class="kw">unsafe </span>{
             gobject_ffi::g_value_set_uint(<span class="kw-2">&amp;mut </span>value.inner, <span class="kw-2">*</span><span class="self">self </span><span class="kw">as </span>u32);
@@ -2608,7 +2760,8 @@
         value
     }
 
-    <span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
         <span class="kw">crate</span>::Type::U32
     }
 }
@@ -2627,7 +2780,8 @@
 <span class="kw">impl </span>Deref <span class="kw">for </span>BoxedValue {
     <span class="kw">type </span>Target = Value;
 
-    <span class="kw">fn </span>deref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>Value {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>deref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>Value {
         <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0
     </span>}
 }
@@ -2641,14 +2795,16 @@
 <span class="kw">unsafe impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; FromValue&lt;<span class="lifetime">&#39;a</span>&gt; <span class="kw">for </span>BoxedValue {
     <span class="kw">type </span>Checker = GenericValueTypeOrNoneChecker&lt;<span class="self">Self</span>&gt;;
 
-    <span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Value) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>Value) -&gt; <span class="self">Self </span>{
         <span class="kw">let </span>ptr = gobject_ffi::g_value_get_boxed(value.to_glib_none().<span class="number">0</span>);
         BoxedValue(from_glib_none(ptr <span class="kw">as </span><span class="kw-2">*const </span>gobject_ffi::GValue))
     }
 }
 
 <span class="kw">impl </span>ToValue <span class="kw">for </span>BoxedValue {
-    <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Value {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Value {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>value = Value::from_type(&lt;BoxedValue&gt;::static_type());
 
@@ -2661,7 +2817,8 @@
         }
     }
 
-    <span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>value_type(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; Type {
         BoxedValue::static_type()
     }
 }
@@ -2683,7 +2840,8 @@
 }
 
 <span class="kw">impl </span>ToValueOptional <span class="kw">for </span>BoxedValue {
-    <span class="kw">fn </span>to_value_optional(s: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="self">Self</span>&gt;) -&gt; Value {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>to_value_optional(s: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="self">Self</span>&gt;) -&gt; Value {
         <span class="kw">let </span><span class="kw-2">mut </span>value = Value::for_value_type::&lt;<span class="self">Self</span>&gt;();
         <span class="kw">unsafe </span>{
             gobject_ffi::g_value_set_boxed(
@@ -2872,4 +3030,4 @@
     }
 }
 </code></pre></div>
-</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (88c58e3c2 2022-12-26)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
+</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (92c1937a9 2022-12-27)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>

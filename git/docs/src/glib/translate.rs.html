@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/translate.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>translate.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-b07ed6aaa412307b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-d695502c06d5afea.css"><link rel="stylesheet" disabled href="../../static.files/dark-aa222ca57e08648b.css"><link rel="stylesheet" disabled href="../../static.files/ayu-4eb006a26ee168b0.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/translate.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>translate.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-b07ed6aaa412307b.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-d695502c06d5afea.css"><link rel="stylesheet" disabled href="../../static.files/dark-aa222ca57e08648b.css"><link rel="stylesheet" disabled href="../../static.files/ayu-d5b7bae5e01694db.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -2982,6 +2982,22 @@
 <a href="#2909" id="2909">2909</a>
 <a href="#2910" id="2910">2910</a>
 <a href="#2911" id="2911">2911</a>
+<a href="#2912" id="2912">2912</a>
+<a href="#2913" id="2913">2913</a>
+<a href="#2914" id="2914">2914</a>
+<a href="#2915" id="2915">2915</a>
+<a href="#2916" id="2916">2916</a>
+<a href="#2917" id="2917">2917</a>
+<a href="#2918" id="2918">2918</a>
+<a href="#2919" id="2919">2919</a>
+<a href="#2920" id="2920">2920</a>
+<a href="#2921" id="2921">2921</a>
+<a href="#2922" id="2922">2922</a>
+<a href="#2923" id="2923">2923</a>
+<a href="#2924" id="2924">2924</a>
+<a href="#2925" id="2925">2925</a>
+<a href="#2926" id="2926">2926</a>
+<a href="#2927" id="2927">2927</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -3178,6 +3194,7 @@
 </span><span class="doccomment">/// Overrides pointer mutability.
 ///
 /// Use when the C API should be specifying a const pointer but doesn&#39;t.
+</span><span class="attr">#[inline]
 </span><span class="kw">pub fn </span>mut_override&lt;T&gt;(ptr: <span class="kw-2">*const </span>T) -&gt; <span class="kw-2">*mut </span>T {
     ptr <span class="kw">as </span><span class="kw-2">*mut </span>T
 }
@@ -3187,6 +3204,7 @@
 ///
 /// Use when the C API need const pointer, but function with `IsA&lt;T&gt;` constraint,
 /// that usually don&#39;t have const pointer conversion.
+</span><span class="attr">#[inline]
 </span><span class="kw">pub fn </span>const_override&lt;T&gt;(ptr: <span class="kw-2">*mut </span>T) -&gt; <span class="kw-2">*const </span>T {
     ptr <span class="kw">as </span><span class="kw-2">*const </span>T
 }
@@ -3257,6 +3275,7 @@
 <span class="kw">impl</span>&lt;T&gt; Borrowed&lt;T&gt; {
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Creates a new borrowed value.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>new(val: T) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>(mem::ManuallyDrop::new(val))
     }
@@ -3268,13 +3287,15 @@
     ///
     /// The returned value must never be dropped and instead has to be passed to `mem::forget()` or
     /// be directly wrapped in `mem::ManuallyDrop` or another `Borrowed` wrapper.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>into_inner(<span class="self">self</span>) -&gt; T {
         mem::ManuallyDrop::into_inner(<span class="self">self</span>.<span class="number">0</span>)
     }
 }
 
 <span class="kw">impl</span>&lt;T&gt; AsRef&lt;T&gt; <span class="kw">for </span>Borrowed&lt;T&gt; {
-    <span class="kw">fn </span>as_ref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>T {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>as_ref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>T {
         <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0
     </span>}
 }
@@ -3282,7 +3303,8 @@
 <span class="kw">impl</span>&lt;T&gt; std::ops::Deref <span class="kw">for </span>Borrowed&lt;T&gt; {
     <span class="kw">type </span>Target = T;
 
-    <span class="kw">fn </span>deref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>T {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>deref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>T {
         <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0
     </span>}
 }
@@ -3912,18 +3934,21 @@
         <span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibContainerFromSlice&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span><span class="macro-nonterminal">$name</span>&gt; <span class="kw">for </span><span class="macro-nonterminal">$name </span>{
             <span class="kw">type </span>Storage = std::marker::PhantomData&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>[<span class="macro-nonterminal">$name</span>]&gt;;
 
-            <span class="kw">fn </span>to_glib_none_from_slice(t: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>[<span class="macro-nonterminal">$name</span>]) -&gt; (<span class="kw-2">*mut </span><span class="macro-nonterminal">$name</span>, <span class="self">Self</span>::Storage) {
+            <span class="attr">#[inline]
+            </span><span class="kw">fn </span>to_glib_none_from_slice(t: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>[<span class="macro-nonterminal">$name</span>]) -&gt; (<span class="kw-2">*mut </span><span class="macro-nonterminal">$name</span>, <span class="self">Self</span>::Storage) {
                 (t.as_ptr() <span class="kw">as </span><span class="kw-2">*mut </span><span class="macro-nonterminal">$name</span>, std::marker::PhantomData)
             }
 
-            <span class="kw">fn </span>to_glib_container_from_slice(t: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>[<span class="macro-nonterminal">$name</span>]) -&gt; (<span class="kw-2">*mut </span><span class="macro-nonterminal">$name</span>, <span class="self">Self</span>::Storage) {
+            <span class="attr">#[inline]
+            </span><span class="kw">fn </span>to_glib_container_from_slice(t: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>[<span class="macro-nonterminal">$name</span>]) -&gt; (<span class="kw-2">*mut </span><span class="macro-nonterminal">$name</span>, <span class="self">Self</span>::Storage) {
                 (
                     ToGlibContainerFromSlice::to_glib_full_from_slice(t),
                     std::marker::PhantomData,
                 )
             }
 
-            <span class="kw">fn </span>to_glib_full_from_slice(t: <span class="kw-2">&amp;</span>[<span class="macro-nonterminal">$name</span>]) -&gt; <span class="kw-2">*mut </span><span class="macro-nonterminal">$name </span>{
+            <span class="attr">#[inline]
+            </span><span class="kw">fn </span>to_glib_full_from_slice(t: <span class="kw-2">&amp;</span>[<span class="macro-nonterminal">$name</span>]) -&gt; <span class="kw-2">*mut </span><span class="macro-nonterminal">$name </span>{
                 <span class="kw">if </span>t.len() == <span class="number">0 </span>{
                     <span class="kw">return </span>ptr::null_mut();
                 }
@@ -4127,7 +4152,8 @@
 </span><span class="kw">pub struct </span>List(ptr::NonNull&lt;ffi::GList&gt;);
 
 <span class="kw">impl </span>Drop <span class="kw">for </span>List {
-    <span class="kw">fn </span>drop(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>drop(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{ ffi::g_list_free(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
     }
 }
@@ -4210,7 +4236,8 @@
 </span><span class="kw">pub struct </span>SList(ptr::NonNull&lt;ffi::GSList&gt;);
 
 <span class="kw">impl </span>Drop <span class="kw">for </span>SList {
-    <span class="kw">fn </span>drop(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>drop(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{ ffi::g_slist_free(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
     }
 }
@@ -4269,7 +4296,8 @@
 </span><span class="kw">pub struct </span>HashTable(ptr::NonNull&lt;ffi::GHashTable&gt;);
 
 <span class="kw">impl </span>Drop <span class="kw">for </span>HashTable {
-    <span class="kw">fn </span>drop(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>drop(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{ ffi::g_hash_table_unref(<span class="self">self</span>.<span class="number">0</span>.as_ptr()) }
     }
 }
@@ -4278,7 +4306,8 @@
 </span><span class="kw">pub struct </span>PtrArray(ptr::NonNull&lt;ffi::GPtrArray&gt;);
 
 <span class="kw">impl </span>Drop <span class="kw">for </span>PtrArray {
-    <span class="kw">fn </span>drop(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>drop(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
         <span class="kw">unsafe </span>{
             ffi::g_ptr_array_unref(<span class="self">self</span>.<span class="number">0</span>.as_ptr());
         }
@@ -4438,25 +4467,29 @@
 <span class="kw">impl</span>&lt;I: Error&gt; GlibNoneOrInvalidError&lt;I&gt; {
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Builds the `None` variant.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>none() -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::None
     }
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Returns `true` if `self` is the `None` variant.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>is_none(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="macro">matches!</span>(<span class="self">self</span>, <span class="self">Self</span>::None)
     }
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Returns `true` if `self` is the `Invalid` variant.
+    </span><span class="attr">#[inline]
     </span><span class="kw">pub fn </span>is_invalid(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
         <span class="macro">matches!</span>(<span class="self">self</span>, <span class="self">Self</span>::Invalid(<span class="kw">_</span>))
     }
 }
 
 <span class="kw">impl</span>&lt;I: Error&gt; From&lt;I&gt; <span class="kw">for </span>GlibNoneOrInvalidError&lt;I&gt; {
-    <span class="kw">fn </span>from(invalid: I) -&gt; <span class="self">Self </span>{
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>from(invalid: I) -&gt; <span class="self">Self </span>{
         <span class="self">Self</span>::Invalid(invalid)
     }
 }
@@ -4636,7 +4669,7 @@
 <span class="kw">impl </span>FromGlibPtrNone&lt;<span class="kw-2">*const </span>c_char&gt; <span class="kw">for </span>String {
     <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_none(ptr: <span class="kw-2">*const </span>c_char) -&gt; <span class="self">Self </span>{
-        <span class="macro">assert!</span>(!ptr.is_null());
+        <span class="macro">debug_assert!</span>(!ptr.is_null());
         <span class="self">Self</span>::from_utf8_lossy(CStr::from_ptr(ptr).to_bytes()).into_owned()
     }
 }
@@ -4655,7 +4688,7 @@
 </span><span class="kw">impl </span>FromGlibPtrNone&lt;<span class="kw-2">*mut </span>c_char&gt; <span class="kw">for </span>String {
     <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_none(ptr: <span class="kw-2">*mut </span>c_char) -&gt; <span class="self">Self </span>{
-        <span class="macro">assert!</span>(!ptr.is_null());
+        <span class="macro">debug_assert!</span>(!ptr.is_null());
         <span class="self">Self</span>::from_utf8_lossy(CStr::from_ptr(ptr).to_bytes()).into_owned()
     }
 }
@@ -4672,7 +4705,7 @@
 
 <span class="attr">#[cfg(not(windows))]
 </span><span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">unsafe fn </span>c_to_path_buf(ptr: <span class="kw-2">*const </span>c_char) -&gt; PathBuf {
-    <span class="macro">assert!</span>(!ptr.is_null());
+    <span class="macro">debug_assert!</span>(!ptr.is_null());
 
     <span class="comment">// GLib paths on UNIX are always in the local encoding, which can be
     // UTF-8 or anything else really, but is always a NUL-terminated string
@@ -4682,7 +4715,7 @@
 
 <span class="attr">#[cfg(windows)]
 </span><span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">unsafe fn </span>c_to_path_buf(ptr: <span class="kw-2">*const </span>c_char) -&gt; PathBuf {
-    <span class="macro">assert!</span>(!ptr.is_null());
+    <span class="macro">debug_assert!</span>(!ptr.is_null());
 
     <span class="comment">// GLib paths on Windows are always UTF-8, as such we can convert to a String
     // first and then go to a PathBuf from there. Unless there is a bug
@@ -4695,7 +4728,7 @@
 
 <span class="attr">#[cfg(not(windows))]
 </span><span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">unsafe fn </span>c_to_os_string(ptr: <span class="kw-2">*const </span>c_char) -&gt; OsString {
-    <span class="macro">assert!</span>(!ptr.is_null());
+    <span class="macro">debug_assert!</span>(!ptr.is_null());
 
     <span class="comment">// GLib OS string (environment strings) on UNIX are always in the local encoding,
     // which can be UTF-8 or anything else really, but is always a NUL-terminated string
@@ -4705,7 +4738,7 @@
 
 <span class="attr">#[cfg(windows)]
 </span><span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">unsafe fn </span>c_to_os_string(ptr: <span class="kw-2">*const </span>c_char) -&gt; OsString {
-    <span class="macro">assert!</span>(!ptr.is_null());
+    <span class="macro">debug_assert!</span>(!ptr.is_null());
 
     <span class="comment">// GLib OS string (environment strings) on Windows are always UTF-8,
     // as such we can convert to a String
@@ -4720,7 +4753,7 @@
 <span class="kw">impl </span>FromGlibPtrNone&lt;<span class="kw-2">*const </span>c_char&gt; <span class="kw">for </span>PathBuf {
     <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_none(ptr: <span class="kw-2">*const </span>c_char) -&gt; <span class="self">Self </span>{
-        <span class="macro">assert!</span>(!ptr.is_null());
+        <span class="macro">debug_assert!</span>(!ptr.is_null());
         c_to_path_buf(ptr)
     }
 }
@@ -4737,7 +4770,7 @@
 <span class="kw">impl </span>FromGlibPtrNone&lt;<span class="kw-2">*mut </span>c_char&gt; <span class="kw">for </span>PathBuf {
     <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_none(ptr: <span class="kw-2">*mut </span>c_char) -&gt; <span class="self">Self </span>{
-        <span class="macro">assert!</span>(!ptr.is_null());
+        <span class="macro">debug_assert!</span>(!ptr.is_null());
         c_to_path_buf(ptr)
     }
 }
@@ -4753,14 +4786,14 @@
 
 <span class="attr">#[cfg(not(windows))]
 </span><span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">unsafe fn </span>c_to_path_buf_num(ptr: <span class="kw-2">*const </span>c_char, num: usize) -&gt; PathBuf {
-    <span class="macro">assert!</span>(!ptr.is_null());
+    <span class="macro">debug_assert!</span>(!ptr.is_null());
     <span class="kw">let </span>slice = std::slice::from_raw_parts(ptr <span class="kw">as </span><span class="kw-2">*const </span>u8, num);
     OsString::from_vec(slice.to_vec()).into()
 }
 
 <span class="attr">#[cfg(windows)]
 </span><span class="kw">pub</span>(<span class="kw">crate</span>) <span class="kw">unsafe fn </span>c_to_path_buf_num(ptr: <span class="kw-2">*const </span>c_char, num: usize) -&gt; PathBuf {
-    <span class="macro">assert!</span>(!ptr.is_null());
+    <span class="macro">debug_assert!</span>(!ptr.is_null());
     <span class="kw">let </span>slice = std::slice::from_raw_parts(ptr <span class="kw">as </span><span class="kw-2">*const </span>u8, num);
     String::from_utf8(slice.into())
         .expect(<span class="string">&quot;Invalid, non-UTF8 path&quot;</span>)
@@ -4769,8 +4802,7 @@
 
 <span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibContainer&lt;<span class="kw-2">*const </span>c_char, <span class="kw-2">*const </span>i8&gt; <span class="kw">for </span>PathBuf {
-    <span class="attr">#[inline]
-    </span><span class="kw">unsafe fn </span>from_glib_none_num(ptr: <span class="kw-2">*const </span>i8, num: usize) -&gt; <span class="self">Self </span>{
+    <span class="kw">unsafe fn </span>from_glib_none_num(ptr: <span class="kw-2">*const </span>i8, num: usize) -&gt; <span class="self">Self </span>{
         c_to_path_buf_num(ptr <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>, num)
     }
 
@@ -4833,7 +4865,7 @@
 <span class="kw">impl </span>FromGlibPtrNone&lt;<span class="kw-2">*const </span>c_char&gt; <span class="kw">for </span>OsString {
     <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_none(ptr: <span class="kw-2">*const </span>c_char) -&gt; <span class="self">Self </span>{
-        <span class="macro">assert!</span>(!ptr.is_null());
+        <span class="macro">debug_assert!</span>(!ptr.is_null());
         c_to_os_string(ptr)
     }
 }
@@ -4850,7 +4882,7 @@
 <span class="kw">impl </span>FromGlibPtrNone&lt;<span class="kw-2">*mut </span>c_char&gt; <span class="kw">for </span>OsString {
     <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_none(ptr: <span class="kw-2">*mut </span>c_char) -&gt; <span class="self">Self </span>{
-        <span class="macro">assert!</span>(!ptr.is_null());
+        <span class="macro">debug_assert!</span>(!ptr.is_null());
         c_to_os_string(ptr)
     }
 }
@@ -5468,7 +5500,7 @@
             <span class="kw">return </span>Vec::new();
         }
         <span class="kw">let </span>pdata = (<span class="kw-2">*</span>ptr).pdata;
-        <span class="macro">assert!</span>((<span class="kw-2">*</span>ptr).len <span class="kw">as </span>usize &gt;= num);
+        <span class="macro">debug_assert!</span>((<span class="kw-2">*</span>ptr).len <span class="kw">as </span>usize &gt;= num);
         <span class="kw">let </span><span class="kw-2">mut </span>res = Vec::with_capacity(num);
         <span class="kw">for </span>i <span class="kw">in </span><span class="number">0</span>..num {
             <span class="kw">let </span>item_ptr: &lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType = Ptr::from(ptr::read(pdata.add(i)));
@@ -5496,7 +5528,7 @@
             <span class="kw">return </span>Vec::new();
         }
         <span class="kw">let </span>pdata = (<span class="kw-2">*</span>ptr).pdata;
-        <span class="macro">assert!</span>((<span class="kw-2">*</span>ptr).len <span class="kw">as </span>usize &gt;= num);
+        <span class="macro">debug_assert!</span>((<span class="kw-2">*</span>ptr).len <span class="kw">as </span>usize &gt;= num);
         <span class="kw">let </span><span class="kw-2">mut </span>res = Vec::with_capacity(num);
         <span class="kw">for </span>i <span class="kw">in </span><span class="number">0</span>..num {
             <span class="kw">let </span>item_ptr: &lt;T <span class="kw">as </span>GlibPtrDefault&gt;::GlibType = Ptr::from(ptr::read(pdata.add(i)));
@@ -5894,4 +5926,4 @@
     }
 }
 </code></pre></div>
-</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (88c58e3c2 2022-12-26)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
+</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (92c1937a9 2022-12-27)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
