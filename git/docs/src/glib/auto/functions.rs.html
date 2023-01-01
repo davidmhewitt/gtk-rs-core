@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/auto/functions.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>functions.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-749885d589dd4e13.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-d695502c06d5afea.css"><link rel="stylesheet" disabled href="../../../static.files/dark-aa222ca57e08648b.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-d5b7bae5e01694db.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/auto/functions.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>functions.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-3cc3084b477498a6.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-4743e13df3dfe8c4.css"><link rel="stylesheet" disabled href="../../../static.files/dark-0e1b889528bd466b.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-65289d5d067c7c66.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -1243,99 +1243,6 @@
 <a href="#1170" id="1170">1170</a>
 <a href="#1171" id="1171">1171</a>
 <a href="#1172" id="1172">1172</a>
-<a href="#1173" id="1173">1173</a>
-<a href="#1174" id="1174">1174</a>
-<a href="#1175" id="1175">1175</a>
-<a href="#1176" id="1176">1176</a>
-<a href="#1177" id="1177">1177</a>
-<a href="#1178" id="1178">1178</a>
-<a href="#1179" id="1179">1179</a>
-<a href="#1180" id="1180">1180</a>
-<a href="#1181" id="1181">1181</a>
-<a href="#1182" id="1182">1182</a>
-<a href="#1183" id="1183">1183</a>
-<a href="#1184" id="1184">1184</a>
-<a href="#1185" id="1185">1185</a>
-<a href="#1186" id="1186">1186</a>
-<a href="#1187" id="1187">1187</a>
-<a href="#1188" id="1188">1188</a>
-<a href="#1189" id="1189">1189</a>
-<a href="#1190" id="1190">1190</a>
-<a href="#1191" id="1191">1191</a>
-<a href="#1192" id="1192">1192</a>
-<a href="#1193" id="1193">1193</a>
-<a href="#1194" id="1194">1194</a>
-<a href="#1195" id="1195">1195</a>
-<a href="#1196" id="1196">1196</a>
-<a href="#1197" id="1197">1197</a>
-<a href="#1198" id="1198">1198</a>
-<a href="#1199" id="1199">1199</a>
-<a href="#1200" id="1200">1200</a>
-<a href="#1201" id="1201">1201</a>
-<a href="#1202" id="1202">1202</a>
-<a href="#1203" id="1203">1203</a>
-<a href="#1204" id="1204">1204</a>
-<a href="#1205" id="1205">1205</a>
-<a href="#1206" id="1206">1206</a>
-<a href="#1207" id="1207">1207</a>
-<a href="#1208" id="1208">1208</a>
-<a href="#1209" id="1209">1209</a>
-<a href="#1210" id="1210">1210</a>
-<a href="#1211" id="1211">1211</a>
-<a href="#1212" id="1212">1212</a>
-<a href="#1213" id="1213">1213</a>
-<a href="#1214" id="1214">1214</a>
-<a href="#1215" id="1215">1215</a>
-<a href="#1216" id="1216">1216</a>
-<a href="#1217" id="1217">1217</a>
-<a href="#1218" id="1218">1218</a>
-<a href="#1219" id="1219">1219</a>
-<a href="#1220" id="1220">1220</a>
-<a href="#1221" id="1221">1221</a>
-<a href="#1222" id="1222">1222</a>
-<a href="#1223" id="1223">1223</a>
-<a href="#1224" id="1224">1224</a>
-<a href="#1225" id="1225">1225</a>
-<a href="#1226" id="1226">1226</a>
-<a href="#1227" id="1227">1227</a>
-<a href="#1228" id="1228">1228</a>
-<a href="#1229" id="1229">1229</a>
-<a href="#1230" id="1230">1230</a>
-<a href="#1231" id="1231">1231</a>
-<a href="#1232" id="1232">1232</a>
-<a href="#1233" id="1233">1233</a>
-<a href="#1234" id="1234">1234</a>
-<a href="#1235" id="1235">1235</a>
-<a href="#1236" id="1236">1236</a>
-<a href="#1237" id="1237">1237</a>
-<a href="#1238" id="1238">1238</a>
-<a href="#1239" id="1239">1239</a>
-<a href="#1240" id="1240">1240</a>
-<a href="#1241" id="1241">1241</a>
-<a href="#1242" id="1242">1242</a>
-<a href="#1243" id="1243">1243</a>
-<a href="#1244" id="1244">1244</a>
-<a href="#1245" id="1245">1245</a>
-<a href="#1246" id="1246">1246</a>
-<a href="#1247" id="1247">1247</a>
-<a href="#1248" id="1248">1248</a>
-<a href="#1249" id="1249">1249</a>
-<a href="#1250" id="1250">1250</a>
-<a href="#1251" id="1251">1251</a>
-<a href="#1252" id="1252">1252</a>
-<a href="#1253" id="1253">1253</a>
-<a href="#1254" id="1254">1254</a>
-<a href="#1255" id="1255">1255</a>
-<a href="#1256" id="1256">1256</a>
-<a href="#1257" id="1257">1257</a>
-<a href="#1258" id="1258">1258</a>
-<a href="#1259" id="1259">1259</a>
-<a href="#1260" id="1260">1260</a>
-<a href="#1261" id="1261">1261</a>
-<a href="#1262" id="1262">1262</a>
-<a href="#1263" id="1263">1263</a>
-<a href="#1264" id="1264">1264</a>
-<a href="#1265" id="1265">1265</a>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
@@ -1713,47 +1620,13 @@
     <span class="kw">unsafe </span>{ from_glib_none(ffi::g_get_host_name()) }
 }
 
-<span class="doccomment">/// Computes a list of applicable locale names, which can be used to
-/// e.g. construct locale-dependent filenames or search paths. The returned
-/// list is sorted from most desirable to least desirable and always contains
-/// the default locale &quot;C&quot;.
-///
-/// For example, if LANGUAGE=de:en_US, then the returned list is
-/// &quot;de&quot;, &quot;en_US&quot;, &quot;en&quot;, &quot;C&quot;.
-///
-/// This function consults the environment variables `LANGUAGE`, `LC_ALL`,
-/// `LC_MESSAGES` and `LANG` to find the list of locales specified by the
-/// user.
-///
-/// # Returns
-///
-/// a [`None`]-terminated array of strings owned by GLib
-///  that must not be modified or freed.
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_language_names&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_get_language_names&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_language_names&quot;</span>)]
 </span><span class="kw">pub fn </span>language_names() -&gt; Vec&lt;<span class="kw">crate</span>::GString&gt; {
     <span class="kw">unsafe </span>{ FromGlibPtrContainer::from_glib_none(ffi::g_get_language_names()) }
 }
 
-<span class="doccomment">/// Computes a list of applicable locale names with a locale category name,
-/// which can be used to construct the fallback locale-dependent filenames
-/// or search paths. The returned list is sorted from most desirable to
-/// least desirable and always contains the default locale &quot;C&quot;.
-///
-/// This function consults the environment variables `LANGUAGE`, `LC_ALL`,
-/// `category_name`, and `LANG` to find the list of locales specified by the
-/// user.
-///
-/// [`language_names()`][crate::language_names()] returns g_get_language_names_with_category(&quot;LC_MESSAGES&quot;).
-/// ## `category_name`
-/// a locale category name
-///
-/// # Returns
-///
-/// a [`None`]-terminated array of strings owned by
-///  the thread g_get_language_names_with_category was called from.
-///  It must not be modified or freed. It must be copied if planned to be used in another thread.
-</span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
 #[doc(alias = <span class="string">&quot;g_get_language_names_with_category&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_language_names_with_category&quot;</span>)]
@@ -1765,30 +1638,7 @@
     }
 }
 
-<span class="doccomment">/// Returns a list of derived variants of `locale`, which can be used to
-/// e.g. construct locale-dependent filenames or search paths. The returned
-/// list is sorted from most desirable to least desirable.
-/// This function handles territory, charset and extra locale modifiers. See
-/// [`setlocale(3)`](man:setlocale) for information about locales and their format.
-///
-/// `locale` itself is guaranteed to be returned in the output.
-///
-/// For example, if `locale` is `fr_BE`, then the returned list
-/// is `fr_BE`, `fr`. If `locale` is `en_GB.UTF-8`euro``, then the returned list
-/// is `en_GB.UTF-8`euro``, `en_GB.UTF-8`, `en_GB`euro``, `en_GB`, `en.UTF-8`euro``,
-/// `en.UTF-8`, `en`euro``, `en`.
-///
-/// If you need the list of variants for the current locale,
-/// use [`language_names()`][crate::language_names()].
-/// ## `locale`
-/// a locale identifier
-///
-/// # Returns
-///
-/// a newly
-///  allocated array of newly allocated strings with the locale variants. Free with
-///  `g_strfreev()`.
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_locale_variants&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_get_locale_variants&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_locale_variants&quot;</span>)]
 </span><span class="kw">pub fn </span>locale_variants(locale: <span class="kw-2">&amp;</span>str) -&gt; Vec&lt;<span class="kw">crate</span>::GString&gt; {
     <span class="kw">unsafe </span>{
@@ -1796,56 +1646,19 @@
     }
 }
 
-<span class="doccomment">/// Queries the system monotonic time.
-///
-/// The monotonic clock will always increase and doesn&#39;t suffer
-/// discontinuities when the user (or NTP) changes the system time. It
-/// may or may not continue to tick during times where the machine is
-/// suspended.
-///
-/// We try to use the clock that corresponds as closely as possible to
-/// the passage of time as measured by system calls such as `poll()` but it
-/// may not always be possible to do this.
-///
-/// # Returns
-///
-/// the monotonic time, in microseconds
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_monotonic_time&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_get_monotonic_time&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_monotonic_time&quot;</span>)]
 </span><span class="kw">pub fn </span>monotonic_time() -&gt; i64 {
     <span class="kw">unsafe </span>{ ffi::g_get_monotonic_time() }
 }
 
-<span class="doccomment">/// Determine the approximate number of threads that the system will
-/// schedule simultaneously for this process. This is intended to be
-/// used as a parameter to [`ThreadPool::new()`][crate::ThreadPool::new()] for CPU bound tasks and
-/// similar cases.
-///
-/// # Returns
-///
-/// Number of schedulable threads, always greater than 0
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_num_processors&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_get_num_processors&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_num_processors&quot;</span>)]
 </span><span class="kw">pub fn </span>num_processors() -&gt; u32 {
     <span class="kw">unsafe </span>{ ffi::g_get_num_processors() }
 }
 
-<span class="doccomment">/// Get information about the operating system.
-///
-/// On Linux this comes from the `/etc/os-release` file. On other systems, it may
-/// come from a variety of sources. You can either use the standard key names
-/// like `G_OS_INFO_KEY_NAME` or pass any UTF-8 string key name. For example,
-/// `/etc/os-release` provides a number of other less commonly used values that may
-/// be useful. No key is guaranteed to be provided, so the caller should always
-/// check if the result is [`None`].
-/// ## `key_name`
-/// a key for the OS info being requested, for example `G_OS_INFO_KEY_NAME`.
-///
-/// # Returns
-///
-/// The associated value for the requested key or [`None`] if
-///  this information is not provided.
-</span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_64&quot;</span>)))]
 #[doc(alias = <span class="string">&quot;g_get_os_info&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_os_info&quot;</span>)]
@@ -1853,155 +1666,37 @@
     <span class="kw">unsafe </span>{ from_glib_full(ffi::g_get_os_info(key_name.to_glib_none().<span class="number">0</span>)) }
 }
 
-<span class="doccomment">/// Gets the real name of the user. This usually comes from the user&#39;s
-/// entry in the `passwd` file. The encoding of the returned string is
-/// system-defined. (On Windows, it is, however, always UTF-8.) If the
-/// real user name cannot be determined, the string &quot;Unknown&quot; is
-/// returned.
-///
-/// # Returns
-///
-/// the user&#39;s real name.
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_real_name&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_get_real_name&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_real_name&quot;</span>)]
 </span><span class="kw">pub fn </span>real_name() -&gt; std::ffi::OsString {
     <span class="kw">unsafe </span>{ from_glib_none(ffi::g_get_real_name()) }
 }
 
-<span class="doccomment">/// Queries the system wall-clock time.
-///
-/// This call is functionally equivalent to `g_get_current_time()` except
-/// that the return value is often more convenient than dealing with a
-/// `GTimeVal`.
-///
-/// You should only use this call if you are actually interested in the real
-/// wall-clock time. [`monotonic_time()`][crate::monotonic_time()] is probably more useful for
-/// measuring intervals.
-///
-/// # Returns
-///
-/// the number of microseconds since January 1, 1970 UTC.
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_real_time&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_get_real_time&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_real_time&quot;</span>)]
 </span><span class="kw">pub fn </span>real_time() -&gt; i64 {
     <span class="kw">unsafe </span>{ ffi::g_get_real_time() }
 }
 
-<span class="doccomment">/// Returns an ordered list of base directories in which to access
-/// system-wide configuration information.
-///
-/// On UNIX platforms this is determined using the mechanisms described
-/// in the
-/// [XDG Base Directory Specification](http://www.freedesktop.org/Standards/basedir-spec).
-/// In this case the list of directories retrieved will be `XDG_CONFIG_DIRS`.
-///
-/// On Windows it follows XDG Base Directory Specification if `XDG_CONFIG_DIRS` is defined.
-/// If `XDG_CONFIG_DIRS` is undefined, the directory that contains application
-/// data for all users is used instead. A typical path is
-/// `C:\Documents and Settings\All Users\Application Data`.
-/// This folder is used for application data
-/// that is not user specific. For example, an application can store
-/// a spell-check dictionary, a database of clip art, or a log file in the
-/// FOLDERID_ProgramData folder. This information will not roam and is available
-/// to anyone using the computer.
-///
-/// The return value is cached and modifying it at runtime is not supported, as
-/// it’s not thread-safe to modify environment variables at runtime.
-///
-/// # Returns
-///
-///
-///  a [`None`]-terminated array of strings owned by GLib that must not be
-///  modified or freed.
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_system_config_dirs&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_get_system_config_dirs&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_system_config_dirs&quot;</span>)]
 </span><span class="kw">pub fn </span>system_config_dirs() -&gt; Vec&lt;std::path::PathBuf&gt; {
     <span class="kw">unsafe </span>{ FromGlibPtrContainer::from_glib_none(ffi::g_get_system_config_dirs()) }
 }
 
-<span class="doccomment">/// Returns an ordered list of base directories in which to access
-/// system-wide application data.
-///
-/// On UNIX platforms this is determined using the mechanisms described
-/// in the
-/// [XDG Base Directory Specification](http://www.freedesktop.org/Standards/basedir-spec)
-/// In this case the list of directories retrieved will be `XDG_DATA_DIRS`.
-///
-/// On Windows it follows XDG Base Directory Specification if `XDG_DATA_DIRS` is defined.
-/// If `XDG_DATA_DIRS` is undefined,
-/// the first elements in the list are the Application Data
-/// and Documents folders for All Users. (These can be determined only
-/// on Windows 2000 or later and are not present in the list on other
-/// Windows versions.) See documentation for FOLDERID_ProgramData and
-/// FOLDERID_PublicDocuments.
-///
-/// Then follows the &quot;share&quot; subfolder in the installation folder for
-/// the package containing the DLL that calls this function, if it can
-/// be determined.
-///
-/// Finally the list contains the &quot;share&quot; subfolder in the installation
-/// folder for GLib, and in the installation folder for the package the
-/// application&#39;s .exe file belongs to.
-///
-/// The installation folders above are determined by looking up the
-/// folder where the module (DLL or EXE) in question is located. If the
-/// folder&#39;s name is &quot;bin&quot;, its parent is used, otherwise the folder
-/// itself.
-///
-/// Note that on Windows the returned list can vary depending on where
-/// this function is called.
-///
-/// The return value is cached and modifying it at runtime is not supported, as
-/// it’s not thread-safe to modify environment variables at runtime.
-///
-/// # Returns
-///
-///
-///  a [`None`]-terminated array of strings owned by GLib that must not be
-///  modified or freed.
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_system_data_dirs&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_get_system_data_dirs&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_system_data_dirs&quot;</span>)]
 </span><span class="kw">pub fn </span>system_data_dirs() -&gt; Vec&lt;std::path::PathBuf&gt; {
     <span class="kw">unsafe </span>{ FromGlibPtrContainer::from_glib_none(ffi::g_get_system_data_dirs()) }
 }
 
-<span class="doccomment">/// Gets the directory to use for temporary files.
-///
-/// On UNIX, this is taken from the `TMPDIR` environment variable.
-/// If the variable is not set, `P_tmpdir` is
-/// used, as defined by the system C library. Failing that, a
-/// hard-coded default of &quot;/tmp&quot; is returned.
-///
-/// On Windows, the `TEMP` environment variable is used, with the
-/// root directory of the Windows installation (eg: &quot;C:\&quot;) used
-/// as a default.
-///
-/// The encoding of the returned string is system-defined. On Windows,
-/// it is always UTF-8. The return value is never [`None`] or the empty
-/// string.
-///
-/// # Returns
-///
-/// the directory to use for temporary files.
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_tmp_dir&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_get_tmp_dir&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_tmp_dir&quot;</span>)]
 </span><span class="kw">pub fn </span>tmp_dir() -&gt; std::path::PathBuf {
     <span class="kw">unsafe </span>{ from_glib_none(ffi::g_get_tmp_dir()) }
 }
 
-<span class="doccomment">/// RIf the paramspec redirects operations to another paramspec,
-/// returns that paramspec. Redirect is used typically for
-/// providing a new implementation of a property in a derived
-/// type while preserving all the properties from the parent
-/// type. Redirection is established by creating a property
-/// of type [`ParamSpecOverride`][crate::ParamSpecOverride]. See `g_object_class_override_property()`
-/// for an example of the use of this capability.
-///
-/// # Returns
-///
-/// paramspec to which requests on this
-///  paramspec should be redirected, or [`None`] if none.
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_user_cache_dir&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_get_user_cache_dir&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_user_cache_dir&quot;</span>)]
 </span><span class="kw">pub fn </span>user_cache_dir() -&gt; std::path::PathBuf {
     <span class="kw">unsafe </span>{ from_glib_none(ffi::g_get_user_cache_dir()) }
@@ -2065,227 +1760,38 @@
     <span class="kw">unsafe </span>{ from_glib(ffi::g_hostname_is_non_ascii(hostname.to_glib_none().<span class="number">0</span>)) }
 }
 
-<span class="doccomment">/// Converts `hostname` to its canonical ASCII form; an ASCII-only
-/// string containing no uppercase letters and not ending with a
-/// trailing dot.
-/// ## `hostname`
-/// a valid UTF-8 or ASCII hostname
-///
-/// # Returns
-///
-/// an ASCII hostname, which must be freed,
-///  or [`None`] if `hostname` is in some way invalid.
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_hostname_to_ascii&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_hostname_to_ascii&quot;</span>)]
 </span><span class="kw">pub fn </span>hostname_to_ascii(hostname: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::GString&gt; {
     <span class="kw">unsafe </span>{ from_glib_full(ffi::g_hostname_to_ascii(hostname.to_glib_none().<span class="number">0</span>)) }
 }
 
-<span class="doccomment">/// Converts `hostname` to its canonical presentation form; a UTF-8
-/// string in Unicode normalization form C, containing no uppercase
-/// letters, no forbidden characters, and no ASCII-encoded segments,
-/// and not ending with a trailing dot.
-///
-/// Of course if `hostname` is not an internationalized hostname, then
-/// the canonical presentation form will be entirely ASCII.
-/// ## `hostname`
-/// a valid UTF-8 or ASCII hostname
-///
-/// # Returns
-///
-/// a UTF-8 hostname, which must be freed,
-///  or [`None`] if `hostname` is in some way invalid.
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_hostname_to_unicode&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_hostname_to_unicode&quot;</span>)]
 </span><span class="kw">pub fn </span>hostname_to_unicode(hostname: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::GString&gt; {
     <span class="kw">unsafe </span>{ from_glib_full(ffi::g_hostname_to_unicode(hostname.to_glib_none().<span class="number">0</span>)) }
 }
 
-<span class="doccomment">/// Gets the names of all variables set in the environment.
-///
-/// Programs that want to be portable to Windows should typically use
-/// this function and [`getenv()`][crate::getenv()] instead of using the environ array
-/// from the C library directly. On Windows, the strings in the environ
-/// array are in system codepage encoding, while in most of the typical
-/// use cases for environment variables in GLib-using programs you want
-/// the UTF-8 encoding that this function and [`getenv()`][crate::getenv()] provide.
-///
-/// # Returns
-///
-///
-///  a [`None`]-terminated list of strings which must be freed with
-///  `g_strfreev()`.
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_listenv&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_listenv&quot;</span>)]
 </span><span class="kw">pub fn </span>listenv() -&gt; Vec&lt;std::ffi::OsString&gt; {
     <span class="kw">unsafe </span>{ FromGlibPtrContainer::from_glib_full(ffi::g_listenv()) }
 }
 
-<span class="doccomment">/// Returns the currently firing source for this thread.
-///
-/// # Returns
-///
-/// The currently firing source or [`None`].
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_main_current_source&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_main_current_source&quot;</span>)]
 </span><span class="kw">pub fn </span>main_current_source() -&gt; <span class="prelude-ty">Option</span>&lt;Source&gt; {
     <span class="kw">unsafe </span>{ from_glib_none(ffi::g_main_current_source()) }
 }
 
-<span class="doccomment">/// Returns the depth of the stack of calls to
-/// [`MainContext::dispatch()`][crate::MainContext::dispatch()] on any [`MainContext`][crate::MainContext] in the current thread.
-///  That is, when called from the toplevel, it gives 0. When
-/// called from within a callback from [`MainContext::iteration()`][crate::MainContext::iteration()]
-/// (or [`MainLoop::run()`][crate::MainLoop::run()], etc.) it returns 1. When called from within
-/// a callback to a recursive call to [`MainContext::iteration()`][crate::MainContext::iteration()],
-/// it returns 2. And so forth.
-///
-/// This function is useful in a situation like the following:
-/// Imagine an extremely simple &quot;garbage collected&quot; system.
-///
-///
-///
-/// **⚠️ The following code is in C ⚠️**
-///
-/// ```C
-/// static GList *free_list;
-///
-/// gpointer
-/// allocate_memory (gsize size)
-/// {
-///   gpointer result = g_malloc (size);
-///   free_list = g_list_prepend (free_list, result);
-///   return result;
-/// }
-///
-/// void
-/// free_allocated_memory (void)
-/// {
-///   GList *l;
-///   for (l = free_list; l; l = l-&gt;next);
-///     g_free (l-&gt;data);
-///   g_list_free (free_list);
-///   free_list = NULL;
-///  }
-///
-/// [...]
-///
-/// while (TRUE);
-///  {
-///    g_main_context_iteration (NULL, TRUE);
-///    free_allocated_memory();
-///   }
-/// ```
-///
-/// This works from an application, however, if you want to do the same
-/// thing from a library, it gets more difficult, since you no longer
-/// control the main loop. You might think you can simply use an idle
-/// function to make the call to `free_allocated_memory()`, but that
-/// doesn&#39;t work, since the idle function could be called from a
-/// recursive callback. This can be fixed by using [`main_depth()`][crate::main_depth()]
-///
-///
-///
-/// **⚠️ The following code is in C ⚠️**
-///
-/// ```C
-/// gpointer
-/// allocate_memory (gsize size)
-/// {
-///   FreeListBlock *block = g_new (FreeListBlock, 1);
-///   block-&gt;mem = g_malloc (size);
-///   block-&gt;depth = g_main_depth ();
-///   free_list = g_list_prepend (free_list, block);
-///   return block-&gt;mem;
-/// }
-///
-/// void
-/// free_allocated_memory (void)
-/// {
-///   GList *l;
-///
-///   int depth = g_main_depth ();
-///   for (l = free_list; l; );
-///     {
-///       GList *next = l-&gt;next;
-///       FreeListBlock *block = l-&gt;data;
-///       if (block-&gt;depth &gt; depth)
-///         {
-///           g_free (block-&gt;mem);
-///           g_free (block);
-///           free_list = g_list_delete_link (free_list, l);
-///         }
-///
-///       l = next;
-///     }
-///   }
-/// ```
-///
-/// There is a temptation to use [`main_depth()`][crate::main_depth()] to solve
-/// problems with reentrancy. For instance, while waiting for data
-/// to be received from the network in response to a menu item,
-/// the menu item might be selected again. It might seem that
-/// one could make the menu item&#39;s callback return immediately
-/// and do nothing if [`main_depth()`][crate::main_depth()] returns a value greater than 1.
-/// However, this should be avoided since the user then sees selecting
-/// the menu item do nothing. Furthermore, you&#39;ll find yourself adding
-/// these checks all over your code, since there are doubtless many,
-/// many things that the user could do. Instead, you can use the
-/// following techniques:
-///
-/// 1. Use `gtk_widget_set_sensitive()` or modal dialogs to prevent
-///  the user from interacting with elements while the main
-///  loop is recursing.
-///
-/// 2. Avoid main loop recursion in situations where you can&#39;t handle
-///  arbitrary callbacks. Instead, structure your code so that you
-///  simply return to the main loop and then get called again when
-///  there is more work to do.
-///
-/// # Returns
-///
-/// The main loop recursion level in the current thread
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_main_depth&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_main_depth&quot;</span>)]
 </span><span class="kw">pub fn </span>main_depth() -&gt; i32 {
     <span class="kw">unsafe </span>{ ffi::g_main_depth() }
 }
 
-<span class="doccomment">/// Escapes text so that the markup parser will parse it verbatim.
-/// Less than, greater than, ampersand, etc. are replaced with the
-/// corresponding entities. This function would typically be used
-/// when writing out a file to be parsed with the markup parser.
-///
-/// Note that this function doesn&#39;t protect whitespace and line endings
-/// from being processed according to the XML rules for normalization
-/// of line endings and attribute values.
-///
-/// Note also that this function will produce character references in
-/// the range of &amp;`x1`; ... &amp;`x1f`; for all control sequences
-/// except for tabstop, newline and carriage return. The character
-/// references in this range are not valid XML 1.0, but they are
-/// valid XML 1.1 and will be accepted by the GMarkup parser.
-/// ## `text`
-/// some valid UTF-8 text
-/// ## `length`
-/// length of `text` in bytes, or -1 if the text is nul-terminated
-///
-/// # Returns
-///
-/// a newly allocated string with the escaped text
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_markup_escape_text&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_markup_escape_text&quot;</span>)]
 </span><span class="kw">pub fn </span>markup_escape_text(text: <span class="kw-2">&amp;</span>str) -&gt; <span class="kw">crate</span>::GString {
     <span class="kw">let </span>length = text.len() <span class="kw">as _</span>;
     <span class="kw">unsafe </span>{ from_glib_full(ffi::g_markup_escape_text(text.to_glib_none().<span class="number">0</span>, length)) }
 }
 
-<span class="doccomment">/// Create a directory if it doesn&#39;t already exist. Create intermediate
-/// parent directories as needed, too.
-/// ## `pathname`
-/// a pathname in the GLib file name encoding
-/// ## `mode`
-/// permissions to use for newly created directories
-///
-/// # Returns
-///
-/// 0 if the directory already exists, or was successfully
-/// created. Returns -1 if an error occurred, with errno set.
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_mkdir_with_parents&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_mkdir_with_parents&quot;</span>)]
 </span><span class="kw">pub fn </span>mkdir_with_parents(pathname: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;, mode: i32) -&gt; i32 {
     <span class="kw">unsafe </span>{ ffi::g_mkdir_with_parents(pathname.as_ref().to_glib_none().<span class="number">0</span>, mode) }
 }
@@ -2384,7 +1890,35 @@
     }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_shell_parse_argv&quot;</span>)]
+<span class="doccomment">/// Parses a command line into an argument vector, in much the same way
+/// the shell would, but without many of the expansions the shell would
+/// perform (variable expansion, globs, operators, filename expansion,
+/// etc. are not supported).
+///
+/// The results are defined to be the same as those you would get from
+/// a UNIX98 `/bin/sh`, as long as the input contains none of the
+/// unsupported shell expansions. If the input does contain such expansions,
+/// they are passed through literally.
+///
+/// Possible errors are those from the `G_SHELL_ERROR` domain.
+///
+/// In particular, if `command_line` is an empty string (or a string containing
+/// only whitespace), `G_SHELL_ERROR_EMPTY_STRING` will be returned. It’s
+/// guaranteed that `argvp` will be a non-empty array if this function returns
+/// successfully.
+///
+/// Free the returned vector with `g_strfreev()`.
+/// ## `command_line`
+/// command line to parse
+///
+/// # Returns
+///
+/// [`true`] on success, [`false`] if error set
+///
+/// ## `argvp`
+///
+///  return location for array of args
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_shell_parse_argv&quot;</span>)]
 </span><span class="kw">pub fn </span>shell_parse_argv(
     command_line: <span class="kw">impl </span>AsRef&lt;std::ffi::OsStr&gt;,
 ) -&gt; <span class="prelude-ty">Result</span>&lt;Vec&lt;std::ffi::OsString&gt;, <span class="kw">crate</span>::Error&gt; {
@@ -2410,7 +1944,23 @@
     }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_shell_quote&quot;</span>)]
+<span class="doccomment">/// Quotes a string so that the shell (/bin/sh) will interpret the
+/// quoted string to mean `unquoted_string`.
+///
+/// If you pass a filename to the shell, for example, you should first
+/// quote it with this function.
+///
+/// The return value must be freed with `g_free()`.
+///
+/// The quoting style used is undefined (single or double quotes may be
+/// used).
+/// ## `unquoted_string`
+/// a literal string
+///
+/// # Returns
+///
+/// quoted string
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_shell_quote&quot;</span>)]
 </span><span class="kw">pub fn </span>shell_quote(unquoted_string: <span class="kw">impl </span>AsRef&lt;std::ffi::OsStr&gt;) -&gt; std::ffi::OsString {
     <span class="kw">unsafe </span>{
         from_glib_full(ffi::g_shell_quote(
@@ -2419,7 +1969,42 @@
     }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_shell_unquote&quot;</span>)]
+<span class="doccomment">/// Unquotes a string as the shell (/bin/sh) would.
+///
+/// This function only handles quotes; if a string contains file globs,
+/// arithmetic operators, variables, backticks, redirections, or other
+/// special-to-the-shell features, the result will be different from the
+/// result a real shell would produce (the variables, backticks, etc.
+/// will be passed through literally instead of being expanded).
+///
+/// This function is guaranteed to succeed if applied to the result of
+/// [`shell_quote()`][crate::shell_quote()]. If it fails, it returns [`None`] and sets the
+/// error.
+///
+/// The `quoted_string` need not actually contain quoted or escaped text;
+/// [`shell_unquote()`][crate::shell_unquote()] simply goes through the string and unquotes/unescapes
+/// anything that the shell would. Both single and double quotes are
+/// handled, as are escapes including escaped newlines.
+///
+/// The return value must be freed with `g_free()`.
+///
+/// Possible errors are in the `G_SHELL_ERROR` domain.
+///
+/// Shell quoting rules are a bit strange. Single quotes preserve the
+/// literal string exactly. escape sequences are not allowed; not even
+/// `\&#39;` - if you want a `&#39;` in the quoted text, you have to do something
+/// like `&#39;foo&#39;\&#39;&#39;bar&#39;`. Double quotes allow `$`, **⚠️ The following code is in , `&quot;`, `\`, and ⚠️**
+///
+/// ```, `&quot;`, `\`, and
+/// newline to be escaped with backslash. Otherwise double quotes
+/// preserve things literally.
+/// ## `quoted_string`
+/// shell-quoted string
+///
+/// # Returns
+///
+/// an unquoted string
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_shell_unquote&quot;</span>)]
 </span><span class="kw">pub fn </span>shell_unquote(
     quoted_string: <span class="kw">impl </span>AsRef&lt;std::ffi::OsStr&gt;,
 ) -&gt; <span class="prelude-ty">Result</span>&lt;std::ffi::OsString, <span class="kw">crate</span>::Error&gt; {
@@ -2434,12 +2019,61 @@
     }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_spaced_primes_closest&quot;</span>)]
+<span class="doccomment">/// Gets the smallest prime number from a built-in array of primes which
+/// is larger than `num`. This is used within GLib to calculate the optimum
+/// size of a `GHashTable`.
+///
+/// The built-in array of primes ranges from 11 to 13845163 such that
+/// each prime is approximately 1.5-2 times the previous prime.
+/// ## `num`
+/// a `guint`
+///
+/// # Returns
+///
+/// the smallest prime number from a built-in array of primes
+///  which is larger than `num`
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_spaced_primes_closest&quot;</span>)]
 </span><span class="kw">pub fn </span>spaced_primes_closest(num: u32) -&gt; u32 {
     <span class="kw">unsafe </span>{ ffi::g_spaced_primes_closest(num) }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_spawn_async&quot;</span>)]
+<span class="doccomment">/// Executes a child program asynchronously.
+///
+/// See `g_spawn_async_with_pipes()` for a full description; this function
+/// simply calls the `g_spawn_async_with_pipes()` without any pipes.
+///
+/// You should call `g_spawn_close_pid()` on the returned child process
+/// reference when you don&#39;t need it any more.
+///
+/// If you are writing a GTK application, and the program you are spawning is a
+/// graphical application too, then to ensure that the spawned program opens its
+/// windows on the right screen, you may want to use `GdkAppLaunchContext`,
+/// `GAppLaunchContext`, or set the `DISPLAY` environment variable.
+///
+/// Note that the returned `child_pid` on Windows is a handle to the child
+/// process and not its identifier. Process handles and process identifiers
+/// are different concepts on Windows.
+/// ## `working_directory`
+/// child&#39;s current working
+///  directory, or [`None`] to inherit parent&#39;s
+/// ## `argv`
+///
+///  child&#39;s argument vector
+/// ## `envp`
+///
+///  child&#39;s environment, or [`None`] to inherit parent&#39;s
+/// ## `flags`
+/// flags from [`SpawnFlags`][crate::SpawnFlags]
+/// ## `child_setup`
+/// function to run in the child just before `exec()`
+///
+/// # Returns
+///
+/// [`true`] on success, [`false`] if error is set
+///
+/// ## `child_pid`
+/// return location for child process reference, or [`None`]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_spawn_async&quot;</span>)]
 </span><span class="kw">pub fn </span>spawn_async(
     working_directory: <span class="prelude-ty">Option</span>&lt;<span class="kw">impl </span>AsRef&lt;std::path::Path&gt;&gt;,
     argv: <span class="kw-2">&amp;</span>[<span class="kw-2">&amp;</span>std::path::Path],
@@ -2493,6 +2127,25 @@
 //    unsafe { TODO: call ffi:g_spawn_async_with_pipes_and_fds() }
 //}
 
+</span><span class="doccomment">/// An old name for [`spawn_check_wait_status()`][crate::spawn_check_wait_status()], deprecated because its
+/// name is misleading.
+///
+/// Despite the name of the function, `wait_status` must be the wait status
+/// as returned by `g_spawn_sync()`, `g_subprocess_get_status()`, ``waitpid()``,
+/// etc. On Unix platforms, it is incorrect for it to be the exit status
+/// as passed to ``exit()`` or returned by `g_subprocess_get_exit_status()` or
+/// `WEXITSTATUS()`.
+///
+/// # Deprecated since 2.70
+///
+/// Use [`spawn_check_wait_status()`][crate::spawn_check_wait_status()] instead, and check whether your code is conflating wait and exit statuses.
+/// ## `wait_status`
+/// A status as returned from `g_spawn_sync()`
+///
+/// # Returns
+///
+/// [`true`] if child exited successfully, [`false`] otherwise (and
+///  `error` will be set)
 </span><span class="attr">#[cfg_attr(feature = <span class="string">&quot;v2_70&quot;</span>, deprecated = <span class="string">&quot;Since 2.70&quot;</span>)]
 #[allow(deprecated)]
 #[doc(alias = <span class="string">&quot;g_spawn_check_exit_status&quot;</span>)]
@@ -2509,7 +2162,53 @@
     }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="doccomment">/// Set `error` if `wait_status` indicates the child exited abnormally
+/// (e.g. with a nonzero exit code, or via a fatal signal).
+///
+/// The `g_spawn_sync()` and `g_child_watch_add()` family of APIs return the
+/// status of subprocesses encoded in a platform-specific way.
+/// On Unix, this is guaranteed to be in the same format `waitpid()` returns,
+/// and on Windows it is guaranteed to be the result of GetExitCodeProcess().
+///
+/// Prior to the introduction of this function in GLib 2.34, interpreting
+/// `wait_status` required use of platform-specific APIs, which is problematic
+/// for software using GLib as a cross-platform layer.
+///
+/// Additionally, many programs simply want to determine whether or not
+/// the child exited successfully, and either propagate a [`Error`][crate::Error] or
+/// print a message to standard error. In that common case, this function
+/// can be used. Note that the error message in `error` will contain
+/// human-readable information about the wait status.
+///
+/// The `domain` and `code` of `error` have special semantics in the case
+/// where the process has an &quot;exit code&quot;, as opposed to being killed by
+/// a signal. On Unix, this happens if WIFEXITED() would be true of
+/// `wait_status`. On Windows, it is always the case.
+///
+/// The special semantics are that the actual exit code will be the
+/// code set in `error`, and the domain will be `G_SPAWN_EXIT_ERROR`.
+/// This allows you to differentiate between different exit codes.
+///
+/// If the process was terminated by some means other than an exit
+/// status (for example if it was killed by a signal), the domain will be
+/// `G_SPAWN_ERROR` and the code will be `G_SPAWN_ERROR_FAILED`.
+///
+/// This function just offers convenience; you can of course also check
+/// the available platform via a macro such as `G_OS_UNIX`, and use
+/// WIFEXITED() and WEXITSTATUS() on `wait_status` directly. Do not attempt
+/// to scan or parse the error message string; it may be translated and/or
+/// change in future versions of GLib.
+///
+/// Prior to version 2.70, [`spawn_check_exit_status()`][crate::spawn_check_exit_status()] provides the same
+/// functionality, although under a misleading name.
+/// ## `wait_status`
+/// A platform-specific wait status as returned from `g_spawn_sync()`
+///
+/// # Returns
+///
+/// [`true`] if child exited successfully, [`false`] otherwise (and
+///  `error` will be set)
+</span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_70&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_70&quot;</span>)))]
 #[doc(alias = <span class="string">&quot;g_spawn_check_wait_status&quot;</span>)]
 </span><span class="kw">pub fn </span>spawn_check_wait_status(wait_status: i32) -&gt; <span class="prelude-ty">Result</span>&lt;(), <span class="kw">crate</span>::Error&gt; {
@@ -2525,7 +2224,23 @@
     }
 }
 
-<span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="doccomment">/// A simple version of [`spawn_async()`][crate::spawn_async()] that parses a command line with
+/// [`shell_parse_argv()`][crate::shell_parse_argv()] and passes it to [`spawn_async()`][crate::spawn_async()].
+///
+/// Runs a command line in the background. Unlike [`spawn_async()`][crate::spawn_async()], the
+/// [`SpawnFlags::SEARCH_PATH`][crate::SpawnFlags::SEARCH_PATH] flag is enabled, other flags are not. Note
+/// that [`SpawnFlags::SEARCH_PATH`][crate::SpawnFlags::SEARCH_PATH] can have security implications, so
+/// consider using [`spawn_async()`][crate::spawn_async()] directly if appropriate. Possible
+/// errors are those from [`shell_parse_argv()`][crate::shell_parse_argv()] and [`spawn_async()`][crate::spawn_async()].
+///
+/// The same concerns on Windows apply as for `g_spawn_command_line_sync()`.
+/// ## `command_line`
+/// a command line
+///
+/// # Returns
+///
+/// [`true`] on success, [`false`] if error is set
+</span><span class="attr">#[cfg(any(unix, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(unix)))]
 #[doc(alias = <span class="string">&quot;g_spawn_command_line_async&quot;</span>)]
 </span><span class="kw">pub fn </span>spawn_command_line_async(
@@ -2554,12 +2269,46 @@
 //    unsafe { TODO: call ffi:g_spawn_sync() }
 //}
 
+</span><span class="doccomment">/// Looks up the Unicode script for `iso15924`. ISO 15924 assigns four-letter
+/// codes to scripts. For example, the code for Arabic is &#39;Arab&#39;.
+/// This function accepts four letter codes encoded as a `guint32` in a
+/// big-endian fashion. That is, the code expected for Arabic is
+/// 0x41726162 (0x41 is ASCII code for &#39;A&#39;, 0x72 is ASCII code for &#39;r&#39;, etc).
+///
+/// See
+/// [Codes for the representation of names of scripts](http://unicode.org/iso15924/codelists.html)
+/// for details.
+/// ## `iso15924`
+/// a Unicode script
+///
+/// # Returns
+///
+/// the Unicode script for `iso15924`, or
+///  of [`UnicodeScript::InvalidCode`][crate::UnicodeScript::InvalidCode] if `iso15924` is zero and
+///  [`UnicodeScript::Unknown`][crate::UnicodeScript::Unknown] if `iso15924` is unknown.
 </span><span class="attr">#[doc(alias = <span class="string">&quot;g_unicode_script_from_iso15924&quot;</span>)]
 </span><span class="kw">pub fn </span>unicode_script_from_iso15924(iso15924: u32) -&gt; UnicodeScript {
     <span class="kw">unsafe </span>{ from_glib(ffi::g_unicode_script_from_iso15924(iso15924)) }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_unicode_script_to_iso15924&quot;</span>)]
+<span class="doccomment">/// Looks up the ISO 15924 code for `script`. ISO 15924 assigns four-letter
+/// codes to scripts. For example, the code for Arabic is &#39;Arab&#39;. The
+/// four letter codes are encoded as a `guint32` by this function in a
+/// big-endian fashion. That is, the code returned for Arabic is
+/// 0x41726162 (0x41 is ASCII code for &#39;A&#39;, 0x72 is ASCII code for &#39;r&#39;, etc).
+///
+/// See
+/// [Codes for the representation of names of scripts](http://unicode.org/iso15924/codelists.html)
+/// for details.
+/// ## `script`
+/// a Unicode script
+///
+/// # Returns
+///
+/// the ISO 15924 code for `script`, encoded as an integer,
+///  of zero if `script` is [`UnicodeScript::InvalidCode`][crate::UnicodeScript::InvalidCode] or
+///  ISO 15924 code &#39;Zzzz&#39; (script code for UNKNOWN) if `script` is not understood.
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_unicode_script_to_iso15924&quot;</span>)]
 </span><span class="kw">pub fn </span>unicode_script_to_iso15924(script: UnicodeScript) -&gt; u32 {
     <span class="kw">unsafe </span>{ ffi::g_unicode_script_to_iso15924(script.into_glib()) }
 }
@@ -2573,33 +2322,98 @@
 //    unsafe { TODO: call ffi:g_unix_get_passwd_entry() }
 //}
 
+</span><span class="doccomment">/// A wrapper for the POSIX `unlink()` function. The `unlink()` function
+/// deletes a name from the filesystem. If this was the last link to the
+/// file and no processes have it opened, the diskspace occupied by the
+/// file is freed.
+///
+/// See your C library manual for more details about `unlink()`. Note
+/// that on Windows, it is in general not possible to delete files that
+/// are open to some process, or mapped into memory.
+/// ## `filename`
+/// a pathname in the GLib file name encoding
+///  (UTF-8 on Windows)
+///
+/// # Returns
+///
+/// 0 if the name was successfully deleted, -1 if an error
+///  occurred
 </span><span class="attr">#[doc(alias = <span class="string">&quot;g_unlink&quot;</span>)]
 </span><span class="kw">pub fn </span>unlink(filename: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;) -&gt; i32 {
     <span class="kw">unsafe </span>{ ffi::g_unlink(filename.as_ref().to_glib_none().<span class="number">0</span>) }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_unsetenv&quot;</span>)]
+<span class="doccomment">/// Removes an environment variable from the environment.
+///
+/// Note that on some systems, when variables are overwritten, the
+/// memory used for the previous variables and its value isn&#39;t reclaimed.
+///
+/// You should be mindful of the fact that environment variable handling
+/// in UNIX is not thread-safe, and your program may crash if one thread
+/// calls [`unsetenv()`][crate::unsetenv()] while another thread is calling `getenv()`. (And note
+/// that many functions, such as `gettext()`, call `getenv()` internally.) This
+/// function is only safe to use at the very start of your program, before
+/// creating any other threads (or creating objects that create worker
+/// threads of their own).
+///
+/// If you need to set up the environment for a child process, you can
+/// use [`environ()`][crate::environ()] to get an environment array, modify that with
+/// `g_environ_setenv()` and `g_environ_unsetenv()`, and then pass that
+/// array directly to `execvpe()`, [`spawn_async()`][crate::spawn_async()], or the like.
+/// ## `variable`
+/// the environment variable to remove, must
+///  not contain &#39;=&#39;
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_unsetenv&quot;</span>)]
 </span><span class="kw">pub fn </span>unsetenv(variable: <span class="kw">impl </span>AsRef&lt;std::ffi::OsStr&gt;) {
     <span class="kw">unsafe </span>{
         ffi::g_unsetenv(variable.as_ref().to_glib_none().<span class="number">0</span>);
     }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_usleep&quot;</span>)]
+<span class="doccomment">/// Pauses the current thread for the given number of microseconds.
+///
+/// There are 1 million microseconds per second (represented by the
+/// `G_USEC_PER_SEC` macro). [`usleep()`][crate::usleep()] may have limited precision,
+/// depending on hardware and operating system; don&#39;t rely on the exact
+/// length of the sleep.
+/// ## `microseconds`
+/// number of microseconds to pause
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_usleep&quot;</span>)]
 </span><span class="kw">pub fn </span>usleep(microseconds: libc::c_ulong) {
     <span class="kw">unsafe </span>{
         ffi::g_usleep(microseconds);
     }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_uuid_string_is_valid&quot;</span>)]
+<span class="doccomment">/// Parses the string `str` and verify if it is a UUID.
+///
+/// The function accepts the following syntax:
+///
+/// - simple forms (e.g. `f81d4fae-7dec-11d0-a765-00a0c91e6bf6`)
+///
+/// Note that hyphens are required within the UUID string itself,
+/// as per the aforementioned RFC.
+/// ## `str`
+/// a string representing a UUID
+///
+/// # Returns
+///
+/// [`true`] if `str` is a valid UUID, [`false`] otherwise.
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_uuid_string_is_valid&quot;</span>)]
 </span><span class="kw">pub fn </span>uuid_string_is_valid(str: <span class="kw-2">&amp;</span>str) -&gt; bool {
     <span class="kw">unsafe </span>{ from_glib(ffi::g_uuid_string_is_valid(str.to_glib_none().<span class="number">0</span>)) }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_uuid_string_random&quot;</span>)]
+<span class="doccomment">/// Generates a random UUID (RFC 4122 version 4) as a string. It has the same
+/// randomness guarantees as `GRand`, so must not be used for cryptographic
+/// purposes such as key generation, nonces, salts or one-time pads.
+///
+/// # Returns
+///
+/// A string that should be freed with `g_free()`.
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_uuid_string_random&quot;</span>)]
 </span><span class="kw">pub fn </span>uuid_string_random() -&gt; <span class="kw">crate</span>::GString {
     <span class="kw">unsafe </span>{ from_glib_full(ffi::g_uuid_string_random()) }
 }
 </code></pre></div>
-</section></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (270c94e48 2022-12-28)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
+</section></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (574b64a97 2022-12-31)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
