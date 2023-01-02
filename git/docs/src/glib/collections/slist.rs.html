@@ -938,6 +938,16 @@
 <a href="#865" id="865">865</a>
 <a href="#866" id="866">866</a>
 <a href="#867" id="867">867</a>
+<a href="#868" id="868">868</a>
+<a href="#869" id="869">869</a>
+<a href="#870" id="870">870</a>
+<a href="#871" id="871">871</a>
+<a href="#872" id="872">872</a>
+<a href="#873" id="873">873</a>
+<a href="#874" id="874">874</a>
+<a href="#875" id="875">875</a>
+<a href="#876" id="876">876</a>
+<a href="#877" id="877">877</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>std::{iter::FusedIterator, marker::PhantomData, mem, ptr};
@@ -963,18 +973,22 @@
     </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_none(list: <span class="kw-2">*const </span>ffi::GSList) -&gt; SList&lt;T&gt; {
         <span class="comment">// Need to copy the whole list
-        </span><span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>copy_item&lt;T: TransparentPtrType&gt;(
-            ptr: ffi::gconstpointer,
-            _user_data: ffi::gpointer,
-        ) -&gt; ffi::gpointer {
-            <span class="kw">let </span><span class="kw-2">mut </span>item =
-                mem::ManuallyDrop::new((<span class="kw-2">*</span>(<span class="kw-2">&amp;</span>ptr <span class="kw">as </span><span class="kw-2">*const </span>ffi::gconstpointer <span class="kw">as </span><span class="kw-2">*const </span>T)).clone());
+        </span><span class="kw">let </span>list = <span class="kw">if </span>mem::needs_drop::&lt;T&gt;() {
+            <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>copy_item&lt;T: TransparentPtrType&gt;(
+                ptr: ffi::gconstpointer,
+                _user_data: ffi::gpointer,
+            ) -&gt; ffi::gpointer {
+                <span class="kw">let </span><span class="kw-2">mut </span>item = mem::ManuallyDrop::new(
+                    (<span class="kw-2">*</span>(<span class="kw-2">&amp;</span>ptr <span class="kw">as </span><span class="kw-2">*const </span>ffi::gconstpointer <span class="kw">as </span><span class="kw-2">*const </span>T)).clone(),
+                );
 
-            <span class="kw-2">*</span>(<span class="kw-2">&amp;mut *</span>item <span class="kw">as </span><span class="kw-2">*mut </span>T <span class="kw">as </span><span class="kw-2">*mut *mut </span>T::GlibType) <span class="kw">as </span>ffi::gpointer
-        }
+                <span class="kw-2">*</span>(<span class="kw-2">&amp;mut *</span>item <span class="kw">as </span><span class="kw-2">*mut </span>T <span class="kw">as </span><span class="kw-2">*mut *mut </span>T::GlibType) <span class="kw">as </span>ffi::gpointer
+            }
 
-        <span class="kw">let </span>list =
-            ffi::g_slist_copy_deep(mut_override(list), <span class="prelude-val">Some</span>(copy_item::&lt;T&gt;), ptr::null_mut());
+            ffi::g_slist_copy_deep(mut_override(list), <span class="prelude-val">Some</span>(copy_item::&lt;T&gt;), ptr::null_mut())
+        } <span class="kw">else </span>{
+            ffi::g_slist_copy(mut_override(list))
+        };
 
         SList {
             ptr: ptr::NonNull::new(list),
@@ -987,15 +1001,17 @@
     </span><span class="attr">#[inline]
     </span><span class="kw">pub unsafe fn </span>from_glib_container(list: <span class="kw-2">*mut </span>ffi::GSList) -&gt; SList&lt;T&gt; {
         <span class="comment">// Need to copy all items as we only own the container
-        </span><span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>copy_item&lt;T: TransparentPtrType&gt;(
-            ptr: ffi::gpointer,
-            _user_data: ffi::gpointer,
-        ) {
-            <span class="kw">let </span>item = (<span class="kw-2">*</span>(<span class="kw-2">&amp;</span>ptr <span class="kw">as </span><span class="kw-2">*const </span>ffi::gpointer <span class="kw">as </span><span class="kw-2">*const </span>T)).clone();
-            ptr::write(ptr <span class="kw">as </span><span class="kw-2">*mut </span>T, item);
-        }
+        </span><span class="kw">if </span>mem::needs_drop::&lt;T&gt;() {
+            <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>copy_item&lt;T: TransparentPtrType&gt;(
+                ptr: ffi::gpointer,
+                _user_data: ffi::gpointer,
+            ) {
+                <span class="kw">let </span>item = (<span class="kw-2">*</span>(<span class="kw-2">&amp;</span>ptr <span class="kw">as </span><span class="kw-2">*const </span>ffi::gpointer <span class="kw">as </span><span class="kw-2">*const </span>T)).clone();
+                ptr::write(ptr <span class="kw">as </span><span class="kw-2">*mut </span>T, item);
+            }
 
-        ffi::g_slist_foreach(list, <span class="prelude-val">Some</span>(copy_item::&lt;T&gt;), ptr::null_mut());
+            ffi::g_slist_foreach(list, <span class="prelude-val">Some</span>(copy_item::&lt;T&gt;), ptr::null_mut());
+        }
 
         SList {
             ptr: ptr::NonNull::new(list),
@@ -1328,11 +1344,15 @@
     </span><span class="kw">fn </span>drop(<span class="kw-2">&amp;mut </span><span class="self">self</span>) {
         <span class="kw">if let </span><span class="prelude-val">Some</span>(ptr) = <span class="self">self</span>.ptr {
             <span class="kw">unsafe </span>{
-                <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>drop_item&lt;T: TransparentPtrType&gt;(<span class="kw-2">mut </span>ptr: ffi::gpointer) {
-                    ptr::drop_in_place(<span class="kw-2">&amp;mut </span>ptr <span class="kw">as </span><span class="kw-2">*mut </span>ffi::gpointer <span class="kw">as </span><span class="kw-2">*mut </span>T);
-                }
+                <span class="kw">if </span>mem::needs_drop::&lt;T&gt;() {
+                    <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>drop_item&lt;T: TransparentPtrType&gt;(<span class="kw-2">mut </span>ptr: ffi::gpointer) {
+                        ptr::drop_in_place(<span class="kw-2">&amp;mut </span>ptr <span class="kw">as </span><span class="kw-2">*mut </span>ffi::gpointer <span class="kw">as </span><span class="kw-2">*mut </span>T);
+                    }
 
-                ffi::g_slist_free_full(ptr.as_ptr(), <span class="prelude-val">Some</span>(drop_item::&lt;T&gt;));
+                    ffi::g_slist_free_full(ptr.as_ptr(), <span class="prelude-val">Some</span>(drop_item::&lt;T&gt;));
+                } <span class="kw">else </span>{
+                    ffi::g_slist_free(ptr.as_ptr());
+                }
             }
         }
     }
