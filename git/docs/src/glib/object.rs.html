@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/object.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>object.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-3cc3084b477498a6.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-4743e13df3dfe8c4.css"><link rel="stylesheet" disabled href="../../static.files/dark-0e1b889528bd466b.css"><link rel="stylesheet" disabled href="../../static.files/ayu-65289d5d067c7c66.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/object.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>object.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-34efc64c5083af8d.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-4743e13df3dfe8c4.css"><link rel="stylesheet" disabled href="../../static.files/dark-0e1b889528bd466b.css"><link rel="stylesheet" disabled href="../../static.files/ayu-65289d5d067c7c66.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -4581,193 +4581,6 @@
 <a href="#4508" id="4508">4508</a>
 <a href="#4509" id="4509">4509</a>
 <a href="#4510" id="4510">4510</a>
-<a href="#4511" id="4511">4511</a>
-<a href="#4512" id="4512">4512</a>
-<a href="#4513" id="4513">4513</a>
-<a href="#4514" id="4514">4514</a>
-<a href="#4515" id="4515">4515</a>
-<a href="#4516" id="4516">4516</a>
-<a href="#4517" id="4517">4517</a>
-<a href="#4518" id="4518">4518</a>
-<a href="#4519" id="4519">4519</a>
-<a href="#4520" id="4520">4520</a>
-<a href="#4521" id="4521">4521</a>
-<a href="#4522" id="4522">4522</a>
-<a href="#4523" id="4523">4523</a>
-<a href="#4524" id="4524">4524</a>
-<a href="#4525" id="4525">4525</a>
-<a href="#4526" id="4526">4526</a>
-<a href="#4527" id="4527">4527</a>
-<a href="#4528" id="4528">4528</a>
-<a href="#4529" id="4529">4529</a>
-<a href="#4530" id="4530">4530</a>
-<a href="#4531" id="4531">4531</a>
-<a href="#4532" id="4532">4532</a>
-<a href="#4533" id="4533">4533</a>
-<a href="#4534" id="4534">4534</a>
-<a href="#4535" id="4535">4535</a>
-<a href="#4536" id="4536">4536</a>
-<a href="#4537" id="4537">4537</a>
-<a href="#4538" id="4538">4538</a>
-<a href="#4539" id="4539">4539</a>
-<a href="#4540" id="4540">4540</a>
-<a href="#4541" id="4541">4541</a>
-<a href="#4542" id="4542">4542</a>
-<a href="#4543" id="4543">4543</a>
-<a href="#4544" id="4544">4544</a>
-<a href="#4545" id="4545">4545</a>
-<a href="#4546" id="4546">4546</a>
-<a href="#4547" id="4547">4547</a>
-<a href="#4548" id="4548">4548</a>
-<a href="#4549" id="4549">4549</a>
-<a href="#4550" id="4550">4550</a>
-<a href="#4551" id="4551">4551</a>
-<a href="#4552" id="4552">4552</a>
-<a href="#4553" id="4553">4553</a>
-<a href="#4554" id="4554">4554</a>
-<a href="#4555" id="4555">4555</a>
-<a href="#4556" id="4556">4556</a>
-<a href="#4557" id="4557">4557</a>
-<a href="#4558" id="4558">4558</a>
-<a href="#4559" id="4559">4559</a>
-<a href="#4560" id="4560">4560</a>
-<a href="#4561" id="4561">4561</a>
-<a href="#4562" id="4562">4562</a>
-<a href="#4563" id="4563">4563</a>
-<a href="#4564" id="4564">4564</a>
-<a href="#4565" id="4565">4565</a>
-<a href="#4566" id="4566">4566</a>
-<a href="#4567" id="4567">4567</a>
-<a href="#4568" id="4568">4568</a>
-<a href="#4569" id="4569">4569</a>
-<a href="#4570" id="4570">4570</a>
-<a href="#4571" id="4571">4571</a>
-<a href="#4572" id="4572">4572</a>
-<a href="#4573" id="4573">4573</a>
-<a href="#4574" id="4574">4574</a>
-<a href="#4575" id="4575">4575</a>
-<a href="#4576" id="4576">4576</a>
-<a href="#4577" id="4577">4577</a>
-<a href="#4578" id="4578">4578</a>
-<a href="#4579" id="4579">4579</a>
-<a href="#4580" id="4580">4580</a>
-<a href="#4581" id="4581">4581</a>
-<a href="#4582" id="4582">4582</a>
-<a href="#4583" id="4583">4583</a>
-<a href="#4584" id="4584">4584</a>
-<a href="#4585" id="4585">4585</a>
-<a href="#4586" id="4586">4586</a>
-<a href="#4587" id="4587">4587</a>
-<a href="#4588" id="4588">4588</a>
-<a href="#4589" id="4589">4589</a>
-<a href="#4590" id="4590">4590</a>
-<a href="#4591" id="4591">4591</a>
-<a href="#4592" id="4592">4592</a>
-<a href="#4593" id="4593">4593</a>
-<a href="#4594" id="4594">4594</a>
-<a href="#4595" id="4595">4595</a>
-<a href="#4596" id="4596">4596</a>
-<a href="#4597" id="4597">4597</a>
-<a href="#4598" id="4598">4598</a>
-<a href="#4599" id="4599">4599</a>
-<a href="#4600" id="4600">4600</a>
-<a href="#4601" id="4601">4601</a>
-<a href="#4602" id="4602">4602</a>
-<a href="#4603" id="4603">4603</a>
-<a href="#4604" id="4604">4604</a>
-<a href="#4605" id="4605">4605</a>
-<a href="#4606" id="4606">4606</a>
-<a href="#4607" id="4607">4607</a>
-<a href="#4608" id="4608">4608</a>
-<a href="#4609" id="4609">4609</a>
-<a href="#4610" id="4610">4610</a>
-<a href="#4611" id="4611">4611</a>
-<a href="#4612" id="4612">4612</a>
-<a href="#4613" id="4613">4613</a>
-<a href="#4614" id="4614">4614</a>
-<a href="#4615" id="4615">4615</a>
-<a href="#4616" id="4616">4616</a>
-<a href="#4617" id="4617">4617</a>
-<a href="#4618" id="4618">4618</a>
-<a href="#4619" id="4619">4619</a>
-<a href="#4620" id="4620">4620</a>
-<a href="#4621" id="4621">4621</a>
-<a href="#4622" id="4622">4622</a>
-<a href="#4623" id="4623">4623</a>
-<a href="#4624" id="4624">4624</a>
-<a href="#4625" id="4625">4625</a>
-<a href="#4626" id="4626">4626</a>
-<a href="#4627" id="4627">4627</a>
-<a href="#4628" id="4628">4628</a>
-<a href="#4629" id="4629">4629</a>
-<a href="#4630" id="4630">4630</a>
-<a href="#4631" id="4631">4631</a>
-<a href="#4632" id="4632">4632</a>
-<a href="#4633" id="4633">4633</a>
-<a href="#4634" id="4634">4634</a>
-<a href="#4635" id="4635">4635</a>
-<a href="#4636" id="4636">4636</a>
-<a href="#4637" id="4637">4637</a>
-<a href="#4638" id="4638">4638</a>
-<a href="#4639" id="4639">4639</a>
-<a href="#4640" id="4640">4640</a>
-<a href="#4641" id="4641">4641</a>
-<a href="#4642" id="4642">4642</a>
-<a href="#4643" id="4643">4643</a>
-<a href="#4644" id="4644">4644</a>
-<a href="#4645" id="4645">4645</a>
-<a href="#4646" id="4646">4646</a>
-<a href="#4647" id="4647">4647</a>
-<a href="#4648" id="4648">4648</a>
-<a href="#4649" id="4649">4649</a>
-<a href="#4650" id="4650">4650</a>
-<a href="#4651" id="4651">4651</a>
-<a href="#4652" id="4652">4652</a>
-<a href="#4653" id="4653">4653</a>
-<a href="#4654" id="4654">4654</a>
-<a href="#4655" id="4655">4655</a>
-<a href="#4656" id="4656">4656</a>
-<a href="#4657" id="4657">4657</a>
-<a href="#4658" id="4658">4658</a>
-<a href="#4659" id="4659">4659</a>
-<a href="#4660" id="4660">4660</a>
-<a href="#4661" id="4661">4661</a>
-<a href="#4662" id="4662">4662</a>
-<a href="#4663" id="4663">4663</a>
-<a href="#4664" id="4664">4664</a>
-<a href="#4665" id="4665">4665</a>
-<a href="#4666" id="4666">4666</a>
-<a href="#4667" id="4667">4667</a>
-<a href="#4668" id="4668">4668</a>
-<a href="#4669" id="4669">4669</a>
-<a href="#4670" id="4670">4670</a>
-<a href="#4671" id="4671">4671</a>
-<a href="#4672" id="4672">4672</a>
-<a href="#4673" id="4673">4673</a>
-<a href="#4674" id="4674">4674</a>
-<a href="#4675" id="4675">4675</a>
-<a href="#4676" id="4676">4676</a>
-<a href="#4677" id="4677">4677</a>
-<a href="#4678" id="4678">4678</a>
-<a href="#4679" id="4679">4679</a>
-<a href="#4680" id="4680">4680</a>
-<a href="#4681" id="4681">4681</a>
-<a href="#4682" id="4682">4682</a>
-<a href="#4683" id="4683">4683</a>
-<a href="#4684" id="4684">4684</a>
-<a href="#4685" id="4685">4685</a>
-<a href="#4686" id="4686">4686</a>
-<a href="#4687" id="4687">4687</a>
-<a href="#4688" id="4688">4688</a>
-<a href="#4689" id="4689">4689</a>
-<a href="#4690" id="4690">4690</a>
-<a href="#4691" id="4691">4691</a>
-<a href="#4692" id="4692">4692</a>
-<a href="#4693" id="4693">4693</a>
-<a href="#4694" id="4694">4694</a>
-<a href="#4695" id="4695">4695</a>
-<a href="#4696" id="4696">4696</a>
-<a href="#4697" id="4697">4697</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -4816,6 +4629,8 @@
 
     <span class="kw">fn </span>as_object_ref(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>ObjectRef;
     <span class="kw">fn </span>as_ptr(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*mut </span><span class="self">Self</span>::GlibType;
+
+    <span class="kw">unsafe fn </span>from_glib_ptr_borrow&lt;<span class="lifetime">&#39;a</span>&gt;(ptr: <span class="kw-2">*const *const </span><span class="self">Self</span>::GlibType) -&gt; <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">Self</span>;
 }
 
 <span class="comment">// rustdoc-stripper-ignore-next
@@ -5231,90 +5046,6 @@
 }
 
 <span class="attr">#[doc(hidden)]
-</span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibContainerFromSlice&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut *mut </span>gobject_ffi::GObject&gt; <span class="kw">for </span>ObjectRef {
-    <span class="kw">type </span>Storage = (
-        Vec&lt;Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>gobject_ffi::GObject, ObjectRef&gt;&gt;,
-        <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw-2">*mut </span>gobject_ffi::GObject&gt;&gt;,
-    );
-
-    <span class="kw">fn </span>to_glib_none_from_slice(
-        t: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>[ObjectRef],
-    ) -&gt; (<span class="kw-2">*mut *mut </span>gobject_ffi::GObject, <span class="self">Self</span>::Storage) {
-        <span class="kw">let </span>v: Vec&lt;<span class="kw">_</span>&gt; = t.iter().map(|s| s.to_glib_none()).collect();
-        <span class="kw">let </span><span class="kw-2">mut </span>v_ptr: Vec&lt;<span class="kw">_</span>&gt; = v.iter().map(|s| s.<span class="number">0</span>).collect();
-        v_ptr.push(ptr::null_mut() <span class="kw">as </span><span class="kw-2">*mut </span>gobject_ffi::GObject);
-
-        (
-            v_ptr.as_ptr() <span class="kw">as </span><span class="kw-2">*mut *mut </span>gobject_ffi::GObject,
-            (v, <span class="prelude-val">Some</span>(v_ptr)),
-        )
-    }
-
-    <span class="kw">fn </span>to_glib_container_from_slice(
-        t: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>[ObjectRef],
-    ) -&gt; (<span class="kw-2">*mut *mut </span>gobject_ffi::GObject, <span class="self">Self</span>::Storage) {
-        <span class="kw">let </span>v: Vec&lt;<span class="kw">_</span>&gt; = t.iter().map(|s| s.to_glib_none()).collect();
-
-        <span class="kw">let </span>v_ptr = <span class="kw">unsafe </span>{
-            <span class="kw">let </span>v_ptr = ffi::g_malloc0(mem::size_of::&lt;<span class="kw-2">*mut </span>gobject_ffi::GObject&gt;() * (t.len() + <span class="number">1</span>))
-                <span class="kw">as </span><span class="kw-2">*mut *mut </span>gobject_ffi::GObject;
-
-            <span class="kw">for </span>(i, s) <span class="kw">in </span>v.iter().enumerate() {
-                ptr::write(v_ptr.add(i), s.<span class="number">0</span>);
-            }
-
-            v_ptr
-        };
-
-        (v_ptr, (v, <span class="prelude-val">None</span>))
-    }
-
-    <span class="kw">fn </span>to_glib_full_from_slice(t: <span class="kw-2">&amp;</span>[ObjectRef]) -&gt; <span class="kw-2">*mut *mut </span>gobject_ffi::GObject {
-        <span class="kw">unsafe </span>{
-            <span class="kw">let </span>v_ptr =
-                ffi::g_malloc0(std::mem::size_of::&lt;<span class="kw-2">*mut </span>gobject_ffi::GObject&gt;() * (t.len() + <span class="number">1</span>))
-                    <span class="kw">as </span><span class="kw-2">*mut *mut </span>gobject_ffi::GObject;
-
-            <span class="kw">for </span>(i, s) <span class="kw">in </span>t.iter().enumerate() {
-                ptr::write(v_ptr.add(i), s.to_glib_full());
-            }
-
-            v_ptr
-        }
-    }
-}
-
-<span class="attr">#[doc(hidden)]
-</span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; ToGlibContainerFromSlice&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*const *mut </span>gobject_ffi::GObject&gt; <span class="kw">for </span>ObjectRef {
-    <span class="kw">type </span>Storage = (
-        Vec&lt;Stash&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span>gobject_ffi::GObject, ObjectRef&gt;&gt;,
-        <span class="prelude-ty">Option</span>&lt;Vec&lt;<span class="kw-2">*mut </span>gobject_ffi::GObject&gt;&gt;,
-    );
-
-    <span class="kw">fn </span>to_glib_none_from_slice(
-        t: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>[ObjectRef],
-    ) -&gt; (<span class="kw-2">*const *mut </span>gobject_ffi::GObject, <span class="self">Self</span>::Storage) {
-        <span class="kw">let </span>(ptr, stash) =
-            ToGlibContainerFromSlice::&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut *mut </span>gobject_ffi::GObject&gt;::to_glib_none_from_slice(
-                t,
-            );
-        (ptr <span class="kw">as </span><span class="kw-2">*const *mut </span>gobject_ffi::GObject, stash)
-    }
-
-    <span class="kw">fn </span>to_glib_container_from_slice(
-        <span class="kw">_</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>[ObjectRef],
-    ) -&gt; (<span class="kw-2">*const *mut </span>gobject_ffi::GObject, <span class="self">Self</span>::Storage) {
-        <span class="comment">// Can&#39;t have consumer free a *const pointer
-        </span><span class="macro">unimplemented!</span>()
-    }
-
-    <span class="kw">fn </span>to_glib_full_from_slice(<span class="kw">_</span>: <span class="kw-2">&amp;</span>[ObjectRef]) -&gt; <span class="kw-2">*const *mut </span>gobject_ffi::GObject {
-        <span class="comment">// Can&#39;t have consumer free a *const pointer
-        </span><span class="macro">unimplemented!</span>()
-    }
-}
-
-<span class="attr">#[doc(hidden)]
 </span><span class="kw">impl </span>FromGlibPtrNone&lt;<span class="kw-2">*mut </span>gobject_ffi::GObject&gt; <span class="kw">for </span>ObjectRef {
     <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_none(ptr: <span class="kw-2">*mut </span>gobject_ffi::GObject) -&gt; <span class="self">Self </span>{
@@ -5368,122 +5099,6 @@
     <span class="attr">#[inline]
     </span><span class="kw">unsafe fn </span>from_glib_borrow(ptr: <span class="kw-2">*const </span>gobject_ffi::GObject) -&gt; Borrowed&lt;<span class="self">Self</span>&gt; {
         from_glib_borrow(ptr <span class="kw">as </span><span class="kw-2">*mut </span>gobject_ffi::GObject)
-    }
-}
-
-<span class="attr">#[doc(hidden)]
-</span><span class="kw">impl </span>FromGlibContainerAsVec&lt;<span class="kw-2">*mut </span>gobject_ffi::GObject, <span class="kw-2">*mut *mut </span>gobject_ffi::GObject&gt;
-    <span class="kw">for </span>ObjectRef
-{
-    <span class="kw">unsafe fn </span>from_glib_none_num_as_vec(
-        ptr: <span class="kw-2">*mut *mut </span>gobject_ffi::GObject,
-        num: usize,
-    ) -&gt; Vec&lt;<span class="self">Self</span>&gt; {
-        <span class="kw">if </span>num == <span class="number">0 </span>|| ptr.is_null() {
-            <span class="kw">return </span>Vec::new();
-        }
-
-        <span class="comment">// Attention: This takes ownership of floating references!
-        </span><span class="kw">let </span><span class="kw-2">mut </span>res = Vec::with_capacity(num);
-        <span class="kw">for </span>i <span class="kw">in </span><span class="number">0</span>..num {
-            res.push(from_glib_none(ptr::read(ptr.add(i))));
-        }
-        res
-    }
-
-    <span class="kw">unsafe fn </span>from_glib_container_num_as_vec(
-        ptr: <span class="kw-2">*mut *mut </span>gobject_ffi::GObject,
-        num: usize,
-    ) -&gt; Vec&lt;<span class="self">Self</span>&gt; {
-        <span class="comment">// Attention: This takes ownership of floating references!
-        </span><span class="kw">let </span>res = FromGlibContainerAsVec::from_glib_none_num_as_vec(ptr, num);
-        ffi::g_free(ptr <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>);
-        res
-    }
-
-    <span class="kw">unsafe fn </span>from_glib_full_num_as_vec(
-        ptr: <span class="kw-2">*mut *mut </span>gobject_ffi::GObject,
-        num: usize,
-    ) -&gt; Vec&lt;<span class="self">Self</span>&gt; {
-        <span class="kw">if </span>num == <span class="number">0 </span>|| ptr.is_null() {
-            ffi::g_free(ptr <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>);
-            <span class="kw">return </span>Vec::new();
-        }
-
-        <span class="kw">let </span><span class="kw-2">mut </span>res = Vec::with_capacity(num);
-        <span class="kw">for </span>i <span class="kw">in </span><span class="number">0</span>..num {
-            res.push(from_glib_full(ptr::read(ptr.add(i))));
-        }
-        ffi::g_free(ptr <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>);
-        res
-    }
-}
-
-<span class="attr">#[doc(hidden)]
-</span><span class="kw">impl </span>FromGlibPtrArrayContainerAsVec&lt;<span class="kw-2">*mut </span>gobject_ffi::GObject, <span class="kw-2">*mut *mut </span>gobject_ffi::GObject&gt;
-    <span class="kw">for </span>ObjectRef
-{
-    <span class="kw">unsafe fn </span>from_glib_none_as_vec(ptr: <span class="kw-2">*mut *mut </span>gobject_ffi::GObject) -&gt; Vec&lt;<span class="self">Self</span>&gt; {
-        <span class="comment">// Attention: This takes ownership of floating references!
-        </span>FromGlibContainerAsVec::from_glib_none_num_as_vec(ptr, c_ptr_array_len(ptr))
-    }
-
-    <span class="kw">unsafe fn </span>from_glib_container_as_vec(ptr: <span class="kw-2">*mut *mut </span>gobject_ffi::GObject) -&gt; Vec&lt;<span class="self">Self</span>&gt; {
-        <span class="comment">// Attention: This takes ownership of floating references!
-        </span>FromGlibContainerAsVec::from_glib_container_num_as_vec(ptr, c_ptr_array_len(ptr))
-    }
-
-    <span class="kw">unsafe fn </span>from_glib_full_as_vec(ptr: <span class="kw-2">*mut *mut </span>gobject_ffi::GObject) -&gt; Vec&lt;<span class="self">Self</span>&gt; {
-        FromGlibContainerAsVec::from_glib_full_num_as_vec(ptr, c_ptr_array_len(ptr))
-    }
-}
-
-<span class="attr">#[doc(hidden)]
-</span><span class="kw">impl </span>FromGlibContainerAsVec&lt;<span class="kw-2">*mut </span>gobject_ffi::GObject, <span class="kw-2">*const *mut </span>gobject_ffi::GObject&gt;
-    <span class="kw">for </span>ObjectRef
-{
-    <span class="kw">unsafe fn </span>from_glib_none_num_as_vec(
-        ptr: <span class="kw-2">*const *mut </span>gobject_ffi::GObject,
-        num: usize,
-    ) -&gt; Vec&lt;<span class="self">Self</span>&gt; {
-        <span class="comment">// Attention: This takes ownership of floating references!
-        </span>FromGlibContainerAsVec::from_glib_none_num_as_vec(ptr <span class="kw">as </span><span class="kw-2">*mut *mut </span><span class="kw">_</span>, num)
-    }
-
-    <span class="kw">unsafe fn </span>from_glib_container_num_as_vec(
-        <span class="kw">_</span>: <span class="kw-2">*const *mut </span>gobject_ffi::GObject,
-        <span class="kw">_</span>: usize,
-    ) -&gt; Vec&lt;<span class="self">Self</span>&gt; {
-        <span class="comment">// Can&#39;t free a *const
-        </span><span class="macro">unimplemented!</span>()
-    }
-
-    <span class="kw">unsafe fn </span>from_glib_full_num_as_vec(
-        <span class="kw">_</span>: <span class="kw-2">*const *mut </span>gobject_ffi::GObject,
-        <span class="kw">_</span>: usize,
-    ) -&gt; Vec&lt;<span class="self">Self</span>&gt; {
-        <span class="comment">// Can&#39;t free a *const
-        </span><span class="macro">unimplemented!</span>()
-    }
-}
-
-<span class="attr">#[doc(hidden)]
-</span><span class="kw">impl </span>FromGlibPtrArrayContainerAsVec&lt;<span class="kw-2">*mut </span>gobject_ffi::GObject, <span class="kw-2">*const *mut </span>gobject_ffi::GObject&gt;
-    <span class="kw">for </span>ObjectRef
-{
-    <span class="kw">unsafe fn </span>from_glib_none_as_vec(ptr: <span class="kw-2">*const *mut </span>gobject_ffi::GObject) -&gt; Vec&lt;<span class="self">Self</span>&gt; {
-        <span class="comment">// Attention: This takes ownership of floating references!
-        </span>FromGlibPtrArrayContainerAsVec::from_glib_none_as_vec(ptr <span class="kw">as </span><span class="kw-2">*mut *mut </span><span class="kw">_</span>)
-    }
-
-    <span class="kw">unsafe fn </span>from_glib_container_as_vec(<span class="kw">_</span>: <span class="kw-2">*const *mut </span>gobject_ffi::GObject) -&gt; Vec&lt;<span class="self">Self</span>&gt; {
-        <span class="comment">// Can&#39;t free a *const
-        </span><span class="macro">unimplemented!</span>()
-    }
-
-    <span class="kw">unsafe fn </span>from_glib_full_as_vec(<span class="kw">_</span>: <span class="kw-2">*const *mut </span>gobject_ffi::GObject) -&gt; Vec&lt;<span class="self">Self</span>&gt; {
-        <span class="comment">// Can&#39;t free a *const
-        </span><span class="macro">unimplemented!</span>()
     }
 }
 
@@ -5674,6 +5289,9 @@
         }
 
         <span class="attr">#[doc(hidden)]
+        </span><span class="kw">unsafe impl </span>$(&lt;$(<span class="macro-nonterminal">$generic </span>$(: <span class="macro-nonterminal">$bound </span>$(+ <span class="macro-nonterminal">$bound2</span>)<span class="kw-2">*</span>)<span class="question-mark">?</span>),+&gt;)<span class="question-mark">? </span><span class="macro-nonterminal">$crate::translate::TransparentPtrType </span><span class="kw">for </span><span class="macro-nonterminal">$name </span>$(&lt;$(<span class="macro-nonterminal">$generic</span>),+&gt;)<span class="question-mark">? </span>{}
+
+        <span class="attr">#[doc(hidden)]
         </span><span class="kw">unsafe impl </span>$(&lt;$(<span class="macro-nonterminal">$generic </span>$(: <span class="macro-nonterminal">$bound </span>$(+ <span class="macro-nonterminal">$bound2</span>)<span class="kw-2">*</span>)<span class="question-mark">?</span>),+&gt;)<span class="question-mark">? </span><span class="macro-nonterminal">$crate::object::ObjectType </span><span class="kw">for </span><span class="macro-nonterminal">$name </span>$(&lt;$(<span class="macro-nonterminal">$generic</span>),+&gt;)<span class="question-mark">? </span>{
             <span class="kw">type </span>GlibType = <span class="macro-nonterminal">$ffi_name</span>;
             <span class="kw">type </span>GlibClassType = <span class="macro-nonterminal">$ffi_class_name</span>;
@@ -5685,8 +5303,13 @@
 
             <span class="attr">#[inline]
             </span><span class="kw">fn </span>as_ptr(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*mut </span><span class="self">Self</span>::GlibType {
-                <span class="macro-nonterminal">$crate::translate::ToGlibPtr::to_glib_none</span>(<span class="kw-2">&amp;*</span><span class="self">self</span>.inner).<span class="number">0 </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_
-            </span>}
+                <span class="kw">unsafe </span>{ <span class="kw-2">*</span>(<span class="self">self </span><span class="kw">as </span><span class="kw-2">*const </span><span class="self">Self </span><span class="kw">as </span><span class="kw-2">*const *const </span><span class="macro-nonterminal">$ffi_name</span>) <span class="kw">as </span><span class="kw-2">*mut </span><span class="macro-nonterminal">$ffi_name </span>}
+            }
+
+            <span class="attr">#[inline]
+            </span><span class="kw">unsafe fn </span>from_glib_ptr_borrow&lt;<span class="lifetime">&#39;a</span>&gt;(ptr: <span class="kw-2">*const *const </span><span class="self">Self</span>::GlibType) -&gt; <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">Self </span>{
+                <span class="kw-2">&amp;*</span>(ptr <span class="kw">as </span><span class="kw-2">*const </span><span class="self">Self</span>)
+            }
         }
 
         <span class="attr">#[doc(hidden)]
@@ -5776,19 +5399,22 @@
 
             <span class="kw">fn </span>to_glib_none_from_slice(t: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>[<span class="self">Self</span>]) -&gt; (<span class="kw-2">*mut *mut </span><span class="macro-nonterminal">$ffi_name</span>, <span class="self">Self</span>::Storage) {
                 <span class="kw">let </span><span class="kw-2">mut </span>v_ptr = Vec::with_capacity(t.len() + <span class="number">1</span>);
-                v_ptr.extend(t.iter().map(|t| &lt;<span class="self">Self </span><span class="kw">as </span><span class="macro-nonterminal">$crate::ObjectType</span>&gt;::as_ptr(t)));
-                v_ptr.push(std::ptr::null_mut());
+                <span class="kw">unsafe </span>{
+                    <span class="kw">let </span>ptr = v_ptr.as_mut_ptr();
+                    std::ptr::copy_nonoverlapping(t.as_ptr() <span class="kw">as </span><span class="kw-2">*mut *mut </span><span class="macro-nonterminal">$ffi_name</span>, ptr, t.len());
+                    std::ptr::write(ptr.add(t.len()), std::ptr::null_mut());
+                    v_ptr.set_len(t.len() + <span class="number">1</span>);
+                }
 
                 (v_ptr.as_ptr() <span class="kw">as </span><span class="kw-2">*mut *mut </span><span class="macro-nonterminal">$ffi_name</span>, (std::marker::PhantomData, <span class="prelude-val">Some</span>(v_ptr)))
             }
 
             <span class="kw">fn </span>to_glib_container_from_slice(t: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>[<span class="self">Self</span>]) -&gt; (<span class="kw-2">*mut *mut </span><span class="macro-nonterminal">$ffi_name</span>, <span class="self">Self</span>::Storage) {
                 <span class="kw">let </span>v_ptr = <span class="kw">unsafe </span>{
-                    <span class="kw">let </span>v_ptr = <span class="macro-nonterminal">$crate::ffi::g_malloc0</span>(std::mem::size_of::&lt;<span class="kw-2">*mut </span><span class="macro-nonterminal">$ffi_name</span>&gt;() * (t.len() + <span class="number">1</span>)) <span class="kw">as </span><span class="kw-2">*mut *mut </span><span class="macro-nonterminal">$ffi_name</span>;
+                    <span class="kw">let </span>v_ptr = <span class="macro-nonterminal">$crate::ffi::g_malloc</span>(std::mem::size_of::&lt;<span class="kw-2">*mut </span><span class="macro-nonterminal">$ffi_name</span>&gt;() * (t.len() + <span class="number">1</span>)) <span class="kw">as </span><span class="kw-2">*mut *mut </span><span class="macro-nonterminal">$ffi_name</span>;
 
-                    <span class="kw">for </span>(i, t) <span class="kw">in </span>t.iter().enumerate() {
-                        std::ptr::write(v_ptr.add(i), &lt;<span class="self">Self </span><span class="kw">as </span><span class="macro-nonterminal">$crate::ObjectType</span>&gt;::as_ptr(t));
-                    }
+                    std::ptr::copy_nonoverlapping(t.as_ptr() <span class="kw">as </span><span class="kw-2">*mut *mut </span><span class="macro-nonterminal">$ffi_name</span>, v_ptr, t.len());
+                    std::ptr::write(v_ptr.add(t.len()), std::ptr::null_mut());
 
                     v_ptr
                 };
@@ -5798,11 +5424,12 @@
 
             <span class="kw">fn </span>to_glib_full_from_slice(t: <span class="kw-2">&amp;</span>[<span class="self">Self</span>]) -&gt; <span class="kw-2">*mut *mut </span><span class="macro-nonterminal">$ffi_name </span>{
                 <span class="kw">unsafe </span>{
-                    <span class="kw">let </span>v_ptr = <span class="macro-nonterminal">$crate::ffi::g_malloc0</span>(std::mem::size_of::&lt;<span class="kw-2">*mut </span><span class="macro-nonterminal">$ffi_name</span>&gt;() * (t.len() + <span class="number">1</span>)) <span class="kw">as </span><span class="kw-2">*mut *mut </span><span class="macro-nonterminal">$ffi_name</span>;
+                    <span class="kw">let </span>v_ptr = <span class="macro-nonterminal">$crate::ffi::g_malloc</span>(std::mem::size_of::&lt;<span class="kw-2">*mut </span><span class="macro-nonterminal">$ffi_name</span>&gt;() * (t.len() + <span class="number">1</span>)) <span class="kw">as </span><span class="kw-2">*mut *mut </span><span class="macro-nonterminal">$ffi_name</span>;
 
                     <span class="kw">for </span>(i, s) <span class="kw">in </span>t.iter().enumerate() {
                         std::ptr::write(v_ptr.add(i), <span class="macro-nonterminal">$crate::translate::ToGlibPtr::to_glib_full</span>(s));
                     }
+                    std::ptr::write(v_ptr.add(t.len()), std::ptr::null_mut());
 
                     v_ptr
                 }
@@ -6013,10 +5640,9 @@
             </span><span class="kw">unsafe fn </span>from_value(value: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="macro-nonterminal">$crate::Value</span>) -&gt; <span class="self">Self </span>{
                 <span class="macro">debug_assert_eq!</span>(std::mem::size_of::&lt;<span class="self">Self</span>&gt;(), std::mem::size_of::&lt;<span class="macro-nonterminal">$crate::ffi::gpointer</span>&gt;());
                 <span class="kw">let </span>value = <span class="kw-2">&amp;*</span>(value <span class="kw">as </span><span class="kw-2">*const </span><span class="macro-nonterminal">$crate::Value </span><span class="kw">as </span><span class="kw-2">*const </span><span class="macro-nonterminal">$crate::gobject_ffi::GValue</span>);
-                <span class="kw">let </span>ptr = <span class="kw-2">&amp;</span>value.data[<span class="number">0</span>].v_pointer <span class="kw">as </span><span class="kw-2">*const </span><span class="macro-nonterminal">$crate::ffi::gpointer </span><span class="kw">as </span><span class="kw-2">*const *const </span><span class="macro-nonterminal">$ffi_name</span>;
-                <span class="macro">debug_assert!</span>(!(<span class="kw-2">*</span>ptr).is_null());
-                <span class="macro">debug_assert_ne!</span>((<span class="kw-2">**</span>(ptr <span class="kw">as </span><span class="kw-2">*const *const </span><span class="macro-nonterminal">$crate::gobject_ffi::GObject</span>)).ref_count, <span class="number">0</span>);
-                <span class="kw-2">&amp;*</span>(ptr <span class="kw">as </span><span class="kw-2">*const </span><span class="macro-nonterminal">$name </span>$(&lt;$(<span class="macro-nonterminal">$generic</span>),+&gt;)<span class="question-mark">?</span>)
+                <span class="macro">debug_assert!</span>(!value.data[<span class="number">0</span>].v_pointer.is_null());
+                <span class="macro">debug_assert_ne!</span>((<span class="kw-2">*</span>(value.data[<span class="number">0</span>].v_pointer <span class="kw">as </span><span class="kw-2">*const </span><span class="macro-nonterminal">$crate::gobject_ffi::GObject</span>)).ref_count, <span class="number">0</span>);
+                &lt;<span class="macro-nonterminal">$name </span>$(&lt;$(<span class="macro-nonterminal">$generic</span>),+&gt;)<span class="question-mark">? </span><span class="kw">as </span><span class="macro-nonterminal">$crate::object::ObjectType</span>&gt;::from_glib_ptr_borrow(<span class="kw-2">&amp;</span>value.data[<span class="number">0</span>].v_pointer <span class="kw">as </span><span class="kw-2">*const </span><span class="macro-nonterminal">$crate::ffi::gpointer </span><span class="kw">as </span><span class="kw-2">*const *const </span><span class="macro-nonterminal">$ffi_name</span>)
             }
         }
 
@@ -8230,7 +7856,7 @@
 
             <span class="kw">let </span>props =
                 gobject_ffi::g_object_class_list_properties(klass <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>, <span class="kw-2">&amp;mut </span>n_properties);
-            PtrSlice::from_glib_container_num_static(props, n_properties <span class="kw">as </span>usize)
+            PtrSlice::from_glib_container_num(props, n_properties <span class="kw">as </span>usize, <span class="bool-val">true</span>)
         }
     }
 }
@@ -9160,7 +8786,7 @@
                 interface <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
                 <span class="kw-2">&amp;mut </span>n_properties,
             );
-            PtrSlice::from_glib_container_num_static(props, n_properties <span class="kw">as </span>usize)
+            PtrSlice::from_glib_container_num(props, n_properties <span class="kw">as </span>usize, <span class="bool-val">true</span>)
         }
     }
 }
@@ -9466,4 +9092,4 @@
     }
 }
 </code></pre></div>
-</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (574b64a97 2022-12-31)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
+</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (77429957a 2023-01-01)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
