@@ -781,30 +781,6 @@
 <a href="#708" id="708">708</a>
 <a href="#709" id="709">709</a>
 <a href="#710" id="710">710</a>
-<a href="#711" id="711">711</a>
-<a href="#712" id="712">712</a>
-<a href="#713" id="713">713</a>
-<a href="#714" id="714">714</a>
-<a href="#715" id="715">715</a>
-<a href="#716" id="716">716</a>
-<a href="#717" id="717">717</a>
-<a href="#718" id="718">718</a>
-<a href="#719" id="719">719</a>
-<a href="#720" id="720">720</a>
-<a href="#721" id="721">721</a>
-<a href="#722" id="722">722</a>
-<a href="#723" id="723">723</a>
-<a href="#724" id="724">724</a>
-<a href="#725" id="725">725</a>
-<a href="#726" id="726">726</a>
-<a href="#727" id="727">727</a>
-<a href="#728" id="728">728</a>
-<a href="#729" id="729">729</a>
-<a href="#730" id="730">730</a>
-<a href="#731" id="731">731</a>
-<a href="#732" id="732">732</a>
-<a href="#733" id="733">733</a>
-<a href="#734" id="734">734</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>std::{fmt, num::NonZeroU32, ptr, sync::Mutex};
@@ -1159,30 +1135,6 @@
     </span><span class="kw">fn </span>into_glib(<span class="self">self</span>) -&gt; ffi::GType {
         <span class="self">self</span>.<span class="number">0
     </span>}
-}
-
-<span class="kw">impl </span>FromGlibContainerAsVec&lt;Type, <span class="kw-2">*const </span>ffi::GType&gt; <span class="kw">for </span>SignalType {
-    <span class="kw">unsafe fn </span>from_glib_none_num_as_vec(ptr: <span class="kw-2">*const </span>ffi::GType, num: usize) -&gt; Vec&lt;<span class="self">Self</span>&gt; {
-        <span class="kw">if </span>num == <span class="number">0 </span>|| ptr.is_null() {
-            <span class="kw">return </span>Vec::new();
-        }
-
-        <span class="kw">let </span><span class="kw-2">mut </span>res = Vec::with_capacity(num);
-        <span class="kw">for </span>i <span class="kw">in </span><span class="number">0</span>..num {
-            res.push(from_glib(<span class="kw-2">*</span>ptr.add(i)));
-        }
-        res
-    }
-
-    <span class="kw">unsafe fn </span>from_glib_container_num_as_vec(<span class="kw">_</span>: <span class="kw-2">*const </span>ffi::GType, <span class="kw">_</span>: usize) -&gt; Vec&lt;<span class="self">Self</span>&gt; {
-        <span class="comment">// Can&#39;t really free a *const
-        </span><span class="macro">unimplemented!</span>();
-    }
-
-    <span class="kw">unsafe fn </span>from_glib_full_num_as_vec(<span class="kw">_</span>: <span class="kw-2">*const </span>ffi::GType, <span class="kw">_</span>: usize) -&gt; Vec&lt;<span class="self">Self</span>&gt; {
-        <span class="comment">// Can&#39;t really free a *const
-        </span><span class="macro">unimplemented!</span>();
-    }
 }
 
 <span class="attr">#[allow(clippy::type_complexity)]

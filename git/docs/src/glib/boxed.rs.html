@@ -647,6 +647,8 @@
 <a href="#574" id="574">574</a>
 <a href="#575" id="575">575</a>
 <a href="#576" id="576">576</a>
+<a href="#577" id="577">577</a>
+<a href="#578" id="578">578</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -880,10 +882,12 @@
                     <span class="kw">return </span>Vec::new();
                 }
 
-                <span class="kw">let </span><span class="kw-2">mut </span>res = Vec::with_capacity(num);
+                <span class="kw">let </span><span class="kw-2">mut </span>res = Vec::&lt;<span class="self">Self</span>&gt;::with_capacity(num);
+                <span class="kw">let </span>res_ptr = res.as_mut_ptr();
                 <span class="kw">for </span>i <span class="kw">in </span><span class="number">0</span>..num {
-                    res.push(<span class="macro-nonterminal">$crate::translate::from_glib_none</span>(std::ptr::read(ptr.add(i))));
+                    ::std::ptr::write(res_ptr.add(i), <span class="macro-nonterminal">$crate::translate::from_glib_none</span>(std::ptr::read(ptr.add(i))));
                 }
+                res.set_len(num);
                 res
             }
 
@@ -900,9 +904,9 @@
                 }
 
                 <span class="kw">let </span><span class="kw-2">mut </span>res = Vec::with_capacity(num);
-                <span class="kw">for </span>i <span class="kw">in </span><span class="number">0</span>..num {
-                    res.push(<span class="macro-nonterminal">$crate::translate::from_glib_full</span>(std::ptr::read(ptr.add(i))));
-                }
+                <span class="kw">let </span>res_ptr = res.as_mut_ptr();
+                ::std::ptr::copy_nonoverlapping(ptr <span class="kw">as </span><span class="kw-2">*mut </span><span class="self">Self</span>, res_ptr, num);
+                res.set_len(num);
                 <span class="macro-nonterminal">$crate::ffi::g_free</span>(ptr <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>);
                 res
             }

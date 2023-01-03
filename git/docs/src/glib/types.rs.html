@@ -731,7 +731,6 @@
 <a href="#658" id="658">658</a>
 <a href="#659" id="659">659</a>
 <a href="#660" id="660">660</a>
-<a href="#661" id="661">661</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -1294,10 +1293,9 @@
 
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>res =
-                ffi::g_malloc0(mem::size_of::&lt;ffi::GType&gt;() * (t.len() + <span class="number">1</span>)) <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GType;
-            <span class="kw">for </span>(i, v) <span class="kw">in </span>t.iter().enumerate() {
-                <span class="kw-2">*</span>res.add(i) = v.into_glib();
-            }
+                ffi::g_malloc(mem::size_of::&lt;ffi::GType&gt;() * (t.len() + <span class="number">1</span>)) <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GType;
+            std::ptr::copy_nonoverlapping(t.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span>ffi::GType, res, t.len());
+            <span class="kw-2">*</span>res.add(t.len()) = <span class="number">0</span>;
             res
         }
     }
@@ -1309,10 +1307,10 @@
             <span class="kw">return </span>Vec::new();
         }
 
-        <span class="kw">let </span><span class="kw-2">mut </span>res = Vec::with_capacity(num);
-        <span class="kw">for </span>i <span class="kw">in </span><span class="number">0</span>..num {
-            res.push(from_glib(<span class="kw-2">*</span>ptr.add(i)));
-        }
+        <span class="kw">let </span><span class="kw-2">mut </span>res = Vec::&lt;<span class="self">Self</span>&gt;::with_capacity(num);
+        <span class="kw">let </span>res_ptr = res.as_mut_ptr() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GType;
+        std::ptr::copy_nonoverlapping(ptr, res_ptr, num);
+        res.set_len(num);
         res
     }
 

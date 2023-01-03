@@ -3024,6 +3024,22 @@
 <a href="#2951" id="2951">2951</a>
 <a href="#2952" id="2952">2952</a>
 <a href="#2953" id="2953">2953</a>
+<a href="#2954" id="2954">2954</a>
+<a href="#2955" id="2955">2955</a>
+<a href="#2956" id="2956">2956</a>
+<a href="#2957" id="2957">2957</a>
+<a href="#2958" id="2958">2958</a>
+<a href="#2959" id="2959">2959</a>
+<a href="#2960" id="2960">2960</a>
+<a href="#2961" id="2961">2961</a>
+<a href="#2962" id="2962">2962</a>
+<a href="#2963" id="2963">2963</a>
+<a href="#2964" id="2964">2964</a>
+<a href="#2965" id="2965">2965</a>
+<a href="#2966" id="2966">2966</a>
+<a href="#2967" id="2967">2967</a>
+<a href="#2968" id="2968">2968</a>
+<a href="#2969" id="2969">2969</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -4021,12 +4037,13 @@
                 <span class="kw">let </span>v: Vec&lt;<span class="kw">_</span>&gt; = t.iter().map(ToGlibPtr::to_glib_none).collect();
 
                 <span class="kw">let </span>v_ptr = <span class="kw">unsafe </span>{
-                    <span class="kw">let </span>v_ptr = ffi::g_malloc0(mem::size_of::&lt;<span class="macro-nonterminal">$ffi_name</span>&gt;() * (t.len() + <span class="number">1</span>))
+                    <span class="kw">let </span>v_ptr = ffi::g_malloc(mem::size_of::&lt;<span class="macro-nonterminal">$ffi_name</span>&gt;() * (t.len() + <span class="number">1</span>))
                         <span class="kw">as </span><span class="kw-2">*mut </span><span class="macro-nonterminal">$ffi_name</span>;
 
                     <span class="kw">for </span>(i, s) <span class="kw">in </span>v.iter().enumerate() {
                         ptr::write(v_ptr.add(i), s.<span class="number">0</span>);
                     }
+                    ptr::write(v_ptr.add(t.len()), ptr::null_mut());
 
                     v_ptr
                 };
@@ -4036,12 +4053,13 @@
 
             <span class="kw">fn </span>to_glib_full_from_slice(t: <span class="kw-2">&amp;</span>[<span class="macro-nonterminal">$name</span>]) -&gt; <span class="kw-2">*mut </span><span class="macro-nonterminal">$ffi_name </span>{
                 <span class="kw">unsafe </span>{
-                    <span class="kw">let </span>v_ptr = ffi::g_malloc0(mem::size_of::&lt;<span class="macro-nonterminal">$ffi_name</span>&gt;() * (t.len() + <span class="number">1</span>))
+                    <span class="kw">let </span>v_ptr = ffi::g_malloc(mem::size_of::&lt;<span class="macro-nonterminal">$ffi_name</span>&gt;() * (t.len() + <span class="number">1</span>))
                         <span class="kw">as </span><span class="kw-2">*mut </span><span class="macro-nonterminal">$ffi_name</span>;
 
                     <span class="kw">for </span>(i, s) <span class="kw">in </span>t.iter().enumerate() {
                         ptr::write(v_ptr.add(i), s.to_glib_full());
                     }
+                    ptr::write(v_ptr.add(t.len()), ptr::null_mut());
 
                     v_ptr
                 }
@@ -4062,12 +4080,13 @@
                 <span class="kw">let </span>v: Vec&lt;<span class="kw">_</span>&gt; = t.iter().map(ToGlibPtr::to_glib_none).collect();
 
                 <span class="kw">let </span>v_ptr = <span class="kw">unsafe </span>{
-                    <span class="kw">let </span>v_ptr = ffi::g_malloc0(mem::size_of::&lt;<span class="macro-nonterminal">$ffi_name</span>&gt;() * (t.len() + <span class="number">1</span>))
+                    <span class="kw">let </span>v_ptr = ffi::g_malloc(mem::size_of::&lt;<span class="macro-nonterminal">$ffi_name</span>&gt;() * (t.len() + <span class="number">1</span>))
                         <span class="kw">as </span><span class="kw-2">*mut </span><span class="macro-nonterminal">$ffi_name</span>;
 
                     <span class="kw">for </span>(i, s) <span class="kw">in </span>v.iter().enumerate() {
                         ptr::write(v_ptr.add(i), s.<span class="number">0</span>);
                     }
+                    ptr::write(v_ptr.add(t.len()), ptr::null_mut());
 
                     v_ptr <span class="kw">as </span><span class="kw-2">*const </span><span class="macro-nonterminal">$ffi_name
                 </span>};
@@ -4077,12 +4096,13 @@
 
             <span class="kw">fn </span>to_glib_full_from_slice(t: <span class="kw-2">&amp;</span>[<span class="macro-nonterminal">$name</span>]) -&gt; <span class="kw-2">*const </span><span class="macro-nonterminal">$ffi_name </span>{
                 <span class="kw">unsafe </span>{
-                    <span class="kw">let </span>v_ptr = ffi::g_malloc0(mem::size_of::&lt;<span class="macro-nonterminal">$ffi_name</span>&gt;() * (t.len() + <span class="number">1</span>))
+                    <span class="kw">let </span>v_ptr = ffi::g_malloc(mem::size_of::&lt;<span class="macro-nonterminal">$ffi_name</span>&gt;() * (t.len() + <span class="number">1</span>))
                         <span class="kw">as </span><span class="kw-2">*mut </span><span class="macro-nonterminal">$ffi_name</span>;
 
                     <span class="kw">for </span>(i, s) <span class="kw">in </span>t.iter().enumerate() {
                         ptr::write(v_ptr.add(i), s.to_glib_full());
                     }
+                    ptr::write(v_ptr.add(t.len()), ptr::null_mut());
 
                     v_ptr <span class="kw">as </span><span class="kw-2">*const </span><span class="macro-nonterminal">$ffi_name
                 </span>}
@@ -4992,10 +5012,12 @@
             <span class="kw">return </span>Vec::new();
         }
 
-        <span class="kw">let </span><span class="kw-2">mut </span>res = Vec::with_capacity(num);
+        <span class="kw">let </span><span class="kw-2">mut </span>res = Vec::&lt;<span class="self">Self</span>&gt;::with_capacity(num);
+        <span class="kw">let </span>res_ptr = res.as_mut_ptr();
         <span class="kw">for </span>i <span class="kw">in </span><span class="number">0</span>..num {
-            res.push(from_glib(ptr::read(ptr.add(i))));
+            <span class="kw-2">*</span>res_ptr.add(i) = from_glib(ptr::read(ptr.add(i)));
         }
+        res.set_len(num);
         res
     }
 
@@ -5039,9 +5061,9 @@
                 }
 
                 <span class="kw">let </span><span class="kw-2">mut </span>res = Vec::with_capacity(num);
-                <span class="kw">for </span>i <span class="kw">in </span><span class="number">0</span>..num {
-                    res.push(ptr::read(ptr.add(i)));
-                }
+                <span class="kw">let </span>res_ptr = res.as_mut_ptr();
+                std::ptr::copy_nonoverlapping(ptr, res_ptr, num);
+                res.set_len(num);
                 res
             }
 
@@ -5093,10 +5115,15 @@
                     <span class="kw">return </span>Vec::new();
                 }
 
-                <span class="kw">let </span><span class="kw-2">mut </span>res = Vec::with_capacity(num);
+                <span class="kw">let </span><span class="kw-2">mut </span>res = Vec::&lt;<span class="self">Self</span>&gt;::with_capacity(num);
+                <span class="kw">let </span>res_ptr = res.as_mut_ptr();
                 <span class="kw">for </span>i <span class="kw">in </span><span class="number">0</span>..num {
-                    res.push(from_glib_none(ptr::read(ptr.add(i)) <span class="kw">as </span><span class="macro-nonterminal">$ffi_name</span>));
+                    std::ptr::write(
+                        res_ptr.add(i),
+                        from_glib_none(ptr::read(ptr.add(i)) <span class="kw">as </span><span class="macro-nonterminal">$ffi_name</span>),
+                    );
                 }
+                res.set_len(num);
                 res
             }
 
@@ -5128,10 +5155,15 @@
                     <span class="kw">return </span>Vec::new();
                 }
 
-                <span class="kw">let </span><span class="kw-2">mut </span>res = Vec::with_capacity(num);
+                <span class="kw">let </span><span class="kw-2">mut </span>res = Vec::&lt;<span class="self">Self</span>&gt;::with_capacity(num);
+                <span class="kw">let </span>res_ptr = res.as_mut_ptr();
                 <span class="kw">for </span>i <span class="kw">in </span><span class="number">0</span>..num {
-                    res.push(from_glib_full(ptr::read(ptr.add(i))));
+                    std::ptr::write(
+                        res_ptr.add(i),
+                        from_glib_full(ptr::read(ptr.add(i)) <span class="kw">as </span><span class="macro-nonterminal">$ffi_name</span>),
+                    );
                 }
+                res.set_len(num);
                 ffi::g_free(ptr <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>);
                 res
             }
