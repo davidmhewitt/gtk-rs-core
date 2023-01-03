@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/auto/uri.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>uri.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-34efc64c5083af8d.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-4743e13df3dfe8c4.css"><link rel="stylesheet" disabled href="../../../static.files/dark-0e1b889528bd466b.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-65289d5d067c7c66.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/auto/uri.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>uri.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-303867cd4f9d7e56.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-4743e13df3dfe8c4.css"><link rel="stylesheet" disabled href="../../../static.files/dark-0e1b889528bd466b.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-65289d5d067c7c66.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -1108,6 +1108,82 @@
 <a href="#1035" id="1035">1035</a>
 <a href="#1036" id="1036">1036</a>
 <a href="#1037" id="1037">1037</a>
+<a href="#1038" id="1038">1038</a>
+<a href="#1039" id="1039">1039</a>
+<a href="#1040" id="1040">1040</a>
+<a href="#1041" id="1041">1041</a>
+<a href="#1042" id="1042">1042</a>
+<a href="#1043" id="1043">1043</a>
+<a href="#1044" id="1044">1044</a>
+<a href="#1045" id="1045">1045</a>
+<a href="#1046" id="1046">1046</a>
+<a href="#1047" id="1047">1047</a>
+<a href="#1048" id="1048">1048</a>
+<a href="#1049" id="1049">1049</a>
+<a href="#1050" id="1050">1050</a>
+<a href="#1051" id="1051">1051</a>
+<a href="#1052" id="1052">1052</a>
+<a href="#1053" id="1053">1053</a>
+<a href="#1054" id="1054">1054</a>
+<a href="#1055" id="1055">1055</a>
+<a href="#1056" id="1056">1056</a>
+<a href="#1057" id="1057">1057</a>
+<a href="#1058" id="1058">1058</a>
+<a href="#1059" id="1059">1059</a>
+<a href="#1060" id="1060">1060</a>
+<a href="#1061" id="1061">1061</a>
+<a href="#1062" id="1062">1062</a>
+<a href="#1063" id="1063">1063</a>
+<a href="#1064" id="1064">1064</a>
+<a href="#1065" id="1065">1065</a>
+<a href="#1066" id="1066">1066</a>
+<a href="#1067" id="1067">1067</a>
+<a href="#1068" id="1068">1068</a>
+<a href="#1069" id="1069">1069</a>
+<a href="#1070" id="1070">1070</a>
+<a href="#1071" id="1071">1071</a>
+<a href="#1072" id="1072">1072</a>
+<a href="#1073" id="1073">1073</a>
+<a href="#1074" id="1074">1074</a>
+<a href="#1075" id="1075">1075</a>
+<a href="#1076" id="1076">1076</a>
+<a href="#1077" id="1077">1077</a>
+<a href="#1078" id="1078">1078</a>
+<a href="#1079" id="1079">1079</a>
+<a href="#1080" id="1080">1080</a>
+<a href="#1081" id="1081">1081</a>
+<a href="#1082" id="1082">1082</a>
+<a href="#1083" id="1083">1083</a>
+<a href="#1084" id="1084">1084</a>
+<a href="#1085" id="1085">1085</a>
+<a href="#1086" id="1086">1086</a>
+<a href="#1087" id="1087">1087</a>
+<a href="#1088" id="1088">1088</a>
+<a href="#1089" id="1089">1089</a>
+<a href="#1090" id="1090">1090</a>
+<a href="#1091" id="1091">1091</a>
+<a href="#1092" id="1092">1092</a>
+<a href="#1093" id="1093">1093</a>
+<a href="#1094" id="1094">1094</a>
+<a href="#1095" id="1095">1095</a>
+<a href="#1096" id="1096">1096</a>
+<a href="#1097" id="1097">1097</a>
+<a href="#1098" id="1098">1098</a>
+<a href="#1099" id="1099">1099</a>
+<a href="#1100" id="1100">1100</a>
+<a href="#1101" id="1101">1101</a>
+<a href="#1102" id="1102">1102</a>
+<a href="#1103" id="1103">1103</a>
+<a href="#1104" id="1104">1104</a>
+<a href="#1105" id="1105">1105</a>
+<a href="#1106" id="1106">1106</a>
+<a href="#1107" id="1107">1107</a>
+<a href="#1108" id="1108">1108</a>
+<a href="#1109" id="1109">1109</a>
+<a href="#1110" id="1110">1110</a>
+<a href="#1111" id="1111">1111</a>
+<a href="#1112" id="1112">1112</a>
+<a href="#1113" id="1113">1113</a>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
@@ -1127,61 +1203,137 @@
 }
 
 <span class="kw">impl </span>Uri {
-    <span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_auth_params&quot;</span>)]
+    <span class="doccomment">/// Gets `self`&#39;s authentication parameters, which may contain
+    /// `%`-encoding, depending on the flags with which `self` was created.
+    /// (If `self` was not created with [`UriFlags::HAS_AUTH_PARAMS`][crate::UriFlags::HAS_AUTH_PARAMS] then this will
+    /// be [`None`].)
+    ///
+    /// Depending on the URI scheme, `g_uri_parse_params()` may be useful for
+    /// further parsing this information.
+    ///
+    /// # Returns
+    ///
+    /// `self`&#39;s authentication parameters.
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_auth_params&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_auth_params&quot;</span>)]
     </span><span class="kw">pub fn </span>auth_params(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_uri_get_auth_params(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
-    <span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_flags&quot;</span>)]
+    <span class="doccomment">/// Gets `self`&#39;s flags set upon construction.
+    ///
+    /// # Returns
+    ///
+    /// `self`&#39;s flags.
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_flags&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_flags&quot;</span>)]
     </span><span class="kw">pub fn </span>flags(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; UriFlags {
         <span class="kw">unsafe </span>{ from_glib(ffi::g_uri_get_flags(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
-    <span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_fragment&quot;</span>)]
+    <span class="doccomment">/// Gets `self`&#39;s fragment, which may contain `%`-encoding, depending on
+    /// the flags with which `self` was created.
+    ///
+    /// # Returns
+    ///
+    /// `self`&#39;s fragment.
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_fragment&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_fragment&quot;</span>)]
     </span><span class="kw">pub fn </span>fragment(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_uri_get_fragment(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
-    <span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_host&quot;</span>)]
+    <span class="doccomment">/// Gets `self`&#39;s host. This will never have `%`-encoded characters,
+    /// unless it is non-UTF-8 (which can only be the case if `self` was
+    /// created with [`UriFlags::NON_DNS`][crate::UriFlags::NON_DNS]).
+    ///
+    /// If `self` contained an IPv6 address literal, this value will be just
+    /// that address, without the brackets around it that are necessary in
+    /// the string form of the URI. Note that in this case there may also
+    /// be a scope ID attached to the address. Eg, `fe80::1234%``em1` (or
+    /// `fe80::1234%``25em1` if the string is still encoded).
+    ///
+    /// # Returns
+    ///
+    /// `self`&#39;s host.
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_host&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_host&quot;</span>)]
     </span><span class="kw">pub fn </span>host(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_uri_get_host(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
-    <span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_password&quot;</span>)]
+    <span class="doccomment">/// Gets `self`&#39;s password, which may contain `%`-encoding, depending on
+    /// the flags with which `self` was created. (If `self` was not created
+    /// with [`UriFlags::HAS_PASSWORD`][crate::UriFlags::HAS_PASSWORD] then this will be [`None`].)
+    ///
+    /// # Returns
+    ///
+    /// `self`&#39;s password.
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_password&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_password&quot;</span>)]
     </span><span class="kw">pub fn </span>password(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_uri_get_password(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
-    <span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_path&quot;</span>)]
+    <span class="doccomment">/// Gets `self`&#39;s path, which may contain `%`-encoding, depending on the
+    /// flags with which `self` was created.
+    ///
+    /// # Returns
+    ///
+    /// `self`&#39;s path.
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_path&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_path&quot;</span>)]
     </span><span class="kw">pub fn </span>path(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::GString {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_uri_get_path(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
-    <span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_port&quot;</span>)]
+    <span class="doccomment">/// Gets `self`&#39;s port.
+    ///
+    /// # Returns
+    ///
+    /// `self`&#39;s port, or `-1` if no port was specified.
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_port&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_port&quot;</span>)]
     </span><span class="kw">pub fn </span>port(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
         <span class="kw">unsafe </span>{ ffi::g_uri_get_port(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
     }
 
-    <span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_query&quot;</span>)]
+    <span class="doccomment">/// Gets `self`&#39;s query, which may contain `%`-encoding, depending on the
+    /// flags with which `self` was created.
+    ///
+    /// For queries consisting of a series of `name=value` parameters,
+    /// `GUriParamsIter` or `g_uri_parse_params()` may be useful.
+    ///
+    /// # Returns
+    ///
+    /// `self`&#39;s query.
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_query&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_query&quot;</span>)]
     </span><span class="kw">pub fn </span>query(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_uri_get_query(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
-    <span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_scheme&quot;</span>)]
+    <span class="doccomment">/// Gets `self`&#39;s scheme. Note that this will always be all-lowercase,
+    /// regardless of the string or strings that `self` was created from.
+    ///
+    /// # Returns
+    ///
+    /// `self`&#39;s scheme.
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_scheme&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_scheme&quot;</span>)]
     </span><span class="kw">pub fn </span>scheme(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::GString {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_uri_get_scheme(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
-    <span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_user&quot;</span>)]
+    <span class="doccomment">/// Gets the ‘username’ component of `self`&#39;s userinfo, which may contain
+    /// `%`-encoding, depending on the flags with which `self` was created.
+    /// If `self` was not created with [`UriFlags::HAS_PASSWORD`][crate::UriFlags::HAS_PASSWORD] or
+    /// [`UriFlags::HAS_AUTH_PARAMS`][crate::UriFlags::HAS_AUTH_PARAMS], this is the same as [`userinfo()`][Self::userinfo()].
+    ///
+    /// # Returns
+    ///
+    /// `self`&#39;s user.
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_uri_get_user&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_user&quot;</span>)]
     </span><span class="kw">pub fn </span>user(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::GString&gt; {
         <span class="kw">unsafe </span>{ from_glib_none(ffi::g_uri_get_user(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
@@ -2146,4 +2298,4 @@
 <span class="kw">unsafe impl </span>Send <span class="kw">for </span>Uri {}
 <span class="kw">unsafe impl </span>Sync <span class="kw">for </span>Uri {}
 </code></pre></div>
-</section></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (77429957a 2023-01-01)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
+</section></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (d6f99e535 2023-01-02)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
