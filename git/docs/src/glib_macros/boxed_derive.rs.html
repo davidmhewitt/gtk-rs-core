@@ -473,7 +473,7 @@
             </span><span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; #crate_ident::Value {
                 <span class="kw">unsafe </span>{
                     <span class="kw">let </span>ptr: <span class="kw-2">*mut </span>#name = ::std::boxed::Box::into_raw(::std::boxed::Box::new(<span class="self">self</span>.clone()));
-                    <span class="kw">let </span><span class="kw-2">mut </span>value = #crate_ident::Value::from_type(&lt;#name <span class="kw">as </span>#crate_ident::StaticType&gt;::static_type());
+                    <span class="kw">let </span><span class="kw-2">mut </span>value = #crate_ident::Value::from_type_unchecked(&lt;#name <span class="kw">as </span>#crate_ident::StaticType&gt;::static_type());
                     #crate_ident::gobject_ffi::g_value_take_boxed(
                         #crate_ident::translate::ToGlibPtrMut::to_glib_none_mut(<span class="kw-2">&amp;mut </span>value).<span class="number">0</span>,
                         ptr <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_
@@ -492,7 +492,7 @@
             <span class="attr">#[inline]
             </span><span class="kw">fn </span>from(v: #name) -&gt; <span class="self">Self </span>{
                 <span class="kw">unsafe </span>{
-                    <span class="kw">let </span><span class="kw-2">mut </span>value = #crate_ident::Value::from_type(&lt;#name <span class="kw">as </span>#crate_ident::StaticType&gt;::static_type());
+                    <span class="kw">let </span><span class="kw-2">mut </span>value = #crate_ident::Value::from_type_unchecked(&lt;#name <span class="kw">as </span>#crate_ident::StaticType&gt;::static_type());
                     #crate_ident::gobject_ffi::g_value_take_boxed(
                         #crate_ident::translate::ToGlibPtrMut::to_glib_none_mut(<span class="kw-2">&amp;mut </span>value).<span class="number">0</span>,
                         #crate_ident::translate::IntoGlibPtr::&lt;<span class="kw-2">*mut </span>#name&gt;::into_glib_ptr(v) <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,

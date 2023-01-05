@@ -2244,7 +2244,7 @@
         <span class="string">&quot;Arguments must be forwarded without changes when chaining up&quot;
     </span>);
 
-    <span class="kw">let </span><span class="kw-2">mut </span>result = Value::from_type(token.<span class="number">1</span>);
+    <span class="kw">let </span><span class="kw-2">mut </span>result = Value::from_type_unchecked(token.<span class="number">1</span>);
     gobject_ffi::g_signal_chain_from_overridden(
         values.as_ptr() <span class="kw">as </span><span class="kw-2">*mut </span>Value <span class="kw">as </span><span class="kw-2">*mut </span>gobject_ffi::GValue,
         result.to_glib_none_mut().<span class="number">0</span>,

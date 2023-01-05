@@ -2077,6 +2077,16 @@
 <a href="#2004" id="2004">2004</a>
 <a href="#2005" id="2005">2005</a>
 <a href="#2006" id="2006">2006</a>
+<a href="#2007" id="2007">2007</a>
+<a href="#2008" id="2008">2008</a>
+<a href="#2009" id="2009">2009</a>
+<a href="#2010" id="2010">2010</a>
+<a href="#2011" id="2011">2011</a>
+<a href="#2012" id="2012">2012</a>
+<a href="#2013" id="2013">2013</a>
+<a href="#2014" id="2014">2014</a>
+<a href="#2015" id="2015">2015</a>
+<a href="#2016" id="2016">2016</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>std::{char::CharTryFromError, convert::TryFrom, ffi::CStr};
@@ -2163,7 +2173,7 @@
 </span><span class="kw">impl </span><span class="kw">crate</span>::value::ToValue <span class="kw">for </span>ParamSpec {
     <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Value {
         <span class="kw">unsafe </span>{
-            <span class="kw">let </span><span class="kw-2">mut </span>value = <span class="kw">crate</span>::Value::from_type(ParamSpec::static_type());
+            <span class="kw">let </span><span class="kw-2">mut </span>value = <span class="kw">crate</span>::Value::from_type_unchecked(ParamSpec::static_type());
             gobject_ffi::g_value_take_param(value.to_glib_none_mut().<span class="number">0</span>, <span class="self">self</span>.to_glib_full());
             value
         }
@@ -2179,7 +2189,7 @@
     <span class="attr">#[inline]
     </span><span class="kw">fn </span>from(s: ParamSpec) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{
-            <span class="kw">let </span><span class="kw-2">mut </span>value = <span class="kw">crate</span>::Value::from_type(ParamSpec::static_type());
+            <span class="kw">let </span><span class="kw-2">mut </span>value = <span class="kw">crate</span>::Value::from_type_unchecked(ParamSpec::static_type());
             gobject_ffi::g_value_take_param(value.to_glib_none_mut().<span class="number">0</span>, s.into_glib_ptr());
             value
         }
@@ -2311,25 +2321,12 @@
 
     <span class="doccomment">/// Get the name of a [`ParamSpec`][crate::ParamSpec].
     ///
-    /// The nametmp_dir --&gt;
-    /// Gets the directory to use for temporary files.
-    ///
-    /// On UNIX, this is taken from the `TMPDIR` environment variable.
-    /// If the variable is not set, `P_tmpdir` is
-    /// used, as defined by the system C library. Failing that, a
-    /// hard-coded default of &quot;/tmp&quot; is returned.
-    ///
-    /// On Windows, the `TEMP` environment variable is used, with the
-    /// root directory of the Windows installation (eg: &quot;C:\&quot;) used
-    /// as a default.
-    ///
-    /// The encoding of the returned string is system-defined. On Windows,
-    /// it is always UTF-8. The return value is never [`None`] or the empty
-    /// string.
+    /// The name is always an &quot;interned&quot; string (as per `g_intern_string()`).
+    /// This allows for pointer-value comparisons.
     ///
     /// # Returns
     ///
-    /// the directory to use for temporary files.
+    /// the name of `self`.
     </span><span class="attr">#[doc(alias = <span class="string">&quot;g_param_spec_get_name&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_name&quot;</span>)]
     #[inline]
@@ -2341,7 +2338,12 @@
         }
     }
 
-    <span class="attr">#[doc(alias = <span class="string">&quot;g_param_spec_get_name_quark&quot;</span>)]
+    <span class="doccomment">/// Gets the GQuark for the name.
+    ///
+    /// # Returns
+    ///
+    /// the GQuark for `self`-&gt;name.
+    </span><span class="attr">#[doc(alias = <span class="string">&quot;g_param_spec_get_name_quark&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_name_quark&quot;</span>)]
     #[inline]
     </span><span class="kw">pub fn </span>name_quark(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Quark {
@@ -2357,6 +2359,12 @@
     ///
     /// If this `ParamSpec` does not have a nickname, the nickname of its redirect target is returned if it has one.
     /// Otherwise, `self.name()` is returned.
+    </span><span class="comment">// rustdoc-stripper-ignore-next-stop
+    </span><span class="doccomment">/// Get the nickname of a [`ParamSpec`][crate::ParamSpec].
+    ///
+    /// # Returns
+    ///
+    /// the nickname of `self`.
     </span><span class="attr">#[doc(alias = <span class="string">&quot;g_param_spec_get_nick&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_nick&quot;</span>)]
     #[inline]
@@ -2372,6 +2380,18 @@
     //    unsafe { TODO: call gobject_ffi::g_param_spec_get_qdata() }
     //}
 
+    </span><span class="doccomment">/// If the paramspec redirects operations to another paramspec,
+    /// returns that paramspec. Redirect is used typically for
+    /// providing a new implementation of a property in a derived
+    /// type while preserving all the properties from the parent
+    /// type. Redirection is established by creating a property
+    /// of type [`ParamSpecOverride`][crate::ParamSpecOverride]. See `g_object_class_override_property()`
+    /// for an example of the use of this capability.
+    ///
+    /// # Returns
+    ///
+    /// paramspec to which requests on this
+    ///  paramspec should be redirected, or [`None`] if none.
     </span><span class="attr">#[doc(alias = <span class="string">&quot;g_param_spec_get_redirect_target&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_redirect_target&quot;</span>)]
     #[inline]
@@ -2488,7 +2508,7 @@
         </span><span class="kw">impl </span><span class="kw">crate</span>::value::ToValue <span class="kw">for </span><span class="macro-nonterminal">$rust_type </span>{
             <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Value {
                 <span class="kw">unsafe </span>{
-                    <span class="kw">let </span><span class="kw-2">mut </span>value = <span class="kw">crate</span>::Value::from_type(<span class="macro-nonterminal">$rust_type::static_type</span>());
+                    <span class="kw">let </span><span class="kw-2">mut </span>value = <span class="kw">crate</span>::Value::from_type_unchecked(<span class="macro-nonterminal">$rust_type::static_type</span>());
                     gobject_ffi::g_value_take_param(value.to_glib_none_mut().<span class="number">0</span>, <span class="macro-nonterminal">$crate::translate::ToGlibPtr</span>::&lt;<span class="kw-2">*const </span><span class="macro-nonterminal">$ffi_type</span>&gt;::to_glib_full(<span class="self">self</span>) <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>);
                     value
                 }
@@ -2504,7 +2524,7 @@
             <span class="attr">#[inline]
             </span><span class="kw">fn </span>from(s: <span class="macro-nonterminal">$rust_type</span>) -&gt; <span class="self">Self </span>{
                 <span class="kw">unsafe </span>{
-                    <span class="kw">let </span><span class="kw-2">mut </span>value = <span class="kw">crate</span>::Value::from_type(<span class="macro-nonterminal">$rust_type::static_type</span>());
+                    <span class="kw">let </span><span class="kw-2">mut </span>value = <span class="kw">crate</span>::Value::from_type_unchecked(<span class="macro-nonterminal">$rust_type::static_type</span>());
                     gobject_ffi::g_value_take_param(
                         value.to_glib_none_mut().<span class="number">0</span>,
                         <span class="macro-nonterminal">$crate::translate::IntoGlibPtr</span>::&lt;<span class="kw-2">*mut </span>gobject_ffi::GParamSpec&gt;::into_glib_ptr(s),

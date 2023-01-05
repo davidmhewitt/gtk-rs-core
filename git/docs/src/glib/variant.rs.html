@@ -3600,7 +3600,7 @@
 </span><span class="kw">impl </span><span class="kw">crate</span>::value::ToValue <span class="kw">for </span>Variant {
     <span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Value {
         <span class="kw">unsafe </span>{
-            <span class="kw">let </span><span class="kw-2">mut </span>value = <span class="kw">crate</span>::Value::from_type(Variant::static_type());
+            <span class="kw">let </span><span class="kw-2">mut </span>value = <span class="kw">crate</span>::Value::from_type_unchecked(Variant::static_type());
             gobject_ffi::g_value_take_variant(value.to_glib_none_mut().<span class="number">0</span>, <span class="self">self</span>.to_glib_full());
             value
         }
@@ -3616,7 +3616,7 @@
     <span class="attr">#[inline]
     </span><span class="kw">fn </span>from(v: Variant) -&gt; <span class="self">Self </span>{
         <span class="kw">unsafe </span>{
-            <span class="kw">let </span><span class="kw-2">mut </span>value = <span class="kw">crate</span>::Value::from_type(Variant::static_type());
+            <span class="kw">let </span><span class="kw-2">mut </span>value = <span class="kw">crate</span>::Value::from_type_unchecked(Variant::static_type());
             gobject_ffi::g_value_take_variant(value.to_glib_none_mut().<span class="number">0</span>, v.into_glib_ptr());
             value
         }

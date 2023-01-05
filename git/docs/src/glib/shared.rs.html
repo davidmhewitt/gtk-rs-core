@@ -1030,7 +1030,7 @@
             <span class="attr">#[inline]
             </span><span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="macro-nonterminal">$crate::Value </span>{
                 <span class="kw">unsafe </span>{
-                    <span class="kw">let </span><span class="kw-2">mut </span>value = <span class="macro-nonterminal">$crate::Value::from_type</span>(&lt;<span class="self">Self </span><span class="kw">as </span><span class="macro-nonterminal">$crate::StaticType</span>&gt;::static_type());
+                    <span class="kw">let </span><span class="kw-2">mut </span>value = <span class="macro-nonterminal">$crate::Value::from_type_unchecked</span>(&lt;<span class="self">Self </span><span class="kw">as </span><span class="macro-nonterminal">$crate::StaticType</span>&gt;::static_type());
                     <span class="macro-nonterminal">$crate::gobject_ffi::g_value_take_boxed</span>(
                         <span class="macro-nonterminal">$crate::translate::ToGlibPtrMut::to_glib_none_mut</span>(<span class="kw-2">&amp;mut </span>value).<span class="number">0</span>,
                         <span class="macro-nonterminal">$crate::translate::ToGlibPtr</span>::&lt;<span class="kw-2">*mut </span><span class="macro-nonterminal">$ffi_name</span>&gt;::to_glib_full(<span class="self">self</span>) <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
@@ -1049,7 +1049,7 @@
             <span class="attr">#[inline]
             </span><span class="kw">fn </span>from(s: <span class="macro-nonterminal">$name </span>$(&lt;$(<span class="macro-nonterminal">$generic</span>),+&gt;)<span class="question-mark">?</span>) -&gt; <span class="self">Self </span>{
                 <span class="kw">unsafe </span>{
-                    <span class="kw">let </span><span class="kw-2">mut </span>value = <span class="macro-nonterminal">$crate::Value::from_type</span>(&lt;<span class="macro-nonterminal">$name </span>$(&lt;$(<span class="macro-nonterminal">$generic</span>),+&gt;)<span class="question-mark">? </span><span class="kw">as </span><span class="macro-nonterminal">$crate::StaticType</span>&gt;::static_type());
+                    <span class="kw">let </span><span class="kw-2">mut </span>value = <span class="macro-nonterminal">$crate::Value::from_type_unchecked</span>(&lt;<span class="macro-nonterminal">$name </span>$(&lt;$(<span class="macro-nonterminal">$generic</span>),+&gt;)<span class="question-mark">? </span><span class="kw">as </span><span class="macro-nonterminal">$crate::StaticType</span>&gt;::static_type());
                     <span class="macro-nonterminal">$crate::gobject_ffi::g_value_take_boxed</span>(
                         <span class="macro-nonterminal">$crate::translate::ToGlibPtrMut::to_glib_none_mut</span>(<span class="kw-2">&amp;mut </span>value).<span class="number">0</span>,
                         <span class="macro-nonterminal">$crate::translate::IntoGlibPtr</span>::&lt;<span class="kw-2">*mut </span><span class="macro-nonterminal">$ffi_name</span>&gt;::into_glib_ptr(s) <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,

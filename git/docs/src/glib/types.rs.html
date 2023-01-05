@@ -731,6 +731,9 @@
 <a href="#658" id="658">658</a>
 <a href="#659" id="659">659</a>
 <a href="#660" id="660">660</a>
+<a href="#661" id="661">661</a>
+<a href="#662" id="662">662</a>
+<a href="#663" id="663">663</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -738,7 +741,7 @@
 
 </span><span class="kw">use </span>std::{fmt, marker::PhantomData, mem, ptr};
 
-<span class="kw">use crate</span>::{translate::<span class="kw-2">*</span>, Slice};
+<span class="kw">use crate</span>::{translate::<span class="kw-2">*</span>, IntoGStr, Slice};
 
 <span class="comment">// rustdoc-stripper-ignore-next
 </span><span class="doccomment">/// A GLib or GLib-based library type
@@ -939,9 +942,12 @@
     }
 
     <span class="attr">#[doc(alias = <span class="string">&quot;g_type_from_name&quot;</span>)]
-    </span><span class="kw">pub fn </span>from_name(name: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="self">Self</span>&gt; {
+    </span><span class="kw">pub fn </span>from_name(name: <span class="kw">impl </span>IntoGStr) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="self">Self</span>&gt; {
         <span class="kw">unsafe </span>{
-            <span class="kw">let </span>type_: <span class="self">Self </span>= from_glib(gobject_ffi::g_type_from_name(name.to_glib_none().<span class="number">0</span>));
+            <span class="kw">let </span>type_ = name.run_with_gstr(|name| {
+                <span class="self">Self</span>::from_glib(gobject_ffi::g_type_from_name(name.as_ptr()))
+            });
+
             <span class="prelude-val">Some</span>(type_).filter(|t| t.is_valid())
         }
     }
@@ -1016,7 +1022,7 @@
     <span class="attr">#[inline]
     </span><span class="kw">fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::Value {
         <span class="kw">unsafe </span>{
-            <span class="kw">let </span><span class="kw-2">mut </span>value = <span class="kw">crate</span>::Value::from_type(Type::static_type());
+            <span class="kw">let </span><span class="kw-2">mut </span>value = <span class="kw">crate</span>::Value::from_type_unchecked(Type::static_type());
             gobject_ffi::g_value_set_gtype(value.to_glib_none_mut().<span class="number">0</span>, <span class="self">self</span>.into_glib());
             value
         }

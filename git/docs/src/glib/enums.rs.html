@@ -1285,7 +1285,7 @@
     </span><span class="doccomment">/// Convert enum value to a `Value`.
     </span><span class="kw">pub fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>, enum_: <span class="kw-2">&amp;</span>EnumClass) -&gt; Value {
         <span class="kw">unsafe </span>{
-            <span class="kw">let </span><span class="kw-2">mut </span>v = Value::from_type(enum_.type_());
+            <span class="kw">let </span><span class="kw-2">mut </span>v = Value::from_type_unchecked(enum_.type_());
             gobject_ffi::g_value_set_enum(v.to_glib_none_mut().<span class="number">0</span>, <span class="self">self</span>.<span class="number">0</span>.value);
             v
         }
@@ -1801,7 +1801,7 @@
     </span><span class="doccomment">/// Convert flags value to a `Value`.
     </span><span class="kw">pub fn </span>to_value(<span class="kw-2">&amp;</span><span class="self">self</span>, flags: <span class="kw-2">&amp;</span>FlagsClass) -&gt; Value {
         <span class="kw">unsafe </span>{
-            <span class="kw">let </span><span class="kw-2">mut </span>v = Value::from_type(flags.type_());
+            <span class="kw">let </span><span class="kw-2">mut </span>v = Value::from_type_unchecked(flags.type_());
             gobject_ffi::g_value_set_flags(v.to_glib_none_mut().<span class="number">0</span>, <span class="self">self</span>.<span class="number">0</span>.value);
             v
         }
@@ -1854,7 +1854,7 @@
 </span><span class="kw">pub struct </span>FlagsBuilder&lt;<span class="lifetime">&#39;a</span>&gt;(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>FlagsClass, <span class="prelude-ty">Option</span>&lt;Value&gt;);
 <span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; FlagsBuilder&lt;<span class="lifetime">&#39;a</span>&gt; {
     <span class="kw">fn </span>new(flags_class: <span class="kw-2">&amp;</span>FlagsClass) -&gt; FlagsBuilder {
-        <span class="kw">let </span>value = Value::from_type(flags_class.type_());
+        <span class="kw">let </span>value = <span class="kw">unsafe </span>{ Value::from_type_unchecked(flags_class.type_()) };
         FlagsBuilder(flags_class, <span class="prelude-val">Some</span>(value))
     }
 
