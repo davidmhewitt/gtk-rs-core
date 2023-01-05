@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/thread_guard.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>thread_guard.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-303867cd4f9d7e56.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-4743e13df3dfe8c4.css"><link rel="stylesheet" disabled href="../../static.files/dark-0e1b889528bd466b.css"><link rel="stylesheet" disabled href="../../static.files/ayu-65289d5d067c7c66.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/thread_guard.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>thread_guard.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-9e69e4c014d22d53.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-4743e13df3dfe8c4.css"><link rel="stylesheet" disabled href="../../static.files/dark-0e1b889528bd466b.css"><link rel="stylesheet" disabled href="../../static.files/ayu-65289d5d067c7c66.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -182,9 +182,15 @@
 <a href="#109" id="109">109</a>
 <a href="#110" id="110">110</a>
 <a href="#111" id="111">111</a>
+<a href="#112" id="112">112</a>
+<a href="#113" id="113">113</a>
+<a href="#114" id="114">114</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span>std::sync::atomic::{AtomicUsize, Ordering};
+</span><span class="kw">use </span>std::{
+    mem, ptr,
+    sync::atomic::{AtomicUsize, Ordering},
+};
 <span class="kw">fn </span>next_thread_id() -&gt; usize {
     <span class="kw">static </span>COUNTER: AtomicUsize = AtomicUsize::new(<span class="number">0</span>);
     COUNTER.fetch_add(<span class="number">1</span>, Ordering::SeqCst)
@@ -204,7 +210,7 @@
 </span><span class="doccomment">/// Thread guard that only gives access to the contained value on the thread it was created on.
 </span><span class="kw">pub struct </span>ThreadGuard&lt;T&gt; {
     thread_id: usize,
-    value: <span class="prelude-ty">Option</span>&lt;T&gt;,
+    value: T,
 }
 
 <span class="kw">impl</span>&lt;T&gt; ThreadGuard&lt;T&gt; {
@@ -219,7 +225,7 @@
     </span><span class="kw">pub fn </span>new(value: T) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             thread_id: thread_id(),
-            value: <span class="prelude-val">Some</span>(value),
+            value,
         }
     }
 
@@ -237,7 +243,7 @@
             <span class="string">&quot;Value accessed from different thread than where it was created&quot;
         </span>);
 
-        <span class="self">self</span>.value.as_ref().unwrap()
+        <span class="kw-2">&amp;</span><span class="self">self</span>.value
     }
 
     <span class="comment">// rustdoc-stripper-ignore-next
@@ -254,7 +260,7 @@
             <span class="string">&quot;Value accessed from different thread than where it was created&quot;
         </span>);
 
-        <span class="self">self</span>.value.as_mut().unwrap()
+        <span class="kw-2">&amp;mut </span><span class="self">self</span>.value
     }
 
     <span class="comment">// rustdoc-stripper-ignore-next
@@ -265,13 +271,13 @@
     /// This function panics if called from a different thread than where the thread guard was
     /// created.
     </span><span class="attr">#[inline]
-    </span><span class="kw">pub fn </span>into_inner(<span class="kw-2">mut </span><span class="self">self</span>) -&gt; T {
+    </span><span class="kw">pub fn </span>into_inner(<span class="self">self</span>) -&gt; T {
         <span class="macro">assert!</span>(
             <span class="self">self</span>.thread_id == thread_id(),
             <span class="string">&quot;Value accessed from different thread than where it was created&quot;
         </span>);
 
-        <span class="self">self</span>.value.take().expect(<span class="string">&quot;into_inner() called twice&quot;</span>)
+        <span class="kw">unsafe </span>{ ptr::read(<span class="kw-2">&amp;</span>mem::ManuallyDrop::new(<span class="self">self</span>).value) }
     }
 
     <span class="comment">// rustdoc-stripper-ignore-next
@@ -294,4 +300,4 @@
 
 <span class="kw">unsafe impl</span>&lt;T&gt; Send <span class="kw">for </span>ThreadGuard&lt;T&gt; {}
 </code></pre></div>
-</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (d6f99e535 2023-01-02)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
+</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (659e169d3 2023-01-04)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>

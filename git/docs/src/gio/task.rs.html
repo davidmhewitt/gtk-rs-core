@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gio/src/task.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>task.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-303867cd4f9d7e56.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-4743e13df3dfe8c4.css"><link rel="stylesheet" disabled href="../../static.files/dark-0e1b889528bd466b.css"><link rel="stylesheet" disabled href="../../static.files/ayu-65289d5d067c7c66.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gio/src/task.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>task.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-9e69e4c014d22d53.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../static.files/light-4743e13df3dfe8c4.css"><link rel="stylesheet" disabled href="../../static.files/dark-0e1b889528bd466b.css"><link rel="stylesheet" disabled href="../../static.files/ayu-65289d5d067c7c66.css"><script id="default-settings" ></script><script src="../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../source-files.js"></script><script defer src="../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -1191,6 +1191,7 @@
 <a href="#1118" id="1118">1118</a>
 <a href="#1119" id="1119">1119</a>
 <a href="#1120" id="1120">1120</a>
+<a href="#1121" id="1121">1121</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>std::{boxed::Box <span class="kw">as </span>Box_, future::Future, mem::transmute, panic, ptr};
@@ -1778,7 +1779,7 @@
 
 <span class="macro">macro_rules! </span>task_impl {
     (<span class="macro-nonterminal">$name</span>:ident $(, @bound: <span class="macro-nonterminal">$bound</span>:tt)<span class="question-mark">? </span>$(, @safety: <span class="macro-nonterminal">$safety</span>:tt)<span class="question-mark">?</span>) =&gt; {
-        <span class="kw">impl </span>&lt;V: ValueType $(+ <span class="macro-nonterminal">$bound</span>)<span class="question-mark">?</span>&gt; <span class="macro-nonterminal">$name</span>&lt;V&gt; {
+        <span class="kw">impl </span>&lt;V: Into&lt;glib::Value&gt; + ValueType $(+ <span class="macro-nonterminal">$bound</span>)<span class="question-mark">?</span>&gt; <span class="macro-nonterminal">$name</span>&lt;V&gt; {
             <span class="attr">#[doc(alias = <span class="string">&quot;g_task_new&quot;</span>)]
             #[allow(unused_unsafe)]
             </span><span class="kw">pub unsafe fn </span>new&lt;S, P, Q&gt;(
@@ -1977,14 +1978,15 @@
                     },
                     <span class="attr">#[cfg(not(feature = <span class="string">&quot;v2_64&quot;</span>))]
                     </span><span class="prelude-val">Ok</span>(v) =&gt; <span class="kw">unsafe </span>{
+                        <span class="kw">let </span>v: glib::Value = v.into();
                         ffi::g_task_return_pointer(
                             <span class="self">self</span>.to_glib_none().<span class="number">0</span>,
-                            v.to_value().to_glib_full() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
+                            &lt;glib::Value <span class="kw">as </span>glib::translate::IntoGlibPtr::&lt;<span class="kw-2">*mut </span>glib::gobject_ffi::GValue&gt;&gt;::into_glib_ptr(v) <span class="kw">as </span>glib::ffi::gpointer,
                             <span class="prelude-val">Some</span>(value_free),
                         )
                     },
                     <span class="prelude-val">Err</span>(e) =&gt; <span class="kw">unsafe </span>{
-                        ffi::g_task_return_error(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, e.to_glib_full() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>);
+                        ffi::g_task_return_error(<span class="self">self</span>.to_glib_none().<span class="number">0</span>, e.into_glib_ptr());
                     },
                 }
             }
@@ -2312,4 +2314,4 @@
     }
 }
 </code></pre></div>
-</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gio" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (d6f99e535 2023-01-02)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
+</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gio" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (659e169d3 2023-01-04)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>

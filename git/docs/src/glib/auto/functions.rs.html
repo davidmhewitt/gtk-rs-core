@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/auto/functions.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>functions.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-303867cd4f9d7e56.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-4743e13df3dfe8c4.css"><link rel="stylesheet" disabled href="../../../static.files/dark-0e1b889528bd466b.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-65289d5d067c7c66.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/auto/functions.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>functions.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-9e69e4c014d22d53.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-4743e13df3dfe8c4.css"><link rel="stylesheet" disabled href="../../../static.files/dark-0e1b889528bd466b.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-65289d5d067c7c66.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-4a084badb5778746.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -1505,10 +1505,6 @@
 <a href="#1432" id="1432">1432</a>
 <a href="#1433" id="1433">1433</a>
 <a href="#1434" id="1434">1434</a>
-<a href="#1435" id="1435">1435</a>
-<a href="#1436" id="1436">1436</a>
-<a href="#1437" id="1437">1437</a>
-<a href="#1438" id="1438">1438</a>
 </pre><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
@@ -1676,7 +1672,23 @@
     }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_dpgettext&quot;</span>)]
+<span class="doccomment">/// This function is a variant of [`dgettext()`][crate::dgettext()] which supports
+/// a disambiguatiLists the properties of an interface.Generally, the interface
+/// vtable passed in as `g_iface` will be the default vtable from
+/// `g_type_default_interface_ref()`, or, if you know the interface has
+/// already been loaded, `g_type_default_interface_peek()`.
+/// ## `g_iface`
+/// any interface vtable for the
+///  interface, or the default vtable for the interface
+///
+/// # Returns
+///
+/// a
+///  pointer to an array of pointers to [`ParamSpec`][crate::ParamSpec]
+///  structures. The paramspecs are owned by GLib, but the
+///  array should be freed with `g_free()` when you are done with
+///  it.
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_dpgettext&quot;</span>)]
 </span><span class="kw">pub fn </span>dpgettext(domain: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>str&gt;, msgctxtid: <span class="kw-2">&amp;</span>str, msgidoffset: usize) -&gt; <span class="kw">crate</span>::GString {
     <span class="kw">unsafe </span>{
         from_glib_none(ffi::g_dpgettext(
@@ -1815,7 +1827,31 @@
     }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_find_program_in_path&quot;</span>)]
+<span class="doccomment">/// Locates the first executable named `program` in the user&#39;s path, in the
+/// same way that `execvp()` would locate it. Returns an allocated string
+/// with the absolute path name, or [`None`] if the program is not found in
+/// the path. If `program` is already an absolute path, returns a copy of
+/// `program` if `program` exists and is executable, and [`None`] otherwise.
+///
+/// On Windows, if `program` does not have a file type suffix, tries
+/// with the suffixes .exe, .cmd, .bat and .com, and the suffixes in
+/// the `PATHEXT` environment variable.
+///
+/// On Windows, it looks for the file in the same way as CreateProcess()
+/// would. This means first in the directory where the executing
+/// program was loaded from, then in the current directory, then in the
+/// Windows 32-bit system directory, then in the Windows directory, and
+/// finally in the directories in the `PATH` environment variable. If
+/// the program is found, the return value contains the full name
+/// including the type suffix.
+/// ## `program`
+/// a program name in the GLib file name encoding
+///
+/// # Returns
+///
+/// a newly-allocated
+///  string with the absolute path, or [`None`]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_find_program_in_path&quot;</span>)]
 </span><span class="kw">pub fn </span>find_program_in_path(program: <span class="kw">impl </span>AsRef&lt;std::path::Path&gt;) -&gt; <span class="prelude-ty">Option</span>&lt;std::path::PathBuf&gt; {
     <span class="kw">unsafe </span>{
         from_glib_full(ffi::g_find_program_in_path(
@@ -1824,29 +1860,105 @@
     }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_format_size&quot;</span>)]
+<span class="doccomment">/// Formats a size (for example the size of a file) into a human readable
+/// string. Sizes are rounded to the nearest size prefix (kB, MB, GB)
+/// and are displayed rounded to the nearest tenth. E.g. the file size
+/// 3292528 bytes will be converted into the string &quot;3.2 MB&quot;. The returned string
+/// is UTF-8, and may use a non-breaking space to separate the number and units,
+/// to ensure they aren’t separated when line wrapped.
+///
+/// The prefix units base is 1000 (i.e. 1 kB is 1000 bytes).
+///
+/// This string should be freed with `g_free()` when not needed any longer.
+///
+/// See [`format_size_full()`][crate::format_size_full()] for more options about how the size might be
+/// formatted.
+/// ## `size`
+/// a size in bytes
+///
+/// # Returns
+///
+/// a newly-allocated formatted string containing
+///  a human readable file size
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_format_size&quot;</span>)]
 </span><span class="kw">pub fn </span>format_size(size: u64) -&gt; <span class="kw">crate</span>::GString {
     <span class="kw">unsafe </span>{ from_glib_full(ffi::g_format_size(size)) }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_format_size_full&quot;</span>)]
+<span class="doccomment">/// Formats a size.
+///
+/// This function is similar to [`format_size()`][crate::format_size()] but allows for flags
+/// that modify the output. See [`FormatSizeFlags`][crate::FormatSizeFlags].
+/// ## `size`
+/// a size in bytes
+/// ## `flags`
+/// [`FormatSizeFlags`][crate::FormatSizeFlags] to modify the output
+///
+/// # Returns
+///
+/// a newly-allocated formatted string
+///  containing a human readable file size
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_format_size_full&quot;</span>)]
 </span><span class="kw">pub fn </span>format_size_full(size: u64, flags: FormatSizeFlags) -&gt; <span class="kw">crate</span>::GString {
     <span class="kw">unsafe </span>{ from_glib_full(ffi::g_format_size_full(size, flags.into_glib())) }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_get_application_name&quot;</span>)]
+<span class="doccomment">/// Gets a human-readable name for the application, as set by
+/// [`set_application_name()`][crate::set_application_name()]. This name should be localized if
+/// possible, and is intended for display to the user. Contrast with
+/// `g_get_prgname()`, which gets a non-localized name. If
+/// [`set_application_name()`][crate::set_application_name()] has not been called, returns the result of
+/// `g_get_prgname()` (which may be [`None`] if `g_set_prgname()` has also not
+/// been called).
+///
+/// # Returns
+///
+/// human-readable application
+///  name. May return [`None`]
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_application_name&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_application_name&quot;</span>)]
 </span><span class="kw">pub fn </span>application_name() -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw">crate</span>::GString&gt; {
     <span class="kw">unsafe </span>{ from_glib_none(ffi::g_get_application_name()) }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_get_codeset&quot;</span>)]
+<span class="doccomment">/// Gets the character set for the current locale.
+///
+/// # Returns
+///
+/// a newly allocated string containing the name
+///  of the character set. This string must be freed with `g_free()`.
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_codeset&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_codeset&quot;</span>)]
 </span><span class="kw">pub fn </span>codeset() -&gt; <span class="kw">crate</span>::GString {
     <span class="kw">unsafe </span>{ from_glib_full(ffi::g_get_codeset()) }
 }
 
-<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="doccomment">/// Obtains the character set used by the console attached to the process,
+/// which is suitable for printing output to the terminal.
+///
+/// Usually this matches the result returned by `g_get_charset()`, but in
+/// environments where the locale&#39;s character set does not match the encoding
+/// of the console this function tries to guess a more suitable value instead.
+///
+/// On Windows the character set returned by this function is the
+/// output code page used by the console associated with the calling process.
+/// If the codepage can&#39;t be determined (for example because there is no
+/// console attached) UTF-8 is assumed.
+///
+/// The return value is [`true`] if the locale&#39;s encoding is UTF-8, in that
+/// case you can perhaps avoid calling [`convert()`][crate::convert()].
+///
+/// The string returned in `charset` is not allocated, and should not be
+/// freed.
+///
+/// # Returns
+///
+/// [`true`] if the returned charset is UTF-8
+///
+/// ## `charset`
+/// return location for character set
+///  name, or [`None`].
+</span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_62&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_62&quot;</span>)))]
 #[doc(alias = <span class="string">&quot;g_get_console_charset&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_console_charset&quot;</span>)]
@@ -1862,71 +1974,117 @@
     }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_get_current_dir&quot;</span>)]
+<span class="doccomment">/// Gets the current directory.
+///
+/// The returned string should be freed when no longer needed.
+/// The encoding of the returned string is system defined.
+/// On Windows, it is always UTF-8.
+///
+/// Since GLib 2.40, this function will return the value of the &quot;PWD&quot;
+/// environment variable if it is set and it happens to be the same as
+/// the current directory. This can make a difference in the case that
+/// the current directory is the target of a symbolic link.
+///
+/// # Returns
+///
+/// the current directory
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_current_dir&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_current_dir&quot;</span>)]
 </span><span class="kw">pub fn </span>current_dir() -&gt; std::path::PathBuf {
     <span class="kw">unsafe </span>{ from_glib_full(ffi::g_get_current_dir()) }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_get_environ&quot;</span>)]
+<span class="doccomment">/// Gets the list of environment variables for the current process.
+///
+/// The list is [`None`] terminated and each item in the list is of the
+/// form &#39;NAME=VALUE&#39;.
+///
+/// This is equivalent to direct access to the &#39;environ&#39; global variable,
+/// except portable.
+///
+/// The return value is freshly allocated and it should be freed with
+/// `g_strfreev()` when it is no longer needed.
+///
+/// # Returns
+///
+///
+///  the list of environment variables
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_environ&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_environ&quot;</span>)]
 </span><span class="kw">pub fn </span>environ() -&gt; Vec&lt;std::ffi::OsString&gt; {
     <span class="kw">unsafe </span>{ FromGlibPtrContainer::from_glib_full(ffi::g_get_environ()) }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_get_home_dir&quot;</span>)]
+<span class="doccomment">/// Gets the current user&#39;s home directory.
+///
+/// As with most UNIX tools, this function will return the value of the
+/// `HOME` environment variable if it is set to an existing absolute path
+/// name, falling back to the `passwd` file in the case that it is unset.
+///
+/// If the path given in `HOME` is non-absolute, does not exist, or is
+/// not a directory, the result is undefined.
+///
+/// Before version 2.36 this function would ignore the `HOME` environment
+/// variable, taking the value from the `passwd` database instead. This was
+/// changed to increase the compatibility of GLib with other programs (and
+/// the XDG basedir specification) and to increase testability of programs
+/// based on GLib (by making it easier to run them from test frameworks).
+///
+/// If your program has a strong requirement for either the new or the
+/// old behaviour (and if you don&#39;t wish to increase your GLib
+/// dependency to ensure that the new behaviour is in effect) then you
+/// should either directly check the `HOME` environment variable yourself
+/// or unset it before calling any functions in GLib.
+///
+/// # Returns
+///
+/// the current user&#39;s home directory
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_home_dir&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_home_dir&quot;</span>)]
 </span><span class="kw">pub fn </span>home_dir() -&gt; std::path::PathBuf {
     <span class="kw">unsafe </span>{ from_glib_none(ffi::g_get_home_dir()) }
 }
 
-<span class="attr">#[doc(alias = <span class="string">&quot;g_get_host_name&quot;</span>)]
+<span class="doccomment">/// Return a name for the machine.
+///
+/// The returned name is not necessarily a fully-qualified domain name,
+/// or even present in DNS or some other name service at all. It need
+/// not even be unique on your local network or site, but usually it
+/// is. Callers should not rely on the return value having any specific
+/// properties like uniqueness for security purposes. Even if the name
+/// of the machine is changed while an application is running, the
+/// return value from this function does not change. The returned
+/// string is owned by GLib and should not be modified or freed. If no
+/// name can be determined, a default fixed string &quot;localhost&quot; is
+/// returned.
+///
+/// The encoding of the returned string is UTF-8.
+///
+/// # Returns
+///
+/// the host name of the machine.
+</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_host_name&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_host_name&quot;</span>)]
 </span><span class="kw">pub fn </span>host_name() -&gt; <span class="kw">crate</span>::GString {
     <span class="kw">unsafe </span>{ from_glib_none(ffi::g_get_host_name()) }
 }
 
-<span class="doccomment">/// Computes a list of applicable locale names, which can be used to
-/// e.g. construct locale-dependent filenames or search paths. The returned
-/// list is sorted from most desirable to least desirable and always contains
-/// the default locale &quot;C&quot;.
+<span class="doccomment">/// Reverts the effect of a previous call to
+/// [`freeze_notify()`][Self::freeze_notify()]. The freeze count is decreased on `self`
+/// and when it reaches zero, queued &quot;notify&quot; signals are emitted.
 ///
-/// For example, if LANGUAGE=de:en_US, then the returned list is
-/// &quot;de&quot;, &quot;en_US&quot;, &quot;en&quot;, &quot;C&quot;.
+/// Duplicate notifications for each property are squashed so that at most one
+/// `signal::Object::notify` signal is emitted for each property, in the reverse order
+/// in which they have been queued.
 ///
-/// This function consults the environment variables `LANGUAGE`, `LC_ALL`,
-/// `LC_MESSAGES` and `LANG` to find the list of locales specified by the
-/// user.
-///
-/// # Returns
-///
-/// a [`None`]-terminated array of strings owned by GLib
-///  that must not be modified or freed.
+/// It is an error to call this function when the freeze count is zero.
 </span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_language_names&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_language_names&quot;</span>)]
 </span><span class="kw">pub fn </span>language_names() -&gt; Vec&lt;<span class="kw">crate</span>::GString&gt; {
     <span class="kw">unsafe </span>{ FromGlibPtrContainer::from_glib_none(ffi::g_get_language_names()) }
 }
 
-<span class="doccomment">/// Computes a list of applicable locale names with a locale category name,
-/// which can be used to construct the fallback locale-dependent filenames
-/// or search paths. The returned list is sorted from most desirable to
-/// least desirable and always contains the default locale &quot;C&quot;.
-///
-/// This function consults the environment variables `LANGUAGE`, `LC_ALL`,
-/// `category_name`, and `LANG` to find the list of locales specified by the
-/// user.
-///
-/// [`language_names()`][crate::language_names()] returns g_get_language_names_with_category(&quot;LC_MESSAGES&quot;).
-/// ## `category_name`
-/// a locale category name
-///
-/// # Returns
-///
-/// a [`None`]-terminated array of strings owned by
-///  the thread g_get_language_names_with_category was called from.
-///  It must not be modified or freed. It must be copied if planned to be used in another thread.
-</span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_58&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_58&quot;</span>)))]
 #[doc(alias = <span class="string">&quot;g_get_language_names_with_category&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_language_names_with_category&quot;</span>)]
@@ -1938,30 +2096,7 @@
     }
 }
 
-<span class="doccomment">/// Returns a list of derived variants of `locale`, which can be used to
-/// e.g. construct locale-dependent filenames or search paths. The returned
-/// list is sorted from most desirable to least desirable.
-/// This function handles territory, charset and extra locale modifiers. See
-/// [`setlocale(3)`](man:setlocale) for information about locales and their format.
-///
-/// `locale` itself is guaranteed to be returned in the output.
-///
-/// For example, if `locale` is `fr_BE`, then the returned list
-/// is `fr_BE`, `fr`. If `locale` is `en_GB.UTF-8`euro``, then the returned list
-/// is `en_GB.UTF-8`euro``, `en_GB.UTF-8`, `en_GB`euro``, `en_GB`, `en.UTF-8`euro``,
-/// `en.UTF-8`, `en`euro``, `en`.
-///
-/// If you need the list of variants for the current locale,
-/// use [`language_names()`][crate::language_names()].
-/// ## `locale`
-/// a locale identifier
-///
-/// # Returns
-///
-/// a newly
-///  allocated array of newly allocated strings with the locale variants. Free with
-///  `g_strfreev()`.
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_locale_variants&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_get_locale_variants&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_locale_variants&quot;</span>)]
 </span><span class="kw">pub fn </span>locale_variants(locale: <span class="kw-2">&amp;</span>str) -&gt; Vec&lt;<span class="kw">crate</span>::GString&gt; {
     <span class="kw">unsafe </span>{
@@ -1969,56 +2104,19 @@
     }
 }
 
-<span class="doccomment">/// Queries the system monotonic time.
-///
-/// The monotonic clock will always increase and doesn&#39;t suffer
-/// discontinuities when the user (or NTP) changes the system time. It
-/// may or may not continue to tick during times where the machine is
-/// suspended.
-///
-/// We try to use the clock that corresponds as closely as possible to
-/// the passage of time as measured by system calls such as `poll()` but it
-/// may not always be possible to do this.
-///
-/// # Returns
-///
-/// the monotonic time, in microseconds
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_monotonic_time&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_get_monotonic_time&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_monotonic_time&quot;</span>)]
 </span><span class="kw">pub fn </span>monotonic_time() -&gt; i64 {
     <span class="kw">unsafe </span>{ ffi::g_get_monotonic_time() }
 }
 
-<span class="doccomment">/// Determine the approximate number of threads that the system will
-/// schedule simultaneously for this process. This is intended to be
-/// used as a parameter to [`ThreadPool::new()`][crate::ThreadPool::new()] for CPU bound tasks and
-/// similar cases.
-///
-/// # Returns
-///
-/// Number of schedulable threads, always greater than 0
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_num_processors&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_get_num_processors&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_num_processors&quot;</span>)]
 </span><span class="kw">pub fn </span>num_processors() -&gt; u32 {
     <span class="kw">unsafe </span>{ ffi::g_get_num_processors() }
 }
 
-<span class="doccomment">/// Get information about the operating system.
-///
-/// On Linux this comes from the `/etc/os-release` file. On other systems, it may
-/// come from a variety of sources. You can either use the standard key names
-/// like `G_OS_INFO_KEY_NAME` or pass any UTF-8 string key name. For example,
-/// `/etc/os-release` provides a number of other less commonly used values that may
-/// be useful. No key is guaranteed to be provided, so the caller should always
-/// check if the result is [`None`].
-/// ## `key_name`
-/// a key for the OS info being requested, for example `G_OS_INFO_KEY_NAME`.
-///
-/// # Returns
-///
-/// The associated value for the requested key or [`None`] if
-///  this information is not provided.
-</span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
+<span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_64&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 #[cfg_attr(feature = <span class="string">&quot;dox&quot;</span>, doc(cfg(feature = <span class="string">&quot;v2_64&quot;</span>)))]
 #[doc(alias = <span class="string">&quot;g_get_os_info&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_os_info&quot;</span>)]
@@ -2026,137 +2124,31 @@
     <span class="kw">unsafe </span>{ from_glib_full(ffi::g_get_os_info(key_name.to_glib_none().<span class="number">0</span>)) }
 }
 
-<span class="doccomment">/// Gets the real name of the user. This usually comes from the user&#39;s
-/// entry in the `passwd` file. The encoding of the returned string is
-/// system-defined. (On Windows, it is, however, always UTF-8.) If the
-/// real user name cannot be determined, the string &quot;Unknown&quot; is
-/// returned.
-///
-/// # Returns
-///
-/// the user&#39;s real name.
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_real_name&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_get_real_name&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_real_name&quot;</span>)]
 </span><span class="kw">pub fn </span>real_name() -&gt; std::ffi::OsString {
     <span class="kw">unsafe </span>{ from_glib_none(ffi::g_get_real_name()) }
 }
 
-<span class="doccomment">/// Queries the system wall-clock time.
-///
-/// This call is functionally equivalent to `g_get_current_time()` except
-/// that the return value is often more convenient than dealing with a
-/// `GTimeVal`.
-///
-/// You should only use this call if you are actually interested in the real
-/// wall-clock time. [`monotonic_time()`][crate::monotonic_time()] is probably more useful for
-/// measuring intervals.
-///
-/// # Returns
-///
-/// the number of microseconds since January 1, 1970 UTC.
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_real_time&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_get_real_time&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_real_time&quot;</span>)]
 </span><span class="kw">pub fn </span>real_time() -&gt; i64 {
     <span class="kw">unsafe </span>{ ffi::g_get_real_time() }
 }
 
-<span class="doccomment">/// Returns an ordered list of base directories in which to access
-/// system-wide configuration information.
-///
-/// On UNIX platforms this is determined using the mechanisms described
-/// in the
-/// [XDG Base Directory Specification](http://www.freedesktop.org/Standards/basedir-spec).
-/// In this case the list of directories retrieved will be `XDG_CONFIG_DIRS`.
-///
-/// On Windows it follows XDG Base Directory Specification if `XDG_CONFIG_DIRS` is defined.
-/// If `XDG_CONFIG_DIRS` is undefined, the directory that contains application
-/// data for all users is used instead. A typical path is
-/// `C:\Documents and Settings\All Users\Application Data`.
-/// This folder is used for application data
-/// that is not user specific. For example, an application can store
-/// a spell-check dictionary, a database of clip art, or a log file in the
-/// FOLDERID_ProgramData folder. This information will not roam and is available
-/// to anyone using the computer.
-///
-/// The return value is cached and modifying it at runtime is not supported, as
-/// it’s not thread-safe to modify environment variables at runtime.
-///
-/// # Returns
-///
-///
-///  a [`None`]-terminated array of strings owned by GLib that must not be
-///  modified or freed.
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_system_config_dirs&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_get_system_config_dirs&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_system_config_dirs&quot;</span>)]
 </span><span class="kw">pub fn </span>system_config_dirs() -&gt; Vec&lt;std::path::PathBuf&gt; {
     <span class="kw">unsafe </span>{ FromGlibPtrContainer::from_glib_none(ffi::g_get_system_config_dirs()) }
 }
 
-<span class="doccomment">/// Returns an ordered list of base directories in which to access
-/// system-wide application data.
-///
-/// On UNIX platforms this is determined using the mechanisms described
-/// in the
-/// [XDG Base Directory Specification](http://www.freedesktop.org/Standards/basedir-spec)
-/// In this case the list of directories retrieved will be `XDG_DATA_DIRS`.
-///
-/// On Windows it follows XDG Base Directory Specification if `XDG_DATA_DIRS` is defined.
-/// If `XDG_DATA_DIRS` is undefined,
-/// the first elements in the list are the Application Data
-/// and Documents folders for All Users. (These can be determined only
-/// on Windows 2000 or later and are not present in the list on other
-/// Windows versions.) See documentation for FOLDERID_ProgramData and
-/// FOLDERID_PublicDocuments.
-///
-/// Then follows the &quot;share&quot; subfolder in the installation folder for
-/// the package containing the DLL that calls this function, if it can
-/// be determined.
-///
-/// Finally the list contains the &quot;share&quot; subfolder in the installation
-/// folder for GLib, and in the installation folder for the package the
-/// application&#39;s .exe file belongs to.
-///
-/// The installation folders above are determined by looking up the
-/// folder where the module (DLL or EXE) in question is located. If the
-/// folder&#39;s name is &quot;bin&quot;, its parent is used, otherwise the folder
-/// itself.
-///
-/// Note that on Windows the returned list can vary depending on where
-/// this function is called.
-///
-/// The return value is cached and modifying it at runtime is not supported, as
-/// it’s not thread-safe to modify environment variables at runtime.
-///
-/// # Returns
-///
-///
-///  a [`None`]-terminated array of strings owned by GLib that must not be
-///  modified or freed.
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_system_data_dirs&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_get_system_data_dirs&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_system_data_dirs&quot;</span>)]
 </span><span class="kw">pub fn </span>system_data_dirs() -&gt; Vec&lt;std::path::PathBuf&gt; {
     <span class="kw">unsafe </span>{ FromGlibPtrContainer::from_glib_none(ffi::g_get_system_data_dirs()) }
 }
 
-<span class="doccomment">/// Gets the directory to use for temporary files.
-///
-/// On UNIX, this is taken from the `TMPDIR` environment variable.
-/// If the variable is not set, `P_tmpdir` is
-/// used, as defined by the system C library. Failing that, a
-/// hard-coded default of &quot;/tmp&quot; is returned.
-///
-/// On Windows, the `TEMP` environment variable is used, with the
-/// root directory of the Windows installation (eg: &quot;C:\&quot;) used
-/// as a default.
-///
-/// The encoding of the returned string is system-defined. On Windows,
-/// it is always UTF-8. The return value is never [`None`] or the empty
-/// string.
-///
-/// # Returns
-///
-/// the directory to use for temporary files.
-</span><span class="attr">#[doc(alias = <span class="string">&quot;g_get_tmp_dir&quot;</span>)]
+<span class="attr">#[doc(alias = <span class="string">&quot;g_get_tmp_dir&quot;</span>)]
 #[doc(alias = <span class="string">&quot;get_tmp_dir&quot;</span>)]
 </span><span class="kw">pub fn </span>tmp_dir() -&gt; std::path::PathBuf {
     <span class="kw">unsafe </span>{ from_glib_none(ffi::g_get_tmp_dir()) }
@@ -2948,4 +2940,4 @@
     <span class="kw">unsafe </span>{ from_glib_full(ffi::g_uuid_string_random()) }
 }
 </code></pre></div>
-</section></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (d6f99e535 2023-01-02)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
+</section></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (659e169d3 2023-01-04)" data-search-js="search-181581080540673f.js" data-settings-js="settings-bebeae96e00e4617.js" data-settings-css="settings-58836c674e2f7bd2.css" ></div></body></html>
