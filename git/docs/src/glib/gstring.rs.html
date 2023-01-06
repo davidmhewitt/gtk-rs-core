@@ -3189,7 +3189,7 @@
 /// creating a [`String`] and then converting it manually to a [`GString`].
 </span><span class="attr">#[macro_export]
 </span><span class="macro">macro_rules! </span>gformat {
-    ($(<span class="macro-nonterminal">$arg</span>:tt)<span class="kw-2">*</span>) =&gt; { GString::format(<span class="macro">std::format_args!</span>($(<span class="macro-nonterminal">$arg</span>)<span class="kw-2">*</span>)) };
+    ($(<span class="macro-nonterminal">$arg</span>:tt)<span class="kw-2">*</span>) =&gt; { <span class="macro-nonterminal">$crate::GString::format</span>(<span class="macro">std::format_args!</span>($(<span class="macro-nonterminal">$arg</span>)<span class="kw-2">*</span>)) };
 }
 
 <span class="comment">// rustdoc-stripper-ignore-next
