@@ -3238,7 +3238,7 @@
         ///  environment variables. For instance, an editor might be expected
         ///  to use the `GIT_COMMITTER_NAME` environment variable
         ///  when editing a git commit message. The environment is available
-        ///  to the `signal::Application::command-line` signal handler, via
+        ///  to the [`command-line`][struct@crate::Application#command-line] signal handler, via
         ///  [`ApplicationCommandLineExt::getenv()`][crate::prelude::ApplicationCommandLineExt::getenv()].
         </span><span class="attr">#[doc(alias = <span class="string">&quot;G_APPLICATION_SEND_ENVIRONMENT&quot;</span>)]
         </span><span class="kw">const </span>SEND_ENVIRONMENT = ffi::G_APPLICATION_SEND_ENVIRONMENT <span class="kw">as _</span>;
@@ -4148,7 +4148,7 @@
         /// This flag is only meaningful in proxies for well-known names.
         </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START&quot;</span>)]
         </span><span class="kw">const </span>DO_NOT_AUTO_START = ffi::G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START <span class="kw">as _</span>;
-        <span class="doccomment">/// If set, the property value for any __invalidated property__ will be (asynchronously) retrieved upon receiving the [`PropertiesChanged`](http://dbus.freedesktop.org/doc/dbus-specification.html`standard`-interfaces-properties) D-Bus signal and the property will not cause emission of the `signal::DBusProxy::g-properties-changed` signal. When the value is received the `signal::DBusProxy::g-properties-changed` signal is emitted for the property along with the retrieved value. Since 2.32.
+        <span class="doccomment">/// If set, the property value for any __invalidated property__ will be (asynchronously) retrieved upon receiving the [`PropertiesChanged`](http://dbus.freedesktop.org/doc/dbus-specification.html`standard`-interfaces-properties) D-Bus signal and the property will not cause emission of the [`g-properties-changed`][struct@crate::DBusProxy#g-properties-changed] signal. When the value is received the [`g-properties-changed`][struct@crate::DBusProxy#g-properties-changed] signal is emitted for the property along with the retrieved value. Since 2.32.
         </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_PROXY_FLAGS_GET_INVALIDATED_PROPERTIES&quot;</span>)]
         </span><span class="kw">const </span>GET_INVALIDATED_PROPERTIES = ffi::G_DBUS_PROXY_FLAGS_GET_INVALIDATED_PROPERTIES <span class="kw">as _</span>;
         <span class="doccomment">/// If the proxy is for a well-known name,
@@ -4323,7 +4323,7 @@
         <span class="doccomment">/// No flags set.
         </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_SERVER_FLAGS_NONE&quot;</span>)]
         </span><span class="kw">const </span>NONE = ffi::G_DBUS_SERVER_FLAGS_NONE <span class="kw">as _</span>;
-        <span class="doccomment">/// All `signal::DBusServer::new-connection`
+        <span class="doccomment">/// All [`new-connection`][struct@crate::DBusServer#new-connection]
         /// signals will run in separated dedicated threads (see signal for
         /// details).
         </span><span class="attr">#[doc(alias = <span class="string">&quot;G_DBUS_SERVER_FLAGS_RUN_IN_THREAD&quot;</span>)]
@@ -5857,7 +5857,7 @@
 <span class="macro">bitflags! </span>{
     <span class="doccomment">/// A set of flags describing TLS certification validation. This can be
     /// used to describe why a particular certificate was rejected (for
-    /// example, in `signal::TlsConnection::accept-certificate`).
+    /// example, in [`accept-certificate`][struct@crate::TlsConnection#accept-certificate]).
     ///
     /// GLib guarantees that if certificate verification fails, at least one
     /// flag will be set, but it does not guarantee that all possible flags

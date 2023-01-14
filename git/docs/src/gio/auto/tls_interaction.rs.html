@@ -767,7 +767,7 @@
     ///
     /// If [`TlsInteractionResult::Handled`][crate::TlsInteractionResult::Handled] is returned, then the [`TlsConnection`][crate::TlsConnection]
     /// passed to [`request_certificate()`][Self::request_certificate()] will have had its
-    /// `property::TlsConnection::certificate` filled in.
+    /// [`certificate`][struct@crate::TlsConnection#certificate] filled in.
     ///
     /// If the interaction is cancelled by the cancellation object, or by the
     /// user then [`TlsInteractionResult::Failed`][crate::TlsInteractionResult::Failed] will be returned with an error that

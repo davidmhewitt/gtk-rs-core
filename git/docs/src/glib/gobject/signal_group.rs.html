@@ -311,9 +311,9 @@
 };
 
 <span class="kw">impl </span>SignalGroup {
-    <span class="doccomment">/// Connects `closure` to the signal `detailed_signal` on `property::SignalGroup::target`.
+    <span class="doccomment">/// Connects `closure` to the signal `detailed_signal` on [`target`][struct@crate::SignalGroup#target].
     ///
-    /// You cannot connect a signal handler after `property::SignalGroup::target` has been set.
+    /// You cannot connect a signal handler after [`target`][struct@crate::SignalGroup#target] has been set.
     /// ## `detailed_signal`
     /// a string of the form `signal-name` with optional `::signal-detail`
     /// ## `closure`
@@ -336,7 +336,7 @@
     <span class="doccomment">/// Connects `c_handler` to the signal `detailed_signal`
     /// on the target instance of `self`.
     ///
-    /// You cannot connect a signal handler after `property::SignalGroup::target` has been set.
+    /// You cannot connect a signal handler after [`target`][struct@crate::SignalGroup#target] has been set.
     /// ## `detailed_signal`
     /// a string of the form &quot;signal-name::detail&quot;
     /// ## `c_handler`
@@ -401,12 +401,12 @@
         )
     }
 
-    <span class="doccomment">/// This signal is emitted when `property::SignalGroup::target` is set to a new value
-    /// other than [`None`]. It is similar to `signal::Object::notify` on `target` except it
-    /// will not emit when `property::SignalGroup::target` is [`None`] and also allows for
+    <span class="doccomment">/// This signal is emitted when [`target`][struct@crate::SignalGroup#target] is set to a new value
+    /// other than [`None`]. It is similar to [`notify`][struct@crate::Object#notify] on `target` except it
+    /// will not emit when [`target`][struct@crate::SignalGroup#target] is [`None`] and also allows for
     /// receiving the [`Object`][crate::Object] without a data-race.
     /// ## `instance`
-    /// a [`Object`][crate::Object] containing the new value for `property::SignalGroup::target`
+    /// a [`Object`][crate::Object] containing the new value for [`target`][struct@crate::SignalGroup#target]
     </span><span class="attr">#[doc(alias = <span class="string">&quot;bind&quot;</span>)]
     </span><span class="kw">pub fn </span>connect_bind&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>Object) + Send + Sync + <span class="lifetime">&#39;static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,

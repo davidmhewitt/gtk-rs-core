@@ -364,11 +364,11 @@
 
     <span class="doccomment">/// Changes `self` by removing `n_removals` items and adding `n_additions`
     /// items to it. `additions` must contain `n_additions` items of type
-    /// `property::ListStore::item-type`. [`None`] is not permitted.
+    /// [`item-type`][struct@crate::ListStore#item-type]. [`None`] is not permitted.
     ///
     /// This function is more efficient than [`insert()`][Self::insert()] and
     /// [`remove()`][Self::remove()], because it only emits
-    /// `signal::ListModel::items-changed` once for the change.
+    /// [`items-changed`][struct@crate::ListModel#items-changed] once for the change.
     ///
     /// This function takes a ref on each item in `additions`.
     ///

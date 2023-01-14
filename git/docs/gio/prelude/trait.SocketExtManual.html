@@ -215,12 +215,12 @@ flags affect the overall receive operation. Flags affecting individual
 messages are returned in <code>GInputMessage.flags</code>.</p>
 <p>The other members of <a href="../struct.InputMessage.html" title="crate::InputMessage"><code>InputMessage</code></a> are treated as described in its
 documentation.</p>
-<p>If <code>property::Socket::blocking</code> is <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html" title="true"><code>true</code></a> the call will block until <code>num_messages</code> have
+<p>If <a href="../struct.Socket.html#blocking" title="crate::Socket"><code>blocking</code></a> is <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html" title="true"><code>true</code></a> the call will block until <code>num_messages</code> have
 been received, or the end of the stream is reached.</p>
-<p>If <code>property::Socket::blocking</code> is <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html" title="false"><code>false</code></a> the call will return up to <code>num_messages</code>
+<p>If <a href="../struct.Socket.html#blocking" title="crate::Socket"><code>blocking</code></a> is <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html" title="false"><code>false</code></a> the call will return up to <code>num_messages</code>
 without blocking, or <a href="../enum.IOErrorEnum.html#variant.WouldBlock" title="crate::IOErrorEnum::WouldBlock"><code>IOErrorEnum::WouldBlock</code></a> if no messages are queued in the
 operating system to be received.</p>
-<p>In blocking mode, if <code>property::Socket::timeout</code> is positive and is reached before any
+<p>In blocking mode, if <a href="../struct.Socket.html#timeout" title="crate::Socket"><code>timeout</code></a> is positive and is reached before any
 messages are received, <a href="../enum.IOErrorEnum.html#variant.TimedOut" title="crate::IOErrorEnum::TimedOut"><code>IOErrorEnum::TimedOut</code></a> is returned, otherwise up to
 <code>num_messages</code> are returned. (Note: This is effectively the
 behaviour of <code>MSG_WAITFORONE</code> with <code>recvmmsg()</code>.)</p>

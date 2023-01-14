@@ -181,9 +181,9 @@ and <a href="trait.AppLaunchContextExt.html#tymethod.unsetenv" title="crate::pre
 environment variable with the path of the launched desktop file and
 <code>GIO_LAUNCHED_DESKTOP_FILE_PID</code> to the process id of the launched
 process. This can be used to ignore <code>GIO_LAUNCHED_DESKTOP_FILE</code>,
-should it be inherited by further processes. The <code>DISPLAY</code> and
-<code>DESKTOP_STARTUP_ID</code> environment variables are also set, based
-on information provided in <code>context</code>.</p>
+should it be inherited by further processes. The <code>DISPLAY</code>,
+<code>XDG_ACTIVATION_TOKEN</code> and <code>DESKTOP_STARTUP_ID</code> environment
+variables are also set, based on information provided in <code>context</code>.</p>
 <h6 id="files"><a href="#files"><code>files</code></a></h6>
 <p>a <code>GList</code> of <a href="../struct.File.html" title="crate::File"><code>File</code></a> objects</p>
 <h6 id="context"><a href="#context"><code>context</code></a></h6>

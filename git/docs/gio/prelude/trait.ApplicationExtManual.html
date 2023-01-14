@@ -88,23 +88,23 @@ of Unicode commandline arguments).</p>
 <p><a href="../struct.Application.html" title="crate::Application"><code>Application</code></a> will attempt to parse the commandline arguments. You
 can add commandline flags to the list of recognised options by way of
 <code>g_application_add_main_option_entries()</code>. After this, the
-<code>signal::Application::handle-local-options</code> signal is emitted, from which the
+<a href="../struct.Application.html#handle-local-options" title="crate::Application"><code>handle-local-options</code></a> signal is emitted, from which the
 application can inspect the values of its <code>GOptionEntrys</code>.</p>
-<p><code>signal::Application::handle-local-options</code> is a good place to handle options
+<p><a href="../struct.Application.html#handle-local-options" title="crate::Application"><code>handle-local-options</code></a> is a good place to handle options
 such as <code>--version</code>, where an immediate reply from the local process is
 desired (instead of communicating with an already-running instance).
-A <code>signal::Application::handle-local-options</code> handler can stop further processing
+A <a href="../struct.Application.html#handle-local-options" title="crate::Application"><code>handle-local-options</code></a> handler can stop further processing
 by returning a non-negative value, which then becomes the exit status of
 the process.</p>
 <p>What happens next depends on the flags: if
 <a href="../struct.ApplicationFlags.html#associatedconstant.HANDLES_COMMAND_LINE" title="crate::ApplicationFlags::HANDLES_COMMAND_LINE"><code>ApplicationFlags::HANDLES_COMMAND_LINE</code></a> was specified then the remaining
 commandline arguments are sent to the primary instance, where a
-<code>signal::Application::command-line</code> signal is emitted. Otherwise, the
+<a href="../struct.Application.html#command-line" title="crate::Application"><code>command-line</code></a> signal is emitted. Otherwise, the
 remaining commandline arguments are assumed to be a list of files.
 If there are no files listed, the application is activated via the
-<code>signal::Application::activate</code> signal. If there are one or more files, and
+<a href="../struct.Application.html#activate" title="crate::Application"><code>activate</code></a> signal. If there are one or more files, and
 <a href="../struct.ApplicationFlags.html#associatedconstant.HANDLES_OPEN" title="crate::ApplicationFlags::HANDLES_OPEN"><code>ApplicationFlags::HANDLES_OPEN</code></a> was specified then the files are opened
-via the <code>signal::Application::open</code> signal.</p>
+via the <a href="../struct.Application.html#open" title="crate::Application"><code>open</code></a> signal.</p>
 <p>If you are interested in doing more complicated local handling of the
 commandline then you should implement your own <a href="../struct.Application.html" title="crate::Application"><code>Application</code></a> subclass
 and override <code>local_command_line()</code>. In this case, you most likely want

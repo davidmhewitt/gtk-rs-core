@@ -320,25 +320,25 @@
     /// [`Application`][crate::Application] will attempt to parse the commandline arguments. You
     /// can add commandline flags to the list of recognised options by way of
     /// `g_application_add_main_option_entries()`. After this, the
-    /// `signal::Application::handle-local-options` signal is emitted, from which the
+    /// [`handle-local-options`][struct@crate::Application#handle-local-options] signal is emitted, from which the
     /// application can inspect the values of its `GOptionEntrys`.
     ///
-    /// `signal::Application::handle-local-options` is a good place to handle options
+    /// [`handle-local-options`][struct@crate::Application#handle-local-options] is a good place to handle options
     /// such as `--version`, where an immediate reply from the local process is
     /// desired (instead of communicating with an already-running instance).
-    /// A `signal::Application::handle-local-options` handler can stop further processing
+    /// A [`handle-local-options`][struct@crate::Application#handle-local-options] handler can stop further processing
     /// by returning a non-negative value, which then becomes the exit status of
     /// the process.
     ///
     /// What happens next depends on the flags: if
     /// [`ApplicationFlags::HANDLES_COMMAND_LINE`][crate::ApplicationFlags::HANDLES_COMMAND_LINE] was specified then the remaining
     /// commandline arguments are sent to the primary instance, where a
-    /// `signal::Application::command-line` signal is emitted. Otherwise, the
+    /// [`command-line`][struct@crate::Application#command-line] signal is emitted. Otherwise, the
     /// remaining commandline arguments are assumed to be a list of files.
     /// If there are no files listed, the application is activated via the
-    /// `signal::Application::activate` signal. If there are one or more files, and
+    /// [`activate`][struct@crate::Application#activate] signal. If there are one or more files, and
     /// [`ApplicationFlags::HANDLES_OPEN`][crate::ApplicationFlags::HANDLES_OPEN] was specified then the files are opened
-    /// via the `signal::Application::open` signal.
+    /// via the [`open`][struct@crate::Application#open] signal.
     ///
     /// If you are interested in doing more complicated local handling of the
     /// commandline then you should implement your own [`Application`][crate::Application] subclass

@@ -173,7 +173,7 @@ also choose to provide a certificate from elsewhere. Alternatively the user may
 abort this certificate request, which will usually abort the TLS connection.</p>
 <p>If <a href="../enum.TlsInteractionResult.html#variant.Handled" title="crate::TlsInteractionResult::Handled"><code>TlsInteractionResult::Handled</code></a> is returned, then the <a href="../struct.TlsConnection.html" title="crate::TlsConnection"><code>TlsConnection</code></a>
 passed to <a href="trait.TlsInteractionExt.html#tymethod.request_certificate" title="Self::request_certificate()"><code>request_certificate()</code></a> will have had its
-<code>property::TlsConnection::certificate</code> filled in.</p>
+<a href="../struct.TlsConnection.html#certificate" title="crate::TlsConnection"><code>certificate</code></a> filled in.</p>
 <p>If the interaction is cancelled by the cancellation object, or by the
 user then <a href="../enum.TlsInteractionResult.html#variant.Failed" title="crate::TlsInteractionResult::Failed"><code>TlsInteractionResult::Failed</code></a> will be returned with an error that
 contains a <a href="../enum.IOErrorEnum.html#variant.Cancelled" title="crate::IOErrorEnum::Cancelled"><code>IOErrorEnum::Cancelled</code></a> error code. Certain implementations may

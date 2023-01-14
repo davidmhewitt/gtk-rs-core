@@ -642,6 +642,10 @@
 <a href="#569" id="569">569</a>
 <a href="#570" id="570">570</a>
 <a href="#571" id="571">571</a>
+<a href="#572" id="572">572</a>
+<a href="#573" id="573">573</a>
+<a href="#574" id="574">574</a>
+<a href="#575" id="575">575</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>std::{boxed::Box <span class="kw">as </span>Box_, num::NonZeroU32};
@@ -904,6 +908,10 @@
     /// constraint is violated, the export will fail and 0 will be
     /// returned (with `error` set accordingly).
     ///
+    /// Exporting menus with sections containing more than
+    /// `G_MENU_EXPORTER_MAX_SECTION_SIZE` items is not supported and results in
+    /// undefined behavior.
+    ///
     /// You can unexport the menu model using
     /// [`unexport_menu_model()`][Self::unexport_menu_model()] with the return value of
     /// this function.
@@ -1047,7 +1055,7 @@
         }
     }
 
-    <span class="doccomment">/// Subscribes to signals on `self` and invokes `callback` with a whenever
+    <span class="doccomment">/// Subscribes to signals on `self` and invokes `callback` whenever
     /// the signal is received. Note that `callback` will be invoked in the
     /// [thread-default main context][g-main-context-push-thread-default]
     /// of the thread you are calling this method from.

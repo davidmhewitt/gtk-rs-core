@@ -2102,14 +2102,14 @@
     /// The other members of [`InputMessage`][crate::InputMessage] are treated as described in its
     /// documentation.
     ///
-    /// If `property::Socket::blocking` is [`true`] the call will block until `num_messages` have
+    /// If [`blocking`][struct@crate::Socket#blocking] is [`true`] the call will block until `num_messages` have
     /// been received, or the end of the stream is reached.
     ///
-    /// If `property::Socket::blocking` is [`false`] the call will return up to `num_messages`
+    /// If [`blocking`][struct@crate::Socket#blocking] is [`false`] the call will return up to `num_messages`
     /// without blocking, or [`IOErrorEnum::WouldBlock`][crate::IOErrorEnum::WouldBlock] if no messages are queued in the
     /// operating system to be received.
     ///
-    /// In blocking mode, if `property::Socket::timeout` is positive and is reached before any
+    /// In blocking mode, if [`timeout`][struct@crate::Socket#timeout] is positive and is reached before any
     /// messages are received, [`IOErrorEnum::TimedOut`][crate::IOErrorEnum::TimedOut] is returned, otherwise up to
     /// `num_messages` are returned. (Note: This is effectively the
     /// behaviour of `MSG_WAITFORONE` with `recvmmsg()`.)

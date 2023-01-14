@@ -1824,9 +1824,9 @@
     /// environment variable with the path of the launched desktop file and
     /// `GIO_LAUNCHED_DESKTOP_FILE_PID` to the process id of the launched
     /// process. This can be used to ignore `GIO_LAUNCHED_DESKTOP_FILE`,
-    /// should it be inherited by further processes. The `DISPLAY` and
-    /// `DESKTOP_STARTUP_ID` environment variables are also set, based
-    /// on information provided in `context`.
+    /// should it be inherited by further processes. The `DISPLAY`,
+    /// `XDG_ACTIVATION_TOKEN` and `DESKTOP_STARTUP_ID` environment
+    /// variables are also set, based on information provided in `context`.
     /// ## `files`
     /// a `GList` of [`File`][crate::File] objects
     /// ## `context`
