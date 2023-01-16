@@ -168,40 +168,20 @@
 <a href="#95" id="95">95</a>
 <a href="#96" id="96">96</a>
 <a href="#97" id="97">97</a>
-<a href="#98" id="98">98</a>
-<a href="#99" id="99">99</a>
-<a href="#100" id="100">100</a>
-<a href="#101" id="101">101</a>
-<a href="#102" id="102">102</a>
-<a href="#103" id="103">103</a>
-<a href="#104" id="104">104</a>
-<a href="#105" id="105">105</a>
-<a href="#106" id="106">106</a>
-<a href="#107" id="107">107</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span>std::ptr;
-
-<span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
+</span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 
 <span class="attr">#[cfg(any(feature = <span class="string">&quot;v1_44&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
 </span><span class="kw">use </span><span class="kw">crate</span>::ShapeFlags;
 <span class="kw">use crate</span>::{Analysis, GlyphString, Item};
 
 <span class="attr">#[doc(alias = <span class="string">&quot;pango_reorder_items&quot;</span>)]
-</span><span class="kw">pub fn </span>reorder_items(logical_items: <span class="kw-2">&amp;</span>[<span class="kw-2">&amp;</span>Item]) -&gt; Vec&lt;Item&gt; {
+</span><span class="kw">pub fn </span>reorder_items(logical_items: <span class="kw-2">&amp;</span>glib::List&lt;Item&gt;) -&gt; glib::List&lt;Item&gt; {
     <span class="kw">unsafe </span>{
-        <span class="kw">let </span>stash_vec: Vec&lt;<span class="kw">_</span>&gt; = logical_items
-            .iter()
-            .rev()
-            .map(|v| v.to_glib_none())
-            .collect();
-        <span class="kw">let </span><span class="kw-2">mut </span>list: <span class="kw-2">*mut </span>glib::ffi::GList = ptr::null_mut();
-        <span class="kw">for </span>stash <span class="kw">in </span><span class="kw-2">&amp;</span>stash_vec {
-            list = glib::ffi::g_list_prepend(list, Ptr::to(stash.<span class="number">0</span>));
-        }
-
-        FromGlibPtrContainer::from_glib_full(ffi::pango_reorder_items(list))
+        FromGlibPtrContainer::from_glib_full(ffi::pango_reorder_items(
+            logical_items.as_ptr() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_
+        </span>))
     }
 }
 
