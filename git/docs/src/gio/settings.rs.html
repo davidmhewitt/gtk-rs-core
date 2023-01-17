@@ -350,9 +350,40 @@
 <a href="#277" id="277">277</a>
 <a href="#278" id="278">278</a>
 <a href="#279" id="279">279</a>
+<a href="#280" id="280">280</a>
+<a href="#281" id="281">281</a>
+<a href="#282" id="282">282</a>
+<a href="#283" id="283">283</a>
+<a href="#284" id="284">284</a>
+<a href="#285" id="285">285</a>
+<a href="#286" id="286">286</a>
+<a href="#287" id="287">287</a>
+<a href="#288" id="288">288</a>
+<a href="#289" id="289">289</a>
+<a href="#290" id="290">290</a>
+<a href="#291" id="291">291</a>
+<a href="#292" id="292">292</a>
+<a href="#293" id="293">293</a>
+<a href="#294" id="294">294</a>
+<a href="#295" id="295">295</a>
+<a href="#296" id="296">296</a>
+<a href="#297" id="297">297</a>
+<a href="#298" id="298">298</a>
+<a href="#299" id="299">299</a>
+<a href="#300" id="300">300</a>
+<a href="#301" id="301">301</a>
+<a href="#302" id="302">302</a>
+<a href="#303" id="303">303</a>
+<a href="#304" id="304">304</a>
+<a href="#305" id="305">305</a>
+<a href="#306" id="306">306</a>
+<a href="#307" id="307">307</a>
+<a href="#308" id="308">308</a>
+<a href="#309" id="309">309</a>
+<a href="#310" id="310">310</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>, variant::FromVariant, BoolError, Variant};
+</span><span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>, variant::FromVariant, BoolError, IntoStrV, StrV, Variant};
 
 <span class="kw">use crate</span>::{prelude::<span class="kw-2">*</span>, Settings, SettingsBindFlags};
 
@@ -522,6 +553,13 @@
 
     <span class="kw">fn </span>set(<span class="kw-2">&amp;</span><span class="self">self</span>, key: <span class="kw-2">&amp;</span>str, value: <span class="kw">impl </span>Into&lt;Variant&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), BoolError&gt;;
 
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_settings_get_strv&quot;</span>)]
+    #[doc(alias = <span class="string">&quot;get_strv&quot;</span>)]
+    </span><span class="kw">fn </span>strv(<span class="kw-2">&amp;</span><span class="self">self</span>, key: <span class="kw-2">&amp;</span>str) -&gt; StrV;
+
+    <span class="attr">#[doc(alias = <span class="string">&quot;g_settings_set_strv&quot;</span>)]
+    </span><span class="kw">fn </span>set_strv(<span class="kw-2">&amp;</span><span class="self">self</span>, key: <span class="kw-2">&amp;</span>str, value: <span class="kw">impl </span>IntoStrV) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::error::BoolError&gt;;
+
     <span class="attr">#[doc(alias = <span class="string">&quot;g_settings_bind&quot;</span>)]
     #[doc(alias = <span class="string">&quot;g_settings_bind_with_mapping&quot;</span>)]
     </span><span class="kw">fn </span>bind&lt;<span class="lifetime">&#39;a</span>, P: IsA&lt;glib::Object&gt;&gt;(
@@ -546,6 +584,30 @@
 
     <span class="kw">fn </span>set(<span class="kw-2">&amp;</span><span class="self">self</span>, key: <span class="kw-2">&amp;</span>str, value: <span class="kw">impl </span>Into&lt;Variant&gt;) -&gt; <span class="prelude-ty">Result</span>&lt;(), BoolError&gt; {
         <span class="self">self</span>.set_value(key, <span class="kw-2">&amp;</span>value.into())
+    }
+
+    <span class="kw">fn </span>strv(<span class="kw-2">&amp;</span><span class="self">self</span>, key: <span class="kw-2">&amp;</span>str) -&gt; StrV {
+        <span class="kw">unsafe </span>{
+            FromGlibPtrContainer::from_glib_full(ffi::g_settings_get_strv(
+                <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+                key.to_glib_none().<span class="number">0</span>,
+            ))
+        }
+    }
+
+    <span class="kw">fn </span>set_strv(<span class="kw-2">&amp;</span><span class="self">self</span>, key: <span class="kw-2">&amp;</span>str, value: <span class="kw">impl </span>IntoStrV) -&gt; <span class="prelude-ty">Result</span>&lt;(), glib::error::BoolError&gt; {
+        <span class="kw">unsafe </span>{
+            value.run_with_strv(|value| {
+                <span class="macro">glib::result_from_gboolean!</span>(
+                    ffi::g_settings_set_strv(
+                        <span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>,
+                        key.to_glib_none().<span class="number">0</span>,
+                        value.as_ptr() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
+                    ),
+                    <span class="string">&quot;Can&#39;t set readonly key&quot;
+                </span>)
+            })
+        }
     }
 
     <span class="kw">fn </span>bind&lt;<span class="lifetime">&#39;a</span>, P: IsA&lt;glib::Object&gt;&gt;(
