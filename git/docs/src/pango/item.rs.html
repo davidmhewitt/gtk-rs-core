@@ -92,30 +92,26 @@
 <a href="#19" id="19">19</a>
 <a href="#20" id="20">20</a>
 <a href="#21" id="21">21</a>
-<a href="#22" id="22">22</a>
-<a href="#23" id="23">23</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
-
-<span class="kw">use crate</span>::{Analysis, Item};
+</span><span class="kw">use crate</span>::{Analysis, Item};
 
 <span class="kw">impl </span>Item {
     <span class="kw">pub fn </span>offset(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
-        <span class="kw">unsafe </span>{ (<span class="kw-2">*</span><span class="self">self</span>.to_glib_none().<span class="number">0</span>).offset }
+        <span class="kw">unsafe </span>{ (<span class="kw-2">*</span><span class="self">self</span>.as_ptr()).offset }
     }
 
     <span class="kw">pub fn </span>length(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
-        <span class="kw">unsafe </span>{ (<span class="kw-2">*</span><span class="self">self</span>.to_glib_none().<span class="number">0</span>).length }
+        <span class="kw">unsafe </span>{ (<span class="kw-2">*</span><span class="self">self</span>.as_ptr()).length }
     }
 
     <span class="kw">pub fn </span>num_chars(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
-        <span class="kw">unsafe </span>{ (<span class="kw-2">*</span><span class="self">self</span>.to_glib_none().<span class="number">0</span>).num_chars }
+        <span class="kw">unsafe </span>{ (<span class="kw-2">*</span><span class="self">self</span>.as_ptr()).num_chars }
     }
 
     <span class="kw">pub fn </span>analysis(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>Analysis {
-        <span class="kw">unsafe </span>{ <span class="kw-2">&amp;*</span>(<span class="kw-2">&amp;</span>((<span class="kw-2">*</span><span class="self">self</span>.to_glib_none().<span class="number">0</span>).analysis) <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_ as </span><span class="kw-2">*const </span>Analysis) }
+        <span class="kw">unsafe </span>{ <span class="kw-2">&amp;*</span>(<span class="kw-2">&amp;</span>((<span class="kw-2">*</span><span class="self">self</span>.as_ptr()).analysis) <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_ as </span><span class="kw-2">*const </span>Analysis) }
     }
 }
 </code></pre></div>
-</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="pango" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (9e75dddf6 2023-01-15)" data-search-js="search-181581080540673f.js" data-settings-js="settings-a2afdefbb7c817f1.js" data-settings-css="settings-84508a86fe805444.css" ></div></body></html>
+</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="pango" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (4781233a7 2023-01-16)" data-search-js="search-181581080540673f.js" data-settings-js="settings-a2afdefbb7c817f1.js" data-settings-css="settings-84508a86fe805444.css" ></div></body></html>

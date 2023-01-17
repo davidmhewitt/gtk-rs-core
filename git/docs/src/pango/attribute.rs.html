@@ -262,15 +262,6 @@
 <a href="#189" id="189">189</a>
 <a href="#190" id="190">190</a>
 <a href="#191" id="191">191</a>
-<a href="#192" id="192">192</a>
-<a href="#193" id="193">193</a>
-<a href="#194" id="194">194</a>
-<a href="#195" id="195">195</a>
-<a href="#196" id="196">196</a>
-<a href="#197" id="197">197</a>
-<a href="#198" id="198">198</a>
-<a href="#199" id="199">199</a>
-<a href="#200" id="200">200</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
@@ -281,45 +272,37 @@
     <span class="attr">#[doc(alias = <span class="string">&quot;get_attr_class&quot;</span>)]
     #[inline]
     </span><span class="kw">pub fn </span>attr_class(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; AttrClass {
-        <span class="kw">unsafe </span>{ from_glib_none((<span class="kw-2">*</span><span class="self">self</span>.to_glib_none().<span class="number">0</span>).klass) }
+        <span class="kw">unsafe </span>{ from_glib_none((<span class="kw-2">*</span><span class="self">self</span>.as_ptr()).klass) }
     }
 
     <span class="attr">#[inline]
     </span><span class="kw">pub fn </span>type_(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; AttrType {
-        <span class="kw">unsafe </span>{ from_glib((<span class="kw-2">*</span>(<span class="kw-2">*</span><span class="self">self</span>.to_glib_none().<span class="number">0</span>).klass).type_) }
+        <span class="kw">unsafe </span>{ from_glib((<span class="kw-2">*</span>(<span class="kw-2">*</span><span class="self">self</span>.as_ptr()).klass).type_) }
     }
 
     <span class="attr">#[doc(alias = <span class="string">&quot;get_start_index&quot;</span>)]
     #[inline]
     </span><span class="kw">pub fn </span>start_index(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
-        <span class="kw">unsafe </span>{
-            <span class="kw">let </span>stash = <span class="self">self</span>.to_glib_none();
-            (<span class="kw-2">*</span>stash.<span class="number">0</span>).start_index
-        }
+        <span class="kw">unsafe </span>{ (<span class="kw-2">*</span><span class="self">self</span>.as_ptr()).start_index }
     }
 
     <span class="attr">#[doc(alias = <span class="string">&quot;get_end_index&quot;</span>)]
     #[inline]
     </span><span class="kw">pub fn </span>end_index(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; u32 {
-        <span class="kw">unsafe </span>{
-            <span class="kw">let </span>stash = <span class="self">self</span>.to_glib_none();
-            (<span class="kw-2">*</span>stash.<span class="number">0</span>).end_index
-        }
+        <span class="kw">unsafe </span>{ (<span class="kw-2">*</span><span class="self">self</span>.as_ptr()).end_index }
     }
 
     <span class="attr">#[inline]
     </span><span class="kw">pub fn </span>set_start_index(<span class="kw-2">&amp;mut </span><span class="self">self</span>, index: u32) {
         <span class="kw">unsafe </span>{
-            <span class="kw">let </span>stash = <span class="self">self</span>.to_glib_none_mut();
-            (<span class="kw-2">*</span>stash.<span class="number">0</span>).start_index = index;
+            (<span class="kw-2">*</span><span class="self">self</span>.as_ptr()).start_index = index;
         }
     }
 
     <span class="attr">#[inline]
     </span><span class="kw">pub fn </span>set_end_index(<span class="kw-2">&amp;mut </span><span class="self">self</span>, index: u32) {
         <span class="kw">unsafe </span>{
-            <span class="kw">let </span>stash = <span class="self">self</span>.to_glib_none_mut();
-            (<span class="kw-2">*</span>stash.<span class="number">0</span>).end_index = index;
+            (<span class="kw-2">*</span><span class="self">self</span>.as_ptr()).end_index = index;
         }
     }
 
@@ -393,9 +376,8 @@
             <span class="attr">#[doc(alias = <span class="string">&quot;pango_attribute_equal&quot;</span>)]
             </span><span class="kw">fn </span>equal&lt;<span class="lifetime">&#39;a</span>, T:  <span class="kw">crate</span>::attribute::IsAttribute&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, attr2: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>T) -&gt; bool {
                 <span class="kw">unsafe </span>{
-                    glib::translate::from_glib(ffi::pango_attribute_equal(
-                       glib::translate::ToGlibPtr::to_glib_none(<span class="self">self</span>).<span class="number">0 </span><span class="kw">as </span><span class="kw-2">*const </span>ffi::PangoAttribute,
-                       glib::translate::ToGlibPtr::to_glib_none(attr2.upcast_ref()).<span class="number">0 </span><span class="kw">as </span><span class="kw-2">*const </span>ffi::PangoAttribute,
+                    glib::translate::from_glib(ffi::pango_attribute_equal(<span class="self">self</span>.as_ptr() <span class="kw">as </span><span class="kw-2">*const </span>ffi::PangoAttribute,
+                       glib::translate::ToGlibPtr::to_glib_none(attr2.upcast_ref()).<span class="number">0</span>,
                     ))
                 }
             }
@@ -472,4 +454,4 @@
     }
 }
 </code></pre></div>
-</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="pango" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (9e75dddf6 2023-01-15)" data-search-js="search-181581080540673f.js" data-settings-js="settings-a2afdefbb7c817f1.js" data-settings-css="settings-84508a86fe805444.css" ></div></body></html>
+</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="pango" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (4781233a7 2023-01-16)" data-search-js="search-181581080540673f.js" data-settings-js="settings-a2afdefbb7c817f1.js" data-settings-css="settings-84508a86fe805444.css" ></div></body></html>

@@ -649,6 +649,22 @@
 <a href="#576" id="576">576</a>
 <a href="#577" id="577">577</a>
 <a href="#578" id="578">578</a>
+<a href="#579" id="579">579</a>
+<a href="#580" id="580">580</a>
+<a href="#581" id="581">581</a>
+<a href="#582" id="582">582</a>
+<a href="#583" id="583">583</a>
+<a href="#584" id="584">584</a>
+<a href="#585" id="585">585</a>
+<a href="#586" id="586">586</a>
+<a href="#587" id="587">587</a>
+<a href="#588" id="588">588</a>
+<a href="#589" id="589">589</a>
+<a href="#590" id="590">590</a>
+<a href="#591" id="591">591</a>
+<a href="#592" id="592">592</a>
+<a href="#593" id="593">593</a>
+<a href="#594" id="594">594</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -739,6 +755,22 @@
             </span><span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*const </span><span class="macro-nonterminal">$ffi_name </span>{
                 <span class="macro-nonterminal">$crate::translate::ToGlibPtr::to_glib_full</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.inner)
             }
+        }
+
+        <span class="attr">#[doc(hidden)]
+        </span><span class="kw">impl</span>&lt;<span class="lifetime">&#39;a </span>$(, $(<span class="macro-nonterminal">$generic </span>$(: <span class="macro-nonterminal">$bound </span>$(+ <span class="macro-nonterminal">$bound2</span>)<span class="kw-2">*</span>)<span class="question-mark">?</span>),+)<span class="question-mark">?</span>&gt; <span class="macro-nonterminal">$crate::translate::ToGlibPtr</span>&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span><span class="macro-nonterminal">$ffi_name</span>&gt; <span class="kw">for </span><span class="macro-nonterminal">$name </span>$(&lt;$(<span class="macro-nonterminal">$generic</span>),+&gt;)<span class="question-mark">? </span>{
+            <span class="kw">type </span>Storage = std::marker::PhantomData&lt;<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="macro-nonterminal">$crate::boxed::Boxed</span>&lt;<span class="macro-nonterminal">$ffi_name</span>, <span class="self">Self</span>&gt;&gt;;
+
+            <span class="attr">#[inline]
+            </span><span class="kw">fn </span>to_glib_none(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span><span class="self">self</span>) -&gt; <span class="macro-nonterminal">$crate::translate::Stash</span>&lt;<span class="lifetime">&#39;a</span>, <span class="kw-2">*mut </span><span class="macro-nonterminal">$ffi_name</span>, <span class="self">Self</span>&gt; {
+                <span class="kw">let </span>stash = <span class="macro-nonterminal">$crate::translate::ToGlibPtr::to_glib_none</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.inner);
+                <span class="macro-nonterminal">$crate::translate::Stash</span>(stash.<span class="number">0 </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>, stash.<span class="number">1</span>)
+            }
+
+            <span class="attr">#[inline]
+            </span><span class="kw">fn </span>to_glib_full(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">*mut </span><span class="macro-nonterminal">$ffi_name </span>{
+                <span class="macro-nonterminal">$crate::translate::ToGlibPtr::to_glib_full</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.inner) <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_
+            </span>}
         }
 
         <span class="attr">#[doc(hidden)]
@@ -1228,4 +1260,4 @@
     }
 }
 </code></pre></div>
-</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (9e75dddf6 2023-01-15)" data-search-js="search-181581080540673f.js" data-settings-js="settings-a2afdefbb7c817f1.js" data-settings-css="settings-84508a86fe805444.css" ></div></body></html>
+</section></main><div id="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (4781233a7 2023-01-16)" data-search-js="search-181581080540673f.js" data-settings-js="settings-a2afdefbb7c817f1.js" data-settings-css="settings-84508a86fe805444.css" ></div></body></html>
