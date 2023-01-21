@@ -2087,6 +2087,11 @@
 <a href="#2014" id="2014">2014</a>
 <a href="#2015" id="2015">2015</a>
 <a href="#2016" id="2016">2016</a>
+<a href="#2017" id="2017">2017</a>
+<a href="#2018" id="2018">2018</a>
+<a href="#2019" id="2019">2019</a>
+<a href="#2020" id="2020">2020</a>
+<a href="#2021" id="2021">2021</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>std::{char::CharTryFromError, convert::TryFrom, ffi::CStr};
@@ -2250,6 +2255,11 @@
                     .g_type,
             )
         }
+    }
+
+    <span class="attr">#[inline]
+    </span><span class="kw">pub fn </span>is&lt;T: StaticType&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool {
+        <span class="self">self</span>.type_().is_a(T::static_type())
     }
 
     <span class="attr">#[doc(alias = <span class="string">&quot;get_value_type&quot;</span>)]
