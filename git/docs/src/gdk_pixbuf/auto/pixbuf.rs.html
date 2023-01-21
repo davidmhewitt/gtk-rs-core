@@ -2306,7 +2306,7 @@
     /// A newly-created pixbuf
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_add_alpha&quot;</span>)]
     #[must_use]
-    </span><span class="kw">pub fn </span>add_alpha(<span class="kw-2">&amp;</span><span class="self">self</span>, substitute_color: bool, r: u8, g: u8, b: u8) -&gt; <span class="prelude-ty">Option</span>&lt;Pixbuf&gt; {
+    </span><span class="kw">pub fn </span>add_alpha(<span class="kw-2">&amp;</span><span class="self">self</span>, substitute_color: bool, r: u8, g: u8, b: u8) -&gt; Pixbuf {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::gdk_pixbuf_add_alpha(
                 <span class="self">self</span>.to_glib_none().<span class="number">0</span>,
@@ -2802,7 +2802,7 @@
     /// a new pixbuf
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_new_subpixbuf&quot;</span>)]
     #[must_use]
-    </span><span class="kw">pub fn </span>new_subpixbuf(<span class="kw-2">&amp;</span><span class="self">self</span>, src_x: i32, src_y: i32, width: i32, height: i32) -&gt; <span class="prelude-ty">Option</span>&lt;Pixbuf&gt; {
+    </span><span class="kw">pub fn </span>new_subpixbuf(<span class="kw-2">&amp;</span><span class="self">self</span>, src_x: i32, src_y: i32, width: i32, height: i32) -&gt; Pixbuf {
         <span class="kw">unsafe </span>{
             from_glib_full(ffi::gdk_pixbuf_new_subpixbuf(
                 <span class="self">self</span>.to_glib_none().<span class="number">0</span>,
@@ -2827,7 +2827,7 @@
     ///   incur a one-time copy of the pixel data for conversion into the
     ///   returned #GBytes.
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_read_pixel_bytes&quot;</span>)]
-    </span><span class="kw">pub fn </span>read_pixel_bytes(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;glib::Bytes&gt; {
+    </span><span class="kw">pub fn </span>read_pixel_bytes(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; glib::Bytes {
         <span class="kw">unsafe </span>{ from_glib_full(ffi::gdk_pixbuf_read_pixel_bytes(<span class="self">self</span>.to_glib_none().<span class="number">0</span>)) }
     }
 
