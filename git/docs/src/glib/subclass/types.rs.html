@@ -1161,6 +1161,8 @@
 <a href="#1088" id="1088">1088</a>
 <a href="#1089" id="1089">1089</a>
 <a href="#1090" id="1090">1090</a>
+<a href="#1091" id="1091">1091</a>
+<a href="#1092" id="1092">1092</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -1282,7 +1284,7 @@
 <span class="kw">impl</span>&lt;T: ObjectSubclassIs&lt;Subclass = S&gt;, S: ObjectSubclass&lt;Type = <span class="self">Self</span>&gt;&gt; ObjectSubclassIsExt <span class="kw">for </span>T {
     <span class="attr">#[inline]
     </span><span class="kw">fn </span>imp(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw-2">&amp;</span>T::Subclass {
-        T::Subclass::from_instance(<span class="self">self</span>)
+        T::Subclass::from_obj(<span class="self">self</span>)
     }
 }
 
@@ -1828,10 +1830,12 @@
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Returns the corresponding object instance.
     </span><span class="attr">#[doc(alias = <span class="string">&quot;get_instance&quot;</span>)]
+    #[deprecated = <span class="string">&quot;Use obj() instead&quot;</span>]
     </span><span class="kw">fn </span>instance(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="kw">crate</span>::BorrowedObject&lt;<span class="self">Self</span>::Type&gt;;
 
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Returns the implementation from an instance.
+    </span><span class="attr">#[deprecated = <span class="string">&quot;Use from_obj() instead&quot;</span>]
     </span><span class="kw">fn </span>from_instance(obj: <span class="kw-2">&amp;</span><span class="self">Self</span>::Type) -&gt; <span class="kw-2">&amp;</span><span class="self">Self</span>;
 
     <span class="comment">// rustdoc-stripper-ignore-next
