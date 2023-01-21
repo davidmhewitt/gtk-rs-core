@@ -338,7 +338,6 @@
 <a href="#265" id="265">265</a>
 <a href="#266" id="266">266</a>
 <a href="#267" id="267">267</a>
-<a href="#268" id="268">268</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="attr">#![allow(clippy::needless_doctest_main)]
@@ -441,10 +440,9 @@
 //!                 vec![
 //!                     glib::ParamSpecString::builder(&quot;name&quot;)
 //!                         .build(),
-//!                     glib::ParamSpecEnum::builder::&lt;Animal&gt;(&quot;animal&quot;, Animal::default())
+//!                     glib::ParamSpecEnum::builder::&lt;Animal&gt;(&quot;animal&quot;)
 //!                         .build(),
 //!                     glib::ParamSpecFlags::builder::&lt;MyFlags&gt;(&quot;flags&quot;)
-//!                         .default_value(MyFlags::default())
 //!                         .build(),
 //!                     glib::ParamSpecVariant::builder(&quot;variant&quot;, glib::VariantTy::ANY)
 //!                         .build(),
