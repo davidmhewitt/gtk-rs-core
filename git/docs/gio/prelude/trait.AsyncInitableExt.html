@@ -82,7 +82,7 @@ interface. This must be done before any real use of the object after
 initial construction. If the object also implements <a href="../struct.Initable.html" title="crate::Initable"><code>Initable</code></a> you can
 optionally call <a href="trait.InitableExt.html#tymethod.init" title="crate::prelude::InitableExt::init()"><code>InitableExt::init()</code></a> instead.</p>
 <p>This method is intended for language bindings. If writing in C,
-<a href="../struct.AsyncInitable.html#method.new_async" title="crate::AsyncInitable::new_async()"><code>AsyncInitable::new_async()</code></a> should typically be used instead.</p>
+[<code>AsyncInitable::new_async()</code>][crate::AsyncInitable::new_async()] should typically be used instead.</p>
 <p>When the initialization is finished, <code>callback</code> will be called. You can
 then call <code>g_async_initable_init_finish()</code> to get the result of the
 initialization.</p>

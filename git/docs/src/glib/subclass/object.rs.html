@@ -1128,7 +1128,7 @@
 
     <span class="attr">#[test]
     </span><span class="kw">fn </span>test_create_child_object() {
-        <span class="kw">let </span>obj: ChildObject = Object::new(<span class="kw-2">&amp;</span>[]);
+        <span class="kw">let </span>obj: ChildObject = Object::new_default();
 
         <span class="macro">assert_eq!</span>(<span class="kw-2">&amp;</span>obj, obj.imp().obj().as_ref());
     }

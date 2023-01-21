@@ -592,7 +592,7 @@
 
 <span class="kw">impl </span>ReadInputStream {
     <span class="kw">pub fn </span>new&lt;R: Read + Send + <span class="lifetime">&#39;static</span>&gt;(read: R) -&gt; ReadInputStream {
-        <span class="kw">let </span>obj: <span class="self">Self </span>= glib::Object::new(<span class="kw-2">&amp;</span>[]);
+        <span class="kw">let </span>obj: <span class="self">Self </span>= glib::Object::new_default();
 
         <span class="kw-2">*</span>obj.imp().read.borrow_mut() = <span class="prelude-val">Some</span>(imp::Reader::Read(AnyReader::new(read)));
 
@@ -600,7 +600,7 @@
     }
 
     <span class="kw">pub fn </span>new_seekable&lt;R: Read + Seek + Send + <span class="lifetime">&#39;static</span>&gt;(read: R) -&gt; ReadInputStream {
-        <span class="kw">let </span>obj: <span class="self">Self </span>= glib::Object::new(<span class="kw-2">&amp;</span>[]);
+        <span class="kw">let </span>obj: <span class="self">Self </span>= glib::Object::new_default();
 
         <span class="kw-2">*</span>obj.imp().read.borrow_mut() = <span class="prelude-val">Some</span>(imp::Reader::ReadSeek(AnyReader::new_seekable(read)));
 

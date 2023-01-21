@@ -354,7 +354,7 @@
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Creates a new `BoxedAnyObject` containing `value`
     </span><span class="kw">pub fn </span>new&lt;T: <span class="lifetime">&#39;static</span>&gt;(value: T) -&gt; <span class="self">Self </span>{
-        <span class="kw">let </span>obj: <span class="self">Self </span>= Object::new(<span class="kw-2">&amp;</span>[]);
+        <span class="kw">let </span>obj: <span class="self">Self </span>= Object::new_default();
         obj.replace(value);
         obj
     }

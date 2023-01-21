@@ -586,14 +586,14 @@
 
 <span class="kw">impl </span>WriteOutputStream {
     <span class="kw">pub fn </span>new&lt;W: Write + Send + Any + <span class="lifetime">&#39;static</span>&gt;(write: W) -&gt; WriteOutputStream {
-        <span class="kw">let </span>obj: <span class="self">Self </span>= glib::Object::new(<span class="kw-2">&amp;</span>[]);
+        <span class="kw">let </span>obj: <span class="self">Self </span>= glib::Object::new_default();
 
         <span class="kw-2">*</span>obj.imp().write.borrow_mut() = <span class="prelude-val">Some</span>(imp::Writer::Write(AnyWriter::new(write)));
         obj
     }
 
     <span class="kw">pub fn </span>new_seekable&lt;W: Write + Seek + Send + Any + <span class="lifetime">&#39;static</span>&gt;(write: W) -&gt; WriteOutputStream {
-        <span class="kw">let </span>obj: <span class="self">Self </span>= glib::Object::new(<span class="kw-2">&amp;</span>[]);
+        <span class="kw">let </span>obj: <span class="self">Self </span>= glib::Object::new_default();
 
         <span class="kw-2">*</span>obj.imp().write.borrow_mut() =
             <span class="prelude-val">Some</span>(imp::Writer::WriteSeek(AnyWriter::new_seekable(write)));
