@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/subclass/object.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>object.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-52c5db6f6f352e54.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-4743e13df3dfe8c4.css"><link rel="stylesheet" disabled href="../../../static.files/dark-0e1b889528bd466b.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-65289d5d067c7c66.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-3367e395607fafc1.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `glib/src/subclass/object.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>object.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-1f7d512b176f0f72.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Bold-124a1ca42af929b6.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-93196c7a1c3542a8.css" id="mainThemeStyle"><link rel="stylesheet" id="themeStyle" href="../../../static.files/light-4743e13df3dfe8c4.css"><link rel="stylesheet" disabled href="../../../static.files/dark-0e1b889528bd466b.css"><link rel="stylesheet" disabled href="../../../static.files/ayu-65289d5d067c7c66.css"><script id="default-settings" ></script><script src="../../../static.files/storage-d43fa987303ecbbb.js"></script><script defer src="../../../static.files/source-script-ea63cb6500f71309.js"></script><script defer src="../../../source-files.js"></script><script defer src="../../../static.files/main-3367e395607fafc1.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-13285aec31fa243e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -695,6 +695,8 @@
 <a href="#622" id="622">622</a>
 <a href="#623" id="623">623</a>
 <a href="#624" id="624">624</a>
+<a href="#625" id="625">625</a>
+<a href="#626" id="626">626</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -1091,7 +1093,7 @@
     <span class="attr">#[test]
     </span><span class="kw">fn </span>test_create() {
         <span class="kw">let </span>type_ = SimpleObject::static_type();
-        <span class="kw">let </span>obj = Object::with_type(type_, <span class="kw-2">&amp;</span>[]);
+        <span class="kw">let </span>obj = Object::new_default_with_type(type_);
 
         <span class="macro">assert!</span>(obj.type_().is_a(Dummy::static_type()));
 
@@ -1114,7 +1116,7 @@
     <span class="attr">#[test]
     </span><span class="kw">fn </span>test_properties() {
         <span class="kw">let </span>type_ = SimpleObject::static_type();
-        <span class="kw">let </span>obj = Object::with_type(type_, <span class="kw-2">&amp;</span>[]);
+        <span class="kw">let </span>obj = Object::new_default_with_type(type_);
 
         <span class="macro">assert!</span>(obj.type_().is_a(Dummy::static_type()));
 
@@ -1150,10 +1152,10 @@
 
     <span class="attr">#[test]
     </span><span class="kw">fn </span>test_set_property() {
-        <span class="kw">let </span>obj = Object::with_type(
-            SimpleObject::static_type(),
-            <span class="kw-2">&amp;</span>[(<span class="string">&quot;construct-name&quot;</span>, <span class="kw-2">&amp;</span><span class="string">&quot;meh&quot;</span>), (<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span><span class="string">&quot;initial&quot;</span>)],
-        );
+        <span class="kw">let </span>obj = Object::builder::&lt;SimpleObject&gt;()
+            .property(<span class="string">&quot;construct-name&quot;</span>, <span class="string">&quot;meh&quot;</span>)
+            .property(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;initial&quot;</span>)
+            .build();
 
         <span class="macro">assert_eq!</span>(
             obj.property::&lt;String&gt;(<span class="string">&quot;construct-name&quot;</span>),
@@ -1169,17 +1171,17 @@
         obj.set_property(<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span><span class="string">&quot;test&quot;</span>);
         <span class="macro">assert_eq!</span>(obj.property::&lt;String&gt;(<span class="string">&quot;name&quot;</span>), String::from(<span class="string">&quot;test&quot;</span>));
 
-        <span class="kw">let </span>child = Object::with_type(ChildObject::static_type(), <span class="kw-2">&amp;</span>[]);
+        <span class="kw">let </span>child = Object::new_default_with_type(ChildObject::static_type());
         obj.set_property(<span class="string">&quot;child&quot;</span>, <span class="kw-2">&amp;</span>child);
     }
 
     <span class="attr">#[test]
     #[should_panic = <span class="string">&quot;property &#39;construct-name&#39; of type &#39;SimpleObject&#39; is not writable&quot;</span>]
     </span><span class="kw">fn </span>test_set_property_non_writable() {
-        <span class="kw">let </span>obj = Object::with_type(
-            SimpleObject::static_type(),
-            <span class="kw-2">&amp;</span>[(<span class="string">&quot;construct-name&quot;</span>, <span class="kw-2">&amp;</span><span class="string">&quot;meh&quot;</span>), (<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span><span class="string">&quot;initial&quot;</span>)],
-        );
+        <span class="kw">let </span>obj = Object::builder::&lt;SimpleObject&gt;()
+            .property(<span class="string">&quot;construct-name&quot;</span>, <span class="string">&quot;meh&quot;</span>)
+            .property(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;initial&quot;</span>)
+            .build();
 
         obj.set_property(<span class="string">&quot;construct-name&quot;</span>, <span class="kw-2">&amp;</span><span class="string">&quot;test&quot;</span>);
     }
@@ -1187,10 +1189,10 @@
     <span class="attr">#[test]
     #[should_panic = <span class="string">&quot;property &#39;test&#39; of type &#39;SimpleObject&#39; not found&quot;</span>]
     </span><span class="kw">fn </span>test_set_property_not_found() {
-        <span class="kw">let </span>obj = Object::with_type(
-            SimpleObject::static_type(),
-            <span class="kw-2">&amp;</span>[(<span class="string">&quot;construct-name&quot;</span>, <span class="kw-2">&amp;</span><span class="string">&quot;meh&quot;</span>), (<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span><span class="string">&quot;initial&quot;</span>)],
-        );
+        <span class="kw">let </span>obj = Object::builder::&lt;SimpleObject&gt;()
+            .property(<span class="string">&quot;construct-name&quot;</span>, <span class="string">&quot;meh&quot;</span>)
+            .property(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;initial&quot;</span>)
+            .build();
 
         obj.set_property(<span class="string">&quot;test&quot;</span>, <span class="kw-2">&amp;</span><span class="bool-val">true</span>);
     }
@@ -1198,10 +1200,10 @@
     <span class="attr">#[test]
     #[should_panic = <span class="string">&quot;property &#39;constructed&#39; of type &#39;SimpleObject&#39; is not writable&quot;</span>]
     </span><span class="kw">fn </span>test_set_property_not_writable() {
-        <span class="kw">let </span>obj = Object::with_type(
-            SimpleObject::static_type(),
-            <span class="kw-2">&amp;</span>[(<span class="string">&quot;construct-name&quot;</span>, <span class="kw-2">&amp;</span><span class="string">&quot;meh&quot;</span>), (<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span><span class="string">&quot;initial&quot;</span>)],
-        );
+        <span class="kw">let </span>obj = Object::builder::&lt;SimpleObject&gt;()
+            .property(<span class="string">&quot;construct-name&quot;</span>, <span class="string">&quot;meh&quot;</span>)
+            .property(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;initial&quot;</span>)
+            .build();
 
         obj.set_property(<span class="string">&quot;constructed&quot;</span>, <span class="kw-2">&amp;</span><span class="bool-val">false</span>);
     }
@@ -1209,10 +1211,10 @@
     <span class="attr">#[test]
     #[should_panic = <span class="string">&quot;property &#39;name&#39; of type &#39;SimpleObject&#39; can&#39;t be set from the given type (expected: &#39;gchararray&#39;, got: &#39;gboolean&#39;)&quot;</span>]
     </span><span class="kw">fn </span>test_set_property_wrong_type() {
-        <span class="kw">let </span>obj = Object::with_type(
-            SimpleObject::static_type(),
-            <span class="kw-2">&amp;</span>[(<span class="string">&quot;construct-name&quot;</span>, <span class="kw-2">&amp;</span><span class="string">&quot;meh&quot;</span>), (<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span><span class="string">&quot;initial&quot;</span>)],
-        );
+        <span class="kw">let </span>obj = Object::builder::&lt;SimpleObject&gt;()
+            .property(<span class="string">&quot;construct-name&quot;</span>, <span class="string">&quot;meh&quot;</span>)
+            .property(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;initial&quot;</span>)
+            .build();
 
         obj.set_property(<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span><span class="bool-val">false</span>);
     }
@@ -1220,12 +1222,12 @@
     <span class="attr">#[test]
     #[should_panic = <span class="string">&quot;property &#39;child&#39; of type &#39;SimpleObject&#39; can&#39;t be set from the given type (expected: &#39;ChildObject&#39;, got: &#39;SimpleObject&#39;)&quot;</span>]
     </span><span class="kw">fn </span>test_set_property_wrong_type_2() {
-        <span class="kw">let </span>obj = Object::with_type(
-            SimpleObject::static_type(),
-            <span class="kw-2">&amp;</span>[(<span class="string">&quot;construct-name&quot;</span>, <span class="kw-2">&amp;</span><span class="string">&quot;meh&quot;</span>), (<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span><span class="string">&quot;initial&quot;</span>)],
-        );
+        <span class="kw">let </span>obj = Object::builder::&lt;SimpleObject&gt;()
+            .property(<span class="string">&quot;construct-name&quot;</span>, <span class="string">&quot;meh&quot;</span>)
+            .property(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;initial&quot;</span>)
+            .build();
 
-        <span class="kw">let </span>other_obj = Object::with_type(SimpleObject::static_type(), <span class="kw-2">&amp;</span>[]);
+        <span class="kw">let </span>other_obj = Object::new_default_with_type(SimpleObject::static_type());
 
         obj.set_property(<span class="string">&quot;child&quot;</span>, <span class="kw-2">&amp;</span>other_obj);
     }
@@ -1233,10 +1235,10 @@
     <span class="attr">#[test]
     #[should_panic = <span class="string">&quot;Can&#39;t set construct property &#39;construct-name&#39; for type &#39;SimpleObject&#39; twice&quot;</span>]
     </span><span class="kw">fn </span>test_construct_property_set_twice() {
-        Object::with_type(
-            SimpleObject::static_type(),
-            <span class="kw-2">&amp;</span>[(<span class="string">&quot;construct-name&quot;</span>, <span class="kw-2">&amp;</span><span class="string">&quot;meh&quot;</span>), (<span class="string">&quot;construct-name&quot;</span>, <span class="kw-2">&amp;</span><span class="string">&quot;meh2&quot;</span>)],
-        );
+        <span class="kw">let </span>_obj = Object::builder::&lt;SimpleObject&gt;()
+            .property(<span class="string">&quot;construct-name&quot;</span>, <span class="string">&quot;meh&quot;</span>)
+            .property(<span class="string">&quot;construct-name&quot;</span>, <span class="string">&quot;meh2&quot;</span>)
+            .build();
     }
 
     <span class="attr">#[test]
@@ -1246,8 +1248,9 @@
             Arc,
         };
 
-        <span class="kw">let </span>type_ = SimpleObject::static_type();
-        <span class="kw">let </span>obj = Object::with_type(type_, <span class="kw-2">&amp;</span>[(<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span><span class="string">&quot;old-name&quot;</span>)]);
+        <span class="kw">let </span>obj = Object::builder::&lt;SimpleObject&gt;()
+            .property(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;old-name&quot;</span>)
+            .build();
 
         <span class="kw">let </span>name_changed_triggered = Arc::new(AtomicBool::new(<span class="bool-val">false</span>));
         <span class="kw">let </span>name_changed_clone = name_changed_triggered.clone();
@@ -1273,7 +1276,7 @@
 
     <span class="attr">#[test]
     </span><span class="kw">fn </span>test_signal_return_expected_type() {
-        <span class="kw">let </span>obj = Object::with_type(SimpleObject::static_type(), <span class="kw-2">&amp;</span>[]);
+        <span class="kw">let </span>obj = Object::new_default_with_type(SimpleObject::static_type());
 
         obj.connect(<span class="string">&quot;create-string&quot;</span>, <span class="bool-val">false</span>, <span class="kw">move </span>|_args| {
             <span class="prelude-val">Some</span>(<span class="string">&quot;return value&quot;</span>.to_value())
@@ -1292,8 +1295,9 @@
             Arc,
         };
 
-        <span class="kw">let </span>type_ = SimpleObject::static_type();
-        <span class="kw">let </span>obj = Object::with_type(type_, <span class="kw-2">&amp;</span>[(<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span><span class="string">&quot;old-name&quot;</span>)]);
+        <span class="kw">let </span>obj = Object::builder::&lt;SimpleObject&gt;()
+            .property(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;old-name&quot;</span>)
+            .build();
 
         <span class="kw">let </span>name_changed_triggered = Arc::new(AtomicBool::new(<span class="bool-val">false</span>));
         <span class="kw">let </span>name_changed_clone = name_changed_triggered.clone();
@@ -1310,14 +1314,14 @@
 
     </span><span class="attr">#[test]
     </span><span class="kw">fn </span>test_signal_return_expected_object_type() {
-        <span class="kw">let </span>obj = Object::with_type(SimpleObject::static_type(), <span class="kw-2">&amp;</span>[]);
+        <span class="kw">let </span>obj = Object::new_default_with_type(SimpleObject::static_type());
 
         obj.connect(<span class="string">&quot;create-child-object&quot;</span>, <span class="bool-val">false</span>, <span class="kw">move </span>|_args| {
-            <span class="prelude-val">Some</span>(Object::with_type(ChildObject::static_type(), <span class="kw-2">&amp;</span>[]).to_value())
+            <span class="prelude-val">Some</span>(Object::new_default_with_type(ChildObject::static_type()).to_value())
         });
         <span class="kw">let </span>value: glib::Object = obj.emit_by_name(<span class="string">&quot;create-child-object&quot;</span>, <span class="kw-2">&amp;</span>[]);
         <span class="macro">assert!</span>(value.type_().is_a(ChildObject::static_type()));
     }
 }
 </code></pre></div>
-</section></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (5ce39f42b 2023-01-20)" data-search-js="search-98d53477a794af0b.js" data-settings-js="settings-c3c521c753752a1a.js" data-settings-css="settings-ab1d4ae2ec52020e.css" ></div></body></html>
+</section></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="glib" data-themes="" data-resource-suffix="" data-rustdoc-version="1.68.0-nightly (52372f9c7 2023-01-21)" data-search-js="search-98d53477a794af0b.js" data-settings-js="settings-c3c521c753752a1a.js" data-settings-css="settings-08ddfdda51b8ee2e.css" ></div></body></html>
