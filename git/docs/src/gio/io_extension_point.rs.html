@@ -312,11 +312,13 @@
 <a href="#239" id="239">239</a>
 <a href="#240" id="240">240</a>
 <a href="#241" id="241">241</a>
+<a href="#242" id="242">242</a>
+<a href="#243" id="243">243</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>std::{fmt, marker::PhantomData, ptr};
 
-<span class="kw">use </span>glib::{translate::<span class="kw-2">*</span>, Type};
+<span class="kw">use </span>glib::{translate::<span class="kw-2">*</span>, GString, IntoGStr, Type};
 
 <span class="kw">use </span><span class="kw">crate</span>::IOExtension;
 
@@ -324,13 +326,13 @@
 </span><span class="doccomment">/// Builder for extension points.
 </span><span class="attr">#[derive(Debug)]
 #[must_use = <span class="string">&quot;The builder must be built to be used&quot;</span>]
-</span><span class="kw">pub struct </span>IOExtensionPointBuilder&lt;<span class="lifetime">&#39;a</span>&gt; {
-    name: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str,
+</span><span class="kw">pub struct </span>IOExtensionPointBuilder {
+    name: GString,
     required_type: <span class="prelude-ty">Option</span>&lt;Type&gt;,
 }
 
-<span class="kw">impl</span>&lt;<span class="lifetime">&#39;a</span>&gt; IOExtensionPointBuilder&lt;<span class="lifetime">&#39;a</span>&gt; {
-    <span class="kw">fn </span>new(name: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a </span>str) -&gt; <span class="self">Self </span>{
+<span class="kw">impl </span>IOExtensionPointBuilder {
+    <span class="kw">fn </span>new(name: GString) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             name,
             required_type: <span class="prelude-val">None</span>,
@@ -397,8 +399,8 @@
     <span class="comment">// rustdoc-stripper-ignore-next
     </span><span class="doccomment">/// Create a new builder for an extension point.
     </span><span class="attr">#[doc(alias = <span class="string">&quot;g_io_extension_point_register&quot;</span>)]
-    </span><span class="kw">pub fn </span>builder(name: <span class="kw-2">&amp;</span>str) -&gt; IOExtensionPointBuilder {
-        IOExtensionPointBuilder::new(name)
+    </span><span class="kw">pub fn </span>builder(name: <span class="kw">impl </span>Into&lt;GString&gt;) -&gt; IOExtensionPointBuilder {
+        IOExtensionPointBuilder::new(name.into())
     }
 
     <span class="doccomment">/// Looks up an existing extension point.
@@ -410,11 +412,11 @@
     /// the [`IOExtensionPoint`][crate::IOExtensionPoint], or [`None`] if there
     ///  is no registered extension point with the given name.
     </span><span class="attr">#[doc(alias = <span class="string">&quot;g_io_extension_point_lookup&quot;</span>)]
-    </span><span class="kw">pub fn </span>lookup(name: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="self">Self</span>&gt; {
-        <span class="kw">unsafe </span>{
+    </span><span class="kw">pub fn </span>lookup(name: <span class="kw">impl </span>IntoGStr) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="self">Self</span>&gt; {
+        name.run_with_gstr(|name| <span class="kw">unsafe </span>{
             <span class="kw">let </span>ep = ffi::g_io_extension_point_lookup(name.to_glib_none().<span class="number">0</span>);
             from_glib_none(ep)
-        }
+        })
     }
 
     <span class="doccomment">/// Gets a list of all extensions that implement this extension point.
@@ -448,14 +450,14 @@
     /// the [`IOExtension`][crate::IOExtension] for `self` that has the
     ///  given name, or [`None`] if there is no extension with that name
     </span><span class="attr">#[doc(alias = <span class="string">&quot;g_io_extension_point_get_extension_by_name&quot;</span>)]
-    </span><span class="kw">pub fn </span>extension_by_name(<span class="kw-2">&amp;</span><span class="self">self</span>, name: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;IOExtension&gt; {
-        <span class="kw">unsafe </span>{
+    </span><span class="kw">pub fn </span>extension_by_name(<span class="kw-2">&amp;</span><span class="self">self</span>, name: <span class="kw">impl </span>IntoGStr) -&gt; <span class="prelude-ty">Option</span>&lt;IOExtension&gt; {
+        name.run_with_gstr(|name| <span class="kw">unsafe </span>{
             <span class="kw">let </span>e = ffi::g_io_extension_point_get_extension_by_name(
                 <span class="self">self</span>.<span class="number">0</span>.as_ptr(),
                 name.to_glib_none().<span class="number">0</span>,
             );
             from_glib_none(e)
-        }
+        })
     }
 
     <span class="doccomment">/// Gets the required type for `self`.
@@ -488,20 +490,22 @@
     /// a [`IOExtension`][crate::IOExtension] object for `GType`
     </span><span class="attr">#[doc(alias = <span class="string">&quot;g_io_extension_point_implement&quot;</span>)]
     </span><span class="kw">pub fn </span>implement(
-        extension_point_name: <span class="kw-2">&amp;</span>str,
+        extension_point_name: <span class="kw">impl </span>IntoGStr,
         type_: Type,
-        extension_name: <span class="kw-2">&amp;</span>str,
+        extension_name: <span class="kw">impl </span>IntoGStr,
         priority: i32,
     ) -&gt; <span class="prelude-ty">Option</span>&lt;IOExtension&gt; {
-        <span class="kw">unsafe </span>{
-            <span class="kw">let </span>e = ffi::g_io_extension_point_implement(
-                extension_point_name.to_glib_none().<span class="number">0</span>,
-                type_.into_glib(),
-                extension_name.to_glib_none().<span class="number">0</span>,
-                priority,
-            );
-            from_glib_none(e)
-        }
+        extension_point_name.run_with_gstr(|extension_point_name| {
+            extension_name.run_with_gstr(|extension_name| <span class="kw">unsafe </span>{
+                <span class="kw">let </span>e = ffi::g_io_extension_point_implement(
+                    extension_point_name.to_glib_none().<span class="number">0</span>,
+                    type_.into_glib(),
+                    extension_name.to_glib_none().<span class="number">0</span>,
+                    priority,
+                );
+                from_glib_none(e)
+            })
+        })
     }
 }
 
