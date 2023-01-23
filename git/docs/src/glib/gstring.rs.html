@@ -2243,6 +2243,42 @@
 <a href="#2170" id="2170">2170</a>
 <a href="#2171" id="2171">2171</a>
 <a href="#2172" id="2172">2172</a>
+<a href="#2173" id="2173">2173</a>
+<a href="#2174" id="2174">2174</a>
+<a href="#2175" id="2175">2175</a>
+<a href="#2176" id="2176">2176</a>
+<a href="#2177" id="2177">2177</a>
+<a href="#2178" id="2178">2178</a>
+<a href="#2179" id="2179">2179</a>
+<a href="#2180" id="2180">2180</a>
+<a href="#2181" id="2181">2181</a>
+<a href="#2182" id="2182">2182</a>
+<a href="#2183" id="2183">2183</a>
+<a href="#2184" id="2184">2184</a>
+<a href="#2185" id="2185">2185</a>
+<a href="#2186" id="2186">2186</a>
+<a href="#2187" id="2187">2187</a>
+<a href="#2188" id="2188">2188</a>
+<a href="#2189" id="2189">2189</a>
+<a href="#2190" id="2190">2190</a>
+<a href="#2191" id="2191">2191</a>
+<a href="#2192" id="2192">2192</a>
+<a href="#2193" id="2193">2193</a>
+<a href="#2194" id="2194">2194</a>
+<a href="#2195" id="2195">2195</a>
+<a href="#2196" id="2196">2196</a>
+<a href="#2197" id="2197">2197</a>
+<a href="#2198" id="2198">2198</a>
+<a href="#2199" id="2199">2199</a>
+<a href="#2200" id="2200">2200</a>
+<a href="#2201" id="2201">2201</a>
+<a href="#2202" id="2202">2202</a>
+<a href="#2203" id="2203">2203</a>
+<a href="#2204" id="2204">2204</a>
+<a href="#2205" id="2205">2205</a>
+<a href="#2206" id="2206">2206</a>
+<a href="#2207" id="2207">2207</a>
+<a href="#2208" id="2208">2208</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>std::{
@@ -2265,8 +2301,7 @@
 ///
 /// This type is very similar to [`std::ffi::CStr`], but with one added constraint: the string
 /// must also be valid UTF-8.
-</span><span class="attr">#[derive(Debug, Eq, Hash, Ord, PartialEq, PartialOrd)]
-#[repr(transparent)]
+</span><span class="attr">#[repr(transparent)]
 </span><span class="kw">pub struct </span>GStr(str);
 
 <span class="kw">impl </span>GStr {
@@ -2576,6 +2611,43 @@
     (<span class="macro-nonterminal">$s</span>:literal) =&gt; {
         <span class="kw">unsafe </span>{ <span class="macro-nonterminal">$crate::GStr::from_utf8_with_nul_unchecked</span>(<span class="macro-nonterminal">$</span><span class="macro">crate::cstr_bytes!</span>(<span class="macro-nonterminal">$s</span>)) }
     };
+}
+
+<span class="kw">impl </span>fmt::Debug <span class="kw">for </span>GStr {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>fmt(<span class="kw-2">&amp;</span><span class="self">self</span>, f: <span class="kw-2">&amp;mut </span>fmt::Formatter&lt;<span class="lifetime">&#39;_</span>&gt;) -&gt; fmt::Result {
+        &lt;<span class="kw-2">&amp;</span>str <span class="kw">as </span>fmt::Debug&gt;::fmt(<span class="kw-2">&amp;</span><span class="self">self</span>.as_str(), f)
+    }
+}
+
+<span class="kw">impl </span>PartialEq <span class="kw">for </span>GStr {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>eq(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; bool {
+        <span class="self">self</span>.as_str().eq(other.as_str())
+    }
+}
+
+<span class="kw">impl </span>Eq <span class="kw">for </span>GStr {}
+
+<span class="kw">impl </span>PartialOrd <span class="kw">for </span>GStr {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>partial_cmp(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Ordering&gt; {
+        <span class="self">self</span>.as_str().partial_cmp(other.as_str())
+    }
+}
+
+<span class="kw">impl </span>Ord <span class="kw">for </span>GStr {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>cmp(<span class="kw-2">&amp;</span><span class="self">self</span>, other: <span class="kw-2">&amp;</span><span class="self">Self</span>) -&gt; Ordering {
+        <span class="self">self</span>.as_str().cmp(other.as_str())
+    }
+}
+
+<span class="kw">impl </span>hash::Hash <span class="kw">for </span>GStr {
+    <span class="attr">#[inline]
+    </span><span class="kw">fn </span>hash&lt;H: hash::Hasher&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, state: <span class="kw-2">&amp;mut </span>H) {
+        <span class="self">self</span>.as_str().hash(state)
+    }
 }
 
 <span class="kw">impl </span>Default <span class="kw">for </span><span class="kw-2">&amp;</span>GStr {
