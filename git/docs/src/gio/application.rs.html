@@ -293,6 +293,7 @@
 <a href="#220" id="220">220</a>
 <a href="#221" id="221">221</a>
 <a href="#222" id="222">222</a>
+<a href="#223" id="223">223</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>std::{boxed::Box <span class="kw">as </span>Box_, mem::transmute};
@@ -301,7 +302,7 @@
     prelude::<span class="kw-2">*</span>,
     signal::{connect_raw, SignalHandlerId},
     translate::<span class="kw-2">*</span>,
-    GString,
+    ExitCode, GString,
 };
 
 <span class="kw">use crate</span>::{Application, File};
@@ -390,9 +391,9 @@
     ///
     /// the exit status
     </span><span class="attr">#[doc(alias = <span class="string">&quot;g_application_run&quot;</span>)]
-    </span><span class="kw">fn </span>run(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32;
+    </span><span class="kw">fn </span>run(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; ExitCode;
     <span class="attr">#[doc(alias = <span class="string">&quot;g_application_run&quot;</span>)]
-    </span><span class="kw">fn </span>run_with_args&lt;S: AsRef&lt;str&gt;&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, args: <span class="kw-2">&amp;</span>[S]) -&gt; i32;
+    </span><span class="kw">fn </span>run_with_args&lt;S: AsRef&lt;str&gt;&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, args: <span class="kw-2">&amp;</span>[S]) -&gt; ExitCode;
     <span class="doccomment">/// The ::open signal is emitted on the primary instance when there are
     /// files to open. See [`ApplicationExt::open()`][crate::prelude::ApplicationExt::open()] for more information.
     /// ## `files`
@@ -428,16 +429,17 @@
 }
 
 <span class="kw">impl</span>&lt;O: IsA&lt;Application&gt;&gt; ApplicationExtManual <span class="kw">for </span>O {
-    <span class="kw">fn </span>run(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
+    <span class="kw">fn </span>run(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; ExitCode {
         <span class="self">self</span>.run_with_args(<span class="kw-2">&amp;</span>std::env::args().collect::&lt;Vec&lt;<span class="kw">_</span>&gt;&gt;())
     }
 
-    <span class="kw">fn </span>run_with_args&lt;S: AsRef&lt;str&gt;&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, args: <span class="kw-2">&amp;</span>[S]) -&gt; i32 {
+    <span class="kw">fn </span>run_with_args&lt;S: AsRef&lt;str&gt;&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, args: <span class="kw-2">&amp;</span>[S]) -&gt; ExitCode {
         <span class="kw">let </span>argv: Vec&lt;<span class="kw-2">&amp;</span>str&gt; = args.iter().map(|a| a.as_ref()).collect();
         <span class="kw">let </span>argc = argv.len() <span class="kw">as </span>i32;
-        <span class="kw">unsafe </span>{
+        <span class="kw">let </span>exit_code = <span class="kw">unsafe </span>{
             ffi::g_application_run(<span class="self">self</span>.as_ref().to_glib_none().<span class="number">0</span>, argc, argv.to_glib_none().<span class="number">0</span>)
-        }
+        };
+        ExitCode::from(exit_code)
     }
 
     <span class="kw">fn </span>connect_open&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <span class="kw-2">&amp;</span>[File], <span class="kw-2">&amp;</span>str) + <span class="lifetime">&#39;static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>, f: F) -&gt; SignalHandlerId {

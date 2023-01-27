@@ -545,11 +545,13 @@
 <a href="#472" id="472">472</a>
 <a href="#473" id="473">473</a>
 <a href="#474" id="474">474</a>
+<a href="#475" id="475">475</a>
+<a href="#476" id="476">476</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>std::{ffi::OsString, fmt, ops::Deref, ptr};
 
-<span class="kw">use </span>glib::{subclass::prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>, Cast, VariantDict};
+<span class="kw">use </span>glib::{subclass::prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>, Cast, ExitCode, VariantDict};
 <span class="kw">use </span>libc::{c_char, c_int, c_void};
 
 <span class="kw">use </span><span class="kw">crate</span>::Application;
@@ -624,11 +626,11 @@
         <span class="self">self</span>.parent_before_emit(platform_data)
     }
 
-    <span class="kw">fn </span>command_line(<span class="kw-2">&amp;</span><span class="self">self</span>, command_line: <span class="kw-2">&amp;</span><span class="kw">crate</span>::ApplicationCommandLine) -&gt; i32 {
+    <span class="kw">fn </span>command_line(<span class="kw-2">&amp;</span><span class="self">self</span>, command_line: <span class="kw-2">&amp;</span><span class="kw">crate</span>::ApplicationCommandLine) -&gt; ExitCode {
         <span class="self">self</span>.parent_command_line(command_line)
     }
 
-    <span class="kw">fn </span>local_command_line(<span class="kw-2">&amp;</span><span class="self">self</span>, arguments: <span class="kw-2">&amp;mut </span>ArgumentList) -&gt; <span class="prelude-ty">Option</span>&lt;i32&gt; {
+    <span class="kw">fn </span>local_command_line(<span class="kw-2">&amp;</span><span class="self">self</span>, arguments: <span class="kw-2">&amp;mut </span>ArgumentList) -&gt; <span class="prelude-ty">Option</span>&lt;ExitCode&gt; {
         <span class="self">self</span>.parent_local_command_line(arguments)
     }
 
@@ -652,7 +654,7 @@
         <span class="self">self</span>.parent_startup()
     }
 
-    <span class="kw">fn </span>handle_local_options(<span class="kw-2">&amp;</span><span class="self">self</span>, options: <span class="kw-2">&amp;</span>VariantDict) -&gt; i32 {
+    <span class="kw">fn </span>handle_local_options(<span class="kw-2">&amp;</span><span class="self">self</span>, options: <span class="kw-2">&amp;</span>VariantDict) -&gt; ExitCode {
         <span class="self">self</span>.parent_handle_local_options(options)
     }
 }
@@ -661,14 +663,14 @@
     <span class="kw">fn </span>parent_activate(<span class="kw-2">&amp;</span><span class="self">self</span>);
     <span class="kw">fn </span>parent_after_emit(<span class="kw-2">&amp;</span><span class="self">self</span>, platform_data: <span class="kw-2">&amp;</span>glib::Variant);
     <span class="kw">fn </span>parent_before_emit(<span class="kw-2">&amp;</span><span class="self">self</span>, platform_data: <span class="kw-2">&amp;</span>glib::Variant);
-    <span class="kw">fn </span>parent_command_line(<span class="kw-2">&amp;</span><span class="self">self</span>, command_line: <span class="kw-2">&amp;</span><span class="kw">crate</span>::ApplicationCommandLine) -&gt; i32;
-    <span class="kw">fn </span>parent_local_command_line(<span class="kw-2">&amp;</span><span class="self">self</span>, arguments: <span class="kw-2">&amp;mut </span>ArgumentList) -&gt; <span class="prelude-ty">Option</span>&lt;i32&gt;;
+    <span class="kw">fn </span>parent_command_line(<span class="kw-2">&amp;</span><span class="self">self</span>, command_line: <span class="kw-2">&amp;</span><span class="kw">crate</span>::ApplicationCommandLine) -&gt; ExitCode;
+    <span class="kw">fn </span>parent_local_command_line(<span class="kw-2">&amp;</span><span class="self">self</span>, arguments: <span class="kw-2">&amp;mut </span>ArgumentList) -&gt; <span class="prelude-ty">Option</span>&lt;ExitCode&gt;;
     <span class="kw">fn </span>parent_open(<span class="kw-2">&amp;</span><span class="self">self</span>, files: <span class="kw-2">&amp;</span>[<span class="kw">crate</span>::File], hint: <span class="kw-2">&amp;</span>str);
     <span class="kw">fn </span>parent_quit_mainloop(<span class="kw-2">&amp;</span><span class="self">self</span>);
     <span class="kw">fn </span>parent_run_mainloop(<span class="kw-2">&amp;</span><span class="self">self</span>);
     <span class="kw">fn </span>parent_shutdown(<span class="kw-2">&amp;</span><span class="self">self</span>);
     <span class="kw">fn </span>parent_startup(<span class="kw-2">&amp;</span><span class="self">self</span>);
-    <span class="kw">fn </span>parent_handle_local_options(<span class="kw-2">&amp;</span><span class="self">self</span>, options: <span class="kw-2">&amp;</span>VariantDict) -&gt; i32;
+    <span class="kw">fn </span>parent_handle_local_options(<span class="kw-2">&amp;</span><span class="self">self</span>, options: <span class="kw-2">&amp;</span>VariantDict) -&gt; ExitCode;
 }
 
 <span class="kw">impl</span>&lt;T: ApplicationImpl&gt; ApplicationImplExt <span class="kw">for </span>T {
@@ -711,7 +713,7 @@
         }
     }
 
-    <span class="kw">fn </span>parent_command_line(<span class="kw-2">&amp;</span><span class="self">self</span>, command_line: <span class="kw-2">&amp;</span><span class="kw">crate</span>::ApplicationCommandLine) -&gt; i32 {
+    <span class="kw">fn </span>parent_command_line(<span class="kw-2">&amp;</span><span class="self">self</span>, command_line: <span class="kw-2">&amp;</span><span class="kw">crate</span>::ApplicationCommandLine) -&gt; ExitCode {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GApplicationClass;
@@ -722,10 +724,11 @@
                 <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Application&gt;().to_glib_none().<span class="number">0</span>,
                 command_line.to_glib_none().<span class="number">0</span>,
             )
+            .into()
         }
     }
 
-    <span class="kw">fn </span>parent_local_command_line(<span class="kw-2">&amp;</span><span class="self">self</span>, arguments: <span class="kw-2">&amp;mut </span>ArgumentList) -&gt; <span class="prelude-ty">Option</span>&lt;i32&gt; {
+    <span class="kw">fn </span>parent_local_command_line(<span class="kw-2">&amp;</span><span class="self">self</span>, arguments: <span class="kw-2">&amp;mut </span>ArgumentList) -&gt; <span class="prelude-ty">Option</span>&lt;ExitCode&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GApplicationClass;
@@ -743,7 +746,7 @@
 
             <span class="kw">match </span>res {
                 glib::ffi::GFALSE =&gt; <span class="prelude-val">None</span>,
-                <span class="kw">_ </span>=&gt; <span class="prelude-val">Some</span>(exit_status),
+                <span class="kw">_ </span>=&gt; <span class="prelude-val">Some</span>(exit_status.into()),
             }
         }
     }
@@ -808,7 +811,7 @@
         }
     }
 
-    <span class="kw">fn </span>parent_handle_local_options(<span class="kw-2">&amp;</span><span class="self">self</span>, options: <span class="kw-2">&amp;</span>VariantDict) -&gt; i32 {
+    <span class="kw">fn </span>parent_handle_local_options(<span class="kw-2">&amp;</span><span class="self">self</span>, options: <span class="kw-2">&amp;</span>VariantDict) -&gt; ExitCode {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GApplicationClass;
@@ -817,10 +820,11 @@
                     <span class="self">self</span>.obj().unsafe_cast_ref::&lt;Application&gt;().to_glib_none().<span class="number">0</span>,
                     options.to_glib_none().<span class="number">0</span>,
                 )
+                .into()
             } <span class="kw">else </span>{
                 <span class="comment">// Continue default handling
-                </span>-<span class="number">1
-            </span>}
+                </span>ExitCode::from(-<span class="number">1</span>)
+            }
         }
     }
 }
@@ -876,7 +880,7 @@
     <span class="kw">let </span>instance = <span class="kw-2">&amp;*</span>(ptr <span class="kw">as </span><span class="kw-2">*mut </span>T::Instance);
     <span class="kw">let </span>imp = instance.imp();
 
-    imp.command_line(<span class="kw-2">&amp;</span>from_glib_borrow(command_line))
+    imp.command_line(<span class="kw-2">&amp;</span>from_glib_borrow(command_line)).into()
 }
 <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>application_local_command_line&lt;T: ApplicationImpl&gt;(
     ptr: <span class="kw-2">*mut </span>ffi::GApplication,
@@ -887,7 +891,7 @@
     <span class="kw">let </span>imp = instance.imp();
 
     <span class="kw">let </span><span class="kw-2">mut </span>args = ArgumentList::new(arguments);
-    <span class="kw">let </span>res = imp.local_command_line(<span class="kw-2">&amp;mut </span>args);
+    <span class="kw">let </span>res = imp.local_command_line(<span class="kw-2">&amp;mut </span>args).map(i32::from);
     args.refresh();
 
     <span class="kw">match </span>res {
@@ -942,7 +946,7 @@
     <span class="kw">let </span>instance = <span class="kw-2">&amp;*</span>(ptr <span class="kw">as </span><span class="kw-2">*mut </span>T::Instance);
     <span class="kw">let </span>imp = instance.imp();
 
-    imp.handle_local_options(<span class="kw-2">&amp;</span>from_glib_borrow(options))
+    imp.handle_local_options(<span class="kw-2">&amp;</span>from_glib_borrow(options)).into()
 }
 
 <span class="attr">#[cfg(test)]
@@ -968,7 +972,7 @@
         <span class="kw">impl </span>ObjectImpl <span class="kw">for </span>SimpleApplication {}
 
         <span class="kw">impl </span>ApplicationImpl <span class="kw">for </span>SimpleApplication {
-            <span class="kw">fn </span>command_line(<span class="kw-2">&amp;</span><span class="self">self</span>, cmd_line: <span class="kw-2">&amp;</span><span class="kw">crate</span>::ApplicationCommandLine) -&gt; i32 {
+            <span class="kw">fn </span>command_line(<span class="kw-2">&amp;</span><span class="self">self</span>, cmd_line: <span class="kw-2">&amp;</span><span class="kw">crate</span>::ApplicationCommandLine) -&gt; ExitCode {
                 <span class="kw">let </span>arguments = cmd_line.arguments();
 
                 <span class="kw">for </span>arg <span class="kw">in </span>arguments {
@@ -977,10 +981,10 @@
                     <span class="macro">assert!</span>(!a.starts_with(<span class="string">&quot;--local-&quot;</span>))
                 }
 
-                EXIT_STATUS
+                EXIT_STATUS.into()
             }
 
-            <span class="kw">fn </span>local_command_line(<span class="kw-2">&amp;</span><span class="self">self</span>, arguments: <span class="kw-2">&amp;mut </span>ArgumentList) -&gt; <span class="prelude-ty">Option</span>&lt;i32&gt; {
+            <span class="kw">fn </span>local_command_line(<span class="kw-2">&amp;</span><span class="self">self</span>, arguments: <span class="kw-2">&amp;mut </span>ArgumentList) -&gt; <span class="prelude-ty">Option</span>&lt;ExitCode&gt; {
                 <span class="kw">let </span><span class="kw-2">mut </span>rm = Vec::new();
 
                 <span class="kw">for </span>(i, line) <span class="kw">in </span>arguments.iter().enumerate() {
@@ -1016,7 +1020,7 @@
 
         app.set_inactivity_timeout(<span class="number">10000</span>);
 
-        <span class="macro">assert_eq!</span>(app.run_with_args(<span class="kw-2">&amp;</span>[<span class="string">&quot;--local&quot;</span>]), EXIT_STATUS);
+        <span class="macro">assert_eq!</span>(app.run_with_args(<span class="kw-2">&amp;</span>[<span class="string">&quot;--local&quot;</span>]), EXIT_STATUS.into());
     }
 }
 </code></pre></div>
