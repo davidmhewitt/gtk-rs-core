@@ -1208,6 +1208,24 @@
 <a href="#1135" id="1135">1135</a>
 <a href="#1136" id="1136">1136</a>
 <a href="#1137" id="1137">1137</a>
+<a href="#1138" id="1138">1138</a>
+<a href="#1139" id="1139">1139</a>
+<a href="#1140" id="1140">1140</a>
+<a href="#1141" id="1141">1141</a>
+<a href="#1142" id="1142">1142</a>
+<a href="#1143" id="1143">1143</a>
+<a href="#1144" id="1144">1144</a>
+<a href="#1145" id="1145">1145</a>
+<a href="#1146" id="1146">1146</a>
+<a href="#1147" id="1147">1147</a>
+<a href="#1148" id="1148">1148</a>
+<a href="#1149" id="1149">1149</a>
+<a href="#1150" id="1150">1150</a>
+<a href="#1151" id="1151">1151</a>
+<a href="#1152" id="1152">1152</a>
+<a href="#1153" id="1153">1153</a>
+<a href="#1154" id="1154">1154</a>
+<a href="#1155" id="1155">1155</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span>std::{boxed::Box <span class="kw">as </span>Box_, future::Future, mem::transmute, panic, ptr};
@@ -1781,6 +1799,24 @@
     ///  having come from the ``_async()`` wrapper
     ///  function (for &quot;short-circuit&quot; results, such as when passing
     ///  0 to [`InputStreamExtManual::read_async()`][crate::prelude::InputStreamExtManual::read_async()]).
+    ///
+    /// ## Thread-safety considerations
+    ///
+    /// Due to some infelicities in the API design, there is a
+    /// thread-safety concern that users of GTask have to be aware of:
+    ///
+    /// If the `main` thread drops its last reference to the source object
+    /// or the task data before the task is finalized, then the finalizers
+    /// of these objects may be called on the worker thread.
+    ///
+    /// This is a problem if the finalizers use non-threadsafe API, and
+    /// can lead to hard-to-debug crashes. Possible workarounds include:
+    ///
+    /// - Clear task data in a signal handler for `notify::completed`
+    ///
+    /// - Keep iterating a main context in the main thread and defer
+    ///  dropping the reference to the source object to that main
+    ///  context when the task is finalized
     ///
     /// ## Properties
     ///
