@@ -241,6 +241,13 @@
 <a href="#168" id="168">168</a>
 <a href="#169" id="169">169</a>
 <a href="#170" id="170">170</a>
+<a href="#171" id="171">171</a>
+<a href="#172" id="172">172</a>
+<a href="#173" id="173">173</a>
+<a href="#174" id="174">174</a>
+<a href="#175" id="175">175</a>
+<a href="#176" id="176">176</a>
+<a href="#177" id="177">177</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -248,7 +255,8 @@
 
 </span><span class="kw">use </span>std::time::Duration;
 
-<span class="kw">use </span>glib::{subclass::prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>, Cast};
+<span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, subclass::prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>};
+<span class="kw">use </span>once_cell::sync::Lazy;
 
 <span class="kw">use crate</span>::{Pixbuf, PixbufAnimationIter};
 
@@ -381,13 +389,19 @@
     imp.delay_time().map(|t| t.as_millis() <span class="kw">as </span>i32).unwrap_or(-<span class="number">1</span>)
 }
 
+<span class="kw">static </span>PIXBUF_QUARK: Lazy&lt;glib::Quark&gt; =
+    Lazy::new(|| glib::Quark::from_str(<span class="string">&quot;gtk-rs-subclass-pixbuf&quot;</span>));
+
 <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>animation_iter_get_pixbuf&lt;T: PixbufAnimationIterImpl&gt;(
     ptr: <span class="kw-2">*mut </span>ffi::GdkPixbufAnimationIter,
 ) -&gt; <span class="kw-2">*mut </span>ffi::GdkPixbuf {
     <span class="kw">let </span>instance = <span class="kw-2">&amp;*</span>(ptr <span class="kw">as </span><span class="kw-2">*mut </span>T::Instance);
     <span class="kw">let </span>imp = instance.imp();
 
-    imp.pixbuf().to_glib_none().<span class="number">0
+    <span class="kw">let </span>pixbuf = imp.pixbuf();
+    <span class="comment">// Ensure that the pixbuf stays alive until the next call
+    </span>imp.obj().set_qdata(<span class="kw-2">*</span>PIXBUF_QUARK, pixbuf.clone());
+    pixbuf.to_glib_none().<span class="number">0
 </span>}
 
 <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>animation_iter_on_currently_loading_frame&lt;T: PixbufAnimationIterImpl&gt;(

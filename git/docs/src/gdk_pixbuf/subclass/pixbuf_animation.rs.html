@@ -247,6 +247,26 @@
 <a href="#174" id="174">174</a>
 <a href="#175" id="175">175</a>
 <a href="#176" id="176">176</a>
+<a href="#177" id="177">177</a>
+<a href="#178" id="178">178</a>
+<a href="#179" id="179">179</a>
+<a href="#180" id="180">180</a>
+<a href="#181" id="181">181</a>
+<a href="#182" id="182">182</a>
+<a href="#183" id="183">183</a>
+<a href="#184" id="184">184</a>
+<a href="#185" id="185">185</a>
+<a href="#186" id="186">186</a>
+<a href="#187" id="187">187</a>
+<a href="#188" id="188">188</a>
+<a href="#189" id="189">189</a>
+<a href="#190" id="190">190</a>
+<a href="#191" id="191">191</a>
+<a href="#192" id="192">192</a>
+<a href="#193" id="193">193</a>
+<a href="#194" id="194">194</a>
+<a href="#195" id="195">195</a>
+<a href="#196" id="196">196</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
@@ -254,7 +274,8 @@
 
 </span><span class="kw">use </span>std::{mem::MaybeUninit, time::Duration};
 
-<span class="kw">use </span>glib::{subclass::prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>, Cast};
+<span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, subclass::prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>};
+<span class="kw">use </span>once_cell::sync::Lazy;
 
 <span class="kw">use crate</span>::{Pixbuf, PixbufAnimation, PixbufAnimationIter};
 
@@ -402,13 +423,32 @@
     }
 }
 
+<span class="kw">static </span>STATIC_IMAGE_QUARK: Lazy&lt;glib::Quark&gt; =
+    Lazy::new(|| glib::Quark::from_str(<span class="string">&quot;gtk-rs-subclass-static-image&quot;</span>));
+
 <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>animation_get_static_image&lt;T: PixbufAnimationImpl&gt;(
     ptr: <span class="kw-2">*mut </span>ffi::GdkPixbufAnimation,
 ) -&gt; <span class="kw-2">*mut </span>ffi::GdkPixbuf {
     <span class="kw">let </span>instance = <span class="kw-2">&amp;*</span>(ptr <span class="kw">as </span><span class="kw-2">*mut </span>T::Instance);
     <span class="kw">let </span>imp = instance.imp();
 
-    imp.static_image().to_glib_none().<span class="number">0
+    <span class="kw">let </span>instance = imp.obj();
+    <span class="kw">let </span>static_image = imp.static_image();
+    <span class="comment">// Ensure that a) the static image stays alive as long as the animation instance and b) that
+    // the same static image is returned every time. This is a requirement by the gdk-pixbuf API.
+    </span><span class="kw">if let </span><span class="prelude-val">Some</span>(old_image) = instance.qdata::&lt;<span class="prelude-ty">Option</span>&lt;Pixbuf&gt;&gt;(<span class="kw-2">*</span>STATIC_IMAGE_QUARK) {
+        <span class="kw">let </span>old_image = old_image.as_ref();
+
+        <span class="kw">if let </span><span class="prelude-val">Some</span>(old_image) = old_image {
+            <span class="macro">assert_eq!</span>(
+                <span class="prelude-val">Some</span>(old_image),
+                static_image.as_ref(),
+                <span class="string">&quot;Did not return same static image again&quot;
+            </span>);
+        }
+    }
+    instance.set_qdata(<span class="kw-2">*</span>STATIC_IMAGE_QUARK, static_image.clone());
+    static_image.to_glib_none().<span class="number">0
 </span>}
 
 <span class="kw">unsafe extern </span><span class="string">&quot;C&quot; </span><span class="kw">fn </span>animation_get_iter&lt;T: PixbufAnimationImpl&gt;(
