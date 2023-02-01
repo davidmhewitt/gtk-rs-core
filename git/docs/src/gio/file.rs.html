@@ -1414,6 +1414,7 @@
 <a href="#1341" id="1341">1341</a>
 <a href="#1342" id="1342">1342</a>
 <a href="#1343" id="1343">1343</a>
+<a href="#1344" id="1344">1344</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="attr">#[cfg(any(feature = <span class="string">&quot;v2_74&quot;</span>, feature = <span class="string">&quot;dox&quot;</span>))]
@@ -1677,7 +1678,7 @@
         Q: FnOnce(<span class="prelude-ty">Result</span>&lt;FileEnumerator, glib::Error&gt;) + <span class="lifetime">&#39;static</span>,
     &gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
-        attributes: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str,
+        attributes: <span class="kw-2">&amp;</span>str,
         flags: FileQueryInfoFlags,
         io_priority: glib::Priority,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>P&gt;,
@@ -1686,7 +1687,7 @@
 
     <span class="kw">fn </span>enumerate_children_future(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
-        attributes: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str,
+        attributes: <span class="kw-2">&amp;</span>str,
         flags: FileQueryInfoFlags,
         io_priority: glib::Priority,
     ) -&gt; Pin&lt;Box&lt;<span class="kw">dyn </span>std::future::Future&lt;Output = <span class="prelude-ty">Result</span>&lt;FileEnumerator, glib::Error&gt;&gt; + <span class="lifetime">&#39;static</span>&gt;&gt;;
@@ -2051,7 +2052,7 @@
         Q: FnOnce(<span class="prelude-ty">Result</span>&lt;FileEnumerator, glib::Error&gt;) + <span class="lifetime">&#39;static</span>,
     &gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
-        attributes: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str,
+        attributes: <span class="kw-2">&amp;</span>str,
         flags: FileQueryInfoFlags,
         io_priority: glib::Priority,
         cancellable: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span>P&gt;,
@@ -2105,16 +2106,17 @@
 
     <span class="kw">fn </span>enumerate_children_future(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
-        attributes: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static </span>str,
+        attributes: <span class="kw-2">&amp;</span>str,
         flags: FileQueryInfoFlags,
         io_priority: glib::Priority,
     ) -&gt; Pin&lt;Box&lt;<span class="kw">dyn </span>std::future::Future&lt;Output = <span class="prelude-ty">Result</span>&lt;FileEnumerator, glib::Error&gt;&gt; + <span class="lifetime">&#39;static</span>&gt;&gt;
     {
+        <span class="kw">let </span>attributes = attributes.to_owned();
         Box::pin(<span class="kw">crate</span>::GioFuture::new(
             <span class="self">self</span>,
             <span class="kw">move </span>|obj, cancellable, send| {
                 obj.enumerate_children_async(
-                    attributes,
+                    <span class="kw-2">&amp;</span>attributes,
                     flags,
                     io_priority,
                     <span class="prelude-val">Some</span>(cancellable),
