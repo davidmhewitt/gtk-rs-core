@@ -267,12 +267,22 @@
 <a href="#194" id="194">194</a>
 <a href="#195" id="195">195</a>
 <a href="#196" id="196">196</a>
+<a href="#197" id="197">197</a>
+<a href="#198" id="198">198</a>
+<a href="#199" id="199">199</a>
+<a href="#200" id="200">200</a>
+<a href="#201" id="201">201</a>
+<a href="#202" id="202">202</a>
+<a href="#203" id="203">203</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 // rustdoc-stripper-ignore-next
 </span><span class="doccomment">//! Traits intended for subclassing [`PixbufAnimation`](crate::PixbufAnimation).
 
-</span><span class="kw">use </span>std::{mem::MaybeUninit, time::Duration};
+</span><span class="kw">use </span>std::{
+    mem::MaybeUninit,
+    time::{Duration, SystemTime},
+};
 
 <span class="kw">use </span>glib::{prelude::<span class="kw-2">*</span>, subclass::prelude::<span class="kw-2">*</span>, translate::<span class="kw-2">*</span>};
 <span class="kw">use </span>once_cell::sync::Lazy;
@@ -292,7 +302,7 @@
         <span class="self">self</span>.parent_size()
     }
 
-    <span class="kw">fn </span>iter(<span class="kw-2">&amp;</span><span class="self">self</span>, start_time: Duration) -&gt; PixbufAnimationIter {
+    <span class="kw">fn </span>iter(<span class="kw-2">&amp;</span><span class="self">self</span>, start_time: SystemTime) -&gt; PixbufAnimationIter {
         <span class="self">self</span>.parent_iter(start_time)
     }
 }
@@ -301,7 +311,7 @@
     <span class="kw">fn </span>parent_is_static_image(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; bool;
     <span class="kw">fn </span>parent_static_image(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Pixbuf&gt;;
     <span class="kw">fn </span>parent_size(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (i32, i32);
-    <span class="kw">fn </span>parent_iter(<span class="kw-2">&amp;</span><span class="self">self</span>, start_time: Duration) -&gt; PixbufAnimationIter;
+    <span class="kw">fn </span>parent_iter(<span class="kw-2">&amp;</span><span class="self">self</span>, start_time: SystemTime) -&gt; PixbufAnimationIter;
 }
 
 <span class="kw">impl</span>&lt;T: PixbufAnimationImpl&gt; PixbufAnimationImplExt <span class="kw">for </span>T {
@@ -358,7 +368,7 @@
         }
     }
 
-    <span class="kw">fn </span>parent_iter(<span class="kw-2">&amp;</span><span class="self">self</span>, start_time: Duration) -&gt; PixbufAnimationIter {
+    <span class="kw">fn </span>parent_iter(<span class="kw-2">&amp;</span><span class="self">self</span>, start_time: SystemTime) -&gt; PixbufAnimationIter {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>data = T::type_data();
             <span class="kw">let </span>parent_class = data.as_ref().parent_class() <span class="kw">as </span><span class="kw-2">*mut </span>ffi::GdkPixbufAnimationClass;
@@ -366,16 +376,19 @@
                 .get_iter
                 .expect(<span class="string">&quot;No parent class implementation for \&quot;get_iter\&quot;&quot;</span>);
 
+            <span class="kw">let </span>diff = start_time
+                .duration_since(SystemTime::UNIX_EPOCH)
+                .expect(<span class="string">&quot;failed to convert time&quot;</span>);
             <span class="kw">let </span>time = glib::ffi::GTimeVal {
-                tv_sec: start_time.as_secs() <span class="kw">as _</span>,
-                tv_usec: start_time.subsec_micros() <span class="kw">as _</span>,
+                tv_sec: diff.as_secs() <span class="kw">as _</span>,
+                tv_usec: diff.subsec_micros() <span class="kw">as _</span>,
             };
             from_glib_full(f(
                 <span class="self">self</span>.obj()
                     .unsafe_cast_ref::&lt;PixbufAnimation&gt;()
                     .to_glib_none()
                     .<span class="number">0</span>,
-                <span class="kw-2">&amp;</span>time <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>,
+                <span class="kw-2">&amp;</span>time,
             ))
         }
     }
@@ -458,10 +471,11 @@
     <span class="kw">let </span>instance = <span class="kw-2">&amp;*</span>(ptr <span class="kw">as </span><span class="kw-2">*mut </span>T::Instance);
     <span class="kw">let </span>imp = instance.imp();
 
-    <span class="kw">let </span>total = Duration::from_secs((<span class="kw-2">*</span>start_time_ptr).tv_sec.try_into().unwrap())
+    <span class="kw">let </span>start_time = SystemTime::UNIX_EPOCH
+        + Duration::from_secs((<span class="kw-2">*</span>start_time_ptr).tv_sec.try_into().unwrap())
         + Duration::from_micros((<span class="kw-2">*</span>start_time_ptr).tv_usec.try_into().unwrap());
 
-    imp.iter(total).into_glib_ptr()
+    imp.iter(start_time).into_glib_ptr()
 }
 </code></pre></div>
 </section></main><div id="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gdk_pixbuf" data-themes="" data-resource-suffix="" data-rustdoc-version="1.69.0-nightly (dc1d9d50f 2023-01-31)" data-search-js="search-98d53477a794af0b.js" data-settings-js="settings-f0c5c39777a9a2f6.js" data-settings-css="settings-7c23ac01f615ce90.css" ></div></body></html>

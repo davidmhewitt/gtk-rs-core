@@ -202,9 +202,17 @@
 <a href="#129" id="129">129</a>
 <a href="#130" id="130">130</a>
 <a href="#131" id="131">131</a>
+<a href="#132" id="132">132</a>
+<a href="#133" id="133">133</a>
+<a href="#134" id="134">134</a>
+<a href="#135" id="135">135</a>
+<a href="#136" id="136">136</a>
+<a href="#137" id="137">137</a>
+<a href="#138" id="138">138</a>
+<a href="#139" id="139">139</a>
 </pre><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
-</span><span class="kw">use </span>std::time::SystemTime;
+</span><span class="kw">use </span>std::time::{Duration, SystemTime};
 
 <span class="kw">use </span>glib::translate::<span class="kw-2">*</span>;
 
@@ -250,8 +258,8 @@
     ///
     /// `TRUE` if the image may need updating
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_animation_iter_advance&quot;</span>)]
-    </span><span class="kw">pub fn </span>advance(<span class="kw-2">&amp;</span><span class="self">self</span>, start_time: SystemTime) -&gt; bool {
-        <span class="kw">let </span>diff = start_time
+    </span><span class="kw">pub fn </span>advance(<span class="kw-2">&amp;</span><span class="self">self</span>, current_time: SystemTime) -&gt; bool {
+        <span class="kw">let </span>diff = current_time
             .duration_since(SystemTime::UNIX_EPOCH)
             .expect(<span class="string">&quot;failed to convert time&quot;</span>);
 
@@ -310,8 +318,16 @@
     /// delay time in milliseconds (thousandths of a second)
     </span><span class="attr">#[doc(alias = <span class="string">&quot;gdk_pixbuf_animation_iter_get_delay_time&quot;</span>)]
     #[doc(alias = <span class="string">&quot;get_delay_time&quot;</span>)]
-    </span><span class="kw">pub fn </span>delay_time(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; i32 {
-        <span class="kw">unsafe </span>{ ffi::gdk_pixbuf_animation_iter_get_delay_time(<span class="self">self</span>.to_glib_none().<span class="number">0</span>) }
+    </span><span class="kw">pub fn </span>delay_time(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;Duration&gt; {
+        <span class="kw">unsafe </span>{
+            <span class="kw">let </span>res = ffi::gdk_pixbuf_animation_iter_get_delay_time(<span class="self">self</span>.to_glib_none().<span class="number">0</span>);
+
+            <span class="kw">if </span>res &lt; <span class="number">0 </span>{
+                <span class="prelude-val">None
+            </span>} <span class="kw">else </span>{
+                <span class="prelude-val">Some</span>(Duration::from_millis(res <span class="kw">as </span>u64))
+            }
+        }
     }
 
     <span class="doccomment">/// Used to determine how to respond to the area_updated signal on
